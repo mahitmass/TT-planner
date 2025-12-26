@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <title>A6 Batch Timetable</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <link rel="icon" type="image/png" href="Logo.png">
+  <link rel="apple-touch-icon" href="Logo.png">
+  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   
   <style>
@@ -61,7 +65,7 @@
       color: var(--text-main);
       margin: 0;
       padding: 0;
-      /* FIXED APP SHELL - UPDATED TO 100dvh FOR MOBILE ADDRESS BARS */
+      /* FIXED APP SHELL */
       height: 100vh;
       height: 100dvh; 
       width: 100vw;
@@ -73,7 +77,7 @@
 
     /* --- HEADER (FIXED TOP) --- */
     header {
-      flex: 0 0 auto; /* Don't shrink/grow */
+      flex: 0 0 auto; 
       width: 100%;
       height: 80px; 
       padding: 0 15px;
@@ -125,7 +129,6 @@
     }
 
     /* --- VIEW CONTAINERS --- */
-    /* This makes the container fill the rest of the screen */
     .view-container {
         flex: 1; 
         position: relative;
@@ -220,9 +223,8 @@
     .break-duration-text { font-size: 0.85rem; color: var(--text-muted); opacity: 0.8; }
 
 
-    /* --- COMPACT TABLE VIEW (FIXED SCROLL) --- */
+    /* --- COMPACT TABLE VIEW --- */
     #compact-container {
-        /* This container scrolls internally */
         overflow: auto; 
         padding: 0;
         /* UPDATED PADDING TO CLEAR FIXED FOOTER */
@@ -232,7 +234,7 @@
 
     .weekly-table {
         border-collapse: separate;
-        border-spacing: 0; /* Remove gaps for perfect sticky headers */
+        border-spacing: 0; 
         width: 100%;
         min-width: 600px; 
     }
@@ -249,7 +251,6 @@
 
     /* --- STICKY HEADERS LOGIC --- */
     
-    /* 1. Header Row (Mon, Tue...) stuck to top of container */
     .weekly-table thead th {
         position: sticky;
         top: 0;
@@ -261,7 +262,6 @@
         font-size: 0.8rem;
     }
 
-    /* 2. Time Column (09:00...) stuck to left */
     .weekly-table tbody td:first-child {
         position: sticky;
         left: 0;
@@ -273,12 +273,11 @@
         min-width: 85px;
     }
 
-    /* 3. The Corner Cell (Time Label) stuck to TOP and LEFT */
     .weekly-table thead th:first-child {
         position: sticky;
         top: 0;
         left: 0;
-        z-index: 30; /* Highest priority */
+        z-index: 30; 
         background-color: var(--header-bg);
         border-right: 2px solid var(--border-color);
     }
@@ -296,7 +295,7 @@
 
     /* --- FOOTER (PERMANENTLY FIXED BOTTOM) --- */
     .footer-sig {
-        position: fixed; /* UPDATED: Changed from flex item to fixed overlay */
+        position: fixed; 
         bottom: 0;
         left: 0;
         width: 100%;
@@ -305,9 +304,7 @@
         background: var(--bg-color);
         color: var(--text-muted);
         border-top: 1px solid var(--border-color);
-        z-index: 200; /* Ensure it's above everything */
-        
-        /* Optional: safe area for iPhone home bar */
+        z-index: 200; 
         padding-bottom: calc(15px + env(safe-area-inset-bottom)); 
     }
     .signature { color: var(--accent-color); font-weight: 700; font-family: 'Courier New', monospace; }
@@ -787,4 +784,4 @@
 
   </script>
 </body>
-                  </html>
+</html>
