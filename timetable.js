@@ -1,7 +1,6 @@
 // --- 1. THE DATA ---
-// Days: 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat
 
-// BATCH A6 SCHEDULE (FIXED WEDNESDAY)
+// BATCH A6 SCHEDULE (FIXED WEDNESDAY TIMES)
 const scheduleA6 = [
   // MONDAY
   { day: 1, start: 10, duration: 2, title: "Physics Lab-2", code: "PL2", teacher: "Dr. Navendu / Dr. Indrani", type: "lab" },
@@ -14,11 +13,11 @@ const scheduleA6 = [
   { day: 2, start: 14, duration: 1, title: "Physics-2", code: "G1", teacher: "Dr. Sandeep Mishra", type: "lec" },
   { day: 2, start: 15, duration: 1, title: "SDF-2", code: "FF1", teacher: "Rohit Kumar Sony", type: "lec" },
 
-  // WEDNESDAY (CORRECTED: Starts at 1PM now)
+  // WEDNESDAY (CORRECTED: Starts at 1PM)
   { day: 3, start: 9, duration: 1, title: "UHV", code: "F10", teacher: "Dr. Yogita Naruka", type: "tut" },
-  { day: 3, start: 13, duration: 1, title: "Physics-2", code: "CS5", teacher: "Dr. Sandeep Mishra", type: "lec" }, // Was 12, now 13
-  { day: 3, start: 14, duration: 1, title: "Mathematics-2", code: "FF3", teacher: "Dr. Arpita Nayek", type: "lec" }, // Was 13, now 14
-  { day: 3, start: 15, duration: 2, title: "SDF Lab", code: "CL02", teacher: "Meenal / Prateek", type: "lab" },     // Was 14, now 15
+  { day: 3, start: 13, duration: 1, title: "Physics-2", code: "CS5", teacher: "Dr. Sandeep Mishra", type: "lec" }, // Moved to 1 PM
+  { day: 3, start: 14, duration: 1, title: "Mathematics-2", code: "FF3", teacher: "Dr. Arpita Nayek", type: "lec" }, // Moved to 2 PM
+  { day: 3, start: 15, duration: 2, title: "SDF Lab", code: "CL02", teacher: "Meenal / Prateek", type: "lab" },     // Moved to 3 PM
 
   // THURSDAY
   { day: 4, start: 10, duration: 1, title: "SDF-2", code: "G1", teacher: "Rohit Kumar Sony", type: "lec" },
@@ -36,7 +35,7 @@ const scheduleA6 = [
   { day: 6, start: 11, duration: 1, title: "Mathematics-2", code: "FF1", teacher: "Dr. Arpita Nayek", type: "lec" },
 ];
 
-// BATCH A5 SCHEDULE (Extracted from Images)
+// BATCH A5 SCHEDULE
 const scheduleA5 = [
   // MONDAY
   { day: 1, start: 9, duration: 1, title: "SDF-2", code: "TS4", teacher: "Dr. Amanpreet Kaur", type: "tut" },
@@ -90,20 +89,14 @@ window.updateBatchData = function(batch) {
     } else {
         currentSchedule = scheduleA6;
     }
-    // Re-render both views
-    renderMobileView();
-    renderDesktopView();
-    
-    // Check if jumpToDay exists (it's in index.html) and reset view
-    if (typeof jumpToDay === 'function') {
-        const today = new Date().getDay();
-        const initial = (today === 0 || today > 6) ? 0 : today - 1;
-        // Small timeout to ensure DOM is ready if called immediately
-        setTimeout(() => jumpToDay(initial), 10);
-    }
+    // Use requestAnimationFrame to ensure the HTML Table exists before we try to fill it
+    requestAnimationFrame(() => {
+        renderMobileView();
+        renderDesktopView();
+    });
 };
 
-// --- 2. GENERATE MOBILE SWIPE VIEW (With Smart Lunch Split) ---
+// --- RENDER MOBILE VIEW ---
 function renderMobileView() {
   const track = document.getElementById('daysTrack');
   if(!track) return;
@@ -125,12 +118,10 @@ function renderMobileView() {
       dayView.innerHTML += `<div class="break-card"><div class="break-header">No Classes Today! 🥳</div></div>`;
     } else {
         let lastEndTime = dayClasses[0].start; 
-
         dayClasses.forEach((cls) => {
             if (cls.start > lastEndTime) {
                 let gapStart = lastEndTime;
                 let gapEnd = cls.start;
-
                 // Lunch Logic
                 if (gapStart < 12) {
                     const end = Math.min(gapEnd, 12);
@@ -165,13 +156,11 @@ function createClassCard(container, cls) {
     };
     const timeString = `${formatTime(cls.start)} - ${formatTime(cls.start + cls.duration)}`;
     const typeText = cls.type === 'lec' ? 'Lecture' : cls.type === 'tut' ? 'Tutorial' : 'LAB';
-
     const card = document.createElement('div');
     card.className = `class-card type-${cls.type}`;
     card.setAttribute('data-day', cls.day);
     card.setAttribute('data-start-hour', cls.start);
     card.setAttribute('data-end-hour', cls.start + cls.duration);
-
     card.innerHTML = `
         <div class="time-slot">${timeString}</div>
         <div class="subject-name">${cls.title}</div>
@@ -179,43 +168,32 @@ function createClassCard(container, cls) {
             <span class="info-badge">🏛 ${cls.code}</span>
             <span class="info-badge">👨‍🏫 ${cls.teacher}</span>
             <span class="info-badge">${typeText}</span>
-        </div>
-    `;
+        </div>`;
     container.appendChild(card);
 }
 
 function createBreakCard(container, start, end, title) {
     const duration = end - start;
     if (duration <= 0) return;
-    const formatTime = (h) => {
-        const ampm = h >= 12 ? 'PM' : 'AM';
-        const hr = h % 12 || 12;
-        return `${hr < 10 ? '0'+hr : hr}:00 ${ampm}`;
-    };
+    const formatTime = (h) => { const hr = h % 12 || 12; return `${hr < 10 ? '0'+hr : hr}:00 ${h >= 12 ? 'PM' : 'AM'}`; };
     const breakDiv = document.createElement('div');
     breakDiv.className = 'break-card';
-    breakDiv.innerHTML = `
-        <div class="break-header">${title}</div>
-        <div class="break-time-text">${formatTime(start)} - ${formatTime(end)}</div>
-        <div class="break-duration-text">${duration} hr${duration > 1 ? 's' : ''} 0 min</div>
-    `;
+    breakDiv.innerHTML = `<div class="break-header">${title}</div><div class="break-time-text">${formatTime(start)} - ${formatTime(end)}</div><div class="break-duration-text">${duration} hr${duration > 1 ? 's' : ''} 0 min</div>`;
     container.appendChild(breakDiv);
 }
 
-// --- 3. GENERATE DESKTOP TABLE VIEW ---
+// --- RENDER DESKTOP VIEW ---
 function renderDesktopView() {
     const tbody = document.querySelector('.weekly-table tbody');
-    if(!tbody) return;
+    if(!tbody) { console.error("Table body not found!"); return; } // ERROR CHECK
     tbody.innerHTML = ''; 
 
     const hours = [9, 10, 11, 12, 13, 14, 15, 16];
-
     hours.forEach(hour => {
         const tr = document.createElement('tr');
         const tdTime = document.createElement('td');
-        const ampm = hour >= 12 ? 'PM' : 'AM';
         const displayHour = hour % 12 || 12;
-        tdTime.innerText = `${displayHour < 10 ? '0'+displayHour : displayHour}:00 ${ampm}`;
+        tdTime.innerText = `${displayHour < 10 ? '0'+displayHour : displayHour}:00 ${hour >= 12 ? 'PM' : 'AM'}`;
         tr.appendChild(tdTime);
 
         if (hour === 12) {
@@ -238,10 +216,7 @@ function renderDesktopView() {
                 if (cls.duration > 1) td.rowSpan = cls.duration;
                 let subjectShort = cls.title; 
                 if(subjectShort.includes('Laboratory')) subjectShort = subjectShort.replace('Laboratory', 'Lab');
-                td.innerHTML = `
-                    <span class="cell-subject">${subjectShort} (${cls.type === 'lec' ? 'L' : cls.type === 'tut' ? 'T' : 'Lab'})</span>
-                    <span class="cell-room">${cls.code}</span>
-                `;
+                td.innerHTML = `<span class="cell-subject">${subjectShort} (${cls.type === 'lec' ? 'L' : cls.type === 'tut' ? 'T' : 'Lab'})</span><span class="cell-room">${cls.code}</span>`;
                 tr.appendChild(td);
             } else {
                 const isOccupied = currentSchedule.some(s => s.day === d && s.start < hour && (s.start + s.duration) > hour);
