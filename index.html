@@ -53,7 +53,7 @@
     }
 
     /* --- GLOBAL --- */
-    * { box-sizing: border-box; transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; }
+    * { box-sizing: border-box; }
     
     body {
       font-family: 'Inter', sans-serif;
@@ -74,14 +74,29 @@
     header {
       flex: 0 0 auto; /* Don't shrink/grow */
       width: 100%;
-      height: 60px;
-      padding: 0 20px;
+      height: 65px; /* Slightly taller for logo */
+      padding: 0 15px;
       background: var(--header-bg);
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid var(--border-color);
       z-index: 100;
+    }
+
+    /* Logo Container */
+    .brand-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .app-logo {
+        height: 40px;
+        width: 40px;
+        border-radius: 8px;
+        object-fit: cover;
+        border: 1px solid var(--border-color);
     }
 
     .header-controls {
@@ -92,7 +107,7 @@
 
     h1 {
       font-weight: 800;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       margin: 0;
       background: linear-gradient(90deg, var(--accent-color), #03dac6);
       -webkit-background-clip: text;
@@ -140,8 +155,7 @@
         height: 100%;
         overflow-y: auto; 
         padding: 20px;
-        /* Padding to clear fixed footer in swipe mode */
-        padding-bottom: 160px; 
+        padding-bottom: 80px; /* Space for footer */
     }
 
     .day-header {
@@ -209,8 +223,8 @@
         /* This container scrolls internally */
         overflow: auto; 
         padding: 0;
-        /* UPDATED: Large padding so last row isn't hidden by fixed footer */
-        padding-bottom: 120px; 
+        /* Padding bottom to clear footer */
+        padding-bottom: 60px; 
         background-color: var(--bg-color);
     }
 
@@ -278,17 +292,16 @@
     .cell-room { font-size: 0.75rem; color: var(--text-muted); display: block; }
 
 
-    /* --- FOOTER (FIXED) --- */
+    /* --- FOOTER (FIXED BOTTOM) --- */
     .footer-sig {
-        position: fixed; /* Fixed at bottom */
-        bottom: 0;
+        flex: 0 0 auto; /* Fixed height */
         width: 100%;
         text-align: center;
         padding: 15px;
         background: var(--bg-color);
         color: var(--text-muted);
         border-top: 1px solid var(--border-color);
-        z-index: 200;
+        z-index: 100;
     }
     .signature { color: var(--accent-color); font-weight: 700; font-family: 'Courier New', monospace; }
 
@@ -297,7 +310,10 @@
 <body data-theme="dark">
 
   <header>
-    <h1>A6 Planner</h1>
+    <div class="brand-container">
+        <img src="1766764701746.jpg" alt="A6 Logo" class="app-logo">
+        <h1>A6 Planner</h1>
+    </div>
     <div class="header-controls">
         <button class="icon-btn" onclick="toggleView()" title="Switch View">🗓️</button>
         <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">☀️</button>
@@ -400,7 +416,7 @@
                 <div class="break-duration-text">2 hr 0 min</div>
             </div>
              <div class="class-card type-lec" data-day="3" data-start-hour="12" data-end-hour="13">
-                <div class="time-slot">01:00 PM - 02:00 PM</div>
+                <div class="time-slot">12:00 PM - 01:00 PM</div>
                 <div class="subject-name">Physics-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ CS5</span>
@@ -409,7 +425,7 @@
                 </div>
             </div>
              <div class="class-card type-lec" data-day="3" data-start-hour="13" data-end-hour="14">
-                <div class="time-slot">02:00 PM - 03:00 PM</div>
+                <div class="time-slot">01:00 PM - 02:00 PM</div>
                 <div class="subject-name">Mathematics-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ FF3</span>
@@ -418,7 +434,7 @@
                 </div>
             </div>
             <div class="class-card type-lab" data-day="3" data-start-hour="14" data-end-hour="16">
-                <div class="time-slot">03:00 PM - 05:00 PM</div>
+                <div class="time-slot">02:00 PM - 04:00 PM</div>
                 <div class="subject-name">SDF Lab</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ CL02</span>
@@ -471,7 +487,7 @@
                 </div>
             </div>
              <div class="class-card type-tut" data-day="5" data-start-hour="12" data-end-hour="13">
-                <div class="time-slot">01:00 PM - 02:00 PM</div>
+                <div class="time-slot">12:00 PM - 01:00 PM</div>
                 <div class="subject-name">Physics-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ TS8</span>
@@ -480,7 +496,7 @@
                 </div>
             </div>
              <div class="class-card type-tut" data-day="5" data-start-hour="13" data-end-hour="14">
-                <div class="time-slot">02:00 PM - 03:00 PM</div>
+                <div class="time-slot">01:00 PM - 02:00 PM</div>
                 <div class="subject-name">Mathematics-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ TS8</span>
@@ -489,7 +505,7 @@
                 </div>
             </div>
             <div class="class-card type-tut" data-day="5" data-start-hour="14" data-end-hour="15">
-                <div class="time-slot">03:00 PM - 04:00 PM</div>
+                <div class="time-slot">02:00 PM - 03:00 PM</div>
                 <div class="subject-name">SDF-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ TS6</span>
@@ -616,10 +632,12 @@
         const compactContainer = document.getElementById('compact-container');
         
         if (swipeContainer.classList.contains('hidden-view')) {
+            // SWITCH TO SWIPE VIEW
             swipeContainer.classList.remove('hidden-view');
             compactContainer.classList.add('hidden-view');
             setTimeout(() => jumpToDay(currentDayIndex), 50);
         } else {
+            // SWITCH TO COMPACT VIEW
             swipeContainer.classList.add('hidden-view');
             compactContainer.classList.remove('hidden-view');
         }
@@ -763,4 +781,3 @@
   </script>
 </body>
 </html>
-
