@@ -73,6 +73,29 @@
       min-height: 100vh;
     }
 
+    /* --- HIGHLIGHT ACTIVE CLASS --- */
+    /* This makes the active class glow Gold */
+    .highlight-now {
+      border: 2px solid #ffd700 !important;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5) inset !important;
+      background-color: rgba(255, 215, 0, 0.1) !important;
+      position: relative;
+      z-index: 5;
+    }
+    
+    .highlight-now::after {
+      content: "🔴 NOW";
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      font-size: 0.6rem;
+      background: red;
+      color: white;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
     /* --- HEADER --- */
     header {
       width: 100%;
@@ -235,19 +258,19 @@
         <tbody>
           <tr>
             <td>MON</td>
-            <td></td>
-            <td colspan="2" class="lab">
+            <td data-day="1" data-hour="9"></td>
+            <td colspan="2" class="lab" data-day="1" data-hour="10,11">
               <div class="cell-content">
                 <span class="subject">Physics Lab-2 (LAB)</span>
                 <div class="details">
                    <span class="room">PL2</span> 
-                   <span>Dr. Navendu Goswami / Dr. Indrani Chakarborty</span>
+                   <span>Dr. Navendu / Dr. Indrani</span>
                 </div>
               </div>
             </td>
-            <td class="lunch-col" rowspan="6">LUNCH</td>
-            <td></td>
-            <td class="lec">
+            <td class="lunch-col" rowspan="6" data-hour="12">LUNCH</td>
+            <td data-day="1" data-hour="13"></td>
+            <td class="lec" data-day="1" data-hour="14">
               <div class="cell-content">
                 <span class="subject">UHV (L)</span>
                 <div class="details">
@@ -256,13 +279,13 @@
                 </div>
               </div>
             </td>
-            <td></td>
-            <td></td>
+            <td data-day="1" data-hour="15"></td>
+            <td data-day="1" data-hour="16"></td>
           </tr>
 
           <tr>
             <td>TUE</td>
-            <td class="tut">
+            <td class="tut" data-day="2" data-hour="9">
               <div class="cell-content">
                 <span class="subject">Workshop (T)</span>
                 <div class="details">
@@ -271,7 +294,7 @@
                 </div>
               </div>
             </td>
-            <td colspan="2" class="lab">
+            <td colspan="2" class="lab" data-day="2" data-hour="10,11">
               <div class="cell-content">
                 <span class="subject">Workshop (LAB)</span>
                 <div class="details">
@@ -280,16 +303,16 @@
                 </div>
               </div>
             </td>
-            <td class="lec">
+            <td class="lec" data-day="2" data-hour="13">
               <div class="cell-content">
-                <span class="subject">Mathematics-2 (L)</span>
+                <span class="subject">Maths-2 (L)</span>
                 <div class="details">
                   <span class="room">G1</span> 
                   <span>Dr. Arpita Nayek</span>
                 </div>
               </div>
             </td>
-            <td class="lec">
+            <td class="lec" data-day="2" data-hour="14">
               <div class="cell-content">
                 <span class="subject">Physics-2 (L)</span>
                 <div class="details">
@@ -298,7 +321,7 @@
                 </div>
               </div>
             </td>
-            <td class="lec">
+            <td class="lec" data-day="2" data-hour="15">
               <div class="cell-content">
                 <span class="subject">SDF-2 (L)</span>
                 <div class="details">
@@ -307,12 +330,12 @@
                 </div>
               </div>
             </td>
-            <td></td>
+            <td data-day="2" data-hour="16"></td>
           </tr>
 
           <tr>
             <td>WED</td>
-            <td class="tut">
+            <td class="tut" data-day="3" data-hour="9">
               <div class="cell-content">
                 <span class="subject">UHV (T)</span>
                 <div class="details">
@@ -321,9 +344,9 @@
                 </div>
               </div>
             </td>
-            <td></td>
-            <td></td>
-            <td class="lec">
+            <td data-day="3" data-hour="10"></td>
+            <td data-day="3" data-hour="11"></td>
+            <td class="lec" data-day="3" data-hour="13">
               <div class="cell-content">
                 <span class="subject">Physics-2 (L)</span>
                 <div class="details">
@@ -332,21 +355,21 @@
                 </div>
               </div>
             </td>
-            <td class="lec">
+            <td class="lec" data-day="3" data-hour="14">
               <div class="cell-content">
-                <span class="subject">Mathematics-2 (L)</span>
+                <span class="subject">Maths-2 (L)</span>
                 <div class="details">
                   <span class="room">FF3</span> 
                   <span>Dr. Arpita Nayek</span>
                 </div>
               </div>
             </td>
-            <td colspan="2" class="lab">
+            <td colspan="2" class="lab" data-day="3" data-hour="15,16">
               <div class="cell-content">
                 <span class="subject">SDF Lab (LAB)</span>
                 <div class="details">
                   <span class="room">CL02</span> 
-                  <span>Meenal Jain / Prateek Kumar Soni</span>
+                  <span>Meenal Jain / Prateek</span>
                 </div>
               </div>
             </td>
@@ -354,8 +377,8 @@
 
           <tr>
             <td>THU</td>
-            <td></td>
-            <td class="lec">
+            <td data-day="4" data-hour="9"></td>
+            <td class="lec" data-day="4" data-hour="10">
               <div class="cell-content">
                 <span class="subject">SDF-2 (L)</span>
                 <div class="details">
@@ -364,7 +387,7 @@
                 </div>
               </div>
             </td>
-            <td class="lec">
+            <td class="lec" data-day="4" data-hour="11">
               <div class="cell-content">
                 <span class="subject">UHV (L)</span>
                 <div class="details">
@@ -373,7 +396,7 @@
                 </div>
               </div>
             </td>
-            <td colspan="2" class="lab">
+            <td colspan="2" class="lab" data-day="4" data-hour="13,14">
               <div class="cell-content">
                 <span class="subject">Life Skills Lab</span>
                 <div class="details">
@@ -382,15 +405,15 @@
                 </div>
               </div>
             </td>
-            <td></td>
-            <td></td>
+            <td data-day="4" data-hour="15"></td>
+            <td data-day="4" data-hour="16"></td>
           </tr>
 
           <tr>
             <td>FRI</td>
-            <td></td>
-            <td></td>
-            <td class="lec">
+            <td data-day="5" data-hour="9"></td>
+            <td data-day="5" data-hour="10"></td>
+            <td class="lec" data-day="5" data-hour="11">
               <div class="cell-content">
                 <span class="subject">Physics-2 (L)</span>
                 <div class="details">
@@ -399,25 +422,25 @@
                 </div>
               </div>
             </td>
-            <td class="tut">
+            <td class="tut" data-day="5" data-hour="13">
               <div class="cell-content">
                 <span class="subject">Physics-2 (T)</span>
                 <div class="details">
                   <span class="room">TS8</span> 
-                  <span>Dr. Bhubesh Chander Joshi</span>
+                  <span>Dr. Bhubesh</span>
                 </div>
               </div>
             </td>
-            <td class="tut">
+            <td class="tut" data-day="5" data-hour="14">
               <div class="cell-content">
-                <span class="subject">Mathematics-2 (T)</span>
+                <span class="subject">Maths-2 (T)</span>
                 <div class="details">
                   <span class="room">TS8</span> 
                   <span>Dr. Neha Singhal</span>
                 </div>
               </div>
             </td>
-            <td class="tut">
+            <td class="tut" data-day="5" data-hour="15">
               <div class="cell-content">
                 <span class="subject">SDF-2 (T)</span>
                 <div class="details">
@@ -426,13 +449,13 @@
                 </div>
               </div>
             </td>
-            <td></td>
+            <td data-day="5" data-hour="16"></td>
           </tr>
 
           <tr>
             <td>SAT</td>
-            <td></td>
-            <td class="lec">
+            <td data-day="6" data-hour="9"></td>
+            <td class="lec" data-day="6" data-hour="10">
               <div class="cell-content">
                 <span class="subject">SDF-2 (L)</span>
                 <div class="details">
@@ -441,19 +464,19 @@
                 </div>
               </div>
             </td>
-            <td class="lec">
+            <td class="lec" data-day="6" data-hour="11">
               <div class="cell-content">
-                <span class="subject">Mathematics-2 (L)</span>
+                <span class="subject">Maths-2 (L)</span>
                 <div class="details">
                   <span class="room">FF1</span> 
                   <span>Dr. Arpita Nayek</span>
                 </div>
               </div>
             </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td data-day="6" data-hour="13"></td>
+            <td data-day="6" data-hour="14"></td>
+            <td data-day="6" data-hour="15"></td>
+            <td data-day="6" data-hour="16"></td>
           </tr>
         </tbody>
       </table>
@@ -464,20 +487,6 @@
     Made by <span class="signature">Mass~MAHIT</span>
   </div>
 
-  <script>
-    function toggleTheme() {
-      const body = document.body;
-      const currentTheme = body.getAttribute('data-theme');
-      const icon = document.getElementById('theme-icon');
-      
-      if (currentTheme === 'dark') {
-        body.setAttribute('data-theme', 'light');
-        icon.textContent = '🌙';
-      } else {
-        body.setAttribute('data-theme', 'dark');
-        icon.textContent = '☀️';
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
