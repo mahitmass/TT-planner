@@ -55,24 +55,35 @@
     /* --- GLOBAL --- */
     * { box-sizing: border-box; }
     
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-main);
       margin: 0;
       padding: 0;
-      /* FIXED APP SHELL - NO BODY SCROLL */
+      /* DEFAULT: APP MODE (Locked height for Swipe View) */
       height: 100vh;
-      width: 100vw;
-      display: flex;
-      flex-direction: column;
       overflow: hidden; 
       user-select: none; 
+      display: flex;
+      flex-direction: column;
     }
 
-    /* --- HEADER (FIXED TOP) --- */
+    /* --- MAGIC TRICK: NATIVE SCROLL MODE --- */
+    /* Only applied when in Compact View */
+    body.native-scroll {
+        height: auto; /* Allow body to grow */
+        min-height: 100vh;
+        overflow-y: auto; /* Enable Native Browser Scroll */
+        display: block; /* Remove flex constraint */
+    }
+
+    /* --- HEADER (STICKY) --- */
     header {
-      flex: 0 0 auto; /* Don't shrink/grow */
       width: 100%;
       height: 60px;
       padding: 0 20px;
@@ -81,7 +92,11 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid var(--border-color);
-      z-index: 100;
+      
+      /* THIS MAKES IT STICK WHEN SCROLLING DOWN */
+      position: sticky;
+      top: 0;
+      z-index: 1000; 
     }
 
     .header-controls {
@@ -109,7 +124,6 @@
     }
 
     /* --- VIEW CONTAINERS --- */
-    /* This makes the container fill the rest of the screen */
     .view-container {
         flex: 1; 
         position: relative;
@@ -140,7 +154,7 @@
         height: 100%;
         overflow-y: auto; 
         padding: 20px;
-        padding-bottom: 80px; /* Space for footer */
+        padding-bottom: 160px; /* Space for footer */
     }
 
     .day-header {
@@ -203,23 +217,25 @@
     .break-duration-text { font-size: 0.85rem; color: var(--text-muted); opacity: 0.8; }
 
 
-    /* --- COMPACT TABLE VIEW (FIXED SCROLL) --- */
+    /* --- COMPACT TABLE VIEW (WEB SCROLL) --- */
     #compact-container {
-        /* This container scrolls internally */
-        overflow: auto; 
+        /* Let the BODY handle vertical scroll (The Miracle) */
+        overflow-x: auto; /* Horizontal scroll handled here */
+        overflow-y: visible; /* Vertical expands */
         padding: 0;
-        /* Padding bottom to clear footer */
-        padding-bottom: 60px; 
+        padding-bottom: 100px; /* Space for footer */
         background-color: var(--bg-color);
+        min-height: 101vh; /* Force scrollbar to trigger address bar hide */
     }
 
     .weekly-table {
         border-collapse: separate;
-        border-spacing: 0; /* Remove gaps for perfect sticky headers */
+        border-spacing: 0; 
         width: 100%;
         min-width: 600px; 
     }
 
+    /* Readable Cells (Larger Font) */
     .weekly-table th, .weekly-table td {
         padding: 12px 8px;
         text-align: center;
@@ -230,21 +246,22 @@
         color: var(--text-main);
     }
 
-    /* --- STICKY HEADERS LOGIC --- */
+    /* --- STICKY HEADERS --- */
     
-    /* 1. Header Row (Mon, Tue...) stuck to top of container */
+    /* 1. Day Headers (Mon, Tue...) stuck below Main Header */
     .weekly-table thead th {
         position: sticky;
-        top: 0;
+        top: 60px; /* Sits right under the 60px header */
         background-color: var(--header-bg);
         z-index: 20;
         border-bottom: 2px solid var(--border-color);
         font-weight: 800;
         text-transform: uppercase;
         font-size: 0.8rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
 
-    /* 2. Time Column (09:00...) stuck to left */
+    /* 2. Time Column stuck to Left */
     .weekly-table tbody td:first-child {
         position: sticky;
         left: 0;
@@ -256,12 +273,12 @@
         min-width: 85px;
     }
 
-    /* 3. The Corner Cell (Time Label) stuck to TOP and LEFT */
+    /* 3. Corner Cell (Time/Day intersection) */
     .weekly-table thead th:first-child {
         position: sticky;
-        top: 0;
+        top: 60px;
         left: 0;
-        z-index: 30; /* Highest priority */
+        z-index: 30; /* Highest */
         background-color: var(--header-bg);
         border-right: 2px solid var(--border-color);
     }
@@ -270,23 +287,26 @@
     .cell-lec { background-color: rgba(144, 202, 249, 0.15); border-left: 4px solid var(--lec-marker) !important; }
     .cell-tut { background-color: rgba(255, 204, 128, 0.15); border-left: 4px solid var(--tut-marker) !important; }
     .cell-lab { background-color: rgba(239, 154, 154, 0.15); border-left: 4px solid var(--lab-marker) !important; }
-    .cell-break { background-color: var(--break-bg); opacity: 0.7; }
+    .cell-break { background-color: var(--break-bg); border: 1px dashed var(--text-muted) !important; opacity: 0.7; }
     .cell-empty { background-color: transparent; }
 
     .cell-subject { font-weight: 700; display: block; margin-bottom: 4px; }
     .cell-room { font-size: 0.75rem; color: var(--text-muted); display: block; }
 
 
-    /* --- FOOTER (FIXED BOTTOM) --- */
+    /* --- FOOTER (FIXED) --- */
     .footer-sig {
-        flex: 0 0 auto; /* Fixed height */
+        position: fixed;
+        bottom: 0;
         width: 100%;
         text-align: center;
         padding: 15px;
         background: var(--bg-color);
         color: var(--text-muted);
         border-top: 1px solid var(--border-color);
-        z-index: 100;
+        z-index: 200;
+        /* Blur effect for better look over content */
+        backdrop-filter: blur(10px); 
     }
     .signature { color: var(--accent-color); font-weight: 700; font-family: 'Courier New', monospace; }
 
@@ -354,7 +374,7 @@
               </div>
                <div class="class-card type-lec" data-day="2" data-start-hour="13" data-end-hour="14">
                 <div class="time-slot">01:00 PM - 02:00 PM</div>
-                <div class="subject-name">Mathematics-2</div>
+                <div class="subject-name">Maths-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ G1</span>
                     <span class="info-badge">👨‍🏫 Dr. Arpita Nayek</span>
@@ -510,7 +530,7 @@
             </div>
              <div class="class-card type-lec" data-day="6" data-start-hour="11" data-end-hour="12">
                 <div class="time-slot">11:00 AM - 12:00 PM</div>
-                <div class="subject-name">Mathematics-2</div>
+                <div class="subject-name">Maths-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ FF1</span>
                     <span class="info-badge">👨‍🏫 Dr. Arpita Nayek</span>
@@ -612,16 +632,21 @@
     function toggleView() {
         const swipeContainer = document.getElementById('timetable-container');
         const compactContainer = document.getElementById('compact-container');
+        const body = document.body;
         
         if (swipeContainer.classList.contains('hidden-view')) {
-            // SWITCH TO SWIPE VIEW
+            // SWITCH TO SWIPE VIEW (App Mode)
             swipeContainer.classList.remove('hidden-view');
             compactContainer.classList.add('hidden-view');
+            body.classList.remove('native-scroll'); // Lock body
+            
+            // Re-jump to current day to fix offsets
             setTimeout(() => jumpToDay(currentDayIndex), 50);
         } else {
-            // SWITCH TO COMPACT VIEW
+            // SWITCH TO COMPACT VIEW (Web Mode)
             swipeContainer.classList.add('hidden-view');
             compactContainer.classList.remove('hidden-view');
+            body.classList.add('native-scroll'); // Unlock body
         }
     }
 
@@ -763,4 +788,3 @@
   </script>
 </body>
 </html>
-
