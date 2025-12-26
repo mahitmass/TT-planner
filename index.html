@@ -21,6 +21,7 @@
       --lec-marker: #90caf9; /* Blue */
       --tut-marker: #ffcc80; /* Orange */
       --lab-marker: #ef9a9a; /* Red */
+      --break-marker: #424242; /* Grey for breaks */
       
       --active-glow: 0 0 15px rgba(187, 134, 252, 0.5);
 
@@ -42,6 +43,7 @@
       --lec-marker: #0d47a1;
       --tut-marker: #e65100;
       --lab-marker: #c62828;
+      --break-marker: #9e9e9e;
 
       --active-glow: 0 0 15px rgba(98, 0, 234, 0.4);
 
@@ -62,8 +64,8 @@
       height: 100vh;
       display: flex;
       flex-direction: column;
-      overflow: hidden; /* Prevent body scroll, handled by containers */
-      user-select: none; /* Prevents text highlighting while dragging on PC */
+      overflow: hidden; 
+      user-select: none; 
     }
 
     /* --- HEADER --- */
@@ -78,6 +80,12 @@
       z-index: 10;
     }
 
+    .header-controls {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
     h1 {
       font-weight: 800;
       font-size: 1.5rem;
@@ -87,7 +95,7 @@
       -webkit-text-fill-color: transparent;
     }
 
-    .theme-toggle {
+    .icon-btn {
       background: transparent;
       border: none;
       color: var(--text-main);
@@ -96,35 +104,37 @@
       padding: 5px;
     }
 
-    /* --- MAIN SWIPE CONTAINER --- */
-    #timetable-container {
+    /* --- VIEW CONTAINERS --- */
+    .view-container {
         flex: 1;
         position: relative;
         overflow: hidden;
         width: 100%;
-        cursor: grab; /* PC: Shows hand icon */
-        touch-action: pan-y; /* Allow vertical scroll, block horizontal for JS */
-    }
-    
-    #timetable-container:active {
-        cursor: grabbing; /* PC: Shows grabbing hand when clicking */
     }
 
-    /* The track that slides left/right */
+    .hidden-view {
+        display: none !important;
+    }
+
+    /* --- SWIPE VIEW STYLES --- */
+    #timetable-container {
+        cursor: grab;
+        touch-action: pan-y; 
+    }
+    #timetable-container:active { cursor: grabbing; }
+
     .days-track {
         display: flex;
         height: 100%;
-        width: 600vw; /* 6 days * 100vw */
+        width: 600vw; 
         transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
     }
 
-    /* Individual Day View */
     .day-view {
         width: 100vw;
         height: 100%;
-        overflow-y: auto; /* Vertical scroll for classes */
+        overflow-y: auto; 
         padding: 20px;
-        /* Increased padding so footer doesn't hide content */
         padding-bottom: 160px; 
     }
 
@@ -136,7 +146,6 @@
         text-align: center;
     }
 
-    /* --- CLASS CARD STYLE --- */
     .class-card {
         background: var(--card-bg);
         border-radius: 16px;
@@ -148,10 +157,8 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        user-select: none; /* Prevents text selection on drag */
     }
     
-    /* The colored bar on the left */
     .class-card::before {
         content: '';
         position: absolute;
@@ -164,55 +171,18 @@
     .type-tut::before { background-color: var(--tut-marker); }
     .type-lab::before { background-color: var(--lab-marker); }
 
-    /* Active class highlight */
     .class-card.active-now {
         border: 2px solid var(--accent-color);
         box-shadow: var(--active-glow);
     }
 
-    .time-slot {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
+    .time-slot { font-size: 0.9rem; color: var(--text-muted); font-weight: 600; display: flex; align-items: center; gap: 8px; }
+    .time-slot::before { content: '•'; color: var(--accent-color); font-size: 1.2rem; }
+    .subject-name { font-size: 1.4rem; font-weight: 800; margin: 5px 0; }
+    .card-footer { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px; padding-top: 15px; border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-muted); }
+    .info-badge { display: flex; align-items: center; gap: 6px; background: rgba(128,128,128,0.1); padding: 6px 12px; border-radius: 20px; font-weight: 600; }
 
-    .time-slot::before {
-        content: '•'; 
-        color: var(--accent-color);
-        font-size: 1.2rem;
-    }
-
-    .subject-name {
-        font-size: 1.4rem;
-        font-weight: 800;
-        margin: 5px 0;
-    }
-
-    .card-footer {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-top: 10px;
-        padding-top: 15px;
-        border-top: 1px solid var(--border-color);
-        font-size: 0.9rem;
-        color: var(--text-muted);
-    }
-    
-    .info-badge {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        background: rgba(128,128,128,0.1);
-        padding: 6px 12px;
-        border-radius: 20px;
-        font-weight: 600;
-    }
-
-    /* --- BREAK CARD STYLE --- */
+    /* Break Card */
     .break-card {
         background: var(--break-bg);
         border: 1px solid var(--break-border);
@@ -223,26 +193,68 @@
         flex-direction: column;
         gap: 8px;
     }
+    .break-header { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
+    .break-time-text { font-size: 0.9rem; color: var(--text-muted); font-family: monospace; }
+    .break-duration-text { font-size: 0.85rem; color: var(--text-muted); opacity: 0.8; }
 
-    .break-header {
-        font-size: 1.1rem;
-        font-weight: 700;
+
+    /* --- COMPACT TABLE VIEW --- */
+    #compact-container {
+        overflow: auto; 
+        padding: 10px;
+        padding-bottom: 100px; 
+        background-color: var(--bg-color);
+    }
+
+    .weekly-table {
+        border-collapse: separate;
+        border-spacing: 4px;
+        width: 100%;
+        min-width: 600px; /* Force horizontal scroll on mobile */
+    }
+
+    .weekly-table th, .weekly-table td {
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 0.85rem;
+        border: 1px solid var(--border-color);
         color: var(--text-main);
     }
 
-    .break-time-text {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        font-family: monospace;
-    }
-    
-    .break-duration-text {
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        opacity: 0.8;
+    /* Sticky Time Column */
+    .weekly-table td:first-child, .weekly-table th:first-child {
+        position: sticky;
+        left: 0;
+        background-color: var(--card-bg);
+        z-index: 2;
+        border-right: 2px solid var(--border-color);
+        font-weight: bold;
+        color: var(--accent-color);
+        min-width: 85px;
     }
 
+    .weekly-table th {
+        background-color: var(--header-bg);
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
 
+    /* Table Cell Types */
+    .cell-lec { background-color: rgba(144, 202, 249, 0.15); border-left: 4px solid var(--lec-marker) !important; }
+    .cell-tut { background-color: rgba(255, 204, 128, 0.15); border-left: 4px solid var(--tut-marker) !important; }
+    .cell-lab { background-color: rgba(239, 154, 154, 0.15); border-left: 4px solid var(--lab-marker) !important; }
+    .cell-break { background-color: var(--break-bg); border: 1px dashed var(--text-muted) !important; opacity: 0.7; }
+    .cell-empty { background-color: transparent; border: none !important; }
+
+    .cell-subject { font-weight: 700; display: block; margin-bottom: 4px; }
+    .cell-room { font-size: 0.75rem; color: var(--text-muted); display: block; }
+
+
+    /* --- FOOTER --- */
     .footer-sig {
         position: fixed;
         bottom: 0;
@@ -262,35 +274,35 @@
 
   <header>
     <h1>A6 Planner</h1>
-    <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">
-      ☀️
-    </button>
+    <div class="header-controls">
+        <button class="icon-btn" onclick="toggleView()" title="Switch View">🗓️</button>
+        <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">☀️</button>
+    </div>
   </header>
 
-  <div id="timetable-container">
+  <div id="timetable-container" class="view-container">
       <div class="days-track" id="daysTrack">
 
           <div class="day-view" data-day-index="1">
               <h2 class="day-header">Monday</h2>
-              
               <div class="class-card type-lab" data-day="1" data-start-hour="10" data-end-hour="12">
                   <div class="time-slot">10:00 AM - 12:00 PM</div>
                   <div class="subject-name">Physics Lab-2</div>
                   <div class="card-footer">
                       <span class="info-badge">🏛️ PL2</span>
-                      <span class="info-badge">👨‍🏫 Dr. Navendu Goswami / Dr. Indrani</span>
+                      <span class="info-badge">👨‍🏫 Dr. Navendu / Dr. Indrani</span>
                       <span class="info-badge">LAB</span>
                   </div>
               </div>
-
+              
               <div class="break-card">
-                <div class="break-header">Breaks in the Day</div>
-                <div class="break-time-text">12:00 PM - 01:00 PM</div>
+                <div class="break-header">Break</div>
+                <div class="break-time-text">01:00 PM - 02:00 PM</div>
                 <div class="break-duration-text">1 hr 0 min</div>
               </div>
 
-              <div class="class-card type-lec" data-day="1" data-start-hour="13" data-end-hour="14">
-                  <div class="time-slot">01:00 PM - 02:00 PM</div>
+              <div class="class-card type-lec" data-day="1" data-start-hour="14" data-end-hour="15">
+                  <div class="time-slot">02:00 PM - 03:00 PM</div>
                   <div class="subject-name">UHV</div>
                   <div class="card-footer">
                       <span class="info-badge">🏛️ G1</span>
@@ -302,17 +314,15 @@
 
           <div class="day-view" data-day-index="2">
               <h2 class="day-header">Tuesday</h2>
-
               <div class="class-card type-tut" data-day="2" data-start-hour="9" data-end-hour="10">
                   <div class="time-slot">09:00 AM - 10:00 AM</div>
                   <div class="subject-name">Workshop</div>
                   <div class="card-footer">
                       <span class="info-badge">🏛️ TS16</span>
                       <span class="info-badge">👨‍🏫 Dr.Gorav Patel</span>
-                      <span class="info-badge">Tutorial</span>
+                      <span class="info-badge">Tut</span>
                   </div>
               </div>
-
               <div class="class-card type-lab" data-day="2" data-start-hour="10" data-end-hour="12">
                   <div class="time-slot">10:00 AM - 12:00 PM</div>
                   <div class="subject-name">Workshop Lab</div>
@@ -322,34 +332,28 @@
                       <span class="info-badge">LAB</span>
                   </div>
               </div>
-
                <div class="class-card type-lec" data-day="2" data-start-hour="13" data-end-hour="14">
                 <div class="time-slot">01:00 PM - 02:00 PM</div>
-                <div class="subject-name">Mathematics-2</div>
+                <div class="subject-name">Maths-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ G1</span>
                     <span class="info-badge">👨‍🏫 Dr. Arpita Nayek</span>
-                    <span class="info-badge">Lecture</span>
                 </div>
             </div>
-
              <div class="class-card type-lec" data-day="2" data-start-hour="14" data-end-hour="15">
                 <div class="time-slot">02:00 PM - 03:00 PM</div>
                 <div class="subject-name">Physics-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ G1</span>
                     <span class="info-badge">👨‍🏫 Dr. Sandeep Mishra</span>
-                    <span class="info-badge">Lecture</span>
                 </div>
             </div>
-
              <div class="class-card type-lec" data-day="2" data-start-hour="15" data-end-hour="16">
                 <div class="time-slot">03:00 PM - 04:00 PM</div>
                 <div class="subject-name">SDF-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ FF1</span>
                     <span class="info-badge">👨‍🏫 Rohit Kumar Sony</span>
-                    <span class="info-badge">Lecture</span>
                 </div>
             </div>
           </div>
@@ -362,42 +366,35 @@
                 <div class="card-footer">
                     <span class="info-badge">🏛️ F10</span>
                     <span class="info-badge">👨‍🏫 Dr. Yogita Naruka</span>
-                    <span class="info-badge">Tutorial</span>
+                    <span class="info-badge">Tut</span>
                 </div>
             </div>
-
             <div class="break-card">
-                <div class="break-header">Breaks in the Day</div>
+                <div class="break-header">Break</div>
                 <div class="break-time-text">10:00 AM - 12:00 PM</div>
-                <div class="break-duration-text">2 hr 0 min</div>
             </div>
-
              <div class="class-card type-lec" data-day="3" data-start-hour="12" data-end-hour="13">
                 <div class="time-slot">12:00 PM - 01:00 PM</div>
                 <div class="subject-name">Physics-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ CS5</span>
                     <span class="info-badge">👨‍🏫 Dr. Sandeep Mishra</span>
-                    <span class="info-badge">Lecture</span>
                 </div>
             </div>
-
              <div class="class-card type-lec" data-day="3" data-start-hour="13" data-end-hour="14">
                 <div class="time-slot">01:00 PM - 02:00 PM</div>
-                <div class="subject-name">Mathematics-2</div>
+                <div class="subject-name">Maths-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ FF3</span>
                     <span class="info-badge">👨‍🏫 Dr. Arpita Nayek</span>
-                    <span class="info-badge">Lecture</span>
                 </div>
             </div>
-
             <div class="class-card type-lab" data-day="3" data-start-hour="14" data-end-hour="16">
                 <div class="time-slot">02:00 PM - 04:00 PM</div>
                 <div class="subject-name">SDF Lab</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ CL02</span>
-                    <span class="info-badge">👨‍🏫 Meenal J / Prateek K S</span>
+                    <span class="info-badge">👨‍🏫 Meenal / Prateek</span>
                     <span class="info-badge">LAB</span>
                 </div>
             </div>
@@ -411,20 +408,16 @@
                 <div class="card-footer">
                     <span class="info-badge">🏛️ G1</span>
                     <span class="info-badge">👨‍🏫 Rohit Kumar Sony</span>
-                    <span class="info-badge">Lecture</span>
                 </div>
             </div>
-
              <div class="class-card type-lec" data-day="4" data-start-hour="11" data-end-hour="12">
                 <div class="time-slot">11:00 AM - 12:00 PM</div>
                 <div class="subject-name">UHV</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ G1</span>
                     <span class="info-badge">👨‍🏫 Dr. Manoj Tripathi</span>
-                    <span class="info-badge">Lecture</span>
                 </div>
             </div>
-
             <div class="class-card type-lab" data-day="4" data-start-hour="12" data-end-hour="14">
                 <div class="time-slot">12:00 PM - 02:00 PM</div>
                 <div class="subject-name">Life Skills Lab</div>
@@ -444,37 +437,33 @@
                 <div class="card-footer">
                     <span class="info-badge">🏛️ FF4</span>
                     <span class="info-badge">👨‍🏫 Dr. Sandeep Mishra</span>
-                    <span class="info-badge">Lecture</span>
                 </div>
             </div>
-
              <div class="class-card type-tut" data-day="5" data-start-hour="12" data-end-hour="13">
                 <div class="time-slot">12:00 PM - 01:00 PM</div>
                 <div class="subject-name">Physics-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ TS8</span>
                     <span class="info-badge">👨‍🏫 Dr. B. C. Joshi</span>
-                    <span class="info-badge">Tutorial</span>
+                    <span class="info-badge">Tut</span>
                 </div>
             </div>
-
              <div class="class-card type-tut" data-day="5" data-start-hour="13" data-end-hour="14">
                 <div class="time-slot">01:00 PM - 02:00 PM</div>
-                <div class="subject-name">Mathematics-2</div>
+                <div class="subject-name">Maths-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ TS8</span>
                     <span class="info-badge">👨‍🏫 Dr. Neha Singhal</span>
-                    <span class="info-badge">Tutorial</span>
+                    <span class="info-badge">Tut</span>
                 </div>
             </div>
-
             <div class="class-card type-tut" data-day="5" data-start-hour="14" data-end-hour="15">
                 <div class="time-slot">02:00 PM - 03:00 PM</div>
                 <div class="subject-name">SDF-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ TS6</span>
                     <span class="info-badge">👨‍🏫 Shardha Porwal</span>
-                    <span class="info-badge">Tutorial</span>
+                    <span class="info-badge">Tut</span>
                 </div>
             </div>
         </div>
@@ -487,27 +476,119 @@
                 <div class="card-footer">
                     <span class="info-badge">🏛️ FF1</span>
                     <span class="info-badge">👨‍🏫 Rohit Kumar Sony</span>
-                    <span class="info-badge">Lecture</span>
                 </div>
             </div>
-
              <div class="class-card type-lec" data-day="6" data-start-hour="11" data-end-hour="12">
                 <div class="time-slot">11:00 AM - 12:00 PM</div>
-                <div class="subject-name">Mathematics-2</div>
+                <div class="subject-name">Maths-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ FF1</span>
                     <span class="info-badge">👨‍🏫 Dr. Arpita Nayek</span>
-                    <span class="info-badge">Lecture</span>
                 </div>
             </div>
         </div>
+      </div> 
+  </div>
 
-      </div> </div> <div class="footer-sig">
+  <div id="compact-container" class="view-container hidden-view">
+      <table class="weekly-table">
+          <thead>
+              <tr>
+                  <th>Time</th>
+                  <th>Mon</th>
+                  <th>Tue</th>
+                  <th>Wed</th>
+                  <th>Thu</th>
+                  <th>Fri</th>
+                  <th>Sat</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>09:00 AM</td>
+                  <td class="cell-empty"></td>
+                  <td class="cell-tut"><span class="cell-subject">Workshop (T)</span><span class="cell-room">TS16</span></td>
+                  <td class="cell-tut"><span class="cell-subject">UHV (T)</span><span class="cell-room">F10</span></td>
+                  <td class="cell-empty"></td>
+                  <td class="cell-empty"></td>
+                  <td class="cell-empty"></td>
+              </tr>
+              <tr>
+                  <td>10:00 AM</td>
+                  <td class="cell-lab" rowspan="2"><span class="cell-subject">Phy Lab</span><span class="cell-room">PL2</span></td>
+                  <td class="cell-lab" rowspan="2"><span class="cell-subject">Work Lab</span><span class="cell-room">EW2</span></td>
+                  <td class="cell-break" rowspan="2"><span class="cell-subject">BREAK</span></td>
+                  <td class="cell-lec"><span class="cell-subject">SDF-2</span><span class="cell-room">G1</span></td>
+                  <td class="cell-empty"></td>
+                  <td class="cell-lec"><span class="cell-subject">SDF-2</span><span class="cell-room">FF1</span></td>
+              </tr>
+              <tr>
+                  <td>11:00 AM</td>
+                  <td class="cell-lec"><span class="cell-subject">UHV</span><span class="cell-room">G1</span></td>
+                  <td class="cell-lec"><span class="cell-subject">Phy-2</span><span class="cell-room">FF4</span></td>
+                  <td class="cell-lec"><span class="cell-subject">Math-2</span><span class="cell-room">FF1</span></td>
+              </tr>
+              <tr>
+                  <td>12:00 PM</td>
+                  <td class="cell-empty"></td>
+                  <td class="cell-empty"></td>
+                  <td class="cell-lec"><span class="cell-subject">Phy-2</span><span class="cell-room">CS5</span></td>
+                  <td class="cell-lab" rowspan="2"><span class="cell-subject">Life Skills</span><span class="cell-room">LL</span></td>
+                  <td class="cell-tut"><span class="cell-subject">Phy (T)</span><span class="cell-room">TS8</span></td>
+                  <td class="cell-empty"></td>
+              </tr>
+              <tr>
+                  <td>01:00 PM</td>
+                  <td class="cell-break"><span class="cell-subject">BREAK</span></td>
+                  <td class="cell-lec"><span class="cell-subject">Math-2</span><span class="cell-room">G1</span></td>
+                  <td class="cell-lec"><span class="cell-subject">Math-2</span><span class="cell-room">FF3</span></td>
+                  <td class="cell-tut"><span class="cell-subject">Math (T)</span><span class="cell-room">TS8</span></td>
+                  <td class="cell-empty"></td>
+              </tr>
+              <tr>
+                  <td>02:00 PM</td>
+                  <td class="cell-lec"><span class="cell-subject">UHV</span><span class="cell-room">G1</span></td>
+                  <td class="cell-lec"><span class="cell-subject">Phy-2</span><span class="cell-room">G1</span></td>
+                  <td class="cell-lab" rowspan="2"><span class="cell-subject">SDF Lab</span><span class="cell-room">CL02</span></td>
+                  <td class="cell-empty"></td>
+                  <td class="cell-tut"><span class="cell-subject">SDF (T)</span><span class="cell-room">TS6</span></td>
+                  <td class="cell-empty"></td>
+              </tr>
+              <tr>
+                  <td>03:00 PM</td>
+                  <td class="cell-empty"></td>
+                  <td class="cell-lec"><span class="cell-subject">SDF-2</span><span class="cell-room">FF1</span></td>
+                  <td class="cell-empty"></td>
+                  <td class="cell-empty"></td>
+                  <td class="cell-empty"></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+
+  <div class="footer-sig">
     Made by <span class="signature">Mass~MAHIT</span> | Swipe left/right for days
   </div>
 
 
   <script>
+    // --- VIEW TOGGLE ---
+    function toggleView() {
+        const swipeContainer = document.getElementById('timetable-container');
+        const compactContainer = document.getElementById('compact-container');
+        
+        if (swipeContainer.classList.contains('hidden-view')) {
+            swipeContainer.classList.remove('hidden-view');
+            compactContainer.classList.add('hidden-view');
+            setTimeout(() => jumpToDay(currentDayIndex), 50);
+        } else {
+            swipeContainer.classList.add('hidden-view');
+            compactContainer.classList.remove('hidden-view');
+        }
+    }
+
+
     // --- THEME TOGGLE ---
     function toggleTheme() {
       const body = document.body;
@@ -523,7 +604,7 @@
       }
     }
 
-    // --- SWIPE LOGIC (Touch + Mouse) ---
+    // --- SWIPE LOGIC ---
     const track = document.getElementById('daysTrack');
     const container = document.getElementById('timetable-container');
     
@@ -535,41 +616,26 @@
     let currentDayIndex = 0; 
     const totalDays = 6;
 
-    // Set initial view
     const today = new Date().getDay(); 
     let initialDayIndex = (today === 0 || today > 6) ? 0 : today - 1;
     jumpToDay(initialDayIndex);
 
-
-    // --- RESIZE LISTENER (FIX FOR ROTATION) ---
     window.addEventListener('resize', () => {
-        // Instantly jump to current day to fix offset
         track.style.transition = 'none';
         jumpToDay(currentDayIndex);
     });
 
-
-    // Touch Events
     track.addEventListener('touchstart', touchStart);
     track.addEventListener('touchmove', touchMove, { passive: false }); 
     track.addEventListener('touchend', touchEnd);
 
-    // Mouse Events (PC)
     track.addEventListener('mousedown', mouseStart);
     track.addEventListener('mousemove', mouseMove);
     track.addEventListener('mouseup', mouseEnd);
-    track.addEventListener('mouseleave', () => {
-        if(isDragging) mouseEnd(); 
-    });
+    track.addEventListener('mouseleave', () => { if(isDragging) mouseEnd(); });
 
-    // 1. START
-    function touchStart(event) {
-        startDrag(event.touches[0].clientX, event.touches[0].clientY);
-    }
-    function mouseStart(event) {
-        event.preventDefault(); 
-        startDrag(event.clientX, event.clientY);
-    }
+    function touchStart(event) { startDrag(event.touches[0].clientX, event.touches[0].clientY); }
+    function mouseStart(event) { event.preventDefault(); startDrag(event.clientX, event.clientY); }
 
     function startDrag(clientX, clientY) {
         isDragging = true;
@@ -579,19 +645,12 @@
         container.style.cursor = 'grabbing';
     }
 
-    // 2. MOVE
     function touchMove(event) {
         if (!isDragging) return;
-        
         const currentX = event.touches[0].clientX;
         const currentY = event.touches[0].clientY;
-        const diffX = Math.abs(currentX - startX);
-        const diffY = Math.abs(currentY - startY);
-
-        // DIRECTION LOCKING LOGIC:
-        // Only swipe if Horizontal movement is greater than Vertical movement
-        if (diffX > diffY) {
-            event.preventDefault(); // Stop vertical scroll
+        if (Math.abs(currentX - startX) > Math.abs(currentY - startY)) {
+            event.preventDefault(); 
             moveDrag(currentX);
         }
     }
@@ -607,17 +666,11 @@
         const currentX = clientX;
         const diffX = currentX - startX;
         currentTranslate = prevTranslate + diffX;
-        
         track.style.transform = `translateX(${currentTranslate}px)`;
     }
 
-    // 3. END
-    function touchEnd() {
-        endDrag();
-    }
-    function mouseEnd() {
-        endDrag();
-    }
+    function touchEnd() { endDrag(); }
+    function mouseEnd() { endDrag(); }
 
     function endDrag() {
         if (!isDragging) return;
@@ -629,21 +682,12 @@
 
         track.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.8, 0.5, 1)';
 
-        // LOOP LOGIC
         if (movedBy < -threshold) {
-            // Swiped Left (Next Day)
-            if (currentDayIndex < totalDays - 1) {
-                currentDayIndex++;
-            } else {
-                currentDayIndex = 0; // Loop back to Monday
-            }
+            if (currentDayIndex < totalDays - 1) currentDayIndex++;
+            else currentDayIndex = 0; 
         } else if (movedBy > threshold) {
-            // Swiped Right (Previous Day)
-            if (currentDayIndex > 0) {
-                currentDayIndex--;
-            } else {
-                currentDayIndex = totalDays - 1; // Loop to Saturday
-            }
+            if (currentDayIndex > 0) currentDayIndex--;
+            else currentDayIndex = totalDays - 1; 
         }
         
         jumpToDay(currentDayIndex);
@@ -657,8 +701,6 @@
         highlightCurrentSlot(); 
     }
 
-
-    // --- CURRENT SLOT HIGHLIGHTING ---
     function highlightCurrentSlot() {
       const now = new Date();
       const currentDay = now.getDay(); 
@@ -667,7 +709,6 @@
       document.querySelectorAll('.class-card.active-now').forEach(el => el.classList.remove('active-now'));
 
       const todaysCards = document.querySelectorAll(`.class-card[data-day="${currentDay}"]`);
-
       todaysCards.forEach(card => {
           const startHour = parseInt(card.getAttribute('data-start-hour'));
           let endHour = parseInt(card.getAttribute('data-end-hour'));
@@ -675,9 +716,6 @@
 
           if (currentHour >= startHour && currentHour < endHour) {
               card.classList.add('active-now');
-              if (currentDayIndex === (currentDay - 1)) {
-                  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              }
           }
       });
     }
