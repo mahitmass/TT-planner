@@ -55,10 +55,7 @@
     /* --- GLOBAL --- */
     * { box-sizing: border-box; transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; }
     
-    html {
-        /* Smooth scroll for native scrolling */
-        scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -90,10 +87,11 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid var(--border-color);
-      z-index: 100;
-      /* Keep header fixed at top even when scrolling in native mode */
+      
+      /* FIXED: Sticky Header */
       position: sticky;
       top: 0;
+      z-index: 1000; /* Stays on top of everything */
     }
 
     .header-controls {
@@ -220,7 +218,7 @@
         overflow-x: auto;
         overflow-y: visible; 
         padding: 10px;
-        padding-bottom: 100px; 
+        padding-bottom: 250px; 
         background-color: var(--bg-color);
         min-height: 100vh; /* Ensure it fills screen to allow scrolling */
     }
@@ -243,23 +241,36 @@
     }
 
     /* Sticky Time Column */
-    .weekly-table td:first-child, .weekly-table th:first-child {
+    .weekly-table td:first-child {
         position: sticky;
         left: 0;
         background-color: var(--card-bg);
-        z-index: 2;
+        z-index: 2; /* Stays above other cells */
         border-right: 2px solid var(--border-color);
         font-weight: bold;
         color: var(--accent-color);
         min-width: 85px;
     }
 
+    /* FIXED: Sticky Table Headers */
     .weekly-table th {
         background-color: var(--header-bg);
         font-weight: 800;
         text-transform: uppercase;
         font-size: 0.8rem;
         letter-spacing: 1px;
+        
+        /* Sticky Magic */
+        position: sticky;
+        top: 60px; /* Sits right below the main header (approx 60px height) */
+        z-index: 900; /* Stays above table content */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow to separate from content */
+    }
+
+    /* Corner Header (Time) needs to stay on top of everything */
+    .weekly-table th:first-child {
+        left: 0;
+        z-index: 950; /* Highest in table */
     }
 
     /* Table Cell Types */
@@ -351,7 +362,7 @@
               </div>
                <div class="class-card type-lec" data-day="2" data-start-hour="13" data-end-hour="14">
                 <div class="time-slot">01:00 PM - 02:00 PM</div>
-                <div class="subject-name">Mathematics-2</div>
+                <div class="subject-name">Maths-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ G1</span>
                     <span class="info-badge">👨‍🏫 Dr. Arpita Nayek</span>
@@ -465,7 +476,7 @@
                     <span class="info-badge">Lecture</span>
                 </div>
             </div>
-             <div class="class-card type-tut" data-day="5" data-start-hour="13" data-end-hour="14">
+             <div class="class-card type-tut" data-day="5" data-start-hour="12" data-end-hour="13">
                 <div class="time-slot">12:00 PM - 01:00 PM</div>
                 <div class="subject-name">Physics-2</div>
                 <div class="card-footer">
@@ -476,7 +487,7 @@
             </div>
              <div class="class-card type-tut" data-day="5" data-start-hour="13" data-end-hour="14">
                 <div class="time-slot">01:00 PM - 02:00 PM</div>
-                <div class="subject-name">Mathematics-2</div>
+                <div class="subject-name">Maths-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ TS8</span>
                     <span class="info-badge">👨‍🏫 Dr. Neha Singhal</span>
@@ -507,7 +518,7 @@
             </div>
              <div class="class-card type-lec" data-day="6" data-start-hour="11" data-end-hour="12">
                 <div class="time-slot">11:00 AM - 12:00 PM</div>
-                <div class="subject-name">Mathematics-2</div>
+                <div class="subject-name">Maths-2</div>
                 <div class="card-footer">
                     <span class="info-badge">🏛️ FF1</span>
                     <span class="info-badge">👨‍🏫 Dr. Arpita Nayek</span>
