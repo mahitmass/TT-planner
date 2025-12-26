@@ -61,8 +61,9 @@
       color: var(--text-main);
       margin: 0;
       padding: 0;
-      /* FIXED APP SHELL - NO BODY SCROLL */
+      /* FIXED APP SHELL - UPDATED TO 100dvh FOR MOBILE ADDRESS BARS */
       height: 100vh;
+      height: 100dvh; 
       width: 100vw;
       display: flex;
       flex-direction: column;
@@ -74,7 +75,7 @@
     header {
       flex: 0 0 auto; /* Don't shrink/grow */
       width: 100%;
-      height: 80px; /* UPDATED: Increased height for bigger logo */
+      height: 80px; 
       padding: 0 15px;
       background: var(--header-bg);
       display: flex;
@@ -88,12 +89,12 @@
     .brand-container {
         display: flex;
         align-items: center;
-        gap: 20px; /* UPDATED: Increased gap to move text ahead */
+        gap: 20px; 
     }
 
     .app-logo {
-        height: 60px; /* UPDATED: Increased size */
-        width: 60px;  /* UPDATED: Increased size */
+        height: 60px; 
+        width: 60px;  
         border-radius: 8px;
         object-fit: cover;
         border: 1px solid var(--border-color);
@@ -155,7 +156,8 @@
         height: 100%;
         overflow-y: auto; 
         padding: 20px;
-        padding-bottom: 80px; /* Space for footer */
+        /* UPDATED PADDING TO CLEAR FIXED FOOTER */
+        padding-bottom: 100px; 
     }
 
     .day-header {
@@ -223,8 +225,8 @@
         /* This container scrolls internally */
         overflow: auto; 
         padding: 0;
-        /* Padding bottom to clear footer */
-        padding-bottom: 60px; 
+        /* UPDATED PADDING TO CLEAR FIXED FOOTER */
+        padding-bottom: 80px; 
         background-color: var(--bg-color);
     }
 
@@ -292,16 +294,21 @@
     .cell-room { font-size: 0.75rem; color: var(--text-muted); display: block; }
 
 
-    /* --- FOOTER (FIXED BOTTOM) --- */
+    /* --- FOOTER (PERMANENTLY FIXED BOTTOM) --- */
     .footer-sig {
-        flex: 0 0 auto; /* Fixed height */
+        position: fixed; /* UPDATED: Changed from flex item to fixed overlay */
+        bottom: 0;
+        left: 0;
         width: 100%;
         text-align: center;
         padding: 15px;
         background: var(--bg-color);
         color: var(--text-muted);
         border-top: 1px solid var(--border-color);
-        z-index: 100;
+        z-index: 200; /* Ensure it's above everything */
+        
+        /* Optional: safe area for iPhone home bar */
+        padding-bottom: calc(15px + env(safe-area-inset-bottom)); 
     }
     .signature { color: var(--accent-color); font-weight: 700; font-family: 'Courier New', monospace; }
 
