@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="Logo.png">
   <link rel="apple-touch-icon" href="Logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  
+   
   <style>
     /* --- CSS VARIABLES --- */
     :root {
@@ -18,8 +18,14 @@
       --lec-marker: #90caf9; --tut-marker: #ffcc80; --lab-marker: #ef9a9a; --break-marker: #424242; 
       --active-glow: 0 0 15px rgba(187, 134, 252, 0.5);
       --break-bg: #000000; --break-border: #333;
-      --header-height: 70px; --bottom-nav-height: 65px;
+      
+      /* New Height Variables for calculation */
+      --main-header-h: 60px;
+      --sub-header-h: 40px;
+      --total-header-h: 100px; /* 60 + 40 */
+      --bottom-nav-height: 65px;
     }
+
     [data-theme="light"] {
       --bg-color: #f0f2f5; --card-bg: #ffffff; --text-main: #333333; --text-muted: #555555;
       --border-color: #e0e0e0; --accent-color: #6200ea; --accent-hover: #5000c9; --header-bg: #ffffff;
@@ -27,24 +33,100 @@
       --active-glow: 0 0 15px rgba(98, 0, 234, 0.4);
       --break-bg: #e0e0e0; --break-border: #ccc;
     }
+
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-main); margin: 0; padding: 0; height: 100vh; height: 100dvh; width: 100vw; display: flex; flex-direction: column; overflow: hidden; user-select: none; }
     
-    /* HEADER */
-    header { flex: 0 0 auto; width: 100%; height: var(--header-height); padding: 0 15px; background: var(--header-bg); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); z-index: 100; }
+    body { 
+        font-family: 'Inter', sans-serif; 
+        background-color: var(--bg-color); 
+        color: var(--text-main); 
+        margin: 0; 
+        padding: 0; 
+        height: 100vh; height: 100dvh; 
+        width: 100vw; 
+        display: flex; 
+        flex-direction: column; 
+        overflow: hidden; 
+        user-select: none; 
+    }
+    
+    /* --- NEW FIXED DOUBLE HEADER WRAPPER --- */
+    .header-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Stacks on top of everything */
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    /* 1. Main Header (Top) */
+    .main-header { 
+        width: 100%; 
+        height: var(--main-header-h); 
+        padding: 0 15px; 
+        background: var(--header-bg); 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        border-bottom: 1px solid var(--border-color); 
+    }
+    
     .brand-container { display: flex; align-items: center; gap: 15px; }
-    .app-logo { height: 45px; width: 45px; border-radius: 8px; object-fit: cover; border: 1px solid var(--border-color); }
+    .app-logo { height: 40px; width: 40px; border-radius: 8px; object-fit: cover; border: 1px solid var(--border-color); }
     h1 { font-weight: 800; font-size: 1.3rem; margin: 0; background: linear-gradient(90deg, var(--accent-color), #03dac6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .header-controls { display: flex; gap: 10px; align-items: center; }
     .icon-btn { background: transparent; border: none; color: var(--text-main); font-size: 1.4rem; cursor: pointer; padding: 8px; }
 
-    /* VIEW CONTAINERS */
-    .view-container { flex: 1; position: relative; overflow: hidden; width: 100%; }
+    /* 2. Sub Header (Below Main) */
+    .sub-header {
+        width: 100%;
+        height: var(--sub-header-h);
+        background: var(--card-bg); /* Slightly different color */
+        display: flex;
+        justify-content: center; /* Center the text */
+        align-items: center;
+        gap: 15px;
+        border-bottom: 1px solid var(--border-color);
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--text-muted);
+    }
+    
+    /* Dynamic text in sub-header */
+    .sub-batch { color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; }
+    .sub-day { color: var(--text-main); }
+
+
+    /* --- VIEW CONTAINERS --- */
+    .view-container { 
+        flex: 1; 
+        position: relative; 
+        overflow: hidden; 
+        width: 100%; 
+        /* CRITICAL: Push content down by the total height of the double header */
+        margin-top: var(--total-header-h); 
+        /* Adjust height calculation to fit between header and bottom nav */
+        height: calc(100vh - var(--total-header-h) - var(--bottom-nav-height));
+    }
+
     .hidden-view { display: none !important; }
     #timetable-container { cursor: grab; touch-action: pan-y; } #timetable-container:active { cursor: grabbing; }
     .days-track { display: flex; height: 100%; width: 600vw; transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.5, 1); }
-    .day-view { width: 100vw; height: 100%; overflow-y: auto; padding: 15px; padding-bottom: 140px; }
-    .day-header { font-size: 1.5rem; font-weight: 800; margin: 10px 0 20px; color: var(--accent-color); text-align: center; }
+    
+    /* Day View Adjustment */
+    .day-view { 
+        width: 100vw; 
+        height: 100%; 
+        overflow-y: auto; 
+        padding: 15px; 
+        padding-bottom: 100px; /* Extra padding for scrolling past bottom nav */
+    }
+    
+    .day-header { display: none; /* Hidden because we have the sub-header now */ }
+    
     .class-card { background: var(--card-bg); border-radius: 16px; padding: 15px; margin-bottom: 15px; border: 1px solid var(--border-color); position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 8px; }
     .class-card::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 5px; }
     .type-lec::before { background-color: var(--lec-marker); } .type-tut::before { background-color: var(--tut-marker); } .type-lab::before { background-color: var(--lab-marker); }
@@ -57,15 +139,17 @@
     .break-card { background: var(--break-bg); border: 1px solid var(--break-border); border-radius: 16px; padding: 15px; margin-bottom: 15px; display: flex; flex-direction: column; gap: 6px; }
     .break-header { font-size: 1rem; font-weight: 700; color: var(--text-main); }
     .break-time-text { font-size: 0.85rem; color: var(--text-muted); font-family: monospace; }
-    .break-duration-text { font-size: 0.8rem; color: var(--text-muted); opacity: 0.8; }
 
     /* TABLE VIEW */
     #compact-container { overflow: auto; padding: 0; padding-bottom: 120px; background-color: var(--bg-color); }
     .weekly-table { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 600px; }
     .weekly-table th, .weekly-table td { padding: 10px 6px; text-align: center; vertical-align: middle; font-size: 0.8rem; border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); color: var(--text-main); }
+    
+    /* Table Headers Sticky Config */
     .weekly-table thead th { position: sticky; top: 0; background-color: var(--header-bg); z-index: 20; border-bottom: 2px solid var(--border-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; }
     .weekly-table tbody td:first-child { position: sticky; left: 0; background-color: var(--card-bg); z-index: 10; border-right: 2px solid var(--border-color); font-weight: bold; color: var(--accent-color); min-width: 75px; }
     .weekly-table thead th:first-child { position: sticky; top: 0; left: 0; z-index: 30; background-color: var(--header-bg); border-right: 2px solid var(--border-color); }
+    
     .cell-lec { background-color: rgba(144, 202, 249, 0.15); border-left: 3px solid var(--lec-marker) !important; } .cell-tut { background-color: rgba(255, 204, 128, 0.15); border-left: 3px solid var(--tut-marker) !important; } .cell-lab { background-color: rgba(239, 154, 154, 0.15); border-left: 3px solid var(--lab-marker) !important; } .cell-break { background-color: var(--break-bg); opacity: 0.7; } .cell-empty { background-color: transparent; }
     .cell-subject { font-weight: 700; display: block; margin-bottom: 2px; font-size: 0.85rem;} .cell-room { font-size: 0.7rem; color: var(--text-muted); display: block; }
 
@@ -83,25 +167,30 @@
 
     .footer-sig { position: fixed; bottom: var(--bottom-nav-height); left: 0; width: 100%; text-align: center; padding: 8px; background: var(--bg-color); color: var(--text-muted); border-top: 1px solid var(--border-color); z-index: 180; font-size: 0.75rem; }
     .signature { color: var(--accent-color); font-weight: 700; }
-    .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; height: var(--bottom-nav-height); background: var(--header-bg); border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; padding: 0 20px; padding-bottom: env(safe-area-inset-bottom); z-index: 200; box-shadow: 0 -2px 10px rgba(0,0,0,0.2); }
-    .nav-status { display: flex; flex-direction: column; justify-content: center; }
-    .nav-batch { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-    .nav-day { font-size: 1.1rem; color: var(--accent-color); font-weight: 800; }
-    .filter-fab { background: var(--accent-color); color: #fff; border: none; padding: 10px 20px; border-radius: 30px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(187, 134, 252, 0.4); transition: transform 0.2s; }
+    
+    .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; height: var(--bottom-nav-height); background: var(--header-bg); border-top: 1px solid var(--border-color); display: flex; justify-content: center; align-items: center; padding: 0 20px; padding-bottom: env(safe-area-inset-bottom); z-index: 200; box-shadow: 0 -2px 10px rgba(0,0,0,0.2); }
+    .filter-fab { background: var(--accent-color); color: #fff; border: none; padding: 12px 30px; border-radius: 30px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(187, 134, 252, 0.4); transition: transform 0.2s; width: 100%; justify-content: center;}
     .filter-fab:active { transform: scale(0.95); }
   </style>
 </head>
 <body data-theme="dark">
 
-  <header>
-    <div class="brand-container">
+  <div class="header-wrapper">
+    <div class="main-header">
+      <div class="brand-container">
         <img src="Logo.png" alt="Logo" class="app-logo">
         <h1>Planner</h1>
-    </div>
-    <div class="header-controls">
+      </div>
+      <div class="header-controls">
         <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">☀</button>
+      </div>
     </div>
-  </header>
+    <div class="sub-header">
+      <span class="sub-batch" id="header-batch">BATCH A6</span>
+      <span style="opacity: 0.3">|</span>
+      <span class="sub-day" id="header-day">Monday</span>
+    </div>
+  </div>
 
   <div id="timetable-container" class="view-container">
       <div class="days-track" id="daysTrack"></div> 
@@ -147,11 +236,7 @@
   <div class="footer-sig">Made by <span class="signature">Mass~MAHIT</span> | Swipe left/right for days</div>
 
   <div class="bottom-nav">
-      <div class="nav-status">
-          <span class="nav-batch" id="status-batch">BATCH A6</span>
-          <span class="nav-day" id="status-day">Monday</span>
-      </div>
-      <button class="filter-fab" onclick="toggleFilterPanel()">FILTERS <span id="filter-arrow">🔼</span></button>
+      <button class="filter-fab" onclick="toggleFilterPanel()">OPEN FILTERS <span id="filter-arrow">🔼</span></button>
   </div>
 
   <script src="timetable.js"></script>
@@ -175,7 +260,7 @@
         localStorage.setItem('selectedBatch', batchName);
         updateBatchUI(batchName);
         if (window.updateBatchData) window.updateBatchData(batchName);
-        updateFooterInfo();
+        updateHeaderInfo();
     }
     function updateBatchUI(batchName) {
         document.querySelectorAll('.filter-options .toggle-btn[id^="btn-A"]').forEach(btn => btn.classList.remove('active'));
@@ -196,11 +281,14 @@
         localStorage.setItem('preferredView', mode);
     }
 
-    function updateFooterInfo() {
+    /* UPDATED FUNCTION: Updates the TOP Sub-Header instead of Bottom Nav */
+    function updateHeaderInfo() {
         const batch = localStorage.getItem('selectedBatch') || 'A6';
         const dayName = dayNames[currentDayIndex + 1]; 
-        document.getElementById('status-batch').textContent = `BATCH ${batch}`;
-        document.getElementById('status-day').textContent = dayName;
+        
+        // Updating the new IDs in the sub-header
+        document.getElementById('header-batch').textContent = `BATCH ${batch}`;
+        document.getElementById('header-day').textContent = dayName;
     }
 
     window.addEventListener('DOMContentLoaded', () => {
@@ -216,7 +304,7 @@
 
         const savedView = localStorage.getItem('preferredView') || 'swipe';
         setViewMode(savedView);
-        setTimeout(updateFooterInfo, 100);
+        setTimeout(updateHeaderInfo, 100);
     });
 
     function toggleTheme() {
@@ -264,7 +352,7 @@
         track.style.transform = `translateX(${currentTranslate}px)`;
         updateActiveDayButton(index + 1);
         highlightCurrentSlot();
-        updateFooterInfo();
+        updateHeaderInfo();
     }
 
     function updateActiveDayButton(dayNum) { document.querySelectorAll('.day-btn').forEach(btn => { btn.classList.toggle('active-day', parseInt(btn.dataset.day) === dayNum); }); }
