@@ -1,31 +1,36 @@
 // --- 1. THE DATA ---
 // Days: 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat
 
-// BATCH A6 SCHEDULE (Existing)
+// BATCH A6 SCHEDULE (RESTORED - DO NOT CHANGE)
 const scheduleA6 = [
   // MONDAY
   { day: 1, start: 10, duration: 2, title: "Physics Lab-2", code: "PL2", teacher: "Dr. Navendu / Dr. Indrani", type: "lab" },
   { day: 1, start: 14, duration: 1, title: "UHV", code: "G1", teacher: "Dr. Manoj Tripathi", type: "lec" },
+
   // TUESDAY
   { day: 2, start: 9, duration: 1, title: "Workshop", code: "TS16", teacher: "Dr. Gorav Patel", type: "tut" },
   { day: 2, start: 10, duration: 2, title: "Workshop Lab", code: "EW2", teacher: "Dr. Gorav Patel", type: "lab" },
   { day: 2, start: 13, duration: 1, title: "Mathematics-2", code: "G1", teacher: "Dr. Arpita Nayek", type: "lec" },
   { day: 2, start: 14, duration: 1, title: "Physics-2", code: "G1", teacher: "Dr. Sandeep Mishra", type: "lec" },
   { day: 2, start: 15, duration: 1, title: "SDF-2", code: "FF1", teacher: "Rohit Kumar Sony", type: "lec" },
+
   // WEDNESDAY
   { day: 3, start: 9, duration: 1, title: "UHV", code: "F10", teacher: "Dr. Yogita Naruka", type: "tut" },
   { day: 3, start: 12, duration: 1, title: "Physics-2", code: "CS5", teacher: "Dr. Sandeep Mishra", type: "lec" },
   { day: 3, start: 13, duration: 1, title: "Mathematics-2", code: "FF3", teacher: "Dr. Arpita Nayek", type: "lec" },
   { day: 3, start: 14, duration: 2, title: "SDF Lab", code: "CL02", teacher: "Meenal / Prateek", type: "lab" },
+
   // THURSDAY
   { day: 4, start: 10, duration: 1, title: "SDF-2", code: "G1", teacher: "Rohit Kumar Sony", type: "lec" },
   { day: 4, start: 11, duration: 1, title: "UHV", code: "G1", teacher: "Dr. Manoj Tripathi", type: "lec" },
   { day: 4, start: 13, duration: 2, title: "Life Skills Lab", code: "LL", teacher: "Prof. Mukta Mani", type: "lab" },
+
   // FRIDAY
   { day: 5, start: 11, duration: 1, title: "Physics-2", code: "FF4", teacher: "Dr. Sandeep Mishra", type: "lec" },
   { day: 5, start: 13, duration: 1, title: "Physics-2", code: "TS8", teacher: "Dr. B. C. Joshi", type: "tut" },
   { day: 5, start: 14, duration: 1, title: "Mathematics-2", code: "TS8", teacher: "Dr. Neha Singhal", type: "tut" },
   { day: 5, start: 15, duration: 1, title: "SDF-2", code: "TS6", teacher: "Shardha Porwal", type: "tut" },
+
   // SATURDAY
   { day: 6, start: 10, duration: 1, title: "SDF-2", code: "FF1", teacher: "Rohit Kumar Sony", type: "lec" },
   { day: 6, start: 11, duration: 1, title: "Mathematics-2", code: "FF1", teacher: "Dr. Arpita Nayek", type: "lec" },
@@ -89,11 +94,12 @@ window.updateBatchData = function(batch) {
     renderMobileView();
     renderDesktopView();
     
-    // Reset view position (optional, good UX)
+    // Check if jumpToDay exists (it's in index.html) and reset view
     if (typeof jumpToDay === 'function') {
         const today = new Date().getDay();
         const initial = (today === 0 || today > 6) ? 0 : today - 1;
-        jumpToDay(initial);
+        // Small timeout to ensure DOM is ready if called immediately
+        setTimeout(() => jumpToDay(initial), 10);
     }
 };
 
