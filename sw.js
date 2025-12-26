@@ -1,10 +1,9 @@
-const CACHE_NAME = "tt-cache-v2";
+const CACHE_NAME = "tt-cache-v3"; // Bumped version to v3
 const ASSETS_TO_CACHE = [
   "./",
   "./index.html",
   "./manifest.json",
-  "./Logo.png", 
-  "./icon.png"
+  "./Logo.png"
 ];
 
 self.addEventListener("install", (event) => {
