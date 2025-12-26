@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>A6 Batch Timetable</title>
+  <title>Batch Timetable</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#121212">
   <link rel="manifest" href="manifest.json">
@@ -110,6 +110,19 @@
         align-items: center;
     }
 
+    /* DROPDOWN STYLE */
+    .batch-select {
+        background: var(--card-bg);
+        color: var(--text-main);
+        border: 1px solid var(--border-color);
+        padding: 5px 10px;
+        border-radius: 8px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        outline: none;
+        cursor: pointer;
+    }
+
     h1 {
       font-weight: 800;
       font-size: 1.4rem;
@@ -159,7 +172,6 @@
         height: 100%;
         overflow-y: auto; 
         padding: 20px;
-        /* UPDATED PADDING TO CLEAR FIXED FOOTER */
         padding-bottom: 100px; 
     }
 
@@ -219,7 +231,8 @@
         gap: 8px;
     }
     .break-header { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
-
+    .break-time-text { font-size: 0.9rem; color: var(--text-muted); font-family: monospace; }
+    .break-duration-text { font-size: 0.85rem; color: var(--text-muted); opacity: 0.8; }
 
     /* --- COMPACT TABLE VIEW --- */
     #compact-container {
@@ -247,7 +260,6 @@
     }
 
     /* --- STICKY HEADERS LOGIC --- */
-    
     .weekly-table thead th {
         position: sticky;
         top: 0;
@@ -289,7 +301,6 @@
     .cell-subject { font-weight: 700; display: block; margin-bottom: 4px; }
     .cell-room { font-size: 0.75rem; color: var(--text-muted); display: block; }
 
-
     /* --- FOOTER (PERMANENTLY FIXED BOTTOM) --- */
     .footer-sig {
         position: fixed; 
@@ -312,10 +323,15 @@
 
   <header>
     <div class="brand-container">
-        <img src="Logo.png" alt="A6 Logo" class="app-logo">
-        <h1>A6 Planner</h1>
+        <img src="Logo.png" alt="Logo" class="app-logo">
+        <h1>Planner</h1>
     </div>
     <div class="header-controls">
+        <select id="batchSelect" class="batch-select" onchange="switchBatch(this.value)">
+            <option value="A6">Batch A6</option>
+            <option value="A5">Batch A5</option>
+        </select>
+
         <button class="icon-btn" onclick="toggleView()" title="Switch View">🗓</button>
         <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">☀</button>
     </div>
@@ -351,6 +367,28 @@
   <script src="timetable.js"></script>
 
   <script>
+    // --- BATCH SWITCHING LOGIC ---
+    function switchBatch(batchName) {
+        // Save preference
+        localStorage.setItem('selectedBatch', batchName);
+        
+        // Update the global variable in timetable.js and re-render
+        if (window.updateBatchData) {
+            window.updateBatchData(batchName);
+        }
+    }
+
+    // Initialize Dropdown from LocalStorage on load
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedBatch = localStorage.getItem('selectedBatch') || 'A6';
+        const select = document.getElementById('batchSelect');
+        if(select) {
+            select.value = savedBatch;
+            // Trigger the update immediately to load correct data
+            if (window.updateBatchData) window.updateBatchData(savedBatch);
+        }
+    });
+
     // --- VIEW TOGGLE ---
     function toggleView() {
         const swipeContainer = document.getElementById('timetable-container');
@@ -396,7 +434,7 @@
 
     const today = new Date().getDay(); 
     let initialDayIndex = (today === 0 || today > 6) ? 0 : today - 1;
-    jumpToDay(initialDayIndex);
+    // Note: jumpToDay is called by updateBatchData when data loads
 
     window.addEventListener('resize', () => {
         track.style.transition = 'none';
@@ -424,8 +462,7 @@
 
     function touchMove(event) {
         if (!isDragging) return;
-        const currentX = event.touches[0].clientX;
-        moveDrag(currentX);
+        moveDrag(event.touches[0].clientX);
     }
 
     function mouseMove(event) {
@@ -492,7 +529,7 @@
     }
 
     setInterval(highlightCurrentSlot, 60000);
-    setTimeout(highlightCurrentSlot, 100); 
+    // setTimeout(highlightCurrentSlot, 100); // Handled by updateBatchData now
 
     // --- SERVICE WORKER ---
     if ("serviceWorker" in navigator) {
