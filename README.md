@@ -1,1 +1,1 @@
-https://sem-2-a6-tt.vercel.app/
+https://planner-mass.vercel.app/
