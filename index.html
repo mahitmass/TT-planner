@@ -177,6 +177,28 @@
     .day-view { width: 100vw; height: 100%; overflow-y: auto; padding: 15px; padding-bottom: 80px; }
     .day-header { font-size: 1.5rem; font-weight: 800; margin: 10px 0 20px; color: var(--accent-color); text-align: center; }
 
+    /* --- FLOATING BATCH BADGE --- */
+    .floating-batch {
+        position: absolute;
+        top: 15px;
+        right: 15px; /* Hooked to the right border */
+        background-color: rgba(30, 30, 30, 0.85); /* Semi-transparent background */
+        color: var(--accent-color);
+        border: 1px solid var(--border-color);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-weight: 800;
+        font-size: 0.85rem;
+        z-index: 50; /* Stays above the swiping cards */
+        pointer-events: none; /* Allows touching through it */
+        backdrop-filter: blur(4px);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        letter-spacing: 0.5px;
+    }
+    [data-theme="light"] .floating-batch {
+        background-color: rgba(255, 255, 255, 0.85);
+    }
+
     .class-card { background: var(--card-bg); border-radius: 16px; padding: 15px; margin-bottom: 15px; border: 1px solid var(--border-color); position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 8px; }
     .class-card::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 5px; }
     .type-lec::before { background-color: var(--lec-marker); }
@@ -200,7 +222,7 @@
     .weekly-table { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 600px; }
     .weekly-table th, .weekly-table td { padding: 10px 6px; text-align: center; vertical-align: middle; font-size: 0.8rem; border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); color: var(--text-main); }
     .weekly-table thead th { position: sticky; top: 0; background-color: var(--header-bg); z-index: 20; border-bottom: 2px solid var(--border-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; }
-    .weekly-table tbody td:first-child { position: sticky; left: 0; background-color: var(--card-bg); z-index: 10; border-right: 2px solid var(--border-color); font-weight: bold; color: var(--accent-color); min-width: 75px; }
+    .weekly-table tbody td:first-child { position: sticky; left: 0; background-color: var(--card-bg); z-index: 10; border-right: 2px solid var(--border-color); font-weight: bold; color: var(--accent-color); min-width: 75px; white-space: nowrap; font-size: 0.7rem; }
     .weekly-table thead th:first-child { position: sticky; top: 0; left: 0; z-index: 30; background-color: var(--header-bg); border-right: 2px solid var(--border-color); }
     .cell-lec { background-color: rgba(144, 202, 249, 0.15); border-left: 3px solid var(--lec-marker) !important; }
     .cell-tut { background-color: rgba(255, 204, 128, 0.15); border-left: 3px solid var(--tut-marker) !important; }
@@ -263,6 +285,8 @@
 
 
   <div id="timetable-container" class="view-container">
+      <div id="floating-batch" class="floating-batch">BATCH A6</div>
+      
       <div class="days-track" id="daysTrack"></div> 
   </div>
 
@@ -301,12 +325,43 @@
     function switchBatch(batchName) {
         localStorage.setItem('selectedBatch', batchName);
         updateBatchUI(batchName);
+        
+        // Update Floating Badge
+        const floatBadge = document.getElementById('floating-batch');
+        if(floatBadge) floatBadge.textContent = `BATCH ${batchName}`;
+
         if (window.updateBatchData) window.updateBatchData(batchName);
+        
+        // Fix Table Times after data update
+        setTimeout(fixTableTimes, 100); 
     }
 
     function updateBatchUI(batchName) {
         document.querySelectorAll('.filter-options .toggle-btn[id^="btn-A"]').forEach(btn => btn.classList.remove('active'));
         document.getElementById(`btn-${batchName}`).classList.add('active');
+    }
+
+    // --- FUNCTION TO FIX TABLE TIMES (50 min interval) ---
+    function fixTableTimes() {
+       const timeMap = {
+           "09:00 AM": "09:00 - 09:50",
+           "10:00 AM": "10:00 - 10:50",
+           "11:00 AM": "11:00 - 11:50",
+           "12:00 PM": "12:00 - 12:50",
+           "01:00 PM": "01:00 - 01:50",
+           "02:00 PM": "02:00 - 02:50",
+           "03:00 PM": "03:00 - 03:50",
+           "04:00 PM": "04:00 - 04:50"
+       };
+       // Find all first-column cells in the table body
+       const timeCells = document.querySelectorAll('.weekly-table tbody tr td:first-child');
+       timeCells.forEach(td => {
+           const txt = td.textContent.trim();
+           // If we have a mapped value for this time, update it
+           if(timeMap[txt]) {
+               td.textContent = timeMap[txt];
+           }
+       });
     }
 
     function setViewMode(mode) {
@@ -317,12 +372,12 @@
         if (mode === 'swipe') {
             swipeContainer.classList.remove('hidden-view');
             compactContainer.classList.add('hidden-view');
-            
-            // Jumps to the auto-calculated day
             setTimeout(() => jumpToDay(currentDayIndex), 50);
         } else {
             swipeContainer.classList.add('hidden-view');
             compactContainer.classList.remove('hidden-view');
+            // Ensure times are fixed when switching to table view
+            fixTableTimes(); 
         }
         localStorage.setItem('preferredView', mode);
     }
@@ -330,28 +385,28 @@
     window.addEventListener('DOMContentLoaded', () => {
         const savedBatch = localStorage.getItem('selectedBatch') || 'A6';
         updateBatchUI(savedBatch);
+        
+        // Init Floating Badge
+        const floatBadge = document.getElementById('floating-batch');
+        if(floatBadge) floatBadge.textContent = `BATCH ${savedBatch}`;
+
         if (window.updateBatchData) window.updateBatchData(savedBatch);
         
         // --- AUTO-SCROLL FIX ---
-        // Calculate index based on today's date
-        // JS getDay(): 0=Sun, 1=Mon, ..., 6=Sat
-        // Our Index: 0=Mon, ..., 5=Sat
         const today = new Date().getDay(); 
-        
         if (today === 0) {
-            // If Sunday (0), default to Monday (0)
             currentDayIndex = 0; 
         } else {
-            // Else subtract 1 (e.g. Sat(6) becomes 5)
             currentDayIndex = today - 1;
         }
-        
-        // Safety check to keep index within bounds (0 to 5)
         if (currentDayIndex < 0) currentDayIndex = 0;
         if (currentDayIndex > 5) currentDayIndex = 0;
 
         const savedView = localStorage.getItem('preferredView') || 'swipe';
-        setViewMode(savedView); // This uses the calculated currentDayIndex
+        setViewMode(savedView);
+        
+        // Run fix times on load (with delay to ensure table is built)
+        setTimeout(fixTableTimes, 500);
     });
 
     function toggleTheme() {
@@ -365,7 +420,7 @@
       }
     }
 
-    // --- TOUCH & DRAG LOGIC (FIXED) ---
+    // --- TOUCH & DRAG LOGIC ---
     const track = document.getElementById('daysTrack');
     const container = document.getElementById('timetable-container');
     let isDragging = false, startX = 0, startY = 0, currentTranslate = 0, prevTranslate = 0, currentDayIndex = 0; 
@@ -375,7 +430,6 @@
 
     window.addEventListener('resize', () => { track.style.transition = 'none'; jumpToDay(currentDayIndex); });
 
-    // TOUCH EVENTS
     track.addEventListener('touchstart', (e) => {
         startDrag(e.touches[0].clientX, e.touches[0].clientY);
     });
@@ -384,17 +438,14 @@
         if (!isDragging) return;
         const currentX = e.touches[0].clientX;
         const currentY = e.touches[0].clientY;
-        
-        // DIRECTION LOCKING: Only horizontal swipe if X movement > Y movement
         if (Math.abs(currentX - startX) > Math.abs(currentY - startY)) {
-            e.preventDefault(); // Stop vertical scroll
+            e.preventDefault(); 
             moveDrag(currentX);
         }
     }, { passive: false });
 
     track.addEventListener('touchend', endDrag);
 
-    // MOUSE EVENTS
     track.addEventListener('mousedown', (e) => { e.preventDefault(); startDrag(e.clientX, 0); });
     track.addEventListener('mousemove', (e) => { if (isDragging) { e.preventDefault(); moveDrag(e.clientX); } });
     track.addEventListener('mouseup', endDrag);
