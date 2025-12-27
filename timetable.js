@@ -11,7 +11,7 @@ const scheduleA6 = [
   { day: 2, start: 10, duration: 2, title: "Workshop Lab", code: "EW2", teacher: "Dr. Gorav Patel", type: "lab" },
   { day: 2, start: 13, duration: 1, title: "Mathematics-2", code: "G1", teacher: "Dr. Arpita Nayek", type: "lec" },
   { day: 2, start: 14, duration: 1, title: "Physics-2", code: "G1", teacher: "Dr. Sandeep Mishra", type: "lec" },
-  { day: 2, start: 15, duration: 1, title: "SDF-2", code: "FF1", teacher: "Rohit Kumar Sony", type: "lec" },
+  { day: 2, start: 15, duration: 1, title: "SDF-2", code: "FF1", teacher: "Rohit Kumar soni", type: "lec" },
 
   // WEDNESDAY (CORRECTED: Starts at 1PM)
   { day: 3, start: 9, duration: 1, title: "UHV", code: "F10", teacher: "Dr. Yogita Naruka", type: "tut" },
@@ -20,7 +20,7 @@ const scheduleA6 = [
   { day: 3, start: 15, duration: 2, title: "SDF Lab", code: "CL02", teacher: "Meenal / Prateek", type: "lab" },     // Moved to 3 PM
 
   // THURSDAY
-  { day: 4, start: 10, duration: 1, title: "SDF-2", code: "G1", teacher: "Rohit Kumar Sony", type: "lec" },
+  { day: 4, start: 10, duration: 1, title: "SDF-2", code: "G1", teacher: "Rohit Kumar soni", type: "lec" },
   { day: 4, start: 11, duration: 1, title: "UHV", code: "G1", teacher: "Dr. Manoj Tripathi", type: "lec" },
   { day: 4, start: 13, duration: 2, title: "Life Skills Lab", code: "LL", teacher: "Prof. Mukta Mani", type: "lab" },
 
@@ -31,7 +31,7 @@ const scheduleA6 = [
   { day: 5, start: 15, duration: 1, title: "SDF-2", code: "TS6", teacher: "Shardha Porwal", type: "tut" },
 
   // SATURDAY
-  { day: 6, start: 10, duration: 1, title: "SDF-2", code: "FF1", teacher: "Rohit Kumar Sony", type: "lec" },
+  { day: 6, start: 10, duration: 1, title: "SDF-2", code: "FF1", teacher: "Rohit Kumar soni", type: "lec" },
   { day: 6, start: 11, duration: 1, title: "Mathematics-2", code: "FF1", teacher: "Dr. Arpita Nayek", type: "lec" },
 ];
 
@@ -50,7 +50,7 @@ const scheduleA5 = [
   { day: 2, start: 11, duration: 1, title: "Workshop", code: "FF1", teacher: "Dr. Priya", type: "lec" },
   { day: 2, start: 13, duration: 1, title: "Mathematics-2", code: "G1", teacher: "Dr. Arpita Nayek", type: "lec" },
   { day: 2, start: 14, duration: 1, title: "Physics-2", code: "G1", teacher: "Dr. Anuraj Panwar", type: "lec" },
-  { day: 2, start: 15, duration: 1, title: "SDF-2", code: "FF1", teacher: "Rohit Kumar Sony", type: "lec" },
+  { day: 2, start: 15, duration: 1, title: "SDF-2", code: "FF1", teacher: "Rohit Kumar soni", type: "lec" },
   { day: 2, start: 16, duration: 1, title: "Mathematics-2", code: "TS4", teacher: "Dr. Nisha Shukla", type: "tut" },
 
   // WEDNESDAY
@@ -58,12 +58,12 @@ const scheduleA5 = [
   { day: 3, start: 10, duration: 1, title: "Mathematics-2", code: "FF1", teacher: "Dr. Nisha Shukla", type: "lec" },
   { day: 3, start: 11, duration: 1, title: "Workshop", code: "TS4", teacher: "Dr. Priya", type: "tut" },
   { day: 3, start: 13, duration: 2, title: "Workshop Lab", code: "EW1", teacher: "Mr. Shwetabh Singh", type: "lab" },
-  { day: 3, start: 15, duration: 1, title: "SDF-2", code: "G1", teacher: "Rohit Kumar Sony", type: "lec" },
+  { day: 3, start: 15, duration: 1, title: "SDF-2", code: "G1", teacher: "Rohit Kumar soni", type: "lec" },
   { day: 3, start: 16, duration: 1, title: "UHV", code: "G1", teacher: "Dr. Manoj Tripathi", type: "lec" },
 
   // THURSDAY
   { day: 4, start: 9, duration: 1, title: "UHV", code: "TS4", teacher: "Dr. Manoj Tripathi", type: "tut" },
-  { day: 4, start: 10, duration: 1, title: "SDF-2", code: "FF1", teacher: "Rohit Kumar Sony", type: "lec" },
+  { day: 4, start: 10, duration: 1, title: "SDF-2", code: "FF1", teacher: "Rohit Kumar soni", type: "lec" },
   { day: 4, start: 11, duration: 1, title: "Mathematics-2", code: "FF1", teacher: "Dr. Nisha Shukla", type: "lec" },
   { day: 4, start: 13, duration: 2, title: "Life Skills Lab", code: "LL", teacher: "Prof. Mukta Mani", type: "lab" },
   { day: 4, start: 15, duration: 1, title: "Physics-2", code: "CS5", teacher: "Dr. Anuraj Panwar", type: "lec" },
@@ -72,10 +72,10 @@ const scheduleA5 = [
   { day: 5, start: 9, duration: 1, title: "Mathematics-2", code: "G1", teacher: "Dr. Nisha Shukla", type: "lec" },
   { day: 5, start: 10, duration: 1, title: "Physics-2", code: "G1", teacher: "Dr. Anuraj Panwar", type: "lec" },
   { day: 5, start: 11, duration: 1, title: "UHV", code: "G1", teacher: "Dr. Manoj Tripathi", type: "lec" },
-  { day: 5, start: 13, duration: 1, title: "SDF-2", code: "FF1", teacher: "Rohit Kumar Sony", type: "lec" },
+  { day: 5, start: 13, duration: 1, title: "SDF-2", code: "FF1", teacher: "Rohit Kumar soni", type: "lec" },
 
   // SATURDAY
-  { day: 6, start: 10, duration: 1, title: "SDF-2", code: "FF1", teacher: "Rohit Kumar Sony", type: "lec" },
+  { day: 6, start: 10, duration: 1, title: "SDF-2", code: "FF1", teacher: "Rohit Kumar soni", type: "lec" },
   { day: 6, start: 11, duration: 1, title: "Mathematics-2", code: "FF1", teacher: "Dr. Arpita Nayek", type: "lec" },
 ];
 
