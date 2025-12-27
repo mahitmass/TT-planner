@@ -80,7 +80,7 @@ const scheduleB12 = [
 
   { day: 5, start: 10, duration: 1, title: "UHV", code: "FF3", teacher: "Dr.Amanpreet Kaur", type: "lec" },
   { day: 5, start: 11, duration: 1, title: "Physics-2", code: "FF3", teacher: "Dr.Navendu Goswami", type: "lec" },
-  { day: 5, start: 13, duration: 1, title: "Worskshop",code: "TS11", teacher: "Ms.Madhu Jharia", type: "tut" },
+  { day: 5, start: 13, duration: 1, title: "Workshop",code: "TS11", teacher: "Ms.Madhu Jharia", type: "tut" },
   { day: 5, start: 15, duration: 2, title: "Workshop Lab", code: "EW2", teacher: "Ms.Madhu Jharia", type: "lab" },
 
   { day: 6, start: 9,  duration: 1, title: "UHV", code: "G1", teacher: "Dr.Amanpreet Kaur", type: "lec" },
