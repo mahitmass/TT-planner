@@ -125,14 +125,10 @@ function renderMobileView() {
     if (!track) return;
     track.innerHTML = '';
 
-    let activeClassFound = false;
-    let activeDayView = null;
-
     for (let d = 1; d <= 6; d++) {
         const dayView = document.createElement('div');
         dayView.className = 'day-view';
         dayView.setAttribute('data-day-index', d);
-        dayView.id = `day-${d}`; // Add ID for easy reference
 
         const h2 = document.createElement('h2');
         h2.className = 'day-header';
@@ -164,62 +160,6 @@ function renderMobileView() {
             });
         }
         track.appendChild(dayView);
-        
-        // Check if this day has an active class
-        const today = new Date().getDay();
-        if (d === today && !activeClassFound) {
-            activeDayView = dayView;
-        }
-    }
-    
-    // After rendering, scroll to today's view and active class
-    setTimeout(() => {
-        scrollToActiveClass();
-    }, 100);
-}
-function scrollToActiveClass() {
-    const now = new Date();
-    const currentDay = now.getDay(); // 0=Sunday, 1=Monday, etc.
-    
-    // Only auto-scroll if it's a weekday (Monday to Saturday)
-    if (currentDay >= 1 && currentDay <= 6) {
-        // First, scroll to today's view in the horizontal track
-        const track = document.getElementById('daysTrack');
-        if (!track) return;
-        
-        // Calculate the horizontal position for today
-        const dayIndex = currentDay - 1; // Convert to 0-based index
-        const viewportWidth = window.innerWidth;
-        const targetTranslate = dayIndex * -viewportWidth;
-        
-        track.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.8, 0.5, 1)';
-        track.style.transform = `translateX(${targetTranslate}px)`;
-        
-        // Update the currentDayIndex for the swipe functionality
-        if (typeof currentDayIndex !== 'undefined') {
-            currentDayIndex = dayIndex;
-            updateActiveDayButton(currentDay + 1);
-        }
-        
-        // Then, find and scroll to the active class card
-        setTimeout(() => {
-            const activeClassCard = document.querySelector('.class-card.active-now');
-            if (activeClassCard) {
-                // Scroll the day view container to show the active class
-                const dayView = activeClassCard.closest('.day-view');
-                if (dayView) {
-                    // Calculate position to scroll to (with some offset from top)
-                    const cardTop = activeClassCard.offsetTop;
-                    const headerHeight = 70; // Approximate header height
-                    const desiredScroll = cardTop - 100; // Scroll to 100px above the card
-                    
-                    dayView.scrollTo({
-                        top: desiredScroll,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        }, 600); // Wait for horizontal scroll to complete
     }
 }
 
@@ -313,8 +253,6 @@ function startAutoRefresh() {
         if (document.getElementById('timetable-container') && 
             !document.getElementById('timetable-container').classList.contains('hidden-view')) {
             renderMobileView();
-            // Also try to scroll to active class on refresh
-            setTimeout(scrollToActiveClass, 50);
         }
         if (document.getElementById('compact-container') && 
             !document.getElementById('compact-container').classList.contains('hidden-view')) {
