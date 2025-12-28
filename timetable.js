@@ -92,6 +92,34 @@ window.updateBatchData = function(batch) {
     });
 };
 
+// FIXED: Better time checking function
+function isClassActive(cls) {
+    const now = new Date();
+    const currentDay = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+    const currentHour = now.getHours();
+    const currentMinute = now.getMinutes();
+    
+    // Convert your day format (1=Monday) to match Date.getDay() (1=Monday)
+    if (cls.day !== currentDay) return false;
+    
+    // Calculate class end hour (classes end 10 minutes before the hour)
+    const classEndHour = cls.start + cls.duration - 1;
+    const classEndMinute = 50; // Classes end at :50
+    
+    // For start hour comparison
+    if (currentHour < cls.start) return false;
+    
+    // For end hour comparison
+    if (currentHour > classEndHour) return false;
+    
+    // If current hour is exactly the end hour, check minutes
+    if (currentHour === classEndHour && currentMinute > classEndMinute) {
+        return false;
+    }
+    
+    return true;
+}
+
 function renderMobileView() {
     const track = document.getElementById('daysTrack');
     if (!track) return;
@@ -144,8 +172,15 @@ function createClassCard(container, cls) {
         const endStr = `${endHr < 10 ? '0' + endHr : endHr}:50`;
         return `${startStr} - ${endStr} ${ampm}`;
     };
+    
     const card = document.createElement('div');
     card.className = `class-card type-${cls.type}`;
+    
+    // Add 'active-now' class if the class is currently happening
+    if (isClassActive(cls)) {
+        card.classList.add('active-now');
+    }
+    
     card.innerHTML = `
         <div class="time-slot">${formatTime(cls.start)}</div>
         <div class="subject-name">${cls.title}</div>
@@ -193,6 +228,12 @@ function renderDesktopView() {
             if (cls) {
                 const td = document.createElement('td');
                 td.className = `cell-${cls.type}`;
+                
+                // Add 'active-now' class for desktop view too
+                if (isClassActive(cls)) {
+                    td.classList.add('active-now');
+                }
+                
                 if (cls.duration > 1) td.rowSpan = cls.duration;
                 td.innerHTML = `<span class="cell-subject">${cls.title}</span><span class="cell-room">${cls.code}</span>`;
                 tr.appendChild(td);
@@ -203,4 +244,24 @@ function renderDesktopView() {
         }
         tbody.appendChild(tr);
     });
+}
+
+// Auto-refresh function
+function startAutoRefresh() {
+    // Refresh every minute to update active classes
+    setInterval(() => {
+        if (document.getElementById('timetable-container') && 
+            !document.getElementById('timetable-container').classList.contains('hidden-view')) {
+            renderMobileView();
+        }
+        if (document.getElementById('compact-container') && 
+            !document.getElementById('compact-container').classList.contains('hidden-view')) {
+            renderDesktopView();
+        }
+    }, 60000); // 60 seconds
+}
+
+// Start auto-refresh when page loads
+if (typeof window !== 'undefined') {
+    window.addEventListener('load', startAutoRefresh);
 }
