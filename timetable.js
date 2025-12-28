@@ -75,7 +75,7 @@ const scheduleB12 = [
 const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let currentSchedule = scheduleA6;
 
-// --- 2. THE RENDER LOGIC ---
+// ==================== 2. THE RENDER LOGIC ====================
 
 window.updateBatchData = function(batch) {
     if (batch === 'A5') {
@@ -92,27 +92,20 @@ window.updateBatchData = function(batch) {
     });
 };
 
-// FIXED: Better time checking function
 function isClassActive(cls) {
     const now = new Date();
-    const currentDay = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+    const currentDay = now.getDay(); 
     const currentHour = now.getHours();
     const currentMinute = now.getMinutes();
     
-    // Convert your day format (1=Monday) to match Date.getDay() (1=Monday)
     if (cls.day !== currentDay) return false;
     
-    // Calculate class end hour (classes end 10 minutes before the hour)
     const classEndHour = cls.start + cls.duration - 1;
-    const classEndMinute = 50; // Classes end at :50
+    const classEndMinute = 50; 
     
-    // For start hour comparison
     if (currentHour < cls.start) return false;
-    
-    // For end hour comparison
     if (currentHour > classEndHour) return false;
     
-    // If current hour is exactly the end hour, check minutes
     if (currentHour === classEndHour && currentMinute > classEndMinute) {
         return false;
     }
@@ -126,13 +119,12 @@ function renderMobileView() {
     track.innerHTML = '';
 
     let activeClassFound = false;
-    let activeDayView = null;
 
     for (let d = 1; d <= 6; d++) {
         const dayView = document.createElement('div');
         dayView.className = 'day-view';
         dayView.setAttribute('data-day-index', d);
-        dayView.id = `day-${d}`; // Add ID for easy reference
+        dayView.id = `day-${d}`;
 
         const h2 = document.createElement('h2');
         h2.className = 'day-header';
@@ -164,54 +156,47 @@ function renderMobileView() {
             });
         }
         track.appendChild(dayView);
-        
-        // Check if this day has an active class
-        const today = new Date().getDay();
-        if (d === today && !activeClassFound) {
-            activeDayView = dayView;
-        }
     }
     
-    // After rendering, scroll to today's view and active class
     setTimeout(() => {
         scrollToActiveClass();
     }, 100);
 }
+
 function scrollToActiveClass() {
     const now = new Date();
-    const currentDay = now.getDay(); // 0=Sunday, 1=Monday, etc.
+    const currentDay = now.getDay(); 
     
-    // Only auto-scroll if it's a weekday (Monday to Saturday)
     if (currentDay >= 1 && currentDay <= 6) {
-        // First, scroll to today's view in the horizontal track
         const track = document.getElementById('daysTrack');
         if (!track) return;
         
-        // Calculate the horizontal position for today
-        const dayIndex = currentDay - 1; // Convert to 0-based index
+        const dayIndex = currentDay - 1; 
         const viewportWidth = window.innerWidth;
         const targetTranslate = dayIndex * -viewportWidth;
         
+        // --- RESTORED GLOBAL VARIABLE HANDLING ---
+        // If currentDayIndex is defined (from restored logic below), update it
+        if (typeof currentDayIndex !== 'undefined') {
+             currentDayIndex = dayIndex;
+             prevTranslate = targetTranslate; // Update drag tracking
+        }
+
         track.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.8, 0.5, 1)';
         track.style.transform = `translateX(${targetTranslate}px)`;
         
-        // Update the currentDayIndex for the swipe functionality
-        if (typeof currentDayIndex !== 'undefined') {
-            currentDayIndex = dayIndex;
-            updateActiveDayButton(currentDay + 1);
+        // RESTORED: Update the day button dots
+        if (typeof updateActiveDayButton === 'function') {
+            updateActiveDayButton(currentDay);
         }
         
-        // Then, find and scroll to the active class card
         setTimeout(() => {
             const activeClassCard = document.querySelector('.class-card.active-now');
             if (activeClassCard) {
-                // Scroll the day view container to show the active class
                 const dayView = activeClassCard.closest('.day-view');
                 if (dayView) {
-                    // Calculate position to scroll to (with some offset from top)
                     const cardTop = activeClassCard.offsetTop;
-                    const headerHeight = 70; // Approximate header height
-                    const desiredScroll = cardTop - 100; // Scroll to 100px above the card
+                    const desiredScroll = cardTop - 100; 
                     
                     dayView.scrollTo({
                         top: desiredScroll,
@@ -219,7 +204,7 @@ function scrollToActiveClass() {
                     });
                 }
             }
-        }, 600); // Wait for horizontal scroll to complete
+        }, 600); 
     }
 }
 
@@ -236,7 +221,6 @@ function createClassCard(container, cls) {
     const card = document.createElement('div');
     card.className = `class-card type-${cls.type}`;
     
-    // Add 'active-now' class if the class is currently happening
     if (isClassActive(cls)) {
         card.classList.add('active-now');
     }
@@ -289,7 +273,6 @@ function renderDesktopView() {
                 const td = document.createElement('td');
                 td.className = `cell-${cls.type}`;
                 
-                // Add 'active-now' class for desktop view too
                 if (isClassActive(cls)) {
                     td.classList.add('active-now');
                 }
@@ -306,24 +289,215 @@ function renderDesktopView() {
     });
 }
 
-// Auto-refresh function
+// ==================== 3. RESTORED SWIPE & INTERACTIVE LOGIC ====================
+
+let isDragging = false;
+let startX = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let currentDayIndex = 0; // 0 = Mon, 1 = Tue... 
+const totalDays = 6;
+
+// Function to update the small Day Buttons (M, T, W...)
+function updateActiveDayButton(dayNumber) {
+    // Remove active class from all
+    document.querySelectorAll('.day-btn').forEach(btn => {
+        btn.classList.remove('active-day');
+    });
+    // Add to specific day (if exists)
+    const activeBtn = document.querySelector(`.day-btn[data-day="${dayNumber}"]`);
+    if (activeBtn) {
+        activeBtn.classList.add('active-day');
+    }
+}
+
+// Function to Jump to a specific day via Buttons
+window.manualJumpToDay = function(dayNumber) {
+    currentDayIndex = dayNumber - 1;
+    jumpToDayIndex(currentDayIndex);
+};
+
+// Core Jump Logic
+function jumpToDayIndex(index) {
+    const track = document.getElementById('daysTrack');
+    const viewportWidth = window.innerWidth;
+    currentTranslate = index * -viewportWidth;
+    prevTranslate = currentTranslate;
+    
+    if (track) {
+        track.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.8, 0.5, 1)';
+        track.style.transform = `translateX(${currentTranslate}px)`;
+    }
+    
+    // Update buttons (index 0 = Day 1)
+    updateActiveDayButton(index + 1);
+}
+
+// Swipe Event Listeners
+function initSwipeLogic() {
+    const track = document.getElementById('daysTrack');
+    if(!track) return;
+
+    track.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+        track.style.transition = 'none'; // Disable transition for direct follow
+    });
+
+    track.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const currentX = e.touches[0].clientX;
+        const diff = currentX - startX;
+        currentTranslate = prevTranslate + diff;
+        track.style.transform = `translateX(${currentTranslate}px)`;
+    });
+
+    track.addEventListener('touchend', (e) => {
+        isDragging = false;
+        const movedBy = currentTranslate - prevTranslate;
+        const threshold = window.innerWidth / 4;
+
+        // Determine if we should snap to next/prev or snap back
+        if (movedBy < -threshold && currentDayIndex < totalDays - 1) {
+            currentDayIndex++;
+        } else if (movedBy > threshold && currentDayIndex > 0) {
+            currentDayIndex--;
+        }
+
+        jumpToDayIndex(currentDayIndex);
+    });
+}
+
+// Dropdown Logic
+window.toggleBatchDropdown = function() {
+    const content = document.getElementById('batch-dropdown-content');
+    content.classList.toggle('show');
+    
+    const arrow = document.getElementById('dropdown-arrow');
+    if (content.classList.contains('show')) {
+        arrow.textContent = "▲";
+    } else {
+        arrow.textContent = "▼";
+    }
+};
+
+window.selectBatchFromDropdown = function(batchName) {
+    // Close dropdown
+    document.getElementById('batch-dropdown-content').classList.remove('show');
+    document.getElementById('dropdown-arrow').textContent = "▼";
+    
+    // Update Label
+    document.getElementById('selected-batch-label').textContent = "Batch " + batchName;
+    
+    // Update Data
+    window.updateBatchData(batchName);
+    
+    // Save preference
+    localStorage.setItem('selectedBatch', batchName);
+    
+    // Update active class on buttons
+    document.querySelectorAll('.batch-btn').forEach(btn => {
+        if(btn.textContent === batchName) btn.classList.add('active-batch');
+        else btn.classList.remove('active-batch');
+    });
+};
+
+// Theme Toggle
+window.toggleTheme = function() {
+    const body = document.body;
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    const btn = document.getElementById('theme-btn');
+    btn.textContent = newTheme === 'dark' ? '☀' : '🌙';
+};
+
+// View Mode Toggle (Swipe vs Table)
+window.setViewMode = function(mode) {
+    const swipeContainer = document.getElementById('timetable-container');
+    const tableContainer = document.getElementById('compact-container');
+    const btnSwipe = document.getElementById('btn-swipe');
+    const btnTable = document.getElementById('btn-table');
+
+    if (mode === 'swipe') {
+        swipeContainer.classList.remove('hidden-view');
+        tableContainer.classList.add('hidden-view');
+        btnSwipe.classList.add('active');
+        btnTable.classList.remove('active');
+        // Re-align swipe view
+        jumpToDayIndex(currentDayIndex);
+    } else {
+        swipeContainer.classList.add('hidden-view');
+        tableContainer.classList.remove('hidden-view');
+        btnSwipe.classList.remove('active');
+        btnTable.classList.add('active');
+    }
+    localStorage.setItem('viewMode', mode);
+};
+
+window.toggleFilterPanel = function() {
+    const panel = document.getElementById('filter-panel');
+    const arrow = document.getElementById('filter-arrow');
+    
+    if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+        arrow.textContent = "🔽";
+    } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        arrow.textContent = "🔼";
+    }
+};
+
+// ==================== 4. INITIALIZATION ====================
+
 function startAutoRefresh() {
-    // Refresh every minute to update active classes
     setInterval(() => {
         if (document.getElementById('timetable-container') && 
             !document.getElementById('timetable-container').classList.contains('hidden-view')) {
             renderMobileView();
-            // Also try to scroll to active class on refresh
-            setTimeout(scrollToActiveClass, 50);
         }
         if (document.getElementById('compact-container') && 
             !document.getElementById('compact-container').classList.contains('hidden-view')) {
             renderDesktopView();
         }
-    }, 60000); // 60 seconds
+    }, 60000); 
 }
 
-// Start auto-refresh when page loads
-if (typeof window !== 'undefined') {
-    window.addEventListener('load', startAutoRefresh);
-}
+// INITIALIZE APP ON LOAD
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Initialize Batch Button Grid
+    const batchList = ['A6', 'A5', 'B12']; // Add more batches here if needed
+    const batchGrid = document.getElementById('batchGrid');
+    if (batchGrid) {
+        batchGrid.innerHTML = '';
+        batchList.forEach(b => {
+            const btn = document.createElement('button');
+            btn.className = 'batch-btn';
+            btn.textContent = b;
+            btn.onclick = () => selectBatchFromDropdown(b);
+            batchGrid.appendChild(btn);
+        });
+    }
+
+    // 2. Load Saved Batch
+    const savedBatch = localStorage.getItem('selectedBatch') || 'A6';
+    selectBatchFromDropdown(savedBatch);
+
+    // 3. Load Saved Theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.body.setAttribute('data-theme', savedTheme);
+    document.getElementById('theme-btn').textContent = savedTheme === 'dark' ? '☀' : '🌙';
+
+    // 4. Load View Mode
+    const savedView = localStorage.getItem('viewMode') || 'swipe';
+    setViewMode(savedView);
+
+    // 5. Init Swipe Logic
+    initSwipeLogic();
+
+    // 6. Start Auto Refresh
+    startAutoRefresh();
+});
