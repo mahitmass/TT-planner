@@ -5,7 +5,9 @@
   <title>Batch Timetable</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#121212">
+  <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="Logo.png">
+  <link rel="apple-touch-icon" href="Logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
    
   <style>
@@ -19,12 +21,15 @@
       --accent-color: #bb86fc;
       --accent-hover: #9965f4;
       --header-bg: #2c2c2c;
+       
       /* Slot Type Markers */
       --lec-marker: #90caf9;
       --tut-marker: #ffcc80;
       --lab-marker: #ef9a9a;
-      --break-marker: #424242;
-      
+      --break-marker: #424242; 
+       
+      --active-glow: 0 0 15px rgba(187, 134, 252, 0.5);
+
       /* Break Card Colors */
       --break-bg: #000000;
       --break-border: #333;
@@ -39,12 +44,15 @@
       --accent-color: #6200ea;
       --accent-hover: #5000c9;
       --header-bg: #ffffff;
+
       /* Slot Type Markers */
       --lec-marker: #0d47a1;
       --tut-marker: #e65100;
       --lab-marker: #c62828;
       --break-marker: #9e9e9e;
-      
+
+      --active-glow: 0 0 15px rgba(98, 0, 234, 0.4);
+
       /* Break Card Colors Light */
       --break-bg: #e0e0e0;
       --break-border: #ccc;
@@ -65,12 +73,12 @@
       display: flex;
       flex-direction: column;
       overflow: hidden; 
-      user-select: none;
+      user-select: none; 
     }
 
     /* --- HEADER --- */
     header {
-      flex: 0 0 auto;
+      flex: 0 0 auto; 
       width: 100%;
       height: 70px; 
       padding: 0 15px;
@@ -83,8 +91,12 @@
       position: relative;
     }
 
-    .brand-container { display: flex; align-items: center; gap: 15px; }
-    .app-logo { height: 45px; width: 45px; border-radius: 8px; object-fit: cover; border: 1px solid var(--border-color); }
+    .brand-container {
+        display: flex; align-items: center; gap: 15px; 
+    }
+    .app-logo {
+        height: 45px; width: 45px; border-radius: 8px; object-fit: cover; border: 1px solid var(--border-color);
+    }
     h1 {
       font-weight: 800; font-size: 1.3rem; margin: 0;
       background: linear-gradient(90deg, var(--accent-color), #03dac6);
@@ -92,6 +104,7 @@
     }
 
     .header-controls { display: flex; gap: 10px; align-items: center; }
+
     .icon-btn {
       background: transparent; border: none; color: var(--text-main);
       font-size: 1.4rem; cursor: pointer; padding: 8px;
@@ -110,16 +123,20 @@
     #filter-panel {
         background: var(--header-bg);
         width: 100%;
-        max-height: 0;
+        max-height: 0; 
         overflow: hidden;
         transition: max-height 0.35s cubic-bezier(0.4, 0.0, 0.2, 1);
         border-bottom: 1px solid var(--border-color);
         position: relative; z-index: 90;
         flex: 0 0 auto; 
     }
-    #filter-panel.expanded { max-height: 400px; }
+    
+    #filter-panel.expanded {
+        max-height: 400px; 
+    }
 
     .filter-content { padding: 20px 15px; display: flex; flex-direction: column; gap: 20px; }
+
     .filter-group { display: flex; flex-direction: column; gap: 8px; }
     .filter-label { font-size: 0.85rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
     .filter-options { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -158,33 +175,40 @@
     .day-header { font-size: 1.5rem; font-weight: 800; margin: 10px 0 20px; color: var(--accent-color); text-align: center; }
 
     .floating-batch {
-        position: absolute; top: 15px; right: 15px;
-        background-color: rgba(30, 30, 30, 0.85); color: var(--accent-color);
-        border: 1px solid var(--border-color); padding: 6px 14px;
-        border-radius: 20px; font-weight: 800; font-size: 0.85rem;
-        z-index: 50; pointer-events: none; backdrop-filter: blur(4px);
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2); letter-spacing: 0.5px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: rgba(30, 30, 30, 0.85);
+        color: var(--accent-color);
+        border: 1px solid var(--border-color);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-weight: 800;
+        font-size: 0.85rem;
+        z-index: 50;
+        pointer-events: none;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        letter-spacing: 0.5px;
     }
-    [data-theme="light"] .floating-batch { background-color: rgba(255, 255, 255, 0.85); }
+    [data-theme="light"] .floating-batch {
+        background-color: rgba(255, 255, 255, 0.85);
+    }
 
-    /* --- CARD STYLES --- */
-    .class-card { 
-        background: var(--card-bg); border-radius: 16px; padding: 15px; 
-        margin-bottom: 15px; border: 1px solid var(--border-color); 
-        position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 8px; 
-    }
+    .class-card { background: var(--card-bg); border-radius: 16px; padding: 15px; margin-bottom: 15px; border: 1px solid var(--border-color); position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 8px; }
     .class-card::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 5px; }
     .type-lec::before { background-color: var(--lec-marker); }
     .type-tut::before { background-color: var(--tut-marker); }
     .type-lab::before { background-color: var(--lab-marker); }
-
-    /* !!! ACTIVE CLASS GLOW - MOBILE !!! */
-    .class-card.active-now { 
-        border: 2px solid var(--accent-color) !important; 
-        box-shadow: 0 0 15px rgba(187, 134, 252, 0.6) !important; 
-        transform: scale(1.01);
-        z-index: 5;
-    }
+    .class-card.active-now { border: 2px solid var(--accent-color); box-shadow: var(--active-glow); }
+    /* ADD THIS TO YOUR CSS TO MAKE THE TABLE HIGHLIGHT VISIBLE */
+.weekly-table td.active-now {
+    border: 2px solid var(--accent-color) !important;
+    background-color: rgba(187, 134, 252, 0.2) !important;
+    box-shadow: inset 0 0 10px var(--accent-color);
+    z-index: 5;
+    position: relative;
+}
 
     .time-slot { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; display: flex; align-items: center; gap: 6px; }
     .time-slot::before { content: '•'; color: var(--accent-color); font-size: 1rem; }
@@ -203,23 +227,12 @@
     .weekly-table thead th { position: sticky; top: 0; background-color: var(--header-bg); z-index: 20; border-bottom: 2px solid var(--border-color); font-weight: 800; text-transform: uppercase; font-size: 0.75rem; }
     .weekly-table tbody td:first-child { position: sticky; left: 0; background-color: var(--card-bg); z-index: 10; border-right: 2px solid var(--border-color); font-weight: bold; color: var(--accent-color); min-width: 75px; white-space: nowrap; font-size: 0.7rem; }
     .weekly-table thead th:first-child { position: sticky; top: 0; left: 0; z-index: 30; background-color: var(--header-bg); border-right: 2px solid var(--border-color); }
-    
     .cell-lec { background-color: rgba(144, 202, 249, 0.15); border-left: 3px solid var(--lec-marker) !important; }
     .cell-tut { background-color: rgba(255, 204, 128, 0.15); border-left: 3px solid var(--tut-marker) !important; }
     .cell-lab { background-color: rgba(239, 154, 154, 0.15); border-left: 3px solid var(--lab-marker) !important; }
     .cell-break { background-color: var(--break-bg); opacity: 0.7; }
     .cell-subject { font-weight: 700; display: block; margin-bottom: 2px; font-size: 0.85rem;}
     .cell-room { font-size: 0.7rem; color: var(--text-muted); display: block; }
-
-    /* !!! ACTIVE CLASS GLOW - TABLE !!! */
-    /* This was missing in your old code */
-    .weekly-table td.active-now {
-        border: 2px solid var(--accent-color) !important;
-        background-color: rgba(187, 134, 252, 0.25) !important;
-        box-shadow: inset 0 0 10px var(--accent-color);
-        z-index: 25;
-        position: relative;
-    }
 
     /* --- FOOTER --- */
     .footer-sig { position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; padding: 10px; background: var(--bg-color); color: var(--text-muted); border-top: 1px solid var(--border-color); z-index: 200; padding-bottom: calc(10px + env(safe-area-inset-bottom)); font-size: 0.8rem; }
@@ -292,5 +305,191 @@
   </div>
 
   <script src="timetable.js"></script>
+
+  <script>
+    // --- UI LOGIC ---
+    function toggleFilterPanel() {
+        const panel = document.getElementById('filter-panel');
+        const arrow = document.getElementById('filter-arrow');
+        panel.classList.toggle('expanded');
+        arrow.textContent = panel.classList.contains('expanded') ? '🔼' : '🔽';
+    }
+    
+    document.addEventListener('click', (e) => {
+        const panel = document.getElementById('filter-panel');
+        const btn = document.querySelector('.filter-toggle-btn');
+        if (panel.classList.contains('expanded') && !panel.contains(e.target) && !btn.contains(e.target)) {
+            toggleFilterPanel();
+        }
+    });
+
+    function switchBatch(batchName) {
+        localStorage.setItem('selectedBatch', batchName);
+        updateBatchUI(batchName);
+        
+        const floatBadge = document.getElementById('floating-batch');
+        if(floatBadge) floatBadge.textContent = `BATCH ${batchName}`;
+
+        if (window.updateBatchData) window.updateBatchData(batchName);
+        
+        setTimeout(fixTableTimes, 100);
+        
+        // Scroll to active class after batch switch
+        setTimeout(() => {
+            if (window.scrollToActiveClass) {
+                window.scrollToActiveClass();
+            }
+        }, 300);
+    }
+
+    // FIXED: Corrected selector to remove highlight from B12
+    function updateBatchUI(batchName) {
+        const batchOptions = document.querySelector('.filter-group:first-child .filter-options');
+        batchOptions.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        const activeBtn = document.getElementById(`btn-${batchName}`);
+        if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    function fixTableTimes() {
+       const timeMap = {
+           "09:00 AM": "09:00 - 09:50", "10:00 AM": "10:00 - 10:50",
+           "11:00 AM": "11:00 - 11:50", "12:00 PM": "12:00 - 12:50",
+           "01:00 PM": "01:00 - 01:50", "02:00 PM": "02:00 - 02:50",
+           "03:00 PM": "03:00 - 03:50", "04:00 PM": "04:00 - 04:50"
+       };
+       const timeCells = document.querySelectorAll('.weekly-table tbody tr td:first-child');
+       timeCells.forEach(td => {
+           const txt = td.textContent.trim();
+           if(timeMap[txt]) td.textContent = timeMap[txt];
+       });
+    }
+
+    function setViewMode(mode) {
+        const swipeContainer = document.getElementById('timetable-container');
+        const compactContainer = document.getElementById('compact-container');
+        
+        // Handle Highlight for View Mode buttons
+        const viewGroup = document.querySelector('.filter-group:nth-child(2) .filter-options');
+        viewGroup.querySelectorAll('.toggle-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(`btn-${mode}`).classList.add('active');
+
+        if (mode === 'swipe') {
+            swipeContainer.classList.remove('hidden-view');
+            compactContainer.classList.add('hidden-view');
+            setTimeout(() => jumpToDay(currentDayIndex), 50);
+        } else {
+            swipeContainer.classList.add('hidden-view');
+            compactContainer.classList.remove('hidden-view');
+            fixTableTimes(); 
+        }
+        localStorage.setItem('preferredView', mode);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedBatch = localStorage.getItem('selectedBatch') || 'A6';
+        updateBatchUI(savedBatch);
+        
+        const floatBadge = document.getElementById('floating-batch');
+        if(floatBadge) floatBadge.textContent = `BATCH ${savedBatch}`;
+
+        if (window.updateBatchData) window.updateBatchData(savedBatch);
+        
+        const today = new Date().getDay(); 
+        currentDayIndex = (today === 0) ? 0 : today - 1;
+        if (currentDayIndex > 5) currentDayIndex = 0;
+
+        const savedView = localStorage.getItem('preferredView') || 'swipe';
+        setViewMode(savedView);
+        
+        setTimeout(fixTableTimes, 500);
+        
+        // Scroll to active class after everything loads
+        setTimeout(() => {
+            if (window.scrollToActiveClass) {
+                window.scrollToActiveClass();
+            }
+        }, 800);
+    });
+
+    function toggleTheme() {
+      const body = document.body;
+      const currentTheme = body.getAttribute('data-theme');
+      const btn = document.getElementById('theme-btn');
+      if (currentTheme === 'dark') {
+        body.setAttribute('data-theme', 'light'); btn.textContent = '🌙';
+      } else {
+        body.setAttribute('data-theme', 'dark'); btn.textContent = '☀';
+      }
+    }
+
+    const track = document.getElementById('daysTrack');
+    const container = document.getElementById('timetable-container');
+    let isDragging = false, startX = 0, startY = 0, currentTranslate = 0, prevTranslate = 0, currentDayIndex = 0; 
+    const totalDays = 6;
+    
+    function manualJumpToDay(dayIndex) { jumpToDay(dayIndex - 1); }
+
+    window.addEventListener('resize', () => { track.style.transition = 'none'; jumpToDay(currentDayIndex); });
+
+    track.addEventListener('touchstart', (e) => startDrag(e.touches[0].clientX, e.touches[0].clientY));
+    track.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        if (Math.abs(e.touches[0].clientX - startX) > Math.abs(e.touches[0].clientY - startY)) {
+            e.preventDefault(); moveDrag(e.touches[0].clientX);
+        }
+    }, { passive: false });
+    track.addEventListener('touchend', endDrag);
+
+    track.addEventListener('mousedown', (e) => { e.preventDefault(); startDrag(e.clientX, 0); });
+    track.addEventListener('mousemove', (e) => { if (isDragging) { e.preventDefault(); moveDrag(e.clientX); } });
+    track.addEventListener('mouseup', endDrag);
+    track.addEventListener('mouseleave', () => { if(isDragging) endDrag(); });
+
+    function startDrag(clientX, clientY) { 
+        isDragging = true; startX = clientX; startY = clientY; 
+        track.style.transition = 'none'; container.style.cursor = 'grabbing'; 
+    }
+    function moveDrag(clientX) { 
+        currentTranslate = prevTranslate + (clientX - startX); 
+        track.style.transform = `translateX(${currentTranslate}px)`; 
+    }
+    function endDrag() {
+        if (!isDragging) return; isDragging = false; container.style.cursor = 'grab';
+        const movedBy = currentTranslate - prevTranslate; 
+        track.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.8, 0.5, 1)';
+        if (movedBy < -window.innerWidth/4) currentDayIndex = (currentDayIndex < totalDays - 1) ? currentDayIndex + 1 : 0;
+        else if (movedBy > window.innerWidth/4) currentDayIndex = (currentDayIndex > 0) ? currentDayIndex - 1 : totalDays - 1;
+        jumpToDay(currentDayIndex);
+    }
+    function jumpToDay(index) {
+        currentDayIndex = index;
+        currentTranslate = index * -window.innerWidth;
+        prevTranslate = currentTranslate;
+        track.style.transform = `translateX(${currentTranslate}px)`;
+        updateActiveDayButton(index + 1);
+    }
+    function updateActiveDayButton(dayNum) {
+        document.querySelectorAll('.day-btn').forEach(btn => btn.classList.toggle('active-day', parseInt(btn.dataset.day) === dayNum));
+    }
+
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(err => console.log("SW Fail", err)));
+    }
+
+    window.addEventListener('load', () => {
+        // Initial render to show active classes
+        setTimeout(() => {
+            if (window.renderMobileView && window.renderDesktopView) {
+                window.renderMobileView();
+                window.renderDesktopView();
+            }
+        }, 100);
+    });
+</script>
 </body>
 </html>
+
+
+
