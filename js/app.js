@@ -603,16 +603,16 @@ if (dayView) {
 
   // ==================== UI CONTROLS ====================
   function toggleFilterPanel() {
+    // 1. Toggle the main panel
     const isExpanded = dom.filterPanel.classList.toggle('expanded');
-    dom.filterArrow.textContent = isExpanded ? '🔼' : '🔽';
-    if (!isExpanded) toggleBatchDropdown(false);
-  }
-toggleBatchGrid(false);
-  function toggleBatchDropdown(force) {
-    // This function is no longer needed because the batch selector 
-    // is embedded directly in the panel. We keep it empty to 
-    // prevent errors if other parts of the code try to call it.
-    return;
+    
+    // 2. Update the arrow icon
+    if (dom.filterArrow) {
+      dom.filterArrow.textContent = isExpanded ? '▲' : '▼';
+    }
+
+    // 3. THE FIX: Use 'toggleBatchGrid', NOT 'toggleBatchDropdown'
+    toggleBatchGrid(false); 
   }
 
   function handleOutsideClick(e) {
@@ -663,6 +663,7 @@ toggleBatchGrid(false);
 })();
 // Start
 document.addEventListener('DOMContentLoaded', TimetableApp.init);
+
 
 
 
