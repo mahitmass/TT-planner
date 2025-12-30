@@ -607,7 +607,7 @@ if (dayView) {
     dom.filterArrow.textContent = isExpanded ? '🔼' : '🔽';
     if (!isExpanded) toggleBatchDropdown(false);
   }
-
+toggleBatchGrid(false);
   function toggleBatchDropdown(force) {
     // This function is no longer needed because the batch selector 
     // is embedded directly in the panel. We keep it empty to 
@@ -663,6 +663,7 @@ if (dayView) {
 })();
 // Start
 document.addEventListener('DOMContentLoaded', TimetableApp.init);
+
 
 
 
