@@ -112,7 +112,10 @@ const TimetableApp = (function() {
       dom.daysTrack.addEventListener('mouseup', handleMouseEnd);
       dom.daysTrack.addEventListener('mouseleave', handleMouseLeave);
     }
-    
+    if (dom.timetableContainer) {
+       
+        dom.timetableContainer.addEventListener('wheel', handleWheel, { passive: false });
+    }
     window.addEventListener('resize', debounce(handleResize, 200));
     document.addEventListener('click', handleOutsideClick);
     document.addEventListener('keydown', handleKeyboardNavigation);
@@ -658,7 +661,39 @@ if (dayView) {
     if (e.key === 'ArrowRight') jumpToDay(state.currentDayIndex < 5 ? state.currentDayIndex + 1 : 0);
     if (e.key === 'ArrowLeft') jumpToDay(state.currentDayIndex > 0 ? state.currentDayIndex - 1 : 5);
   }
+// ==================== TRACKPAD SWIPE LOGIC ====================
+  function handleWheel(e) {
+    // Only active in Swipe view
+    if (state.currentView !== 'swipe') return;
 
+    // Check if movement is horizontal (horizontal delta > vertical delta)
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+      
+      // Prevent browser back/forward navigation
+      e.preventDefault();
+
+      // Threshold check (ignore tiny accidental movements)
+      if (Math.abs(e.deltaX) < 20) return;
+
+      // Cooldown check (prevent one swipe triggering 10 day jumps)
+      if (state.wheelCooldown) return;
+
+      // Set cooldown
+      state.wheelCooldown = true;
+      setTimeout(() => { state.wheelCooldown = false; }, 800); // 800ms delay
+
+      // Determine Direction
+      if (e.deltaX > 0) {
+        // Swiping Right -> Go to Next Day
+        // Logic: (Current + 1) or Loop back to 0
+        jumpToDay(state.currentDayIndex < state.totalDays - 1 ? state.currentDayIndex + 1 : 0);
+      } else {
+        // Swiping Left -> Go to Prev Day
+        // Logic: (Current - 1) or Loop to last day
+        jumpToDay(state.currentDayIndex > 0 ? state.currentDayIndex - 1 : state.totalDays - 1);
+      }
+    }
+  }
  // Public API
   return {
     init,
@@ -674,6 +709,7 @@ if (dayView) {
 })();
 // Start
 document.addEventListener('DOMContentLoaded', TimetableApp.init);
+
 
 
 
