@@ -249,9 +249,12 @@ const TimetableApp = (function() {
       const hStr = displayHour < 10 ? '0' + displayHour : displayHour;
 
       // DELETE the old timeCell.textContent line and PASTE this instead:
-      timeCell.innerHTML = `
-        ${hStr}:00 - ${hStr}:50
-        <div style="font-size: 0.8rem; opacity: 0.8; margin-top: 2px;">${ampm}</div>
+     timeCell.innerHTML = `
+        <div style="line-height: 1.1;">
+            ${hStr}:00<br>
+            <span style="font-size: 0.85em; opacity: 0.7;">${hStr}:50</span>
+        </div>
+        <div style="font-size: 0.75em; margin-top: 4px; opacity: 0.6;">${ampm}</div>
       `;
       row.appendChild(timeCell);
 
@@ -671,6 +674,7 @@ if (dayView) {
 })();
 // Start
 document.addEventListener('DOMContentLoaded', TimetableApp.init);
+
 
 
 
