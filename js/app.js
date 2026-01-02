@@ -16,7 +16,8 @@ const TimetableApp = (function() {
     activeHighlightInterval: null,
     isVerticalScroll: false,
     isVerticalScrollPossible: false,
-    initialScrollTop: 0
+    initialScrollTop: 0,
+    wheelCooldown: false
   };
 
   // DOM Elements cache
@@ -709,6 +710,7 @@ if (dayView) {
 })();
 // Start
 document.addEventListener('DOMContentLoaded', TimetableApp.init);
+
 
 
 
