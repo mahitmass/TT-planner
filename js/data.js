@@ -1032,16 +1032,16 @@ const scheduleF1 = [
     { day: 2, start: 14, duration: 1, title: "CI211", code: "116", teacher: "SSJ/ZUBAIR", type: "tut" },
     { day: 4, start: 9, duration: 1, title: "PH211", code: "116", teacher: "VM", type: "tut" },
     { day: 4, start: 10, duration: 1, title: "MA211", code: "116", teacher: "PKS", type: "tut" },
-    { day: 4, start: 13, duration: 1, title: "MA211", code: "3092", teacher: "SHP", type: "lec" },
+    { day: 4, start: 13, duration: 1, title: "MA211", code: "3092", teacher: "SHP1", type: "lec" },
     { day: 4, start: 14, duration: 1, title: "PH211", code: "3092", teacher: "VM", type: "lec" },
     { day: 4, start: 15, duration: 1, title: "HS111", code: "3092", teacher: "NEA", type: "lec" },
     { day: 4, start: 16, duration: 1, title: "CI211", code: "3092", teacher: "SHJ", type: "lec" },
     { day: 5, start: 9, duration: 1, title: "PH211", code: "3084", teacher: "VM", type: "lec" },
-    { day: 5, start: 10, duration: 1, title: "MA211", code: "3084", teacher: "SHP", type: "lec" },
+    { day: 5, start: 10, duration: 1, title: "MA211", code: "3084", teacher: "SHP1", type: "lec" },
     { day: 5, start: 11, duration: 1, title: "CI211", code: "3084", teacher: "SHJ", type: "lec" },
     { day: 5, start: 13, duration: 1, title: "HS111", code: "121", teacher: "SHV", type: "tut" },
     { day: 5, start: 14, duration: 1, title: "CI211", code: "116", teacher: "SSJ/ZUBAIR", type: "tut" },
-    { day: 6, start: 9, duration: 1, title: "MA211", code: "3028", teacher: "SHP", type: "lec" },
+    { day: 6, start: 9, duration: 1, title: "MA211", code: "3028", teacher: "SHP1", type: "lec" },
     { day: 6, start: 10, duration: 1, title: "PH211", code: "3028", teacher: "VM", type: "lec" },
     { day: 6, start: 11, duration: 1, title: "HS111", code: "3028", teacher: "NEA", type: "lec" },
     { day: 6, start: 12, duration: 1, title: "CI211", code: "3028", teacher: "SHJ", type: "lec" }
@@ -1053,17 +1053,17 @@ const scheduleF2 = [
     { day: 2, start: 14, duration: 1, title: "CI211", code: "126", teacher: "SSJ/AVINASH", type: "tut" },
     { day: 4, start: 10, duration: 1, title: "PH211", code: "121", teacher: "VM", type: "tut" },
     { day: 4, start: 11, duration: 1, title: "MA211", code: "127", teacher: "AMB", type: "tut" },
-    { day: 4, start: 13, duration: 1, title: "MA211", code: "3092", teacher: "SHP", type: "lec" },
+    { day: 4, start: 13, duration: 1, title: "MA211", code: "3092", teacher: "SHP1", type: "lec" },
     { day: 4, start: 14, duration: 1, title: "PH211", code: "3092", teacher: "VM", type: "lec" },
     { day: 4, start: 15, duration: 1, title: "HS111", code: "3092", teacher: "NEA", type: "lec" },
     { day: 4, start: 16, duration: 1, title: "CI211", code: "3092", teacher: "SHJ", type: "lec" },
     { day: 5, start: 9, duration: 1, title: "PH211", code: "3084", teacher: "VM", type: "lec" },
-    { day: 5, start: 10, duration: 1, title: "MA211", code: "3084", teacher: "SHP", type: "lec" },
+    { day: 5, start: 10, duration: 1, title: "MA211", code: "3084", teacher: "SHP1", type: "lec" },
     { day: 5, start: 11, duration: 1, title: "CI211", code: "3084", teacher: "SHJ", type: "lec" },
     { day: 5, start: 13, duration: 1, title: "HS111", code: "116", teacher: "DEV", type: "tut" },
     { day: 5, start: 14, duration: 2, title: "PH271", code: "41", teacher: "VM", type: "lab" },
     { day: 5, start: 14, duration: 1, title: "CI211", code: "126", teacher: "SSJ/AVINASH", type: "tut" },
-    { day: 6, start: 9, duration: 1, title: "MA211", code: "3028", teacher: "SHP", type: "lec" },
+    { day: 6, start: 9, duration: 1, title: "MA211", code: "3028", teacher: "SHP1", type: "lec" },
     { day: 6, start: 10, duration: 1, title: "PH211", code: "3028", teacher: "VM", type: "lec" },
     { day: 6, start: 11, duration: 1, title: "HS111", code: "3028", teacher: "NEA", type: "lec" },
     { day: 6, start: 12, duration: 1, title: "CI211", code: "3028", teacher: "SHJ", type: "lec" }
@@ -1745,6 +1745,7 @@ if (typeof module !== 'undefined' && module.exports) {
     // ... export other schedules if needed
   };
 }
+
 
 
 
