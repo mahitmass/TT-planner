@@ -116,7 +116,7 @@ const facultyNames128 = {
     "ANK1": "Anuj Kumar", "SKH": "Sudip Kumar Haldar", "NAK": "Narender Khatri",
     "BHT": "Bharti Arora", "PRJ": "Prabhakar Jha", "HAB": "Harish Bishwakarma",
     "SUM": "Sumit Mahajan", "PSH": "Piyush Sharma", "RAK": "Rahul Kumar",
-    "NIK": "Niraj Kumar", "ASP": "Asim Patra", "SHP": "Shivani Pant",
+    "NIK": "Niraj Kumar", "ASP": "Asim Patra", "SHP1": "Shivani Pant",
     "VIS": "Vikas Sharma", "KAS": "Kartik Samanta", "SHALU": "SHALU",
     "EKS1": "Ekta Srivastava", "AMA": "Amba Aggarwal", "ANB": "Anshu Banwari",
     "SHV": "Shweta Verma", "PRS": "Praveen Kumar Sharma", "DEV": "Deepak Verma",
@@ -1745,6 +1745,7 @@ if (typeof module !== 'undefined' && module.exports) {
     // ... export other schedules if needed
   };
 }
+
 
 
 
