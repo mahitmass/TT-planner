@@ -30,7 +30,7 @@ const facultyNames = {
     "EKS": "Dr. Ekta Singh", "HK": "Dr. Harleen Kaur", "IJ": "Dr. ILA Joshi",
     "KMB": "Dr. Kanupriya Misra Bakhru", "MM": "Prof. Mukta Mani", "MRB": "Dr. Manas Ranjan Behera",
     "MB": "Dr.Monali Bhattacharya", "NAM": "Dr. Namreeta Kumari", "NES": "Dr. Neha Singh",
-    "NIS": "Dr. Nibha Sinha", "PSH": "Dr. Purwa Shriwastava", "SKU": "Ms. Shikha Kumari",
+    "NIS": "Dr. Nibha Sinha",  "SKU": "Ms. Shikha Kumari",
     "VSE": "Dr. Vandana Sehgal", "YN": "Dr Yogita Naruka", "MDU": "Dr Mohua Dutta",
     "PRI": "Dr. Priya", "SDA": "Dr. Suraj Das", "AMN": "Dr. Amandeep", "PAC": "Dr Paridhi",
 
@@ -42,7 +42,7 @@ const facultyNames = {
     "AJP": "Dr. Amarjeet Prajapati", "AMS": "Dr. Amit Mishra", "ASA": "Dr. Anita Sahoo",
     "ANV": "Dr. Ankit Vidyarthi", "AJS": "Dr. Ankita Jaiswal", "AVR": "Dr. Ankita Verma",
     "AW": "Dr. Ankita Wadhwa", "ASK": "Dr. Anuja Shukla", "APJ": "Dr. Arpita Jadav Bhatt",
-    "AM": "Dr. Asish Mishra", "ASP": "Dr. Asish Singh Parihar", "ASY": "Dr. Asmita Yadav",
+    "AM": "Dr. Asish Mishra", "ASY": "Dr. Asmita Yadav",
     "BS": "Dr. Bhawna Saxena", "DEP": "Dr. Deepika Varshney", "DL": "Dr. Dhanalakshmi",
     "DSR": "Dr. Dharamveer Singh Rajput", "DCH": "Dr. Diksha Chawla", "DPT": "Dr. Dipti Tripathy",
     "HN": "Dr. Hema N", "IC": "Dr. Indu Chawla", "JAG": "Dr. Jagriti", "JN": "Dr. Janardhan",
@@ -1076,6 +1076,7 @@ const scheduleF3 = [
     { day: 2, start: 9, duration: 2, title: "HS111", code: "240", teacher: "MEENAKSHI", type: "lab" },
     { day: 2, start: 11, duration: 1, title: "MA211", code: "126", teacher: "NEA", type: "tut" },
     { day: 2, start: 13, duration: 1, title: "CI211", code: "121", teacher: "SAP/ZUBAIR", type: "tut" },
+    { day: 2, start: 14, duration: 2, title: "CI271", code: "CL1", teacher: "MKS/SAP/SQM/SAMARTH JAIN", type: "lab" },
     { day: 3, start: 13, duration: 1, title: "MA211", code: "3092", teacher: "ASP", type: "lec" },
     { day: 3, start: 14, duration: 1, title: "PH211", code: "3092", teacher: "PKC", type: "lec" },
     { day: 3, start: 16, duration: 1, title: "CI211", code: "3092", teacher: "SAP", type: "lec" },
@@ -1083,8 +1084,7 @@ const scheduleF3 = [
     { day: 4, start: 10, duration: 1, title: "CI211", code: "3023", teacher: "SAP", type: "lec" },
     { day: 4, start: 11, duration: 1, title: "PH211", code: "116", teacher: "AMV", type: "tut" },
     { day: 4, start: 13, duration: 1, title: "PH211", code: "226", teacher: "PKC", type: "lec" },
-    { day: 4, start: 15, duration: 1, title: "HS111", code: "3092", teacher: "NFHSS1", type: "lec" },
-    { day: 4, start: 16, duration: 1, title: "CI211", code: "3092", teacher: "SAP", type: "lec" },
+    { day: 3, start: 15, duration: 1, title: "HS111", code: "3092", teacher: "NewFacultyHSS1", type: "lec" },
     { day: 5, start: 9, duration: 1, title: "CI211", code: "3028", teacher: "SAP", type: "lec" },
     { day: 5, start: 10, duration: 1, title: "MA211", code: "3028", teacher: "ASP", type: "lec" },
     { day: 5, start: 11, duration: 1, title: "PH211", code: "3028", teacher: "PKC", type: "lec" },
@@ -1097,20 +1097,20 @@ const scheduleF4 = [
     { day: 2, start: 9, duration: 2, title: "HS111", code: "246", teacher: "CHANDERSHEKHAR", type: "lab" },
     { day: 2, start: 11, duration: 1, title: "HS111", code: "3092", teacher: "NIC", type: "tut" },
     { day: 2, start: 13, duration: 1, title: "CI211", code: "127", teacher: "SAP/AVINASH", type: "tut" },
-    { day: 3, start: 9, duration: 3, title: "CI271", code: "CL1", teacher: "SAP/SGU/ARJ/BAIBHAV", type: "lab" },
+    { day: 3, start: 9, duration: 2, title: "CI271", code: "CL1", teacher: "SAP/SGU/ARJ/BAIBHAV", type: "lab" },
     { day: 3, start: 13, duration: 1, title: "MA211", code: "3092", teacher: "ASP", type: "lec" },
     { day: 3, start: 14, duration: 1, title: "PH211", code: "3092", teacher: "PKC", type: "lec" },
     { day: 3, start: 16, duration: 1, title: "CI211", code: "3092", teacher: "SAP", type: "lec" },
     { day: 4, start: 9, duration: 1, title: "MA211", code: "3023", teacher: "ASP", type: "lec" },
     { day: 4, start: 10, duration: 1, title: "CI211", code: "3023", teacher: "SAP", type: "lec" },
-    { day: 4, start: 11, duration: 1, title: "PH211", code: "126", teacher: "KAS", type: "tut" },
+    { day: 3, start: 11, duration: 1, title: "PH211", code: "126", teacher: "AMV", type: "tut" },
     { day: 4, start: 13, duration: 1, title: "PH211", code: "226", teacher: "PKC", type: "lec" },
-    { day: 4, start: 15, duration: 1, title: "HS111", code: "3092", teacher: "NFHSS1", type: "lec" },
-    { day: 4, start: 16, duration: 1, title: "CI211", code: "3092", teacher: "SAP", type: "lec" },
+    { day: 3, start: 15, duration: 1, title: "HS111", code: "3092", teacher: "NewFacultyHSS1", type: "lec" },
+    { day: 4, start: 14, duration: 1, title: "MA211", code: "121", teacher: "NEA", type: "tut" },
     { day: 5, start: 9, duration: 1, title: "CI211", code: "3028", teacher: "SAP", type: "lec" },
     { day: 5, start: 10, duration: 1, title: "MA211", code: "3028", teacher: "ASP", type: "lec" },
     { day: 5, start: 11, duration: 1, title: "PH211", code: "3028", teacher: "PKC", type: "lec" },
-    { day: 5, start: 13, duration: 1, title: "HS111", code: "3028", teacher: "NFHSS1", type: "lec" }
+    { day: 5, start: 13, duration: 1, title: "HS111", code: "3028", teacher: "NewFacultyHSS1", type: "lec" }
 ];
 
 const scheduleF5 = [
@@ -1748,6 +1748,7 @@ if (typeof module !== 'undefined' && module.exports) {
     // ... export other schedules if needed
   };
 }
+
 
 
 
