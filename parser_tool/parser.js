@@ -139,15 +139,15 @@ function parseCellString(rawText) {
 
     entries.forEach(entry => {
         // Match: BATCHES(SUBJECT)-ROOM/TEACHER
-        // Changed to make the teacher part optional to handle cases like (BT211)-FF7/
-        const match = entry.match(/^([^()]+)\s*\(\s*([^)]+)\s*\)\s*-?\s*(.+?)(?:\s*[\/;,]+\s*(.*))?$/i);     
+        // We use \/ as the separator between room and teacher to avoid splitting by comma prematurely
+        const match = entry.match(/^([^()]+)\s*\(\s*([^)]+)\s*\)\s*-?\s*([^/]+?)(?:\s*\/\s*(.*))?$/i);     
         
         if (!match) return;
 
         let batchPart = match[1].trim();
         let subjectPart = match[2].trim();
         let roomPart = match[3].trim();
-        let teacherPart = match[4] ? match[4].trim().replace(/\s*[,;]\s*/g, '/').replace(/\s*\/\s*/g, '/') : "TBA";
+        let teacherPart = match[4] ? match[4].trim() : "TBA";
         if (!teacherPart) teacherPart = "TBA";
         
         let type = 'LEC';
@@ -162,8 +162,52 @@ function parseCellString(rawText) {
         cleanBatches = cleanBatches.replace(/^[LTP](?=[A-Z])/i, '').trim();
 
         const rawBatchesList = expandBatches(cleanBatches);
+        const numBatches = rawBatchesList.length;
+
+        // --- Distribute Rooms ---
+        let roomPartsRaw = roomPart.split(',').map(s => s.trim()).filter(s => s);
+        let roomParts = [];
+        let lastRoomPrefix = '';
+        roomPartsRaw.forEach(r => {
+            let m = r.match(/^([A-Za-z]+)?(.*)$/);
+            if (m && m[1]) lastRoomPrefix = m[1];
+            roomParts.push((m && m[1] ? m[1] : lastRoomPrefix) + (m ? m[2] : r));
+        });
         
-        rawBatchesList.forEach(b => {
+        let chunkedRooms = [];
+        if (roomParts.length === 1) {
+            for (let i = 0; i < numBatches; i++) chunkedRooms.push(roomParts[0]);
+        } else if (roomParts.length >= numBatches && numBatches > 1) {
+            for (let i = 0; i < numBatches; i++) {
+                if (i === numBatches - 1) {
+                    chunkedRooms.push(roomParts.slice(i).join(','));
+                } else {
+                    chunkedRooms.push(roomParts[i]);
+                }
+            }
+        } else {
+            for (let i = 0; i < numBatches; i++) chunkedRooms.push(roomParts.join(','));
+        }
+
+        // --- Distribute Teachers ---
+        let teacherPartsRaw = teacherPart === "TBA" ? ["TBA"] : teacherPart.split(/[,/]+/).map(s => s.trim()).filter(s => s);
+        let chunkedTeachers = [];
+        if (teacherPartsRaw.length === 1) {
+            for (let i = 0; i < numBatches; i++) chunkedTeachers.push(teacherPartsRaw[0]);
+        } else if (teacherPartsRaw.length >= numBatches && numBatches > 1) {
+            const baseSize = Math.floor(teacherPartsRaw.length / numBatches);
+            const remainder = teacherPartsRaw.length % numBatches;
+            let offset = 0;
+            for (let i = 0; i < numBatches; i++) {
+                let size = baseSize + (i >= numBatches - remainder ? 1 : 0);
+                chunkedTeachers.push(teacherPartsRaw.slice(offset, offset + size).join(','));
+                offset += size;
+            }
+        } else {
+            for (let i = 0; i < numBatches; i++) chunkedTeachers.push(teacherPartsRaw.join(','));
+        }
+        
+        rawBatchesList.forEach((b, index) => {
             let finalBatch = b.trim().toUpperCase();
             
             // VALIDATION: batch must match pattern like A1, B12, C3, D1, G1, etc.
@@ -174,8 +218,8 @@ function parseCellString(rawText) {
                 rawBatch: finalBatch,
                 type: type,
                 subject: subjectPart,
-                room: roomPart,
-                teacher: teacherPart
+                room: chunkedRooms[index] || roomPart,
+                teacher: chunkedTeachers[index] || teacherPart
             });
         });
     });

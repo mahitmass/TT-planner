@@ -376,8 +376,8 @@
     "batch": "A3",
     "type": "LEC",
     "subject": "EC214",
-    "room": "/G8RK",
-    "teacher": "TBA"
+    "room": "-",
+    "teacher": "G8RK"
   },
   {
     "day": 1,
@@ -386,8 +386,8 @@
     "batch": "A4",
     "type": "LEC",
     "subject": "EC214",
-    "room": "/G8RK",
-    "teacher": "TBA"
+    "room": "-",
+    "teacher": "G8RK"
   },
   {
     "day": 1,
@@ -877,7 +877,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "G7",
-    "teacher": "SOC/POC"
+    "teacher": "SOC,POC"
   },
   {
     "day": 1,
@@ -887,7 +887,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "G7",
-    "teacher": "SOC/POC"
+    "teacher": "SOC,POC"
   },
   {
     "day": 1,
@@ -897,7 +897,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "G7",
-    "teacher": "SOC/POC"
+    "teacher": "SOC,POC"
   },
   {
     "day": 1,
@@ -1617,7 +1617,7 @@
     "type": "LAB",
     "subject": "CI371",
     "room": "CL21",
-    "teacher": "LM/KRI"
+    "teacher": "LM,KRI"
   },
   {
     "day": 1,
@@ -1647,7 +1647,7 @@
     "type": "LAB",
     "subject": "CI371",
     "room": "CL22",
-    "teacher": "KJ/VRN"
+    "teacher": "KJ,VRN"
   },
   {
     "day": 1,
@@ -1657,7 +1657,7 @@
     "type": "LAB",
     "subject": "B15CS214",
     "room": "CL23",
-    "teacher": "PAG/JAT"
+    "teacher": "PAG,JAT"
   },
   {
     "day": 1,
@@ -1667,7 +1667,7 @@
     "type": "LAB",
     "subject": "B15CS214",
     "room": "CL08",
-    "teacher": "PU/SAM"
+    "teacher": "PU,SAM"
   },
   {
     "day": 1,
@@ -1677,7 +1677,7 @@
     "type": "LAB",
     "subject": "EC212",
     "room": "BPL",
-    "teacher": "ABY/TA13"
+    "teacher": "ABY,TA13"
   },
   {
     "day": 1,
@@ -1687,7 +1687,7 @@
     "type": "LAB",
     "subject": "15EC215",
     "room": "CML",
-    "teacher": "AGO/AKS"
+    "teacher": "AGO,AKS"
   },
   {
     "day": 1,
@@ -1697,7 +1697,7 @@
     "type": "LAB",
     "subject": "15EC211",
     "room": "EDC",
-    "teacher": "APN/AJK"
+    "teacher": "APN,AJK"
   },
   {
     "day": 1,
@@ -1707,7 +1707,7 @@
     "type": "LAB",
     "subject": "CI371",
     "room": "CL15",
-    "teacher": "AW/KRI"
+    "teacher": "AW,KRI"
   },
   {
     "day": 1,
@@ -1717,7 +1717,7 @@
     "type": "LAB",
     "subject": "B15CS215",
     "room": "CL04",
-    "teacher": "ASY/UMF"
+    "teacher": "ASY,UMF"
   },
   {
     "day": 1,
@@ -1727,7 +1727,7 @@
     "type": "LAB",
     "subject": "CI371",
     "room": "CL16",
-    "teacher": "LM/MKT"
+    "teacher": "LM,MKT"
   },
   {
     "day": 1,
@@ -1737,7 +1737,7 @@
     "type": "LAB",
     "subject": "B15CS215",
     "room": "CL16",
-    "teacher": "KRL/ISH"
+    "teacher": "KRL,ISH"
   },
   {
     "day": 1,
@@ -1747,7 +1747,7 @@
     "type": "LAB",
     "subject": "CI371",
     "room": "CL17",
-    "teacher": "SUD/SHG"
+    "teacher": "SUD,SHG"
   },
   {
     "day": 1,
@@ -1767,7 +1767,7 @@
     "type": "LAB",
     "subject": "EC214",
     "room": "MODLAB",
-    "teacher": "SB/TA4"
+    "teacher": "SB,TA4"
   },
   {
     "day": 1,
@@ -1787,7 +1787,7 @@
     "type": "LAB",
     "subject": "15EC215",
     "room": "CML",
-    "teacher": "AGO/SHI"
+    "teacher": "AGO,SHI"
   },
   {
     "day": 1,
@@ -1797,7 +1797,7 @@
     "type": "LAB",
     "subject": "15EC211",
     "room": "EDC",
-    "teacher": "SHS/NF6"
+    "teacher": "SHS,NF6"
   },
   {
     "day": 1,
@@ -1827,7 +1827,7 @@
     "type": "LAB",
     "subject": "B15CS213",
     "room": "CL18",
-    "teacher": "19/SON/DEP/ABC/ISH"
+    "teacher": "SON,DEP"
   },
   {
     "day": 1,
@@ -1836,8 +1836,8 @@
     "batch": "B2",
     "type": "LAB",
     "subject": "B15CS213",
-    "room": "CL18",
-    "teacher": "19/SON/DEP/ABC/ISH"
+    "room": "CL19",
+    "teacher": "ABC,ISH"
   },
   {
     "day": 1,
@@ -1847,7 +1847,7 @@
     "type": "LAB",
     "subject": "CI371",
     "room": "CL20",
-    "teacher": "VRN/PRV"
+    "teacher": "VRN,PRV"
   },
   {
     "day": 1,
@@ -1857,7 +1857,7 @@
     "type": "LAB",
     "subject": "CI371",
     "room": "CL21",
-    "teacher": "KJ/RJM"
+    "teacher": "KJ,RJM"
   },
   {
     "day": 2,
@@ -2647,7 +2647,7 @@
     "type": "LEC",
     "subject": "15BT211",
     "room": "LT3",
-    "teacher": "GMA/RAC"
+    "teacher": "GMA,RAC"
   },
   {
     "day": 2,
@@ -2657,7 +2657,7 @@
     "type": "LEC",
     "subject": "15BT211",
     "room": "LT3",
-    "teacher": "GMA/RAC"
+    "teacher": "GMA,RAC"
   },
   {
     "day": 2,
@@ -2667,7 +2667,7 @@
     "type": "LEC",
     "subject": "15BT211",
     "room": "LT3",
-    "teacher": "GMA/RAC"
+    "teacher": "GMA,RAC"
   },
   {
     "day": 2,
@@ -2677,7 +2677,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "LT3",
-    "teacher": "SOC/POC"
+    "teacher": "SOC,POC"
   },
   {
     "day": 2,
@@ -2687,7 +2687,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "LT3",
-    "teacher": "SOC/POC"
+    "teacher": "SOC,POC"
   },
   {
     "day": 2,
@@ -2697,7 +2697,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "LT3",
-    "teacher": "SOC/POC"
+    "teacher": "SOC,POC"
   },
   {
     "day": 2,
@@ -3127,7 +3127,7 @@
     "type": "LAB",
     "subject": "15EC211",
     "room": "EDC",
-    "teacher": "RRJ/NF3"
+    "teacher": "RRJ,NF3"
   },
   {
     "day": 2,
@@ -3156,8 +3156,8 @@
     "batch": "C3",
     "type": "TUT",
     "subject": "BT313",
-    "room": "TS11SOC",
-    "teacher": "POC"
+    "room": "TS11SOC,POC",
+    "teacher": "TBA"
   },
   {
     "day": 2,
@@ -3177,7 +3177,7 @@
     "type": "LAB",
     "subject": "EC214",
     "room": "MODLAB",
-    "teacher": "VK/TA11"
+    "teacher": "VK,TA11"
   },
   {
     "day": 2,
@@ -3207,7 +3207,7 @@
     "type": "TUT",
     "subject": "15BT211",
     "room": "TS13",
-    "teacher": "GMA/RAC"
+    "teacher": "GMA,RAC"
   },
   {
     "day": 2,
@@ -3247,7 +3247,7 @@
     "type": "LAB",
     "subject": "B15CS213",
     "room": "CL03",
-    "teacher": "ATI/ALK"
+    "teacher": "ATI,ALK"
   },
   {
     "day": 2,
@@ -3257,7 +3257,7 @@
     "type": "LAB",
     "subject": "B15CS213",
     "room": "CL01",
-    "teacher": "02/IC/AA/ISH"
+    "teacher": "IC"
   },
   {
     "day": 2,
@@ -3266,8 +3266,8 @@
     "batch": "B14",
     "type": "LAB",
     "subject": "B15CS213",
-    "room": "CL01",
-    "teacher": "02/IC/AA/ISH"
+    "room": "CL02",
+    "teacher": "AA,ISH"
   },
   {
     "day": 2,
@@ -3277,7 +3277,7 @@
     "type": "LAB",
     "subject": "EC214",
     "room": "MODLAB",
-    "teacher": "RIG/TA3"
+    "teacher": "RIG,TA3"
   },
   {
     "day": 2,
@@ -3287,7 +3287,7 @@
     "type": "LAB",
     "subject": "25B25EC211",
     "room": "CML",
-    "teacher": "RS/NF8"
+    "teacher": "RS,NF8"
   },
   {
     "day": 2,
@@ -3297,7 +3297,7 @@
     "type": "LAB",
     "subject": "15EC215",
     "room": "CML",
-    "teacher": "SCH/AKS"
+    "teacher": "SCH,AKS"
   },
   {
     "day": 2,
@@ -3307,7 +3307,7 @@
     "type": "LAB",
     "subject": "B15CS213",
     "room": "CL24",
-    "teacher": "ATI/ALK"
+    "teacher": "ATI,ALK"
   },
   {
     "day": 2,
@@ -3317,7 +3317,7 @@
     "type": "LAB",
     "subject": "B15CS215",
     "room": "CL18",
-    "teacher": "19/SLK/UMF/ISH/POS"
+    "teacher": "SLK,UMF"
   },
   {
     "day": 2,
@@ -3326,8 +3326,8 @@
     "batch": "B6",
     "type": "LAB",
     "subject": "B15CS215",
-    "room": "CL18",
-    "teacher": "19/SLK/UMF/ISH/POS"
+    "room": "CL19",
+    "teacher": "ISH,POS"
   },
   {
     "day": 2,
@@ -3337,7 +3337,7 @@
     "type": "LAB",
     "subject": "B15CS213",
     "room": "CL07",
-    "teacher": "DEP/AYS"
+    "teacher": "DEP,AYS"
   },
   {
     "day": 2,
@@ -3347,7 +3347,7 @@
     "type": "LAB",
     "subject": "B15CS213",
     "room": "CL19",
-    "teacher": "AA/SON"
+    "teacher": "AA,SON"
   },
   {
     "day": 2,
@@ -3367,7 +3367,7 @@
     "type": "LAB",
     "subject": "CI371",
     "room": "CL20",
-    "teacher": "AW/KRI"
+    "teacher": "AW,KRI"
   },
   {
     "day": 2,
@@ -3387,7 +3387,7 @@
     "type": "LAB",
     "subject": "CI371",
     "room": "CL18",
-    "teacher": "LM/VIB"
+    "teacher": "LM,VIB"
   },
   {
     "day": 2,
@@ -3407,7 +3407,7 @@
     "type": "LAB",
     "subject": "B15CS215",
     "room": "CL22",
-    "teacher": "23/SHB/ISH/DEV/POS/SHY"
+    "teacher": "SHB,ISH"
   },
   {
     "day": 2,
@@ -3416,8 +3416,8 @@
     "batch": "B10",
     "type": "LAB",
     "subject": "B15CS215",
-    "room": "CL22",
-    "teacher": "23/SHB/ISH/DEV/POS/SHY"
+    "room": "CL23",
+    "teacher": "DEV,POS,SHY"
   },
   {
     "day": 2,
@@ -3427,7 +3427,7 @@
     "type": "LAB",
     "subject": "EC212",
     "room": "BPL",
-    "teacher": "ABY/TA13"
+    "teacher": "ABY,TA13"
   },
   {
     "day": 2,
@@ -3437,7 +3437,7 @@
     "type": "LAB",
     "subject": "B15CS214",
     "room": "CL20",
-    "teacher": "PU/SAM"
+    "teacher": "PU,SAM"
   },
   {
     "day": 2,
@@ -4187,7 +4187,7 @@
     "type": "LEC",
     "subject": "BT211",
     "room": "G9",
-    "teacher": "RPS/KS"
+    "teacher": "RPS,KS"
   },
   {
     "day": 3,
@@ -4197,7 +4197,7 @@
     "type": "LEC",
     "subject": "BT211",
     "room": "G9",
-    "teacher": "RPS/KS"
+    "teacher": "RPS,KS"
   },
   {
     "day": 3,
@@ -4207,7 +4207,7 @@
     "type": "LEC",
     "subject": "BT211",
     "room": "G9",
-    "teacher": "RPS/KS"
+    "teacher": "RPS,KS"
   },
   {
     "day": 3,
@@ -4227,7 +4227,7 @@
     "type": "LEC",
     "subject": "15BT211",
     "room": "LT3",
-    "teacher": "GMA/RAC"
+    "teacher": "GMA,RAC"
   },
   {
     "day": 3,
@@ -4237,7 +4237,7 @@
     "type": "LEC",
     "subject": "15BT211",
     "room": "LT3",
-    "teacher": "GMA/RAC"
+    "teacher": "GMA,RAC"
   },
   {
     "day": 3,
@@ -4247,7 +4247,7 @@
     "type": "LEC",
     "subject": "15BT211",
     "room": "LT3",
-    "teacher": "GMA/RAC"
+    "teacher": "GMA,RAC"
   },
   {
     "day": 3,
@@ -4287,7 +4287,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "LT3",
-    "teacher": "SOC/POC"
+    "teacher": "SOC,POC"
   },
   {
     "day": 3,
@@ -4297,7 +4297,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "LT3",
-    "teacher": "SOC/POC"
+    "teacher": "SOC,POC"
   },
   {
     "day": 3,
@@ -4307,7 +4307,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "LT3",
-    "teacher": "SOC/POC"
+    "teacher": "SOC,POC"
   },
   {
     "day": 3,
@@ -4917,7 +4917,7 @@
     "type": "LAB",
     "subject": "B15CS214",
     "room": "CL11",
-    "teacher": "SAM/PU"
+    "teacher": "SAM,PU"
   },
   {
     "day": 3,
@@ -4957,7 +4957,7 @@
     "type": "LAB",
     "subject": "CI371",
     "room": "CL09",
-    "teacher": "LM/MON"
+    "teacher": "LM,MON"
   },
   {
     "day": 3,
@@ -4967,7 +4967,7 @@
     "type": "LAB",
     "subject": "EC214",
     "room": "MODLAB",
-    "teacher": "SB/TA2"
+    "teacher": "SB,TA2"
   },
   {
     "day": 3,
@@ -4977,7 +4977,7 @@
     "type": "LAB",
     "subject": "CI371",
     "room": "CL10",
-    "teacher": "RJM/SUD"
+    "teacher": "RJM,SUD"
   },
   {
     "day": 3,
@@ -4987,7 +4987,7 @@
     "type": "LAB",
     "subject": "15EC215",
     "room": "CML",
-    "teacher": "RMD/SHI"
+    "teacher": "RMD,SHI"
   },
   {
     "day": 3,
@@ -4997,7 +4997,7 @@
     "type": "LAB",
     "subject": "EC214",
     "room": "MODLAB",
-    "teacher": "RIG/TA11"
+    "teacher": "RIG,TA11"
   },
   {
     "day": 3,
@@ -5007,7 +5007,7 @@
     "type": "LAB",
     "subject": "25B55EC211",
     "room": "ADE",
-    "teacher": "MTO/HIM"
+    "teacher": "MTO,HIM"
   },
   {
     "day": 3,
@@ -5017,7 +5017,7 @@
     "type": "LAB",
     "subject": "15EC211",
     "room": "EDC",
-    "teacher": "RSB/NF6"
+    "teacher": "RSB,NF6"
   },
   {
     "day": 3,
@@ -5027,7 +5027,7 @@
     "type": "LAB",
     "subject": "15EC215",
     "room": "CML",
-    "teacher": "JAS/JOY"
+    "teacher": "JAS,JOY"
   },
   {
     "day": 3,
@@ -5037,7 +5037,7 @@
     "type": "LAB",
     "subject": "EC214",
     "room": "SPL",
-    "teacher": "NF3/TA17"
+    "teacher": "NF3,TA17"
   },
   {
     "day": 3,
@@ -5047,7 +5047,7 @@
     "type": "LAB",
     "subject": "CI371",
     "room": "CL09",
-    "teacher": "10/MKT/VRN/KRI/MON/AW"
+    "teacher": "MKT,VRN"
   },
   {
     "day": 3,
@@ -5056,8 +5056,8 @@
     "batch": "B10",
     "type": "LAB",
     "subject": "CI371",
-    "room": "CL09",
-    "teacher": "10/MKT/VRN/KRI/MON/AW"
+    "room": "CL10",
+    "teacher": "KRI,MON,AW"
   },
   {
     "day": 3,
@@ -5067,7 +5067,7 @@
     "type": "LAB",
     "subject": "25EC211",
     "room": "ADE",
-    "teacher": "MNA/NF5"
+    "teacher": "MNA,NF5"
   },
   {
     "day": 3,
@@ -5077,7 +5077,7 @@
     "type": "LAB",
     "subject": "EC214",
     "room": "MODLAB",
-    "teacher": "VK/TA11"
+    "teacher": "VK,TA11"
   },
   {
     "day": 3,
@@ -5087,7 +5087,7 @@
     "type": "LAB",
     "subject": "15EC215",
     "room": "CML",
-    "teacher": "SCH/AKS"
+    "teacher": "SCH,AKS"
   },
   {
     "day": 3,
@@ -5097,7 +5097,7 @@
     "type": "LAB",
     "subject": "15EC211",
     "room": "EDC",
-    "teacher": "AJK/APN"
+    "teacher": "AJK,APN"
   },
   {
     "day": 4,
@@ -5726,8 +5726,8 @@
     "batch": "A3",
     "type": "LEC",
     "subject": "B11EC211",
-    "room": "/AJK",
-    "teacher": "TBA"
+    "room": "-",
+    "teacher": "AJK"
   },
   {
     "day": 4,
@@ -5736,8 +5736,8 @@
     "batch": "A4",
     "type": "LEC",
     "subject": "B11EC211",
-    "room": "/AJK",
-    "teacher": "TBA"
+    "room": "-",
+    "teacher": "AJK"
   },
   {
     "day": 4,
@@ -5787,7 +5787,7 @@
     "type": "LEC",
     "subject": "15BT211",
     "room": "FF7",
-    "teacher": "GMA/RAC"
+    "teacher": "GMA,RAC"
   },
   {
     "day": 4,
@@ -5797,7 +5797,7 @@
     "type": "LEC",
     "subject": "15BT211",
     "room": "FF7",
-    "teacher": "GMA/RAC"
+    "teacher": "GMA,RAC"
   },
   {
     "day": 4,
@@ -5807,7 +5807,7 @@
     "type": "LEC",
     "subject": "15BT211",
     "room": "FF7",
-    "teacher": "GMA/RAC"
+    "teacher": "GMA,RAC"
   },
   {
     "day": 4,
@@ -5857,7 +5857,7 @@
     "type": "LEC",
     "subject": "BT211",
     "room": "G7",
-    "teacher": "RPS/KS"
+    "teacher": "RPS,KS"
   },
   {
     "day": 4,
@@ -5867,7 +5867,7 @@
     "type": "LEC",
     "subject": "BT211",
     "room": "G7",
-    "teacher": "RPS/KS"
+    "teacher": "RPS,KS"
   },
   {
     "day": 4,
@@ -5877,7 +5877,7 @@
     "type": "LEC",
     "subject": "BT211",
     "room": "G7",
-    "teacher": "RPS/KS"
+    "teacher": "RPS,KS"
   },
   {
     "day": 4,
@@ -5927,7 +5927,7 @@
     "type": "TUT",
     "subject": "15BT211",
     "room": "TS16",
-    "teacher": "GMA/RAC"
+    "teacher": "GMA,RAC"
   },
   {
     "day": 4,
@@ -6317,7 +6317,7 @@
     "type": "TUT",
     "subject": "BT313",
     "room": "TS13",
-    "teacher": "SOC/POC"
+    "teacher": "SOC,POC"
   },
   {
     "day": 4,
@@ -6327,7 +6327,7 @@
     "type": "TUT",
     "subject": "15BT211",
     "room": "TS16",
-    "teacher": "GMA/RAC"
+    "teacher": "GMA,RAC"
   },
   {
     "day": 4,
@@ -6347,7 +6347,7 @@
     "type": "LAB",
     "subject": "15EC215",
     "room": "CML",
-    "teacher": "JAS/JOY"
+    "teacher": "JAS,JOY"
   },
   {
     "day": 4,
@@ -6357,7 +6357,7 @@
     "type": "LAB",
     "subject": "25B25EC211",
     "room": "CML",
-    "teacher": "RS/NF8"
+    "teacher": "RS,NF8"
   },
   {
     "day": 4,
@@ -6367,7 +6367,7 @@
     "type": "LAB",
     "subject": "15EC211",
     "room": "EDC",
-    "teacher": "GK/RSB"
+    "teacher": "GK,RSB"
   },
   {
     "day": 4,
@@ -6377,7 +6377,7 @@
     "type": "LAB",
     "subject": "B17CI372",
     "room": "CL21",
-    "teacher": "KJ/RTK"
+    "teacher": "KJ,RTK"
   },
   {
     "day": 4,
@@ -6387,7 +6387,7 @@
     "type": "LAB",
     "subject": "15EC211",
     "room": "EDC",
-    "teacher": "AJK/APN"
+    "teacher": "AJK,APN"
   },
   {
     "day": 4,
@@ -6397,7 +6397,7 @@
     "type": "LAB",
     "subject": "B15CS214",
     "room": "CL11",
-    "teacher": "MAY/AKT"
+    "teacher": "MAY,AKT"
   },
   {
     "day": 4,
@@ -6407,7 +6407,7 @@
     "type": "LAB",
     "subject": "B17CI372",
     "room": "CL22",
-    "teacher": "ATI/KAS"
+    "teacher": "ATI,KAS"
   },
   {
     "day": 4,
@@ -6417,7 +6417,7 @@
     "type": "LAB",
     "subject": "EC214",
     "room": "MODLAB",
-    "teacher": "RK/TA7"
+    "teacher": "RK,TA7"
   },
   {
     "day": 4,
@@ -6427,7 +6427,7 @@
     "type": "LAB",
     "subject": "B15CS214",
     "room": "CL07",
-    "teacher": "HN/KRR"
+    "teacher": "HN,KRR"
   },
   {
     "day": 4,
@@ -6437,7 +6437,7 @@
     "type": "LAB",
     "subject": "B15CS215",
     "room": "CL15",
-    "teacher": "16/PAG/ASI/GAS/DEV"
+    "teacher": "PAG,ASI"
   },
   {
     "day": 4,
@@ -6446,8 +6446,8 @@
     "batch": "G4",
     "type": "LAB",
     "subject": "B15CS215",
-    "room": "CL15",
-    "teacher": "16/PAG/ASI/GAS/DEV"
+    "room": "CL16",
+    "teacher": "GAS,DEV"
   },
   {
     "day": 4,
@@ -6457,7 +6457,7 @@
     "type": "LAB",
     "subject": "B15CS215",
     "room": "CL22",
-    "teacher": "23/SHB/SHY/DEV"
+    "teacher": "SHB"
   },
   {
     "day": 4,
@@ -6466,8 +6466,8 @@
     "batch": "B12",
     "type": "LAB",
     "subject": "B15CS215",
-    "room": "CL22",
-    "teacher": "23/SHB/SHY/DEV"
+    "room": "CL23",
+    "teacher": "SHY,DEV"
   },
   {
     "day": 4,
@@ -6477,7 +6477,7 @@
     "type": "LAB",
     "subject": "B15CS214",
     "room": "CL21",
-    "teacher": "AKT/BHA"
+    "teacher": "AKT,BHA"
   },
   {
     "day": 4,
@@ -6497,7 +6497,7 @@
     "type": "LAB",
     "subject": "B15CS213",
     "room": "CL17",
-    "teacher": "18/RTK/ALK/IC/ABC/ISH"
+    "teacher": "RTK,ALK"
   },
   {
     "day": 4,
@@ -6506,8 +6506,8 @@
     "batch": "B8",
     "type": "LAB",
     "subject": "B15CS213",
-    "room": "CL17",
-    "teacher": "18/RTK/ALK/IC/ABC/ISH"
+    "room": "CL18",
+    "teacher": "IC,ABC,ISH"
   },
   {
     "day": 4,
@@ -7407,7 +7407,7 @@
     "type": "LEC",
     "subject": "BT211",
     "room": "G9",
-    "teacher": "RPS/KS"
+    "teacher": "RPS,KS"
   },
   {
     "day": 5,
@@ -7417,7 +7417,7 @@
     "type": "LEC",
     "subject": "BT211",
     "room": "G9",
-    "teacher": "RPS/KS"
+    "teacher": "RPS,KS"
   },
   {
     "day": 5,
@@ -7427,7 +7427,7 @@
     "type": "LEC",
     "subject": "BT211",
     "room": "G9",
-    "teacher": "RPS/KS"
+    "teacher": "RPS,KS"
   },
   {
     "day": 5,
@@ -7557,7 +7557,7 @@
     "type": "LAB",
     "subject": "B15CS215",
     "room": "CL04",
-    "teacher": "SLK/KRI"
+    "teacher": "SLK,KRI"
   },
   {
     "day": 5,
@@ -7567,7 +7567,7 @@
     "type": "LAB",
     "subject": "B15CS215",
     "room": "CL07",
-    "teacher": "ASY/ASI"
+    "teacher": "ASY,ASI"
   },
   {
     "day": 5,
@@ -7597,7 +7597,7 @@
     "type": "LAB",
     "subject": "CI372",
     "room": "CL08",
-    "teacher": "KJ/RTK"
+    "teacher": "KJ,RTK"
   },
   {
     "day": 5,
@@ -7607,7 +7607,7 @@
     "type": "LAB",
     "subject": "B15CS214",
     "room": "CL05",
-    "teacher": "06/JAG/HN/PRK/BHA/JAT"
+    "teacher": "JAG,HN"
   },
   {
     "day": 5,
@@ -7616,8 +7616,8 @@
     "batch": "B2",
     "type": "LAB",
     "subject": "B15CS214",
-    "room": "CL05",
-    "teacher": "06/JAG/HN/PRK/BHA/JAT"
+    "room": "CL06",
+    "teacher": "PRK,BHA,JAT"
   },
   {
     "day": 5,
@@ -7647,7 +7647,7 @@
     "type": "LAB",
     "subject": "CI372",
     "room": "CL16",
-    "teacher": "ATI/KAS"
+    "teacher": "ATI,KAS"
   },
   {
     "day": 5,
@@ -7657,7 +7657,7 @@
     "type": "LAB",
     "subject": "25B55EC211",
     "room": "ADE",
-    "teacher": "MTO/HIM"
+    "teacher": "MTO,HIM"
   },
   {
     "day": 5,
@@ -7667,7 +7667,7 @@
     "type": "LAB",
     "subject": "B15CS214",
     "room": "CL23",
-    "teacher": "24/PAG/HN/MAY/PRK/BHA"
+    "teacher": "PAG,HN"
   },
   {
     "day": 5,
@@ -7676,8 +7676,8 @@
     "batch": "B8",
     "type": "LAB",
     "subject": "B15CS214",
-    "room": "CL23",
-    "teacher": "24/PAG/HN/MAY/PRK/BHA"
+    "room": "CL24",
+    "teacher": "MAY,PRK,BHA"
   },
   {
     "day": 5,
@@ -7687,7 +7687,7 @@
     "type": "LAB",
     "subject": "EC214",
     "room": "MODLAB",
-    "teacher": "RK/TA9"
+    "teacher": "RK,TA9"
   },
   {
     "day": 5,
@@ -7697,7 +7697,7 @@
     "type": "LAB",
     "subject": "EC214",
     "room": "MODLAB",
-    "teacher": "VK/TA11"
+    "teacher": "VK,TA11"
   },
   {
     "day": 5,
@@ -7707,7 +7707,7 @@
     "type": "LAB",
     "subject": "15EC215",
     "room": "CML",
-    "teacher": "AGO/JOY"
+    "teacher": "AGO,JOY"
   },
   {
     "day": 5,
@@ -7717,7 +7717,7 @@
     "type": "LAB",
     "subject": "15EC211",
     "room": "EDC",
-    "teacher": "GK/RSB"
+    "teacher": "GK,RSB"
   },
   {
     "day": 5,
@@ -7727,7 +7727,7 @@
     "type": "LAB",
     "subject": "15EC211",
     "room": "EDC",
-    "teacher": "SHS/NF6"
+    "teacher": "SHS,NF6"
   },
   {
     "day": 5,
@@ -7737,7 +7737,7 @@
     "type": "LAB",
     "subject": "B15CS213",
     "room": "CL01",
-    "teacher": "SHR/RTK"
+    "teacher": "SHR,RTK"
   },
   {
     "day": 5,
@@ -7747,7 +7747,7 @@
     "type": "LAB",
     "subject": "25EC211",
     "room": "ADE",
-    "teacher": "MNA/NF5"
+    "teacher": "MNA,NF5"
   },
   {
     "day": 5,
@@ -7757,7 +7757,7 @@
     "type": "LAB",
     "subject": "B15CS213",
     "room": "CL21",
-    "teacher": "SHR/ABC"
+    "teacher": "SHR,ABC"
   },
   {
     "day": 5,
@@ -7767,7 +7767,7 @@
     "type": "LAB",
     "subject": "EC214",
     "room": "MODLAB",
-    "teacher": "SB/TA12"
+    "teacher": "SB,TA12"
   },
   {
     "day": 5,
@@ -7777,7 +7777,7 @@
     "type": "LAB",
     "subject": "CS214",
     "room": "CL02",
-    "teacher": "AKT/KRR"
+    "teacher": "AKT,KRR"
   },
   {
     "day": 5,
@@ -7787,7 +7787,7 @@
     "type": "LAB",
     "subject": "CI371",
     "room": "CL13",
-    "teacher": "14/NSA/SHG/VIB/RJM/SUD"
+    "teacher": "NSA,SHG"
   },
   {
     "day": 5,
@@ -7796,8 +7796,8 @@
     "batch": "B6",
     "type": "LAB",
     "subject": "CI371",
-    "room": "CL13",
-    "teacher": "14/NSA/SHG/VIB/RJM/SUD"
+    "room": "CL14",
+    "teacher": "VIB,RJM,SUD"
   },
   {
     "day": 5,
@@ -7807,7 +7807,7 @@
     "type": "LAB",
     "subject": "15EC215",
     "room": "CML",
-    "teacher": "RMD/SHI"
+    "teacher": "RMD,SHI"
   },
   {
     "day": 6,
@@ -8077,7 +8077,7 @@
     "type": "TUT",
     "subject": "BT313",
     "room": "TS13",
-    "teacher": "SOC/POC"
+    "teacher": "SOC,POC"
   },
   {
     "day": 6,
@@ -8087,7 +8087,7 @@
     "type": "LAB",
     "subject": "B15CS214",
     "room": "CL10",
-    "teacher": "AKT/JAG"
+    "teacher": "AKT,JAG"
   },
   {
     "day": 6,
@@ -8097,7 +8097,7 @@
     "type": "LAB",
     "subject": "B15CS215",
     "room": "CL19",
-    "teacher": "20/PAG/KRL/KRI/POS"
+    "teacher": "PAG,KRL"
   },
   {
     "day": 6,
@@ -8106,8 +8106,8 @@
     "batch": "B4",
     "type": "LAB",
     "subject": "B15CS215",
-    "room": "CL19",
-    "teacher": "20/PAG/KRL/KRI/POS"
+    "room": "CL20",
+    "teacher": "KRI,POS"
   },
   {
     "day": 6,
@@ -8117,7 +8117,7 @@
     "type": "LAB",
     "subject": "B15CS215",
     "room": "CL06",
-    "teacher": "07/SHB/GAS/ASI/SHY"
+    "teacher": "SHB,GAS"
   },
   {
     "day": 6,
@@ -8126,8 +8126,8 @@
     "batch": "G2",
     "type": "LAB",
     "subject": "B15CS215",
-    "room": "CL06",
-    "teacher": "07/SHB/GAS/ASI/SHY"
+    "room": "CL07",
+    "teacher": "ASI,SHY"
   },
   {
     "day": 6,
@@ -8137,7 +8137,7 @@
     "type": "LAB",
     "subject": "B15CS213",
     "room": "CL11",
-    "teacher": "IC/AA"
+    "teacher": "IC,AA"
   },
   {
     "day": 6,
@@ -8147,7 +8147,7 @@
     "type": "LAB",
     "subject": "15EC215",
     "room": "CML",
-    "teacher": "RMD/JAS"
+    "teacher": "RMD,JAS"
   },
   {
     "day": 6,
@@ -8157,7 +8157,7 @@
     "type": "LAB",
     "subject": "15EC215",
     "room": "CML",
-    "teacher": "SCH/AKS"
+    "teacher": "SCH,AKS"
   },
   {
     "day": 6,
@@ -8167,7 +8167,7 @@
     "type": "LAB",
     "subject": "15EC211",
     "room": "EDC",
-    "teacher": "GK/RSB"
+    "teacher": "GK,RSB"
   },
   {
     "day": 6,
@@ -8177,7 +8177,7 @@
     "type": "LAB",
     "subject": "15EC211",
     "room": "EDC",
-    "teacher": "SHS/NF3"
+    "teacher": "SHS,NF3"
   },
   {
     "day": 6,
@@ -8187,7 +8187,7 @@
     "type": "LAB",
     "subject": "EC214",
     "room": "MODLAB",
-    "teacher": "RK/TA20"
+    "teacher": "RK,TA20"
   },
   {
     "day": 6,
@@ -8197,7 +8197,7 @@
     "type": "LAB",
     "subject": "EC214",
     "room": "MODLAB",
-    "teacher": "RIG/TA15"
+    "teacher": "RIG,TA15"
   },
   {
     "day": 6,
@@ -8207,7 +8207,7 @@
     "type": "LAB",
     "subject": "CI371",
     "room": "CL21",
-    "teacher": "NSA/VIB"
+    "teacher": "NSA,VIB"
   },
   {
     "day": 6,
@@ -8217,6 +8217,6 @@
     "type": "LAB",
     "subject": "CI371",
     "room": "CL22",
-    "teacher": "SHG/MON"
+    "teacher": "SHG,MON"
   }
 ]

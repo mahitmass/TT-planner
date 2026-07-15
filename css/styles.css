@@ -8,13 +8,13 @@
   --accent-color: #d8b4fe;
   --accent-hover: #c084fc;
   --header-bg: rgba(20, 20, 20, 0.75);
-   
+
   /* Slot Type Markers */
   --lec-marker: #90caf9;
   --tut-marker: #ffcc80;
   --lab-marker: #ef9a9a;
-  --break-marker: #424242; 
-   
+  --break-marker: #424242;
+
   --active-glow: 0 0 15px rgba(187, 134, 252, 0.5);
 
   /* Break Card Colors */
@@ -46,8 +46,8 @@
 }
 
 /* --- GLOBAL --- */
-* { 
-  box-sizing: border-box; 
+* {
+  box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   margin: 0;
   padding: 0;
@@ -86,47 +86,50 @@ header {
 }
 
 .brand-container {
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   gap: 15px;
 
-  padding-right: 12px;                    /* Space between "Planner" and the line */
-  border-right: 2px solid var(--border-color); /* The vertical divider line */
-  margin-right: 5px;                      /* Tiny gap after the line */
+  padding-right: 12px;
+  /* Space between "Planner" and the line */
+  border-right: 2px solid var(--border-color);
+  /* The vertical divider line */
+  margin-right: 5px;
+  /* Tiny gap after the line */
   height: 45px;
 }
 
 .app-logo {
-  height: 45px; 
-  width: 45px; 
-  border-radius: 8px; 
-  object-fit: cover; 
+  height: 45px;
+  width: 45px;
+  border-radius: 8px;
+  object-fit: cover;
   border: 1px solid var(--border-color);
   transition: border-color 0.3s ease;
 }
 
 h1 {
-  font-weight: 800; 
-  font-size: 1.3rem; 
+  font-weight: 800;
+  font-size: 1.3rem;
   margin: 0;
   background: linear-gradient(90deg, var(--accent-color), #03dac6);
-  -webkit-background-clip: text; 
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.header-controls { 
-  display: flex; 
-  gap: 10px; 
-  align-items: center; 
+.header-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .icon-btn {
-  background: transparent; 
-  border: none; 
+  background: transparent;
+  border: none;
   color: var(--text-main);
-  font-size: 1.4rem; 
-  cursor: pointer; 
+  font-size: 1.4rem;
+  cursor: pointer;
   padding: 8px;
   border-radius: 8px;
   transition: all 0.2s ease;
@@ -179,7 +182,7 @@ h1 {
   margin-top: 8px;
   padding: 15px;
   z-index: 200;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
@@ -193,6 +196,7 @@ h1 {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -236,23 +240,23 @@ h1 {
 
 /* --- FILTER PANEL --- */
 .filter-toggle-btn {
-  background: var(--accent-color); 
+  background: var(--accent-color);
   color: #fff;
-  border: none; 
-  padding: 8px 16px; 
+  border: none;
+  padding: 8px 16px;
   border-radius: 20px;
-  font-weight: 700; 
-  font-size: 0.9rem; 
+  font-weight: 700;
+  font-size: 0.9rem;
   cursor: pointer;
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   gap: 6px;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 10px rgba(187,134,252,0.25);
+  box-shadow: 0 4px 10px rgba(187, 134, 252, 0.25);
 }
 
-.filter-toggle-btn:hover { 
-  background: var(--accent-hover); 
+.filter-toggle-btn:hover {
+  background: var(--accent-hover);
 }
 
 #filter-panel {
@@ -274,47 +278,48 @@ h1 {
   overflow-y: auto;
 }
 
-.filter-content { 
-  padding: 20px 20px; 
-  display: flex; 
-  flex-direction: column; 
-  gap: 25px; 
+.filter-content {
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.filter-group { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 12px; 
-  position: relative; 
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
   z-index: 10;
 }
 
-.filter-label { 
-  font-size: 0.85rem; 
-  color: var(--text-muted); 
-  font-weight: 700; 
-  text-transform: uppercase; 
-  letter-spacing: 1.5px; 
+.filter-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
   margin-left: 4px;
 }
 
-.filter-options { 
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 12px; 
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   justify-content: flex-start;
 }
 
 .toggle-btn {
- flex: 1; /* Makes them share full width */
+  flex: 1;
+  /* Makes them share full width */
   padding: 12px 10px;
-  background: var(--card-bg); 
+  background: var(--card-bg);
   border: 2px solid var(--border-color);
-  color: var(--text-muted); 
-  font-weight: 600; 
+  color: var(--text-muted);
+  font-weight: 600;
   border-radius: 10px;
-  cursor: pointer; 
-  transition: all 0.2s ease; 
+  cursor: pointer;
+  transition: all 0.2s ease;
   min-width: 65px;
   font-size: 0.85rem;
 }
@@ -324,26 +329,27 @@ h1 {
 }
 
 .toggle-btn.active {
-  background: rgba(187, 134, 252, 0.15); 
+  background: rgba(187, 134, 252, 0.15);
   color: var(--accent-color);
   border-color: var(--accent-color);
 }
 
 .day-btn {
-  width: 42px; 
-  height: 42px; 
+  width: 42px;
+  height: 42px;
   border-radius: 12px;
-  background: var(--card-bg); 
+  background: var(--card-bg);
   border: 2px solid var(--border-color);
-  color: var(--text-muted); 
-  font-weight: 700; 
+  color: var(--text-muted);
+  font-weight: 700;
   font-size: 0.9rem;
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   justify-content: center;
-  cursor: pointer; 
+  cursor: pointer;
   transition: all 0.2s ease;
-  flex-grow: 1; /* Allows them to stretch slightly */
+  flex-grow: 1;
+  /* Allows them to stretch slightly */
   max-width: 50px;
 }
 
@@ -352,8 +358,8 @@ h1 {
 }
 
 .day-btn.active-day {
-  background: var(--accent-color); 
-  color: #fff; 
+  background: var(--accent-color);
+  color: #fff;
   border-color: var(--accent-color);
   box-shadow: 0 4px 12px rgba(187, 134, 252, 0.3);
 }
@@ -391,41 +397,41 @@ h1 {
 }
 
 /* --- VIEW CONTAINERS --- */
-.view-container { 
-  flex: 1; 
-  position: relative; 
-  overflow: hidden; 
-  width: 100%; 
+.view-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
   transition: opacity 0.3s ease;
 }
 
-.hidden-view { 
-  display: none !important; 
+.hidden-view {
+  display: none !important;
 }
 
-#timetable-container { 
-  cursor: grab; 
-  touch-action: pan-y; 
+#timetable-container {
+  cursor: grab;
+  touch-action: pan-y;
   user-select: none;
 }
 
-#timetable-container:active { 
-  cursor: grabbing; 
+#timetable-container:active {
+  cursor: grabbing;
 }
 
-.days-track { 
-  display: flex; 
-  height: 100%; 
-  width: 600vw; 
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.5, 1); 
+.days-track {
+  display: flex;
+  height: 100%;
+  width: 600vw;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
 }
 
-.day-view { 
-  width: 100vw; 
-  height: 100%; 
-  overflow-y: auto; 
-  padding: 15px; 
-  padding-bottom: 80px; 
+.day-view {
+  width: 100vw;
+  height: 100%;
+  overflow-y: auto;
+  padding: 15px;
+  padding-bottom: 80px;
   scrollbar-width: thin;
   scrollbar-color: var(--accent-color) transparent;
 }
@@ -452,21 +458,18 @@ h1 {
   position: sticky;
   top: 0;
   padding: 10px 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(18,18,18,0.95),
-    rgba(18,18,18,0.7),
-    transparent
-  );
+  background: linear-gradient(to bottom,
+      rgba(18, 18, 18, 0.95),
+      rgba(18, 18, 18, 0.7),
+      transparent);
   z-index: 10;
 }
+
 body[data-theme="light"] .day-header {
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.95),
-    rgba(255,255,255,0.75),
-    transparent
-  );
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.75),
+      transparent);
 }
 
 
@@ -484,34 +487,38 @@ body[data-theme="light"] .day-header {
   font-weight: 800;
   font-size: 0.85rem;
   z-index: 50;
-  pointer-events: auto !important; /* <--- CHANGE THIS from 'none' to 'auto' */
-  touch-action: none; /* Prevents Safari from hijacking the swipe */
+  pointer-events: auto !important;
+  /* <--- CHANGE THIS from 'none' to 'auto' */
+  touch-action: none;
+  /* Prevents Safari from hijacking the swipe */
   cursor: pointer;
   backdrop-filter: blur(4px);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   letter-spacing: 0.5px;
   transition: opacity 0.2s ease;
 }
+
 .floating-batch.hide-self {
   opacity: 0;
   pointer-events: none;
 }
+
 [data-theme="light"] .floating-batch {
   background-color: rgba(255, 255, 255, 0.85);
 }
 
-.class-card { 
-  background: var(--card-bg); 
-  border-radius: 16px; 
-  padding: 15px; 
-  margin-bottom: 15px; 
+.class-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 15px;
+  margin-bottom: 15px;
   border: none;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.35); 
-  position: relative; 
-  overflow: hidden; 
-  display: flex; 
-  flex-direction: column; 
-  gap: 8px; 
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -519,133 +526,138 @@ body[data-theme="light"] .day-header {
 
 .class-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-.class-card::before { 
-  content: ''; 
-  position: absolute; 
-  left: 0; 
-  top: 0; 
-  height: 100%; 
-  width: 5px; 
+.class-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
 }
 
-.type-lec::before { 
-  background-color: var(--lec-marker); 
+.type-lec::before {
+  background-color: var(--lec-marker);
 }
 
-.type-tut::before { 
-  background-color: var(--tut-marker); 
+.type-tut::before {
+  background-color: var(--tut-marker);
 }
 
-.type-lab::before { 
-  background-color: var(--lab-marker); 
+.type-lab::before {
+  background-color: var(--lab-marker);
 }
 
-.active-now { 
-  border: 2px solid var(--accent-color) !important; 
-  box-shadow: var(--active-glow) !important; 
+.active-now {
+  border: 2px solid var(--accent-color) !important;
+  box-shadow: var(--active-glow) !important;
   position: relative;
   z-index: 5;
   animation: pulseGlow 2s infinite;
 }
 
 @keyframes pulseGlow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: var(--active-glow);
   }
+
   50% {
     box-shadow: 0 0 20px rgba(187, 134, 252, 0.8);
   }
 }
 
-.time-slot { 
-  font-size: 1rem; 
-  color: var(--accent-color); 
-  font-weight: 700; 
-  display: flex; 
-  align-items: center; 
+.time-slot {
+  font-size: 1rem;
+  color: var(--accent-color);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
   gap: 8px;
   margin-bottom: 4px;
 }
 
-.time-slot::before { 
-  content: '•'; 
-  color: var(--accent-color); 
+.time-slot::before {
+  content: '•';
+  color: var(--accent-color);
   opacity: 0.6;
-  font-size: 1rem; 
+  font-size: 1rem;
 }
 
-.subject-name { 
-  font-size: 1.5rem; 
-  font-weight: 800; 
-  margin: 4px 0; 
+.subject-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 4px 0;
   line-height: 1.2;
   letter-spacing: 0.5px;
 }
 
-.card-footer { 
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 12px; 
-  margin-top: 12px; 
-  padding-top: 14px; 
-  border-top: 1px solid var(--border-color); 
-  font-size: 0.8rem; 
-  color: var(--text-muted); 
+.card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  color: var(--text-muted);
 }
 
 .info-badge {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   padding: 8px 14px;
   border-radius: 12px;
   font-weight: 600;
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.95);
-  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 
 
 
-.break-card { 
-  background: var(--break-bg); 
-  border: 1px solid var(--break-border); 
-  border-radius: 20px; 
-  padding: 15px; 
-  margin-bottom: 15px; 
-  display: flex; 
-  flex-direction: column; 
-  gap: 6px; 
+.break-card {
+  background: var(--break-bg);
+  border: 1px solid var(--break-border);
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   transition: all 0.3s ease;
 }
 
-.break-header { 
-  font-size: 1rem; 
-  font-weight: 700; 
-  color: var(--text-main); 
+.break-header {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
 }
 
-.break-time-text { 
-  font-size: 0.85rem; 
-  color: var(--text-muted); 
-  font-family: monospace; 
+.break-time-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: monospace;
 }
 
 /* --- TABLE VIEW --- */
-#compact-container { 
+#compact-container {
   display: block;
   width: 100%;
-  height: 100%;            /* Fills vertical space */
-  overflow-x: auto;        
-  overflow-y: hidden;      
+  height: 100%;
+  /* Fills vertical space */
+  overflow-x: auto;
+  overflow-y: hidden;
   padding: 0;
-  padding-bottom: 60px;    /* Keeps space for your footer */
-  background-color: var(--bg-color); 
+  padding-bottom: 60px;
+  /* Keeps space for your footer */
+  background-color: var(--bg-color);
 }
 
 #compact-container::-webkit-scrollbar {
@@ -662,36 +674,38 @@ body[data-theme="light"] .day-header {
   border-radius: 20px;
 }
 
-.weekly-table { 
-  height: 100%;            /* Forces table to stretch vertically */
-  width: 100%; 
-  min-width: 750px;        
+.weekly-table {
+  height: 100%;
+  /* Forces table to stretch vertically */
+  width: 100%;
+  min-width: 750px;
   border-collapse: collapse;
   table-layout: fixed;
 }
 
-.weekly-table th, .weekly-table td { 
-  padding: 10px 6px; 
-  text-align: center; 
-  vertical-align: middle; 
-  font-size: 0.8rem; 
-  border-right: 1px solid var(--border-color); 
-  border-bottom: 1px solid var(--border-color); 
-  color: var(--text-main); 
+.weekly-table th,
+.weekly-table td {
+  padding: 10px 6px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.8rem;
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-main);
   transition: all 0.3s ease;
 }
 
-.weekly-table thead th { 
-  position: sticky; 
-  top: 0; 
+.weekly-table thead th {
+  position: sticky;
+  top: 0;
   height: 50px;
   vertical-align: middle;
-  background-color: var(--header-bg); 
-  z-index: 50; 
-  border-bottom: 2px solid var(--border-color); 
-  font-weight: 800; 
-  text-transform: uppercase; 
-  font-size: 0.75rem; 
+  background-color: var(--header-bg);
+  z-index: 50;
+  border-bottom: 2px solid var(--border-color);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.75rem;
 }
 
 /* New Fixed Column for Days (Mon, Tue, Wed...) */
@@ -713,58 +727,56 @@ body[data-theme="light"] .day-header {
 
 
 
-.cell-lec { 
-  background-color: rgba(144, 202, 249, 0.15); 
-  border-left: 3px solid var(--lec-marker) !important; 
+.cell-lec {
+  background-color: rgba(144, 202, 249, 0.15);
+  border-left: 3px solid var(--lec-marker) !important;
 }
 
-.cell-tut { 
-  background-color: rgba(255, 204, 128, 0.15); 
-  border-left: 3px solid var(--tut-marker) !important; 
+.cell-tut {
+  background-color: rgba(255, 204, 128, 0.15);
+  border-left: 3px solid var(--tut-marker) !important;
 }
 
-.cell-lab { 
-  background-color: rgba(239, 154, 154, 0.15); 
-  border-left: 3px solid var(--lab-marker) !important; 
+.cell-lab {
+  background-color: rgba(239, 154, 154, 0.15);
+  border-left: 3px solid var(--lab-marker) !important;
 }
 
-.cell-break { 
-  background-color: var(--break-bg); 
-  opacity: 0.7; 
+.cell-break {
+  background-color: var(--break-bg);
+  opacity: 0.7;
 }
 
-.cell-subject { 
-  font-weight: 700; 
-  display: block; 
-  margin-bottom: 2px; 
+.cell-subject {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
   font-size: 0.85rem;
 }
 
-.cell-room { 
-  font-size: 0.7rem; 
-  color: var(--text-muted); 
-  display: block; 
+.cell-room {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  display: block;
 }
 
 /* --- HIGHLIGHT CURRENT DAY ROW (Table View) --- */
 .weekly-table tr.active-day-row {
-  background-color: rgba(187, 134, 252, 0.08) !important; 
+  background-color: rgba(187, 134, 252, 0.08) !important;
   position: relative;
-  z-index: 5; 
+  z-index: 5;
 }
 
 /* --- FIX FOR TEXT OVERLAP --- */
 .weekly-table tr.active-day-row td:first-child {
   border-left: 4px solid var(--accent-color) !important;
-  
+
   /* 1. We MUST use a SOLID background color to block text scrolling behind */
-  background-color: var(--card-bg) !important; 
+  background-color: var(--card-bg) !important;
 
   /* 2. We apply the purple tint as an "Image" layer on top of the solid color */
-  background-image: linear-gradient(
-    rgba(187, 134, 252, 0.15), 
-    rgba(187, 134, 252, 0.15)
-  ) !important;
+  background-image: linear-gradient(rgba(187, 134, 252, 0.15),
+      rgba(187, 134, 252, 0.15)) !important;
 }
 
 /* Light Mode Support */
@@ -773,12 +785,12 @@ body[data-theme="light"] .day-header {
 }
 
 [data-theme="light"] .weekly-table tr.active-day-row td:first-child {
-  background-color: var(--card-bg) !important; /* Solid White */
-  background-image: linear-gradient(
-    rgba(98, 0, 234, 0.08), 
-    rgba(98, 0, 234, 0.08)
-  ) !important;
+  background-color: var(--card-bg) !important;
+  /* Solid White */
+  background-image: linear-gradient(rgba(98, 0, 234, 0.08),
+      rgba(98, 0, 234, 0.08)) !important;
 }
+
 /* -------------------------------------------------- */
 .weekly-table td.active-now {
   border: 2px solid var(--accent-color) !important;
@@ -790,24 +802,30 @@ body[data-theme="light"] .day-header {
 }
 
 @keyframes tablePulse {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: inset 0 0 10px var(--accent-color);
   }
+
   50% {
     box-shadow: inset 0 0 15px var(--accent-color);
   }
 }
+
 /* In the TABLE VIEW section, add: */
 
 
 
 .weekly-table th {
-  width: 11%; /* Roughly 100% / 9 */
+  width: 11%;
+  /* Roughly 100% / 9 */
   min-width: 60px;
 }
 
 .weekly-table td {
-  height: auto !important; /* Allows rows to expand */
+  height: auto !important;
+  /* Allows rows to expand */
   vertical-align: middle;
   padding: 3px !important;
   white-space: normal;
@@ -828,50 +846,54 @@ body[data-theme="light"] .day-header {
 .cell-lec[colspan],
 .cell-tut[colspan],
 .cell-lab[colspan] {
-  background-image: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.2) 0%,   
-    rgba(0, 0, 0, 0.2) 90%, 
-    var(--border-color) 90%, 
-    var(--border-color) 100%
-  );
+  background-image: linear-gradient(135deg,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.2) 90%,
+      var(--border-color) 90%,
+      var(--border-color) 100%);
   background-blend-mode: multiply;
 }
+
 /* --- FOOTER (Restored Vibe) --- */
 /* --- FOOTER (Tab Style - Flush to Bottom) --- */
-.footer-sig { 
-  position: fixed !important; 
-  bottom: 0 !important;                  /* 1. Touches the bottom edge */
-  left: 50% !important; 
-  transform: translateX(-50%) !important; 
-  
-  width: auto !important;                
+.footer-sig {
+  position: fixed !important;
+  bottom: 0 !important;
+  /* 1. Touches the bottom edge */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+
+  width: auto !important;
   max-width: 90% !important;
-  
+
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  
+
   /* 2. The Look: Tab style (Flat bottom, rounded top) */
-  background: rgba(30, 30, 30, 0.98) !important; 
+  background: rgba(30, 30, 30, 0.98) !important;
   backdrop-filter: blur(10px) !important;
-  
+
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  border-bottom: none !important;        /* No border on bottom edge */
-  border-radius: 16px 16px 0 0 !important; /* Top-left, Top-right, Bottom-right, Bottom-left */
-  
-  padding: 6px 24px !important;          
-  padding-bottom: calc(6px + env(safe-area-inset-bottom)) !important; /* Respects iPhone home bar */
-  
+  border-bottom: none !important;
+  /* No border on bottom edge */
+  border-radius: 16px 16px 0 0 !important;
+  /* Top-left, Top-right, Bottom-right, Bottom-left */
+
+  padding: 6px 24px !important;
+  padding-bottom: calc(6px + env(safe-area-inset-bottom)) !important;
+  /* Respects iPhone home bar */
+
   /* Text Styles (Unchanged) */
-  color: var(--text-muted) !important; 
-  font-size: 0.75rem !important;          
+  color: var(--text-muted) !important;
+  font-size: 0.75rem !important;
   font-weight: 600 !important;
   white-space: nowrap !important;
-  
+
   /* Layering */
-  z-index: 9999 !important;              
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.3) !important; /* Shadow points UP now */
+  z-index: 9999 !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3) !important;
+  /* Shadow points UP now */
 }
 
 /* Light Mode Support */
@@ -879,14 +901,15 @@ body[data-theme="light"] .day-header {
   background: rgba(255, 255, 255, 0.98) !important;
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
   border-bottom: none !important;
-  box-shadow: 0 -4px 20px rgba(0,0,0,0.1) !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1) !important;
 }
 
-.signature { 
-  color: var(--accent-color) !important; 
+.signature {
+  color: var(--accent-color) !important;
   font-weight: 800 !important;
   margin: 0 4px !important;
 }
+
 /* --- LOADING STATE --- */
 .loading {
   opacity: 0.6;
@@ -912,6 +935,7 @@ body[data-theme="light"] .day-header {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -927,47 +951,54 @@ body[data-theme="light"] .day-header {
   .batch-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-.info-badge {
+
+  .info-badge {
     font-size: 0.9rem;
     padding: 6px 12px;
   }
-  
+
   .filter-options {
     justify-content: center;
   }
-  
+
   h1 {
     font-size: 1.1rem;
   }
-  
+
   .class-card {
     padding: 18px;
     margin-bottom: 18px;
   }
-  
+
   .subject-name {
     font-size: 1.4rem;
     line-height: 1.3;
   }
 }
+
 /* Ensure day view scrolls properly */
-.day-view { 
-  width: 100vw; 
-  height: 100%; 
+.day-view {
+  width: 100vw;
+  height: 100%;
   overflow-y: auto !important;
   overflow-x: hidden;
-  padding: 15px; 
-  padding-bottom: 80px; 
+  padding: 15px;
+  padding-bottom: 80px;
   scrollbar-width: thin;
   scrollbar-color: var(--accent-color) transparent;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-  overscroll-behavior: contain; /* Prevent scroll chaining */
-  touch-action: pan-y; /* Allow vertical panning */
+  -webkit-overflow-scrolling: touch;
+  /* Smooth scrolling on iOS */
+  overscroll-behavior: contain;
+  /* Prevent scroll chaining */
+  touch-action: pan-y;
+  /* Allow vertical panning */
 }
 
 /* Improve touch experience */
-.class-card, .break-card {
-  touch-action: pan-y; /* Allow scrolling on cards */
+.class-card,
+.break-card {
+  touch-action: pan-y;
+  /* Allow scrolling on cards */
 }
 
 /* Prevent text selection during swipe */
@@ -979,8 +1010,8 @@ body[data-theme="light"] .day-header {
 }
 
 body[data-theme="light"] .info-badge {
-  background: rgba(0,0,0,0.06);
-  color: rgba(0,0,0,0.75);
+  background: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.75);
 }
 
 
@@ -994,7 +1025,8 @@ body[data-theme="light"] .info-badge {
 }
 
 select.dropdown-trigger {
-  appearance: none; /* Remove default arrow to use our style if needed, or keep native */
+  appearance: none;
+  /* Remove default arrow to use our style if needed, or keep native */
   background-color: var(--card-bg);
   cursor: pointer;
   border-radius: 12px;
@@ -1005,13 +1037,15 @@ select.dropdown-trigger {
 .half-width {
   width: 50%;
   text-align: center;
-  text-align-last: center; /* Centers text in dropdown for Chrome */
+  text-align-last: center;
+  /* Centers text in dropdown for Chrome */
 }
 
 select:focus {
   border-color: var(--accent-color);
   outline: none;
 }
+
 /* --- BATCH TABS (Inside Dropdown) --- */
 .batch-tabs {
   display: flex;
@@ -1043,13 +1077,15 @@ select:focus {
 
 /* Fix grid to ensure buttons look good */
 .batch-btn {
-  font-family: monospace; /* Makes alignment of A1, A10 cleaner */
+  font-family: monospace;
+  /* Makes alignment of A1, A10 cleaner */
   font-size: 0.9rem;
 }
 
 /* --- EMBEDDED BATCH SELECTOR --- */
 .batch-selection-embedded {
-  display: block; /* Forces it to show */
+  display: block;
+  /* Forces it to show */
   width: 100%;
   position: relative;
   background: transparent;
@@ -1058,9 +1094,11 @@ select:focus {
   padding: 0;
   margin-top: 10px;
 }
+
 /* --- CONTAINER FOR CONTROLS --- */
 .filter-group {
-  position: relative; /* Crucial for floating positioning */
+  position: relative;
+  /* Crucial for floating positioning */
   z-index: 10;
 }
 
@@ -1085,26 +1123,32 @@ select:focus {
 }
 
 .half-width {
-  flex: 1; /* Both take equal space */
+  flex: 1;
+  /* Both take equal space */
   width: 50%;
 }
 
 /* --- THE FLOATING GRID (The Fix) --- */
 .floating-grid {
-  position: absolute; /* Floats on top! */
-  top: 75px;          /* Pushes it below the buttons */
+  position: absolute;
+  /* Floats on top! */
+  top: 75px;
+  /* Pushes it below the buttons */
   left: 0;
   width: 100%;
   background-color: var(--header-bg);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 10px;
-  z-index: 999;       /* Ensures it sits ABOVE everything else */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  max-height: 250px;  /* Scrollable if too long */
+  z-index: 999;
+  /* Ensures it sits ABOVE everything else */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  max-height: 250px;
+  /* Scrollable if too long */
   overflow-y: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 Columns */
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 Columns */
   gap: 8px;
 }
 
@@ -1114,19 +1158,28 @@ select:focus {
 }
 
 /* Scrollbar for the grid */
-.floating-grid::-webkit-scrollbar { width: 4px; }
-.floating-grid::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 4px; }
+.floating-grid::-webkit-scrollbar {
+  width: 4px;
+}
+
+.floating-grid::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
 
 /* --- FIX LAYERING ISSUE --- */
 .bring-to-front {
   position: relative;
-  z-index: 1000; /* Forces this group ABOVE the View Mode group */
+  z-index: 1000;
+  /* Forces this group ABOVE the View Mode group */
 }
 
 /* Ensure the grid background is solid so you can't see buttons behind it */
 .floating-grid {
-  background-color: var(--header-bg); /* Opaque background */
-  box-shadow: 0 10px 40px rgba(0,0,0,0.8); /* Stronger shadow */
+  background-color: var(--header-bg);
+  /* Opaque background */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  /* Stronger shadow */
 }
 
 /* --- TEACHER MODE STYLES --- */
@@ -1134,8 +1187,10 @@ select:focus {
 /* The Circular Button */
 #teacher-mode-btn {
   height: 40px;
-  padding: 0 16px;           /* More padding for text */
-  border-radius: 20px;       /* Pill shape, not circle */
+  padding: 0 16px;
+  /* More padding for text */
+  border-radius: 20px;
+  /* Pill shape, not circle */
   border: 1px solid var(--border-color);
   background: var(--card-bg);
   color: var(--text-main);
@@ -1144,7 +1199,8 @@ select:focus {
   margin-right: 8px;
   display: flex;
   align-items: center;
-  gap: 8px;                  /* Space between Icon and Text */
+  gap: 8px;
+  /* Space between Icon and Text */
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   width: auto;
 }
@@ -1153,11 +1209,13 @@ select:focus {
   font-size: 1.2rem;
   line-height: 1;
 }
+
 /* Glowing Active State */
 #teacher-mode-btn.active-mode {
   background: var(--accent-color);
   border-color: var(--accent-color);
-  color: #fff;               /* White text when active */
+  color: #fff;
+  /* White text when active */
   box-shadow: 0 0 15px var(--accent-color);
   transform: scale(1.05);
   z-index: 101;
@@ -1165,16 +1223,21 @@ select:focus {
 
 @media (max-width: 480px) {
   #teacher-mode-btn {
-    width: 40px;             /* Fixed width */
-    padding: 0;              /* Remove padding */
-    justify-content: center; /* Center the icon */
-    border-radius: 50%;      /* Back to circle */
+    width: 40px;
+    /* Fixed width */
+    padding: 0;
+    /* Remove padding */
+    justify-content: center;
+    /* Center the icon */
+    border-radius: 50%;
+    /* Back to circle */
   }
 
   .t-label {
-    display: none;           /* Hide the text "Find Teacher" */
+    display: none;
+    /* Hide the text "Find Teacher" */
   }
-  
+
   .t-icon {
     margin: 0;
   }
@@ -1220,7 +1283,7 @@ select:focus {
   border: 1px solid var(--border-color);
   border-radius: 0 0 12px 12px;
   z-index: 1000;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
   margin-top: 5px;
   z-index: 1001;
 }
@@ -1234,11 +1297,23 @@ select:focus {
   align-items: center;
 }
 
-.suggestion-item:last-child { border-bottom: none; }
-.suggestion-item:hover { background: rgba(187, 134, 252, 0.1); }
+.suggestion-item:last-child {
+  border-bottom: none;
+}
 
-.s-code { font-weight: 800; color: var(--accent-color); }
-.s-name { opacity: 0.8; font-size: 0.9rem; }
+.suggestion-item:hover {
+  background: rgba(187, 134, 252, 0.1);
+}
+
+.s-code {
+  font-weight: 800;
+  color: var(--accent-color);
+}
+
+.s-name {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
 
 /* --- MODAL STYLES --- */
 .modal-overlay {
@@ -1263,12 +1338,13 @@ select:focus {
 }
 
 .modal-content {
-  background-color: #1e1e1e; /* Dark Card BG */
+  background-color: #1e1e1e;
+  /* Dark Card BG */
   width: 90%;
   max-width: 400px;
   border-radius: 16px;
   padding: 25px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   border: 1px solid var(--border-color);
   position: relative;
   transform: scale(1);
@@ -1302,7 +1378,8 @@ select:focus {
   font-weight: 800;
   color: var(--text-main);
   margin-bottom: 5px;
-  margin-right: 20px; /* Space for close btn */
+  margin-right: 20px;
+  /* Space for close btn */
   line-height: 1.2;
 }
 
@@ -1343,18 +1420,21 @@ select:focus {
   font-size: 1rem;
   text-align: right;
 }
+
 /* --- TEACHER MODE HINT --- */
 .teacher-hint {
   position: absolute;
   top: 10px;
-  right: 140px; /* Positions it nicely under the buttons */
+  right: 140px;
+  /* Positions it nicely under the buttons */
   display: flex;
   align-items: center;
   gap: 6px;
   color: var(--accent-color);
   font-weight: 700;
   font-size: 0.9rem;
-  pointer-events: none; /* Allows clicking through it */
+  pointer-events: none;
+  /* Allows clicking through it */
   animation: bounceHint 1.5s infinite alternate ease-in-out;
   z-index: 20;
 }
@@ -1364,20 +1444,28 @@ select:focus {
   font-size: 1.4rem;
   line-height: 1;
   /* Flip the arrow so it curves UP and LEFT towards the Teacher button */
-  transform: scaleX(-1) rotate(-10deg); 
+  transform: scaleX(-1) rotate(-10deg);
   display: inline-block;
 }
 
 /* Bouncing Animation */
 @keyframes bounceHint {
-  from { transform: translateY(0); opacity: 0.6; }
-  to { transform: translateY(-5px); opacity: 1; }
+  from {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+
+  to {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
 }
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .teacher-hint {
-    right: 95px; /* Move closer for smaller screens */
+    right: 95px;
+    /* Move closer for smaller screens */
     font-size: 0.8rem;
   }
 }
@@ -1391,7 +1479,8 @@ select:focus {
 .filter-content {
   position: relative;
   background-color: var(--header-bg);
-  min-height: 200px; /* Ensures panel is never 0px height */
+  min-height: 200px;
+  /* Ensures panel is never 0px height */
 }
 
 /* --- CLICKABLE BADGE --- */
@@ -1399,7 +1488,8 @@ select:focus {
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;
   position: relative;
-  z-index: 10; /* Ensures it sits above other card clicks if any */
+  z-index: 10;
+  /* Ensures it sits above other card clicks if any */
 }
 
 .clickable-badge:hover {
@@ -1410,21 +1500,26 @@ select:focus {
 .clickable-badge:active {
   transform: scale(0.95);
 }
+
 /* --- ROOM INFO POPUP --- */
 #room-info-popup {
   position: absolute;
-  background-color: var(--card-bg); /* Matches your card theme */
+  background-color: var(--card-bg);
+  /* Matches your card theme */
   color: var(--text-main);
   border: 1px solid var(--accent-color);
   padding: 8px 12px;
   border-radius: 8px;
   font-size: 0.85rem;
   font-weight: 600;
-  z-index: 9999; /* Sits on top of everything */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-  display: none; /* Hidden by default */
+  z-index: 9999;
+  /* Sits on top of everything */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  display: none;
+  /* Hidden by default */
   max-width: 220px;
-  pointer-events: none; /* Allows touches to pass through (helps with quick dismissal) */
+  pointer-events: none;
+  /* Allows touches to pass through (helps with quick dismissal) */
   line-height: 1.4;
   backdrop-filter: blur(5px);
 }
@@ -1442,23 +1537,30 @@ select:focus {
   border-top: 1px solid var(--accent-color);
   transform: rotate(45deg);
 }
+
 /* --- CARD VIEW ICON (Bordered & Larger) --- */
 .info-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 22px;       /* Fixed width for circle */
-  height: 22px;      /* Fixed height for circle */
-  border: 2px solid var(--accent-color); /* The Border */
-  border-radius: 50%; /* Make it a circle */
+  width: 22px;
+  /* Fixed width for circle */
+  height: 22px;
+  /* Fixed height for circle */
+  border: 2px solid var(--accent-color);
+  /* The Border */
+  border-radius: 50%;
+  /* Make it a circle */
   margin-left: 8px;
-  
-  font-family: serif; /* Serif font makes the 'i' look better */
+
+  font-family: serif;
+  /* Serif font makes the 'i' look better */
   font-style: italic;
   font-weight: 900;
   font-size: 14px;
   color: var(--accent-color);
-  background: rgba(0,0,0,0.2); /* Slight contrast background */
+  background: rgba(0, 0, 0, 0.2);
+  /* Slight contrast background */
 }
 
 /* --- TABLE MODAL ICON (Glowing Button) --- */
@@ -1472,50 +1574,63 @@ select:focus {
   margin-left: 10px;
   border-radius: 50%;
   vertical-align: middle;
-  
+
   /* The Glow Look */
-  background: rgba(187, 134, 252, 0.15); /* Low opacity accent bg */
+  background: rgba(187, 134, 252, 0.15);
+  /* Low opacity accent bg */
   border: 1px solid var(--accent-color);
-  color: #fff; /* White text to stand out from accent color */
-  box-shadow: 0 0 8px var(--accent-color); /* The Glow */
+  color: #fff;
+  /* White text to stand out from accent color */
+  box-shadow: 0 0 8px var(--accent-color);
+  /* The Glow */
   font-family: serif;
   font-style: italic;
   font-weight: bold;
   font-size: 1.1rem;
-  
+
   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .modal-glow-btn:hover {
   transform: scale(1.15);
   background: var(--accent-color);
-  box-shadow: 0 0 15px var(--accent-color), 0 0 25px var(--accent-color); /* Stronger glow on hover */
+  box-shadow: 0 0 15px var(--accent-color), 0 0 25px var(--accent-color);
+  /* Stronger glow on hover */
   text-shadow: none;
 }
+
 /* ================= FONT SIZE FIXES ================= */
 
 /* 1. Swipe Cards: Make Subject Bigger & Bolder */
 .subject-name {
-  font-size: 1.35rem !important; /* Increased from default */
-  font-weight: 700 !important;   /* Make it thick like Inter */
-  letter-spacing: 0.5px;         /* Adds breathing room */
+  font-size: 1.35rem !important;
+  /* Increased from default */
+  font-weight: 700 !important;
+  /* Make it thick like Inter */
+  letter-spacing: 0.5px;
+  /* Adds breathing room */
   margin-bottom: 6px;
 }
 
 /* 2. Table View: Make Time Column Readable */
 /* Targets the first column (Time) specifically */
 .weekly-table td:first-child {
-  font-weight: 700;              /* Make 09:00 stand out */
-  min-width: 65px;               /* Ensure it doesn't get squished */
+  font-weight: 700;
+  /* Make 09:00 stand out */
+  min-width: 65px;
+  /* Ensure it doesn't get squished */
 }
 
 .weekly-table td:first-child div {
-  font-size: 0.95rem !important; /* Bigger time text */
+  font-size: 0.95rem !important;
+  /* Bigger time text */
 }
 
 .weekly-table td:first-child span {
-  font-size: 0.8rem !important;  /* Bigger "09:50" text */
-  opacity: 0.8 !important;       /* Make it easier to see */
+  font-size: 0.8rem !important;
+  /* Bigger "09:50" text */
+  opacity: 0.8 !important;
+  /* Make it easier to see */
 }
 
 /* 3. Global Text Boost (Optional) */
@@ -1524,20 +1639,24 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
 }
+
 /* ================= FINAL TABLE LAYOUT (Adjusted v2) ================= */
 
 /* 1. The Cells: Reduced padding to fit screen */
 .weekly-table td {
-  padding-top: 3px !important;    /* Reduced from 5px to 3px */
-  padding-bottom: 3px !important; /* Reduced from 5px to 3px */
+  padding-top: 3px !important;
+  /* Reduced from 5px to 3px */
+  padding-bottom: 3px !important;
+  /* Reduced from 5px to 3px */
   height: auto !important;
 }
 
 /* 2. The Time Column: Tightened line height */
 .weekly-table td:first-child div {
-  line-height: 1.15 !important;   /* Tightened from 1.3 */
-  margin-bottom: 1px !important;  
-  font-size: 0.9rem !important;   
+  line-height: 1.15 !important;
+  /* Tightened from 1.3 */
+  margin-bottom: 1px !important;
+  font-size: 0.9rem !important;
 }
 
 /* 3. Subject Text: Compact */
@@ -1549,15 +1668,17 @@ body {
 
 .cell-room {
   line-height: 1 !important;
-  margin-top: 0px !important;     /* Removed top margin */
+  margin-top: 0px !important;
+  /* Removed top margin */
 }
 
 /* 4. The Bottom Hint: Kept tiny */
 .weekly-table tr:last-child td {
-  padding: 2px !important;        
-  font-size: 0.7rem !important;  
+  padding: 2px !important;
+  font-size: 0.7rem !important;
   line-height: 1 !important;
 }
+
 /* ================= SWIPE VIEW BOOSTER (Big & Tight) ================= */
 
 /* 1. Day Header */
@@ -1576,21 +1697,27 @@ body {
 
 /* 3. Time Slot: MADE BIGGER */
 .time-slot {
-  font-size: 1.1rem !important;   /* Increased from 0.95rem */
+  font-size: 1.1rem !important;
+  /* Increased from 0.95rem */
   font-weight: 600 !important;
-  opacity: 1 !important;          /* Fully visible */
+  opacity: 1 !important;
+  /* Fully visible */
   letter-spacing: 0.5px;
-  margin-bottom: 2px !important;  /* Keep close to subject */
-  color: var(--accent-color);     /* Ensure it pops */
+  margin-bottom: 2px !important;
+  /* Keep close to subject */
+  color: var(--accent-color);
+  /* Ensure it pops */
 }
 
 /* 4. Subject Name: HUGE & NO GAP */
 .subject-name {
-  font-size: 1.8rem !important;   /* Increased from 1.45rem to 1.8rem */
+  font-size: 1.8rem !important;
+  /* Increased from 1.45rem to 1.8rem */
   font-weight: 800 !important;
   line-height: 1.1 !important;
   margin-top: 4px !important;
-  margin-bottom: 4px !important;  /* REDUCED GAP (Was 10px) */
+  margin-bottom: 4px !important;
+  /* REDUCED GAP (Was 10px) */
 }
 
 /* 5. The Badges */
@@ -1601,28 +1728,35 @@ body {
 }
 
 /* 6. Break Card */
-.break-card { padding: 20px !important; }
-.break-header { font-size: 1.2rem !important; }
+.break-card {
+  padding: 20px !important;
+}
+
+.break-header {
+  font-size: 1.2rem !important;
+}
 
 /* --- BATCH SCROLL OVERLAY (V3 - Centered & Filtered) --- */
 .batch-scroll-overlay {
-  position: fixed; /* Breaks out of the container! */
-  top: 85px;       /* Exact position of the badge (70px Header + 15px Margin) */
+  position: fixed;
+  /* Breaks out of the container! */
+  top: 85px;
+  /* Exact position of the badge (70px Header + 15px Margin) */
   right: 15px;
   width: 120px;
   height: 0px;
-  
+
   /* Centers the list on the badge */
   transform: translateY(-50%);
-  
+
   background: rgba(18, 18, 18, 0.98);
   backdrop-filter: blur(12px);
   border: 1px solid var(--accent-color);
   border-radius: 16px;
-  
+
   /* MAX Z-INDEX: Ensures it sits on top of the Header */
-  z-index: 9999; 
-  
+  z-index: 9999;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1630,24 +1764,27 @@ body {
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
-  touch-action: none; /* Prevents Safari from hijacking the swipe */
+  touch-action: none;
+  /* Prevents Safari from hijacking the swipe */
   transition: height 0.2s ease, opacity 0.2s ease;
-  box-shadow: 0 10px 50px rgba(0,0,0,0.8);
-  
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
+
   /* Cool Borders */
   border-top: 2px solid var(--accent-color);
   border-bottom: 2px solid var(--accent-color);
 }
 
 .batch-scroll-overlay.active {
-  height: 175px; /* SMALLER: 5 items x 35px = 175px */
+  height: 175px;
+  /* SMALLER: 5 items x 35px = 175px */
   opacity: 1;
   pointer-events: auto;
 }
 
 /* COMPACT ITEMS (To save space) */
 .scroll-item {
-  height: 35px; /* Reduced from 48px */
+  height: 35px;
+  /* Reduced from 48px */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1668,11 +1805,13 @@ body {
   border-left: 3px solid var(--accent-color);
   border-right: 3px solid var(--accent-color);
 }
+
 .weekly-table tr.active-now {
-    /* If you want to highlight the whole row (Day) */
-    background-color: rgba(187, 134, 252, 0.05); 
+  /* If you want to highlight the whole row (Day) */
+  background-color: rgba(187, 134, 252, 0.05);
 }
-.weekly-table td:first-child, 
+
+.weekly-table td:first-child,
 .day-col-header {
   width: 60px !important;
   min-width: 60px !important;
@@ -1692,13 +1831,16 @@ body {
 
 /* 1. Lift the Floating Pointer UP */
 .teacher-hint {
-  top: -1px !important;       /* Was 10px, now higher */
+  top: -1px !important;
+  /* Was 10px, now higher */
 }
 
 /* 2. Push the Label DOWN (into the gap) */
 #teacher-controls .filter-label {
-  margin-top: 8px !important;    /* Pushes label down */
-  margin-bottom: -8px !important; /* Pulls search bar back UP so it doesn't move */
+  margin-top: 8px !important;
+  /* Pushes label down */
+  margin-bottom: -8px !important;
+  /* Pulls search bar back UP so it doesn't move */
   position: relative;
   z-index: 5;
 }
@@ -1707,35 +1849,63 @@ body {
    SEMESTER TOGGLE BUTTONS
 ========================================= */
 .sem-btn {
-    transition: all 0.2s ease-in-out;
-    opacity: 0.4; /* Dims the unselected button */
+  transition: all 0.2s ease-in-out;
+  opacity: 0.4;
+  /* Dims the unselected button */
 }
 
 .sem-btn.active {
-    opacity: 1 !important;
-    background: var(--accent-color) !important;
-    color: #ffffff !important;
-    box-shadow: 0 0 12px rgba(187, 134, 252, 0.5) !important;
-    border-color: var(--accent-color) !important;
-    transform: scale(1.03); /* Makes the active one pop out slightly */
+  opacity: 1 !important;
+  background: var(--accent-color) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(187, 134, 252, 0.5) !important;
+  border-color: var(--accent-color) !important;
+  transform: scale(1.03);
+  /* Makes the active one pop out slightly */
 }
 
 /* =========================================
    ANTI-HYPHEN & WORD WRAP FIX
 ========================================= */
 /* This combines with your existing rules to stop words from breaking in half */
-.cell-subject, .subject-name {
-    -webkit-hyphens: none !important;
-    hyphens: none !important;
-    word-break: normal !important;
-    overflow-wrap: break-word !important;
+.cell-subject,
+.subject-name {
+  -webkit-hyphens: none !important;
+  hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
 }
 
+/* =========================================
+   MICRO-ANIMATIONS
+========================================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
 
+.class-card {
+  animation: slideUp 0.3s ease-out backwards;
+}
 
+.batch-btn {
+  animation: fadeIn 0.3s ease-out backwards;
+}
 
-
- 
- 
+/* Stagger animations for class cards if possible */
+.class-card:nth-child(1) { animation-delay: 0.05s; }
+.class-card:nth-child(2) { animation-delay: 0.1s; }
+.class-card:nth-child(3) { animation-delay: 0.15s; }
+.class-card:nth-child(4) { animation-delay: 0.2s; }
+.class-card:nth-child(5) { animation-delay: 0.25s; }
+.class-card:nth-child(n+6) { animation-delay: 0.3s; }
