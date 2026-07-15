@@ -100,5 +100,16 @@ if (totalParsedBatches < 5) {
     process.exit(1);
 }
 
-let fileContent = `// AUTOMATICALLY GENERATED\nconst scheduleMap = ${JSON.stringify(finalBatches, null, 2)};\nconst facultyNames = ${JSON.stringify(dictionaries.teachers, null, 2)};\nconst ROOM_LOCATIONS = ${JSON.stringify(staticData.classroomLocations, null, 2)};\n`;
+let scheduleMapString = "{\n";
+const sortedBatches = Object.keys(finalBatches).sort((a, b) => a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'}));
+sortedBatches.forEach((bName, i) => {
+    scheduleMapString += `  "${bName}": [\n`;
+    finalBatches[bName].forEach((cls, j) => {
+        scheduleMapString += `    { "day": ${cls.day}, "start": ${cls.start}, "duration": ${cls.duration}, "title": "${cls.title}", "code": "${cls.code}", "teacher": "${cls.teacher}", "type": "${cls.type}" }${j < finalBatches[bName].length - 1 ? ',' : ''}\n`;
+    });
+    scheduleMapString += `  ]${i < sortedBatches.length - 1 ? ',' : ''}\n`;
+});
+scheduleMapString += "}";
+
+let fileContent = `// AUTOMATICALLY GENERATED\nconst scheduleMap = ${scheduleMapString};\nconst facultyNames = ${JSON.stringify(dictionaries.teachers, null, 2)};\nconst ROOM_LOCATIONS = ${JSON.stringify(staticData.classroomLocations, null, 2)};\n`;
 fs.writeFileSync('../js/data.js', fileContent);
