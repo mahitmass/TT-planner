@@ -139,14 +139,16 @@ function parseCellString(rawText) {
 
     entries.forEach(entry => {
         // Match: BATCHES(SUBJECT)-ROOM/TEACHER
-        const match = entry.match(/^([^()]+)\s*\(\s*([^)]+)\s*\)\s*-?\s*(.+?)\s*[\/;,]+\s*(.+)$/i);     
+        // Changed to make the teacher part optional to handle cases like (BT211)-FF7/
+        const match = entry.match(/^([^()]+)\s*\(\s*([^)]+)\s*\)\s*-?\s*(.+?)(?:\s*[\/;,]+\s*(.*))?$/i);     
         
         if (!match) return;
 
         let batchPart = match[1].trim();
         let subjectPart = match[2].trim();
         let roomPart = match[3].trim();
-        let teacherPart = match[4].trim().replace(/\s*[,;]\s*/g, '/').replace(/\s*\/\s*/g, '/');
+        let teacherPart = match[4] ? match[4].trim().replace(/\s*[,;]\s*/g, '/').replace(/\s*\/\s*/g, '/') : "TBA";
+        if (!teacherPart) teacherPart = "TBA";
         
         let type = 'LEC';
         let cleanBatches = batchPart.toUpperCase();
