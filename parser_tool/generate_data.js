@@ -5,6 +5,11 @@ const staticData = require('./static_data');
 let overrides = { deletions: [], additions: [] };
 try { overrides = require('./manual_overrides'); } catch (err) {}
 
+if (!fs.existsSync('parsed_output.json')) {
+    console.warn('🚨 parsed_output.json not found. Outputting empty data.js');
+    fs.writeFileSync('../js/data.js', 'const scheduleMap = {}; const facultyNames = {}; const ROOM_LOCATIONS = {};');
+    process.exit(0);
+}
 const rawData = JSON.parse(fs.readFileSync('parsed_output.json', 'utf8'));
 
 // Smart Subject Lookup: Handles both "24B11CS312" and "CS312" automatically!
@@ -29,14 +34,12 @@ rawData.forEach(entry => {
     const dayIndex = dayMap[entry.day];
     const batchName = entry.batch;
     const actualHour = entry.start + 8; 
-    const sem = entry.semester || "2";
 
     // Overrides: Deletions
     if (overrides.deletions.some(del => del.batch === batchName && del.day === dayIndex && del.start === actualHour)) return;
 
-    // Create sem and batch objects if they don't exist
-    if (!finalBatches[sem]) finalBatches[sem] = {};
-    if (!finalBatches[sem][batchName]) finalBatches[sem][batchName] = [];
+    // Create batch object if it doesn't exist
+    if (!finalBatches[batchName]) finalBatches[batchName] = [];
 
     let finalSubject = getSubjectName(entry.subject);
     
@@ -66,7 +69,7 @@ rawData.forEach(entry => {
         }).join('/');
     }
 
-    finalBatches[sem][batchName].push({
+    finalBatches[batchName].push({
         day: dayIndex, start: actualHour, duration: finalDuration,
         title: finalSubject, code: entry.room, teacher: finalTeacher, type: entry.type.toLowerCase() 
     });
@@ -76,12 +79,13 @@ rawData.forEach(entry => {
 if (overrides.additions && overrides.additions.length > 0) {
     overrides.additions.forEach(newClass => {
         const bName = newClass.batch;
-        const sem = newClass.semester || "2"; // Default to sem 2 if not specified in override
         
-        if (!finalBatches[sem]) finalBatches[sem] = {};
-        if (!finalBatches[sem][bName]) finalBatches[sem][bName] = [];
+        if (!finalBatches[bName]) finalBatches[bName] = [];
         
-        finalBatches[sem][bName].push({
+        // Priority Overwrite: Remove any existing class at this day and start time
+        finalBatches[bName] = finalBatches[bName].filter(c => !(c.day === newClass.day && c.start === newClass.start));
+        
+        finalBatches[bName].push({
             day: newClass.day, start: newClass.start, duration: newClass.duration,
             title: newClass.title, code: newClass.code, teacher: newClass.teacher, type: newClass.type
         });
@@ -89,8 +93,7 @@ if (overrides.additions && overrides.additions.length > 0) {
 }
 
 // Kill Switch
-let totalParsedBatches = 0;
-Object.values(finalBatches).forEach(semObj => totalParsedBatches += Object.keys(semObj).length);
+let totalParsedBatches = Object.keys(finalBatches).length;
 
 if (totalParsedBatches < 5) {
     console.error(`🚨 FATAL ERROR: Only ${totalParsedBatches} total batches parsed!`);

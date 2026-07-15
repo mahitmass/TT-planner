@@ -4,11 +4,6 @@ let currentSemester = "2"; // Default Semester
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.sem-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            document.querySelectorAll('.sem-btn').forEach(b => { 
-                b.style.background = 'transparent'; 
-                b.style.color = 'var(--text)'; 
-                b.classList.remove('active'); 
-            });
             e.target.style.background = 'var(--primary)';
             e.target.style.color = 'white';
             e.target.classList.add('active');
@@ -34,9 +29,9 @@ if ("serviceWorker" in navigator) {
                 const newScheduleMap = getNewSchedule();
                 
                 const currentBatch = Storage.get('selectedBatch', 'A1');
-                const currentSem = Storage.get('selectedSemester', '2');
                 
-                const oldBatchSchedule = JSON.stringify(scheduleMap[currentSem]?.[currentBatch] || []);
+                
+                const oldBatchSchedule = JSON.stringify(scheduleMap?.[currentBatch] || []);
                 const newBatchSchedule = JSON.stringify(newScheduleMap[currentSem]?.[currentBatch] || []);
                 
                 if (oldBatchSchedule !== newBatchSchedule) {
@@ -165,7 +160,7 @@ const TimetableApp = (function() {
       const is128 = /^[FEH]/.test(current); 
       
       // THE FIX: Look inside currentSemester!
-      const allBatches = Object.keys(scheduleMap[state.currentSemester] || {});
+      const allBatches = Object.keys(scheduleMap || {});
       masterList = allBatches.filter(b => {
            return is128 ? /^[EFH]/.test(b) : /^[ABCDG]/.test(b);
       }).sort((a, b) => 
@@ -354,13 +349,13 @@ const TimetableApp = (function() {
   }
 
   function loadSavedPreferences() {
-    state.currentSemester = Storage.get('selectedSemester', '2'); // Load saved sem
+    
     const savedBatch = Storage.get('selectedBatch', 'A1');
     state.currentBatch = savedBatch;
     
     // Check inside the semester!
-    if (typeof scheduleMap !== 'undefined' && scheduleMap[state.currentSemester] && scheduleMap[state.currentSemester][savedBatch]) {
-        state.currentSchedule = scheduleMap[state.currentSemester][savedBatch];
+    if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[savedBatch]) {
+        state.currentSchedule = scheduleMap[savedBatch];
     } else {
         state.currentSchedule = (typeof scheduleA1 !== 'undefined') ? scheduleA1 : [];
     }
@@ -693,7 +688,7 @@ function populateBatches() {
     let hasData = false;
     
     // Read from the new nested object!
-    const semData = scheduleMap[currentSemester] || {};
+    const semData = scheduleMap || {};
 
     Object.keys(semData).sort().forEach(batch => {
         const startsWithPrefix = targetPrefixes.some(prefix => batch.startsWith(prefix));
@@ -718,7 +713,7 @@ function populateBatches() {
     if (!grid || typeof scheduleMap === 'undefined') return;
     grid.innerHTML = '';
 
-    const allBatches = Object.keys(scheduleMap[state.currentSemester] || {});
+    const allBatches = Object.keys(scheduleMap || {});
     const filteredBatches = allBatches.filter(b => {
         return type === "128" ? /^[EFH]/.test(b) : /^[ABCDG]/.test(b);
     });
@@ -771,8 +766,8 @@ function populateBatches() {
     if (seriesBtn) seriesBtn.textContent = is128 ? "128 Series" : "62 Series";
 
     // THE FIX: Look inside currentSemester!
-    if (typeof scheduleMap !== 'undefined' && scheduleMap[state.currentSemester] && scheduleMap[state.currentSemester][batchName]) {
-        state.currentSchedule = scheduleMap[state.currentSemester][batchName];
+    if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[batchName]) {
+        state.currentSchedule = scheduleMap[batchName];
     } else {
         state.currentSchedule = [];
     }
@@ -791,35 +786,7 @@ function populateBatches() {
     }, 50);
   }
 
-function selectSemester(sem) {
-      state.currentSemester = sem;
-      Storage.set('selectedSemester', sem);
-      
-      // Update Button Colors Visuals
-      document.querySelectorAll('.sem-btn').forEach(b => b.classList.remove('active'));
-      const activeBtn = document.querySelector(`.sem-btn[data-sem="${sem}"]`);
-      if (activeBtn) activeBtn.classList.add('active');
-
-      // Refresh Dropdown Math
-      populateBatchGrid();
-
-      // Ensure the batch exists in the new semester, otherwise switch to first available
-      const availableBatches = Object.keys(scheduleMap[sem] || {});
-      if (availableBatches.length > 0) {
-          if (!availableBatches.includes(state.currentBatch)) {
-              const is128 = document.body.classList.contains('series-128');
-              const valid = availableBatches.filter(b => is128 ? /^[FEH]/.test(b) : /^[ABCDG]/.test(b));
-              selectBatch(valid.length > 0 ? valid[0] : availableBatches[0]);
-          } else {
-              selectBatch(state.currentBatch); // Forces redraw with new semester data!
-          }
-      } else {
-          state.currentSchedule = [];
-          renderMobileView();
-          renderDesktopView();
-      }
-  }
-  // ==================== VIEW MODE ====================
+// ==================== VIEW MODE ====================
  // REPLACE 'setViewMode' in app.js
 function setViewMode(mode) {
     state.currentView = mode;
@@ -1433,8 +1400,8 @@ function initTeacherSearch() {
     const slotMap = new Map();
     if (typeof scheduleMap !== 'undefined') {
       // THE FIX: Look inside currentSemester!
-      Object.keys(scheduleMap[state.currentSemester] || {}).forEach(batchName => {
-        const batchClasses = scheduleMap[state.currentSemester][batchName];
+      Object.keys(scheduleMap || {}).forEach(batchName => {
+        const batchClasses = scheduleMap[batchName];
         batchClasses.forEach(cls => {
            const teachers = cls.teacher.split('/').map(t => t.trim());
            if (teachers.includes(targetCode)) {

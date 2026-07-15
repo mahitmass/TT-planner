@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: write
-  issues: write
+  pull-requests: write
 
 jobs:
   sync-data:
@@ -16,11 +16,11 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
-      - name: Fetch Multi-Semester Data
+      - name: Fetch Data
         run: |
           # Clean old data to prevent ghosts
-          rm -rf raw_data parser_tool/*.xlsx parser_tool/*.csv
-          mkdir -p raw_data/62 raw_data/128
+          rm -rf raw_data
+          mkdir -p raw_data
 
           # Smart-clone only the folders we need from senior repo
           git clone --depth 1 --filter=blob:none --sparse https://github.com/codelif/jiit-planner-cdn.git senior_repo
@@ -28,26 +28,19 @@ jobs:
           git sparse-checkout set "raw/time_tables/B.Tech 62 (btech-62)" "raw/time_tables/B.Tech 128 (btech-128)"
           cd ..
 
-          # Move the exact semester folders (2, 4, etc.) into our raw_data
-          cp -r "senior_repo/raw/time_tables/B.Tech 62 (btech-62)/." raw_data/62/
-          cp -r "senior_repo/raw/time_tables/B.Tech 128 (btech-128)/." raw_data/128/
+          # Find the first .xlsx in the directories and copy directly to raw_data
+          find "senior_repo/raw/time_tables/B.Tech 62 (btech-62)" -type f -name "*.xlsx" -print -quit | xargs -I {} cp "{}" raw_data/62.xlsx
+          find "senior_repo/raw/time_tables/B.Tech 128 (btech-128)" -type f -name "*.xlsx" -print -quit | xargs -I {} cp "{}" raw_data/128.xlsx
           
           # Delete the temp clone
           rm -rf senior_repo
 
-          # Force rename the fetched files to 62.xlsx and 128.xlsx to ensure strict parser matching
-          find raw_data/62 -type f -name "*.xlsx" -execdir mv "{}" 62.xlsx \;
-          find raw_data/128 -type f -name "*.xlsx" -execdir mv "{}" 128.xlsx \;
-
-      - name: Process Updates
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.name 'Automated Sync'
-          git config --global user.email 'actions@github.com'
-          git add raw_data/
-          
-          if [[ -n $(git status --porcelain) ]]; then
-            git commit -m "chore: synchronize multi-semester data"
-            git push
-          fi
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: synchronize timetable data"
+          title: "New Timetable Data Available"
+          body: "A new timetable excel file has been detected in the upstream repo. Please review and merge to trigger parsing."
+          branch: "sync-timetable-data"
+          base: "main"

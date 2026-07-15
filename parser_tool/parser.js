@@ -242,9 +242,7 @@ function main() {
         const items = fs.readdirSync(dir);
         items.forEach(item => {
             const fullPath = path.join(dir, item);
-            if (fs.statSync(fullPath).isDirectory()) {
-                findFiles(fullPath); // Dig deeper (e.g. into the "2" or "4" folder)
-            } else {
+            if (!fs.statSync(fullPath).isDirectory()) {
                 const lowerItem = item.toLowerCase();
                 if (lowerItem === '62.xlsx' || lowerItem === '128.xlsx') {
                     filesToParse.push(fullPath);
@@ -262,29 +260,21 @@ function main() {
     }
 
     filesToParse.forEach(filePath => {
-        // Magically extract the Semester number from the folder name!
-        // E.g., raw_data/62/4/file.csv -> grabs the "4"
-        const pathParts = filePath.split(path.sep);
-        const semFolder = pathParts[pathParts.length - 2]; 
-        let currentSem = isNaN(semFolder) ? "2" : semFolder; 
-
         try {
             const fileData = parseSingleFile(filePath);
             if (fileData && fileData.length > 0) {
-                // Attach the semester tag to every parsed class
-                fileData.forEach(entry => entry.semester = currentSem);
                 combinedSchedule = combinedSchedule.concat(fileData);
-                console.log(`   ✅ Extracted ${fileData.length} entries from Sem ${currentSem} (${path.basename(filePath)})`);
+                console.log(`   ✅ Extracted ${fileData.length} entries from ${path.basename(filePath)}`);
             }
         } catch (err) {
             console.error(`   ❌ ERROR parsing file ${filePath}:`, err.message);
         }
     });
 
-    // --- THE DEDUPLICATOR (Now respects semesters) ---
+    // --- THE DEDUPLICATOR ---
     const uniqueClasses = new Map();
     combinedSchedule.forEach(entry => {
-        const uniqueKey = `${entry.semester}-${entry.batch}-${entry.day}-${entry.start}`;
+        const uniqueKey = `${entry.batch}-${entry.day}-${entry.start}`;
         if (!uniqueClasses.has(uniqueKey)) {
             uniqueClasses.set(uniqueKey, entry);
         }

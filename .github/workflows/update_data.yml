@@ -3,7 +3,8 @@ name: Re-Generate Data
 on:
   push:
     paths:
-      - 'parser_tool/**' # Runs whenever you change the parser or upload Excel
+      - 'parser_tool/**' # Runs whenever you change the parser
+      - 'raw_data/**' # Runs whenever new Excel data is added
 
 permissions:
   contents: write
