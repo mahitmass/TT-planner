@@ -31,6 +31,16 @@
   },
   {
     "day": 1,
+    "start": 10,
+    "duration": 1,
+    "batch": "B2",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "G3",
+    "teacher": "MKT"
+  },
+  {
+    "day": 1,
     "start": 12,
     "duration": 1,
     "batch": "A1",
@@ -141,6 +151,16 @@
   },
   {
     "day": 1,
+    "start": 10,
+    "duration": 1,
+    "batch": "B10",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "G4",
+    "teacher": "SUD"
+  },
+  {
+    "day": 1,
     "start": 12,
     "duration": 1,
     "batch": "G3",
@@ -164,6 +184,16 @@
     "start": 14,
     "duration": 1,
     "batch": "B5",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "G4",
+    "teacher": "RTK"
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 1,
+    "batch": "B6",
     "type": "LEC",
     "subject": "CS212",
     "room": "G4",
@@ -201,6 +231,16 @@
   },
   {
     "day": 1,
+    "start": 16,
+    "duration": 1,
+    "batch": "B6",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "G4",
+    "teacher": "RJM"
+  },
+  {
+    "day": 1,
     "start": 9,
     "duration": 1,
     "batch": "A5",
@@ -224,6 +264,26 @@
     "start": 10,
     "duration": 1,
     "batch": "B11",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "FF5",
+    "teacher": "PRV"
+  },
+  {
+    "day": 1,
+    "start": 10,
+    "duration": 1,
+    "batch": "B12",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "FF5",
+    "teacher": "PRV"
+  },
+  {
+    "day": 1,
+    "start": 10,
+    "duration": 1,
+    "batch": "B14",
     "type": "LEC",
     "subject": "CI311",
     "room": "FF5",
@@ -611,6 +671,26 @@
   },
   {
     "day": 1,
+    "start": 12,
+    "duration": 1,
+    "batch": "B12",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "FF7",
+    "teacher": "RTK"
+  },
+  {
+    "day": 1,
+    "start": 12,
+    "duration": 1,
+    "batch": "B14",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "FF7",
+    "teacher": "RTK"
+  },
+  {
+    "day": 1,
     "start": 14,
     "duration": 1,
     "batch": "G3",
@@ -771,6 +851,16 @@
   },
   {
     "day": 1,
+    "start": 14,
+    "duration": 1,
+    "batch": "B4",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "FF5",
+    "teacher": "VRN"
+  },
+  {
+    "day": 1,
     "start": 15,
     "duration": 1,
     "batch": "B7",
@@ -804,6 +894,16 @@
     "start": 9,
     "duration": 1,
     "batch": "B7",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "CS4",
+    "teacher": "ASY"
+  },
+  {
+    "day": 1,
+    "start": 9,
+    "duration": 1,
+    "batch": "B8",
     "type": "LEC",
     "subject": "CS212",
     "room": "CS4",
@@ -981,9 +1081,29 @@
   },
   {
     "day": 1,
+    "start": 12,
+    "duration": 1,
+    "batch": "B2",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "G5",
+    "teacher": "KA"
+  },
+  {
+    "day": 1,
     "start": 14,
     "duration": 1,
     "batch": "B1",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "FF7",
+    "teacher": "ALK"
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 1,
+    "batch": "B2",
     "type": "LEC",
     "subject": "CS213",
     "room": "FF7",
@@ -1074,6 +1194,16 @@
     "start": 12,
     "duration": 1,
     "batch": "B9",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "G9",
+    "teacher": "KM"
+  },
+  {
+    "day": 1,
+    "start": 12,
+    "duration": 1,
+    "batch": "B10",
     "type": "LEC",
     "subject": "CS212",
     "room": "G9",
@@ -1184,6 +1314,16 @@
     "start": 14,
     "duration": 1,
     "batch": "B7",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "CS5",
+    "teacher": "NSA"
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 1,
+    "batch": "B8",
     "type": "LEC",
     "subject": "CI311",
     "room": "CS5",
@@ -1781,6 +1921,16 @@
   },
   {
     "day": 2,
+    "start": 10,
+    "duration": 1,
+    "batch": "B2",
+    "type": "LEC",
+    "subject": "CS214",
+    "room": "G3",
+    "teacher": "HN"
+  },
+  {
+    "day": 2,
     "start": 11,
     "duration": 1,
     "batch": "A5",
@@ -1844,6 +1994,16 @@
     "start": 15,
     "duration": 1,
     "batch": "B5",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "G4",
+    "teacher": "RJM"
+  },
+  {
+    "day": 2,
+    "start": 15,
+    "duration": 1,
+    "batch": "B6",
     "type": "LEC",
     "subject": "CI311",
     "room": "G4",
@@ -1941,6 +2101,16 @@
   },
   {
     "day": 2,
+    "start": 12,
+    "duration": 1,
+    "batch": "B10",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "G5",
+    "teacher": "DCH"
+  },
+  {
+    "day": 2,
     "start": 14,
     "duration": 1,
     "batch": "A5",
@@ -1984,6 +2154,16 @@
     "start": 16,
     "duration": 1,
     "batch": "B7",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "G5",
+    "teacher": "NSA"
+  },
+  {
+    "day": 2,
+    "start": 16,
+    "duration": 1,
+    "batch": "B8",
     "type": "LEC",
     "subject": "CI311",
     "room": "G5",
@@ -2054,6 +2234,16 @@
     "start": 12,
     "duration": 1,
     "batch": "B7",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "G6",
+    "teacher": "ABC"
+  },
+  {
+    "day": 2,
+    "start": 12,
+    "duration": 1,
+    "batch": "B8",
     "type": "LEC",
     "subject": "CS213",
     "room": "G6",
@@ -2311,9 +2501,29 @@
   },
   {
     "day": 2,
+    "start": 11,
+    "duration": 1,
+    "batch": "B2",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "FF5",
+    "teacher": "KA"
+  },
+  {
+    "day": 2,
     "start": 14,
     "duration": 1,
     "batch": "B9",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "FF6",
+    "teacher": "SUD"
+  },
+  {
+    "day": 2,
+    "start": 14,
+    "duration": 1,
+    "batch": "B10",
     "type": "LEC",
     "subject": "CI311",
     "room": "FF6",
@@ -2421,6 +2631,16 @@
   },
   {
     "day": 2,
+    "start": 11,
+    "duration": 1,
+    "batch": "B10",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "FF6",
+    "teacher": "KM"
+  },
+  {
+    "day": 2,
     "start": 12,
     "duration": 1,
     "batch": "G1",
@@ -2444,6 +2664,26 @@
     "start": 14,
     "duration": 1,
     "batch": "B11",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "FF7",
+    "teacher": "PRV"
+  },
+  {
+    "day": 2,
+    "start": 14,
+    "duration": 1,
+    "batch": "B12",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "FF7",
+    "teacher": "PRV"
+  },
+  {
+    "day": 2,
+    "start": 14,
+    "duration": 1,
+    "batch": "B14",
     "type": "LEC",
     "subject": "CI311",
     "room": "FF7",
@@ -2561,6 +2801,16 @@
   },
   {
     "day": 2,
+    "start": 14,
+    "duration": 1,
+    "batch": "B4",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "CS3",
+    "teacher": "SON"
+  },
+  {
+    "day": 2,
     "start": 15,
     "duration": 1,
     "batch": "A4",
@@ -2584,6 +2834,16 @@
     "start": 10,
     "duration": 1,
     "batch": "B3",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "F8",
+    "teacher": "VRN"
+  },
+  {
+    "day": 2,
+    "start": 10,
+    "duration": 1,
+    "batch": "B4",
     "type": "LEC",
     "subject": "CI311",
     "room": "F8",
@@ -3121,6 +3381,16 @@
   },
   {
     "day": 3,
+    "start": 11,
+    "duration": 1,
+    "batch": "B2",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "G3",
+    "teacher": "MKT"
+  },
+  {
+    "day": 3,
     "start": 12,
     "duration": 1,
     "batch": "B1",
@@ -3144,6 +3414,16 @@
     "start": 9,
     "duration": 1,
     "batch": "B7",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "CS5",
+    "teacher": "ASY"
+  },
+  {
+    "day": 3,
+    "start": 9,
+    "duration": 1,
+    "batch": "B8",
     "type": "LEC",
     "subject": "CS212",
     "room": "CS5",
@@ -3191,9 +3471,39 @@
   },
   {
     "day": 3,
+    "start": 11,
+    "duration": 1,
+    "batch": "B8",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "G4",
+    "teacher": "NSA"
+  },
+  {
+    "day": 3,
     "start": 12,
     "duration": 1,
     "batch": "B11",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "G4",
+    "teacher": "PRV"
+  },
+  {
+    "day": 3,
+    "start": 12,
+    "duration": 1,
+    "batch": "B12",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "G4",
+    "teacher": "PRV"
+  },
+  {
+    "day": 3,
+    "start": 12,
+    "duration": 1,
+    "batch": "B14",
     "type": "LEC",
     "subject": "CI311",
     "room": "G4",
@@ -3381,6 +3691,16 @@
   },
   {
     "day": 3,
+    "start": 16,
+    "duration": 1,
+    "batch": "B10",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "G4",
+    "teacher": "KM"
+  },
+  {
+    "day": 3,
     "start": 10,
     "duration": 1,
     "batch": "A3",
@@ -3561,6 +3881,16 @@
   },
   {
     "day": 3,
+    "start": 12,
+    "duration": 1,
+    "batch": "B6",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "FF7",
+    "teacher": "RJM"
+  },
+  {
+    "day": 3,
     "start": 14,
     "duration": 1,
     "batch": "A5",
@@ -3654,6 +3984,16 @@
     "start": 10,
     "duration": 1,
     "batch": "B3",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "CR501",
+    "teacher": "KA"
+  },
+  {
+    "day": 3,
+    "start": 10,
+    "duration": 1,
+    "batch": "B4",
     "type": "LEC",
     "subject": "CS212",
     "room": "CR501",
@@ -3871,6 +4211,16 @@
   },
   {
     "day": 3,
+    "start": 14,
+    "duration": 1,
+    "batch": "B4",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "FF5",
+    "teacher": "SON"
+  },
+  {
+    "day": 3,
     "start": 15,
     "duration": 1,
     "batch": "B3",
@@ -3881,9 +4231,29 @@
   },
   {
     "day": 3,
+    "start": 15,
+    "duration": 1,
+    "batch": "B4",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "FF5",
+    "teacher": "VRN"
+  },
+  {
+    "day": 3,
     "start": 16,
     "duration": 1,
     "batch": "B5",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "FF5",
+    "teacher": "SHR"
+  },
+  {
+    "day": 3,
+    "start": 16,
+    "duration": 1,
+    "batch": "B6",
     "type": "LEC",
     "subject": "CS213",
     "room": "FF5",
@@ -3964,6 +4334,16 @@
     "start": 14,
     "duration": 1,
     "batch": "B9",
+    "type": "LEC",
+    "subject": "CS214",
+    "room": "FF6",
+    "teacher": "KRR"
+  },
+  {
+    "day": 3,
+    "start": 14,
+    "duration": 1,
+    "batch": "B10",
     "type": "LEC",
     "subject": "CS214",
     "room": "FF6",
@@ -4081,9 +4461,39 @@
   },
   {
     "day": 3,
+    "start": 15,
+    "duration": 1,
+    "batch": "B6",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "FF7",
+    "teacher": "RTK"
+  },
+  {
+    "day": 3,
     "start": 16,
     "duration": 1,
     "batch": "B11",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "FF7",
+    "teacher": "RTK"
+  },
+  {
+    "day": 3,
+    "start": 16,
+    "duration": 1,
+    "batch": "B12",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "FF7",
+    "teacher": "RTK"
+  },
+  {
+    "day": 3,
+    "start": 16,
+    "duration": 1,
+    "batch": "B14",
     "type": "LEC",
     "subject": "CS212",
     "room": "FF7",
@@ -4354,6 +4764,16 @@
     "start": 12,
     "duration": 1,
     "batch": "B9",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "CS1",
+    "teacher": "SUD"
+  },
+  {
+    "day": 3,
+    "start": 12,
+    "duration": 1,
+    "batch": "B10",
     "type": "LEC",
     "subject": "CI311",
     "room": "CS1",
@@ -4641,6 +5061,16 @@
   },
   {
     "day": 4,
+    "start": 10,
+    "duration": 1,
+    "batch": "B8",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "G4",
+    "teacher": "ASY"
+  },
+  {
+    "day": 4,
     "start": 11,
     "duration": 1,
     "batch": "B7",
@@ -4841,9 +5271,29 @@
   },
   {
     "day": 4,
+    "start": 14,
+    "duration": 1,
+    "batch": "B2",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "G4",
+    "teacher": "ALK"
+  },
+  {
+    "day": 4,
     "start": 9,
     "duration": 1,
     "batch": "B1",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "CS6",
+    "teacher": "KA"
+  },
+  {
+    "day": 4,
+    "start": 9,
+    "duration": 1,
+    "batch": "B2",
     "type": "LEC",
     "subject": "CS212",
     "room": "CS6",
@@ -4924,6 +5374,26 @@
     "start": 14,
     "duration": 1,
     "batch": "B11",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "FF5",
+    "teacher": "DEP"
+  },
+  {
+    "day": 4,
+    "start": 14,
+    "duration": 1,
+    "batch": "B12",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "FF5",
+    "teacher": "DEP"
+  },
+  {
+    "day": 4,
+    "start": 14,
+    "duration": 1,
+    "batch": "B14",
     "type": "LEC",
     "subject": "CS213",
     "room": "FF5",
@@ -5051,6 +5521,16 @@
   },
   {
     "day": 4,
+    "start": 14,
+    "duration": 1,
+    "batch": "B10",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "FF6",
+    "teacher": "DCH"
+  },
+  {
+    "day": 4,
     "start": 15,
     "duration": 1,
     "batch": "G3",
@@ -5154,6 +5634,16 @@
     "start": 12,
     "duration": 1,
     "batch": "B3",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "G7",
+    "teacher": "KA"
+  },
+  {
+    "day": 4,
+    "start": 12,
+    "duration": 1,
+    "batch": "B4",
     "type": "LEC",
     "subject": "CS212",
     "room": "G7",
@@ -5271,9 +5761,29 @@
   },
   {
     "day": 4,
+    "start": 12,
+    "duration": 1,
+    "batch": "B6",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "G8",
+    "teacher": "SHR"
+  },
+  {
+    "day": 4,
     "start": 14,
     "duration": 1,
     "batch": "B3",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "G6",
+    "teacher": "SON"
+  },
+  {
+    "day": 4,
+    "start": 14,
+    "duration": 1,
+    "batch": "B4",
     "type": "LEC",
     "subject": "CS213",
     "room": "G6",
@@ -5294,6 +5804,16 @@
     "start": 10,
     "duration": 1,
     "batch": "B1",
+    "type": "LEC",
+    "subject": "CI311",
+    "room": "F8",
+    "teacher": "MKT"
+  },
+  {
+    "day": 4,
+    "start": 10,
+    "duration": 1,
+    "batch": "B2",
     "type": "LEC",
     "subject": "CI311",
     "room": "F8",
@@ -5334,6 +5854,16 @@
     "start": 12,
     "duration": 1,
     "batch": "B7",
+    "type": "LEC",
+    "subject": "CS214",
+    "room": "G9",
+    "teacher": "KRR"
+  },
+  {
+    "day": 4,
+    "start": 12,
+    "duration": 1,
+    "batch": "B8",
     "type": "LEC",
     "subject": "CS214",
     "room": "G9",
@@ -5391,9 +5921,39 @@
   },
   {
     "day": 4,
+    "start": 12,
+    "duration": 1,
+    "batch": "B12",
+    "type": "LEC",
+    "subject": "CS214",
+    "room": "FF5",
+    "teacher": "HN"
+  },
+  {
+    "day": 4,
+    "start": 12,
+    "duration": 1,
+    "batch": "B14",
+    "type": "LEC",
+    "subject": "CS214",
+    "room": "FF5",
+    "teacher": "HN"
+  },
+  {
+    "day": 4,
     "start": 14,
     "duration": 1,
     "batch": "B7",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "G8",
+    "teacher": "ABC"
+  },
+  {
+    "day": 4,
+    "start": 14,
+    "duration": 1,
+    "batch": "B8",
     "type": "LEC",
     "subject": "CS213",
     "room": "G8",
@@ -5881,6 +6441,26 @@
   },
   {
     "day": 5,
+    "start": 9,
+    "duration": 1,
+    "batch": "B12",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "FF6",
+    "teacher": "RTK"
+  },
+  {
+    "day": 5,
+    "start": 9,
+    "duration": 1,
+    "batch": "B14",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "FF6",
+    "teacher": "RTK"
+  },
+  {
+    "day": 5,
     "start": 11,
     "duration": 1,
     "batch": "A17",
@@ -6061,9 +6641,39 @@
   },
   {
     "day": 5,
+    "start": 15,
+    "duration": 1,
+    "batch": "B12",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "G4",
+    "teacher": "DEP"
+  },
+  {
+    "day": 5,
+    "start": 15,
+    "duration": 1,
+    "batch": "B14",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "G4",
+    "teacher": "DEP"
+  },
+  {
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "B3",
+    "type": "LEC",
+    "subject": "CS214",
+    "room": "G3",
+    "teacher": "AKT"
+  },
+  {
+    "day": 5,
+    "start": 16,
+    "duration": 1,
+    "batch": "B4",
     "type": "LEC",
     "subject": "CS214",
     "room": "G3",
@@ -6161,9 +6771,29 @@
   },
   {
     "day": 5,
+    "start": 16,
+    "duration": 1,
+    "batch": "B6",
+    "type": "LEC",
+    "subject": "CS214",
+    "room": "G4",
+    "teacher": "MAY"
+  },
+  {
+    "day": 5,
     "start": 9,
     "duration": 1,
     "batch": "B3",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "CS6",
+    "teacher": "KA"
+  },
+  {
+    "day": 5,
+    "start": 9,
+    "duration": 1,
+    "batch": "B4",
     "type": "LEC",
     "subject": "CS212",
     "room": "CS6",
@@ -6291,6 +6921,26 @@
   },
   {
     "day": 5,
+    "start": 10,
+    "duration": 1,
+    "batch": "B12",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "G8",
+    "teacher": "DEP"
+  },
+  {
+    "day": 5,
+    "start": 10,
+    "duration": 1,
+    "batch": "B14",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "G8",
+    "teacher": "DEP"
+  },
+  {
+    "day": 5,
     "start": 11,
     "duration": 1,
     "batch": "B9",
@@ -6314,6 +6964,16 @@
     "start": 12,
     "duration": 1,
     "batch": "B9",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "G6",
+    "teacher": "DCH"
+  },
+  {
+    "day": 5,
+    "start": 12,
+    "duration": 1,
+    "batch": "B10",
     "type": "LEC",
     "subject": "CS213",
     "room": "G6",
@@ -6521,6 +7181,16 @@
   },
   {
     "day": 5,
+    "start": 12,
+    "duration": 1,
+    "batch": "B2",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "G9",
+    "teacher": "ALK"
+  },
+  {
+    "day": 5,
     "start": 14,
     "duration": 1,
     "batch": "A7",
@@ -6604,6 +7274,16 @@
     "start": 12,
     "duration": 1,
     "batch": "B7",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "CR501",
+    "teacher": "ABC"
+  },
+  {
+    "day": 5,
+    "start": 12,
+    "duration": 1,
+    "batch": "B8",
     "type": "LEC",
     "subject": "CS213",
     "room": "CR501",
@@ -7041,9 +7721,29 @@
   },
   {
     "day": 6,
+    "start": 11,
+    "duration": 1,
+    "batch": "B6",
+    "type": "LEC",
+    "subject": "CS213",
+    "room": "FF5",
+    "teacher": "SHR"
+  },
+  {
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "B5",
+    "type": "LEC",
+    "subject": "CS212",
+    "room": "G8",
+    "teacher": "RTK"
+  },
+  {
+    "day": 6,
+    "start": 12,
+    "duration": 1,
+    "batch": "B6",
     "type": "LEC",
     "subject": "CS212",
     "room": "G8",

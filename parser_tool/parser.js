@@ -71,15 +71,19 @@ function expandBatches(batchString) {
     let spaced = batchString.replace(/(\d)([A-Za-z])/g, '$1,$2');
     const parts = spaced.split(/[,+]/).map(s => s.trim()).filter(s => s);
     const expanded = [];
+    
+    let lastPrefix = '';
 
     parts.forEach(part => {
         if (part.includes('-')) {
             const [start, end] = part.split('-').map(s => s.trim());
-            const matchStart = start.match(/^([A-Za-z]+)(\d+)$/i);
+            const matchStart = start.match(/^([A-Za-z]*)(\d+)$/i);
             const matchEnd = end.match(/^([A-Za-z]*)(\d+)$/i);
             
             if (matchStart && matchEnd) {
-                const prefix = matchStart[1];
+                let prefix = matchStart[1] || lastPrefix;
+                if (prefix) lastPrefix = prefix; // remember it
+                
                 const endPrefix = matchEnd[1] || prefix;
                 
                 if (prefix.toUpperCase() === endPrefix.toUpperCase()) {
@@ -88,11 +92,28 @@ function expandBatches(batchString) {
                     
                     if (startNum <= endNum && (endNum - startNum) < 20) {
                         for (let i = startNum; i <= endNum; i++) expanded.push(`${prefix}${i}`);
-                    } else expanded.push(part);
+                    } else expanded.push(`${prefix}${matchStart[2]}-${endPrefix}${matchEnd[2]}`);
                 } else expanded.push(part);
             } else expanded.push(part);
         } else {
-            expanded.push(part);
+            // It's a single item like "B11" or "12"
+            const matchSingle = part.match(/^([A-Za-z]*)(\d+)$/i);
+            if (matchSingle) {
+                let prefix = matchSingle[1];
+                if (prefix) {
+                    lastPrefix = prefix; // update prefix
+                } else {
+                    prefix = lastPrefix; // inherit prefix
+                }
+                
+                if (prefix) {
+                    expanded.push(`${prefix}${matchSingle[2]}`);
+                } else {
+                    expanded.push(part); // fallback
+                }
+            } else {
+                expanded.push(part);
+            }
         }
     });
     return expanded;

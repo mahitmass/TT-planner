@@ -441,10 +441,10 @@ const TimetableApp = (function() {
       if (index > 0 && cls.start > lastEndTime) {
         const gapStart = lastEndTime;
         const gapEnd = cls.start;
-        if (gapStart <= 12 && gapEnd >= 13) {
-          if (12 > gapStart) container.appendChild(createBreakCard(gapStart, 12, "Break"));
-          container.appendChild(createBreakCard(12, 13, "Lunch Break"));
-          if (gapEnd > 13) container.appendChild(createBreakCard(13, gapEnd, "Break"));
+        if (gapStart <= 13 && gapEnd >= 14) {
+          if (13 > gapStart) container.appendChild(createBreakCard(gapStart, 13, "Break"));
+          container.appendChild(createBreakCard(13, 14, "Lunch Break"));
+          if (gapEnd > 14) container.appendChild(createBreakCard(14, gapEnd, "Break"));
         } else {
           container.appendChild(createBreakCard(gapStart, gapEnd, "Break"));
         }
@@ -594,7 +594,7 @@ function renderDesktopView() {
   function createEmptyTableCell(day, hour) {
     const cell = document.createElement('td');
     cell.setAttribute('data-day', day);
-    if (hour === 12) {
+    if (hour === 13) {
       cell.className = 'cell-break';
       cell.innerHTML = '<span style="font-size:0.6rem; opacity:0.5;">LUNCH</span>';
     }

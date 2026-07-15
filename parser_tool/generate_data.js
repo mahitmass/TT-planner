@@ -43,16 +43,17 @@ rawData.forEach(entry => {
     let finalSubject = getSubjectName(entry.subject);
     
     if (entry.subject === 'HS111' || finalSubject.includes('UHV')) {
-        finalSubject = (entry.type === 'LAB' || entry.duration > 1) ? "Life Skills Lab" : "UHV";
+        finalSubject = (entry.type === 'LAB' || entry.duration > 1) ? "Life Skills" : "UHV";
     } else if (entry.subject === 'GE112' || finalSubject.toLowerCase().includes('workshop')) {
-        finalSubject = (entry.type === 'LAB' || entry.duration > 1) ? "Workshop Lab" : "Workshop";
-    } else if (entry.type === 'LAB' && !finalSubject.toLowerCase().includes('lab')) {
-        finalSubject += " (Lab)";
+        finalSubject = "Workshop";
     }
+    
+    // Strip "Lab" or "(Lab)" from the title (case insensitive) at the end of the string
+    finalSubject = finalSubject.replace(/\s*\(?Lab\)?$/ig, '').trim();
 
     let finalDuration = entry.duration;
     const is128Batch = /^[FHE]/.test(batchName);
-    if (entry.type === 'LAB' || finalSubject.toLowerCase().includes('lab')) {
+    if (entry.type === 'LAB' || entry.duration > 1) {
         finalDuration = 2;
         if (is128Batch && finalSubject.includes('Workshop')) finalDuration = 3;
     }
@@ -103,6 +104,13 @@ let scheduleMapString = "{\n";
 const sortedBatches = Object.keys(finalBatches).sort((a, b) => a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'}));
 sortedBatches.forEach((bName, i) => {
     scheduleMapString += `  "${bName}": [\n`;
+    
+    // Sort classes within the batch by day and then by start time to guarantee 100% deterministic order
+    finalBatches[bName].sort((a, b) => {
+        if (a.day !== b.day) return a.day - b.day;
+        return a.start - b.start;
+    });
+
     finalBatches[bName].forEach((cls, j) => {
         scheduleMapString += `    { "day": ${cls.day}, "start": ${cls.start}, "duration": ${cls.duration}, "title": "${cls.title}", "code": "${cls.code}", "teacher": "${cls.teacher}", "type": "${cls.type}" }${j < finalBatches[bName].length - 1 ? ',' : ''}\n`;
     });
