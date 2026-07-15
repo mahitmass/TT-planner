@@ -22,8 +22,8 @@ jobs:
     - run: cd parser_tool && node generate_data.js
     - name: Commit and Push
       run: |
-        git config --global user.name 'Data Bot'
-        git config --global user.email 'bot@noreply.github.com'
+        git config --global user.name 'mahitmass'
+        git config --global user.email 'mahitmass@users.noreply.github.com'
         git add js/data.js
         git commit -m "🤖 Bot updated data.js" || echo "No changes"
         git push
