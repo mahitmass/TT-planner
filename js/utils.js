@@ -52,9 +52,9 @@ function getTeacherDisplayName(code) {
     return facultyNames128[code];
   }
 
-  // 3. Handle combined names like "NG / INC"
-  if (code.includes('/')) {
-    return code.split('/')
+  // 3. Handle combined names like "NG / INC" or "LM,MKT"
+  if (code.includes('/') || code.includes(',')) {
+    return code.split(/[\/,]+/)
       .map(part => {
         const trimmed = part.trim();
         // Check both lists for each part
