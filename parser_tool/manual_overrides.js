@@ -34,7 +34,7 @@ module.exports = {
       "start": 15,
       "duration": 2 ,
       "title": "SDF-2",
-      "code": "FF2",
+      "code": "FF3",
       "teacher": "ROH",
       "type": "lec"
     },
