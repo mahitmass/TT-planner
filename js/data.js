@@ -4,8 +4,8 @@ const scheduleMap = {
     {
       "day": 2,
       "start": 10,
-      "duration": 1,
-      "title": "CS214",
+      "duration": 2,
+      "title": "IT Infrastructure and Communication Lab",
       "code": "G3",
       "teacher": "HN",
       "type": "lec"
@@ -14,7 +14,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "FF5",
       "teacher": "KA",
       "type": "lec"
@@ -23,7 +23,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "G3",
       "teacher": "MKT",
       "type": "lec"
@@ -32,7 +32,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G4",
       "teacher": "ALK",
       "type": "lec"
@@ -41,7 +41,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "CS6",
       "teacher": "KA",
       "type": "lec"
@@ -50,7 +50,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "F8",
       "teacher": "MKT",
       "type": "lec"
@@ -59,7 +59,7 @@ const scheduleMap = {
       "day": 5,
       "start": 12,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G9",
       "teacher": "ALK",
       "type": "lec"
@@ -70,7 +70,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "CS3",
       "teacher": "SON",
       "type": "lec"
@@ -79,7 +79,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "F8",
       "teacher": "VRN",
       "type": "lec"
@@ -88,7 +88,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "CR501",
       "teacher": "KA",
       "type": "lec"
@@ -97,7 +97,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "FF5",
       "teacher": "SON",
       "type": "lec"
@@ -106,7 +106,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "FF5",
       "teacher": "VRN",
       "type": "lec"
@@ -115,7 +115,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "G7",
       "teacher": "KA",
       "type": "lec"
@@ -124,7 +124,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G6",
       "teacher": "SON",
       "type": "lec"
@@ -132,8 +132,8 @@ const scheduleMap = {
     {
       "day": 5,
       "start": 16,
-      "duration": 1,
-      "title": "CS214",
+      "duration": 2,
+      "title": "IT Infrastructure and Communication Lab",
       "code": "G3",
       "teacher": "AKT",
       "type": "lec"
@@ -142,7 +142,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "CS6",
       "teacher": "KA",
       "type": "lec"
@@ -153,7 +153,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "G4",
       "teacher": "RJM",
       "type": "lec"
@@ -162,7 +162,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "FF7",
       "teacher": "RJM",
       "type": "lec"
@@ -171,7 +171,7 @@ const scheduleMap = {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "FF5",
       "teacher": "SHR",
       "type": "lec"
@@ -180,7 +180,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "FF7",
       "teacher": "RTK",
       "type": "lec"
@@ -189,7 +189,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G8",
       "teacher": "SHR",
       "type": "lec"
@@ -197,8 +197,8 @@ const scheduleMap = {
     {
       "day": 5,
       "start": 16,
-      "duration": 1,
-      "title": "CS214",
+      "duration": 2,
+      "title": "IT Infrastructure and Communication Lab",
       "code": "G4",
       "teacher": "MAY",
       "type": "lec"
@@ -207,7 +207,7 @@ const scheduleMap = {
       "day": 6,
       "start": 11,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "FF5",
       "teacher": "SHR",
       "type": "lec"
@@ -216,7 +216,7 @@ const scheduleMap = {
       "day": 6,
       "start": 12,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "G8",
       "teacher": "RTK",
       "type": "lec"
@@ -227,7 +227,7 @@ const scheduleMap = {
       "day": 2,
       "start": 16,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "G5",
       "teacher": "NSA",
       "type": "lec"
@@ -236,7 +236,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G6",
       "teacher": "ABC",
       "type": "lec"
@@ -245,7 +245,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "CS5",
       "teacher": "ASY",
       "type": "lec"
@@ -254,7 +254,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "G4",
       "teacher": "NSA",
       "type": "lec"
@@ -263,7 +263,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "G4",
       "teacher": "ASY",
       "type": "lec"
@@ -271,8 +271,8 @@ const scheduleMap = {
     {
       "day": 4,
       "start": 12,
-      "duration": 1,
-      "title": "CS214",
+      "duration": 2,
+      "title": "IT Infrastructure and Communication Lab",
       "code": "G9",
       "teacher": "KRR",
       "type": "lec"
@@ -281,7 +281,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G8",
       "teacher": "ABC",
       "type": "lec"
@@ -290,7 +290,7 @@ const scheduleMap = {
       "day": 5,
       "start": 12,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "CR501",
       "teacher": "ABC",
       "type": "lec"
@@ -301,7 +301,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G5",
       "teacher": "DCH",
       "type": "lec"
@@ -310,7 +310,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "FF6",
       "teacher": "SUD",
       "type": "lec"
@@ -319,7 +319,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "FF6",
       "teacher": "KM",
       "type": "lec"
@@ -328,7 +328,7 @@ const scheduleMap = {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "G4",
       "teacher": "KM",
       "type": "lec"
@@ -336,8 +336,8 @@ const scheduleMap = {
     {
       "day": 3,
       "start": 14,
-      "duration": 1,
-      "title": "CS214",
+      "duration": 2,
+      "title": "IT Infrastructure and Communication Lab",
       "code": "FF6",
       "teacher": "KRR",
       "type": "lec"
@@ -346,7 +346,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "CS1",
       "teacher": "SUD",
       "type": "lec"
@@ -355,7 +355,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "FF6",
       "teacher": "DCH",
       "type": "lec"
@@ -364,7 +364,7 @@ const scheduleMap = {
       "day": 5,
       "start": 12,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G6",
       "teacher": "DCH",
       "type": "lec"
@@ -375,7 +375,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "FF7",
       "teacher": "PRV",
       "type": "lec"
@@ -384,7 +384,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "G4",
       "teacher": "PRV",
       "type": "lec"
@@ -393,7 +393,7 @@ const scheduleMap = {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "FF7",
       "teacher": "RTK",
       "type": "lec"
@@ -402,7 +402,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "FF5",
       "teacher": "DEP",
       "type": "lec"
@@ -410,8 +410,8 @@ const scheduleMap = {
     {
       "day": 4,
       "start": 12,
-      "duration": 1,
-      "title": "CS214",
+      "duration": 2,
+      "title": "IT Infrastructure and Communication Lab",
       "code": "FF5",
       "teacher": "HN",
       "type": "lec"
@@ -420,7 +420,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "FF6",
       "teacher": "RTK",
       "type": "lec"
@@ -429,7 +429,7 @@ const scheduleMap = {
       "day": 5,
       "start": 15,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G4",
       "teacher": "DEP",
       "type": "lec"
@@ -438,7 +438,7 @@ const scheduleMap = {
       "day": 5,
       "start": 10,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G8",
       "teacher": "DEP",
       "type": "lec"
@@ -449,7 +449,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "FF7",
       "teacher": "PRV",
       "type": "lec"
@@ -458,7 +458,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "G4",
       "teacher": "PRV",
       "type": "lec"
@@ -467,7 +467,7 @@ const scheduleMap = {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "FF7",
       "teacher": "RTK",
       "type": "lec"
@@ -476,7 +476,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "FF5",
       "teacher": "DEP",
       "type": "lec"
@@ -484,8 +484,8 @@ const scheduleMap = {
     {
       "day": 4,
       "start": 12,
-      "duration": 1,
-      "title": "CS214",
+      "duration": 2,
+      "title": "IT Infrastructure and Communication Lab",
       "code": "FF5",
       "teacher": "HN",
       "type": "lec"
@@ -494,7 +494,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "FF6",
       "teacher": "RTK",
       "type": "lec"
@@ -503,7 +503,7 @@ const scheduleMap = {
       "day": 5,
       "start": 15,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G4",
       "teacher": "DEP",
       "type": "lec"
@@ -512,7 +512,7 @@ const scheduleMap = {
       "day": 5,
       "start": 10,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G8",
       "teacher": "DEP",
       "type": "lec"
@@ -523,7 +523,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G3",
       "teacher": "NF5",
       "type": "lec"
@@ -532,7 +532,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "G3",
       "teacher": "SCH",
       "type": "lec"
@@ -541,7 +541,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G3",
       "teacher": "AMN",
       "type": "lec"
@@ -550,7 +550,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "CS5",
       "teacher": "VK",
       "type": "lec"
@@ -559,7 +559,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "FF5",
       "teacher": "VK",
       "type": "lec"
@@ -568,7 +568,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "FF5",
       "teacher": "SCH",
       "type": "lec"
@@ -577,7 +577,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G4-",
       "teacher": "NF5",
       "type": "lec"
@@ -586,7 +586,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 2,
-      "title": "15EC215 (Lab)",
+      "title": "Digital Circuit Design (Lab)",
       "code": "CML",
       "teacher": "RMD/SHI",
       "type": "lab"
@@ -595,7 +595,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 2,
-      "title": "15EC211 (Lab)",
+      "title": "Electronic Devices and circuits (Lab)",
       "code": "EDC",
       "teacher": "AJK/APN",
       "type": "lab"
@@ -604,7 +604,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "FF4",
       "teacher": "GMA",
       "type": "lec"
@@ -613,7 +613,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "CR501",
       "teacher": "NF5",
       "type": "lec"
@@ -622,7 +622,7 @@ const scheduleMap = {
       "day": 4,
       "start": 15,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "TS13",
       "teacher": "VK",
       "type": "tut"
@@ -631,7 +631,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G4",
       "teacher": "GMA",
       "type": "lec"
@@ -640,7 +640,7 @@ const scheduleMap = {
       "day": 5,
       "start": 10,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "TS10",
       "teacher": "YG",
       "type": "tut"
@@ -649,7 +649,7 @@ const scheduleMap = {
       "day": 5,
       "start": 15,
       "duration": 2,
-      "title": "EC214 (Lab)",
+      "title": "Signals and Systems (Lab)",
       "code": "MODLAB",
       "teacher": "VK/TA11",
       "type": "lab"
@@ -660,7 +660,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G3",
       "teacher": "NF5",
       "type": "lec"
@@ -669,7 +669,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "G3",
       "teacher": "SCH",
       "type": "lec"
@@ -678,7 +678,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G3",
       "teacher": "AMN",
       "type": "lec"
@@ -687,7 +687,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "CS5",
       "teacher": "VK",
       "type": "lec"
@@ -696,7 +696,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "FF5",
       "teacher": "YG",
       "type": "lec"
@@ -705,7 +705,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 2,
-      "title": "EC214 (Lab)",
+      "title": "Signals and Systems (Lab)",
       "code": "MODLAB",
       "teacher": "VK/TA11",
       "type": "lab"
@@ -714,7 +714,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "FF5",
       "teacher": "VK",
       "type": "lec"
@@ -723,7 +723,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "FF5",
       "teacher": "SCH",
       "type": "lec"
@@ -732,7 +732,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G4-",
       "teacher": "NF5",
       "type": "lec"
@@ -741,7 +741,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 2,
-      "title": "15EC211 (Lab)",
+      "title": "Electronic Devices and circuits (Lab)",
       "code": "EDC",
       "teacher": "RSB/NF6",
       "type": "lab"
@@ -750,7 +750,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 2,
-      "title": "15EC215 (Lab)",
+      "title": "Digital Circuit Design (Lab)",
       "code": "CML",
       "teacher": "SCH/AKS",
       "type": "lab"
@@ -759,7 +759,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "G3",
       "teacher": "YG",
       "type": "lec"
@@ -768,7 +768,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "FF4",
       "teacher": "GMA",
       "type": "lec"
@@ -777,7 +777,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "CR501",
       "teacher": "NF5",
       "type": "lec"
@@ -786,7 +786,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "TS13",
       "teacher": "VK",
       "type": "tut"
@@ -795,7 +795,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G4",
       "teacher": "GMA",
       "type": "lec"
@@ -804,7 +804,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "TS16",
       "teacher": "AJK",
       "type": "tut"
@@ -813,7 +813,7 @@ const scheduleMap = {
       "day": 6,
       "start": 9,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "FF7",
       "teacher": "YG",
       "type": "lec"
@@ -824,7 +824,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "G3",
       "teacher": "MSD",
       "type": "lec"
@@ -833,7 +833,7 @@ const scheduleMap = {
       "day": 2,
       "start": 16,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G3",
       "teacher": "KMB",
       "type": "lec"
@@ -842,7 +842,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS11",
       "teacher": "PSH",
       "type": "tut"
@@ -851,7 +851,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "TS13",
       "teacher": "MSD",
       "type": "tut"
@@ -860,7 +860,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "G5",
       "teacher": "MSD",
       "type": "lec"
@@ -869,7 +869,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "TS13",
       "teacher": "LM",
       "type": "tut"
@@ -878,7 +878,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "FF7",
       "teacher": "KMB",
       "type": "lec"
@@ -887,7 +887,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 2,
-      "title": "B15CS214 (Lab)",
+      "title": "IT Infrastructure and Communication Lab",
       "code": "CL07",
       "teacher": "HN/KRR",
       "type": "lab"
@@ -896,7 +896,7 @@ const scheduleMap = {
       "day": 4,
       "start": 15,
       "duration": 2,
-      "title": "B15CS213 (Lab)",
+      "title": "Database Management Systems (Lab)",
       "code": "CL17",
       "teacher": "18/RTK/ALK/IC/ABC/ISH",
       "type": "lab"
@@ -905,7 +905,7 @@ const scheduleMap = {
       "day": 6,
       "start": 10,
       "duration": 2,
-      "title": "B15CS215 (Lab)",
+      "title": "Object Oriented Programming using Java (Lab)",
       "code": "CL19",
       "teacher": "20/PAG/KRL/KRI/POS",
       "type": "lab"
@@ -916,7 +916,7 @@ const scheduleMap = {
       "day": 2,
       "start": 16,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G3",
       "teacher": "KMB",
       "type": "lec"
@@ -925,7 +925,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "CS3",
       "teacher": "SON",
       "type": "lec"
@@ -934,7 +934,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "F8",
       "teacher": "VRN",
       "type": "lec"
@@ -943,7 +943,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS10",
       "teacher": "NES",
       "type": "tut"
@@ -952,7 +952,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "CR501",
       "teacher": "KA",
       "type": "lec"
@@ -961,7 +961,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "FF5",
       "teacher": "SON",
       "type": "lec"
@@ -970,7 +970,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "FF5",
       "teacher": "VRN",
       "type": "lec"
@@ -979,7 +979,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "FF7",
       "teacher": "KMB",
       "type": "lec"
@@ -988,7 +988,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "G7",
       "teacher": "KA",
       "type": "lec"
@@ -997,7 +997,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G6",
       "teacher": "SON",
       "type": "lec"
@@ -1006,7 +1006,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 2,
-      "title": "B15CS214 (Lab)",
+      "title": "IT Infrastructure and Communication Lab",
       "code": "CL11",
       "teacher": "MAY/AKT",
       "type": "lab"
@@ -1014,8 +1014,8 @@ const scheduleMap = {
     {
       "day": 5,
       "start": 16,
-      "duration": 1,
-      "title": "CS214",
+      "duration": 2,
+      "title": "IT Infrastructure and Communication Lab",
       "code": "G3",
       "teacher": "AKT",
       "type": "lec"
@@ -1024,7 +1024,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "CS6",
       "teacher": "KA",
       "type": "lec"
@@ -1033,7 +1033,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 2,
-      "title": "B15CS213 (Lab)",
+      "title": "Database Management Systems (Lab)",
       "code": "CL01",
       "teacher": "SHR/RTK",
       "type": "lab"
@@ -1042,7 +1042,7 @@ const scheduleMap = {
       "day": 6,
       "start": 10,
       "duration": 2,
-      "title": "B15CS215 (Lab)",
+      "title": "Object Oriented Programming using Java (Lab)",
       "code": "CL19",
       "teacher": "20/PAG/KRL/KRI/POS",
       "type": "lab"
@@ -1053,7 +1053,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "CS2",
       "teacher": "NF9",
       "type": "lec"
@@ -1062,7 +1062,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "TS13",
       "teacher": "KJ",
       "type": "tut"
@@ -1071,7 +1071,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 2,
-      "title": "B15CS213 (Lab)",
+      "title": "Database Management Systems (Lab)",
       "code": "CL01",
       "teacher": "02/IC/AA/ISH",
       "type": "lab"
@@ -1080,7 +1080,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "TS10",
       "teacher": "RSH",
       "type": "tut"
@@ -1089,7 +1089,7 @@ const scheduleMap = {
       "day": 4,
       "start": 15,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "FF5",
       "teacher": "NF9",
       "type": "lec"
@@ -1098,7 +1098,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS10",
       "teacher": "MM",
       "type": "tut"
@@ -1107,7 +1107,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 2,
-      "title": "B15CS215 (Lab)",
+      "title": "Object Oriented Programming using Java (Lab)",
       "code": "CL22",
       "teacher": "23/SHB/SHY/DEV",
       "type": "lab"
@@ -1116,7 +1116,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "FF6",
       "teacher": "NF9",
       "type": "lec"
@@ -1125,7 +1125,7 @@ const scheduleMap = {
       "day": 6,
       "start": 11,
       "duration": 2,
-      "title": "B15CS214 (Lab)",
+      "title": "IT Infrastructure and Communication Lab",
       "code": "CL10",
       "teacher": "AKT/JAG",
       "type": "lab"
@@ -1136,7 +1136,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "CS2",
       "teacher": "NF9",
       "type": "lec"
@@ -1145,7 +1145,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 2,
-      "title": "B15CS213 (Lab)",
+      "title": "Database Management Systems (Lab)",
       "code": "CL01",
       "teacher": "02/IC/AA/ISH",
       "type": "lab"
@@ -1154,7 +1154,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "FF7",
       "teacher": "MRB",
       "type": "lec"
@@ -1163,7 +1163,7 @@ const scheduleMap = {
       "day": 4,
       "start": 15,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "FF5",
       "teacher": "NF9",
       "type": "lec"
@@ -1172,7 +1172,7 @@ const scheduleMap = {
       "day": 4,
       "start": 16,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "TS10",
       "teacher": "SUD",
       "type": "tut"
@@ -1181,7 +1181,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "FF6",
       "teacher": "NF9",
       "type": "lec"
@@ -1190,7 +1190,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 2,
-      "title": "CS214 (Lab)",
+      "title": "IT Infrastructure and Communication Lab",
       "code": "CL02",
       "teacher": "AKT/KRR",
       "type": "lab"
@@ -1200,8 +1200,8 @@ const scheduleMap = {
     {
       "day": 2,
       "start": 10,
-      "duration": 1,
-      "title": "CS214",
+      "duration": 2,
+      "title": "IT Infrastructure and Communication Lab",
       "code": "G3",
       "teacher": "HN",
       "type": "lec"
@@ -1210,7 +1210,7 @@ const scheduleMap = {
       "day": 2,
       "start": 16,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G7",
       "teacher": "NES",
       "type": "lec"
@@ -1219,7 +1219,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "FF5",
       "teacher": "KA",
       "type": "lec"
@@ -1228,7 +1228,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "TS13",
       "teacher": "SHG",
       "type": "tut"
@@ -1237,7 +1237,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "G3",
       "teacher": "MKT",
       "type": "lec"
@@ -1246,7 +1246,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 2,
-      "title": "B15CS214 (Lab)",
+      "title": "IT Infrastructure and Communication Lab",
       "code": "CL11",
       "teacher": "SAM/PU",
       "type": "lab"
@@ -1255,7 +1255,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G4",
       "teacher": "ALK",
       "type": "lec"
@@ -1264,7 +1264,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "CS6",
       "teacher": "KA",
       "type": "lec"
@@ -1273,7 +1273,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "FF6",
       "teacher": "NES",
       "type": "lec"
@@ -1282,7 +1282,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "F8",
       "teacher": "MKT",
       "type": "lec"
@@ -1291,7 +1291,7 @@ const scheduleMap = {
       "day": 5,
       "start": 12,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G9",
       "teacher": "ALK",
       "type": "lec"
@@ -1300,7 +1300,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS10",
       "teacher": "VSE",
       "type": "tut"
@@ -1309,7 +1309,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 2,
-      "title": "B15CS215 (Lab)",
+      "title": "Object Oriented Programming using Java (Lab)",
       "code": "CL07",
       "teacher": "ASY/ASI",
       "type": "lab"
@@ -1318,7 +1318,7 @@ const scheduleMap = {
       "day": 6,
       "start": 11,
       "duration": 2,
-      "title": "CI371 (Lab)",
+      "title": "Data Structures Lab",
       "code": "CL21",
       "teacher": "NSA/VIB",
       "type": "lab"
@@ -1329,7 +1329,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G4",
       "teacher": "NF6",
       "type": "lec"
@@ -1338,25 +1338,43 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G8",
       "teacher": "MRB",
       "type": "lec"
     },
     {
       "day": 2,
+      "start": 15,
+      "duration": 1,
+      "title": "Signals and Systems",
+      "code": "G6",
+      "teacher": "BHG",
+      "type": "lec"
+    },
+    {
+      "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "TS10",
       "teacher": "DCS",
       "type": "tut"
     },
     {
       "day": 3,
+      "start": 15,
+      "duration": 1,
+      "title": "Digital Circuit Design",
+      "code": "G8",
+      "teacher": "RMD",
+      "type": "lec"
+    },
+    {
+      "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G8",
       "teacher": "SBT",
       "type": "lec"
@@ -1365,7 +1383,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "G8",
       "teacher": "BHG",
       "type": "lec"
@@ -1374,7 +1392,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G8",
       "teacher": "NF6",
       "type": "lec"
@@ -1383,7 +1401,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G3",
       "teacher": "NF6",
       "type": "lec"
@@ -1392,7 +1410,7 @@ const scheduleMap = {
       "day": 4,
       "start": 15,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "TS16",
       "teacher": "MN",
       "type": "tut"
@@ -1401,7 +1419,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS11",
       "teacher": "MM",
       "type": "tut"
@@ -1410,7 +1428,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "G7",
       "teacher": "RMD",
       "type": "lec"
@@ -1419,7 +1437,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 2,
-      "title": "15EC215 (Lab)",
+      "title": "Digital Circuit Design (Lab)",
       "code": "CML",
       "teacher": "AGO/JOY",
       "type": "lab"
@@ -1428,7 +1446,7 @@ const scheduleMap = {
       "day": 5,
       "start": 15,
       "duration": 2,
-      "title": "15EC211 (Lab)",
+      "title": "Electronic Devices and circuits (Lab)",
       "code": "EDC",
       "teacher": "GK/RSB",
       "type": "lab"
@@ -1437,37 +1455,10 @@ const scheduleMap = {
       "day": 6,
       "start": 11,
       "duration": 2,
-      "title": "EC214 (Lab)",
+      "title": "Signals and Systems (Lab)",
       "code": "MODLAB",
       "teacher": "RIG/TA15",
       "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 2,
-      "title": "SDF-2",
-      "code": "FF1",
-      "teacher": "ROH",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 2,
-      "title": "SDF Lab",
-      "code": "CL01",
-      "teacher": "TNV/KRL",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TR307",
-      "teacher": "PRI",
-      "type": "tut"
     }
   ],
   "A6": [
@@ -1475,7 +1466,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G4",
       "teacher": "NF6",
       "type": "lec"
@@ -1484,7 +1475,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "G4",
       "teacher": "DCS",
       "type": "lec"
@@ -1493,16 +1484,25 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G8",
       "teacher": "MRB",
       "type": "lec"
     },
     {
       "day": 2,
+      "start": 15,
+      "duration": 1,
+      "title": "Signals and Systems",
+      "code": "G6",
+      "teacher": "BHG",
+      "type": "lec"
+    },
+    {
+      "day": 2,
       "start": 9,
       "duration": 2,
-      "title": "EC214 (Lab)",
+      "title": "Signals and Systems (Lab)",
       "code": "MODLAB",
       "teacher": "RIG/TA3",
       "type": "lab"
@@ -1511,7 +1511,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "G8",
       "teacher": "DCS",
       "type": "lec"
@@ -1520,7 +1520,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "G8",
       "teacher": "RMD",
       "type": "lec"
@@ -1529,25 +1529,43 @@ const scheduleMap = {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G8",
       "teacher": "SBT",
       "type": "lec"
     },
     {
       "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "Signals and Systems",
+      "code": "G8",
+      "teacher": "BHG",
+      "type": "lec"
+    },
+    {
+      "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G8",
       "teacher": "NF6",
       "type": "lec"
     },
     {
       "day": 3,
+      "start": 9,
+      "duration": 1,
+      "title": "Probability and Random Processes",
+      "code": "TS11",
+      "teacher": "DCS",
+      "type": "tut"
+    },
+    {
+      "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "TS16",
       "teacher": "RS",
       "type": "tut"
@@ -1556,7 +1574,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G3",
       "teacher": "NF6",
       "type": "lec"
@@ -1565,7 +1583,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "LT3",
       "teacher": "SBT",
       "type": "lec"
@@ -1574,7 +1592,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS10",
       "teacher": "PSH",
       "type": "tut"
@@ -1583,7 +1601,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "G7",
       "teacher": "RMD",
       "type": "lec"
@@ -1592,7 +1610,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 2,
-      "title": "15EC211 (Lab)",
+      "title": "Electronic Devices and circuits (Lab)",
       "code": "EDC",
       "teacher": "SHS/NF6",
       "type": "lab"
@@ -1601,28 +1619,10 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 2,
-      "title": "15EC215 (Lab)",
+      "title": "Digital Circuit Design (Lab)",
       "code": "CML",
       "teacher": "RMD/SHI",
       "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 2,
-      "title": "SDF-2",
-      "code": "FF3",
-      "teacher": "ROH",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS12",
-      "teacher": "YN",
-      "type": "tut"
     }
   ],
   "A3": [
@@ -1630,7 +1630,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G4",
       "teacher": "NES",
       "type": "lec"
@@ -1639,7 +1639,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "CS6",
       "teacher": "RK",
       "type": "lec"
@@ -1648,7 +1648,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "FF6",
       "teacher": "AJK",
       "type": "lec"
@@ -1657,7 +1657,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "TS13",
       "teacher": "AJK",
       "type": "tut"
@@ -1666,7 +1666,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "FF6",
       "teacher": "AJK",
       "type": "lec"
@@ -1675,7 +1675,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "FF6",
       "teacher": "RK",
       "type": "lec"
@@ -1684,7 +1684,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "FF6",
       "teacher": "AGO",
       "type": "lec"
@@ -1693,7 +1693,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 2,
-      "title": "EC214 (Lab)",
+      "title": "Signals and Systems (Lab)",
       "code": "MODLAB",
       "teacher": "VK/TA11",
       "type": "lab"
@@ -1702,7 +1702,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "-",
       "teacher": "AJK",
       "type": "lec"
@@ -1711,7 +1711,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS10",
       "teacher": "AMN",
       "type": "tut"
@@ -1720,7 +1720,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "TS11",
       "teacher": "AGO",
       "type": "tut"
@@ -1729,7 +1729,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G4",
       "teacher": "GMA",
       "type": "lec"
@@ -1738,7 +1738,7 @@ const scheduleMap = {
       "day": 5,
       "start": 10,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "TS11",
       "teacher": "MJ",
       "type": "tut"
@@ -1747,7 +1747,7 @@ const scheduleMap = {
       "day": 6,
       "start": 12,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "G3",
       "teacher": "AGO",
       "type": "lec"
@@ -1756,7 +1756,7 @@ const scheduleMap = {
       "day": 6,
       "start": 9,
       "duration": 2,
-      "title": "15EC211 (Lab)",
+      "title": "Electronic Devices and circuits (Lab)",
       "code": "EDC",
       "teacher": "GK/RSB",
       "type": "lab"
@@ -1767,7 +1767,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G4",
       "teacher": "NES",
       "type": "lec"
@@ -1776,7 +1776,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "G6",
       "teacher": "BPC",
       "type": "lec"
@@ -1785,7 +1785,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "CS6",
       "teacher": "RK",
       "type": "lec"
@@ -1794,7 +1794,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "FF6",
       "teacher": "AJK",
       "type": "lec"
@@ -1803,7 +1803,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "TS11",
       "teacher": "BPC",
       "type": "tut"
@@ -1812,7 +1812,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "FF6",
       "teacher": "AJK",
       "type": "lec"
@@ -1821,7 +1821,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "FF6",
       "teacher": "RK",
       "type": "lec"
@@ -1830,7 +1830,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "FF6",
       "teacher": "AGO",
       "type": "lec"
@@ -1839,7 +1839,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS12",
       "teacher": "VSE",
       "type": "tut"
@@ -1848,7 +1848,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "TS13",
       "teacher": "AJK",
       "type": "tut"
@@ -1857,7 +1857,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "G2",
       "teacher": "BPC",
       "type": "lec"
@@ -1866,7 +1866,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "-",
       "teacher": "AJK",
       "type": "lec"
@@ -1875,7 +1875,7 @@ const scheduleMap = {
       "day": 4,
       "start": 16,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "TS11",
       "teacher": "AGO",
       "type": "tut"
@@ -1884,7 +1884,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 2,
-      "title": "EC214 (Lab)",
+      "title": "Signals and Systems (Lab)",
       "code": "MODLAB",
       "teacher": "RK/TA7",
       "type": "lab"
@@ -1893,7 +1893,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "FF4",
       "teacher": "BPC",
       "type": "lec"
@@ -1902,7 +1902,7 @@ const scheduleMap = {
       "day": 6,
       "start": 12,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "G3",
       "teacher": "AGO",
       "type": "lec"
@@ -1911,7 +1911,7 @@ const scheduleMap = {
       "day": 6,
       "start": 9,
       "duration": 2,
-      "title": "15EC215 (Lab)",
+      "title": "Digital Circuit Design (Lab)",
       "code": "CML",
       "teacher": "RMD/JAS",
       "type": "lab"
@@ -1922,7 +1922,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "G4",
       "teacher": "RJM",
       "type": "lec"
@@ -1931,7 +1931,7 @@ const scheduleMap = {
       "day": 2,
       "start": 16,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G4",
       "teacher": "MRB",
       "type": "lec"
@@ -1940,7 +1940,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 2,
-      "title": "B15CS213 (Lab)",
+      "title": "Database Management Systems (Lab)",
       "code": "CL24",
       "teacher": "ATI/ALK",
       "type": "lab"
@@ -1949,7 +1949,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 2,
-      "title": "B15CS215 (Lab)",
+      "title": "Object Oriented Programming using Java (Lab)",
       "code": "CL18",
       "teacher": "19/SLK/UMF/ISH/POS",
       "type": "lab"
@@ -1958,7 +1958,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "FF7",
       "teacher": "RJM",
       "type": "lec"
@@ -1967,7 +1967,7 @@ const scheduleMap = {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "FF5",
       "teacher": "SHR",
       "type": "lec"
@@ -1976,7 +1976,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "FF7",
       "teacher": "RTK",
       "type": "lec"
@@ -1985,7 +1985,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS10",
       "teacher": "VSE",
       "type": "tut"
@@ -1994,7 +1994,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G6",
       "teacher": "MRB",
       "type": "lec"
@@ -2003,7 +2003,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G8",
       "teacher": "SHR",
       "type": "lec"
@@ -2011,8 +2011,8 @@ const scheduleMap = {
     {
       "day": 5,
       "start": 16,
-      "duration": 1,
-      "title": "CS214",
+      "duration": 2,
+      "title": "IT Infrastructure and Communication Lab",
       "code": "G4",
       "teacher": "MAY",
       "type": "lec"
@@ -2021,7 +2021,7 @@ const scheduleMap = {
       "day": 5,
       "start": 12,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "TS11",
       "teacher": "KJ",
       "type": "tut"
@@ -2030,7 +2030,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 2,
-      "title": "CI371 (Lab)",
+      "title": "Data Structures Lab",
       "code": "CL13",
       "teacher": "14/NSA/SHG/VIB/RJM/SUD",
       "type": "lab"
@@ -2039,7 +2039,7 @@ const scheduleMap = {
       "day": 6,
       "start": 11,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "FF5",
       "teacher": "SHR",
       "type": "lec"
@@ -2048,7 +2048,7 @@ const scheduleMap = {
       "day": 6,
       "start": 12,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "G8",
       "teacher": "RTK",
       "type": "lec"
@@ -2059,7 +2059,7 @@ const scheduleMap = {
       "day": 2,
       "start": 16,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G4",
       "teacher": "MRB",
       "type": "lec"
@@ -2068,7 +2068,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS11",
       "teacher": "PSH",
       "type": "tut"
@@ -2077,7 +2077,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 2,
-      "title": "B15CS215 (Lab)",
+      "title": "Object Oriented Programming using Java (Lab)",
       "code": "CL18",
       "teacher": "19/SLK/UMF/ISH/POS",
       "type": "lab"
@@ -2086,7 +2086,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 2,
-      "title": "B15CS213 (Lab)",
+      "title": "Database Management Systems (Lab)",
       "code": "CL19",
       "teacher": "AA/SON",
       "type": "lab"
@@ -2095,7 +2095,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "TS10",
       "teacher": "RSH",
       "type": "tut"
@@ -2104,7 +2104,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G6",
       "teacher": "MRB",
       "type": "lec"
@@ -2113,7 +2113,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "G9",
       "teacher": "RSH",
       "type": "lec"
@@ -2122,7 +2122,7 @@ const scheduleMap = {
       "day": 5,
       "start": 12,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "TS10",
       "teacher": "VRN",
       "type": "tut"
@@ -2131,7 +2131,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 2,
-      "title": "CI371 (Lab)",
+      "title": "Data Structures Lab",
       "code": "CL13",
       "teacher": "14/NSA/SHG/VIB/RJM/SUD",
       "type": "lab"
@@ -2140,7 +2140,7 @@ const scheduleMap = {
       "day": 6,
       "start": 10,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "G4",
       "teacher": "RSH",
       "type": "lec"
@@ -2151,7 +2151,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "15BT211",
+      "title": "Environmental Studies",
       "code": "G4",
       "teacher": "AKV",
       "type": "lec"
@@ -2169,7 +2169,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "F6",
       "teacher": "SHG",
       "type": "lec"
@@ -2178,7 +2178,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS10",
       "teacher": "VSE",
       "type": "tut"
@@ -2223,7 +2223,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G7",
       "teacher": "AKV",
       "type": "lec"
@@ -2241,7 +2241,7 @@ const scheduleMap = {
       "day": 4,
       "start": 16,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "FF6",
       "teacher": "SHG",
       "type": "lec"
@@ -2250,7 +2250,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "CR301",
       "teacher": "AKV",
       "type": "lec"
@@ -2259,7 +2259,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "TS11",
       "teacher": "VRN",
       "type": "tut"
@@ -2268,7 +2268,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 2,
-      "title": "B15CS215 (Lab)",
+      "title": "Object Oriented Programming using Java (Lab)",
       "code": "CL15",
       "teacher": "16/PAG/ASI/GAS/DEV",
       "type": "lab"
@@ -2286,7 +2286,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "FF7",
       "teacher": "SHG",
       "type": "lec"
@@ -2324,7 +2324,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "15BT211",
+      "title": "Environmental Studies",
       "code": "G4",
       "teacher": "AKV",
       "type": "lec"
@@ -2342,7 +2342,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "F6",
       "teacher": "SHG",
       "type": "lec"
@@ -2369,7 +2369,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 1,
-      "title": "MA211",
+      "title": "Summer Training-I",
       "code": "CS8",
       "teacher": "DGA",
       "type": "lec"
@@ -2396,7 +2396,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G7",
       "teacher": "AKV",
       "type": "lec"
@@ -2405,7 +2405,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 1,
-      "title": "MA211",
+      "title": "Summer Training-I",
       "code": "CR301",
       "teacher": "DGA",
       "type": "lec"
@@ -2423,7 +2423,7 @@ const scheduleMap = {
       "day": 4,
       "start": 16,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "FF6",
       "teacher": "SHG",
       "type": "lec"
@@ -2432,7 +2432,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "CR301",
       "teacher": "AKV",
       "type": "lec"
@@ -2441,7 +2441,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "MA211",
+      "title": "Summer Training-I",
       "code": "TS13",
       "teacher": "DGA",
       "type": "tut"
@@ -2450,7 +2450,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 2,
-      "title": "B15CS215 (Lab)",
+      "title": "Object Oriented Programming using Java (Lab)",
       "code": "CL15",
       "teacher": "16/PAG/ASI/GAS/DEV",
       "type": "lab"
@@ -2468,7 +2468,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "FF7",
       "teacher": "SHG",
       "type": "lec"
@@ -2477,7 +2477,7 @@ const scheduleMap = {
       "day": 5,
       "start": 12,
       "duration": 1,
-      "title": "MA211",
+      "title": "Summer Training-I",
       "code": "FF7",
       "teacher": "DGA",
       "type": "lec"
@@ -2504,7 +2504,7 @@ const scheduleMap = {
       "day": 6,
       "start": 11,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "TS12",
       "teacher": "KJ",
       "type": "tut"
@@ -2524,7 +2524,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G5",
       "teacher": "DCH",
       "type": "lec"
@@ -2533,7 +2533,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "FF6",
       "teacher": "SUD",
       "type": "lec"
@@ -2542,7 +2542,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "FF6",
       "teacher": "KM",
       "type": "lec"
@@ -2551,7 +2551,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 2,
-      "title": "B15CS213 (Lab)",
+      "title": "Database Management Systems (Lab)",
       "code": "CL07",
       "teacher": "DEP/AYS",
       "type": "lab"
@@ -2560,7 +2560,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 2,
-      "title": "B15CS215 (Lab)",
+      "title": "Object Oriented Programming using Java (Lab)",
       "code": "CL22",
       "teacher": "23/SHB/ISH/DEV/POS/SHY",
       "type": "lab"
@@ -2569,7 +2569,7 @@ const scheduleMap = {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "G4",
       "teacher": "KM",
       "type": "lec"
@@ -2578,7 +2578,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "FF7",
       "teacher": "AMN",
       "type": "lec"
@@ -2586,8 +2586,8 @@ const scheduleMap = {
     {
       "day": 3,
       "start": 14,
-      "duration": 1,
-      "title": "CS214",
+      "duration": 2,
+      "title": "IT Infrastructure and Communication Lab",
       "code": "FF6",
       "teacher": "KRR",
       "type": "lec"
@@ -2596,7 +2596,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "CS1",
       "teacher": "SUD",
       "type": "lec"
@@ -2605,7 +2605,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS11",
       "teacher": "VSE",
       "type": "tut"
@@ -2614,7 +2614,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 2,
-      "title": "CI371 (Lab)",
+      "title": "Data Structures Lab",
       "code": "CL09",
       "teacher": "10/MKT/VRN/KRI/MON/AW",
       "type": "lab"
@@ -2623,7 +2623,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "FF6",
       "teacher": "DCH",
       "type": "lec"
@@ -2632,7 +2632,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "TS11",
       "teacher": "SHG",
       "type": "tut"
@@ -2641,7 +2641,7 @@ const scheduleMap = {
       "day": 4,
       "start": 15,
       "duration": 2,
-      "title": "B15CS214 (Lab)",
+      "title": "IT Infrastructure and Communication Lab",
       "code": "CL21",
       "teacher": "AKT/BHA",
       "type": "lab"
@@ -2650,7 +2650,7 @@ const scheduleMap = {
       "day": 5,
       "start": 12,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G6",
       "teacher": "DCH",
       "type": "lec"
@@ -2659,7 +2659,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "TS13",
       "teacher": "PAT",
       "type": "tut"
@@ -2670,7 +2670,7 @@ const scheduleMap = {
       "day": 2,
       "start": 16,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "G5",
       "teacher": "NSA",
       "type": "lec"
@@ -2679,7 +2679,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G6",
       "teacher": "ABC",
       "type": "lec"
@@ -2688,7 +2688,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "FF7",
       "teacher": "VSE",
       "type": "lec"
@@ -2697,7 +2697,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 2,
-      "title": "CI371 (Lab)",
+      "title": "Data Structures Lab",
       "code": "CL20",
       "teacher": "AW/KRI",
       "type": "lab"
@@ -2706,7 +2706,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "TR305",
       "teacher": "MON",
       "type": "tut"
@@ -2715,7 +2715,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "CS5",
       "teacher": "ASY",
       "type": "lec"
@@ -2724,7 +2724,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "G4",
       "teacher": "NSA",
       "type": "lec"
@@ -2733,7 +2733,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "TS11",
       "teacher": "HZR",
       "type": "tut"
@@ -2742,7 +2742,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "G4",
       "teacher": "ASY",
       "type": "lec"
@@ -2751,7 +2751,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G4",
       "teacher": "VSE",
       "type": "lec"
@@ -2759,8 +2759,8 @@ const scheduleMap = {
     {
       "day": 4,
       "start": 12,
-      "duration": 1,
-      "title": "CS214",
+      "duration": 2,
+      "title": "IT Infrastructure and Communication Lab",
       "code": "G9",
       "teacher": "KRR",
       "type": "lec"
@@ -2769,7 +2769,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G8",
       "teacher": "ABC",
       "type": "lec"
@@ -2778,7 +2778,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS10",
       "teacher": "NES",
       "type": "tut"
@@ -2787,7 +2787,7 @@ const scheduleMap = {
       "day": 5,
       "start": 12,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "CR501",
       "teacher": "ABC",
       "type": "lec"
@@ -2796,7 +2796,7 @@ const scheduleMap = {
       "day": 5,
       "start": 15,
       "duration": 2,
-      "title": "B15CS214 (Lab)",
+      "title": "IT Infrastructure and Communication Lab",
       "code": "CL23",
       "teacher": "24/PAG/HN/MAY/PRK/BHA",
       "type": "lab"
@@ -2805,7 +2805,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 2,
-      "title": "B15CS213 (Lab)",
+      "title": "Database Management Systems (Lab)",
       "code": "CL21",
       "teacher": "SHR/ABC",
       "type": "lab"
@@ -2816,7 +2816,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "G7",
       "teacher": "NF9",
       "type": "lec"
@@ -2825,7 +2825,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "CS7",
       "teacher": "BHG",
       "type": "lec"
@@ -2834,7 +2834,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "FF7",
       "teacher": "NF6",
       "type": "lec"
@@ -2843,7 +2843,7 @@ const scheduleMap = {
       "day": 2,
       "start": 16,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G8",
       "teacher": "ANS",
       "type": "lec"
@@ -2852,7 +2852,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "TS12",
       "teacher": "JOY",
       "type": "tut"
@@ -2861,7 +2861,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 2,
-      "title": "15EC215 (Lab)",
+      "title": "Digital Circuit Design (Lab)",
       "code": "CML",
       "teacher": "SCH/AKS",
       "type": "lab"
@@ -2870,7 +2870,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "FF7",
       "teacher": "NF6",
       "type": "lec"
@@ -2879,7 +2879,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 2,
-      "title": "EC214 (Lab)",
+      "title": "Signals and Systems (Lab)",
       "code": "SPL",
       "teacher": "NF3/TA17",
       "type": "lab"
@@ -2888,7 +2888,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "LT2",
       "teacher": "NF9",
       "type": "lec"
@@ -2897,7 +2897,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G6",
       "teacher": "NF6",
       "type": "lec"
@@ -2906,7 +2906,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G7",
       "teacher": "ANS",
       "type": "lec"
@@ -2915,7 +2915,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "TS13",
       "teacher": "KUL",
       "type": "tut"
@@ -2924,7 +2924,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "G4",
       "teacher": "NF8",
       "type": "lec"
@@ -2933,7 +2933,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G3",
       "teacher": "ANS",
       "type": "lec"
@@ -2942,7 +2942,7 @@ const scheduleMap = {
       "day": 5,
       "start": 15,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "G3",
       "teacher": "BHG",
       "type": "lec"
@@ -2951,7 +2951,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "CS2",
       "teacher": "NF9",
       "type": "lec"
@@ -2960,7 +2960,7 @@ const scheduleMap = {
       "day": 5,
       "start": 16,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "TS10",
       "teacher": "NF9",
       "type": "tut"
@@ -2969,7 +2969,7 @@ const scheduleMap = {
       "day": 6,
       "start": 10,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "FF5",
       "teacher": "NF8",
       "type": "lec"
@@ -2978,7 +2978,7 @@ const scheduleMap = {
       "day": 6,
       "start": 11,
       "duration": 2,
-      "title": "15EC211 (Lab)",
+      "title": "Electronic Devices and circuits (Lab)",
       "code": "EDC",
       "teacher": "SHS/NF3",
       "type": "lab"
@@ -2989,7 +2989,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G9",
       "teacher": "VSE",
       "type": "lec"
@@ -2998,7 +2998,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "F6",
       "teacher": "GK",
       "type": "lec"
@@ -3007,7 +3007,7 @@ const scheduleMap = {
       "day": 2,
       "start": 16,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "TS11",
       "teacher": "RS",
       "type": "tut"
@@ -3016,7 +3016,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "TS16",
       "teacher": "GK",
       "type": "tut"
@@ -3025,7 +3025,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS11",
       "teacher": "MM",
       "type": "tut"
@@ -3034,7 +3034,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G4",
       "teacher": "GK",
       "type": "lec"
@@ -3043,7 +3043,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G9",
       "teacher": "RPS/KS",
       "type": "lec"
@@ -3052,7 +3052,7 @@ const scheduleMap = {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "CS1",
       "teacher": "JOY",
       "type": "lec"
@@ -3061,7 +3061,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "TS16",
       "teacher": "BPC",
       "type": "tut"
@@ -3070,7 +3070,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G5",
       "teacher": "GK",
       "type": "lec"
@@ -3079,7 +3079,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G7",
       "teacher": "RPS/KS",
       "type": "lec"
@@ -3088,7 +3088,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 2,
-      "title": "15EC211 (Lab)",
+      "title": "Electronic Devices and circuits (Lab)",
       "code": "EDC",
       "teacher": "AJK/APN",
       "type": "lab"
@@ -3097,7 +3097,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "G8",
       "teacher": "JOY",
       "type": "lec"
@@ -3106,27 +3106,27 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G9",
       "teacher": "RPS/KS",
       "type": "lec"
     },
     {
       "day": 5,
-      "start": 9,
-      "duration": 2,
-      "title": "EC214 (Lab)",
-      "code": "MODLAB",
-      "teacher": "RK/TA9",
-      "type": "lab"
+      "start": 15,
+      "duration": 1,
+      "title": "Digital Circuit Design",
+      "code": "TS13",
+      "teacher": "AKS",
+      "type": "tut"
     },
     {
       "day": 5,
-      "start": 15,
+      "start": 9,
       "duration": 2,
-      "title": "Physics Lab-2",
-      "code": "PL3",
-      "teacher": "RKD/INC",
+      "title": "Signals and Systems (Lab)",
+      "code": "MODLAB",
+      "teacher": "RK/TA9",
       "type": "lab"
     }
   ],
@@ -3135,7 +3135,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G9",
       "teacher": "VSE",
       "type": "lec"
@@ -3144,7 +3144,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "F6",
       "teacher": "GK",
       "type": "lec"
@@ -3153,7 +3153,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "TS13",
       "teacher": "JOY",
       "type": "tut"
@@ -3162,7 +3162,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G4",
       "teacher": "GK",
       "type": "lec"
@@ -3171,7 +3171,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "G9",
       "teacher": "NF4",
       "type": "lec"
@@ -3180,7 +3180,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G9",
       "teacher": "RPS/KS",
       "type": "lec"
@@ -3189,7 +3189,7 @@ const scheduleMap = {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "CS1",
       "teacher": "JOY",
       "type": "lec"
@@ -3198,7 +3198,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "TS11",
       "teacher": "YG",
       "type": "tut"
@@ -3207,7 +3207,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS11",
       "teacher": "VSE",
       "type": "tut"
@@ -3216,7 +3216,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G5",
       "teacher": "GK",
       "type": "lec"
@@ -3225,7 +3225,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G7",
       "teacher": "RPS/KS",
       "type": "lec"
@@ -3234,7 +3234,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 2,
-      "title": "15EC215 (Lab)",
+      "title": "Digital Circuit Design (Lab)",
       "code": "CML",
       "teacher": "JAS/JOY",
       "type": "lab"
@@ -3243,7 +3243,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "G8",
       "teacher": "JOY",
       "type": "lec"
@@ -3252,7 +3252,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G9",
       "teacher": "RPS/KS",
       "type": "lec"
@@ -3261,7 +3261,7 @@ const scheduleMap = {
       "day": 5,
       "start": 10,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "TS13",
       "teacher": "RIG",
       "type": "tut"
@@ -3270,7 +3270,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 1,
-      "title": "11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "TR302",
       "teacher": "RSB",
       "type": "tut"
@@ -3279,7 +3279,7 @@ const scheduleMap = {
       "day": 6,
       "start": 11,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "G3",
       "teacher": "NF4",
       "type": "lec"
@@ -3288,7 +3288,7 @@ const scheduleMap = {
       "day": 6,
       "start": 9,
       "duration": 2,
-      "title": "EC214 (Lab)",
+      "title": "Signals and Systems (Lab)",
       "code": "MODLAB",
       "teacher": "RK/TA20",
       "type": "lab"
@@ -3299,7 +3299,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G9",
       "teacher": "VSE",
       "type": "lec"
@@ -3308,7 +3308,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "G7",
       "teacher": "RIG",
       "type": "lec"
@@ -3317,7 +3317,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "F6",
       "teacher": "GK",
       "type": "lec"
@@ -3326,7 +3326,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "TR302",
       "teacher": "SB",
       "type": "tut"
@@ -3335,7 +3335,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "TS16",
       "teacher": "JAS",
       "type": "tut"
@@ -3344,7 +3344,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "CS2",
       "teacher": "RIG",
       "type": "lec"
@@ -3353,7 +3353,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G4",
       "teacher": "GK",
       "type": "lec"
@@ -3362,7 +3362,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "G9",
       "teacher": "NF4",
       "type": "lec"
@@ -3371,7 +3371,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G9",
       "teacher": "RPS/KS",
       "type": "lec"
@@ -3380,7 +3380,7 @@ const scheduleMap = {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "CS1",
       "teacher": "JOY",
       "type": "lec"
@@ -3389,7 +3389,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 2,
-      "title": "15EC215 (Lab)",
+      "title": "Digital Circuit Design (Lab)",
       "code": "CML",
       "teacher": "JAS/JOY",
       "type": "lab"
@@ -3398,7 +3398,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G5",
       "teacher": "GK",
       "type": "lec"
@@ -3407,7 +3407,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G7",
       "teacher": "RPS/KS",
       "type": "lec"
@@ -3416,7 +3416,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 2,
-      "title": "15EC211 (Lab)",
+      "title": "Electronic Devices and circuits (Lab)",
       "code": "EDC",
       "teacher": "GK/RSB",
       "type": "lab"
@@ -3425,7 +3425,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "G8",
       "teacher": "JOY",
       "type": "lec"
@@ -3434,7 +3434,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G9",
       "teacher": "RPS/KS",
       "type": "lec"
@@ -3443,7 +3443,7 @@ const scheduleMap = {
       "day": 6,
       "start": 11,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "G3",
       "teacher": "NF4",
       "type": "lec"
@@ -3452,7 +3452,7 @@ const scheduleMap = {
       "day": 6,
       "start": 12,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "TS10",
       "teacher": "NF4",
       "type": "tut"
@@ -3463,7 +3463,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "B21EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G7",
       "teacher": "NF2",
       "type": "lec"
@@ -3472,7 +3472,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS11",
       "teacher": "MM",
       "type": "tut"
@@ -3481,7 +3481,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "B21EC211",
+      "title": "Electronic Devices and circuits",
       "code": "TR302",
       "teacher": "NF2",
       "type": "tut"
@@ -3490,7 +3490,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "B21EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G3",
       "teacher": "NF2",
       "type": "lec"
@@ -3499,7 +3499,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "G3",
       "teacher": "RK",
       "type": "lec"
@@ -3508,7 +3508,7 @@ const scheduleMap = {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G3",
       "teacher": "KAR",
       "type": "lec"
@@ -3517,7 +3517,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 1,
-      "title": "Digital Logic and Circuit Design",
+      "title": "Electronic Devices and circuits",
       "code": "CS6",
       "teacher": "JAS",
       "type": "lec"
@@ -3526,7 +3526,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 2,
-      "title": "25EC211 (Lab)",
+      "title": "Electronic Devices and circuits (Lab)",
       "code": "ADE",
       "teacher": "MNA/NF5",
       "type": "lab"
@@ -3535,7 +3535,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "B21EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G4",
       "teacher": "NF2",
       "type": "lec"
@@ -3544,7 +3544,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 1,
-      "title": "Numerical Techniques",
+      "title": "Summer Training-I",
       "code": "CS8",
       "teacher": "RSA",
       "type": "lec"
@@ -3553,7 +3553,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 2,
-      "title": "Digital Logic and Circuit Design Lab",
+      "title": "Electronic Devices and circuits (Lab)",
       "code": "CML",
       "teacher": "RS/NF8",
       "type": "lab"
@@ -3562,7 +3562,7 @@ const scheduleMap = {
       "day": 5,
       "start": 10,
       "duration": 1,
-      "title": "Digital Logic and Circuit Design",
+      "title": "Electronic Devices and circuits",
       "code": "G3",
       "teacher": "JAS",
       "type": "lec"
@@ -3571,7 +3571,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G3",
       "teacher": "MM",
       "type": "lec"
@@ -3580,7 +3580,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "FF7",
       "teacher": "RK",
       "type": "lec"
@@ -3589,7 +3589,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "TS16",
       "teacher": "SB",
       "type": "tut"
@@ -3598,7 +3598,7 @@ const scheduleMap = {
       "day": 6,
       "start": 9,
       "duration": 1,
-      "title": "Numerical Techniques",
+      "title": "Summer Training-I",
       "code": "FF8",
       "teacher": "RSA",
       "type": "lec"
@@ -3609,7 +3609,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "B21EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G7",
       "teacher": "NF2",
       "type": "lec"
@@ -3618,7 +3618,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "TS10",
       "teacher": "YG",
       "type": "tut"
@@ -3627,7 +3627,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 2,
-      "title": "Digital Logic and Circuit Design Lab",
+      "title": "Electronic Devices and circuits (Lab)",
       "code": "CML",
       "teacher": "RS/NF8",
       "type": "lab"
@@ -3636,7 +3636,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "B21EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G3",
       "teacher": "NF2",
       "type": "lec"
@@ -3645,7 +3645,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "G3",
       "teacher": "RK",
       "type": "lec"
@@ -3654,7 +3654,7 @@ const scheduleMap = {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G3",
       "teacher": "KAR",
       "type": "lec"
@@ -3663,7 +3663,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 1,
-      "title": "Digital Logic and Circuit Design",
+      "title": "Electronic Devices and circuits",
       "code": "CS6",
       "teacher": "JAS",
       "type": "lec"
@@ -3672,7 +3672,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "FF5",
       "teacher": "NF2",
       "type": "lec"
@@ -3681,7 +3681,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "TS10",
       "teacher": "SB",
       "type": "tut"
@@ -3690,7 +3690,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "FF5",
       "teacher": "NF2",
       "type": "lec"
@@ -3699,7 +3699,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "B21EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G4",
       "teacher": "NF2",
       "type": "lec"
@@ -3708,7 +3708,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 1,
-      "title": "Numerical Techniques",
+      "title": "Summer Training-I",
       "code": "CS8",
       "teacher": "RSA",
       "type": "lec"
@@ -3717,7 +3717,7 @@ const scheduleMap = {
       "day": 5,
       "start": 10,
       "duration": 1,
-      "title": "Digital Logic and Circuit Design",
+      "title": "Electronic Devices and circuits",
       "code": "G3",
       "teacher": "JAS",
       "type": "lec"
@@ -3726,7 +3726,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G3",
       "teacher": "MM",
       "type": "lec"
@@ -3735,7 +3735,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "FF7",
       "teacher": "RK",
       "type": "lec"
@@ -3744,7 +3744,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS10",
       "teacher": "MM",
       "type": "tut"
@@ -3753,7 +3753,7 @@ const scheduleMap = {
       "day": 5,
       "start": 15,
       "duration": 2,
-      "title": "25EC211 (Lab)",
+      "title": "Electronic Devices and circuits (Lab)",
       "code": "ADE",
       "teacher": "MNA/NF5",
       "type": "lab"
@@ -3762,7 +3762,7 @@ const scheduleMap = {
       "day": 6,
       "start": 9,
       "duration": 1,
-      "title": "Numerical Techniques",
+      "title": "Summer Training-I",
       "code": "FF8",
       "teacher": "RSA",
       "type": "lec"
@@ -3773,7 +3773,7 @@ const scheduleMap = {
       "day": 2,
       "start": 16,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G7",
       "teacher": "NES",
       "type": "lec"
@@ -3782,7 +3782,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "LT2",
       "teacher": "PAT",
       "type": "lec"
@@ -3791,7 +3791,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "G3",
       "teacher": "PAT",
       "type": "lec"
@@ -3800,7 +3800,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "FF6",
       "teacher": "NES",
       "type": "lec"
@@ -3809,7 +3809,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS10",
       "teacher": "KMB",
       "type": "tut"
@@ -3818,7 +3818,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "TS13",
       "teacher": "VRN",
       "type": "tut"
@@ -3827,7 +3827,7 @@ const scheduleMap = {
       "day": 5,
       "start": 15,
       "duration": 2,
-      "title": "B15CS215 (Lab)",
+      "title": "Object Oriented Programming using Java (Lab)",
       "code": "CL04",
       "teacher": "SLK/KRI",
       "type": "lab"
@@ -3836,7 +3836,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 2,
-      "title": "B15CS214 (Lab)",
+      "title": "IT Infrastructure and Communication Lab",
       "code": "CL05",
       "teacher": "06/JAG/HN/PRK/BHA/JAT",
       "type": "lab"
@@ -3845,7 +3845,7 @@ const scheduleMap = {
       "day": 6,
       "start": 11,
       "duration": 2,
-      "title": "CI371 (Lab)",
+      "title": "Data Structures Lab",
       "code": "CL22",
       "teacher": "SHG/MON",
       "type": "lab"
@@ -3856,7 +3856,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "CS7",
       "teacher": "BHG",
       "type": "lec"
@@ -3865,7 +3865,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "FF7",
       "teacher": "NF6",
       "type": "lec"
@@ -3874,7 +3874,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 2,
-      "title": "15EC211 (Lab)",
+      "title": "Electronic Devices and circuits (Lab)",
       "code": "EDC",
       "teacher": "RRJ/NF3",
       "type": "lab"
@@ -3883,7 +3883,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "TR307",
       "teacher": "MN",
       "type": "tut"
@@ -3892,7 +3892,7 @@ const scheduleMap = {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G3",
       "teacher": "KAR",
       "type": "lec"
@@ -3901,7 +3901,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "FF7",
       "teacher": "NF6",
       "type": "lec"
@@ -3910,7 +3910,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 2,
-      "title": "EC214 (Lab)",
+      "title": "Signals and Systems (Lab)",
       "code": "MODLAB",
       "teacher": "RIG/TA11",
       "type": "lab"
@@ -3919,7 +3919,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "FF5",
       "teacher": "KAR",
       "type": "lec"
@@ -3928,7 +3928,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "B11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "G6",
       "teacher": "NF6",
       "type": "lec"
@@ -3937,7 +3937,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS11",
       "teacher": "VSE",
       "type": "tut"
@@ -3946,7 +3946,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "G4",
       "teacher": "NF8",
       "type": "lec"
@@ -3955,7 +3955,7 @@ const scheduleMap = {
       "day": 5,
       "start": 15,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "G3",
       "teacher": "BHG",
       "type": "lec"
@@ -3964,7 +3964,7 @@ const scheduleMap = {
       "day": 5,
       "start": 16,
       "duration": 1,
-      "title": "11EC211",
+      "title": "Electronic Devices and circuits",
       "code": "TS11",
       "teacher": "SHI",
       "type": "tut"
@@ -3973,7 +3973,7 @@ const scheduleMap = {
       "day": 6,
       "start": 10,
       "duration": 1,
-      "title": "EC215",
+      "title": "Digital Circuit Design",
       "code": "FF5",
       "teacher": "NF8",
       "type": "lec"
@@ -3982,7 +3982,7 @@ const scheduleMap = {
       "day": 6,
       "start": 11,
       "duration": 2,
-      "title": "15EC215 (Lab)",
+      "title": "Digital Circuit Design (Lab)",
       "code": "CML",
       "teacher": "SCH/AKS",
       "type": "lab"
@@ -4002,7 +4002,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "G8",
       "teacher": "KJ",
       "type": "lec"
@@ -4011,7 +4011,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G9",
       "teacher": "AKV",
       "type": "lec"
@@ -4029,7 +4029,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "CS7",
       "teacher": "KJ",
       "type": "lec"
@@ -4038,7 +4038,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "MA211",
+      "title": "Summer Training-I",
       "code": "G9",
       "teacher": "ATI",
       "type": "lec"
@@ -4047,7 +4047,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "G9",
       "teacher": "KJ",
       "type": "lec"
@@ -4056,7 +4056,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 2,
-      "title": "CI371 (Lab)",
+      "title": "Data Structures Lab",
       "code": "CL10",
       "teacher": "RJM/SUD",
       "type": "lab"
@@ -4074,7 +4074,7 @@ const scheduleMap = {
       "day": 4,
       "start": 15,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS11",
       "teacher": "PSH",
       "type": "tut"
@@ -4101,7 +4101,7 @@ const scheduleMap = {
       "day": 5,
       "start": 10,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "FF6",
       "teacher": "AMN",
       "type": "lec"
@@ -4110,7 +4110,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "MA211",
+      "title": "Summer Training-I",
       "code": "FF6",
       "teacher": "ATI",
       "type": "lec"
@@ -4119,7 +4119,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "FF5",
       "teacher": "AKV",
       "type": "lec"
@@ -4128,7 +4128,7 @@ const scheduleMap = {
       "day": 6,
       "start": 11,
       "duration": 2,
-      "title": "B15CS215 (Lab)",
+      "title": "Object Oriented Programming using Java (Lab)",
       "code": "CL06",
       "teacher": "07/SHB/GAS/ASI/SHY",
       "type": "lab"
@@ -4139,7 +4139,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "G8",
       "teacher": "KJ",
       "type": "lec"
@@ -4148,7 +4148,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G9",
       "teacher": "AKV",
       "type": "lec"
@@ -4166,7 +4166,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "CS7",
       "teacher": "KJ",
       "type": "lec"
@@ -4175,7 +4175,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "G9",
       "teacher": "KJ",
       "type": "lec"
@@ -4184,7 +4184,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "TR302",
       "teacher": "SUD",
       "type": "tut"
@@ -4193,7 +4193,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 2,
-      "title": "CI371 (Lab)",
+      "title": "Data Structures Lab",
       "code": "CL09",
       "teacher": "LM/MON",
       "type": "lab"
@@ -4202,7 +4202,7 @@ const scheduleMap = {
       "day": 4,
       "start": 15,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS10",
       "teacher": "VSE",
       "type": "tut"
@@ -4220,7 +4220,7 @@ const scheduleMap = {
       "day": 5,
       "start": 10,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "FF6",
       "teacher": "AMN",
       "type": "lec"
@@ -4229,7 +4229,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "FF5",
       "teacher": "AKV",
       "type": "lec"
@@ -4238,7 +4238,7 @@ const scheduleMap = {
       "day": 6,
       "start": 11,
       "duration": 2,
-      "title": "B15CS215 (Lab)",
+      "title": "Object Oriented Programming using Java (Lab)",
       "code": "CL06",
       "teacher": "07/SHB/GAS/ASI/SHY",
       "type": "lab"
@@ -4249,7 +4249,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "CS8",
       "teacher": "NSK",
       "type": "lec"
@@ -4258,7 +4258,7 @@ const scheduleMap = {
       "day": 2,
       "start": 16,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G8",
       "teacher": "ANS",
       "type": "lec"
@@ -4267,7 +4267,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "Analog & Digital Electronics",
+      "title": "Electronic Devices and circuits",
       "code": "CR425",
       "teacher": "MTO",
       "type": "lec"
@@ -4276,7 +4276,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "CR425",
       "teacher": "NF3",
       "type": "lec"
@@ -4285,7 +4285,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "TS16",
       "teacher": "VD",
       "type": "tut"
@@ -4294,7 +4294,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "Analog & Digital Electronics",
+      "title": "Electronic Devices and circuits",
       "code": "G6",
       "teacher": "MTO",
       "type": "lec"
@@ -4303,7 +4303,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS11",
       "teacher": "MM",
       "type": "tut"
@@ -4312,7 +4312,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 2,
-      "title": "EC214 (Lab)",
+      "title": "Signals and Systems (Lab)",
       "code": "MODLAB",
       "teacher": "SB/TA2",
       "type": "lab"
@@ -4321,7 +4321,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 2,
-      "title": "Analog & Digital Electronics Lab",
+      "title": "Electronic Devices and circuits (Lab)",
       "code": "ADE",
       "teacher": "MTO/HIM",
       "type": "lab"
@@ -4330,7 +4330,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "Analog & Digital Electronics",
+      "title": "Electronic Devices and circuits",
       "code": "G3",
       "teacher": "MTO",
       "type": "lec"
@@ -4339,7 +4339,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G3",
       "teacher": "PSH",
       "type": "lec"
@@ -4348,7 +4348,7 @@ const scheduleMap = {
       "day": 4,
       "start": 15,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "G3",
       "teacher": "NF3",
       "type": "lec"
@@ -4357,7 +4357,7 @@ const scheduleMap = {
       "day": 4,
       "start": 16,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "G3",
       "teacher": "NSK",
       "type": "lec"
@@ -4366,7 +4366,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G7",
       "teacher": "ANS",
       "type": "lec"
@@ -4375,7 +4375,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G3",
       "teacher": "ANS",
       "type": "lec"
@@ -4384,7 +4384,7 @@ const scheduleMap = {
       "day": 6,
       "start": 9,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "TS10",
       "teacher": "NSK",
       "type": "tut"
@@ -4395,7 +4395,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "CS8",
       "teacher": "NSK",
       "type": "lec"
@@ -4404,7 +4404,7 @@ const scheduleMap = {
       "day": 2,
       "start": 16,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G8",
       "teacher": "ANS",
       "type": "lec"
@@ -4413,7 +4413,7 @@ const scheduleMap = {
       "day": 2,
       "start": 12,
       "duration": 1,
-      "title": "Analog & Digital Electronics",
+      "title": "Electronic Devices and circuits",
       "code": "CR425",
       "teacher": "MTO",
       "type": "lec"
@@ -4422,7 +4422,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "CR425",
       "teacher": "NF3",
       "type": "lec"
@@ -4431,7 +4431,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 2,
-      "title": "EC212 (Lab)",
+      "title": "Robot Programming Lab",
       "code": "BPL",
       "teacher": "ABY/TA13",
       "type": "lab"
@@ -4440,7 +4440,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS10",
       "teacher": "PSH",
       "type": "tut"
@@ -4449,7 +4449,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "Analog & Digital Electronics",
+      "title": "Electronic Devices and circuits",
       "code": "G6",
       "teacher": "MTO",
       "type": "lec"
@@ -4458,7 +4458,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "Analog & Digital Electronics",
+      "title": "Electronic Devices and circuits",
       "code": "TS16",
       "teacher": "MTO",
       "type": "tut"
@@ -4467,7 +4467,7 @@ const scheduleMap = {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "TS10",
       "teacher": "MJ",
       "type": "tut"
@@ -4476,7 +4476,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "Analog & Digital Electronics",
+      "title": "Electronic Devices and circuits",
       "code": "G3",
       "teacher": "MTO",
       "type": "lec"
@@ -4485,7 +4485,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G3",
       "teacher": "PSH",
       "type": "lec"
@@ -4494,7 +4494,7 @@ const scheduleMap = {
       "day": 4,
       "start": 15,
       "duration": 1,
-      "title": "EC214",
+      "title": "Signals and Systems",
       "code": "G3",
       "teacher": "NF3",
       "type": "lec"
@@ -4503,7 +4503,7 @@ const scheduleMap = {
       "day": 4,
       "start": 16,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "G3",
       "teacher": "NSK",
       "type": "lec"
@@ -4512,7 +4512,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G7",
       "teacher": "ANS",
       "type": "lec"
@@ -4521,7 +4521,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "G3",
       "teacher": "ANS",
       "type": "lec"
@@ -4530,7 +4530,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 2,
-      "title": "Analog & Digital Electronics Lab",
+      "title": "Electronic Devices and circuits (Lab)",
       "code": "ADE",
       "teacher": "MTO/HIM",
       "type": "lab"
@@ -4539,7 +4539,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 2,
-      "title": "EC214 (Lab)",
+      "title": "Signals and Systems (Lab)",
       "code": "MODLAB",
       "teacher": "SB/TA12",
       "type": "lab"
@@ -4548,7 +4548,7 @@ const scheduleMap = {
       "day": 6,
       "start": 10,
       "duration": 1,
-      "title": "MA301",
+      "title": "Probability and Random Processes",
       "code": "TS10",
       "teacher": "NSK",
       "type": "tut"
@@ -4559,7 +4559,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "15BT211",
+      "title": "Environmental Studies",
       "code": "LT3",
       "teacher": "GMA/RAC",
       "type": "lec"
@@ -4568,7 +4568,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "BT311",
+      "title": "Thermodynamics and Chemical Processes",
       "code": "LT3",
       "teacher": "SOC/POC",
       "type": "lec"
@@ -4577,7 +4577,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "15BT211",
+      "title": "Environmental Studies",
       "code": "TS13",
       "teacher": "GMA/RAC",
       "type": "tut"
@@ -4586,7 +4586,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "15BT211",
+      "title": "Environmental Studies",
       "code": "LT3",
       "teacher": "GMA/RAC",
       "type": "lec"
@@ -4595,7 +4595,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "BT311",
+      "title": "Thermodynamics and Chemical Processes",
       "code": "LT3",
       "teacher": "ASM APC",
       "type": "lec"
@@ -4604,7 +4604,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "BT311",
+      "title": "Thermodynamics and Chemical Processes",
       "code": "LT3",
       "teacher": "SOC/POC",
       "type": "lec"
@@ -4613,7 +4613,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "MA302",
+      "title": "Probability and Statistics",
       "code": "FF6",
       "teacher": "NF5",
       "type": "lec"
@@ -4622,7 +4622,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "MA302",
+      "title": "Probability and Statistics",
       "code": "TR302",
       "teacher": "NF5",
       "type": "tut"
@@ -4631,7 +4631,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "15BT211",
+      "title": "Environmental Studies",
       "code": "FF7",
       "teacher": "GMA/RAC",
       "type": "lec"
@@ -4640,7 +4640,7 @@ const scheduleMap = {
       "day": 4,
       "start": 15,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "FF7",
       "teacher": "NV",
       "type": "lec"
@@ -4649,7 +4649,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "BT311",
+      "title": "Thermodynamics and Chemical Processes",
       "code": "TR302",
       "teacher": "ASM APC",
       "type": "tut"
@@ -4658,7 +4658,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "MA302",
+      "title": "Probability and Statistics",
       "code": "FF5",
       "teacher": "NF5",
       "type": "lec"
@@ -4667,7 +4667,7 @@ const scheduleMap = {
       "day": 5,
       "start": 12,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "FF5",
       "teacher": "NV",
       "type": "lec"
@@ -4676,7 +4676,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "BT311",
+      "title": "Thermodynamics and Chemical Processes",
       "code": "G6",
       "teacher": "ASM APC",
       "type": "lec"
@@ -4685,7 +4685,7 @@ const scheduleMap = {
       "day": 5,
       "start": 15,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS11",
       "teacher": "MM",
       "type": "tut"
@@ -4694,7 +4694,7 @@ const scheduleMap = {
       "day": 6,
       "start": 10,
       "duration": 1,
-      "title": "BT313",
+      "title": "Genetics and Developmental Biology",
       "code": "TS13",
       "teacher": "SOC/POC",
       "type": "tut"
@@ -4705,7 +4705,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "15BT211",
+      "title": "Environmental Studies",
       "code": "LT3",
       "teacher": "GMA/RAC",
       "type": "lec"
@@ -4714,7 +4714,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "BT311",
+      "title": "Thermodynamics and Chemical Processes",
       "code": "LT3",
       "teacher": "SOC/POC",
       "type": "lec"
@@ -4723,7 +4723,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "BT311",
+      "title": "Thermodynamics and Chemical Processes",
       "code": "TS16",
       "teacher": "ASM APC",
       "type": "tut"
@@ -4732,7 +4732,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "15BT211",
+      "title": "Environmental Studies",
       "code": "LT3",
       "teacher": "GMA/RAC",
       "type": "lec"
@@ -4741,7 +4741,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "BT311",
+      "title": "Thermodynamics and Chemical Processes",
       "code": "LT3",
       "teacher": "ASM APC",
       "type": "lec"
@@ -4750,7 +4750,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "BT311",
+      "title": "Thermodynamics and Chemical Processes",
       "code": "LT3",
       "teacher": "SOC/POC",
       "type": "lec"
@@ -4759,7 +4759,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "MA302",
+      "title": "Probability and Statistics",
       "code": "FF6",
       "teacher": "NF5",
       "type": "lec"
@@ -4768,7 +4768,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 1,
-      "title": "MA302",
+      "title": "Probability and Statistics",
       "code": "TR302",
       "teacher": "NF5",
       "type": "tut"
@@ -4777,7 +4777,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS12",
       "teacher": "NES",
       "type": "tut"
@@ -4786,7 +4786,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "15BT211",
+      "title": "Environmental Studies",
       "code": "FF7",
       "teacher": "GMA/RAC",
       "type": "lec"
@@ -4795,7 +4795,7 @@ const scheduleMap = {
       "day": 4,
       "start": 15,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "FF7",
       "teacher": "NV",
       "type": "lec"
@@ -4804,7 +4804,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 1,
-      "title": "15BT211",
+      "title": "Environmental Studies",
       "code": "TS16",
       "teacher": "GMA/RAC",
       "type": "tut"
@@ -4813,7 +4813,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "BT313",
+      "title": "Genetics and Developmental Biology",
       "code": "TS13",
       "teacher": "SOC/POC",
       "type": "tut"
@@ -4822,7 +4822,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "MA302",
+      "title": "Probability and Statistics",
       "code": "FF5",
       "teacher": "NF5",
       "type": "lec"
@@ -4831,7 +4831,7 @@ const scheduleMap = {
       "day": 5,
       "start": 12,
       "duration": 1,
-      "title": "BT211",
+      "title": "Environmental Studies",
       "code": "FF5",
       "teacher": "NV",
       "type": "lec"
@@ -4840,7 +4840,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "BT311",
+      "title": "Thermodynamics and Chemical Processes",
       "code": "G6",
       "teacher": "ASM APC",
       "type": "lec"
@@ -4851,7 +4851,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "15BT211",
+      "title": "Environmental Studies",
       "code": "LT3",
       "teacher": "GMA/RAC",
       "type": "lec"
@@ -4860,7 +4860,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "BT311",
+      "title": "Thermodynamics and Chemical Processes",
       "code": "LT3",
       "teacher": "SOC/POC",
       "type": "lec"
@@ -4869,7 +4869,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "BT313",
+      "title": "Genetics and Developmental Biology",
       "code": "TS11SOC",
       "teacher": "POC",
       "type": "tut"
@@ -4878,7 +4878,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "15BT211",
+      "title": "Environmental Studies",
       "code": "LT3",
       "teacher": "GMA/RAC",
       "type": "lec"
@@ -4887,7 +4887,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "BT311",
+      "title": "Thermodynamics and Chemical Processes",
       "code": "LT3",
       "teacher": "ASM APC",
       "type": "lec"
@@ -4896,7 +4896,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "BT311",
+      "title": "Thermodynamics and Chemical Processes",
       "code": "LT3",
       "teacher": "SOC/POC",
       "type": "lec"
@@ -4905,7 +4905,7 @@ const scheduleMap = {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "MA302",
+      "title": "Probability and Statistics",
       "code": "FF6",
       "teacher": "NF5",
       "type": "lec"
@@ -4914,7 +4914,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "BT311",
+      "title": "Thermodynamics and Chemical Processes",
       "code": "TS17",
       "teacher": "ASM APC",
       "type": "tut"
@@ -4923,7 +4923,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "15BT211",
+      "title": "Environmental Studies",
       "code": "FF7",
       "teacher": "GMA/RAC",
       "type": "lec"
@@ -4932,7 +4932,7 @@ const scheduleMap = {
       "day": 4,
       "start": 12,
       "duration": 1,
-      "title": "15BT211",
+      "title": "Environmental Studies",
       "code": "TS16",
       "teacher": "GMA/RAC",
       "type": "tut"
@@ -4941,7 +4941,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "MA302",
+      "title": "Probability and Statistics",
       "code": "FF5",
       "teacher": "NF5",
       "type": "lec"
@@ -4950,7 +4950,7 @@ const scheduleMap = {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "BT311",
+      "title": "Thermodynamics and Chemical Processes",
       "code": "G6",
       "teacher": "ASM APC",
       "type": "lec"
@@ -4959,7 +4959,7 @@ const scheduleMap = {
       "day": 5,
       "start": 15,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS10",
       "teacher": "AMN",
       "type": "tut"
@@ -4968,7 +4968,7 @@ const scheduleMap = {
       "day": 6,
       "start": 11,
       "duration": 1,
-      "title": "MA302",
+      "title": "Probability and Statistics",
       "code": "TS10",
       "teacher": "NF5",
       "type": "tut"
@@ -4979,7 +4979,7 @@ const scheduleMap = {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "FF7",
       "teacher": "PRV",
       "type": "lec"
@@ -4988,7 +4988,7 @@ const scheduleMap = {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS10",
       "teacher": "AMN",
       "type": "tut"
@@ -4997,7 +4997,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 2,
-      "title": "B15CS213 (Lab)",
+      "title": "Database Management Systems (Lab)",
       "code": "CL03",
       "teacher": "ATI/ALK",
       "type": "lab"
@@ -5006,7 +5006,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 2,
-      "title": "B15CS214 (Lab)",
+      "title": "IT Infrastructure and Communication Lab",
       "code": "CL20",
       "teacher": "PU/SAM",
       "type": "lab"
@@ -5015,7 +5015,7 @@ const scheduleMap = {
       "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "G4",
       "teacher": "PRV",
       "type": "lec"
@@ -5024,7 +5024,7 @@ const scheduleMap = {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "FF7",
       "teacher": "RTK",
       "type": "lec"
@@ -5033,7 +5033,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "TS16",
       "teacher": "RSH",
       "type": "tut"
@@ -5042,7 +5042,7 @@ const scheduleMap = {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "FF5",
       "teacher": "DEP",
       "type": "lec"
@@ -5050,8 +5050,8 @@ const scheduleMap = {
     {
       "day": 4,
       "start": 12,
-      "duration": 1,
-      "title": "CS214",
+      "duration": 2,
+      "title": "IT Infrastructure and Communication Lab",
       "code": "FF5",
       "teacher": "HN",
       "type": "lec"
@@ -5060,7 +5060,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 2,
-      "title": "B15CS215 (Lab)",
+      "title": "Object Oriented Programming using Java (Lab)",
       "code": "CL22",
       "teacher": "23/SHB/SHY/DEV",
       "type": "lab"
@@ -5069,7 +5069,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 1,
-      "title": "CS212",
+      "title": "Theory of Computation",
       "code": "FF6",
       "teacher": "RTK",
       "type": "lec"
@@ -5078,7 +5078,7 @@ const scheduleMap = {
       "day": 5,
       "start": 15,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G4",
       "teacher": "DEP",
       "type": "lec"
@@ -5087,7 +5087,7 @@ const scheduleMap = {
       "day": 5,
       "start": 10,
       "duration": 1,
-      "title": "CS213",
+      "title": "Database Management Systems",
       "code": "G8",
       "teacher": "DEP",
       "type": "lec"
@@ -5096,7 +5096,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "TR302",
       "teacher": "RJM",
       "type": "tut"
@@ -5107,7 +5107,7 @@ const scheduleMap = {
       "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "TS10",
       "teacher": "PAT",
       "type": "tut"
@@ -5116,7 +5116,7 @@ const scheduleMap = {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "FF7",
       "teacher": "VSE",
       "type": "lec"
@@ -5125,7 +5125,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 2,
-      "title": "CI371 (Lab)",
+      "title": "Data Structures Lab",
       "code": "CL18",
       "teacher": "LM/VIB",
       "type": "lab"
@@ -5134,7 +5134,7 @@ const scheduleMap = {
       "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "TS10",
       "teacher": "AMN",
       "type": "tut"
@@ -5143,7 +5143,7 @@ const scheduleMap = {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "TS13",
       "teacher": "SHG",
       "type": "tut"
@@ -5152,7 +5152,7 @@ const scheduleMap = {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "G4",
       "teacher": "VSE",
       "type": "lec"
@@ -5161,7 +5161,7 @@ const scheduleMap = {
       "day": 4,
       "start": 9,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "CS7",
       "teacher": "HZR",
       "type": "lec"
@@ -5170,7 +5170,7 @@ const scheduleMap = {
       "day": 4,
       "start": 15,
       "duration": 2,
-      "title": "B15CS213 (Lab)",
+      "title": "Database Management Systems (Lab)",
       "code": "CL17",
       "teacher": "18/RTK/ALK/IC/ABC/ISH",
       "type": "lab"
@@ -5179,7 +5179,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "CR501",
       "teacher": "HZR",
       "type": "lec"
@@ -5188,7 +5188,7 @@ const scheduleMap = {
       "day": 5,
       "start": 15,
       "duration": 2,
-      "title": "B15CS214 (Lab)",
+      "title": "IT Infrastructure and Communication Lab",
       "code": "CL23",
       "teacher": "24/PAG/HN/MAY/PRK/BHA",
       "type": "lab"
@@ -5199,7 +5199,7 @@ const scheduleMap = {
       "day": 2,
       "start": 9,
       "duration": 2,
-      "title": "B15CS215 (Lab)",
+      "title": "Object Oriented Programming using Java (Lab)",
       "code": "CL22",
       "teacher": "23/SHB/ISH/DEV/POS/SHY",
       "type": "lab"
@@ -5208,7 +5208,7 @@ const scheduleMap = {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "HS211",
+      "title": "Economics",
       "code": "FF7",
       "teacher": "AMN",
       "type": "lec"
@@ -5217,7 +5217,7 @@ const scheduleMap = {
       "day": 3,
       "start": 9,
       "duration": 2,
-      "title": "CI371 (Lab)",
+      "title": "Data Structures Lab",
       "code": "CL09",
       "teacher": "10/MKT/VRN/KRI/MON/AW",
       "type": "lab"
@@ -5226,7 +5226,7 @@ const scheduleMap = {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "CI311",
+      "title": "Data Structures",
       "code": "TS10",
       "teacher": "LM",
       "type": "tut"
@@ -5235,7 +5235,7 @@ const scheduleMap = {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "G6",
       "teacher": "NF6",
       "type": "lec"
@@ -5244,7 +5244,7 @@ const scheduleMap = {
       "day": 5,
       "start": 9,
       "duration": 2,
-      "title": "B15CS214 (Lab)",
+      "title": "IT Infrastructure and Communication Lab",
       "code": "CL05",
       "teacher": "06/JAG/HN/PRK/BHA/JAT",
       "type": "lab"
@@ -5253,7 +5253,7 @@ const scheduleMap = {
       "day": 6,
       "start": 10,
       "duration": 1,
-      "title": "MA213",
+      "title": "Mathematical Foundations for Artificial Intelligence and Data Science",
       "code": "FF6",
       "teacher": "NF6",
       "type": "lec"
@@ -5262,7 +5262,7 @@ const scheduleMap = {
       "day": 6,
       "start": 11,
       "duration": 2,
-      "title": "B15CS213 (Lab)",
+      "title": "Database Management Systems (Lab)",
       "code": "CL11",
       "teacher": "IC/AA",
       "type": "lab"
