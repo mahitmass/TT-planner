@@ -119,6 +119,7 @@ const TimetableApp = (function() {
       badge.addEventListener('touchstart', handleStart, { passive: false });
       badge.addEventListener('touchmove', handleMove, { passive: false });
       badge.addEventListener('touchend', handleEnd);
+      badge.addEventListener('touchcancel', handleEnd);
       
       document.addEventListener('click', (e) => {
           if (isOpen && !isSwiping && !overlay.contains(e.target) && !badge.contains(e.target)) {

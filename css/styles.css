@@ -485,6 +485,7 @@ body[data-theme="light"] .day-header {
   font-size: 0.85rem;
   z-index: 50;
   pointer-events: auto !important; /* <--- CHANGE THIS from 'none' to 'auto' */
+  touch-action: none; /* Prevents Safari from hijacking the swipe */
   cursor: pointer;
   backdrop-filter: blur(4px);
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
@@ -1629,6 +1630,7 @@ body {
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
+  touch-action: none; /* Prevents Safari from hijacking the swipe */
   transition: height 0.2s ease, opacity 0.2s ease;
   box-shadow: 0 10px 50px rgba(0,0,0,0.8);
   
