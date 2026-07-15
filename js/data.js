@@ -2,5607 +2,1445 @@
 const scheduleMap = {
   "2": [
     {
+      "day": 2,
+      "start": 10,
+      "duration": 1,
+      "title": "CS214",
+      "code": "G3",
+      "teacher": "HN",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "CS212",
+      "code": "FF5",
+      "teacher": "KA",
+      "type": "lec"
+    },
+    {
       "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "CI311",
+      "code": "G3",
+      "teacher": "MKT",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G4",
+      "teacher": "ALK",
+      "type": "lec"
+    },
+    {
+      "day": 4,
       "start": 9,
-      "duration": 2,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "ARJ",
+      "duration": 1,
+      "title": "CS212",
+      "code": "CS6",
+      "teacher": "KA",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 10,
+      "duration": 1,
+      "title": "CI311",
+      "code": "F8",
+      "teacher": "MKT",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 12,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G9",
+      "teacher": "ALK",
       "type": "lec"
     }
   ],
   "4": [
     {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "15B11PH211",
-      "code": "3092",
-      "teacher": "PKC",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3028",
-      "teacher": "ASP",
-      "type": "lec"
-    }
-  ],
-  "F9": [
-    {
-      "day": 1,
-      "start": 12,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "226",
-      "teacher": "ASP",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 16,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "116",
-      "teacher": "AKS",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "SGU/ARJ",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "121",
-      "teacher": "ANK1",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "121",
-      "teacher": "ATH",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "41",
-      "teacher": "SHALU",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3045",
-      "teacher": "ANK1",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "226",
-      "teacher": "AKB",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3045",
-      "teacher": "ASP",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "AKB/KAKUL",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS06",
-      "teacher": "PSH",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3092",
-      "teacher": "ANK1",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3092",
-      "teacher": "AKB",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "240",
-      "teacher": "CHANDERSHEKHAR",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "ASP",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "ANK1",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3023",
-      "teacher": "PRK1",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 12,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "AKB",
-      "type": "lec"
-    }
-  ],
-  "F10": [
-    {
-      "day": 1,
-      "start": 12,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "226",
-      "teacher": "ASP",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3028",
-      "teacher": "DEV",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "SQM/NMD/ARJ/RSK",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "027A",
-      "teacher": "KAS",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3045",
-      "teacher": "ANK1",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "226",
-      "teacher": "AKB",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3045",
-      "teacher": "ASP",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "AKB/SAMARTH",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3092",
-      "teacher": "ANK1",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3092",
-      "teacher": "AKB",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "121",
-      "teacher": "NEA",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS04",
-      "teacher": "HAB",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "246",
-      "teacher": "HIMANSNHI",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "127",
-      "teacher": "ANK1",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "ASP",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "ANK1",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3023",
-      "teacher": "PRK1",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 12,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "AKB",
-      "type": "lec"
-    }
-  ],
-  "F2": [
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS05",
-      "teacher": "HAB",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "256C",
-      "teacher": "SKH",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "MKS/SAP/SQM/SAMARTH JAIN",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "246",
-      "teacher": "SANJAY",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3092",
-      "teacher": "NEA",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3092",
-      "teacher": "SHJ",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3092",
-      "teacher": "SHP1",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3092",
-      "teacher": "VM",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "121",
-      "teacher": "VM",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "127",
-      "teacher": "AMB",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "116",
-      "teacher": "DEV",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3084",
-      "teacher": "SHJ",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "VM",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3084",
-      "teacher": "SHP1",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "126",
-      "teacher": "SSJ//AVINASH",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 12,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "SHJ",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3028",
-      "teacher": "SHP1",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "VM",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3028",
-      "teacher": "NEA",
-      "type": "lec"
-    }
-  ],
-  "F4": [
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS05",
-      "teacher": "PSH",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "256C",
-      "teacher": "VM",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "SR05",
-      "teacher": "PRK1",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "246",
-      "teacher": "CHANDERSHEKHAR",
-      "type": "lab"
-    },
-    {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "24B11HS111",
-      "code": "153",
-      "teacher": "PRK1",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3092",
-      "teacher": "DEV",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "127",
-      "teacher": "SAP/AVINASH",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3092",
-      "teacher": "NFHSS1",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3092",
-      "teacher": "SAP",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "SAP/SGU//BAIBHAV",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "15B11MA211",
-      "code": "3092",
-      "teacher": "ASP LF3F",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "126",
-      "teacher": "AMV",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "ASP",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "226",
-      "teacher": "PKC",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "SAP",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "121",
-      "teacher": "NEA",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "PKC",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "SAP",
-      "type": "lec"
-    }
-  ],
-  "F21": [
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS06",
-      "teacher": "NIK",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "116",
-      "teacher": "KAS",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "JYR",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "240",
-      "teacher": "ALOK",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "ADV",
+      "title": "CS213",
+      "code": "CS3",
+      "teacher": "SON",
       "type": "lec"
     },
     {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "15B11MA211",
-      "code": "3028",
-      "teacher": "PKR",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "126",
-      "teacher": "SHP1",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "116",
-      "teacher": "DEV",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 2,
-      "title": "24B11HS111",
-      "code": "3045",
-      "teacher": "RSK LF21F2",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "MKS/SGU/BAIBHAV/RSK",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3028",
-      "teacher": "PKR",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "ADV",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "JYR",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "ADS",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "ADV",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3023",
-      "teacher": "RSK",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "256C",
-      "teacher": "SHALU",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "PKR",
-      "type": "lec"
-    }
-  ],
-  "F22": [
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS06",
-      "teacher": "RAK",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "116",
-      "teacher": "SKA1",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "126",
-      "teacher": "UMK",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "JYR",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "246",
-      "teacher": "ANB",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "ADV",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3028",
-      "teacher": "PKR",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 2,
-      "title": "24B11HS111",
-      "code": "3045",
-      "teacher": "RSK LF21F2",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "MKS/SGU/BAIBHAV/RSK",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3028",
-      "teacher": "PKR",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "ADV",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "JYR",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3098",
-      "teacher": "SHV",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "ADV",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3023",
-      "teacher": "RSK",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "PKR",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "027A",
-      "teacher": "PKC",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3092",
-      "teacher": "AKB",
-      "type": "tut"
-    }
-  ],
-  "F17": [
-    {
-      "day": 1,
-      "start": 16,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "118",
-      "teacher": "ARM",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "256C",
-      "teacher": "PKC",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "240",
-      "teacher": "ANB",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "118",
-      "teacher": "RKA",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CYBER SECURITY",
-      "teacher": "HIB/SAMARTH JAIN",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS06",
-      "teacher": "PRJ",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 16,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "121",
-      "teacher": "NIC",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "116",
-      "teacher": "BHT",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3045",
-      "teacher": "NEA",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "226",
-      "teacher": "RKA",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "BHT",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3045",
-      "teacher": "ARM",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "BHT",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "NEA",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "RKA/KAKUL",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "RKA",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 12,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "126",
-      "teacher": "SHP1",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3084",
-      "teacher": "NEA",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "BHT",
-      "type": "lec"
-    }
-  ],
-  "F18": [
-    {
-      "day": 1,
-      "start": 16,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "118",
-      "teacher": "ARM",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "41",
-      "teacher": "SKA1",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "246",
-      "teacher": "CHANDERSHEKHAR",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "118",
-      "teacher": "RKA",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS06",
-      "teacher": "RAK",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "126",
-      "teacher": "SHP1",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3045",
-      "teacher": "NEA",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "226",
-      "teacher": "RKA",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "BHT",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3045",
-      "teacher": "ARM",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CYBER SECURITY",
-      "teacher": "SHJ/JATIN",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "BHT",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "NEA",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "RKA/DHRUV",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "121",
-      "teacher": "BHT",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "RKA",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "127",
-      "teacher": "DEV",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3084",
-      "teacher": "NEA",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "BHT",
-      "type": "lec"
-    }
-  ],
-  "F3": [
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "041",
-      "teacher": "SKA1",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "116",
-      "teacher": "SHV",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS04",
-      "teacher": "SUM",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "240",
-      "teacher": "MEENAKSHI",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "126",
-      "teacher": "NEA",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "MKS/SAP/SQM/SAMARTH JAIN",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "121",
-      "teacher": "SAP/ZUBAIR",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3092",
-      "teacher": "NFHSS1",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3092",
-      "teacher": "SAP",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "15B11MA211",
-      "code": "3092",
-      "teacher": "ASP LF3F",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "ASP",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "226",
-      "teacher": "PKC",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "116",
-      "teacher": "PKC",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "SAP",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11HS11",
-      "code": "SR05",
-      "teacher": "PRS",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "PKC",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11HS11",
-      "code": "SR05",
-      "teacher": "PRS",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "SAP",
-      "type": "lec"
-    }
-  ],
-  "E1": [
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "HMB/SAP/SHJ/JATIN",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "118",
-      "teacher": "SHALU",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "116",
-      "teacher": "SHV",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "SR05",
-      "teacher": "PRK1",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "SR05",
-      "teacher": "NMD",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "41",
-      "teacher": "SKA1",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "153",
-      "teacher": "PRK1",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "228",
-      "teacher": "NMD",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3045",
-      "teacher": "BAIBHAV",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "SHALU",
+      "title": "CI311",
+      "code": "F8",
+      "teacher": "VRN",
       "type": "lec"
     },
     {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "PKS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "240",
-      "teacher": "MEENAKSHI",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "121",
-      "teacher": "SHALU",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "NMD",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "SHALU",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3084",
-      "teacher": "PKS",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS04",
-      "teacher": "NIK",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "244B",
-      "teacher": "AMB",
-      "type": "tut"
-    }
-  ],
-  "E2": [
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "HMB/SAP/SHJ/JATIN",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "118",
-      "teacher": "SHALU",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "SR05",
-      "teacher": "PRK1",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "121",
-      "teacher": "PRS",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "SR05",
-      "teacher": "NMD",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "256C",
-      "teacher": "BHT",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "153",
-      "teacher": "PRK1",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "228",
-      "teacher": "NMD",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "121",
-      "teacher": "SHALU",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3083",
-      "teacher": "JATIN",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "SHALU",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "PKS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "246",
-      "teacher": "EKS1",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "NMD",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "127",
-      "teacher": "AMB",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "SHALU",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3084",
-      "teacher": "PKS",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS05",
-      "teacher": "PRJ",
-      "type": "lab"
-    }
-  ],
-  "E3": [
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "HMB/SAP/SHJ/JATIN",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3092",
-      "teacher": "AMB",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3092",
-      "teacher": "URS",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "ANK1",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3092",
-      "teacher": "NIC",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "230",
-      "teacher": "URS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "127",
-      "teacher": "PKS",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "230",
-      "teacher": "AMB",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 16,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "116",
-      "teacher": "AKS",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "230",
-      "teacher": "ANK1",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "256C",
-      "teacher": "SHALU",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "240",
-      "teacher": "ANB",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "217",
-      "teacher": "ANK1",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "217",
-      "teacher": "ANK1/BAIBHAV",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 16,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3084",
-      "teacher": "NIC",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS04",
-      "teacher": "PRJ",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3084",
-      "teacher": "AMB",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "URS",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "KAS",
-      "type": "tut"
-    }
-  ],
-  "H3": [
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "PKR/ATH",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "027A",
-      "teacher": "ADV",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "DVG/BAIBHAV",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "126",
-      "teacher": "ASP",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3028",
-      "teacher": "PKR/ATH",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "SKH",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "DVG",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "CR54",
-      "teacher": "PRS",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3092",
-      "teacher": "SKH",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "240",
-      "teacher": "ANB",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3092",
-      "teacher": "PKR/ATH",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3092",
-      "teacher": "DVG",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS06",
-      "teacher": "HAB",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11HS11",
-      "code": "SR05",
-      "teacher": "PRS",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "126",
-      "teacher": "SKH",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11HS11",
-      "code": "SR05",
-      "teacher": "PRS",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "HIB/SHJ/GAH/SAMARTH",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "SR05",
-      "teacher": "DVG",
-      "type": "lec"
-    }
-  ],
-  "H4": [
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "PKR/ATH",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "256C",
-      "teacher": "URS",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "127",
-      "teacher": "UMK",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3028",
-      "teacher": "PKR/ATH",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "SKH",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "DVG",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "MKS/NMD/GAH/Baibhav",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "DVG/JATIN",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3092",
-      "teacher": "SKH",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "246",
-      "teacher": "HIMANSHI",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3092",
-      "teacher": "PKR/ATH",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3092",
-      "teacher": "DVG",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "126",
-      "teacher": "KAS",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11HS11",
-      "code": "SR05",
-      "teacher": "PRS",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "121",
-      "teacher": "SHV",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11HS11",
-      "code": "SR05",
-      "teacher": "PRS",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "SR05",
-      "teacher": "DVG",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS05",
-      "teacher": "SUM",
-      "type": "lab"
-    }
-  ],
-  "F1": [
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS04",
-      "teacher": "PRJ",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "027A",
-      "teacher": "AK",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "MKS/SAP/SQM/SAMARTH JAIN",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "240",
-      "teacher": "HSSSCHOLAR",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3092",
-      "teacher": "NEA",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3092",
-      "teacher": "SHJ",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3092",
-      "teacher": "SHP1",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3092",
-      "teacher": "VM",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "116",
-      "teacher": "VM",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "116",
-      "teacher": "PKS",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "121",
-      "teacher": "SHV",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3084",
-      "teacher": "SHJ",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "VM",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3084",
-      "teacher": "SHP1",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3092",
-      "teacher": "SSJ/ZUBAIR",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 12,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "SHJ",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3028",
-      "teacher": "SHP1",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "VM",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3028",
-      "teacher": "NEA",
-      "type": "lec"
-    }
-  ],
-  "F8": [
-    {
-      "day": 1,
-      "start": 12,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3028",
-      "teacher": "DEV",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "SGU/ARJ",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "217",
-      "teacher": "MKS",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "116",
-      "teacher": "SHALU",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "113",
-      "teacher": "PKR",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS05",
-      "teacher": "SUM",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3092",
-      "teacher": "MKS/AVINASH",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3092",
-      "teacher": "PRITEE",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "228",
-      "teacher": "MKS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3028",
-      "teacher": "URS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "URS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "256C",
-      "teacher": "URS/VM",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "246",
-      "teacher": "EKS1",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3045",
-      "teacher": "URS",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3045",
-      "teacher": "PRITEE",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3045",
-      "teacher": "MKS",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 12,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3045",
-      "teacher": "URS",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3045",
-      "teacher": "URS",
-      "type": "lec"
-    }
-  ],
-  "F13": [
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3045",
-      "teacher": "GAH",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3045",
-      "teacher": "NAK",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "126",
-      "teacher": "GAH/KAKUL",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3045",
-      "teacher": "PKR",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "126",
-      "teacher": "VM",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "116",
-      "teacher": "KKS",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "NAK",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "PKR",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "GAH",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS04",
-      "teacher": "PSH",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "RSK/ARJ/NMD",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "GAH",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "NAK",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "027A",
-      "teacher": "AMV",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3092",
-      "teacher": "ARM",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3092",
-      "teacher": "PKR",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "240",
-      "teacher": "MEENAKSHI",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3092",
-      "teacher": "ARM",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "116",
-      "teacher": "SHV",
-      "type": "tut"
-    }
-  ],
-  "F14": [
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3045",
-      "teacher": "GAH",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3045",
-      "teacher": "NAK",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "127",
-      "teacher": "GAH/SAMARTH",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3045",
-      "teacher": "PKR",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "126",
-      "teacher": "LKK",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "NAK",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "PKR",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "GAH",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "-256C",
-      "teacher": "ANK1/AMV",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS05",
-      "teacher": "RAK",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "RSK/ARJ/NMD",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "GAH",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "NAK",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3092",
-      "teacher": "ARM",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3092",
-      "teacher": "PKR",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "246",
-      "teacher": "HIMANSHI",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3092",
-      "teacher": "ARM",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "126",
-      "teacher": "DEV",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "121",
-      "teacher": "KAS",
-      "type": "tut"
-    }
-  ],
-  "F5": [
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "240",
-      "teacher": "EKS1",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "217",
-      "teacher": "ADV",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "217",
-      "teacher": "ADS",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "217",
-      "teacher": "UMK",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "217",
-      "teacher": "PKC",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3084",
-      "teacher": "ADS",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3084",
-      "teacher": "ADV",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "ADV",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS04",
-      "teacher": "PSH",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3084",
-      "teacher": "UMK",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3084",
-      "teacher": "ADS/ZUBAIR",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3045",
-      "teacher": "ADS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "SAP/SGU//BAIBHAV",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "116",
-      "teacher": "AMB",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "121",
-      "teacher": "SHV",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "256C",
-      "teacher": "ANK1",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3045",
-      "teacher": "ADS",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3045",
-      "teacher": "ADV",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3045",
-      "teacher": "UMK",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "121",
-      "teacher": "AMV",
-      "type": "tut"
-    }
-  ],
-  "F11": [
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "UMK",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3023",
-      "teacher": "JRD",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "SKH",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "SQM/NMD/ARJ/RSK",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "ARJ",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3045",
-      "teacher": "JRD",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "SKH",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3084",
-      "teacher": "UMK",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "ARJ/KAKUL",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS04",
-      "teacher": "HAB",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 2,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "SKH LF11F1",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3028",
-      "teacher": "UMK",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "ARJ",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "126",
-      "teacher": "SKH",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "-126",
-      "teacher": "PRS",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "240",
-      "teacher": "ALOK",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "126",
-      "teacher": "PKS",
-      "type": "tut"
-    }
-  ],
-  "F12": [
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "UMK",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3023",
-      "teacher": "JRD",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "SKH",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "SQM/NMD/ARJ/RSK",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "ARJ",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3045",
-      "teacher": "JRD",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "SKH",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3084",
-      "teacher": "UMK",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS05",
-      "teacher": "RAK",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "ARJ/SAMARTH",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 2,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "SKH LF11F1",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3028",
-      "teacher": "UMK",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "41",
-      "teacher": "NAK",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "ARJ",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "116",
-      "teacher": "SKH",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "116",
-      "teacher": "ATH",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "246",
-      "teacher": "SANJAY",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "121",
-      "teacher": "SHV",
-      "type": "tut"
-    }
-  ],
-  "F24": [
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "240",
-      "teacher": "MEENAKSHI",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 2,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "NAK",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3028",
-      "teacher": "NEA",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "SQM",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "127",
-      "teacher": "SQM/SAMARTH",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "SQM",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "230",
-      "teacher": "NAK",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "230",
-      "teacher": "NEA",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS06",
-      "teacher": "NIK",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "116",
-      "teacher": "NAK",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "116",
-      "teacher": "NIC",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "RSK/ARJ/NMD",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "126",
-      "teacher": "UMK",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "NEA LF3F",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "NAK",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "027A",
-      "teacher": "SKA1",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "226",
-      "teacher": "SQM",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3023",
-      "teacher": "RSK",
-      "type": "lec"
-    }
-  ],
-  "F6": [
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "246",
-      "teacher": "AMA",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "217",
-      "teacher": "ADV",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "217",
-      "teacher": "ADS",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "217",
-      "teacher": "UMK",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "217",
-      "teacher": "PKC",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3084",
-      "teacher": "ADS",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3084",
-      "teacher": "ADV",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS05",
-      "teacher": "SUM",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "ADV",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3084",
-      "teacher": "UMK",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3092",
-      "teacher": "ADS/AVINASH",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3045",
-      "teacher": "ADS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "SAP/SGU//BAIBHAV",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "121",
-      "teacher": "PRS",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "121",
-      "teacher": "PKC",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "027A",
-      "teacher": "KAS",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3045",
-      "teacher": "ADS",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3045",
-      "teacher": "ADV",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3045",
-      "teacher": "UMK",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "127",
-      "teacher": "AMB",
-      "type": "tut"
-    }
-  ],
-  "E4": [
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3092",
-      "teacher": "AMB",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3092",
-      "teacher": "URS",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "ANK1",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3092",
-      "teacher": "NIC",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "116",
-      "teacher": "AKS",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "MKS/NMD/GAH/Baibhav",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "126",
-      "teacher": "PKS",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "230",
-      "teacher": "URS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "230",
-      "teacher": "AMB",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "230",
-      "teacher": "ANK1",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "116",
-      "teacher": "KAS",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "027A",
-      "teacher": "URS",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "217",
-      "teacher": "ANK1",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "246",
-      "teacher": "ALOK",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 16,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3084",
-      "teacher": "NIC",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS05",
-      "teacher": "NIK",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3084",
-      "teacher": "AMB",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "URS",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "127",
-      "teacher": "ANK1/JATIN",
-      "type": "tut"
-    }
-  ],
-  "F25": [
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "246",
-      "teacher": "SANJAY",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 2,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "NAK",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3028",
-      "teacher": "NEA",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "SQM",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "126",
-      "teacher": "ATH",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "116",
-      "teacher": "NAK",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3023",
-      "teacher": "SQM",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "230",
-      "teacher": "NAK",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "MKS/NMD/GAH/Baibhav",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "230",
-      "teacher": "NEA",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3092",
-      "teacher": "NMD",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "NEA LF3F",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "NAK",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "41",
-      "teacher": "VM",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "226",
-      "teacher": "SQM",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3023",
-      "teacher": "RSK",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS06",
-      "teacher": "RAK",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 12,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "127",
-      "teacher": "SHV",
-      "type": "tut"
-    }
-  ],
-  "F7": [
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "SGU/ARJ",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "217",
-      "teacher": "MKS",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS04",
-      "teacher": "NIK",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3084",
-      "teacher": "MKS/ZUBAIR",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "127",
-      "teacher": "PKS",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3092",
-      "teacher": "PRITEE",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "228",
-      "teacher": "MKS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3028",
-      "teacher": "URS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "URS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "41",
-      "teacher": "BHT",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 16,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "244",
-      "teacher": "AKS",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "240",
-      "teacher": "SANJAY",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3045",
-      "teacher": "URS",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3045",
-      "teacher": "PRITEE",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3045",
-      "teacher": "MKS",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 12,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3045",
-      "teacher": "URS",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3045",
-      "teacher": "URS",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "116",
-      "teacher": "URS",
-      "type": "tut"
-    }
-  ],
-  "H2": [
-    {
-      "day": 1,
-      "start": 16,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3084",
-      "teacher": "LKK",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3084",
-      "teacher": "NIC",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3084",
-      "teacher": "KKS",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "SKA1",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "KKS",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "246",
-      "teacher": "CHANDERSHEKHAR",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "121",
-      "teacher": "AKS",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "41",
-      "teacher": "PKC",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "SKA1",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3084",
-      "teacher": "HMB",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS04",
-      "teacher": "SUM",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 12,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "HMB",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "SKA1",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3028",
-      "teacher": "KKS",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 16,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3084",
-      "teacher": "NIC",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3045",
-      "teacher": "HMB",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3045",
-      "teacher": "AVINASH",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "HIB/SHJ/GAH/SAMARTH",
-      "type": "lab"
-    }
-  ],
-  "H1": [
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3084",
-      "teacher": "NIC",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3084",
-      "teacher": "KKS",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3023",
-      "teacher": "SKA1",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3023",
-      "teacher": "KKS",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 2,
-      "title": "24B16HS111 (Lab)",
-      "code": "240",
-      "teacher": "SANJAY",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 2,
-      "title": "15B17PH271 (Lab)",
-      "code": "027A",
-      "teacher": "KAS",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3084",
-      "teacher": "SKA1",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3084",
-      "teacher": "HMB",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 12,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3028",
-      "teacher": "HMB",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "3028",
-      "teacher": "SKA1",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "3028",
-      "teacher": "KKS",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 16,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "3084",
-      "teacher": "NIC",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 2,
-      "title": "18B15GE112 (Lab)",
-      "code": "/WS06",
-      "teacher": "PSH",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3045",
-      "teacher": "HMB",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 2,
-      "title": "15B17CI271 (Lab)",
-      "code": "CL1",
-      "teacher": "HIB/SHJ/GAH/SAMARTH",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 12,
-      "duration": 1,
-      "title": "15B11PH211",
-      "code": "116",
-      "teacher": "SKA1",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 1,
-      "title": "15B11CI211",
-      "code": "3045",
-      "teacher": "JATIN",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "24B11HS111",
-      "code": "126",
-      "teacher": "DEV",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "15B11MA211",
-      "code": "127",
-      "teacher": "KKS",
-      "type": "tut"
-    }
-  ],
-  "B3": [
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CR325",
-      "teacher": "ANP",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 16,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "SPP",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
+      "title": "CS212",
       "code": "CR501",
-      "teacher": "LK",
+      "teacher": "KA",
       "type": "lec"
     },
     {
-      "day": 1,
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "CS213",
+      "code": "FF5",
+      "teacher": "SON",
+      "type": "lec"
+    },
+    {
+      "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "MA211",
-      "code": "TS8",
-      "teacher": "HA",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "G2",
-      "teacher": "PU",
+      "title": "CI311",
+      "code": "FF5",
+      "teacher": "VRN",
       "type": "lec"
     },
     {
-      "day": 1,
-      "start": 13,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "-LL",
-      "teacher": "AMI",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 11,
+      "day": 4,
+      "start": 12,
       "duration": 1,
-      "title": "CI121",
-      "code": "FF3",
-      "teacher": "ANP",
+      "title": "CS212",
+      "code": "G7",
+      "teacher": "KA",
       "type": "lec"
     },
     {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G6",
+      "teacher": "SON",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 16,
+      "duration": 1,
+      "title": "CS214",
+      "code": "G3",
+      "teacher": "AKT",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 9,
+      "duration": 1,
+      "title": "CS212",
+      "code": "CS6",
+      "teacher": "KA",
+      "type": "lec"
+    }
+  ],
+  "6": [
+    {
       "day": 2,
-      "start": 13,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL01",
-      "teacher": "ASI/PRV",
-      "type": "lab"
+      "start": 15,
+      "duration": 1,
+      "title": "CI311",
+      "code": "G4",
+      "teacher": "RJM",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "CI311",
+      "code": "FF7",
+      "teacher": "RJM",
+      "type": "lec"
     },
     {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "SPP",
+      "title": "CS213",
+      "code": "FF5",
+      "teacher": "SHR",
       "type": "lec"
     },
     {
       "day": 3,
-      "start": 10,
+      "start": 15,
       "duration": 1,
-      "title": "MA211",
-      "code": "G1",
-      "teacher": "LK",
+      "title": "CS212",
+      "code": "FF7",
+      "teacher": "RTK",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G8",
+      "teacher": "SHR",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 16,
+      "duration": 1,
+      "title": "CS214",
+      "code": "G4",
+      "teacher": "MAY",
+      "type": "lec"
+    },
+    {
+      "day": 6,
+      "start": 11,
+      "duration": 1,
+      "title": "CS213",
+      "code": "FF5",
+      "teacher": "SHR",
+      "type": "lec"
+    },
+    {
+      "day": 6,
+      "start": 12,
+      "duration": 1,
+      "title": "CS212",
+      "code": "G8",
+      "teacher": "RTK",
+      "type": "lec"
+    }
+  ],
+  "8": [
+    {
+      "day": 2,
+      "start": 16,
+      "duration": 1,
+      "title": "CI311",
+      "code": "G5",
+      "teacher": "NSA",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 12,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G6",
+      "teacher": "ABC",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 1,
+      "title": "CS212",
+      "code": "CS5",
+      "teacher": "ASY",
       "type": "lec"
     },
     {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "CI121",
-      "code": "CR301",
-      "teacher": "ANP",
+      "title": "CI311",
+      "code": "G4",
+      "teacher": "NSA",
       "type": "lec"
     },
     {
-      "day": 3,
-      "start": 9,
+      "day": 4,
+      "start": 10,
       "duration": 1,
-      "title": "CI121",
-      "code": "TS8",
-      "teacher": "AW",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS6",
-      "teacher": "ANU",
-      "type": "tut"
+      "title": "CS212",
+      "code": "G4",
+      "teacher": "ASY",
+      "type": "lec"
     },
     {
       "day": 4,
-      "start": 9,
+      "start": 12,
       "duration": 1,
-      "title": "Workshop",
-      "code": "TS7",
-      "teacher": "NBH",
-      "type": "tut"
+      "title": "CS214",
+      "code": "G9",
+      "teacher": "KRR",
+      "type": "lec"
     },
     {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "UHV",
+      "title": "CS213",
       "code": "G8",
-      "teacher": "PU",
+      "teacher": "ABC",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 12,
+      "duration": 1,
+      "title": "CS213",
+      "code": "CR501",
+      "teacher": "ABC",
+      "type": "lec"
+    }
+  ],
+  "10": [
+    {
+      "day": 2,
+      "start": 12,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G5",
+      "teacher": "DCH",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 1,
+      "title": "CI311",
+      "code": "FF6",
+      "teacher": "SUD",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "CS212",
+      "code": "FF6",
+      "teacher": "KM",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 16,
+      "duration": 1,
+      "title": "CS212",
+      "code": "G4",
+      "teacher": "KM",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "CS214",
+      "code": "FF6",
+      "teacher": "KRR",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "CI311",
+      "code": "CS1",
+      "teacher": "SUD",
       "type": "lec"
     },
     {
       "day": 4,
-      "start": 13,
+      "start": 14,
       "duration": 1,
-      "title": "UHV",
-      "code": "TS6",
-      "teacher": "MEE",
-      "type": "tut"
+      "title": "CS213",
+      "code": "FF6",
+      "teacher": "DCH",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 12,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G6",
+      "teacher": "DCH",
+      "type": "lec"
+    }
+  ],
+  "12": [
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 1,
+      "title": "CI311",
+      "code": "FF7",
+      "teacher": "PRV",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "CI311",
+      "code": "G4",
+      "teacher": "PRV",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 16,
+      "duration": 1,
+      "title": "CS212",
+      "code": "FF7",
+      "teacher": "RTK",
+      "type": "lec"
     },
     {
       "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "CS213",
+      "code": "FF5",
+      "teacher": "DEP",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "CS214",
+      "code": "FF5",
+      "teacher": "HN",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 9,
+      "duration": 1,
+      "title": "CS212",
+      "code": "FF6",
+      "teacher": "RTK",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 15,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G4",
+      "teacher": "DEP",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 10,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G8",
+      "teacher": "DEP",
+      "type": "lec"
+    }
+  ],
+  "14": [
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 1,
+      "title": "CI311",
+      "code": "FF7",
+      "teacher": "PRV",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "CI311",
+      "code": "G4",
+      "teacher": "PRV",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 16,
+      "duration": 1,
+      "title": "CS212",
+      "code": "FF7",
+      "teacher": "RTK",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "CS213",
+      "code": "FF5",
+      "teacher": "DEP",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "CS214",
+      "code": "FF5",
+      "teacher": "HN",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 9,
+      "duration": 1,
+      "title": "CS212",
+      "code": "FF6",
+      "teacher": "RTK",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 15,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G4",
+      "teacher": "DEP",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 10,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G8",
+      "teacher": "DEP",
+      "type": "lec"
+    }
+  ],
+  "A1": [
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "G3",
+      "teacher": "NF5",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 12,
+      "duration": 1,
+      "title": "EC215",
+      "code": "G3",
+      "teacher": "SCH",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 1,
+      "title": "HS211",
+      "code": "G3",
+      "teacher": "AMN",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 1,
+      "title": "EC214",
+      "code": "CS5",
+      "teacher": "VK",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "EC214",
+      "code": "FF5",
+      "teacher": "VK",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "EC215",
+      "code": "FF5",
+      "teacher": "SCH",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "G4-",
+      "teacher": "NF5",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 2,
+      "title": "15EC215 (Lab)",
+      "code": "CML",
+      "teacher": "RMD/SHI",
+      "type": "lab"
+    },
+    {
+      "day": 3,
       "start": 15,
       "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL3",
-      "teacher": "SPP/SND",
+      "title": "15EC211 (Lab)",
+      "code": "EDC",
+      "teacher": "AJK/APN",
       "type": "lab"
     },
     {
       "day": 4,
       "start": 10,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "NBH",
-      "type": "lab"
+      "duration": 1,
+      "title": "BT211",
+      "code": "FF4",
+      "teacher": "GMA",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "CR501",
+      "teacher": "NF5",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 15,
+      "duration": 1,
+      "title": "EC214",
+      "code": "TS13",
+      "teacher": "VK",
+      "type": "tut"
     },
     {
       "day": 5,
-      "start": 13,
+      "start": 14,
       "duration": 1,
-      "title": "MA211",
-      "code": "FF2",
-      "teacher": "LK",
+      "title": "BT211",
+      "code": "G4",
+      "teacher": "GMA",
       "type": "lec"
     },
     {
       "day": 5,
-      "start": 15,
+      "start": 10,
       "duration": 1,
-      "title": "PH211",
+      "title": "MA301",
+      "code": "TS10",
+      "teacher": "YG",
+      "type": "tut"
+    },
+    {
+      "day": 5,
+      "start": 15,
+      "duration": 2,
+      "title": "EC214 (Lab)",
+      "code": "MODLAB",
+      "teacher": "VK/TA11",
+      "type": "lab"
+    }
+  ],
+  "A2": [
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "G3",
+      "teacher": "NF5",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 12,
+      "duration": 1,
+      "title": "EC215",
+      "code": "G3",
+      "teacher": "SCH",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 1,
+      "title": "HS211",
+      "code": "G3",
+      "teacher": "AMN",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 1,
+      "title": "EC214",
+      "code": "CS5",
+      "teacher": "VK",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 10,
+      "duration": 1,
+      "title": "MA301",
+      "code": "FF5",
+      "teacher": "YG",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 15,
+      "duration": 2,
+      "title": "EC214 (Lab)",
+      "code": "MODLAB",
+      "teacher": "VK/TA11",
+      "type": "lab"
+    },
+    {
+      "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "EC214",
+      "code": "FF5",
+      "teacher": "VK",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "EC215",
+      "code": "FF5",
+      "teacher": "SCH",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "G4-",
+      "teacher": "NF5",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 2,
+      "title": "15EC211 (Lab)",
+      "code": "EDC",
+      "teacher": "RSB/NF6",
+      "type": "lab"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 2,
+      "title": "15EC215 (Lab)",
+      "code": "CML",
+      "teacher": "SCH/AKS",
+      "type": "lab"
+    },
+    {
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "MA301",
+      "code": "G3",
+      "teacher": "YG",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 10,
+      "duration": 1,
+      "title": "BT211",
       "code": "FF4",
-      "teacher": "SPP",
+      "teacher": "GMA",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "CR501",
+      "teacher": "NF5",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 1,
+      "title": "EC214",
+      "code": "TS13",
+      "teacher": "VK",
+      "type": "tut"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G4",
+      "teacher": "GMA",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 1,
+      "title": "11EC211",
+      "code": "TS16",
+      "teacher": "AJK",
+      "type": "tut"
+    },
+    {
+      "day": 6,
+      "start": 9,
+      "duration": 1,
+      "title": "MA301",
+      "code": "FF7",
+      "teacher": "YG",
       "type": "lec"
     }
   ],
   "B4": [
     {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CR325",
-      "teacher": "ANP",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 16,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "SPP",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "CR501",
-      "teacher": "LK",
-      "type": "lec"
-    },
-    {
-      "day": 1,
+      "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "MA211",
-      "code": "TS10",
+      "title": "MA213",
+      "code": "G3",
+      "teacher": "MSD",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 16,
+      "duration": 1,
+      "title": "HS211",
+      "code": "G3",
+      "teacher": "KMB",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 12,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS11",
+      "teacher": "PSH",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 1,
+      "title": "MA213",
+      "code": "TS13",
       "teacher": "MSD",
       "type": "tut"
     },
     {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "G2",
-      "teacher": "PU",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "-LL1",
-      "teacher": "PAC",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF3",
-      "teacher": "ANP",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL05",
-      "teacher": "PSO/ANV",
-      "type": "lab"
-    },
-    {
       "day": 3,
-      "start": 16,
+      "start": 12,
       "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "SPP",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G1",
-      "teacher": "LK",
+      "title": "MA213",
+      "code": "G5",
+      "teacher": "MSD",
       "type": "lec"
     },
     {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "CI121",
-      "code": "CR301",
-      "teacher": "ANP",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS6",
-      "teacher": "ROH",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS7",
-      "teacher": "RAV",
+      "title": "CI311",
+      "code": "TS13",
+      "teacher": "LM",
       "type": "tut"
     },
     {
       "day": 4,
-      "start": 14,
+      "start": 11,
       "duration": 1,
-      "title": "UHV",
-      "code": "G8",
-      "teacher": "PU",
+      "title": "HS211",
+      "code": "FF7",
+      "teacher": "KMB",
       "type": "lec"
     },
     {
       "day": 4,
       "start": 9,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS8",
-      "teacher": "CDN",
-      "type": "tut"
+      "duration": 2,
+      "title": "B15CS214 (Lab)",
+      "code": "CL07",
+      "teacher": "HN/KRR",
+      "type": "lab"
     },
     {
       "day": 4,
       "start": 15,
       "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL1VRT",
-      "teacher": "RKG",
+      "title": "B15CS213 (Lab)",
+      "code": "CL17",
+      "teacher": "18/RTK/ALK/IC/ABC/ISH",
       "type": "lab"
     },
     {
-      "day": 4,
+      "day": 6,
       "start": 10,
       "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "CDN",
+      "title": "B15CS215 (Lab)",
+      "code": "CL19",
+      "teacher": "20/PAG/KRL/KRI/POS",
       "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF2",
-      "teacher": "LK",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF4",
-      "teacher": "SPP",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS7",
-      "teacher": "MEE",
-      "type": "tut"
     }
   ],
-  "A1": [
+  "B3": [
     {
-      "day": 1,
-      "start": 10,
+      "day": 2,
+      "start": 16,
       "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "ANU",
+      "title": "HS211",
+      "code": "G3",
+      "teacher": "KMB",
       "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G1",
-      "teacher": "NSK",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS6",
-      "teacher": "SNP",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL1",
-      "teacher": "DIN/ABH",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "-LL",
-      "teacher": "EKS",
-      "type": "lab"
     },
     {
       "day": 2,
-      "start": 9,
+      "start": 14,
       "duration": 1,
-      "title": "PH211",
-      "code": "TS6",
-      "teacher": "RKG",
-      "type": "tut"
+      "title": "CS213",
+      "code": "CS3",
+      "teacher": "SON",
+      "type": "lec"
     },
     {
       "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "UHV",
-      "code": "G1",
-      "teacher": "NEJ",
+      "title": "CI311",
+      "code": "F8",
+      "teacher": "VRN",
       "type": "lec"
     },
     {
       "day": 2,
       "start": 11,
       "duration": 1,
-      "title": "CI121",
-      "code": "G1",
-      "teacher": "MAY",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS11",
-      "teacher": "AW",
+      "title": "HS211",
+      "code": "TS10",
+      "teacher": "NES",
       "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "SNP",
-      "type": "lab"
     },
     {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "UHV",
-      "code": "FF1",
-      "teacher": "NEJ",
+      "title": "CS212",
+      "code": "CR501",
+      "teacher": "KA",
       "type": "lec"
     },
     {
       "day": 3,
-      "start": 11,
+      "start": 14,
       "duration": 1,
-      "title": "CI121",
-      "code": "FF3",
-      "teacher": "MAY",
+      "title": "CS213",
+      "code": "FF5",
+      "teacher": "SON",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 1,
+      "title": "CI311",
+      "code": "FF5",
+      "teacher": "VRN",
       "type": "lec"
     },
     {
       "day": 4,
-      "start": 13,
+      "start": 11,
       "duration": 1,
-      "title": "PH211",
-      "code": "FF1",
-      "teacher": "ANU",
+      "title": "HS211",
+      "code": "FF7",
+      "teacher": "KMB",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "CS212",
+      "code": "G7",
+      "teacher": "KA",
       "type": "lec"
     },
     {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "MA211",
-      "code": "G1",
-      "teacher": "NSK",
+      "title": "CS213",
+      "code": "G6",
+      "teacher": "SON",
       "type": "lec"
     },
     {
       "day": 4,
-      "start": 10,
+      "start": 9,
       "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL02",
-      "teacher": "MGR/RTK",
+      "title": "B15CS214 (Lab)",
+      "code": "CL11",
+      "teacher": "MAY/AKT",
       "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G1",
-      "teacher": "NSK",
-      "type": "lec"
     },
     {
       "day": 5,
       "start": 16,
       "duration": 1,
-      "title": "CI121",
-      "code": "G1",
-      "teacher": "MAY",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF1",
-      "teacher": "ANU",
+      "title": "CS214",
+      "code": "G3",
+      "teacher": "AKT",
       "type": "lec"
     },
     {
       "day": 5,
       "start": 9,
       "duration": 1,
-      "title": "UHV",
-      "code": "TS6",
-      "teacher": "MJH",
-      "type": "tut"
+      "title": "CS212",
+      "code": "CS6",
+      "teacher": "KA",
+      "type": "lec"
     },
     {
       "day": 5,
+      "start": 11,
+      "duration": 2,
+      "title": "B15CS213 (Lab)",
+      "code": "CL01",
+      "teacher": "SHR/RTK",
+      "type": "lab"
+    },
+    {
+      "day": 6,
+      "start": 10,
+      "duration": 2,
+      "title": "B15CS215 (Lab)",
+      "code": "CL19",
+      "teacher": "20/PAG/KRL/KRI/POS",
+      "type": "lab"
+    }
+  ],
+  "B12": [
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 1,
+      "title": "MA213",
+      "code": "CS2",
+      "teacher": "NF9",
+      "type": "lec"
+    },
+    {
+      "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "MA211",
-      "code": "TS6",
+      "title": "CI311",
+      "code": "TS13",
+      "teacher": "KJ",
+      "type": "tut"
+    },
+    {
+      "day": 2,
+      "start": 15,
+      "duration": 2,
+      "title": "B15CS213 (Lab)",
+      "code": "CL01",
+      "teacher": "02/IC/AA/ISH",
+      "type": "lab"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 1,
+      "title": "MA213",
+      "code": "TS10",
       "teacher": "RSH",
       "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 15,
+      "duration": 1,
+      "title": "MA213",
+      "code": "FF5",
+      "teacher": "NF9",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS10",
+      "teacher": "MM",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 9,
+      "duration": 2,
+      "title": "B15CS215 (Lab)",
+      "code": "CL22",
+      "teacher": "23/SHB/SHY/DEV",
+      "type": "lab"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "MA213",
+      "code": "FF6",
+      "teacher": "NF9",
+      "type": "lec"
+    },
+    {
+      "day": 6,
+      "start": 11,
+      "duration": 2,
+      "title": "B15CS214 (Lab)",
+      "code": "CL10",
+      "teacher": "AKT/JAG",
+      "type": "lab"
     }
   ],
-  "A2": [
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "ANU",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G1",
-      "teacher": "NSK",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS7",
-      "teacher": "SWET",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL2",
-      "teacher": "PC/SHIV",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "-LL1",
-      "teacher": "KNP",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "G1",
-      "teacher": "NEJ",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "G1",
-      "teacher": "MAY",
-      "type": "lec"
-    },
+  "B14": [
     {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "PH211",
-      "code": "TS7",
-      "teacher": "DIN",
-      "type": "tut"
+      "title": "MA213",
+      "code": "CS2",
+      "teacher": "NF9",
+      "type": "lec"
     },
     {
       "day": 2,
       "start": 15,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS10",
-      "teacher": "MJH",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 13,
       "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "SWET",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF1",
-      "teacher": "NEJ",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF3",
-      "teacher": "MAY",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF1",
-      "teacher": "ANU",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G1",
-      "teacher": "NSK",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 2,
-      "title": "CS121 (Lab)",
+      "title": "B15CS213 (Lab)",
       "code": "CL01",
-      "teacher": "ANP/KP",
+      "teacher": "02/IC/AA/ISH",
       "type": "lab"
     },
     {
-      "day": 5,
-      "start": 13,
+      "day": 3,
+      "start": 10,
       "duration": 1,
-      "title": "MA211",
-      "code": "G1",
-      "teacher": "NSK",
+      "title": "HS211",
+      "code": "FF7",
+      "teacher": "MRB",
       "type": "lec"
     },
     {
-      "day": 5,
+      "day": 4,
+      "start": 15,
+      "duration": 1,
+      "title": "MA213",
+      "code": "FF5",
+      "teacher": "NF9",
+      "type": "lec"
+    },
+    {
+      "day": 4,
       "start": 16,
       "duration": 1,
-      "title": "CI121",
-      "code": "G1",
-      "teacher": "MAY",
+      "title": "CI311",
+      "code": "TS10",
+      "teacher": "SUD",
+      "type": "tut"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "MA213",
+      "code": "FF6",
+      "teacher": "NF9",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 2,
+      "title": "CS214 (Lab)",
+      "code": "CL02",
+      "teacher": "AKT/KRR",
+      "type": "lab"
+    }
+  ],
+  "B1": [
+    {
+      "day": 2,
+      "start": 10,
+      "duration": 1,
+      "title": "CS214",
+      "code": "G3",
+      "teacher": "HN",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 16,
+      "duration": 1,
+      "title": "HS211",
+      "code": "G7",
+      "teacher": "NES",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "CS212",
+      "code": "FF5",
+      "teacher": "KA",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 12,
+      "duration": 1,
+      "title": "CI311",
+      "code": "TS13",
+      "teacher": "SHG",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "CI311",
+      "code": "G3",
+      "teacher": "MKT",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 2,
+      "title": "B15CS214 (Lab)",
+      "code": "CL11",
+      "teacher": "SAM/PU",
+      "type": "lab"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G4",
+      "teacher": "ALK",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 9,
+      "duration": 1,
+      "title": "CS212",
+      "code": "CS6",
+      "teacher": "KA",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 1,
+      "title": "HS211",
+      "code": "FF6",
+      "teacher": "NES",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 10,
+      "duration": 1,
+      "title": "CI311",
+      "code": "F8",
+      "teacher": "MKT",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 12,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G9",
+      "teacher": "ALK",
       "type": "lec"
     },
     {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "PH211",
-      "code": "FF1",
-      "teacher": "ANU",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS6",
-      "teacher": "ROH",
+      "title": "HS211",
+      "code": "TS10",
+      "teacher": "VSE",
       "type": "tut"
     },
     {
       "day": 5,
       "start": 9,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS7",
-      "teacher": "NSK",
-      "type": "tut"
+      "duration": 2,
+      "title": "B15CS215 (Lab)",
+      "code": "CL07",
+      "teacher": "ASY/ASI",
+      "type": "lab"
+    },
+    {
+      "day": 6,
+      "start": 11,
+      "duration": 2,
+      "title": "CI371 (Lab)",
+      "code": "CL21",
+      "teacher": "NSA/VIB",
+      "type": "lab"
     }
   ],
   "A5": [
     {
-      "day": 1,
-      "start": 14,
+      "day": 2,
+      "start": 11,
       "duration": 1,
-      "title": "UHV",
-      "code": "G1",
-      "teacher": "MTR",
+      "title": "B11EC211",
+      "code": "G4",
+      "teacher": "NF6",
       "type": "lec"
     },
     {
-      "day": 1,
-      "start": 13,
+      "day": 2,
+      "start": 14,
       "duration": 1,
-      "title": "MA211",
+      "title": "HS211",
+      "code": "G8",
+      "teacher": "MRB",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 1,
+      "title": "MA301",
+      "code": "TS10",
+      "teacher": "DCS",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 16,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G8",
+      "teacher": "SBT",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "EC214",
+      "code": "G8",
+      "teacher": "BHG",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "G8",
+      "teacher": "NF6",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "B11EC211",
       "code": "G3",
-      "teacher": "ANK",
+      "teacher": "NF6",
       "type": "lec"
     },
     {
-      "day": 1,
-      "start": 10,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL1",
-      "teacher": "MKC/MTR",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 13,
+      "day": 4,
+      "start": 15,
       "duration": 1,
-      "title": "MA211",
-      "code": "G1",
-      "teacher": "ANK",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "SND",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS13",
-      "teacher": "SWET",
+      "title": "EC215",
+      "code": "TS16",
+      "teacher": "MN",
       "type": "tut"
     },
     {
-      "day": 2,
-      "start": 10,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "SWET",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "CS5",
-      "teacher": "SND",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF3",
-      "teacher": "ANK",
-      "type": "lec"
-    },
-    {
       "day": 4,
-      "start": 10,
+      "start": 12,
       "duration": 1,
-      "title": "CI121",
-      "code": "G1",
-      "teacher": "ROH",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "G1",
-      "teacher": "MTR",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL1",
-      "teacher": "KMB",
-      "type": "lab"
+      "title": "HS211",
+      "code": "TS11",
+      "teacher": "MM",
+      "type": "tut"
     },
     {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "PH211",
-      "code": "FF4",
-      "teacher": "SND",
+      "title": "EC215",
+      "code": "G7",
+      "teacher": "RMD",
       "type": "lec"
     },
     {
       "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS7",
-      "teacher": "RAV",
-      "type": "tut"
-    },
-    {
-      "day": 5,
       "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS8",
-      "teacher": "APR",
-      "type": "tut"
+      "duration": 2,
+      "title": "15EC215 (Lab)",
+      "code": "CML",
+      "teacher": "AGO/JOY",
+      "type": "lab"
     },
     {
       "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS7",
-      "teacher": "NS",
-      "type": "tut"
+      "start": 15,
+      "duration": 2,
+      "title": "15EC211 (Lab)",
+      "code": "EDC",
+      "teacher": "GK/RSB",
+      "type": "lab"
+    },
+    {
+      "day": 6,
+      "start": 11,
+      "duration": 2,
+      "title": "EC214 (Lab)",
+      "code": "MODLAB",
+      "teacher": "RIG/TA15",
+      "type": "lab"
     },
     {
       "day": 2,
@@ -5634,157 +1472,139 @@ const scheduleMap = {
   ],
   "A6": [
     {
-      "day": 1,
-      "start": 14,
+      "day": 2,
+      "start": 11,
       "duration": 1,
-      "title": "UHV",
-      "code": "G1",
-      "teacher": "MTR",
+      "title": "B11EC211",
+      "code": "G4",
+      "teacher": "NF6",
       "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G3",
-      "teacher": "ANK",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL2",
-      "teacher": "NG/INC",
-      "type": "lab"
     },
     {
       "day": 2,
-      "start": 13,
+      "start": 12,
       "duration": 1,
-      "title": "MA211",
-      "code": "G1",
-      "teacher": "ANK",
+      "title": "MA301",
+      "code": "G4",
+      "teacher": "DCS",
       "type": "lec"
     },
     {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "SND",
+      "title": "HS211",
+      "code": "G8",
+      "teacher": "MRB",
       "type": "lec"
     },
     {
       "day": 2,
       "start": 9,
+      "duration": 2,
+      "title": "EC214 (Lab)",
+      "code": "MODLAB",
+      "teacher": "RIG/TA3",
+      "type": "lab"
+    },
+    {
+      "day": 3,
+      "start": 14,
       "duration": 1,
-      "title": "Workshop",
+      "title": "MA301",
+      "code": "G8",
+      "teacher": "DCS",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 1,
+      "title": "EC215",
+      "code": "G8",
+      "teacher": "RMD",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 16,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G8",
+      "teacher": "SBT",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "G8",
+      "teacher": "NF6",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 10,
+      "duration": 1,
+      "title": "EC214",
       "code": "TS16",
-      "teacher": "GRP",
+      "teacher": "RS",
       "type": "tut"
     },
     {
-      "day": 2,
-      "start": 10,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "GRP",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "CS5",
-      "teacher": "SND",
-      "type": "lec"
-    },
-    {
-      "day": 3,
+      "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "MA211",
-      "code": "FF3",
-      "teacher": "ANK",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL02",
-      "teacher": "MEE/PSO",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "CI121",
-      "code": "G1",
-      "teacher": "ROH",
+      "title": "B11EC211",
+      "code": "G3",
+      "teacher": "NF6",
       "type": "lec"
     },
     {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "UHV",
-      "code": "G1",
-      "teacher": "MTR",
+      "title": "BT211",
+      "code": "LT3",
+      "teacher": "SBT",
       "type": "lec"
     },
     {
       "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL",
-      "teacher": "MM",
-      "type": "lab"
+      "start": 9,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS10",
+      "teacher": "PSH",
+      "type": "tut"
     },
     {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "PH211",
-      "code": "FF4",
-      "teacher": "SND",
+      "title": "EC215",
+      "code": "G7",
+      "teacher": "RMD",
       "type": "lec"
     },
     {
       "day": 5,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS6",
-      "teacher": "SHP",
-      "type": "tut"
+      "start": 9,
+      "duration": 2,
+      "title": "15EC211 (Lab)",
+      "code": "EDC",
+      "teacher": "SHS/NF6",
+      "type": "lab"
     },
     {
       "day": 5,
       "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS8",
-      "teacher": "NS",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS8",
-      "teacher": "BCJ",
-      "type": "tut"
+      "duration": 2,
+      "title": "15EC215 (Lab)",
+      "code": "CML",
+      "teacher": "RMD/SHI",
+      "type": "lab"
     },
     {
       "day": 2,
@@ -5805,1268 +1625,1499 @@ const scheduleMap = {
       "type": "tut"
     }
   ],
-  "B11": [
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "G1",
-      "teacher": "AM",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS8",
-      "teacher": "HPT",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS8",
-      "teacher": "NAR",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF2",
-      "teacher": "NG",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G9",
-      "teacher": "HPT",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF3",
-      "teacher": "AM",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 1,
-      "title": "UHV",
-      "code": "CR301",
-      "teacher": "APR",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS10",
-      "teacher": "SDA",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS10",
-      "teacher": "ASA",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "NG",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "CS5",
-      "teacher": "HPT",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS10",
-      "teacher": "ADM",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL1",
-      "teacher": "RAV/BCJ",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "ADM",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CS5",
-      "teacher": "AM",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL",
-      "teacher": "HK",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL01",
-      "teacher": "AM/AW",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G9",
-      "teacher": "HPT",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF3",
-      "teacher": "NG",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF3",
-      "teacher": "APR",
-      "type": "lec"
-    }
-  ],
-  "B12": [
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "G1",
-      "teacher": "AM",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS6",
-      "teacher": "HPT",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS10",
-      "teacher": "IJ",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS10",
-      "teacher": "RKD",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF2",
-      "teacher": "NG",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G9",
-      "teacher": "HPT",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF3",
-      "teacher": "AM",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 9,
-      "duration": 1,
-      "title": "UHV",
-      "code": "CR301",
-      "teacher": "APR",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "NG",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "CS5",
-      "teacher": "HPT",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL2",
-      "teacher": "NAR/ANU",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CS5",
-      "teacher": "AM",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL1",
-      "teacher": "MDU",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TR302",
-      "teacher": "ASY",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G9",
-      "teacher": "HPT",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL07",
-      "teacher": "ANP/ASA",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF3",
-      "teacher": "NG",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF3",
-      "teacher": "APR",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS11",
-      "teacher": "MJH",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "MJH",
-      "type": "lab"
-    }
-  ],
-  "A10": [
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "UHV",
-      "code": "CS2",
-      "teacher": "ASY",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "CS5",
-      "teacher": "SHIV",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "CS5",
-      "teacher": "ANK",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL24",
-      "teacher": "APJ/MEE",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CS5",
-      "teacher": "SHP",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS11",
-      "teacher": "ASA",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS11",
-      "teacher": "IJ",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL1",
-      "teacher": "SDC/SHIV",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "G8",
-      "teacher": "SHP",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS8",
-      "teacher": "MTR",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "CR501",
-      "teacher": "ASY",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "CS5",
-      "teacher": "ANK",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "CS5",
-      "teacher": "SHIV",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF1",
-      "teacher": "ANK",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS7",
-      "teacher": "NBH",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL",
-      "teacher": "MRB",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "NBH",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CS5",
-      "teacher": "SHP",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF2",
-      "teacher": "SHIV",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 12,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS6",
-      "teacher": "RSC",
-      "type": "tut"
-    }
-  ],
-  "B14": [
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "UHV",
-      "code": "CS2",
-      "teacher": "ASY",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "CS5",
-      "teacher": "SHIV",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "CS5",
-      "teacher": "ANK",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS6",
-      "teacher": "MB",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL21",
-      "teacher": "KP/SUD",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CS5",
-      "teacher": "SHP",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL2",
-      "teacher": "MKC/ANU",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS7",
-      "teacher": "SPP",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS10",
-      "teacher": "AM",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "G8",
-      "teacher": "SHP",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "CR501",
-      "teacher": "ASY",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "CS5",
-      "teacher": "ANK",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "CS5",
-      "teacher": "SHIV",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF1",
-      "teacher": "ANK",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS11",
-      "teacher": "CDN",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL1",
-      "teacher": "YN",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "CDN",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CS5",
-      "teacher": "SHP",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF2",
-      "teacher": "SHIV",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 12,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS7",
-      "teacher": "ANK",
-      "type": "tut"
-    }
-  ],
   "A3": [
     {
-      "day": 1,
-      "start": 10,
+      "day": 2,
+      "start": 14,
       "duration": 1,
-      "title": "PH211",
-      "code": "FF1",
-      "teacher": "RKD",
+      "title": "HS211",
+      "code": "G4",
+      "teacher": "NES",
       "type": "lec"
     },
     {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF1",
-      "teacher": "MPA",
-      "type": "lec"
-    },
-    {
-      "day": 1,
+      "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "Workshop",
-      "code": "TS8",
-      "teacher": "CDN",
-      "type": "tut"
+      "title": "EC214",
+      "code": "CS6",
+      "teacher": "RK",
+      "type": "lec"
     },
     {
-      "day": 1,
+      "day": 2,
+      "start": 10,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "FF6",
+      "teacher": "AJK",
+      "type": "lec"
+    },
+    {
+      "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "PH211",
-      "code": "TS7",
-      "teacher": "RKG",
+      "title": "11EC211",
+      "code": "TS13",
+      "teacher": "AJK",
       "type": "tut"
     },
     {
-      "day": 2,
+      "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "UHV",
-      "code": "FF1",
-      "teacher": "RSC",
+      "title": "B11EC211",
+      "code": "FF6",
+      "teacher": "AJK",
       "type": "lec"
     },
     {
-      "day": 2,
+      "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "CI121",
-      "code": "FF1",
-      "teacher": "AJS",
+      "title": "EC214",
+      "code": "FF6",
+      "teacher": "RK",
       "type": "lec"
     },
     {
-      "day": 2,
-      "start": 9,
+      "day": 3,
+      "start": 12,
       "duration": 1,
-      "title": "MA211",
-      "code": "TS12",
-      "teacher": "ATI",
-      "type": "tut"
+      "title": "EC215",
+      "code": "FF6",
+      "teacher": "AGO",
+      "type": "lec"
     },
     {
-      "day": 2,
+      "day": 3,
       "start": 15,
       "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "CDN",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CR325",
-      "teacher": "AJS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G2",
-      "teacher": "MPA",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF4",
-      "teacher": "RSC",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS20",
-      "teacher": "MDU",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL01",
-      "teacher": "02/MEE/SRG/SUD/NEH",
+      "title": "EC214 (Lab)",
+      "code": "MODLAB",
+      "teacher": "VK/TA11",
       "type": "lab"
     },
     {
       "day": 4,
-      "start": 13,
+      "start": 10,
       "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "RKD",
+      "title": "B11EC211",
+      "code": "-",
+      "teacher": "AJK",
       "type": "lec"
     },
     {
       "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "MA211",
-      "code": "FF1",
-      "teacher": "MPA",
-      "type": "lec"
+      "title": "HS211",
+      "code": "TS10",
+      "teacher": "AMN",
+      "type": "tut"
     },
     {
       "day": 4,
-      "start": 16,
+      "start": 11,
       "duration": 1,
-      "title": "CI121",
-      "code": "G8",
-      "teacher": "AJS",
+      "title": "EC215",
+      "code": "TS11",
+      "teacher": "AGO",
+      "type": "tut"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G4",
+      "teacher": "GMA",
       "type": "lec"
     },
     {
-      "day": 4,
+      "day": 5,
       "start": 10,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL3",
-      "teacher": "GPK/RKD",
-      "type": "lab"
+      "duration": 1,
+      "title": "EC214",
+      "code": "TS11",
+      "teacher": "MJ",
+      "type": "tut"
     },
     {
       "day": 6,
-      "start": 10,
+      "start": 12,
       "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "RKD",
+      "title": "EC215",
+      "code": "G3",
+      "teacher": "AGO",
       "type": "lec"
     },
     {
       "day": 6,
       "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS6",
-      "teacher": "AW",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 11,
       "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL",
-      "teacher": "KNP",
+      "title": "15EC211 (Lab)",
+      "code": "EDC",
+      "teacher": "GK/RSB",
       "type": "lab"
     }
   ],
   "A4": [
     {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF1",
-      "teacher": "RKD",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF1",
-      "teacher": "MPA",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS10",
-      "teacher": "APR",
-      "type": "tut"
-    },
-    {
       "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF1",
-      "teacher": "RSC",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF1",
-      "teacher": "AJS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CR325",
-      "teacher": "AJS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G2",
-      "teacher": "MPA",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF4",
-      "teacher": "RSC",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS17",
-      "teacher": "SNP",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL01",
-      "teacher": "02/MEE/SRG/SUD/NEH",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "RKD",
-      "type": "lec"
-    },
-    {
-      "day": 4,
       "start": 14,
       "duration": 1,
-      "title": "MA211",
-      "code": "FF1",
-      "teacher": "MPA",
+      "title": "HS211",
+      "code": "G4",
+      "teacher": "NES",
       "type": "lec"
     },
     {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS7",
-      "teacher": "MSD",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 16,
-      "duration": 1,
-      "title": "CI121",
-      "code": "G8",
-      "teacher": "AJS",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS6",
-      "teacher": "EKY",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL2",
-      "teacher": "NG/DIP",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS6",
-      "teacher": "PRI",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "SNP",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "RKD",
-      "type": "lec"
-    },
-    {
-      "day": 6,
+      "day": 2,
       "start": 11,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL1",
-      "teacher": "AMI",
-      "type": "lab"
-    }
-  ],
-  "A7": [
-    {
-      "day": 1,
-      "start": 13,
       "duration": 1,
-      "title": "PH211",
-      "code": "FF1",
-      "teacher": "DIP",
+      "title": "MA301",
+      "code": "G6",
+      "teacher": "BPC",
       "type": "lec"
     },
     {
-      "day": 1,
-      "start": 14,
+      "day": 2,
+      "start": 9,
       "duration": 1,
-      "title": "UHV",
-      "code": "FF1",
-      "teacher": "ANU",
+      "title": "EC214",
+      "code": "CS6",
+      "teacher": "RK",
       "type": "lec"
     },
     {
-      "day": 1,
+      "day": 2,
+      "start": 10,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "FF6",
+      "teacher": "AJK",
+      "type": "lec"
+    },
+    {
+      "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "CI121",
-      "code": "FF1",
-      "teacher": "PRV",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL01",
-      "teacher": "SHP/APR",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 16,
-      "duration": 1,
-      "title": "CI121",
-      "code": "G1",
-      "teacher": "PRV",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
+      "title": "MA301",
       "code": "TS11",
-      "teacher": "MB",
+      "teacher": "BPC",
       "type": "tut"
     },
     {
-      "day": 2,
-      "start": 14,
+      "day": 3,
+      "start": 10,
       "duration": 1,
-      "title": "MA211",
-      "code": "CR526",
-      "teacher": "HZR",
+      "title": "B11EC211",
+      "code": "FF6",
+      "teacher": "AJK",
       "type": "lec"
     },
     {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "CR325",
-      "teacher": "DIP",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS6",
-      "teacher": "AM",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF1",
-      "teacher": "PRV",
-      "type": "lec"
-    },
-    {
-      "day": 4,
+      "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "UHV",
-      "code": "FF1",
-      "teacher": "ANU",
+      "title": "EC214",
+      "code": "FF6",
+      "teacher": "RK",
       "type": "lec"
     },
     {
-      "day": 4,
-      "start": 13,
+      "day": 3,
+      "start": 12,
       "duration": 1,
-      "title": "MA211",
-      "code": "G8",
-      "teacher": "HZR",
+      "title": "EC215",
+      "code": "FF6",
+      "teacher": "AGO",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS12",
+      "teacher": "VSE",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "11EC211",
+      "code": "TS13",
+      "teacher": "AJK",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "MA301",
+      "code": "G2",
+      "teacher": "BPC",
       "type": "lec"
     },
     {
       "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "MA211",
-      "code": "TS7",
-      "teacher": "HZR",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF1",
-      "teacher": "DIP",
+      "title": "B11EC211",
+      "code": "-",
+      "teacher": "AJK",
       "type": "lec"
     },
     {
-      "day": 5,
-      "start": 14,
+      "day": 4,
+      "start": 16,
       "duration": 1,
-      "title": "PH211",
-      "code": "TS10",
-      "teacher": "BCJ",
+      "title": "EC215",
+      "code": "TS11",
+      "teacher": "AGO",
       "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 2,
+      "title": "EC214 (Lab)",
+      "code": "MODLAB",
+      "teacher": "RK/TA7",
+      "type": "lab"
     },
     {
       "day": 5,
       "start": 9,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL",
-      "teacher": "VSE",
-      "type": "lab"
+      "duration": 1,
+      "title": "MA301",
+      "code": "FF4",
+      "teacher": "BPC",
+      "type": "lec"
     },
     {
       "day": 6,
       "start": 12,
       "duration": 1,
-      "title": "MA211",
-      "code": "G1",
-      "teacher": "HZR",
+      "title": "EC215",
+      "code": "G3",
+      "teacher": "AGO",
       "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS6",
-      "teacher": "ASG",
-      "type": "tut"
     },
     {
       "day": 6,
       "start": 9,
       "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "ASG/GRP",
+      "title": "15EC215 (Lab)",
+      "code": "CML",
+      "teacher": "RMD/JAS",
+      "type": "lab"
+    }
+  ],
+  "B5": [
+    {
+      "day": 2,
+      "start": 15,
+      "duration": 1,
+      "title": "CI311",
+      "code": "G4",
+      "teacher": "RJM",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 16,
+      "duration": 1,
+      "title": "HS211",
+      "code": "G4",
+      "teacher": "MRB",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 2,
+      "title": "B15CS213 (Lab)",
+      "code": "CL24",
+      "teacher": "ATI/ALK",
+      "type": "lab"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 2,
+      "title": "B15CS215 (Lab)",
+      "code": "CL18",
+      "teacher": "19/SLK/UMF/ISH/POS",
+      "type": "lab"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "CI311",
+      "code": "FF7",
+      "teacher": "RJM",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 16,
+      "duration": 1,
+      "title": "CS213",
+      "code": "FF5",
+      "teacher": "SHR",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 1,
+      "title": "CS212",
+      "code": "FF7",
+      "teacher": "RTK",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS10",
+      "teacher": "VSE",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 1,
+      "title": "HS211",
+      "code": "G6",
+      "teacher": "MRB",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G8",
+      "teacher": "SHR",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 16,
+      "duration": 1,
+      "title": "CS214",
+      "code": "G4",
+      "teacher": "MAY",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 12,
+      "duration": 1,
+      "title": "CI311",
+      "code": "TS11",
+      "teacher": "KJ",
+      "type": "tut"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 2,
+      "title": "CI371 (Lab)",
+      "code": "CL13",
+      "teacher": "14/NSA/SHG/VIB/RJM/SUD",
+      "type": "lab"
+    },
+    {
+      "day": 6,
+      "start": 11,
+      "duration": 1,
+      "title": "CS213",
+      "code": "FF5",
+      "teacher": "SHR",
+      "type": "lec"
+    },
+    {
+      "day": 6,
+      "start": 12,
+      "duration": 1,
+      "title": "CS212",
+      "code": "G8",
+      "teacher": "RTK",
+      "type": "lec"
+    }
+  ],
+  "B6": [
+    {
+      "day": 2,
+      "start": 16,
+      "duration": 1,
+      "title": "HS211",
+      "code": "G4",
+      "teacher": "MRB",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS11",
+      "teacher": "PSH",
+      "type": "tut"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 2,
+      "title": "B15CS215 (Lab)",
+      "code": "CL18",
+      "teacher": "19/SLK/UMF/ISH/POS",
+      "type": "lab"
+    },
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 2,
+      "title": "B15CS213 (Lab)",
+      "code": "CL19",
+      "teacher": "AA/SON",
+      "type": "lab"
+    },
+    {
+      "day": 3,
+      "start": 10,
+      "duration": 1,
+      "title": "MA213",
+      "code": "TS10",
+      "teacher": "RSH",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 1,
+      "title": "HS211",
+      "code": "G6",
+      "teacher": "MRB",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 1,
+      "title": "MA213",
+      "code": "G9",
+      "teacher": "RSH",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 12,
+      "duration": 1,
+      "title": "CI311",
+      "code": "TS10",
+      "teacher": "VRN",
+      "type": "tut"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 2,
+      "title": "CI371 (Lab)",
+      "code": "CL13",
+      "teacher": "14/NSA/SHG/VIB/RJM/SUD",
+      "type": "lab"
+    },
+    {
+      "day": 6,
+      "start": 10,
+      "duration": 1,
+      "title": "MA213",
+      "code": "G4",
+      "teacher": "RSH",
+      "type": "lec"
+    }
+  ],
+  "G3": [
+    {
+      "day": 2,
+      "start": 10,
+      "duration": 1,
+      "title": "15BT211",
+      "code": "G4",
+      "teacher": "AKV",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 1,
+      "title": "MA212",
+      "code": "FF5",
+      "teacher": "NF3",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "CI311",
+      "code": "F6",
+      "teacher": "SHG",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 12,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS10",
+      "teacher": "VSE",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "CI312",
+      "code": "G7",
+      "teacher": "KSA",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 1,
+      "title": "MA212",
+      "code": "G7",
+      "teacher": "NF3",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 10,
+      "duration": 1,
+      "title": "CI312",
+      "code": "F6",
+      "teacher": "ATI",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "HS112",
+      "code": "CR425",
+      "teacher": "KMB",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G7",
+      "teacher": "AKV",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 15,
+      "duration": 1,
+      "title": "CI312",
+      "code": "FF6",
+      "teacher": "ATI",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 16,
+      "duration": 1,
+      "title": "CI311",
+      "code": "FF6",
+      "teacher": "SHG",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 10,
+      "duration": 1,
+      "title": "BT211",
+      "code": "CR301",
+      "teacher": "AKV",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "CI311",
+      "code": "TS11",
+      "teacher": "VRN",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 2,
+      "title": "B15CS215 (Lab)",
+      "code": "CL15",
+      "teacher": "16/PAG/ASI/GAS/DEV",
+      "type": "lab"
+    },
+    {
+      "day": 5,
+      "start": 10,
+      "duration": 1,
+      "title": "CI312",
+      "code": "FF7",
+      "teacher": "ATI",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 1,
+      "title": "CI311",
+      "code": "FF7",
+      "teacher": "SHG",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 9,
+      "duration": 1,
+      "title": "CI312",
+      "code": "CS7",
+      "teacher": "KSA",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 15,
+      "duration": 2,
+      "title": "CI372 (Lab)",
+      "code": "CL08",
+      "teacher": "KJ/RTK",
+      "type": "lab"
+    },
+    {
+      "day": 6,
+      "start": 9,
+      "duration": 1,
+      "title": "MA212",
+      "code": "TS11",
+      "teacher": "NF3",
+      "type": "tut"
+    }
+  ],
+  "G4": [
+    {
+      "day": 2,
+      "start": 10,
+      "duration": 1,
+      "title": "15BT211",
+      "code": "G4",
+      "teacher": "AKV",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 1,
+      "title": "MA212",
+      "code": "FF5",
+      "teacher": "NF3",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "CI311",
+      "code": "F6",
+      "teacher": "SHG",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "CI312",
+      "code": "G7",
+      "teacher": "KSA",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 1,
+      "title": "MA212",
+      "code": "G7",
+      "teacher": "NF3",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 1,
+      "title": "MA211",
+      "code": "CS8",
+      "teacher": "DGA",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 10,
+      "duration": 1,
+      "title": "CI312",
+      "code": "F6",
+      "teacher": "ATI",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "HS112",
+      "code": "CR425",
+      "teacher": "KMB",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G7",
+      "teacher": "AKV",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 9,
+      "duration": 1,
+      "title": "MA211",
+      "code": "CR301",
+      "teacher": "DGA",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 15,
+      "duration": 1,
+      "title": "CI312",
+      "code": "FF6",
+      "teacher": "ATI",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 16,
+      "duration": 1,
+      "title": "CI311",
+      "code": "FF6",
+      "teacher": "SHG",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 10,
+      "duration": 1,
+      "title": "BT211",
+      "code": "CR301",
+      "teacher": "AKV",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "MA211",
+      "code": "TS13",
+      "teacher": "DGA",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 2,
+      "title": "B15CS215 (Lab)",
+      "code": "CL15",
+      "teacher": "16/PAG/ASI/GAS/DEV",
+      "type": "lab"
+    },
+    {
+      "day": 5,
+      "start": 10,
+      "duration": 1,
+      "title": "CI312",
+      "code": "FF7",
+      "teacher": "ATI",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 1,
+      "title": "CI311",
+      "code": "FF7",
+      "teacher": "SHG",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 12,
+      "duration": 1,
+      "title": "MA211",
+      "code": "FF7",
+      "teacher": "DGA",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 9,
+      "duration": 1,
+      "title": "CI312",
+      "code": "CS7",
+      "teacher": "KSA",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 15,
+      "duration": 2,
+      "title": "CI372 (Lab)",
+      "code": "CL16",
+      "teacher": "ATI/KAS",
+      "type": "lab"
+    },
+    {
+      "day": 6,
+      "start": 11,
+      "duration": 1,
+      "title": "CI311",
+      "code": "TS12",
+      "teacher": "KJ",
+      "type": "tut"
+    },
+    {
+      "day": 6,
+      "start": 10,
+      "duration": 1,
+      "title": "MA212",
+      "code": "TS11",
+      "teacher": "NF3",
+      "type": "tut"
+    }
+  ],
+  "B9": [
+    {
+      "day": 2,
+      "start": 12,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G5",
+      "teacher": "DCH",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 1,
+      "title": "CI311",
+      "code": "FF6",
+      "teacher": "SUD",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "CS212",
+      "code": "FF6",
+      "teacher": "KM",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 15,
+      "duration": 2,
+      "title": "B15CS213 (Lab)",
+      "code": "CL07",
+      "teacher": "DEP/AYS",
+      "type": "lab"
+    },
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 2,
+      "title": "B15CS215 (Lab)",
+      "code": "CL22",
+      "teacher": "23/SHB/ISH/DEV/POS/SHY",
+      "type": "lab"
+    },
+    {
+      "day": 3,
+      "start": 16,
+      "duration": 1,
+      "title": "CS212",
+      "code": "G4",
+      "teacher": "KM",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "HS211",
+      "code": "FF7",
+      "teacher": "AMN",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "CS214",
+      "code": "FF6",
+      "teacher": "KRR",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "CI311",
+      "code": "CS1",
+      "teacher": "SUD",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS11",
+      "teacher": "VSE",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 2,
+      "title": "CI371 (Lab)",
+      "code": "CL09",
+      "teacher": "10/MKT/VRN/KRI/MON/AW",
+      "type": "lab"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "CS213",
+      "code": "FF6",
+      "teacher": "DCH",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 10,
+      "duration": 1,
+      "title": "CI311",
+      "code": "TS11",
+      "teacher": "SHG",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 15,
+      "duration": 2,
+      "title": "B15CS214 (Lab)",
+      "code": "CL21",
+      "teacher": "AKT/BHA",
+      "type": "lab"
+    },
+    {
+      "day": 5,
+      "start": 12,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G6",
+      "teacher": "DCH",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 9,
+      "duration": 1,
+      "title": "MA213",
+      "code": "TS13",
+      "teacher": "PAT",
+      "type": "tut"
+    }
+  ],
+  "B7": [
+    {
+      "day": 2,
+      "start": 16,
+      "duration": 1,
+      "title": "CI311",
+      "code": "G5",
+      "teacher": "NSA",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 12,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G6",
+      "teacher": "ABC",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "HS211",
+      "code": "FF7",
+      "teacher": "VSE",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 2,
+      "title": "CI371 (Lab)",
+      "code": "CL20",
+      "teacher": "AW/KRI",
+      "type": "lab"
+    },
+    {
+      "day": 2,
+      "start": 15,
+      "duration": 1,
+      "title": "CI311",
+      "code": "TR305",
+      "teacher": "MON",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 1,
+      "title": "CS212",
+      "code": "CS5",
+      "teacher": "ASY",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "CI311",
+      "code": "G4",
+      "teacher": "NSA",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 10,
+      "duration": 1,
+      "title": "MA213",
+      "code": "TS11",
+      "teacher": "HZR",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 10,
+      "duration": 1,
+      "title": "CS212",
+      "code": "G4",
+      "teacher": "ASY",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 1,
+      "title": "HS211",
+      "code": "G4",
+      "teacher": "VSE",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "CS214",
+      "code": "G9",
+      "teacher": "KRR",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G8",
+      "teacher": "ABC",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS10",
+      "teacher": "NES",
+      "type": "tut"
+    },
+    {
+      "day": 5,
+      "start": 12,
+      "duration": 1,
+      "title": "CS213",
+      "code": "CR501",
+      "teacher": "ABC",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 15,
+      "duration": 2,
+      "title": "B15CS214 (Lab)",
+      "code": "CL23",
+      "teacher": "24/PAG/HN/MAY/PRK/BHA",
+      "type": "lab"
+    },
+    {
+      "day": 5,
+      "start": 9,
+      "duration": 2,
+      "title": "B15CS213 (Lab)",
+      "code": "CL21",
+      "teacher": "SHR/ABC",
+      "type": "lab"
+    }
+  ],
+  "A18": [
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "MA301",
+      "code": "G7",
+      "teacher": "NF9",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 1,
+      "title": "EC214",
+      "code": "CS7",
+      "teacher": "BHG",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 10,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "FF7",
+      "teacher": "NF6",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 16,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G8",
+      "teacher": "ANS",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 12,
+      "duration": 1,
+      "title": "EC215",
+      "code": "TS12",
+      "teacher": "JOY",
+      "type": "tut"
+    },
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 2,
+      "title": "15EC215 (Lab)",
+      "code": "CML",
+      "teacher": "SCH/AKS",
+      "type": "lab"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "FF7",
+      "teacher": "NF6",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 2,
+      "title": "EC214 (Lab)",
+      "code": "SPL",
+      "teacher": "NF3/TA17",
+      "type": "lab"
+    },
+    {
+      "day": 4,
+      "start": 10,
+      "duration": 1,
+      "title": "MA301",
+      "code": "LT2",
+      "teacher": "NF9",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "G6",
+      "teacher": "NF6",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G7",
+      "teacher": "ANS",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 9,
+      "duration": 1,
+      "title": "EC214",
+      "code": "TS13",
+      "teacher": "KUL",
+      "type": "tut"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 1,
+      "title": "EC215",
+      "code": "G4",
+      "teacher": "NF8",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G3",
+      "teacher": "ANS",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 15,
+      "duration": 1,
+      "title": "EC214",
+      "code": "G3",
+      "teacher": "BHG",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 9,
+      "duration": 1,
+      "title": "MA301",
+      "code": "CS2",
+      "teacher": "NF9",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 16,
+      "duration": 1,
+      "title": "MA301",
+      "code": "TS10",
+      "teacher": "NF9",
+      "type": "tut"
+    },
+    {
+      "day": 6,
+      "start": 10,
+      "duration": 1,
+      "title": "EC215",
+      "code": "FF5",
+      "teacher": "NF8",
+      "type": "lec"
+    },
+    {
+      "day": 6,
+      "start": 11,
+      "duration": 2,
+      "title": "15EC211 (Lab)",
+      "code": "EDC",
+      "teacher": "SHS/NF3",
+      "type": "lab"
+    }
+  ],
+  "A7": [
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 1,
+      "title": "HS211",
+      "code": "G9",
+      "teacher": "VSE",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 10,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "F6",
+      "teacher": "GK",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 16,
+      "duration": 1,
+      "title": "EC214",
+      "code": "TS11",
+      "teacher": "RS",
+      "type": "tut"
+    },
+    {
+      "day": 2,
+      "start": 15,
+      "duration": 1,
+      "title": "11EC211",
+      "code": "TS16",
+      "teacher": "GK",
+      "type": "tut"
+    },
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS11",
+      "teacher": "MM",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 10,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "G4",
+      "teacher": "GK",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G9",
+      "teacher": "RPS/KS",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 16,
+      "duration": 1,
+      "title": "EC215",
+      "code": "CS1",
+      "teacher": "JOY",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "MA301",
+      "code": "TS16",
+      "teacher": "BPC",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "G5",
+      "teacher": "GK",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G7",
+      "teacher": "RPS/KS",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 2,
+      "title": "15EC211 (Lab)",
+      "code": "EDC",
+      "teacher": "AJK/APN",
+      "type": "lab"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 1,
+      "title": "EC215",
+      "code": "G8",
+      "teacher": "JOY",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G9",
+      "teacher": "RPS/KS",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 9,
+      "duration": 2,
+      "title": "EC214 (Lab)",
+      "code": "MODLAB",
+      "teacher": "RK/TA9",
       "type": "lab"
     },
     {
@@ -7081,3970 +3132,2169 @@ const scheduleMap = {
   ],
   "A8": [
     {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF1",
-      "teacher": "DIP",
-      "type": "lec"
-    },
-    {
-      "day": 1,
+      "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "UHV",
-      "code": "FF1",
-      "teacher": "ANU",
+      "title": "HS211",
+      "code": "G9",
+      "teacher": "VSE",
       "type": "lec"
     },
     {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF1",
-      "teacher": "PRV",
-      "type": "lec"
-    },
-    {
-      "day": 1,
+      "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "PH211",
-      "code": "TS6",
-      "teacher": "DIP",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS6",
-      "teacher": "HZR",
-      "type": "tut"
+      "title": "B11EC211",
+      "code": "F6",
+      "teacher": "GK",
+      "type": "lec"
     },
     {
       "day": 2,
+      "start": 9,
+      "duration": 1,
+      "title": "EC215",
+      "code": "TS13",
+      "teacher": "JOY",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 10,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "G4",
+      "teacher": "GK",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "MA301",
+      "code": "G9",
+      "teacher": "NF4",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G9",
+      "teacher": "RPS/KS",
+      "type": "lec"
+    },
+    {
+      "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "CI121",
-      "code": "G1",
-      "teacher": "PRV",
+      "title": "EC215",
+      "code": "CS1",
+      "teacher": "JOY",
       "type": "lec"
     },
     {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "CR526",
-      "teacher": "HZR",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "CR325",
-      "teacher": "DIP",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS7",
-      "teacher": "SHP",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF1",
-      "teacher": "PRV",
-      "type": "lec"
-    },
-    {
-      "day": 4,
+      "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "UHV",
-      "code": "FF1",
-      "teacher": "ANU",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G8",
-      "teacher": "HZR",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL01",
-      "teacher": "MGR/ASY",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF1",
-      "teacher": "DIP",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL1",
-      "teacher": "GPK/SND",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS12",
-      "teacher": "AMN",
+      "title": "MA301",
+      "code": "TS11",
+      "teacher": "YG",
       "type": "tut"
     },
     {
-      "day": 5,
-      "start": 9,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL1",
-      "teacher": "MDU",
-      "type": "lab"
-    },
-    {
-      "day": 6,
+      "day": 3,
       "start": 12,
       "duration": 1,
-      "title": "MA211",
-      "code": "G1",
-      "teacher": "HZR",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS7",
-      "teacher": "MJH",
+      "title": "HS211",
+      "code": "TS11",
+      "teacher": "VSE",
       "type": "tut"
     },
     {
-      "day": 6,
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "G5",
+      "teacher": "GK",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G7",
+      "teacher": "RPS/KS",
+      "type": "lec"
+    },
+    {
+      "day": 4,
       "start": 9,
       "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "MJH",
-      "type": "lab"
-    }
-  ],
-  "B1": [
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF2",
-      "teacher": "RKG",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF2",
-      "teacher": "YG",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL04",
-      "teacher": "AJS/IMR",
+      "title": "15EC215 (Lab)",
+      "code": "CML",
+      "teacher": "JAS/JOY",
       "type": "lab"
     },
     {
-      "day": 2,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS8",
-      "teacher": "NIY",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF2",
-      "teacher": "PRV",
-      "type": "lec"
-    },
-    {
-      "day": 2,
+      "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "CI121",
-      "code": "FF2",
-      "teacher": "APJ",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS6",
-      "teacher": "SPP",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS8",
-      "teacher": "YG",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "-LL",
-      "teacher": "SKU",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF1",
-      "teacher": "PRV",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF1",
-      "teacher": "APJ",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
+      "title": "EC215",
       "code": "G8",
-      "teacher": "RKG",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL3",
-      "teacher": "MTR/SDC",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G9",
-      "teacher": "YG",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS8",
-      "teacher": "NTS",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G9",
-      "teacher": "RKG",
+      "teacher": "JOY",
       "type": "lec"
     },
     {
       "day": 5,
       "start": 14,
       "duration": 1,
-      "title": "CI121",
-      "code": "FF3",
-      "teacher": "APJ",
+      "title": "BT211",
+      "code": "G9",
+      "teacher": "RPS/KS",
       "type": "lec"
     },
     {
       "day": 5,
-      "start": 15,
+      "start": 10,
       "duration": 1,
-      "title": "MA211",
-      "code": "FF3",
-      "teacher": "YG",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS10",
-      "teacher": "KSA",
+      "title": "EC214",
+      "code": "TS13",
+      "teacher": "RIG",
       "type": "tut"
     },
     {
       "day": 5,
       "start": 9,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "NTS",
-      "type": "lab"
-    }
-  ],
-  "B2": [
-    {
-      "day": 1,
-      "start": 10,
       "duration": 1,
-      "title": "PH211",
-      "code": "FF2",
-      "teacher": "RKG",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF2",
-      "teacher": "YG",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL24",
-      "teacher": "JSM/ROH",
-      "type": "lab"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "CDN",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF2",
-      "teacher": "PRV",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF2",
-      "teacher": "APJ",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS7",
-      "teacher": "EKY",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS10",
-      "teacher": "MSD",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "-LL1",
-      "teacher": "ASU",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF1",
-      "teacher": "PRV",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF1",
-      "teacher": "APJ",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G8",
-      "teacher": "RKG",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 16,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS6",
-      "teacher": "AM",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL2",
-      "teacher": "NKS/VRT",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "UHV",
+      "title": "11EC211",
       "code": "TR302",
-      "teacher": "KSA",
+      "teacher": "RSB",
       "type": "tut"
     },
     {
-      "day": 4,
+      "day": 6,
+      "start": 11,
+      "duration": 1,
+      "title": "MA301",
+      "code": "G3",
+      "teacher": "NF4",
+      "type": "lec"
+    },
+    {
+      "day": 6,
+      "start": 9,
+      "duration": 2,
+      "title": "EC214 (Lab)",
+      "code": "MODLAB",
+      "teacher": "RK/TA20",
+      "type": "lab"
+    }
+  ],
+  "A10": [
+    {
+      "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "MA211",
+      "title": "HS211",
       "code": "G9",
-      "teacher": "YG",
+      "teacher": "VSE",
       "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G9",
-      "teacher": "RKG",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF3",
-      "teacher": "APJ",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF3",
-      "teacher": "YG",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS8",
-      "teacher": "CDN",
-      "type": "tut"
-    }
-  ],
-  "G1": [
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF2",
-      "teacher": "MKB",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF3",
-      "teacher": "NAR",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF3",
-      "teacher": "PAT",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS7",
-      "teacher": "DAM",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL2",
-      "teacher": "EKY/DIP",
-      "type": "lab"
     },
     {
       "day": 2,
-      "start": 11,
+      "start": 12,
       "duration": 1,
-      "title": "CI121",
+      "title": "EC214",
       "code": "G7",
-      "teacher": "RTK",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF2",
-      "teacher": "RTK",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 16,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF2",
-      "teacher": "MKB",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS11",
-      "teacher": "GGL",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "-LL",
-      "teacher": "KMB",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "GGL",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF3",
-      "teacher": "PAT",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF3",
-      "teacher": "NAR",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS13",
-      "teacher": "SDU",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS12",
-      "teacher": "SHR",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "NAR",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 16,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF4",
-      "teacher": "RTK",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF4",
-      "teacher": "PAT",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS10",
-      "teacher": "PAT",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL01",
-      "teacher": "SRG/ANV",
-      "type": "lab"
-    }
-  ],
-  "G2": [
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF2",
-      "teacher": "MKB",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF3",
-      "teacher": "NAR",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF3",
-      "teacher": "PAT",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS8",
-      "teacher": "NKS",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL3",
-      "teacher": "RKD/DAM",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "G7",
-      "teacher": "RTK",
+      "teacher": "RIG",
       "type": "lec"
     },
     {
       "day": 2,
-      "start": 15,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL09",
-      "teacher": "MSI/KRL",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF2",
-      "teacher": "RTK",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 16,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF2",
-      "teacher": "MKB",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS20",
-      "teacher": "MJH",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL1",
-      "teacher": "MDU",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "MJH",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF3",
-      "teacher": "PAT",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF3",
-      "teacher": "NAR",
-      "type": "lec"
-    },
-    {
-      "day": 4,
       "start": 10,
       "duration": 1,
-      "title": "UHV",
-      "code": "TS11",
-      "teacher": "ASU",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TR326",
-      "teacher": "NIY",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "NAR",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 16,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF4",
-      "teacher": "RTK",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF4",
-      "teacher": "PAT",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS6",
-      "teacher": "DCS",
-      "type": "tut"
-    }
-  ],
-  "B5": [
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF2",
-      "teacher": "IC",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF2",
-      "teacher": "AW",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF1",
-      "teacher": "RSA",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF1",
-      "teacher": "AW",
+      "title": "B11EC211",
+      "code": "F6",
+      "teacher": "GK",
       "type": "lec"
     },
     {
       "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "RKD",
-      "type": "lec"
+      "title": "EC214",
+      "code": "TR302",
+      "teacher": "SB",
+      "type": "tut"
     },
     {
       "day": 2,
       "start": 9,
       "duration": 1,
-      "title": "CI121",
-      "code": "TS10",
-      "teacher": "APJ",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL1",
-      "teacher": "NAR/DAM",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF3",
-      "teacher": "RSA",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "RKD",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS8",
-      "teacher": "RSA",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS8",
-      "teacher": "GPK",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "-LL",
-      "teacher": "PAC",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF2",
-      "teacher": "AW",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF2",
-      "teacher": "IC",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS10",
-      "teacher": "SWET",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "SWET",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "RKD",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS13",
-      "teacher": "MEE",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF3",
-      "teacher": "RSA",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL01",
-      "teacher": "KP/ASA",
-      "type": "lab"
-    }
-  ],
-  "B6": [
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF2",
-      "teacher": "IC",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF2",
-      "teacher": "AW",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL3",
-      "teacher": "EKY/NKS",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF1",
-      "teacher": "RSA",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF1",
-      "teacher": "AW",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "RKD",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF3",
-      "teacher": "RSA",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "RKD",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS10",
-      "teacher": "MTR",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS10",
-      "teacher": "RSA",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL1",
-      "teacher": "KNP",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF2",
-      "teacher": "AW",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF2",
-      "teacher": "IC",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS11",
-      "teacher": "NTS",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "NTS",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G1",
-      "teacher": "RKD",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
+      "title": "EC215",
       "code": "TS16",
-      "teacher": "NSA",
+      "teacher": "JAS",
       "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TR302",
-      "teacher": "MEE",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF3",
-      "teacher": "RSA",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL05",
-      "teacher": "MAY/SHR",
-      "type": "lab"
-    }
-  ],
-  "G3": [
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF3",
-      "teacher": "SGL",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CS5",
-      "teacher": "SRG",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS11",
-      "teacher": "ABH",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 16,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF4",
-      "teacher": "SRG",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF3",
-      "teacher": "EKY",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF4",
-      "teacher": "DCS",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "-LL",
-      "teacher": "HK",
-      "type": "lab"
     },
     {
       "day": 3,
-      "start": 13,
+      "start": 9,
       "duration": 1,
-      "title": "PH211",
-      "code": "G6",
-      "teacher": "EKY",
+      "title": "EC214",
+      "code": "CS2",
+      "teacher": "RIG",
       "type": "lec"
     },
     {
-      "day": 4,
+      "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "CI121",
-      "code": "CR425",
-      "teacher": "SRG",
+      "title": "B11EC211",
+      "code": "G4",
+      "teacher": "GK",
       "type": "lec"
     },
     {
-      "day": 4,
+      "day": 3,
       "start": 14,
       "duration": 1,
-      "title": "UHV",
-      "code": "TS13",
-      "teacher": "MDU",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS8",
-      "teacher": "DCS",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "CS3",
-      "teacher": "SGL",
+      "title": "MA301",
+      "code": "G9",
+      "teacher": "NF4",
       "type": "lec"
     },
     {
-      "day": 4,
-      "start": 15,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL07",
-      "teacher": "PSO/PRV",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "CR425",
-      "teacher": "EKY",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS12",
-      "teacher": "ADM",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS13",
-      "teacher": "NIY",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "ADM",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 12,
-      "duration": 1,
-      "title": "MA211",
-      "code": "CS2",
-      "teacher": "DCS",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL1",
-      "teacher": "DAM/INC",
-      "type": "lab"
-    }
-  ],
-  "G4": [
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF3",
-      "teacher": "SGL",
-      "type": "lec"
-    },
-    {
-      "day": 1,
+      "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "CI121",
-      "code": "CS5",
-      "teacher": "SRG",
+      "title": "BT211",
+      "code": "G9",
+      "teacher": "RPS/KS",
       "type": "lec"
     },
     {
-      "day": 1,
-      "start": 10,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL05",
-      "teacher": "RTK/TNV",
-      "type": "lab"
-    },
-    {
-      "day": 2,
+      "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "CI121",
-      "code": "FF4",
-      "teacher": "SRG",
+      "title": "EC215",
+      "code": "CS1",
+      "teacher": "JOY",
       "type": "lec"
     },
     {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF3",
-      "teacher": "EKY",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF4",
-      "teacher": "DCS",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
+      "day": 3,
+      "start": 11,
       "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "-LL1",
-      "teacher": "KMB",
+      "title": "15EC215 (Lab)",
+      "code": "CML",
+      "teacher": "JAS/JOY",
       "type": "lab"
     },
     {
-      "day": 3,
-      "start": 13,
+      "day": 4,
+      "start": 12,
       "duration": 1,
-      "title": "PH211",
-      "code": "G6",
-      "teacher": "EKY",
+      "title": "B11EC211",
+      "code": "G5",
+      "teacher": "GK",
       "type": "lec"
     },
     {
-      "day": 3,
+      "day": 4,
+      "start": 11,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G7",
+      "teacher": "RPS/KS",
+      "type": "lec"
+    },
+    {
+      "day": 4,
       "start": 9,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS7",
-      "teacher": "ASU",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS11",
-      "teacher": "NIY",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS11",
-      "teacher": "DCS",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CR425",
-      "teacher": "SRG",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS7",
-      "teacher": "GGL",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "CS3",
-      "teacher": "SGL",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 15,
       "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "GGL/GRP",
+      "title": "15EC211 (Lab)",
+      "code": "EDC",
+      "teacher": "GK/RSB",
       "type": "lab"
     },
     {
       "day": 5,
-      "start": 15,
+      "start": 11,
       "duration": 1,
-      "title": "PH211",
-      "code": "TS7",
-      "teacher": "RKG",
-      "type": "tut"
+      "title": "EC215",
+      "code": "G8",
+      "teacher": "JOY",
+      "type": "lec"
     },
     {
       "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G9",
+      "teacher": "RPS/KS",
+      "type": "lec"
+    },
+    {
+      "day": 6,
       "start": 11,
       "duration": 1,
-      "title": "PH211",
-      "code": "CR425",
-      "teacher": "EKY",
+      "title": "MA301",
+      "code": "G3",
+      "teacher": "NF4",
       "type": "lec"
     },
     {
       "day": 6,
       "start": 12,
       "duration": 1,
-      "title": "MA211",
-      "code": "CS2",
-      "teacher": "DCS",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL2",
-      "teacher": "DIP",
-      "type": "lab"
-    }
-  ],
-  "B7": [
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF3",
-      "teacher": "SOC",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL",
-      "teacher": "HK",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF4",
-      "teacher": "DAM",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF8",
-      "teacher": "MKB",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS12",
-      "teacher": "SHIV",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS6",
-      "teacher": "IMR",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CR401",
-      "teacher": "SHP",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF4",
-      "teacher": "DAM",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF4",
-      "teacher": "MKB",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS6",
-      "teacher": "RSH",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "UHV",
+      "title": "MA301",
       "code": "TS10",
-      "teacher": "NES",
+      "teacher": "NF4",
       "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF3",
-      "teacher": "SOC",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF3",
-      "teacher": "SHP",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "PH211",
-      "code": "CR425",
-      "teacher": "DAM",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF1",
-      "teacher": "MKB",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CS4",
-      "teacher": "SHP",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL01",
-      "teacher": "APR/AYS",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL2",
-      "teacher": "NAR/ABH",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS6",
-      "teacher": "GGL",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "GGL",
-      "type": "lab"
-    }
-  ],
-  "B8": [
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF3",
-      "teacher": "SOC",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL1",
-      "teacher": "KNP",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF4",
-      "teacher": "DAM",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF8",
-      "teacher": "MKB",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS8",
-      "teacher": "ANU",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS7",
-      "teacher": "SUD",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CR401",
-      "teacher": "SHP",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF4",
-      "teacher": "DAM",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF4",
-      "teacher": "MKB",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS7",
-      "teacher": "NSK",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS11",
-      "teacher": "YN",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF3",
-      "teacher": "SOC",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF3",
-      "teacher": "SHP",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "PH211",
-      "code": "CR425",
-      "teacher": "DAM",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF1",
-      "teacher": "MKB",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "CS4",
-      "teacher": "SHP",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL07",
-      "teacher": "SHB/AJS",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL3",
-      "teacher": "ANU/DIN",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS7",
-      "teacher": "ADM",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "ADM",
-      "type": "lab"
-    }
-  ],
-  "B9": [
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF3",
-      "teacher": "ASA",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G5",
-      "teacher": "RSC",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS7",
-      "teacher": "RSC",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS7",
-      "teacher": "VRT",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "UHV",
-      "code": "G7",
-      "teacher": "RAV",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF2",
-      "teacher": "ASA",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF3",
-      "teacher": "MKC",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "ASG",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF1",
-      "teacher": "MKC",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF1",
-      "teacher": "RSC",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL13",
-      "teacher": "AM/SHB",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 16,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS7",
-      "teacher": "AM",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF4",
-      "teacher": "ASA",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G8",
-      "teacher": "RSC",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL2",
-      "teacher": "RAV/EKY",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF2",
-      "teacher": "MKC",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF2",
-      "teacher": "RAV",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS11",
-      "teacher": "PRI",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL",
-      "teacher": "NIS",
-      "type": "lab"
-    }
-  ],
-  "B10": [
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF3",
-      "teacher": "ASA",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G5",
-      "teacher": "RSC",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS11",
-      "teacher": "MDU",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "UHV",
-      "code": "G7",
-      "teacher": "RAV",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF2",
-      "teacher": "ASA",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF3",
-      "teacher": "MKC",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS8",
-      "teacher": "VRT",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS8",
-      "teacher": "RSC",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF1",
-      "teacher": "MKC",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF1",
-      "teacher": "RSC",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL07",
-      "teacher": "AW/TNV",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF4",
-      "teacher": "ASA",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 9,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS20",
-      "teacher": "MJH",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "MJH",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G8",
-      "teacher": "RSC",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL1",
-      "teacher": "BCJ/MKC",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF2",
-      "teacher": "MKC",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF2",
-      "teacher": "RAV",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS12",
-      "teacher": "APJ",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL1",
-      "teacher": "NAM",
-      "type": "lab"
-    }
-  ],
-  "D1": [
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF4",
-      "teacher": "DIN",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF4",
-      "teacher": "SGL",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "UHV",
-      "code": "CS5",
-      "teacher": "BCJ",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 14,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS10",
-      "teacher": "ANP",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "G6",
-      "teacher": "SRG",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS6",
-      "teacher": "SGL",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL01",
-      "teacher": "ANP/SHB",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "-LL",
-      "teacher": "MRB",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF2",
-      "teacher": "DIN",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF4",
-      "teacher": "SRG",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS6",
-      "teacher": "NTS",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "NTS",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF4",
-      "teacher": "SGL",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF4",
-      "teacher": "DIN",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS8",
-      "teacher": "ABH",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS11",
-      "teacher": "EKT",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF5",
-      "teacher": "SRG",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "UHV",
-      "code": "CS5",
-      "teacher": "BCJ",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF3",
-      "teacher": "SGL",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL1",
-      "teacher": "MTR/NKS",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 2,
-      "title": "PH171 (Lab)",
-      "code": "PL1",
-      "teacher": "NAR",
-      "type": "lab"
-    }
-  ],
-  "D2": [
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF4",
-      "teacher": "DIN",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF4",
-      "teacher": "SGL",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "UHV",
-      "code": "CS5",
-      "teacher": "BCJ",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TR302",
-      "teacher": "ROH",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 11,
-      "duration": 1,
-      "title": "CI121",
-      "code": "G6",
-      "teacher": "SRG",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS7",
-      "teacher": "SP",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "-LL1",
-      "teacher": "AMI",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF2",
-      "teacher": "DIN",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF4",
-      "teacher": "SRG",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS7",
-      "teacher": "CDN",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "CDN",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF4",
-      "teacher": "SGL",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF4",
-      "teacher": "DIN",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS10",
-      "teacher": "EKT",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF5",
-      "teacher": "SRG",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "UHV",
-      "code": "CS5",
-      "teacher": "BCJ",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF3",
-      "teacher": "SGL",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL2",
-      "teacher": "VRT/PC",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS8",
-      "teacher": "EKY",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL09",
-      "teacher": "NEH/SOS",
-      "type": "lab"
     }
   ],
   "A15": [
     {
-      "day": 1,
-      "start": 14,
+      "day": 2,
+      "start": 15,
       "duration": 1,
-      "title": "PH211",
-      "code": "FF4",
-      "teacher": "INC",
+      "title": "B21EC211",
+      "code": "G7",
+      "teacher": "NF2",
       "type": "lec"
     },
     {
-      "day": 1,
-      "start": 9,
+      "day": 2,
+      "start": 10,
       "duration": 1,
-      "title": "Workshop",
+      "title": "HS211",
       "code": "TS11",
-      "teacher": "ASG",
+      "teacher": "MM",
       "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS8",
-      "teacher": "NSA",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "ASG",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "MA211",
-      "code": "CS5",
-      "teacher": "DGA",
-      "type": "lec"
     },
     {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "CI121",
-      "code": "CS5",
-      "teacher": "MAY",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL3",
-      "teacher": "NG/ABH",
-      "type": "lab"
+      "title": "B21EC211",
+      "code": "TR302",
+      "teacher": "NF2",
+      "type": "tut"
     },
     {
       "day": 3,
-      "start": 9,
+      "start": 14,
       "duration": 1,
-      "title": "UHV",
-      "code": "CR425",
-      "teacher": "SHS",
+      "title": "B21EC211",
+      "code": "G3",
+      "teacher": "NF2",
       "type": "lec"
     },
     {
       "day": 3,
-      "start": 13,
+      "start": 15,
       "duration": 1,
-      "title": "PH211",
-      "code": "FF2",
-      "teacher": "INC",
+      "title": "EC214",
+      "code": "G3",
+      "teacher": "RK",
       "type": "lec"
     },
     {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "MA211",
-      "code": "FF9",
-      "teacher": "DGA",
+      "title": "BT211",
+      "code": "G3",
+      "teacher": "KAR",
       "type": "lec"
     },
     {
       "day": 3,
-      "start": 15,
+      "start": 9,
       "duration": 1,
-      "title": "PH211",
-      "code": "TS7",
-      "teacher": "SND",
-      "type": "tut"
+      "title": "Digital Logic and Circuit Design",
+      "code": "CS6",
+      "teacher": "JAS",
+      "type": "lec"
     },
     {
       "day": 3,
-      "start": 10,
+      "start": 11,
       "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "-LL",
-      "teacher": "VSE",
+      "title": "25EC211 (Lab)",
+      "code": "ADE",
+      "teacher": "MNA/NF5",
+      "type": "lab"
+    },
+    {
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "B21EC211",
+      "code": "G4",
+      "teacher": "NF2",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 9,
+      "duration": 1,
+      "title": "Numerical Techniques",
+      "code": "CS8",
+      "teacher": "RSA",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 2,
+      "title": "Digital Logic and Circuit Design Lab",
+      "code": "CML",
+      "teacher": "RS/NF8",
       "type": "lab"
     },
     {
       "day": 5,
-      "start": 15,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF1",
-      "teacher": "SHS",
-      "type": "lec"
-    },
-    {
-      "day": 5,
       "start": 10,
       "duration": 1,
-      "title": "CI121",
-      "code": "G9",
-      "teacher": "MAY",
+      "title": "Digital Logic and Circuit Design",
+      "code": "G3",
+      "teacher": "JAS",
       "type": "lec"
     },
     {
       "day": 5,
       "start": 11,
       "duration": 1,
-      "title": "PH211",
-      "code": "CS5",
-      "teacher": "INC",
+      "title": "HS211",
+      "code": "G3",
+      "teacher": "MM",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "EC214",
+      "code": "FF7",
+      "teacher": "RK",
       "type": "lec"
     },
     {
       "day": 5,
       "start": 9,
       "duration": 1,
-      "title": "UHV",
-      "code": "TS10",
-      "teacher": "PAC",
+      "title": "EC214",
+      "code": "TS16",
+      "teacher": "SB",
       "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL21",
-      "teacher": "22/JSM/PTK/PRV/MAY",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G1",
-      "teacher": "DGA",
-      "type": "lec"
     },
     {
       "day": 6,
       "start": 9,
       "duration": 1,
-      "title": "MA211",
-      "code": "TS7",
-      "teacher": "DGA",
-      "type": "tut"
+      "title": "Numerical Techniques",
+      "code": "FF8",
+      "teacher": "RSA",
+      "type": "lec"
     }
   ],
   "A16": [
     {
-      "day": 1,
-      "start": 14,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF4",
-      "teacher": "INC",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TS7",
-      "teacher": "AMN",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "F10",
-      "teacher": "NBH",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "NBH",
-      "type": "lab"
-    },
-    {
       "day": 2,
-      "start": 13,
+      "start": 15,
       "duration": 1,
-      "title": "MA211",
-      "code": "CS5",
-      "teacher": "DGA",
+      "title": "B21EC211",
+      "code": "G7",
+      "teacher": "NF2",
       "type": "lec"
     },
     {
       "day": 2,
       "start": 14,
       "duration": 1,
-      "title": "CI121",
-      "code": "CS5",
-      "teacher": "MAY",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL2",
-      "teacher": "RKG/GPK",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "UHV",
-      "code": "CR425",
-      "teacher": "SHS",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "FF2",
-      "teacher": "INC",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 16,
-      "duration": 1,
-      "title": "MA211",
-      "code": "FF9",
-      "teacher": "DGA",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "PH211",
-      "code": "TS8",
-      "teacher": "EKY",
-      "type": "tut"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "-LL1",
-      "teacher": "EKS",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 15,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF1",
-      "teacher": "SHS",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "CI121",
-      "code": "G9",
-      "teacher": "MAY",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 16,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TS7",
-      "teacher": "SUD",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "CS5",
-      "teacher": "INC",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL21",
-      "teacher": "22/JSM/PTK/PRV/MAY",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 11,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G1",
-      "teacher": "DGA",
-      "type": "lec"
-    },
-    {
-      "day": 6,
-      "start": 9,
-      "duration": 1,
-      "title": "MA211",
-      "code": "TS8",
+      "title": "MA301",
+      "code": "TS10",
       "teacher": "YG",
       "type": "tut"
-    }
-  ],
-  "C1": [
+    },
     {
-      "day": 1,
+      "day": 2,
       "start": 11,
-      "duration": 1,
-      "title": "MA212",
-      "code": "CR425",
-      "teacher": "AN",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS20",
-      "teacher": "NTS",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TR326",
-      "teacher": "DSH",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 13,
       "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "NTS",
+      "title": "Digital Logic and Circuit Design Lab",
+      "code": "CML",
+      "teacher": "RS/NF8",
       "type": "lab"
     },
     {
-      "day": 2,
-      "start": 9,
-      "duration": 1,
-      "title": "B11CI121",
-      "code": "TS11",
-      "teacher": "ALK",
-      "type": "tut"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "PH212",
-      "code": "FF4",
-      "teacher": "SDC",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "MA212",
-      "code": "G4",
-      "teacher": "AN",
-      "type": "lec"
-    },
-    {
       "day": 3,
-      "start": 9,
+      "start": 14,
       "duration": 1,
-      "title": "PH212",
-      "code": "CR501",
-      "teacher": "SDC",
+      "title": "B21EC211",
+      "code": "G3",
+      "teacher": "NF2",
       "type": "lec"
     },
     {
       "day": 3,
       "start": 15,
       "duration": 1,
-      "title": "B11CI121",
-      "code": "FF3",
-      "teacher": "ALK",
+      "title": "EC214",
+      "code": "G3",
+      "teacher": "RK",
       "type": "lec"
     },
     {
       "day": 3,
       "start": 16,
       "duration": 1,
-      "title": "UHV",
-      "code": "FF3",
-      "teacher": "SMO",
+      "title": "BT211",
+      "code": "G3",
+      "teacher": "KAR",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 1,
+      "title": "Digital Logic and Circuit Design",
+      "code": "CS6",
+      "teacher": "JAS",
       "type": "lec"
     },
     {
       "day": 3,
       "start": 10,
       "duration": 1,
-      "title": "PH212",
-      "code": "TR302",
-      "teacher": "DAM",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 16,
-      "duration": 1,
-      "title": "UHV",
-      "code": "G1",
-      "teacher": "SMO",
+      "title": "MA301",
+      "code": "FF5",
+      "teacher": "NF2",
       "type": "lec"
     },
     {
-      "day": 4,
-      "start": 13,
+      "day": 3,
+      "start": 12,
       "duration": 1,
-      "title": "PH212",
-      "code": "FF2",
-      "teacher": "SDC",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 11,
-      "duration": 1,
-      "title": "MA212",
+      "title": "EC214",
       "code": "TS10",
-      "teacher": "AN",
+      "teacher": "SB",
       "type": "tut"
     },
     {
       "day": 4,
-      "start": 9,
-      "duration": 2,
-      "title": "B15CI121 (Lab)",
-      "code": "CL05",
-      "teacher": "NIY/ALK",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "B11CI121",
-      "code": "CR325",
-      "teacher": "ALK",
-      "type": "lec"
-    },
-    {
-      "day": 5,
       "start": 10,
       "duration": 1,
-      "title": "MA212",
+      "title": "MA301",
       "code": "FF5",
-      "teacher": "AN",
+      "teacher": "NF2",
       "type": "lec"
     },
     {
-      "day": 5,
-      "start": 14,
-      "duration": 2,
-      "title": "15BT111 (Lab)",
-      "code": "BT1",
-      "teacher": "PG/EKT/SHD/ANM/SBT",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL",
-      "teacher": "NES",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 10,
+      "day": 4,
+      "start": 12,
       "duration": 1,
-      "title": "PH112",
-      "code": "G7",
-      "teacher": "AP",
-      "type": "lec"
-    }
-  ],
-  "C2": [
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA212",
-      "code": "CR425",
-      "teacher": "AN",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS11",
-      "teacher": "SWET",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "TR326",
-      "teacher": "DSH",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 13,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "SWET",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "PH212",
-      "code": "FF4",
-      "teacher": "SDC",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "MA212",
+      "title": "B21EC211",
       "code": "G4",
-      "teacher": "AN",
+      "teacher": "NF2",
       "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 15,
-      "duration": 2,
-      "title": "B15CI121 (Lab)",
-      "code": "CL13",
-      "teacher": "ALK/PK",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "PH212",
-      "code": "CR501",
-      "teacher": "SDC",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "B11CI121",
-      "code": "FF3",
-      "teacher": "ALK",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 16,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF3",
-      "teacher": "SMO",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "PH212",
-      "code": "TS8",
-      "teacher": "DAM",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 16,
-      "duration": 1,
-      "title": "UHV",
-      "code": "G1",
-      "teacher": "SMO",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "PH212",
-      "code": "FF2",
-      "teacher": "SDC",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL",
-      "teacher": "SKU",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 14,
-      "duration": 2,
-      "title": "15BT111 (Lab)",
-      "code": "BT1",
-      "teacher": "PG/EKT/SHD/ANM/SBT",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "B11CI121",
-      "code": "CR325",
-      "teacher": "ALK",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "B11CI121",
-      "code": "TS16",
-      "teacher": "ALK",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 10,
-      "duration": 1,
-      "title": "MA212",
-      "code": "FF5",
-      "teacher": "AN",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "MA212",
-      "code": "TS8",
-      "teacher": "ANK",
-      "type": "tut"
-    },
-    {
-      "day": 6,
-      "start": 10,
-      "duration": 1,
-      "title": "PH112",
-      "code": "G7",
-      "teacher": "AP",
-      "type": "lec"
-    }
-  ],
-  "C3": [
-    {
-      "day": 1,
-      "start": 11,
-      "duration": 1,
-      "title": "MA212",
-      "code": "CR425",
-      "teacher": "AN",
-      "type": "lec"
-    },
-    {
-      "day": 1,
-      "start": 9,
-      "duration": 1,
-      "title": "B11CI121",
-      "code": "F4",
-      "teacher": "ALK",
-      "type": "tut"
-    },
-    {
-      "day": 1,
-      "start": 15,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "GGL",
-      "type": "lab"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 1,
-      "title": "PH212",
-      "code": "FF4",
-      "teacher": "SDC",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "MA212",
-      "code": "G4",
-      "teacher": "AN",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 9,
-      "duration": 1,
-      "title": "PH212",
-      "code": "CR501",
-      "teacher": "SDC",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 1,
-      "title": "B11CI121",
-      "code": "FF3",
-      "teacher": "ALK",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 16,
-      "duration": 1,
-      "title": "UHV",
-      "code": "FF3",
-      "teacher": "SMO",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 2,
-      "title": "B15CI121 (Lab)",
-      "code": "CL17",
-      "teacher": "PK/PRK",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 2,
-      "title": "15BT111 (Lab)",
-      "code": "BT1",
-      "teacher": "PG/EKT/SHD/ANM/SBT",
-      "type": "lab"
-    },
-    {
-      "day": 4,
-      "start": 16,
-      "duration": 1,
-      "title": "UHV",
-      "code": "G1",
-      "teacher": "SMO",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 13,
-      "duration": 1,
-      "title": "PH212",
-      "code": "FF2",
-      "teacher": "SDC",
-      "type": "lec"
-    },
-    {
-      "day": 4,
-      "start": 15,
-      "duration": 1,
-      "title": "PH212",
-      "code": "TS12",
-      "teacher": "DAM",
-      "type": "tut"
     },
     {
       "day": 4,
       "start": 9,
       "duration": 1,
-      "title": "UHV",
-      "code": "TS12",
-      "teacher": "IJ",
-      "type": "tut"
-    },
-    {
-      "day": 4,
-      "start": 10,
-      "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL1",
-      "teacher": "NAM",
-      "type": "lab"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "B11CI121",
-      "code": "CR325",
-      "teacher": "ALK",
-      "type": "lec"
-    },
-    {
-      "day": 5,
-      "start": 14,
-      "duration": 1,
-      "title": "MA212",
-      "code": "TS11",
+      "title": "Numerical Techniques",
+      "code": "CS8",
       "teacher": "RSA",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 1,
-      "title": "Workshop",
-      "code": "TS12",
-      "teacher": "GGL",
-      "type": "tut"
+      "type": "lec"
     },
     {
       "day": 5,
       "start": 10,
       "duration": 1,
-      "title": "MA212",
-      "code": "FF5",
-      "teacher": "AN",
+      "title": "Digital Logic and Circuit Design",
+      "code": "G3",
+      "teacher": "JAS",
       "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 1,
+      "title": "HS211",
+      "code": "G3",
+      "teacher": "MM",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "EC214",
+      "code": "FF7",
+      "teacher": "RK",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 9,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS10",
+      "teacher": "MM",
+      "type": "tut"
+    },
+    {
+      "day": 5,
+      "start": 15,
+      "duration": 2,
+      "title": "25EC211 (Lab)",
+      "code": "ADE",
+      "teacher": "MNA/NF5",
+      "type": "lab"
     },
     {
       "day": 6,
-      "start": 10,
+      "start": 9,
       "duration": 1,
-      "title": "PH112",
-      "code": "G7",
-      "teacher": "AP",
+      "title": "Numerical Techniques",
+      "code": "FF8",
+      "teacher": "RSA",
       "type": "lec"
+    }
+  ],
+  "B2": [
+    {
+      "day": 2,
+      "start": 16,
+      "duration": 1,
+      "title": "HS211",
+      "code": "G7",
+      "teacher": "NES",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 1,
+      "title": "MA213",
+      "code": "LT2",
+      "teacher": "PAT",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "MA213",
+      "code": "G3",
+      "teacher": "PAT",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 1,
+      "title": "HS211",
+      "code": "FF6",
+      "teacher": "NES",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS10",
+      "teacher": "KMB",
+      "type": "tut"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 1,
+      "title": "CI311",
+      "code": "TS13",
+      "teacher": "VRN",
+      "type": "tut"
+    },
+    {
+      "day": 5,
+      "start": 15,
+      "duration": 2,
+      "title": "B15CS215 (Lab)",
+      "code": "CL04",
+      "teacher": "SLK/KRI",
+      "type": "lab"
+    },
+    {
+      "day": 5,
+      "start": 9,
+      "duration": 2,
+      "title": "B15CS214 (Lab)",
+      "code": "CL05",
+      "teacher": "06/JAG/HN/PRK/BHA/JAT",
+      "type": "lab"
+    },
+    {
+      "day": 6,
+      "start": 11,
+      "duration": 2,
+      "title": "CI371 (Lab)",
+      "code": "CL22",
+      "teacher": "SHG/MON",
+      "type": "lab"
     }
   ],
   "A17": [
     {
       "day": 2,
-      "start": 15,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G8",
-      "teacher": "RSA",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 14,
-      "duration": 1,
-      "title": "PH211",
-      "code": "CS2",
-      "teacher": "GPK",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF9",
-      "teacher": "SHR",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 10,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL09",
-      "teacher": "APR/AM",
-      "type": "lab"
-    },
-    {
-      "day": 3,
-      "start": 10,
-      "duration": 1,
-      "title": "UHV",
-      "code": "CR501",
-      "teacher": "VRT",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G7",
-      "teacher": "GPK",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G7",
-      "teacher": "RSA",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 15,
-      "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL3",
-      "teacher": "AP/SHIV",
-      "type": "lab"
-    },
-    {
-      "day": 4,
       "start": 9,
       "duration": 1,
-      "title": "MA211",
-      "code": "G9",
-      "teacher": "RSA",
+      "title": "EC214",
+      "code": "CS7",
+      "teacher": "BHG",
       "type": "lec"
     },
     {
-      "day": 4,
-      "start": 15,
+      "day": 2,
+      "start": 10,
       "duration": 1,
-      "title": "UHV",
-      "code": "TS10",
-      "teacher": "PRI",
+      "title": "B11EC211",
+      "code": "FF7",
+      "teacher": "NF6",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 15,
+      "duration": 2,
+      "title": "15EC211 (Lab)",
+      "code": "EDC",
+      "teacher": "RRJ/NF3",
+      "type": "lab"
+    },
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 1,
+      "title": "EC215",
+      "code": "TR307",
+      "teacher": "MN",
       "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 16,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G3",
+      "teacher": "KAR",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "B11EC211",
+      "code": "FF7",
+      "teacher": "NF6",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 11,
+      "duration": 2,
+      "title": "EC214 (Lab)",
+      "code": "MODLAB",
+      "teacher": "RIG/TA11",
+      "type": "lab"
     },
     {
       "day": 4,
       "start": 11,
       "duration": 1,
-      "title": "PH211",
-      "code": "TS6",
-      "teacher": "INC",
-      "type": "tut"
+      "title": "BT211",
+      "code": "FF5",
+      "teacher": "KAR",
+      "type": "lec"
     },
     {
       "day": 4,
-      "start": 14,
+      "start": 12,
       "duration": 1,
-      "title": "MA211",
-      "code": "TS7",
-      "teacher": "HA",
+      "title": "B11EC211",
+      "code": "G6",
+      "teacher": "NF6",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 9,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS11",
+      "teacher": "VSE",
       "type": "tut"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 1,
+      "title": "EC215",
+      "code": "G4",
+      "teacher": "NF8",
+      "type": "lec"
     },
     {
       "day": 5,
       "start": 15,
       "duration": 1,
-      "title": "UHV",
-      "code": "FF2",
-      "teacher": "VRT",
+      "title": "EC214",
+      "code": "G3",
+      "teacher": "BHG",
       "type": "lec"
     },
     {
       "day": 5,
       "start": 16,
       "duration": 1,
-      "title": "CI121",
-      "code": "FF1",
-      "teacher": "SHR",
-      "type": "lec"
+      "title": "11EC211",
+      "code": "TS11",
+      "teacher": "SHI",
+      "type": "tut"
     },
     {
-      "day": 5,
-      "start": 11,
-      "duration": 1,
-      "title": "PH211",
-      "code": "CS3",
-      "teacher": "GPK",
-      "type": "lec"
-    },
-    {
-      "day": 5,
+      "day": 6,
       "start": 10,
       "duration": 1,
-      "title": "Workshop",
-      "code": "TS8",
-      "teacher": "SWET",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 9,
-      "duration": 1,
-      "title": "CI121",
-      "code": "TR302",
-      "teacher": "ASY",
-      "type": "tut"
-    },
-    {
-      "day": 5,
-      "start": 13,
-      "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW2",
-      "teacher": "SWET",
-      "type": "lab"
-    },
-    {
-      "day": 6,
-      "start": 12,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF1",
-      "teacher": "SHR",
+      "title": "EC215",
+      "code": "FF5",
+      "teacher": "NF8",
       "type": "lec"
     },
     {
       "day": 6,
-      "start": 9,
+      "start": 11,
       "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL",
-      "teacher": "HK",
+      "title": "15EC215 (Lab)",
+      "code": "CML",
+      "teacher": "SCH/AKS",
       "type": "lab"
     }
   ],
-  "A18": [
+  "G2": [
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "MA212",
+      "code": "G9",
+      "teacher": "SGL",
+      "type": "lec"
+    },
     {
       "day": 2,
       "start": 15,
       "duration": 1,
-      "title": "MA211",
+      "title": "CI311",
       "code": "G8",
-      "teacher": "RSA",
+      "teacher": "KJ",
       "type": "lec"
     },
     {
       "day": 2,
-      "start": 14,
+      "start": 12,
       "duration": 1,
-      "title": "PH211",
-      "code": "CS2",
-      "teacher": "GPK",
-      "type": "lec"
-    },
-    {
-      "day": 2,
-      "start": 13,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF9",
-      "teacher": "SHR",
+      "title": "BT211",
+      "code": "G9",
+      "teacher": "AKV",
       "type": "lec"
     },
     {
       "day": 2,
       "start": 10,
-      "duration": 2,
-      "title": "CS121 (Lab)",
-      "code": "CL08",
-      "teacher": "TNV/SHB",
-      "type": "lab"
+      "duration": 1,
+      "title": "MA212",
+      "code": "TS16",
+      "teacher": "NF3",
+      "type": "tut"
     },
     {
       "day": 3,
-      "start": 10,
+      "start": 9,
       "duration": 1,
-      "title": "UHV",
-      "code": "CR501",
-      "teacher": "VRT",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 13,
-      "duration": 1,
-      "title": "PH211",
-      "code": "G7",
-      "teacher": "GPK",
-      "type": "lec"
-    },
-    {
-      "day": 3,
-      "start": 14,
-      "duration": 1,
-      "title": "MA211",
-      "code": "G7",
-      "teacher": "RSA",
+      "title": "CI311",
+      "code": "CS7",
+      "teacher": "KJ",
       "type": "lec"
     },
     {
       "day": 3,
       "start": 11,
       "duration": 1,
-      "title": "CI121",
-      "code": "TS13",
-      "teacher": "SRG",
-      "type": "tut"
+      "title": "MA211",
+      "code": "G9",
+      "teacher": "ATI",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "CI311",
+      "code": "G9",
+      "teacher": "KJ",
+      "type": "lec"
     },
     {
       "day": 3,
       "start": 15,
       "duration": 2,
-      "title": "PH271 (Lab)",
-      "code": "PL1",
-      "teacher": "RKG/PC",
+      "title": "CI371 (Lab)",
+      "code": "CL10",
+      "teacher": "RJM/SUD",
       "type": "lab"
     },
     {
       "day": 4,
-      "start": 9,
+      "start": 10,
       "duration": 1,
-      "title": "MA211",
-      "code": "G9",
-      "teacher": "RSA",
+      "title": "MA212",
+      "code": "FF7",
+      "teacher": "SGL",
       "type": "lec"
     },
     {
       "day": 4,
       "start": 15,
       "duration": 1,
-      "title": "UHV",
+      "title": "HS211",
       "code": "TS11",
+      "teacher": "PSH",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 2,
+      "title": "B17CI372 (Lab)",
+      "code": "CL22",
+      "teacher": "ATI/KAS",
+      "type": "lab"
+    },
+    {
+      "day": 5,
+      "start": 9,
+      "duration": 1,
+      "title": "MA212",
+      "code": "CS5",
+      "teacher": "SGL",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 10,
+      "duration": 1,
+      "title": "HS211",
+      "code": "FF6",
+      "teacher": "AMN",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 1,
+      "title": "MA211",
+      "code": "FF6",
+      "teacher": "ATI",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "BT211",
+      "code": "FF5",
+      "teacher": "AKV",
+      "type": "lec"
+    },
+    {
+      "day": 6,
+      "start": 11,
+      "duration": 2,
+      "title": "B15CS215 (Lab)",
+      "code": "CL06",
+      "teacher": "07/SHB/GAS/ASI/SHY",
+      "type": "lab"
+    }
+  ],
+  "G1": [
+    {
+      "day": 2,
+      "start": 15,
+      "duration": 1,
+      "title": "CI311",
+      "code": "G8",
+      "teacher": "KJ",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 12,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G9",
+      "teacher": "AKV",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 1,
+      "title": "CI312",
+      "code": "TS13",
+      "teacher": "KSA",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 1,
+      "title": "CI311",
+      "code": "CS7",
+      "teacher": "KJ",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "CI311",
+      "code": "G9",
+      "teacher": "KJ",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 10,
+      "duration": 1,
+      "title": "CI311",
+      "code": "TR302",
+      "teacher": "SUD",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 2,
+      "title": "CI371 (Lab)",
+      "code": "CL09",
+      "teacher": "LM/MON",
+      "type": "lab"
+    },
+    {
+      "day": 4,
+      "start": 15,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS10",
+      "teacher": "VSE",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 2,
+      "title": "B17CI372 (Lab)",
+      "code": "CL21",
+      "teacher": "KJ/RTK",
+      "type": "lab"
+    },
+    {
+      "day": 5,
+      "start": 10,
+      "duration": 1,
+      "title": "HS211",
+      "code": "FF6",
+      "teacher": "AMN",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "BT211",
+      "code": "FF5",
+      "teacher": "AKV",
+      "type": "lec"
+    },
+    {
+      "day": 6,
+      "start": 11,
+      "duration": 2,
+      "title": "B15CS215 (Lab)",
+      "code": "CL06",
+      "teacher": "07/SHB/GAS/ASI/SHY",
+      "type": "lab"
+    }
+  ],
+  "D1": [
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 1,
+      "title": "MA301",
+      "code": "CS8",
+      "teacher": "NSK",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 16,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G8",
+      "teacher": "ANS",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 12,
+      "duration": 1,
+      "title": "Analog & Digital Electronics",
+      "code": "CR425",
+      "teacher": "MTO",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "EC214",
+      "code": "CR425",
+      "teacher": "NF3",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 1,
+      "title": "EC214",
+      "code": "TS16",
+      "teacher": "VD",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "Analog & Digital Electronics",
+      "code": "G6",
+      "teacher": "MTO",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS11",
+      "teacher": "MM",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 2,
+      "title": "EC214 (Lab)",
+      "code": "MODLAB",
+      "teacher": "SB/TA2",
+      "type": "lab"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 2,
+      "title": "Analog & Digital Electronics Lab",
+      "code": "ADE",
+      "teacher": "MTO/HIM",
+      "type": "lab"
+    },
+    {
+      "day": 4,
+      "start": 10,
+      "duration": 1,
+      "title": "Analog & Digital Electronics",
+      "code": "G3",
+      "teacher": "MTO",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 1,
+      "title": "HS211",
+      "code": "G3",
+      "teacher": "PSH",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 15,
+      "duration": 1,
+      "title": "EC214",
+      "code": "G3",
+      "teacher": "NF3",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 16,
+      "duration": 1,
+      "title": "MA301",
+      "code": "G3",
+      "teacher": "NSK",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G7",
+      "teacher": "ANS",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G3",
+      "teacher": "ANS",
+      "type": "lec"
+    },
+    {
+      "day": 6,
+      "start": 9,
+      "duration": 1,
+      "title": "MA301",
+      "code": "TS10",
+      "teacher": "NSK",
+      "type": "tut"
+    }
+  ],
+  "D2": [
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 1,
+      "title": "MA301",
+      "code": "CS8",
+      "teacher": "NSK",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 16,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G8",
+      "teacher": "ANS",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 12,
+      "duration": 1,
+      "title": "Analog & Digital Electronics",
+      "code": "CR425",
+      "teacher": "MTO",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "EC214",
+      "code": "CR425",
+      "teacher": "NF3",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 2,
+      "title": "EC212 (Lab)",
+      "code": "BPL",
+      "teacher": "ABY/TA13",
+      "type": "lab"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS10",
+      "teacher": "PSH",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "Analog & Digital Electronics",
+      "code": "G6",
+      "teacher": "MTO",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "Analog & Digital Electronics",
+      "code": "TS16",
+      "teacher": "MTO",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 16,
+      "duration": 1,
+      "title": "EC214",
+      "code": "TS10",
+      "teacher": "MJ",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 10,
+      "duration": 1,
+      "title": "Analog & Digital Electronics",
+      "code": "G3",
+      "teacher": "MTO",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 1,
+      "title": "HS211",
+      "code": "G3",
+      "teacher": "PSH",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 15,
+      "duration": 1,
+      "title": "EC214",
+      "code": "G3",
+      "teacher": "NF3",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 16,
+      "duration": 1,
+      "title": "MA301",
+      "code": "G3",
+      "teacher": "NSK",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G7",
+      "teacher": "ANS",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "BT211",
+      "code": "G3",
+      "teacher": "ANS",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 9,
+      "duration": 2,
+      "title": "Analog & Digital Electronics Lab",
+      "code": "ADE",
+      "teacher": "MTO/HIM",
+      "type": "lab"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 2,
+      "title": "EC214 (Lab)",
+      "code": "MODLAB",
+      "teacher": "SB/TA12",
+      "type": "lab"
+    },
+    {
+      "day": 6,
+      "start": 10,
+      "duration": 1,
+      "title": "MA301",
+      "code": "TS10",
+      "teacher": "NSK",
+      "type": "tut"
+    }
+  ],
+  "C1": [
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 1,
+      "title": "15BT211",
+      "code": "LT3",
+      "teacher": "GMA/RAC",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 10,
+      "duration": 1,
+      "title": "BT311",
+      "code": "LT3",
+      "teacher": "SOC/POC",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "15BT211",
+      "code": "TS13",
+      "teacher": "GMA/RAC",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 10,
+      "duration": 1,
+      "title": "15BT211",
+      "code": "LT3",
+      "teacher": "GMA/RAC",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "BT311",
+      "code": "LT3",
+      "teacher": "ASM APC",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "BT311",
+      "code": "LT3",
+      "teacher": "SOC/POC",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 1,
+      "title": "MA302",
+      "code": "FF6",
+      "teacher": "NF5",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "MA302",
+      "code": "TR302",
+      "teacher": "NF5",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "15BT211",
+      "code": "FF7",
+      "teacher": "GMA/RAC",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 15,
+      "duration": 1,
+      "title": "BT211",
+      "code": "FF7",
+      "teacher": "NV",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "BT311",
+      "code": "TR302",
+      "teacher": "ASM APC",
+      "type": "tut"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 1,
+      "title": "MA302",
+      "code": "FF5",
+      "teacher": "NF5",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 12,
+      "duration": 1,
+      "title": "BT211",
+      "code": "FF5",
+      "teacher": "NV",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "BT311",
+      "code": "G6",
+      "teacher": "ASM APC",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 15,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS11",
+      "teacher": "MM",
+      "type": "tut"
+    },
+    {
+      "day": 6,
+      "start": 10,
+      "duration": 1,
+      "title": "BT313",
+      "code": "TS13",
+      "teacher": "SOC/POC",
+      "type": "tut"
+    }
+  ],
+  "C2": [
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 1,
+      "title": "15BT211",
+      "code": "LT3",
+      "teacher": "GMA/RAC",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 10,
+      "duration": 1,
+      "title": "BT311",
+      "code": "LT3",
+      "teacher": "SOC/POC",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "BT311",
+      "code": "TS16",
+      "teacher": "ASM APC",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 10,
+      "duration": 1,
+      "title": "15BT211",
+      "code": "LT3",
+      "teacher": "GMA/RAC",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "BT311",
+      "code": "LT3",
+      "teacher": "ASM APC",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "BT311",
+      "code": "LT3",
+      "teacher": "SOC/POC",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 1,
+      "title": "MA302",
+      "code": "FF6",
+      "teacher": "NF5",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 1,
+      "title": "MA302",
+      "code": "TR302",
+      "teacher": "NF5",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS12",
       "teacher": "NES",
       "type": "tut"
     },
     {
       "day": 4,
-      "start": 11,
+      "start": 14,
       "duration": 1,
-      "title": "PH211",
-      "code": "TS7",
-      "teacher": "RKG",
+      "title": "15BT211",
+      "code": "FF7",
+      "teacher": "GMA/RAC",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 15,
+      "duration": 1,
+      "title": "BT211",
+      "code": "FF7",
+      "teacher": "NV",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 9,
+      "duration": 1,
+      "title": "15BT211",
+      "code": "TS16",
+      "teacher": "GMA/RAC",
       "type": "tut"
     },
     {
       "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "BT313",
+      "code": "TS13",
+      "teacher": "SOC/POC",
+      "type": "tut"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 1,
+      "title": "MA302",
+      "code": "FF5",
+      "teacher": "NF5",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 12,
+      "duration": 1,
+      "title": "BT211",
+      "code": "FF5",
+      "teacher": "NV",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "BT311",
+      "code": "G6",
+      "teacher": "ASM APC",
+      "type": "lec"
+    }
+  ],
+  "C3": [
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 1,
+      "title": "15BT211",
+      "code": "LT3",
+      "teacher": "GMA/RAC",
+      "type": "lec"
+    },
+    {
+      "day": 2,
       "start": 10,
       "duration": 1,
-      "title": "MA211",
-      "code": "TS6",
-      "teacher": "MSD",
+      "title": "BT311",
+      "code": "LT3",
+      "teacher": "SOC/POC",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "BT313",
+      "code": "TS11SOC",
+      "teacher": "POC",
       "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 10,
+      "duration": 1,
+      "title": "15BT211",
+      "code": "LT3",
+      "teacher": "GMA/RAC",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "BT311",
+      "code": "LT3",
+      "teacher": "ASM APC",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "BT311",
+      "code": "LT3",
+      "teacher": "SOC/POC",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 15,
+      "duration": 1,
+      "title": "MA302",
+      "code": "FF6",
+      "teacher": "NF5",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "BT311",
+      "code": "TS17",
+      "teacher": "ASM APC",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "15BT211",
+      "code": "FF7",
+      "teacher": "GMA/RAC",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "15BT211",
+      "code": "TS16",
+      "teacher": "GMA/RAC",
+      "type": "tut"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 1,
+      "title": "MA302",
+      "code": "FF5",
+      "teacher": "NF5",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 14,
+      "duration": 1,
+      "title": "BT311",
+      "code": "G6",
+      "teacher": "ASM APC",
+      "type": "lec"
     },
     {
       "day": 5,
       "start": 15,
       "duration": 1,
-      "title": "UHV",
-      "code": "FF2",
-      "teacher": "VRT",
-      "type": "lec"
+      "title": "HS211",
+      "code": "TS10",
+      "teacher": "AMN",
+      "type": "tut"
     },
     {
-      "day": 5,
-      "start": 16,
-      "duration": 1,
-      "title": "CI121",
-      "code": "FF1",
-      "teacher": "SHR",
-      "type": "lec"
-    },
-    {
-      "day": 5,
+      "day": 6,
       "start": 11,
       "duration": 1,
-      "title": "PH211",
-      "code": "CS3",
-      "teacher": "GPK",
+      "title": "MA302",
+      "code": "TS10",
+      "teacher": "NF5",
+      "type": "tut"
+    }
+  ],
+  "B11": [
+    {
+      "day": 2,
+      "start": 14,
+      "duration": 1,
+      "title": "CI311",
+      "code": "FF7",
+      "teacher": "PRV",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 10,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS10",
+      "teacher": "AMN",
+      "type": "tut"
+    },
+    {
+      "day": 2,
+      "start": 15,
+      "duration": 2,
+      "title": "B15CS213 (Lab)",
+      "code": "CL03",
+      "teacher": "ATI/ALK",
+      "type": "lab"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 2,
+      "title": "B15CS214 (Lab)",
+      "code": "CL20",
+      "teacher": "PU/SAM",
+      "type": "lab"
+    },
+    {
+      "day": 3,
+      "start": 12,
+      "duration": 1,
+      "title": "CI311",
+      "code": "G4",
+      "teacher": "PRV",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 16,
+      "duration": 1,
+      "title": "CS212",
+      "code": "FF7",
+      "teacher": "RTK",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 1,
+      "title": "MA213",
+      "code": "TS16",
+      "teacher": "RSH",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 14,
+      "duration": 1,
+      "title": "CS213",
+      "code": "FF5",
+      "teacher": "DEP",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 12,
+      "duration": 1,
+      "title": "CS214",
+      "code": "FF5",
+      "teacher": "HN",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 9,
+      "duration": 2,
+      "title": "B15CS215 (Lab)",
+      "code": "CL22",
+      "teacher": "23/SHB/SHY/DEV",
+      "type": "lab"
+    },
+    {
+      "day": 5,
+      "start": 9,
+      "duration": 1,
+      "title": "CS212",
+      "code": "FF6",
+      "teacher": "RTK",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 15,
+      "duration": 1,
+      "title": "CS213",
+      "code": "G4",
+      "teacher": "DEP",
       "type": "lec"
     },
     {
       "day": 5,
       "start": 10,
       "duration": 1,
-      "title": "Workshop",
+      "title": "CS213",
+      "code": "G8",
+      "teacher": "DEP",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 1,
+      "title": "CI311",
+      "code": "TR302",
+      "teacher": "RJM",
+      "type": "tut"
+    }
+  ],
+  "B8": [
+    {
+      "day": 2,
+      "start": 15,
+      "duration": 1,
+      "title": "MA213",
       "code": "TS10",
-      "teacher": "ASG",
+      "teacher": "PAT",
+      "type": "tut"
+    },
+    {
+      "day": 2,
+      "start": 11,
+      "duration": 1,
+      "title": "HS211",
+      "code": "FF7",
+      "teacher": "VSE",
+      "type": "lec"
+    },
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 2,
+      "title": "CI371 (Lab)",
+      "code": "CL18",
+      "teacher": "LM/VIB",
+      "type": "lab"
+    },
+    {
+      "day": 3,
+      "start": 14,
+      "duration": 1,
+      "title": "HS211",
+      "code": "TS10",
+      "teacher": "AMN",
+      "type": "tut"
+    },
+    {
+      "day": 3,
+      "start": 10,
+      "duration": 1,
+      "title": "CI311",
+      "code": "TS13",
+      "teacher": "SHG",
+      "type": "tut"
+    },
+    {
+      "day": 4,
+      "start": 11,
+      "duration": 1,
+      "title": "HS211",
+      "code": "G4",
+      "teacher": "VSE",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 9,
+      "duration": 1,
+      "title": "MA213",
+      "code": "CS7",
+      "teacher": "HZR",
+      "type": "lec"
+    },
+    {
+      "day": 4,
+      "start": 15,
+      "duration": 2,
+      "title": "B15CS213 (Lab)",
+      "code": "CL17",
+      "teacher": "18/RTK/ALK/IC/ABC/ISH",
+      "type": "lab"
+    },
+    {
+      "day": 5,
+      "start": 11,
+      "duration": 1,
+      "title": "MA213",
+      "code": "CR501",
+      "teacher": "HZR",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 15,
+      "duration": 2,
+      "title": "B15CS214 (Lab)",
+      "code": "CL23",
+      "teacher": "24/PAG/HN/MAY/PRK/BHA",
+      "type": "lab"
+    }
+  ],
+  "B10": [
+    {
+      "day": 2,
+      "start": 9,
+      "duration": 2,
+      "title": "B15CS215 (Lab)",
+      "code": "CL22",
+      "teacher": "23/SHB/ISH/DEV/POS/SHY",
+      "type": "lab"
+    },
+    {
+      "day": 3,
+      "start": 11,
+      "duration": 1,
+      "title": "HS211",
+      "code": "FF7",
+      "teacher": "AMN",
+      "type": "lec"
+    },
+    {
+      "day": 3,
+      "start": 9,
+      "duration": 2,
+      "title": "CI371 (Lab)",
+      "code": "CL09",
+      "teacher": "10/MKT/VRN/KRI/MON/AW",
+      "type": "lab"
+    },
+    {
+      "day": 4,
+      "start": 10,
+      "duration": 1,
+      "title": "CI311",
+      "code": "TS10",
+      "teacher": "LM",
       "type": "tut"
     },
     {
       "day": 5,
-      "start": 13,
+      "start": 11,
+      "duration": 1,
+      "title": "MA213",
+      "code": "G6",
+      "teacher": "NF6",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 9,
       "duration": 2,
-      "title": "Workshop Lab",
-      "code": "EW1",
-      "teacher": "ASG",
+      "title": "B15CS214 (Lab)",
+      "code": "CL05",
+      "teacher": "06/JAG/HN/PRK/BHA/JAT",
       "type": "lab"
     },
     {
       "day": 6,
-      "start": 12,
+      "start": 10,
       "duration": 1,
-      "title": "CI121",
-      "code": "FF1",
-      "teacher": "SHR",
+      "title": "MA213",
+      "code": "FF6",
+      "teacher": "NF6",
       "type": "lec"
     },
     {
       "day": 6,
-      "start": 9,
+      "start": 11,
       "duration": 2,
-      "title": "Life Skills Lab",
-      "code": "LL1",
-      "teacher": "ASU",
+      "title": "B15CS213 (Lab)",
+      "code": "CL11",
+      "teacher": "IC/AA",
       "type": "lab"
+    }
+  ],
+  "MINOR": [
+    {
+      "day": 2,
+      "start": 13,
+      "duration": 1,
+      "title": "PH311",
+      "code": "FF5",
+      "teacher": "SHIV",
+      "type": "lec"
+    },
+    {
+      "day": 5,
+      "start": 15,
+      "duration": 2,
+      "title": "PH311 (Lab)",
+      "code": "QCL",
+      "teacher": "AP",
+      "type": "lab"
+    },
+    {
+      "day": 5,
+      "start": 13,
+      "duration": 1,
+      "title": "PH311",
+      "code": "FF5",
+      "teacher": "SHIV",
+      "type": "lec"
     }
   ]
 };
