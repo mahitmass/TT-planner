@@ -30,10 +30,9 @@ function getSubjectName(code) {
 const finalBatches = {};
 
 rawData.forEach(entry => {
-    const dayMap = { "MON": 1, "TUE": 2, "WED": 3, "THU": 4, "FRI": 5, "SAT": 6, "SUN": 0 };
-    const dayIndex = dayMap[entry.day];
+    const dayIndex = entry.day;
     const batchName = entry.batch;
-    const actualHour = entry.start + 8; 
+    const actualHour = entry.start;
 
     // Overrides: Deletions
     if (overrides.deletions.some(del => del.batch === batchName && del.day === dayIndex && del.start === actualHour)) return;

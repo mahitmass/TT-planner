@@ -1,22 +1,4 @@
-let currentSemester = "2"; // Default Semester
-
-// Semester Button Listeners
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.sem-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.target.style.background = 'var(--primary)';
-            e.target.style.color = 'white';
-            e.target.classList.add('active');
-            
-            currentSemester = e.target.getAttribute('data-sem');
-            
-            // Force the grid/dropdown to redraw with the new semester's batches
-            if (typeof renderFilterPanel === "function") renderFilterPanel();
-            if (typeof populateBatchGrid === "function") populateBatchGrid(currentType); 
-        });
-    });
-});
-//old code 
+// Removed semester logic
 if ("serviceWorker" in navigator) {
     
     // 1. Listen for the "Reload" command from the Service Worker
@@ -30,9 +12,8 @@ if ("serviceWorker" in navigator) {
                 
                 const currentBatch = Storage.get('selectedBatch', 'A1');
                 
-                
                 const oldBatchSchedule = JSON.stringify(scheduleMap?.[currentBatch] || []);
-                const newBatchSchedule = JSON.stringify(newScheduleMap[currentSem]?.[currentBatch] || []);
+                const newBatchSchedule = JSON.stringify(newScheduleMap?.[currentBatch] || []);
                 
                 if (oldBatchSchedule !== newBatchSchedule) {
                     console.log("Current batch data changed. Showing Update button.");
@@ -43,6 +24,7 @@ if ("serviceWorker" in navigator) {
                 }
             } catch (err) {
                 console.error("Failed to parse new schedule data", err);
+
             }
         } else if (event.data && event.data.type === 'FORCE_RELOAD') {
             console.log("Force Update Triggered");

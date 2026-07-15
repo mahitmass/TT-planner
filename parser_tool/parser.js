@@ -4,44 +4,71 @@ const path = require('path');
 
 const CONFIG = { sheetIndex: 0 };
 
-// === THE FIX: BULLETPROOF SECTOR 62 & 128 TIMINGS ===
-const TIME_SLOT_MAP = {
-    // Sector 62 & 128 Standard Starts
-    "9-": 1,  "09-": 1, "9:00-": 1, "09:00-": 1, "9:00AM-": 1,
-    "10-": 2, "10:00-": 2, "10:00AM-": 2, "09:55-": 2, "9:55-": 2, "09:50-": 2, "9:50-": 2,
-    "11-": 3, "11:00-": 3, "11:00AM-": 3, "10:50-": 3, "10:40-": 3,
-    "12-": 4, "12:00-": 4, "12:00PM-": 4, "11:45-": 4, "11:30-": 4,
-    "1-": 5,  "01-": 5, "1:00-": 5, "1:00PM-": 5, "13:00-": 5, "12:40-": 5, "12:20-": 5,
-    "2-": 6,  "02-": 6, "2:00-": 6, "2:00PM-": 6, "14:00-": 6, "01:35-": 6, "1:35-": 6, "13:35-": 6, "01:10-": 6, "1:10-": 6,
-    "3-": 7,  "03-": 7, "3:00-": 7, "3:00PM-": 7, "15:00-": 7, "02:30-": 7, "2:30-": 7, "14:30-": 7,
-    "4-": 8,  "04-": 8, "4:00-": 8, "4:00PM-": 8, "16:00-": 8, "03:25-": 8, "3:25-": 8, "15:25-": 8, "02:50-": 8, "2:50-": 8,
-    "5-": 9,  "05-": 9, "5:00-": 9, "5:00PM-": 9, "17:00-": 9, "04:20-": 9, "4:20-": 9, "16:20-": 9, "03:40-": 9, "3:40-": 9
-};
-
-const DAY_MAP = {
-    "MON": "MON",   "MONDAY": "MON",
-    "TUE": "TUE",   "TUES": "TUE",   "TUESDAY": "TUE",
-    "WED": "WED",   "WEDNESDAY": "WED",
-    "THU": "THU",   "THUR": "THU",   "THURSDAY": "THU",
-    "FRI": "FRI",   "FRIDAY": "FRI",
-    "SAT": "SAT",   "SATURDAY": "SAT"
-};
-
-function cleanHeader(str) {
-    if (!str) return "";
-    return str.toString()
-        .toUpperCase()
-        .replace(/\s+/g, '')       
-        .replace(/[–—]/g, '-')     
-        .replace(/TO/g, '-')       
-        .replace(/\./g, ':');
+// Map time header text to hour (9AM=9, 10AM=10, etc.)
+function parseTimeHeader(text) {
+    if (!text) return null;
+    const cleaned = text.toString().toUpperCase().replace(/\s+/g, '').replace(/[–—]/g, '-').replace(/\./g, ':');
+    
+    // Must look like a time range: "9-10AM", "11-12PM", "1-2PM", "12-1PM", etc.
+    // Must contain a dash and at least one digit
+    if (!cleaned.includes('-') || !/\d/.test(cleaned)) return null;
+    
+    // Reject if it looks like class data (contains parentheses or slashes)
+    if (cleaned.includes('(') || cleaned.includes('/')) return null;
+    
+    // Try to extract: startHour-endHour[AM/PM]
+    const rangeMatch = cleaned.match(/^(\d{1,2})(?::?\d{0,2})?-(\d{1,2})(?::?\d{0,2})?(AM|PM)?$/);
+    if (!rangeMatch) return null;
+    
+    let startHour = parseInt(rangeMatch[1], 10);
+    let endHour = parseInt(rangeMatch[2], 10);
+    let ampm = rangeMatch[3]; // AM or PM suffix (applies to END hour typically)
+    
+    // If we have AM/PM, figure out the actual start hour
+    if (ampm === 'PM') {
+        // End hour is PM
+        if (endHour < 12) endHour += 12;
+        // Start hour: if it's >= endHour-2 and < 12, it's probably AM (like 11-12PM means 11AM)
+        // If start hour is small (1-6), it's PM too (like 1-2PM means 13)
+        if (startHour <= 6) startHour += 12; // 1-2PM -> 13, 2-3PM -> 14, etc.
+        // 11-12PM: startHour=11, keep as-is (11AM)
+        // 12-1PM: startHour=12, keep as-is (12PM)
+    } else if (ampm === 'AM') {
+        // Both are AM
+        // 9-10AM: startHour=9, fine
+    } else {
+        // No AM/PM suffix - try to infer from hour values
+        // If startHour is 1-6, assume PM
+        if (startHour >= 1 && startHour <= 6) startHour += 12;
+    }
+    
+    // Sanity check: only accept hours 8-18
+    if (startHour >= 8 && startHour <= 18) return startHour;
+    return null;
 }
 
-// === THE FIX: SPLIT GLUED BATCHES (e.g. F9F10 -> F9, F10) ===
+const DAY_MAP = {
+    "MON": 1, "MONDAY": 1,
+    "TUE": 2, "TUES": 2, "TUESDAY": 2,
+    "WED": 3, "WEDNESDAY": 3,
+    "THU": 4, "THUR": 4, "THURSDAY": 4,
+    "FRI": 5, "FRIDAY": 5,
+    "SAT": 6, "SATURDAY": 6
+};
+
+// Detect day from cell text
+function detectDay(text) {
+    if (!text) return null;
+    const cleaned = text.toString().toUpperCase().trim();
+    for (const [key, val] of Object.entries(DAY_MAP)) {
+        if (cleaned === key || cleaned.startsWith(key)) return val;
+    }
+    return null;
+}
+
+// === BATCH EXPANSION: e.g. "A1-A4" -> ["A1","A2","A3","A4"] ===
 function expandBatches(batchString) {
-    // Inserts a comma between a number and a letter
     let spaced = batchString.replace(/(\d)([A-Za-z])/g, '$1,$2');
-    
     const parts = spaced.split(/[,+]/).map(s => s.trim()).filter(s => s);
     const expanded = [];
 
@@ -59,7 +86,7 @@ function expandBatches(batchString) {
                     const startNum = parseInt(matchStart[2], 10);
                     const endNum = parseInt(matchEnd[2], 10);
                     
-                    if (startNum <= endNum) {
+                    if (startNum <= endNum && (endNum - startNum) < 20) {
                         for (let i = startNum; i <= endNum; i++) expanded.push(`${prefix}${i}`);
                     } else expanded.push(part);
                 } else expanded.push(part);
@@ -71,22 +98,26 @@ function expandBatches(batchString) {
     return expanded;
 }
 
-// === THE FIX: MULTI-CLASS CELLS & TEACHER COMMAS ===
+// === PARSE A SINGLE CELL's TEXT ===
 function parseCellString(rawText) {
     if (!rawText || typeof rawText !== 'string') return [];
     
-    // Convert newlines to spaces so we can process multi-class cells mathematically
     const text = rawText.replace(/\r?\n/g, ' ').replace(/[–—]/g, '-').replace(/\s+/g, ' ').trim();
     
-    // Lookahead Regex: Splits string safely when two classes share the same cell
-    const entries = text.match(/[A-Z0-9,+-]+\s*\(\s*[^)]+\s*\)[^(]*(?=\s*[A-Z0-9,+-]+\s*\(\s*[^)]+\s*\)|$)/gi);
+    // Skip cells that are clearly headers/junk (day names, time slots, "LEGEND", etc.)
+    const upperText = text.toUpperCase();
+    if (/^(MON|TUE|WED|THU|FRI|SAT|SUN|LEGEND|BACKLOG|PROBABILITY AND|NOTE)/i.test(upperText)) return [];
+    if (/^\d{1,2}-\d{1,2}(AM|PM)?$/i.test(text.replace(/\s/g, ''))) return []; // skip time-only cells
+    
+    // Lookahead Regex: Splits when two classes share the same cell
+    const entries = text.match(/[A-Z0-9,+\- ]+\(\s*[^)]+\s*\)[^(]*(?=\s*[A-Z0-9,+\- ]+\(\s*[^)]+\s*\)|$)/gi);
     
     if (!entries) return [];
 
     const results = [];
 
     entries.forEach(entry => {
-        // THE MAGIC REGEX
+        // Match: BATCHES(SUBJECT)-ROOM/TEACHER
         const match = entry.match(/^([^()]+)\s*\(\s*([^)]+)\s*\)\s*-?\s*(.+?)\s*[\/;,]+\s*(.+)$/i);     
         
         if (!match) return;
@@ -94,8 +125,6 @@ function parseCellString(rawText) {
         let batchPart = match[1].trim();
         let subjectPart = match[2].trim();
         let roomPart = match[3].trim();
-        
-        // Convert Teacher commas to clean slashes
         let teacherPart = match[4].trim().replace(/\s*[,;]\s*/g, '/').replace(/\s*\/\s*/g, '/');
         
         let type = 'LEC';
@@ -106,22 +135,25 @@ function parseCellString(rawText) {
         else if (cleanBatches.startsWith('L')) type = 'LEC';
         else if (subjectPart.toUpperCase().includes('LAB')) type = 'LAB';
 
-        // Strip the L, T, P prefix BEFORE expanding
+        // Strip the L, T, P prefix
         cleanBatches = cleanBatches.replace(/^[LTP](?=[A-Z])/i, '').trim();
 
         const rawBatchesList = expandBatches(cleanBatches);
         
         rawBatchesList.forEach(b => {
-            let finalBatch = b.trim();
-            if (finalBatch.length > 0 && finalBatch.length <= 5) {
-                results.push({
-                    rawBatch: finalBatch,
-                    type: type,
-                    subject: subjectPart,
-                    room: roomPart,
-                    teacher: teacherPart
-                });
-            }
+            let finalBatch = b.trim().toUpperCase();
+            
+            // VALIDATION: batch must match pattern like A1, B12, C3, D1, G1, etc.
+            // Must start with a letter and end with digits, total length 2-4
+            if (!/^[A-Z]\d{1,3}$/.test(finalBatch)) return;
+            
+            results.push({
+                rawBatch: finalBatch,
+                type: type,
+                subject: subjectPart,
+                room: roomPart,
+                teacher: teacherPart
+            });
         });
     });
 
@@ -142,18 +174,23 @@ function parseSingleFile(filePath) {
     const range = XLSX.utils.decode_range(sheet['!ref']);
     const merges = sheet['!merges'] || [];
 
+    // === STEP 1: Find the time header row ===
+    // Look for a row that has at least 3 valid time headers in columns 1+
     let timeRowIndex = -1;
     let colToStartHour = {};
 
-    for (let R = 0; R <= 10; ++R) {
+    for (let R = 0; R <= 15; ++R) {
         let matchesInRow = 0;
         let tempMap = {};
-        for (let C = 0; C <= range.e.c; ++C) {
+        for (let C = 1; C <= range.e.c; ++C) { // Start from col 1, not col 0 (col 0 has day names)
             const cell = sheet[XLSX.utils.encode_cell({ r: R, c: C })];
             if (cell && cell.v) {
-                const cleaned = cleanHeader(cell.v.toString());
-                let foundTime = Object.values(TIME_SLOT_MAP).find((_, idx) => cleaned.includes(Object.keys(TIME_SLOT_MAP)[idx]));
-                if (foundTime) { matchesInRow++; tempMap[C] = foundTime; }
+                const cellText = cell.v.toString().trim();
+                const hour = parseTimeHeader(cellText);
+                if (hour !== null) {
+                    matchesInRow++;
+                    tempMap[C] = hour;
+                }
             }
         }
         if (matchesInRow >= 3) {
@@ -168,43 +205,69 @@ function parseSingleFile(filePath) {
         return [];
     }
 
-    let dataStartRowIndex = -1;
-    for (let R = timeRowIndex + 1; R <= range.e.r; ++R) {
+    console.log(`   ⏰ Time header row: ${timeRowIndex}, columns mapped: ${JSON.stringify(colToStartHour)}`);
+
+    // === STEP 2: Detect the day for the time header row itself ===
+    // The day name (e.g. "MON") might be on the SAME row as the time headers
+    let firstDay = null;
+    const dayCell = sheet[XLSX.utils.encode_cell({ r: timeRowIndex, c: 0 })];
+    if (dayCell && dayCell.v) {
+        firstDay = detectDay(dayCell.v.toString());
+    }
+    
+    // Data starts from the row AFTER the time header
+    const dataStartRow = timeRowIndex + 1;
+    
+    // === STEP 3: Build a map of which rows belong to which day ===
+    // Using merge information + cell scanning
+    const rowToDay = {};
+    
+    // If the time header row had a day, all subsequent rows until next day belong to it
+    if (firstDay !== null) {
+        // Find the merge range for column 0 starting at timeRowIndex
+        const dayMerge = merges.find(m => m.s.r === timeRowIndex && m.s.c === 0);
+        const endRow = dayMerge ? dayMerge.e.r : timeRowIndex;
+        for (let R = dataStartRow; R <= endRow; R++) {
+            rowToDay[R] = firstDay;
+        }
+        console.log(`   📅 First day: ${firstDay} (rows ${dataStartRow}-${endRow})`);
+    }
+    
+    // Now scan remaining rows for day names in column 0
+    for (let R = dataStartRow; R <= range.e.r; ++R) {
+        if (rowToDay[R] !== undefined) continue; // already assigned
+        
         const cell = sheet[XLSX.utils.encode_cell({ r: R, c: 0 })];
         if (cell && cell.v) {
-            const val = cleanHeader(cell.v);
-            if (DAY_MAP[val] || Object.keys(DAY_MAP).some(k => val.includes(k))) {
-                dataStartRowIndex = R;
-                break;
+            const dayVal = detectDay(cell.v.toString());
+            if (dayVal !== null) {
+                // Find merge range for this day cell
+                const dayMerge = merges.find(m => m.s.r === R && m.s.c === 0);
+                const endRow = dayMerge ? dayMerge.e.r : R;
+                for (let rr = R; rr <= endRow; rr++) {
+                    rowToDay[rr] = dayVal;
+                }
+                console.log(`   📅 Day ${dayVal}: rows ${R}-${endRow}`);
             }
+            
+            // Stop at LEGEND
+            if (cell.v.toString().toUpperCase().includes('LEGEND')) break;
         }
     }
 
-    if (dataStartRowIndex === -1) return [];
-
+    // === STEP 4: Extract class data ===
     const results = [];
-    let currentDayStr = null;
 
-    for (let R = dataStartRowIndex; R <= range.e.r; ++R) {
-        const dayCell = sheet[XLSX.utils.encode_cell({ r: R, c: 0 })];
-        let dayVal = dayCell ? dayCell.v.toString().toUpperCase().trim() : "";
-        
-        if (dayVal.length > 0) {
-            let cleanDay = cleanHeader(dayVal);
-            for (const [key, val] of Object.entries(DAY_MAP)) {
-                if (cleanDay.includes(key)) { currentDayStr = val; break; }
-            }
-            if (dayVal.includes("LEGEND")) break;
-        }
+    for (let R = dataStartRow; R <= range.e.r; ++R) {
+        const currentDay = rowToDay[R];
+        if (!currentDay) continue;
 
-        if (!currentDayStr) continue; 
-
-        for (let C = 0; C <= range.e.c; ++C) {
+        for (let C = 1; C <= range.e.c; ++C) {
             const startHour = colToStartHour[C];
             if (!startHour) continue;
 
             const mergeObj = isInsideMerge(R, C, merges);
-            if (mergeObj && (mergeObj.s.r !== R || mergeObj.s.c !== C)) continue; 
+            if (mergeObj && (mergeObj.s.r !== R || mergeObj.s.c !== C)) continue;
 
             const cell = sheet[XLSX.utils.encode_cell({ r: R, c: C })];
             if (cell && cell.v) {
@@ -213,7 +276,7 @@ function parseSingleFile(filePath) {
                 const parsedDataList = parseCellString(cell.v.toString());
                 parsedDataList.forEach(parsedData => {
                     results.push({
-                        day: currentDayStr,
+                        day: currentDay,
                         start: startHour,
                         duration: duration,
                         batch: parsedData.rawBatch,
@@ -229,14 +292,11 @@ function parseSingleFile(filePath) {
     return results;
 }
 
-// ... (Keep TIME_SLOT_MAP, Regex, and parseSingleFile exactly the same) ...
-
-// === THE NEW MULTI-SEM SCANNER & DEDUPLICATOR ===
+// === MAIN ===
 function main() {
     const rawDataDir = path.join(__dirname, '../raw_data');
     let filesToParse = [];
 
-    // Recursively dig through folders to find all Excels/CSVs
     function findFiles(dir) {
         if (!fs.existsSync(dir)) return;
         const items = fs.readdirSync(dir);
@@ -271,7 +331,7 @@ function main() {
         }
     });
 
-    // --- THE DEDUPLICATOR ---
+    // --- DEDUPLICATOR ---
     const uniqueClasses = new Map();
     combinedSchedule.forEach(entry => {
         const uniqueKey = `${entry.batch}-${entry.day}-${entry.start}`;
@@ -285,6 +345,26 @@ function main() {
     if (finalCleanSchedule.length > 0) {
         fs.writeFileSync(path.join(__dirname, 'parsed_output.json'), JSON.stringify(finalCleanSchedule, null, 2));
         console.log(`\n🎉 Success! Final master count: ${finalCleanSchedule.length}`);
+        
+        // Summary per batch
+        const batchCounts = {};
+        finalCleanSchedule.forEach(e => {
+            batchCounts[e.batch] = (batchCounts[e.batch] || 0) + 1;
+        });
+        const sortedBatches = Object.keys(batchCounts).sort((a, b) => a.localeCompare(b, undefined, {numeric: true}));
+        console.log('\n📊 Entries per batch:');
+        sortedBatches.forEach(b => console.log(`   ${b}: ${batchCounts[b]}`));
+        
+        // Summary per day
+        const dayCounts = {};
+        finalCleanSchedule.forEach(e => {
+            dayCounts[e.day] = (dayCounts[e.day] || 0) + 1;
+        });
+        console.log('\n📊 Entries per day:');
+        Object.keys(dayCounts).sort().forEach(d => {
+            const dayNames = {1:'MON',2:'TUE',3:'WED',4:'THU',5:'FRI',6:'SAT'};
+            console.log(`   ${dayNames[d] || d}: ${dayCounts[d]}`);
+        });
     } else {
         console.log("\n❌ No data was extracted.");
     }
