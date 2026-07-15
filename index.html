@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Batch Timetable</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#121212">
+  <meta name="description" content="Interactive timetable for batch schedules">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="Logo.png">
+  <link rel="apple-touch-icon" href="Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body data-theme="dark">
+
+  <header>
+    <div class="brand-container">
+      <img src="Logo.png" alt="Timetable App Logo" class="app-logo">
+      <h1>Planner</h1>
+    </div>
+    <div class="header-controls">
+      <button id="teacher-mode-btn" class="icon-btn" aria-label="Search Mode">
+        <span class="t-icon">🔍</span> <span class="t-label">Search</span>
+      </button>
+      <button class="filter-toggle-btn" onclick="TimetableApp.toggleFilterPanel()" aria-expanded="false" aria-controls="filter-panel">
+        FILTERS <span id="filter-arrow">🔽</span>
+      </button>
+      
+      <button class="icon-btn" onclick="TimetableApp.toggleTheme()" id="theme-btn" aria-label="Toggle theme">☀</button>
+    </div>
+  </header>
+
+  <div id="filter-panel" role="region" aria-label="Filter panel">
+    <div class="filter-content">
+  <div class="teacher-hint">
+          <span class="hint-arrow">⤴</span> <span>Search Mode</span>          </div>
+  <div id="student-controls">
+      <div class="filter-group bring-to-front">
+        <div class="filter-label">Select Batch</div>
+        <div class="batch-selector-row">
+          <button id="series-trigger-btn" class="dropdown-trigger half-width" onclick="TimetableApp.toggleSeries()">
+            <span id="series-text">62 Series</span> ⇄
+          </button>
+          <button id="batch-trigger-btn" class="dropdown-trigger half-width" onclick="TimetableApp.toggleBatchGrid()">
+            <span id="trigger-text">Select Batch</span> ▼
+          </button>
+        </div>
+        <div class="semester-toggle" style="display: flex; justify-content: center; gap: 10px; margin-top: 10px; margin-bottom: 5px;">
+            <button class="sem-btn active" data-sem="2" style="flex: 1; padding: 6px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: var(--primary); color: white; cursor: pointer; font-size: 0.9rem; font-weight: bold;">Sem 2</button>
+            <button class="sem-btn" data-sem="4" style="flex: 1; padding: 6px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--text); cursor: pointer; font-size: 0.9rem; font-weight: bold;">Sem 4</button>
+        </div>
+        <div id="floating-batch-grid" class="floating-grid hidden"></div>
+      </div>
+  </div>
+
+  <div id="teacher-controls" class="hidden">
+      <div class="filter-group">
+        <div class="filter-label">Find Teacher/Classroom</div>
+        <div class="search-wrapper">
+          <input type="text" id="teacher-search" placeholder="Type (e.g. ANK, Manoj, G2)..." autocomplete="off">
+          <div id="search-suggestions" class="suggestions-list"></div>
+        </div>
+      </div>
+  </div>
+      
+      <div class="filter-group">
+        <div class="filter-label">View Mode</div>
+        <div class="filter-options">
+          <button class="toggle-btn" id="btn-swipe" onclick="TimetableApp.setViewMode('swipe')" aria-pressed="true">Swipe Cards</button>
+          <button class="toggle-btn" id="btn-table" onclick="TimetableApp.setViewMode('table')" aria-pressed="false">Table View</button>
+        </div>
+      </div>
+      
+      <div class="filter-group">
+        <div class="filter-label">Jump to Day</div>
+        <div class="filter-options" id="day-filters">
+          <button class="day-btn" data-day="1" onclick="TimetableApp.manualJumpToDay(1)" aria-label="Jump to Monday">M</button>
+          <button class="day-btn" data-day="2" onclick="TimetableApp.manualJumpToDay(2)" aria-label="Jump to Tuesday">T</button>
+          <button class="day-btn" data-day="3" onclick="TimetableApp.manualJumpToDay(3)" aria-label="Jump to Wednesday">W</button>
+          <button class="day-btn" data-day="4" onclick="TimetableApp.manualJumpToDay(4)" aria-label="Jump to Thursday">T</button>
+          <button class="day-btn" data-day="5" onclick="TimetableApp.manualJumpToDay(5)" aria-label="Jump to Friday">F</button>
+          <button class="day-btn" data-day="6" onclick="TimetableApp.manualJumpToDay(6)" aria-label="Jump to Saturday">S</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="timetable-container" class="view-container">
+    <div id="floating-batch" class="floating-batch" aria-live="polite">BATCH A1</div>
+    <div id="batch-scroller" class="batch-scroll-overlay">
+        </div>
+    <div class="days-track" id="daysTrack"></div>
+  </div>
+
+  <div id="compact-container" class="view-container hidden-view">
+    <table class="weekly-table" aria-label="Weekly timetable">
+      <thead>
+        <tr>
+          <th scope="col" id="table-corner-label">Time</th>
+          <th scope="col">Mon</th>
+          <th scope="col">Tue</th>
+          <th scope="col">Wed</th>
+          <th scope="col">Thu</th>
+          <th scope="col">Fri</th>
+          <th scope="col">Sat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table content will be inserted here by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+
+  <div id="smart-update-btn" class="smart-update-btn hidden" onclick="window.location.reload(true)">
+    Update Available <span class="update-icon">🔄</span>
+  </div>
+
+  <div class="footer-sig">
+    Made by <span class="signature">Mass~<a href="https://github.com/mahitmass/TT-planner" target="_blank" style="color: var(--accent-color); text-decoration: underline;">MAHIT A6</a></span> | Swipe left/right for days
+</div>
+  <!-- Screen reader announcements -->
+  <div id="sr-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  
+<div id="details-modal" class="modal-overlay hidden-modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+      
+      <h2 id="modal-subject" class="modal-title">Subject Name</h2>
+      <div id="modal-time" class="modal-subtitle">00:00 AM - 00:00 AM</div>
+      
+      <div class="modal-grid">
+        <div class="modal-row">
+          <span class="modal-label">Type:</span>
+          <span id="modal-type" class="modal-value">Lecture</span>
+        </div>
+        <div class="modal-row">
+          <span class="modal-label">Teacher:</span>
+          <span id="modal-teacher" class="modal-value">Dr. Name</span>
+        </div>
+        <div class="modal-row">
+          <span class="modal-label">Batches:</span>
+          <span id="modal-batch" class="modal-value">A1</span>
+        </div>
+        <div class="modal-row" id="modal-venue-row"> <span class="modal-label">Venue:</span>
+  <span id="modal-room" class="modal-value">LT-1</span>
+</div>
+      </div>
+    </div>
+  </div>
+  <!-- JavaScript Files -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
