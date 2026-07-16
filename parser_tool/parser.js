@@ -291,7 +291,7 @@ function parseCellString(rawText, semester) {
         if (isMisarranged) {
             // Re-parse the text for this entry using token classification to fix the misarrangement
             let combinedString = `${res.rawBatch} ${res.subject} ${res.room} ${res.teacher}`;
-            let corrected = parseCellStringTokens(combinedString, semester);
+            let corrected = parseCellStringTokens(combinedString, semester, [res.rawBatch]);
             if (corrected.length > 0) {
                 finalResults.push(...corrected);
             } else {
@@ -540,7 +540,7 @@ function main() {
 
 main();
 // === SECOND LEVEL PARSING (TOKEN CLASSIFICATION) ===
-function parseCellStringTokens(rawText, semester) {
+function parseCellStringTokens(rawText, semester, knownBatches = []) {
     if (!rawText || typeof rawText !== 'string') return [];
     
     // Normalize text
@@ -566,7 +566,9 @@ function parseCellStringTokens(rawText, semester) {
     tokens.forEach(token => {
         let t = token.toUpperCase();
         
-        if (teacherCodes.includes(t) || /^NF\d{1,3}$/.test(t)) {
+        if (knownBatches.includes(t)) {
+            foundBatches.push(t);
+        } else if (teacherCodes.includes(t) || /^NF\d{1,3}$/.test(t)) {
             foundTeachers.push(t);
         } else if (roomCodes.includes(t) || /^(CL|CR|TR|TS|G|F|FF|PL|BT|MCL|LAB)\d{1,3}$/.test(t)) {
             foundRooms.push(t);
