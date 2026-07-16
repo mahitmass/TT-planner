@@ -1733,8 +1733,8 @@
     "batch": "G5",
     "type": "LAB",
     "subject": "CS111",
-    "room": "AVR,DSI",
-    "teacher": "CL01",
+    "room": "CL01",
+    "teacher": "AVR,DSI",
     "semester": 1
   },
   {
@@ -1766,8 +1766,8 @@
     "batch": "G4",
     "type": "LAB",
     "subject": "CS111",
-    "room": "AW,SHR",
-    "teacher": "CL02",
+    "room": "CL02",
+    "teacher": "AW,SHR",
     "semester": 1
   },
   {
@@ -3933,8 +3933,8 @@
     "batch": "G2",
     "type": "LAB",
     "subject": "CS111",
-    "room": "ASA,ANV",
-    "teacher": "CL06",
+    "room": "CL06",
+    "teacher": "ASA,ANV",
     "semester": 1
   },
   {
@@ -3955,8 +3955,8 @@
     "batch": "G6",
     "type": "LAB",
     "subject": "CS111",
-    "room": "RCA,PTK",
-    "teacher": "CL03",
+    "room": "CL03",
+    "teacher": "RCA,PTK",
     "semester": 1
   },
   {
@@ -8190,8 +8190,8 @@
     "batch": "G3",
     "type": "LAB",
     "subject": "CS111",
-    "room": "MGR,AKT",
-    "teacher": "CL09",
+    "room": "CL09",
+    "teacher": "MGR,AKT",
     "semester": 1
   },
   {
@@ -11204,8 +11204,8 @@
     "batch": "G1",
     "type": "LAB",
     "subject": "CS111",
-    "room": "ANV,NF14",
-    "teacher": "CL01",
+    "room": "CL01",
+    "teacher": "ANV,NF14",
     "semester": 1
   },
   {
