@@ -299,6 +299,10 @@ function parseCellString(rawText, semester) {
         }
     });
 
+    if (finalResults.length === 0) {
+        return parseCellStringTokens(rawText, semester);
+    }
+
     return finalResults;
 }
 

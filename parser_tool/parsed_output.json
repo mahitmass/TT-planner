@@ -1698,10 +1698,10 @@
     "start": 10,
     "duration": 2,
     "batch": "A7",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "NIY,APR",
-    "teacher": "CL05",
+    "room": "CL05",
+    "teacher": "NIY,APR",
     "semester": 1
   },
   {
@@ -1841,10 +1841,10 @@
     "start": 13,
     "duration": 2,
     "batch": "B13",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "NAC,SHO",
-    "teacher": "CL05",
+    "room": "CL05",
+    "teacher": "NAC,SHO",
     "semester": 1
   },
   {
@@ -1852,10 +1852,10 @@
     "start": 15,
     "duration": 2,
     "batch": "B14",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "AYS,NF14",
-    "teacher": "CL01",
+    "room": "CL01",
+    "teacher": "AYS",
     "semester": 1
   },
   {
@@ -1907,10 +1907,10 @@
     "start": 13,
     "duration": 2,
     "batch": "B1",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "AYS,PSO",
-    "teacher": "CL01",
+    "room": "CL01",
+    "teacher": "AYS,PSO",
     "semester": 1
   },
   {
@@ -1918,10 +1918,10 @@
     "start": 15,
     "duration": 2,
     "batch": "A10",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "ANP,NF13",
-    "teacher": "CL02",
+    "room": "CL02",
+    "teacher": "ANP",
     "semester": 1
   },
   {
@@ -1940,10 +1940,10 @@
     "start": 13,
     "duration": 2,
     "batch": "B2",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "DCH",
-    "teacher": "SLK,CL02",
+    "room": "CL02",
+    "teacher": "DCH,SLK",
     "semester": 1
   },
   {
@@ -1951,10 +1951,10 @@
     "start": 15,
     "duration": 2,
     "batch": "B20",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "SHV,NF15",
-    "teacher": "CL05",
+    "room": "CL05",
+    "teacher": "SHV",
     "semester": 1
   },
   {
@@ -3887,10 +3887,10 @@
     "start": 13,
     "duration": 2,
     "batch": "B3",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "SMS,MAY",
-    "teacher": "CL01",
+    "room": "CL01",
+    "teacher": "SMS,MAY",
     "semester": 1
   },
   {
@@ -3898,10 +3898,10 @@
     "start": 15,
     "duration": 2,
     "batch": "D1",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "AW,AVR",
-    "teacher": "CL05",
+    "room": "CL05",
+    "teacher": "AW,AVR",
     "semester": 1
   },
   {
@@ -3920,10 +3920,10 @@
     "start": 13,
     "duration": 2,
     "batch": "B4",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "NAC,SHV",
-    "teacher": "CL02",
+    "room": "CL02",
+    "teacher": "NAC,SHV",
     "semester": 1
   },
   {
@@ -4008,10 +4008,10 @@
     "start": 9,
     "duration": 2,
     "batch": "A17",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "DSI,DCH",
-    "teacher": "CL01",
+    "room": "CL01",
+    "teacher": "DSI,DCH",
     "semester": 1
   },
   {
@@ -4041,10 +4041,10 @@
     "start": 9,
     "duration": 2,
     "batch": "A18",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "SHR,SRG",
-    "teacher": "CL02",
+    "room": "CL02",
+    "teacher": "SHR,SRG",
     "semester": 1
   },
   {
@@ -4074,10 +4074,10 @@
     "start": 9,
     "duration": 2,
     "batch": "C4",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "BS,SHP",
-    "teacher": "CL21",
+    "room": "CL21",
+    "teacher": "BS,SHP",
     "semester": 1
   },
   {
@@ -4085,10 +4085,10 @@
     "start": 15,
     "duration": 2,
     "batch": "C2",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "BS,MSH",
-    "teacher": "CL21",
+    "room": "CL21",
+    "teacher": "BS,MSH",
     "semester": 1
   },
   {
@@ -5944,10 +5944,10 @@
     "start": 13,
     "duration": 2,
     "batch": "H1",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "MSI,PTK",
-    "teacher": "CL03",
+    "room": "CL03",
+    "teacher": "MSI,PTK",
     "semester": 1
   },
   {
@@ -6087,10 +6087,10 @@
     "start": 10,
     "duration": 2,
     "batch": "B9",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "NIY,APR",
-    "teacher": "CL05",
+    "room": "CL05",
+    "teacher": "NIY,APR",
     "semester": 1
   },
   {
@@ -6120,10 +6120,10 @@
     "start": 10,
     "duration": 2,
     "batch": "H2",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "SHR,ASA",
-    "teacher": "CL06",
+    "room": "CL06",
+    "teacher": "SHR,ASA",
     "semester": 1
   },
   {
@@ -6131,10 +6131,10 @@
     "start": 13,
     "duration": 2,
     "batch": "A3",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "AYS,DCH",
-    "teacher": "CL01",
+    "room": "CL01",
+    "teacher": "AYS,DCH",
     "semester": 1
   },
   {
@@ -6142,10 +6142,10 @@
     "start": 15,
     "duration": 2,
     "batch": "A5",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "APR,ASA",
-    "teacher": "CL05",
+    "room": "CL05",
+    "teacher": "APR,ASA",
     "semester": 1
   },
   {
@@ -6153,10 +6153,10 @@
     "start": 10,
     "duration": 2,
     "batch": "B10",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "ANV,DSI",
-    "teacher": "CL07",
+    "room": "CL07",
+    "teacher": "ANV,DSI",
     "semester": 1
   },
   {
@@ -6197,10 +6197,10 @@
     "start": 13,
     "duration": 2,
     "batch": "A4",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "MAY,AM",
-    "teacher": "CL02",
+    "room": "CL02",
+    "teacher": "MAY,AM",
     "semester": 1
   },
   {
@@ -6208,10 +6208,10 @@
     "start": 15,
     "duration": 2,
     "batch": "B16",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "AKT,NAC",
-    "teacher": "CL06",
+    "room": "CL06",
+    "teacher": "AKT,NAC",
     "semester": 1
   },
   {
@@ -6241,10 +6241,10 @@
     "start": 15,
     "duration": 2,
     "batch": "A6",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "ANV,NF12",
-    "teacher": "CL07",
+    "room": "CL07",
+    "teacher": "ANV",
     "semester": 1
   },
   {
@@ -6340,10 +6340,10 @@
     "start": 15,
     "duration": 2,
     "batch": "C5",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "MSH,SAA",
-    "teacher": "CL01",
+    "room": "CL01",
+    "teacher": "MSH,SAA",
     "semester": 1
   },
   {
@@ -7979,10 +7979,10 @@
     "start": 10,
     "duration": 2,
     "batch": "D3",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "SLK,MSI",
-    "teacher": "CL01",
+    "room": "CL01",
+    "teacher": "SLK,MSI",
     "semester": 1
   },
   {
@@ -8166,10 +8166,10 @@
     "start": 10,
     "duration": 2,
     "batch": "A1",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "TAJ,AM",
-    "teacher": "CL02",
+    "room": "CL02",
+    "teacher": "TAJ,AM",
     "semester": 1
   },
   {
@@ -8210,10 +8210,10 @@
     "start": 13,
     "duration": 2,
     "batch": "B11",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "PSO,ANP",
-    "teacher": "CL05",
+    "room": "CL05",
+    "teacher": "PSO,ANP",
     "semester": 1
   },
   {
@@ -8221,10 +8221,10 @@
     "start": 15,
     "duration": 2,
     "batch": "A8",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "SJA,ROH",
-    "teacher": "CL01",
+    "room": "CL01",
+    "teacher": "SJA,ROH",
     "semester": 1
   },
   {
@@ -8232,10 +8232,10 @@
     "start": 13,
     "duration": 2,
     "batch": "B12",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "RJM,RCA",
-    "teacher": "CL06",
+    "room": "CL06",
+    "teacher": "RJM,RCA",
     "semester": 1
   },
   {
@@ -8254,10 +8254,10 @@
     "start": 9,
     "duration": 2,
     "batch": "C1",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "SHP,BS",
-    "teacher": "CL21",
+    "room": "CL21",
+    "teacher": "SHP,BS",
     "semester": 1
   },
   {
@@ -8353,10 +8353,10 @@
     "start": 9,
     "duration": 2,
     "batch": "A2",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "SAA,ROH",
-    "teacher": "CL05",
+    "room": "CL05",
+    "teacher": "SAA,ROH",
     "semester": 1
   },
   {
@@ -10146,10 +10146,10 @@
     "start": 15,
     "duration": 2,
     "batch": "B15",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "ANP,NF14",
-    "teacher": "CL01",
+    "room": "CL01",
+    "teacher": "ANP",
     "semester": 1
   },
   {
@@ -10300,10 +10300,10 @@
     "start": 15,
     "duration": 2,
     "batch": "B7",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "SOS,NF15",
-    "teacher": "CL05",
+    "room": "CL05",
+    "teacher": "SOS",
     "semester": 1
   },
   {
@@ -10333,10 +10333,10 @@
     "start": 15,
     "duration": 2,
     "batch": "B8",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "SMS,NF16",
-    "teacher": "CL06",
+    "room": "CL06",
+    "teacher": "SMS",
     "semester": 1
   },
   {
@@ -10355,10 +10355,10 @@
     "start": 13,
     "duration": 2,
     "batch": "A15",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "SHO,DCH",
-    "teacher": "CL03",
+    "room": "CL03",
+    "teacher": "SHO,DCH",
     "semester": 1
   },
   {
@@ -10366,10 +10366,10 @@
     "start": 15,
     "duration": 2,
     "batch": "D4",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "NF13",
-    "teacher": "CL02",
+    "room": "CL02",
+    "teacher": "TBA",
     "semester": 1
   },
   {
@@ -10388,10 +10388,10 @@
     "start": 13,
     "duration": 2,
     "batch": "A16",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "ANP,NF13",
-    "teacher": "CL02",
+    "room": "CL02",
+    "teacher": "ANP",
     "semester": 1
   },
   {
@@ -11224,10 +11224,10 @@
     "start": 11,
     "duration": 2,
     "batch": "D2",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "TAJ,NF16",
-    "teacher": "CL03",
+    "room": "CL03",
+    "teacher": "TAJ",
     "semester": 1
   },
   {
@@ -11290,10 +11290,10 @@
     "start": 9,
     "duration": 2,
     "batch": "B5",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "SRG,RJM",
-    "teacher": "CL05",
+    "room": "CL05",
+    "teacher": "SRG,RJM",
     "semester": 1
   },
   {
@@ -11301,10 +11301,10 @@
     "start": 9,
     "duration": 2,
     "batch": "B6",
-    "type": "LAB",
+    "type": "LEC",
     "subject": "CS111",
-    "room": "ASA,NF12",
-    "teacher": "CL01",
+    "room": "CL01",
+    "teacher": "ASA",
     "semester": 1
   },
   {
@@ -14854,10 +14854,10 @@
     "start": 11,
     "duration": 1,
     "batch": "C3",
-    "type": "TUT",
-    "subject": "BT313",
-    "room": "TS11,POC",
-    "teacher": "SOC",
+    "type": "LEC",
+    "subject": "UNKNOWN",
+    "room": "BT313,TS11",
+    "teacher": "POC,SOC",
     "semester": 3
   },
   {
