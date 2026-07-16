@@ -33,7 +33,7 @@ module.exports = {
         "MSU": "Dr Monika Suri", "AS": "Prof. Alka Sarma", "BB": "Dr. Badri Bajaj",
         "EKS": "Dr. Ekta Singh", "HK": "Dr. Harleen Kaur", "IJ": "Dr. ILA Joshi",
         "KMB": "Dr. Kanupriya Misra Bakhru", "MM": "Prof. Mukta Mani", "MRB": "Dr. Manas Ranjan Behera",
-        "MB": "Dr.Monali Bhattacharya", "NAM": "Dr. Namreeta Kumari", "NES": "Dr. Neha Singh",
+        "MB": "Dr.`Mon`ali Bhattacharya", "NAM": "Dr. Namreeta Kumari", "NES": "Dr. Neha Singh",
         "NIS": "Dr. Nibha Sinha", "SKU": "Ms. Shikha Kumari",
         "VSE": "Dr. Vandana Sehgal", "YN": "Dr Yogita Naruka", "MDU": "Dr Mohua Dutta",
         "PRI": "Dr. Priya", "SDA": "Dr. Suraj Das", "AMN": "Dr. Amandeep", "PAC": "Dr Paridhi",

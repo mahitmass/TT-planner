@@ -139,14 +139,8 @@ const TimetableApp = (function() {
   function updateMasterList() {
       if (typeof scheduleMap === 'undefined') return;
       
-      const current = state.currentBatch;
-      const is128 = /^[FEH]/.test(current); 
-      
-      // THE FIX: Look inside currentSemester!
-      const allBatches = Object.keys(scheduleMap || {});
-      masterList = allBatches.filter(b => {
-           return is128 ? /^[EFH]/.test(b) : /^[ABCDG]/.test(b);
-      }).sort((a, b) => 
+      const semData = scheduleMap[state.currentSemester] || {};
+      masterList = Object.keys(semData).sort((a, b) => 
           a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' })
       );
   }
@@ -248,7 +242,7 @@ const TimetableApp = (function() {
   return { init };
 })();    
   let state = {
-    currentSemester: '2',
+    currentSemester: Storage.get('selectedSemester', '3'),
     currentSchedule: [],
     currentDayIndex: 0,
     currentBatch: 'A1',
@@ -623,46 +617,50 @@ function createTableCell(classes) {
     if (extraCount > 0) {
         innerHtml += `<div style="position: absolute; top: 2px; right: 2px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 4px; color: #fff; font-size: 0.6rem; padding: 1px 3px; font-weight: bold;">+${extraCount}</div>`;
         cell.style.position = 'relative';
-    }
-
     cell.innerHTML = innerHtml;
     return cell; // <--- This is CRITICAL
 }
   // --- BATCH MANAGEMENT ---
   function initializeBatchDropdown() {
-    const current = state.currentBatch;
-    const is128 = /^[FEH]/.test(current); 
-    
-    // Apply Global Tag
-    if (is128) {
-        document.body.classList.add('series-128');
-    } else {
-        document.body.classList.remove('series-128');
+      const availableSems = typeof scheduleMap !== 'undefined' ? Object.keys(scheduleMap) : ['3'];
+      if (!availableSems.includes(state.currentSemester)) {
+          state.currentSemester = availableSems[0] || '3';
+      }
+      
+      const semText = document.getElementById('series-text');
+      if (semText) semText.textContent = `Sem ${state.currentSemester}`;
+      
+      if (scheduleMap && scheduleMap[state.currentSemester] && !scheduleMap[state.currentSemester][state.currentBatch]) {
+          state.currentBatch = Object.keys(scheduleMap[state.currentSemester])[0] || 'A1';
+      }
+      
+      updateTriggerText();
+      populateBatchGrid();
     }
-
-    const seriesBtn = document.getElementById('series-text');
-    if (seriesBtn) seriesBtn.textContent = is128 ? "128 Series" : "62 Series";
-    
-    updateTriggerText();
-    populateBatchGrid(is128 ? "128" : "62");
-  }
-
-  function toggleSeries() {
-    const seriesText = document.getElementById('series-text');
-    if (!seriesText) return;
-
-    const isCurrently62 = seriesText.textContent.includes("62");
-    const newType = isCurrently62 ? "128" : "62";
-
-    if (newType === "128") {
-        document.body.classList.add('series-128');
-    } else {
-        document.body.classList.remove('series-128');
+  
+    function toggleSemester() {
+      const semText = document.getElementById('series-text');
+      if (!semText) return;
+      if (typeof scheduleMap === 'undefined') return;
+      
+      const availableSems = Object.keys(scheduleMap).sort();
+      if (availableSems.length <= 1) return;
+      
+      let currentIndex = availableSems.indexOf(state.currentSemester);
+      let nextIndex = (currentIndex + 1) % availableSems.length;
+      let nextSem = availableSems[nextIndex];
+      
+      state.currentSemester = nextSem;
+      Storage.set('selectedSemester', nextSem);
+      semText.textContent = `Sem ${nextSem}`;
+      
+      const semBatches = Object.keys(scheduleMap[nextSem] || {});
+      if (semBatches.length > 0) {
+          selectBatch(semBatches[0]);
+      } else {
+          populateBatchGrid();
+      }
     }
-
-    seriesText.textContent = `${newType} Series`;
-    populateBatchGrid(newType);
-  }
 
   function toggleBatchGrid(forceState) {
     const grid = document.getElementById('floating-batch-grid');
@@ -701,38 +699,28 @@ function populateBatches() {
     }
 
 }
-  function populateBatchGrid(forcedType) {
-    const grid = document.getElementById('floating-batch-grid');
-    const seriesText = document.getElementById('series-text');
-    const type = forcedType || (seriesText?.textContent.includes("128") ? "128" : "62");
-    if (!grid || typeof scheduleMap === 'undefined') return;
-    grid.innerHTML = '';
-
-    const allBatches = Object.keys(scheduleMap || {});
-    const filteredBatches = allBatches.filter(b => {
-        return type === "128" ? /^[EFH]/.test(b) : /^[ABCDG]/.test(b);
-    });
-    filteredBatches.sort((a, b) => {
-        return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
-    });
-
-    filteredBatches.forEach(batch => {
-        const btn = document.createElement('button');
-        btn.className = 'batch-btn';
-        if(batch === state.currentBatch) btn.classList.add('active-batch');
-        btn.textContent = batch;
-        btn.onclick = () => {
-            selectBatch(batch);
-            toggleBatchGrid(false); 
-        };
-        grid.appendChild(btn);
-    });
-
-    if(filteredBatches.length === 0) {
-        grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; opacity:0.5; padding:10px;">No Data</div>';
+  function populateBatchGrid() {
+      const grid = document.getElementById('floating-batch-grid');
+      if (!grid || typeof scheduleMap === 'undefined') return;
+      grid.innerHTML = '';
+  
+      const semData = scheduleMap[state.currentSemester] || {};
+      const filteredBatches = Object.keys(semData).sort((a, b) => 
+          a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'})
+      );
+      
+      filteredBatches.forEach(bName => {
+          const div = document.createElement('div');
+          div.className = `batch-grid-item ${bName === state.currentBatch ? 'active' : ''}`;
+          div.textContent = bName;
+          div.onclick = (e) => {
+              e.stopPropagation();
+              selectBatch(bName);
+              toggleBatchGrid(false);
+          };
+          grid.appendChild(div);
+      });
     }
-    updateGridSelection();
-  }
 
   function updateTriggerText() {
       const btnText = document.getElementById('trigger-text');
@@ -749,36 +737,30 @@ function populateBatches() {
   }
   
   function selectBatch(batchName) {
-    state.currentBatch = batchName;
-    
-    const is128 = /^[FEH]/.test(batchName);
-    if (is128) {
-        document.body.classList.add('series-128');
-    } else {
-        document.body.classList.remove('series-128');
-    }
-    const seriesBtn = document.getElementById('series-text');
-    if (seriesBtn) seriesBtn.textContent = is128 ? "128 Series" : "62 Series";
-
-    // THE FIX: Look inside currentSemester!
-    if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[batchName]) {
-        state.currentSchedule = scheduleMap[batchName];
-    } else {
-        state.currentSchedule = [];
-    }
-    
-    Storage.set('selectedBatch', batchName);
-    updateBatchLabels(batchName);
-    updateTriggerText(); 
-    updateGridSelection();
-    renderMobileView();
-    renderDesktopView();
-    populateBatchGrid(is128 ? "128" : "62");
-    
-    setTimeout(() => {
-        highlightActiveClass();
-        jumpToDay(state.currentDayIndex);
-    }, 50);
+      if (!batchName) return;
+      
+      state.currentBatch = batchName;
+      Storage.set('selectedBatch', batchName);
+      
+      if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[state.currentSemester] && scheduleMap[state.currentSemester][batchName]) {
+          state.currentSchedule = scheduleMap[state.currentSemester][batchName];
+      } else {
+          state.currentSchedule = [];
+      }
+      
+      updateTriggerText();
+      populateBatchGrid();
+      BatchScroller.init(); 
+      renderInitialViews();
+      
+      updateGridSelection();
+      renderMobileView();
+      renderDesktopView();
+      
+      setTimeout(() => {
+          highlightActiveClass();
+          jumpToDay(state.currentDayIndex);
+      }, 50);
   }
 
 // ==================== VIEW MODE ====================
@@ -1452,17 +1434,18 @@ function initTeacherSearch() {
         .catch(() => console.log("Check failed (offline)"));
   }
   // Public API
-  return {
-    init,
-    toggleFilterPanel,
-    toggleTheme,
-    selectBatch,
-    setViewMode,
-    manualJumpToDay,
-    toggleSeries,
-    toggleBatchGrid,
-      forceUpdateCheck
-  };
+    return {
+      init,
+      toggleFilterPanel,
+      toggleTheme,
+      selectBatch,
+      setViewMode,
+      manualJumpToDay,
+      toggleSemester,
+      toggleSeries,
+      toggleBatchGrid,
+        forceUpdateCheck
+    };
 })();
 
 // Start

@@ -33,12 +33,15 @@ rawData.forEach(entry => {
     const dayIndex = entry.day;
     const batchName = entry.batch;
     const actualHour = entry.start;
+    const semester = entry.semester || "3"; // Default to 3
+
+    if (!finalBatches[semester]) finalBatches[semester] = {};
 
     // Overrides: Deletions
-    if (overrides.deletions.some(del => del.batch === batchName && del.day === dayIndex && del.start === actualHour)) return;
+    if (overrides.deletions.some(del => del.batch === batchName && del.day === dayIndex && del.start === actualHour && (!del.semester || del.semester == semester))) return;
 
     // Create batch object if it doesn't exist
-    if (!finalBatches[batchName]) finalBatches[batchName] = [];
+    if (!finalBatches[semester][batchName]) finalBatches[semester][batchName] = [];
 
     let finalSubject = getSubjectName(entry.subject);
     
@@ -69,7 +72,7 @@ rawData.forEach(entry => {
         }).join('/');
     }
 
-    finalBatches[batchName].push({
+    finalBatches[semester][batchName].push({
         day: dayIndex, start: actualHour, duration: finalDuration,
         title: finalSubject, code: entry.room, teacher: finalTeacher, type: entry.type.toLowerCase() 
     });
@@ -79,13 +82,15 @@ rawData.forEach(entry => {
 if (overrides.additions && overrides.additions.length > 0) {
     overrides.additions.forEach(newClass => {
         const bName = newClass.batch;
+        const sem = newClass.semester || "3";
         
-        if (!finalBatches[bName]) finalBatches[bName] = [];
+        if (!finalBatches[sem]) finalBatches[sem] = {};
+        if (!finalBatches[sem][bName]) finalBatches[sem][bName] = [];
         
         // Priority Overwrite: Remove any existing class at this day and start time
-        finalBatches[bName] = finalBatches[bName].filter(c => !(c.day === newClass.day && c.start === newClass.start));
+        finalBatches[sem][bName] = finalBatches[sem][bName].filter(c => !(c.day === newClass.day && c.start === newClass.start));
         
-        finalBatches[bName].push({
+        finalBatches[sem][bName].push({
             day: newClass.day, start: newClass.start, duration: newClass.duration,
             title: newClass.title, code: newClass.code, teacher: newClass.teacher, type: newClass.type
         });
@@ -93,7 +98,8 @@ if (overrides.additions && overrides.additions.length > 0) {
 }
 
 // Kill Switch
-let totalParsedBatches = Object.keys(finalBatches).length;
+let totalParsedBatches = 0;
+Object.values(finalBatches).forEach(semObj => totalParsedBatches += Object.keys(semObj).length);
 
 if (totalParsedBatches < 5) {
     console.error(`🚨 FATAL ERROR: Only ${totalParsedBatches} total batches parsed!`);
@@ -101,20 +107,25 @@ if (totalParsedBatches < 5) {
 }
 
 let scheduleMapString = "{\n";
-const sortedBatches = Object.keys(finalBatches).sort((a, b) => a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'}));
-sortedBatches.forEach((bName, i) => {
-    scheduleMapString += `  "${bName}": [\n`;
-    
-    // Sort classes within the batch by day and then by start time to guarantee 100% deterministic order
-    finalBatches[bName].sort((a, b) => {
-        if (a.day !== b.day) return a.day - b.day;
-        return a.start - b.start;
-    });
+const semesters = Object.keys(finalBatches).sort();
+semesters.forEach((sem, k) => {
+    scheduleMapString += `  "${sem}": {\n`;
+    const sortedBatches = Object.keys(finalBatches[sem]).sort((a, b) => a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'}));
+    sortedBatches.forEach((bName, i) => {
+        scheduleMapString += `    "${bName}": [\n`;
+        
+        // Sort classes within the batch by day and then by start time to guarantee 100% deterministic order
+        finalBatches[sem][bName].sort((a, b) => {
+            if (a.day !== b.day) return a.day - b.day;
+            return a.start - b.start;
+        });
 
-    finalBatches[bName].forEach((cls, j) => {
-        scheduleMapString += `    { "day": ${cls.day}, "start": ${cls.start}, "duration": ${cls.duration}, "title": "${cls.title}", "code": "${cls.code}", "teacher": "${cls.teacher}", "type": "${cls.type}" }${j < finalBatches[bName].length - 1 ? ',' : ''}\n`;
+        finalBatches[sem][bName].forEach((cls, j) => {
+            scheduleMapString += `      { "day": ${cls.day}, "start": ${cls.start}, "duration": ${cls.duration}, "title": "${cls.title}", "code": "${cls.code}", "teacher": "${cls.teacher}", "type": "${cls.type}" }${j < finalBatches[sem][bName].length - 1 ? ',' : ''}\n`;
+        });
+        scheduleMapString += `    ]${i < sortedBatches.length - 1 ? ',' : ''}\n`;
     });
-    scheduleMapString += `  ]${i < sortedBatches.length - 1 ? ',' : ''}\n`;
+    scheduleMapString += `  }${k < semesters.length - 1 ? ',' : ''}\n`;
 });
 scheduleMapString += "}";
 

@@ -380,10 +380,15 @@ function parseSingleFile(filePath) {
                 
                 const parsedDataList = parseCellString(cell.v.toString());
                 parsedDataList.forEach(parsedData => {
+                    let finalDuration = duration;
+                    if (parsedData.subject.toUpperCase().includes('GE111')) {
+                        finalDuration = 3;
+                    }
+
                     results.push({
                         day: currentDay,
                         start: startHour,
-                        duration: duration,
+                        duration: finalDuration,
                         batch: parsedData.rawBatch,
                         type: parsedData.type,
                         subject: parsedData.subject,
@@ -409,7 +414,7 @@ function main() {
             const fullPath = path.join(dir, item);
             if (!fs.statSync(fullPath).isDirectory()) {
                 const lowerItem = item.toLowerCase();
-                if (lowerItem === '62.xlsx' || lowerItem === '128.xlsx') {
+                if (lowerItem === '62.xlsx' || lowerItem === '128.xlsx' || lowerItem === '1.xlsx') {
                     filesToParse.push(fullPath);
                 }
             }
@@ -426,8 +431,13 @@ function main() {
 
     filesToParse.forEach(filePath => {
         try {
+            const basename = path.basename(filePath).toLowerCase();
+            let semester = 3;
+            if (basename === '1.xlsx') semester = 1;
+
             const fileData = parseSingleFile(filePath);
             if (fileData && fileData.length > 0) {
+                fileData.forEach(entry => entry.semester = semester);
                 combinedSchedule = combinedSchedule.concat(fileData);
                 console.log(`   ✅ Extracted ${fileData.length} entries from ${path.basename(filePath)}`);
             }

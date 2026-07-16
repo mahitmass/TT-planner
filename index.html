@@ -46,7 +46,13 @@
           <span class="hint-arrow">⤴</span> <span>Search Mode</span>          </div>
   <div id="student-controls">
       <div class="filter-group bring-to-front">
-        <div class="filter-label">Select Batch</div>
+        <div class="filter-label">Select Semester</div>
+        <button id="semester-trigger-btn" class="dropdown-trigger full-width" onclick="TimetableApp.toggleSemester()">
+          <span id="semester-text">Semester 3</span> ⇄
+        </button>
+      </div>
+      <div class="filter-group bring-to-front" style="margin-top: 10px;">
+        <div class="filter-label">Select Batch & Series</div>
         <div class="batch-selector-row">
           <button id="series-trigger-btn" class="dropdown-trigger half-width" onclick="TimetableApp.toggleSeries()">
             <span id="series-text">62 Series</span> ⇄
