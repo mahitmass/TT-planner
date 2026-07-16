@@ -35,7 +35,7 @@ module.exports = {
         day: 1,
         start: 9,
         changes: {
-            code: "FF2" // In the UI, 'code' represents the room
+            code: "FF2" 
         }
     },
     // Example 2: Change both teacher and type for a Semester 3 class
@@ -49,5 +49,22 @@ module.exports = {
         }
     }
     */
+    {
+        batch: "A6",
+        day: 1,
+        start: 9,
+        changes: {
+            teacher: "Dr. XYZZ"
+        }
+    },
+    {
+        batch: "A6",
+        day: 1,
+        start: 10,
+        changes: {
+            teacher: "AK"
+        }
+    }
+    
   ]
 };
