@@ -1855,7 +1855,7 @@
     "type": "LAB",
     "subject": "CS111",
     "room": "CL01",
-    "teacher": "AYS",
+    "teacher": "AYS,NF14",
     "semester": 1
   },
   {
@@ -1921,7 +1921,7 @@
     "type": "LAB",
     "subject": "CS111",
     "room": "CL02",
-    "teacher": "ANP",
+    "teacher": "ANP,NF13",
     "semester": 1
   },
   {
@@ -1954,7 +1954,7 @@
     "type": "LAB",
     "subject": "CS111",
     "room": "CL05",
-    "teacher": "SHV",
+    "teacher": "SHV,NF15",
     "semester": 1
   },
   {
@@ -6244,7 +6244,7 @@
     "type": "LAB",
     "subject": "CS111",
     "room": "CL07",
-    "teacher": "ANV",
+    "teacher": "ANV,NF12",
     "semester": 1
   },
   {
@@ -10149,7 +10149,7 @@
     "type": "LAB",
     "subject": "CS111",
     "room": "CL01",
-    "teacher": "ANP",
+    "teacher": "ANP,NF14",
     "semester": 1
   },
   {
@@ -10303,7 +10303,7 @@
     "type": "LAB",
     "subject": "CS111",
     "room": "CL05",
-    "teacher": "SOS",
+    "teacher": "SOS,NF15",
     "semester": 1
   },
   {
@@ -10336,7 +10336,7 @@
     "type": "LAB",
     "subject": "CS111",
     "room": "CL06",
-    "teacher": "SMS",
+    "teacher": "SMS,NF16",
     "semester": 1
   },
   {
@@ -10369,7 +10369,7 @@
     "type": "LAB",
     "subject": "CS111",
     "room": "CL02",
-    "teacher": "TBA",
+    "teacher": "NF13",
     "semester": 1
   },
   {
@@ -10391,7 +10391,7 @@
     "type": "LAB",
     "subject": "CS111",
     "room": "CL02",
-    "teacher": "ANP",
+    "teacher": "ANP,NF13",
     "semester": 1
   },
   {
@@ -11227,7 +11227,7 @@
     "type": "LAB",
     "subject": "CS111",
     "room": "CL03",
-    "teacher": "TAJ",
+    "teacher": "TAJ,NF16",
     "semester": 1
   },
   {
@@ -11304,7 +11304,7 @@
     "type": "LAB",
     "subject": "CS111",
     "room": "CL01",
-    "teacher": "ASA",
+    "teacher": "ASA,NF12",
     "semester": 1
   },
   {
