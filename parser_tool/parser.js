@@ -1,6 +1,10 @@
 const XLSX = require('xlsx');
 const fs = require('fs');
 const path = require('path');
+const dictionaries = require('./dictionaries');
+
+const allTeachers = { ...(dictionaries.facultyNames || {}), ...(dictionaries.facultyNames128 || {}) };
+const sortedTeacherCodes = Object.keys(allTeachers).sort((a, b) => b.length - a.length);
 
 const CONFIG = { sheetIndex: 0 };
 
@@ -148,6 +152,35 @@ function parseCellString(rawText) {
         let subjectPart = match[2].trim();
         let roomPart = match[3].trim();
         let teacherPart = match[4] ? match[4].trim() : "TBA";
+        
+        // Dictionary-assisted splitting if no explicit slash was found and teacher is TBA
+        if (teacherPart === "TBA") {
+            let extractedTeachers = [];
+            let cleanRooms = [];
+            
+            // Split roomPart by comma to handle multiple combined blocks
+            let tempParts = roomPart.split(',').map(s => s.trim()).filter(s => s);
+            
+            tempParts.forEach(part => {
+                let foundTeacher = null;
+                for (const tCode of sortedTeacherCodes) {
+                    if (part.toUpperCase().endsWith(tCode) && part.length > tCode.length) {
+                        foundTeacher = tCode;
+                        cleanRooms.push(part.slice(0, -tCode.length).trim());
+                        extractedTeachers.push(tCode);
+                        break;
+                    }
+                }
+                if (!foundTeacher) {
+                    cleanRooms.push(part);
+                }
+            });
+            
+            if (extractedTeachers.length > 0) {
+                roomPart = cleanRooms.join(',');
+                teacherPart = extractedTeachers.join(',');
+            }
+        }
         if (!teacherPart) teacherPart = "TBA";
         
         let type = 'LEC';
