@@ -1266,7 +1266,7 @@ const scheduleMap = {
       { "day": 6, "start": 11, "duration": 2, "title": "Signals and Systems", "code": "MODLAB", "teacher": "RIG,TA15", "type": "lab" }
     ],
     "A6": [
-      { "day": 1, "start": 9, "duration": 1, "title": "Economics", "code": "FF2", "teacher": "MRB", "type": "lec" },
+      { "day": 1, "start": 9, "duration": 1, "title": "Economics", "code": "FF7", "teacher": "MRB", "type": "lec" },
       { "day": 1, "start": 10, "duration": 1, "title": "Environmental Studies", "code": "LT3", "teacher": "SBT", "type": "lec" },
       { "day": 1, "start": 11, "duration": 1, "title": "Signals and Systems", "code": "FF5", "teacher": "BHG", "type": "lec" },
       { "day": 1, "start": 12, "duration": 1, "title": "Probability & Random Processes", "code": "FF5", "teacher": "DCS", "type": "lec" },
