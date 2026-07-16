@@ -158,7 +158,8 @@ module.exports = {
         "15B11PH112": "Physics for Biotechnology",
         "PH171": "Physics Lab-1",
         "15B17PH171": "Physics Lab-1",
-        "MA111": "Maths-1"
+        "MA111": "Maths-1",
+        "MA112": "Maths-1"
     },
     subjectsSem3: {
         "MA230": "Probability & Statistics",
