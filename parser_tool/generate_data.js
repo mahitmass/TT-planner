@@ -104,6 +104,21 @@ if (overrides.additions && overrides.additions.length > 0) {
     });
 }
 
+// Overrides: Edits
+if (overrides.edits && overrides.edits.length > 0) {
+    overrides.edits.forEach(edit => {
+        const bName = edit.batch;
+        const sem = edit.semester || "3";
+        
+        if (finalBatches[sem] && finalBatches[sem][bName]) {
+            let classToEdit = finalBatches[sem][bName].find(c => c.day === edit.day && c.start === edit.start);
+            if (classToEdit && edit.changes) {
+                Object.assign(classToEdit, edit.changes);
+            }
+        }
+    });
+}
+
 // Kill Switch
 let totalParsedBatches = 0;
 Object.values(finalBatches).forEach(semObj => totalParsedBatches += Object.keys(semObj).length);

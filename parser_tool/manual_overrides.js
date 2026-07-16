@@ -24,5 +24,30 @@ module.exports = {
     }
     */
 
+  ],
+
+  // 3. CLASSES TO EDIT (Edit specific fields of an existing class)
+  edits: [
+    /* Example: Change the room to FF2 for A6's Monday 9 AM class in Semester 1
+    {
+        semester: 1,
+        batch: "A6",
+        day: 1,
+        start: 9,
+        changes: {
+            code: "FF2" // In the UI, 'code' represents the room
+        }
+    },
+    // Example 2: Change both teacher and type for a Semester 3 class
+    {
+        batch: "G4",
+        day: 3,
+        start: 13,
+        changes: {
+            teacher: "Dr. XYZ",
+            type: "lec"
+        }
+    }
+    */
   ]
 };
