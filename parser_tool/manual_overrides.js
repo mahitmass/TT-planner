@@ -49,6 +49,22 @@ module.exports = {
         }
     }
     */
+    {
+        batch: "A6",
+        day: 1,
+        start: 9,
+        changes: {
+            teacher: "Dr. XYZZ"
+        }
+    },
+    {
+        batch: "A6",
+        day: 1,
+        start: 10,
+        changes: {
+            teacher: "AK"
+        }
+    }
     
   ]
 };
