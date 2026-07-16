@@ -1,6 +1,6 @@
 // AUTOMATICALLY GENERATED
 const scheduleMap = {
-  "A1": [
+  "A1" : [
     { "day": 1, "start": 9, "duration": 1, "title": "Economics", "code": "FF1", "teacher": "AMN", "type": "lec" },
     { "day": 1, "start": 10, "duration": 1, "title": "Environmental Studies", "code": "CR301", "teacher": "GMA", "type": "lec" },
     { "day": 1, "start": 11, "duration": 1, "title": "Digital Circuit Design", "code": "TR302", "teacher": "JOY", "type": "tut" },
