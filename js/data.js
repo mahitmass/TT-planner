@@ -2099,7 +2099,7 @@ const facultyNames = {
   "KMB": "Dr. Kanupriya Misra Bakhru",
   "MM": "Prof. Mukta Mani",
   "MRB": "Dr. Manas Ranjan Behera",
-  "MB": "Dr.Monali Bhattacharya",
+  "MB": "Dr.`Mon`ali Bhattacharya",
   "NAM": "Dr. Namreeta Kumari",
   "NES": "Dr. Neha Singh",
   "SKU": "Ms. Shikha Kumari",
