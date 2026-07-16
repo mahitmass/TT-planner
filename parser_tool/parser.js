@@ -284,7 +284,7 @@ function parseCellString(rawText, semester) {
         }
         
         // Check if room field contains a teacher
-        if (rTokens.some(r => teacherCodes.includes(r))) {
+        if (rTokens.some(r => teacherCodes.includes(r) || /^NF\d{1,3}$/.test(r))) {
             isMisarranged = true;
         }
 
@@ -566,7 +566,7 @@ function parseCellStringTokens(rawText, semester) {
     tokens.forEach(token => {
         let t = token.toUpperCase();
         
-        if (teacherCodes.includes(t)) {
+        if (teacherCodes.includes(t) || /^NF\d{1,3}$/.test(t)) {
             foundTeachers.push(t);
         } else if (roomCodes.includes(t) || /^(CL|CR|TR|TS|G|F|FF|PL|BT|MCL|LAB)\d{1,3}$/.test(t)) {
             foundRooms.push(t);
