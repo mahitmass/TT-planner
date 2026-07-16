@@ -49,14 +49,6 @@ module.exports = {
         }
     }
     */
-    {
-        semester: 3,
-        batch: "A6",
-        day: 1,
-        start: 9,
-        changes: {
-            code: "FF2" 
-        }
-    },
+    
   ]
 };
