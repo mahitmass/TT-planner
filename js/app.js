@@ -563,10 +563,11 @@ function renderDesktopView() {
                 return;
             }
 
-            const cls = state.currentSchedule.find(s => s.day === day && s.start === hour);
+            const classesForSlot = state.currentSchedule.filter(s => s.day === day && s.start === hour);
 
-            if (cls) {
-                const cell = createTableCell(cls); // Uses helper below
+            if (classesForSlot.length > 0) {
+                const cls = classesForSlot[0];
+                const cell = createTableCell(classesForSlot); // Uses helper below
                 if (cls.duration > 1) {
                     cell.colSpan = cls.duration;
                     skipSlots = cls.duration - 1;
@@ -601,19 +602,30 @@ function renderDesktopView() {
     }
     return cell;
   }
-function createTableCell(cls) {
+function createTableCell(classes) {
+    const isArray = Array.isArray(classes);
+    const cls = isArray ? classes[0] : classes;
+    const extraCount = isArray ? classes.length - 1 : 0;
+
     const cell = document.createElement('td');
     cell.className = `cell-${cls.type}`;
     cell.style.cursor = 'pointer';
-    cell.onclick = () => openDetailsModal(cls);
+    cell.onclick = () => openDetailsModal(classes);
 
     const displayTitle = getSubjectFullTitle(cls.title, cls.type) || cls.title;
     const shortTitle = displayTitle.includes('(') ? displayTitle.split('(')[0].trim() : displayTitle;
 
-    cell.innerHTML = `
+    let innerHtml = `
         <span class="cell-subject" title="${displayTitle}">${shortTitle}</span>
         <span class="cell-room">${cls.code}</span>
     `;
+
+    if (extraCount > 0) {
+        innerHtml += `<div style="position: absolute; top: 2px; right: 2px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 4px; color: #fff; font-size: 0.6rem; padding: 1px 3px; font-weight: bold;">+${extraCount}</div>`;
+        cell.style.position = 'relative';
+    }
+
+    cell.innerHTML = innerHtml;
     return cell; // <--- This is CRITICAL
 }
   // --- BATCH MANAGEMENT ---
@@ -1040,37 +1052,51 @@ function resetModalFields() {
     if (batchRow) batchRow.style.display = 'flex';
 }
     
-  function openDetailsModal(cls) {
+  function openDetailsModal(classes) {
     const modal = document.getElementById('details-modal');
     if(!modal) return;
     
     // CRITICAL: Ensure fields are visible (in case Room Modal hid them)
     resetModalFields();
 
-    const rawTitle = cls.title;
-    const isFormatted = rawTitle.includes('('); 
-    const displayTitle = isFormatted ? rawTitle : (getSubjectFullTitle(rawTitle, cls.type) || rawTitle);
-    const displayTeacher = getTeacherDisplayName(cls.teacher);
-    const displayTime = formatTimeRange(cls.start, cls.duration);
+    const isArray = Array.isArray(classes);
+    const clsList = isArray ? classes : [classes];
+    const primaryCls = clsList[0];
+
+    let subjectHtml = '';
+    let typeHtml = '';
+    let teacherHtml = '';
+    let roomHtml = '';
+
+    clsList.forEach((cls, index) => {
+        const rawTitle = cls.title;
+        const isFormatted = rawTitle.includes('('); 
+        const displayTitle = isFormatted ? rawTitle : (getSubjectFullTitle(rawTitle, cls.type) || rawTitle);
+        const displayTeacher = getTeacherDisplayName(cls.teacher);
+
+        const separator = index > 0 ? '<div style="height: 1px; background: rgba(255,255,255,0.1); margin: 6px 0;"></div>' : '';
+
+        subjectHtml += `${separator}<div>${displayTitle}</div>`;
+        typeHtml += `${separator}<div>${cls.type.charAt(0).toUpperCase() + cls.type.slice(1)}</div>`;
+        teacherHtml += `${separator}<div>${displayTeacher}</div>`;
+        roomHtml += `${separator}<div>${cls.code} <span class="modal-glow-btn" onclick="window.showRoomPopup(event, '${cls.code}')">i</span></div>`;
+    });
+
+    const displayTime = formatTimeRange(primaryCls.start, primaryCls.duration);
     
     let displayBatch = state.currentBatch;
-    if (cls.batchNames && Array.isArray(cls.batchNames)) {
-        displayBatch = cls.batchNames.join(', ');
+    if (primaryCls.batchNames && Array.isArray(primaryCls.batchNames)) {
+        displayBatch = primaryCls.batchNames.join(', ');
     }
 
-    document.getElementById('modal-subject').textContent = displayTitle;
+    document.getElementById('modal-subject').innerHTML = subjectHtml;
     document.getElementById('modal-time').textContent = displayTime;
-    document.getElementById('modal-type').textContent = cls.type.charAt(0).toUpperCase() + cls.type.slice(1);
-    document.getElementById('modal-teacher').textContent = displayTeacher;
+    document.getElementById('modal-type').innerHTML = typeHtml;
+    document.getElementById('modal-teacher').innerHTML = teacherHtml;
     document.getElementById('modal-batch').textContent = displayBatch;
     
     const roomEl = document.getElementById('modal-room');
-    roomEl.innerHTML = `
-      ${cls.code} 
-      <span class="modal-glow-btn" onclick="window.showRoomPopup(event, '${cls.code}')">
-        i
-      </span>
-    `;
+    roomEl.innerHTML = roomHtml;
     
     modal.classList.remove('hidden-modal');
     modal.setAttribute('aria-hidden', 'false');

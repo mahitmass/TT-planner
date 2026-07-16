@@ -401,7 +401,7 @@ function main() {
     // --- DEDUPLICATOR ---
     const uniqueClasses = new Map();
     combinedSchedule.forEach(entry => {
-        const uniqueKey = `${entry.batch}-${entry.day}-${entry.start}`;
+        const uniqueKey = `${entry.batch}-${entry.day}-${entry.start}-${entry.subject}-${entry.room}`;
         if (!uniqueClasses.has(uniqueKey)) {
             uniqueClasses.set(uniqueKey, entry);
         }

@@ -1491,6 +1491,16 @@
   },
   {
     "day": 1,
+    "start": 15,
+    "duration": 1,
+    "batch": "A17",
+    "type": "TUT",
+    "subject": "MA301",
+    "room": "TR302",
+    "teacher": "NF1"
+  },
+  {
+    "day": 1,
     "start": 16,
     "duration": 1,
     "batch": "A3",
@@ -5100,6 +5110,16 @@
     "teacher": "AJK,APN"
   },
   {
+    "day": 3,
+    "start": 10,
+    "duration": 2,
+    "batch": "B14",
+    "type": "LAB",
+    "subject": "B15CS215",
+    "room": "CL18",
+    "teacher": "ASY,GAS"
+  },
+  {
     "day": 4,
     "start": 10,
     "duration": 1,
@@ -5844,6 +5864,16 @@
     "start": 10,
     "duration": 1,
     "batch": "A2",
+    "type": "LEC",
+    "subject": "BT211",
+    "room": "FF4",
+    "teacher": "GMA"
+  },
+  {
+    "day": 4,
+    "start": 10,
+    "duration": 1,
+    "batch": "A3",
     "type": "LEC",
     "subject": "BT211",
     "room": "FF4",
