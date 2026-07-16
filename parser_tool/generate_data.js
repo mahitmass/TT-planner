@@ -63,6 +63,10 @@ rawData.forEach(entry => {
         finalDuration = 2;
         if (is128Batch && finalSubject.includes('Workshop')) finalDuration = 3;
     }
+    // Strict fix for GE111 3hr duration
+    if (finalSubject.toUpperCase().includes('GE111')) {
+        finalDuration = 3;
+    }
 
     // Smart 128 Teacher Codes
     let finalTeacher = entry.teacher;

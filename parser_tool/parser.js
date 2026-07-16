@@ -2,6 +2,7 @@ const XLSX = require('xlsx');
 const fs = require('fs');
 const path = require('path');
 const dictionaries = require('./dictionaries');
+const staticData = require('./static_data');
 
 const allTeachers = dictionaries.teachers || {};
 const sortedTeacherCodes = Object.keys(allTeachers).sort((a, b) => b.length - a.length);
@@ -124,7 +125,7 @@ function expandBatches(batchString) {
 }
 
 // === PARSE A SINGLE CELL's TEXT ===
-function parseCellString(rawText) {
+function parseCellString(rawText, semester) {
     if (!rawText || typeof rawText !== 'string') return [];
     
     const text = rawText.replace(/\r?\n/g, ' ').replace(/[–—]/g, '-').replace(/\s+/g, ' ').trim();
@@ -262,14 +263,50 @@ function parseCellString(rawText) {
         });
     });
 
-    return results;
+    // === SECOND LEVEL PARSING ===
+    // Go through the extracted results and detect misarrangements (be "the eyes")
+    const teacherCodes = Object.keys(dictionaries.teachers || {});
+    const roomCodes = Object.keys(staticData.classroomLocations || {});
+    
+    let finalResults = [];
+    results.forEach(res => {
+        let isMisarranged = false;
+        
+        let tTokens = res.teacher.split(/[,/\s]+/).map(t => t.trim().toUpperCase()).filter(t => t);
+        let rTokens = res.room.split(/[,/\s]+/).map(t => t.trim().toUpperCase()).filter(t => t);
+
+        // Check if teacher field contains a room
+        if (tTokens.some(t => roomCodes.includes(t) || /^(CL|CR|TR|TS|G|F|FF|PL|BT|MCL|LAB)\d{1,3}$/.test(t))) {
+            isMisarranged = true;
+        }
+        
+        // Check if room field contains a teacher
+        if (rTokens.some(r => teacherCodes.includes(r))) {
+            isMisarranged = true;
+        }
+
+        if (isMisarranged) {
+            // Re-parse the text for this entry using token classification to fix the misarrangement
+            let combinedString = `${res.rawBatch} ${res.subject} ${res.room} ${res.teacher}`;
+            let corrected = parseCellStringTokens(combinedString, semester);
+            if (corrected.length > 0) {
+                finalResults.push(...corrected);
+            } else {
+                finalResults.push(res);
+            }
+        } else {
+            finalResults.push(res);
+        }
+    });
+
+    return finalResults;
 }
 
 const isInsideMerge = (r, c, merges) => {
     return merges.find(m => r >= m.s.r && r <= m.e.r && c >= m.s.c && c <= m.e.c);
 };
 
-function parseSingleFile(filePath) {
+function parseSingleFile(filePath, semester) {
     console.log(`📂 Reading: ${filePath}...`);
     
     const workbook = XLSX.readFile(filePath);
@@ -387,7 +424,7 @@ function parseSingleFile(filePath) {
                     }
                 }
                 
-                const parsedDataList = parseCellString(cell.v.toString());
+                const parsedDataList = parseCellString(cell.v.toString(), semester);
                 parsedDataList.forEach(parsedData => {
                     let finalDuration = duration;
                     if (parsedData.subject.toUpperCase().includes('GE111')) {
@@ -444,7 +481,7 @@ function main() {
             let semester = 3;
             if (basename === '1.xlsx') semester = 1;
 
-            const fileData = parseSingleFile(filePath);
+            let fileData = parseSingleFile(filePath, semester);
             if (fileData && fileData.length > 0) {
                 fileData.forEach(entry => entry.semester = semester);
                 combinedSchedule = combinedSchedule.concat(fileData);
@@ -495,3 +532,76 @@ function main() {
 }
 
 main();
+// === SECOND LEVEL PARSING (TOKEN CLASSIFICATION) ===
+function parseCellStringTokens(rawText, semester) {
+    if (!rawText || typeof rawText !== 'string') return [];
+    
+    // Normalize text
+    const text = rawText.replace(/\r?\n/g, ' ').replace(/[?"?"]/g, '-').replace(/\s+/g, ' ').trim();
+    
+    const upperText = text.toUpperCase();
+    if (/^(MON|TUE|WED|THU|FRI|SAT|SUN|LEGEND|BACKLOG|PROBABILITY AND|NOTE)/i.test(upperText)) return [];
+    if (/^\d{1,2}-\d{1,2}(AM|PM)?$/i.test(text.replace(/\s/g, ''))) return [];
+
+    let tokens = text.split(/[\s()/\-,]+/).filter(t => t.trim());
+    
+    // First pass: extract all matches
+    let foundBatches = [];
+    let foundTeachers = [];
+    let foundRooms = [];
+    let foundSubjects = [];
+
+    const teacherCodes = Object.keys(dictionaries.teachers || {});
+    const roomCodes = Object.keys(staticData.classroomLocations || {});
+    const subjectsList = (semester == 1) ? Object.keys(dictionaries.subjectsSem1 || {}) : Object.keys(dictionaries.subjectsSem3 || {});
+
+    // Attempt to identify each token
+    tokens.forEach(token => {
+        let t = token.toUpperCase();
+        
+        if (teacherCodes.includes(t)) {
+            foundTeachers.push(t);
+        } else if (roomCodes.includes(t) || /^(CL|CR|TR|TS|G|F|FF|PL|BT|MCL|LAB)\d{1,3}$/.test(t)) {
+            foundRooms.push(t);
+        } else if (subjectsList.includes(t)) {
+            foundSubjects.push(t);
+        } else if (/^[A-Z]{1,2}\d{1,3}(-[A-Z]{0,2}\d{1,3})?$/.test(t) && !/^(CL|CR|TR|TS|G|F|FF|PL|BT|MCL)\d/.test(t)) {
+            foundBatches.push(t);
+        } else {
+            let shortCodeMatch = t.match(/[A-Z]{2}\d{3,4}/);
+            if (shortCodeMatch && subjectsList.includes(shortCodeMatch[0])) {
+                foundSubjects.push(shortCodeMatch[0]);
+            }
+        }
+    });
+
+    if (foundBatches.length === 0 && foundSubjects.length === 0) return [];
+
+    let subject = foundSubjects.length > 0 ? foundSubjects[0] : "UNKNOWN";
+    let room = foundRooms.length > 0 ? foundRooms.join(',') : "TBA";
+    let teacher = foundTeachers.length > 0 ? foundTeachers.join(',') : "TBA";
+    
+    let type = 'LEC';
+    if (subject.includes('LAB') || foundBatches.some(b => b.startsWith('P'))) type = 'LAB';
+    else if (foundBatches.some(b => b.startsWith('T'))) type = 'TUT';
+
+    let rawBatchesStr = foundBatches.join(',');
+    let cleanBatches = rawBatchesStr.replace(/^[LTP](?=[A-Z])/ig, '').trim();
+    
+    const expandedBatches = expandBatches(cleanBatches);
+    
+    let results = [];
+    expandedBatches.forEach(b => {
+        let finalBatch = b.trim().toUpperCase();
+        if (!/^[A-Z]\d{1,3}$/.test(finalBatch)) return;
+        results.push({
+            rawBatch: finalBatch,
+            type: type,
+            subject: subject,
+            room: room,
+            teacher: teacher
+        });
+    });
+
+    return results;
+}

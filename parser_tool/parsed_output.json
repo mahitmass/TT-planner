@@ -13420,6 +13420,17 @@
     "semester": 3
   },
   {
+    "day": 1,
+    "start": 13,
+    "duration": 1,
+    "batch": "H311",
+    "type": "LAB",
+    "subject": "UNKNOWN",
+    "room": "FF5",
+    "teacher": "SHIV",
+    "semester": 3
+  },
+  {
     "day": 2,
     "start": 11,
     "duration": 1,
@@ -19940,6 +19951,17 @@
     "subject": "EC214",
     "room": "MODLAB",
     "teacher": "SB,TA12",
+    "semester": 3
+  },
+  {
+    "day": 5,
+    "start": 15,
+    "duration": 2,
+    "batch": "H311",
+    "type": "LAB",
+    "subject": "UNKNOWN",
+    "room": "TBA",
+    "teacher": "AP",
     "semester": 3
   },
   {
