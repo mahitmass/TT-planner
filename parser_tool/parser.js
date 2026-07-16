@@ -192,10 +192,13 @@ function parseCellString(rawText, semester) {
         let type = 'LEC';
         let cleanBatches = batchPart.toUpperCase();
         
+        let subjectDict = semester === 1 ? dictionaries.subjectsSem1 : dictionaries.subjectsSem3;
+        let subjectTitle = subjectDict && subjectDict[subjectPart] ? subjectDict[subjectPart].toUpperCase() : "";
+        
         if (cleanBatches.startsWith('T')) type = 'TUT';
         else if (cleanBatches.startsWith('P')) type = 'LAB';
         else if (cleanBatches.startsWith('L')) type = 'LEC';
-        else if (subjectPart.toUpperCase().includes('LAB')) type = 'LAB';
+        else if (subjectPart.toUpperCase().includes('LAB') || subjectTitle.includes('LAB')) type = 'LAB';
 
         // Strip the L, T, P prefix
         cleanBatches = cleanBatches.replace(/^[LTP](?=[A-Z])/i, '').trim();
@@ -585,8 +588,11 @@ function parseCellStringTokens(rawText, semester) {
     let room = foundRooms.length > 0 ? foundRooms.join(',') : "TBA";
     let teacher = foundTeachers.length > 0 ? foundTeachers.join(',') : "TBA";
     
+    let subjectDict = semester === 1 ? dictionaries.subjectsSem1 : dictionaries.subjectsSem3;
+    let subjectTitle = subjectDict && subjectDict[subject] ? subjectDict[subject].toUpperCase() : "";
+
     let type = 'LEC';
-    if (subject.includes('LAB') || foundBatches.some(b => b.startsWith('P'))) type = 'LAB';
+    if (subject.includes('LAB') || subjectTitle.includes('LAB') || foundBatches.some(b => b.startsWith('P'))) type = 'LAB';
     else if (foundBatches.some(b => b.startsWith('T'))) type = 'TUT';
 
     let rawBatchesStr = foundBatches.join(',');

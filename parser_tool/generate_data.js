@@ -64,7 +64,7 @@ rawData.forEach(entry => {
         if (is128Batch && finalSubject.includes('Workshop')) finalDuration = 3;
     }
     // Strict fix for GE111 3hr duration
-    if (finalSubject.toUpperCase().includes('GE111')) {
+    if (entry.subject && entry.subject.toUpperCase().includes('GE111')) {
         finalDuration = 3;
     }
 
