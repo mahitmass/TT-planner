@@ -30,6 +30,7 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+  if (!event.request.url.startsWith('http')) return;
   const url = new URL(event.request.url);
   const isDataFile = url.pathname.endsWith('data.js');
 

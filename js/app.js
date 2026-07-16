@@ -617,29 +617,41 @@ function createTableCell(classes) {
     if (extraCount > 0) {
         innerHtml += `<div style="position: absolute; top: 2px; right: 2px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 4px; color: #fff; font-size: 0.6rem; padding: 1px 3px; font-weight: bold;">+${extraCount}</div>`;
         cell.style.position = 'relative';
+    }
     cell.innerHTML = innerHtml;
     return cell; // <--- This is CRITICAL
 }
-  // --- BATCH MANAGEMENT ---
   function initializeBatchDropdown() {
       const availableSems = typeof scheduleMap !== 'undefined' ? Object.keys(scheduleMap) : ['3'];
       if (!availableSems.includes(state.currentSemester)) {
           state.currentSemester = availableSems[0] || '3';
       }
       
-      const semText = document.getElementById('series-text');
-      if (semText) semText.textContent = `Sem ${state.currentSemester}`;
+      const semText = document.getElementById('semester-text');
+      if (semText) semText.textContent = `Semester ${state.currentSemester}`;
       
       if (scheduleMap && scheduleMap[state.currentSemester] && !scheduleMap[state.currentSemester][state.currentBatch]) {
           state.currentBatch = Object.keys(scheduleMap[state.currentSemester])[0] || 'A1';
       }
       
+      const current = state.currentBatch;
+      const is128 = /^[FEH]/.test(current); 
+      
+      if (is128) {
+          document.body.classList.add('series-128');
+      } else {
+          document.body.classList.remove('series-128');
+      }
+
+      const seriesBtn = document.getElementById('series-text');
+      if (seriesBtn) seriesBtn.textContent = is128 ? "128 Series" : "62 Series";
+      
       updateTriggerText();
-      populateBatchGrid();
+      populateBatchGrid(is128 ? "128" : "62");
     }
   
     function toggleSemester() {
-      const semText = document.getElementById('series-text');
+      const semText = document.getElementById('semester-text');
       if (!semText) return;
       if (typeof scheduleMap === 'undefined') return;
       
@@ -652,7 +664,7 @@ function createTableCell(classes) {
       
       state.currentSemester = nextSem;
       Storage.set('selectedSemester', nextSem);
-      semText.textContent = `Sem ${nextSem}`;
+      semText.textContent = `Semester ${nextSem}`;
       
       const semBatches = Object.keys(scheduleMap[nextSem] || {});
       if (semBatches.length > 0) {
@@ -660,6 +672,23 @@ function createTableCell(classes) {
       } else {
           populateBatchGrid();
       }
+    }
+
+    function toggleSeries() {
+      const seriesText = document.getElementById('series-text');
+      if (!seriesText) return;
+
+      const isCurrently62 = seriesText.textContent.includes("62");
+      const newType = isCurrently62 ? "128" : "62";
+
+      if (newType === "128") {
+          document.body.classList.add('series-128');
+      } else {
+          document.body.classList.remove('series-128');
+      }
+
+      seriesText.textContent = `${newType} Series`;
+      populateBatchGrid(newType);
     }
 
   function toggleBatchGrid(forceState) {
@@ -699,13 +728,19 @@ function populateBatches() {
     }
 
 }
-  function populateBatchGrid() {
+  function populateBatchGrid(forcedType) {
       const grid = document.getElementById('floating-batch-grid');
+      const seriesText = document.getElementById('series-text');
+      const type = forcedType || (seriesText?.textContent.includes("128") ? "128" : "62");
       if (!grid || typeof scheduleMap === 'undefined') return;
       grid.innerHTML = '';
   
       const semData = scheduleMap[state.currentSemester] || {};
-      const filteredBatches = Object.keys(semData).sort((a, b) => 
+      const allBatches = Object.keys(semData);
+      
+      const filteredBatches = allBatches.filter(b => {
+          return type === "128" ? /^[EFH]/.test(b) : /^[ABCDG]/.test(b);
+      }).sort((a, b) => 
           a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'})
       );
       
@@ -720,6 +755,11 @@ function populateBatches() {
           };
           grid.appendChild(div);
       });
+      
+      if(filteredBatches.length === 0) {
+          grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; opacity:0.5; padding:10px;">No Data</div>';
+      }
+      updateGridSelection();
     }
 
   function updateTriggerText() {
@@ -742,6 +782,15 @@ function populateBatches() {
       state.currentBatch = batchName;
       Storage.set('selectedBatch', batchName);
       
+      const is128 = /^[FEH]/.test(batchName);
+      if (is128) {
+          document.body.classList.add('series-128');
+      } else {
+          document.body.classList.remove('series-128');
+      }
+      const seriesBtn = document.getElementById('series-text');
+      if (seriesBtn) seriesBtn.textContent = is128 ? "128 Series" : "62 Series";
+      
       if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[state.currentSemester] && scheduleMap[state.currentSemester][batchName]) {
           state.currentSchedule = scheduleMap[state.currentSemester][batchName];
       } else {
@@ -749,7 +798,7 @@ function populateBatches() {
       }
       
       updateTriggerText();
-      populateBatchGrid();
+      populateBatchGrid(is128 ? "128" : "62");
       BatchScroller.init(); 
       renderInitialViews();
       
