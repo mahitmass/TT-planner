@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const dictionaries = require('./dictionaries');
 
-const allTeachers = { ...(dictionaries.facultyNames || {}), ...(dictionaries.facultyNames128 || {}) };
+const allTeachers = dictionaries.teachers || {};
 const sortedTeacherCodes = Object.keys(allTeachers).sort((a, b) => b.length - a.length);
 
 const CONFIG = { sheetIndex: 0 };
@@ -165,6 +165,11 @@ function parseCellString(rawText) {
                 let foundTeacher = null;
                 for (const tCode of sortedTeacherCodes) {
                     if (part.toUpperCase().endsWith(tCode) && part.length > tCode.length) {
+                        // Prevent slicing "LAB" into room "L" and teacher "AB"
+                        if (part.toUpperCase().endsWith("LAB") && tCode === "AB") {
+                            continue;
+                        }
+
                         foundTeacher = tCode;
                         cleanRooms.push(part.slice(0, -tCode.length).trim());
                         extractedTeachers.push(tCode);
@@ -223,7 +228,7 @@ function parseCellString(rawText) {
         }
 
         // --- Distribute Teachers ---
-        let teacherPartsRaw = teacherPart === "TBA" ? ["TBA"] : teacherPart.split(/[,/]+/).map(s => s.trim()).filter(s => s);
+        let teacherPartsRaw = teacherPart === "TBA" ? ["TBA"] : teacherPart.split(/[,/\s]+/).map(s => s.trim()).filter(s => s);
         let chunkedTeachers = [];
         if (teacherPartsRaw.length === 1) {
             for (let i = 0; i < numBatches; i++) chunkedTeachers.push(teacherPartsRaw[0]);

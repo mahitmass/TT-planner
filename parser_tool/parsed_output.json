@@ -586,8 +586,8 @@
     "batch": "A15",
     "type": "LEC",
     "subject": "HS211",
-    "room": "FF6MM",
-    "teacher": "TBA"
+    "room": "FF6",
+    "teacher": "MM"
   },
   {
     "day": 1,
@@ -596,8 +596,8 @@
     "batch": "A16",
     "type": "LEC",
     "subject": "HS211",
-    "room": "FF6MM",
-    "teacher": "TBA"
+    "room": "FF6",
+    "teacher": "MM"
   },
   {
     "day": 1,
@@ -847,7 +847,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "G7",
-    "teacher": "ASM APC"
+    "teacher": "ASM,APC"
   },
   {
     "day": 1,
@@ -857,7 +857,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "G7",
-    "teacher": "ASM APC"
+    "teacher": "ASM,APC"
   },
   {
     "day": 1,
@@ -867,7 +867,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "G7",
-    "teacher": "ASM APC"
+    "teacher": "ASM,APC"
   },
   {
     "day": 1,
@@ -3166,8 +3166,8 @@
     "batch": "C3",
     "type": "TUT",
     "subject": "BT313",
-    "room": "TS11SOC,POC",
-    "teacher": "TBA"
+    "room": "TS11,POC",
+    "teacher": "SOC"
   },
   {
     "day": 2,
@@ -3237,7 +3237,7 @@
     "type": "TUT",
     "subject": "BT311",
     "room": "TS16",
-    "teacher": "ASM APC"
+    "teacher": "ASM,APC"
   },
   {
     "day": 2,
@@ -4267,7 +4267,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "LT3",
-    "teacher": "ASM APC"
+    "teacher": "ASM,APC"
   },
   {
     "day": 3,
@@ -4277,7 +4277,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "LT3",
-    "teacher": "ASM APC"
+    "teacher": "ASM,APC"
   },
   {
     "day": 3,
@@ -4287,7 +4287,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "LT3",
-    "teacher": "ASM APC"
+    "teacher": "ASM,APC"
   },
   {
     "day": 3,
@@ -4957,7 +4957,7 @@
     "type": "TUT",
     "subject": "BT311",
     "room": "TS17",
-    "teacher": "ASM APC"
+    "teacher": "ASM,APC"
   },
   {
     "day": 3,
@@ -5416,8 +5416,8 @@
     "batch": "B1",
     "type": "LEC",
     "subject": "MA213",
-    "room": "G4PAT",
-    "teacher": "TBA"
+    "room": "G4",
+    "teacher": "PAT"
   },
   {
     "day": 4,
@@ -5426,8 +5426,8 @@
     "batch": "B2",
     "type": "LEC",
     "subject": "MA213",
-    "room": "G4PAT",
-    "teacher": "TBA"
+    "room": "G4",
+    "teacher": "PAT"
   },
   {
     "day": 4,
@@ -6367,7 +6367,7 @@
     "type": "TUT",
     "subject": "BT311",
     "room": "TR302",
-    "teacher": "ASM APC"
+    "teacher": "ASM,APC"
   },
   {
     "day": 4,
@@ -6656,8 +6656,8 @@
     "batch": "A17",
     "type": "LEC",
     "subject": "HS211",
-    "room": "G4PSH",
-    "teacher": "TBA"
+    "room": "G4",
+    "teacher": "PSH"
   },
   {
     "day": 5,
@@ -6666,8 +6666,8 @@
     "batch": "A18",
     "type": "LEC",
     "subject": "HS211",
-    "room": "G4PSH",
-    "teacher": "TBA"
+    "room": "G4",
+    "teacher": "PSH"
   },
   {
     "day": 5,
@@ -7257,7 +7257,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "G6",
-    "teacher": "ASM APC"
+    "teacher": "ASM,APC"
   },
   {
     "day": 5,
@@ -7267,7 +7267,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "G6",
-    "teacher": "ASM APC"
+    "teacher": "ASM,APC"
   },
   {
     "day": 5,
@@ -7277,7 +7277,7 @@
     "type": "LEC",
     "subject": "BT311",
     "room": "G6",
-    "teacher": "ASM APC"
+    "teacher": "ASM,APC"
   },
   {
     "day": 5,
@@ -7376,8 +7376,8 @@
     "batch": "A10",
     "type": "TUT",
     "subject": "HS211",
-    "room": "TS11AMN",
-    "teacher": "TBA"
+    "room": "TS11",
+    "teacher": "AMN"
   },
   {
     "day": 5,
