@@ -7,11 +7,11 @@
   --border-color: rgba(255, 255, 255, 0.1);
   --accent-color: #d8b4fe;
   --accent-hover: #c084fc;
-  --header-bg: rgba(20, 20, 20, 0.75);
+  --header-bg: rgba(20, 20, 20, 0.95);
 
   /* Slot Type Markers */
   --lec-marker: #90caf9;
-  --tut-marker: #4db6ac;
+  --tut-marker: #fff59d;
   --lab-marker: #ef9a9a;
   --break-marker: #424242;
 
@@ -30,11 +30,11 @@
   --border-color: rgba(0, 0, 0, 0.1);
   --accent-color: #7c3aed;
   --accent-hover: #6d28d9;
-  --header-bg: rgba(255, 255, 255, 0.75);
+  --header-bg: rgba(255, 255, 255, 0.95);
 
   /* Slot Type Markers */
   --lec-marker: #0d47a1;
-  --tut-marker: #00695c;
+  --tut-marker: #fbc02d;
   --lab-marker: #c62828;
   --break-marker: #9e9e9e;
 
@@ -733,7 +733,7 @@ body[data-theme="light"] .day-header {
 }
 
 .cell-tut {
-  background-color: rgba(77, 182, 172, 0.15);
+  background-color: rgba(253, 216, 53, 0.15);
   border-left: 3px solid var(--tut-marker) !important;
 }
 
