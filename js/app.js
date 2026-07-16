@@ -331,10 +331,10 @@ const TimetableApp = (function() {
     state.currentBatch = savedBatch;
     
     // Check inside the semester!
-    if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[savedBatch]) {
-        state.currentSchedule = scheduleMap[savedBatch];
+    if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[state.currentSemester] && scheduleMap[state.currentSemester][savedBatch]) {
+        state.currentSchedule = scheduleMap[state.currentSemester][savedBatch];
     } else {
-        state.currentSchedule = (typeof scheduleA1 !== 'undefined') ? scheduleA1 : [];
+        state.currentSchedule = [];
     }
     
     state.currentView = Storage.get('preferredView', 'swipe');
@@ -1443,25 +1443,27 @@ function initTeacherSearch() {
 
     const slotMap = new Map();
     if (typeof scheduleMap !== 'undefined') {
-      // THE FIX: Look inside currentSemester!
-      Object.keys(scheduleMap || {}).forEach(batchName => {
-        const batchClasses = scheduleMap[batchName];
-        batchClasses.forEach(cls => {
-           const teachers = cls.teacher.split('/').map(t => t.trim());
-           if (teachers.includes(targetCode)) {
-               const key = `${cls.day}-${cls.start}`;
-               if (!slotMap.has(key)) {
-                  slotMap.set(key, { ...cls, batchNames: [batchName] });
-               } else {
-                   const existing = slotMap.get(key);
-                   if (!existing.batchNames.includes(batchName)) {
-                       existing.batchNames.push(batchName);
+        Object.keys(scheduleMap || {}).forEach(semId => {
+          const semBatches = scheduleMap[semId];
+          Object.keys(semBatches || {}).forEach(batchName => {
+            const batchClasses = semBatches[batchName];
+            batchClasses.forEach(cls => {
+               const teachers = cls.teacher.split('/').map(t => t.trim());
+               if (teachers.includes(targetCode)) {
+                   const key = `${cls.day}-${cls.start}`;
+                   if (!slotMap.has(key)) {
+                      slotMap.set(key, { ...cls, batchNames: [batchName] });
+                   } else {
+                       const existing = slotMap.get(key);
+                       if (!existing.batchNames.includes(batchName)) {
+                           existing.batchNames.push(batchName);
+                       }
                    }
                }
-           }
+            });
+          });
         });
-      });
-    }
+      }
 
     const aggregatedSchedule = Array.from(slotMap.values()).map(cls => {
         const fullName = getSubjectFullTitle(cls.title, cls.type) || cls.title;

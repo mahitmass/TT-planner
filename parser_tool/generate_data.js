@@ -13,17 +13,20 @@ if (!fs.existsSync('parsed_output.json')) {
 const rawData = JSON.parse(fs.readFileSync('parsed_output.json', 'utf8'));
 
 // Smart Subject Lookup: Handles both "24B11CS312" and "CS312" automatically!
-function getSubjectName(code) {
+function getSubjectName(code, semester) {
     let cleanCode = code.replace(/\(.*\)/, '').trim();
+    let subjDict = (semester == 1 || semester == '1') ? dictionaries.subjectsSem1 : dictionaries.subjectsSem3;
+    if (!subjDict) subjDict = {};
+
     // Try exact match first (e.g., 24B11CS312)
-    if (dictionaries.subjects[cleanCode]) return dictionaries.subjects[cleanCode];
+    if (subjDict[cleanCode]) return subjDict[cleanCode];
     
     // Try short-code match (e.g., extracts CS312 from 24B11CS312)
     let shortCodeMatch = cleanCode.match(/[A-Z]{2}\d{3,4}/);
-    if (shortCodeMatch && dictionaries.subjects[shortCodeMatch[0]]) {
-        return dictionaries.subjects[shortCodeMatch[0]];
+    if (shortCodeMatch && subjDict[shortCodeMatch[0]]) {
+        return subjDict[shortCodeMatch[0]];
     }
-    return dictionaries.subjects[code] || code;
+    return subjDict[code] || code;
 }
 
 // Master object: { "2": { "A1": [...] }, "4": { "A1": [...] } }
@@ -43,7 +46,7 @@ rawData.forEach(entry => {
     // Create batch object if it doesn't exist
     if (!finalBatches[semester][batchName]) finalBatches[semester][batchName] = [];
 
-    let finalSubject = getSubjectName(entry.subject);
+    let finalSubject = getSubjectName(entry.subject, semester);
     
     if (entry.subject === 'HS111' || finalSubject.includes('UHV')) {
         finalSubject = (entry.type === 'LAB' || entry.duration > 1) ? "Life Skills" : "UHV";

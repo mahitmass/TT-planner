@@ -56,7 +56,7 @@ self.addEventListener('fetch', (event) => {
                   return response;
               }
           } catch(e) { /* Ignore offline errors */ }
-          throw new Error("Network Failed");
+          return null;
       })();
 
       // 3. Timeout Promise
@@ -82,7 +82,7 @@ self.addEventListener('fetch', (event) => {
       }
 
       // SCENARIO A: Network Won (Fresh Data!)
-      if (winner !== 'TIMEOUT') {
+      if (winner && winner !== 'TIMEOUT') {
           await cache.put(cleanRequest, winner.clone());
           return winner;
       }
@@ -107,6 +107,7 @@ self.addEventListener('fetch', (event) => {
 async function updateInBackground(networkPromise, cache, cleanRequest, oldResponse) {
     try {
         const networkResponse = await networkPromise;
+        if (!networkResponse) return;
         
         const oldText = await oldResponse.text();
         const newText = await networkResponse.clone().text();
