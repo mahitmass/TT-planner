@@ -8,20 +8,12 @@ const scheduleMap = {
       { "day": 1, "start": 15, "duration": 2, "title": "Basic Electronics", "code": "BEL1", "teacher": "KUL,ABU", "type": "lab" },
       { "day": 2, "start": 9, "duration": 1, "title": "Physics-1", "code": "TS6", "teacher": "RAV", "type": "tut" },
       { "day": 2, "start": 11, "duration": 1, "title": "SDF- I", "code": "FF9", "teacher": "AW", "type": "lec" },
-<<<<<<< HEAD
       { "day": 2, "start": 13, "duration": 3, "title": "Engineering Drawing and Design", "code": "CAD2", "teacher": "GRP", "type": "lab" },
-=======
-      { "day": 2, "start": 13, "duration": 2, "title": "Engineering awing and Design", "code": "CAD2", "teacher": "GRP", "type": "lab" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 3, "start": 10, "duration": 1, "title": "English", "code": "FF8", "teacher": "PAC", "type": "lec" },
       { "day": 3, "start": 11, "duration": 1, "title": "Basic Electronics", "code": "G1", "teacher": "JMO", "type": "lec" },
       { "day": 3, "start": 13, "duration": 2, "title": "English", "code": "CL12", "teacher": "SDA", "type": "lab" },
       { "day": 3, "start": 15, "duration": 1, "title": "SDF- I", "code": "G1", "teacher": "AW", "type": "lec" },
-<<<<<<< HEAD
       { "day": 4, "start": 10, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "TAJ,AM", "type": "lab" },
-=======
-      { "day": 4, "start": 10, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "TAJ,AM", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 4, "start": 13, "duration": 1, "title": "Physics-1", "code": "G1", "teacher": "BCJ", "type": "lec" },
       { "day": 4, "start": 14, "duration": 1, "title": "Maths-1", "code": "G1", "teacher": "NF8", "type": "lec" },
       { "day": 4, "start": 15, "duration": 1, "title": "Basic Electronics", "code": "G1", "teacher": "JMO", "type": "lec" },
@@ -40,20 +32,12 @@ const scheduleMap = {
       { "day": 1, "start": 15, "duration": 2, "title": "Basic Electronics", "code": "BEL2", "teacher": "SHA,MJ", "type": "lab" },
       { "day": 2, "start": 9, "duration": 1, "title": "Physics-1", "code": "TS7", "teacher": "MKC", "type": "tut" },
       { "day": 2, "start": 11, "duration": 1, "title": "SDF- I", "code": "FF9", "teacher": "AW", "type": "lec" },
-<<<<<<< HEAD
       { "day": 2, "start": 13, "duration": 3, "title": "Engineering Drawing and Design", "code": "CAD3", "teacher": "ASG", "type": "lab" },
-=======
-      { "day": 2, "start": 13, "duration": 2, "title": "Engineering awing and Design", "code": "CAD3", "teacher": "ASG", "type": "lab" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 3, "start": 10, "duration": 1, "title": "English", "code": "FF8", "teacher": "PAC", "type": "lec" },
       { "day": 3, "start": 11, "duration": 1, "title": "Basic Electronics", "code": "G1", "teacher": "JMO", "type": "lec" },
       { "day": 3, "start": 13, "duration": 2, "title": "English", "code": "LL", "teacher": "KMB", "type": "lab" },
       { "day": 3, "start": 15, "duration": 1, "title": "SDF- I", "code": "G1", "teacher": "AW", "type": "lec" },
-<<<<<<< HEAD
       { "day": 4, "start": 9, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "SAA,ROH", "type": "lab" },
-=======
-      { "day": 4, "start": 9, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "SAA,ROH", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 4, "start": 13, "duration": 1, "title": "Physics-1", "code": "G1", "teacher": "BCJ", "type": "lec" },
       { "day": 4, "start": 14, "duration": 1, "title": "Maths-1", "code": "G1", "teacher": "NF8", "type": "lec" },
       { "day": 4, "start": 15, "duration": 1, "title": "Basic Electronics", "code": "G1", "teacher": "JMO", "type": "lec" },
@@ -72,19 +56,11 @@ const scheduleMap = {
       { "day": 1, "start": 15, "duration": 1, "title": "Physics-1", "code": "TS8", "teacher": "PC", "type": "tut" },
       { "day": 2, "start": 10, "duration": 1, "title": "Maths-1", "code": "G1", "teacher": "RSC", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "SDF- I", "code": "CR526", "teacher": "RCA", "type": "lec" },
-<<<<<<< HEAD
       { "day": 2, "start": 13, "duration": 3, "title": "Engineering Drawing and Design", "code": "CAD4", "teacher": "NF1", "type": "lab" },
       { "day": 3, "start": 9, "duration": 1, "title": "Basic Electronics", "code": "TS7", "teacher": "BVI", "type": "tut" },
       { "day": 3, "start": 10, "duration": 1, "title": "English", "code": "FF1", "teacher": "MDU", "type": "lec" },
       { "day": 3, "start": 11, "duration": 1, "title": "Maths-1", "code": "FF1", "teacher": "RSC", "type": "lec" },
       { "day": 3, "start": 13, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "AYS,DCH", "type": "lab" },
-=======
-      { "day": 2, "start": 13, "duration": 2, "title": "Engineering awing and Design", "code": "CAD4", "teacher": "NF1", "type": "lab" },
-      { "day": 3, "start": 9, "duration": 1, "title": "Basic Electronics", "code": "TS7", "teacher": "BVI", "type": "tut" },
-      { "day": 3, "start": 10, "duration": 1, "title": "English", "code": "FF1", "teacher": "MDU", "type": "lec" },
-      { "day": 3, "start": 11, "duration": 1, "title": "Maths-1", "code": "FF1", "teacher": "RSC", "type": "lec" },
-      { "day": 3, "start": 13, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "AYS,DCH", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 3, "start": 15, "duration": 1, "title": "SDF- I", "code": "FF1", "teacher": "RCA", "type": "lec" },
       { "day": 4, "start": 10, "duration": 2, "title": "Physics Lab-1", "code": "PL1", "teacher": "RAV", "type": "lab" },
       { "day": 4, "start": 13, "duration": 1, "title": "Physics-1", "code": "FF1", "teacher": "DIP", "type": "lec" },
@@ -108,11 +84,7 @@ const scheduleMap = {
       { "day": 3, "start": 9, "duration": 1, "title": "Basic Electronics", "code": "F4", "teacher": "RU", "type": "tut" },
       { "day": 3, "start": 10, "duration": 1, "title": "English", "code": "FF1", "teacher": "MDU", "type": "lec" },
       { "day": 3, "start": 11, "duration": 1, "title": "Maths-1", "code": "FF1", "teacher": "RSC", "type": "lec" },
-<<<<<<< HEAD
       { "day": 3, "start": 13, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "MAY,AM", "type": "lab" },
-=======
-      { "day": 3, "start": 13, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "MAY,AM", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 3, "start": 15, "duration": 1, "title": "SDF- I", "code": "FF1", "teacher": "RCA", "type": "lec" },
       { "day": 4, "start": 10, "duration": 1, "title": "Physics-1", "code": "TS13", "teacher": "DIN", "type": "tut" },
       { "day": 4, "start": 13, "duration": 1, "title": "Physics-1", "code": "FF1", "teacher": "DIP", "type": "lec" },
@@ -130,22 +102,14 @@ const scheduleMap = {
       { "day": 1, "start": 13, "duration": 1, "title": "English", "code": "G1", "teacher": "MB", "type": "lec" },
       { "day": 1, "start": 14, "duration": 1, "title": "Basic Electronics", "code": "G1", "teacher": "HEM", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "SDF- I", "code": "G1", "teacher": "SAA", "type": "lec" },
-<<<<<<< HEAD
       { "day": 2, "start": 9, "duration": 3, "title": "Engineering Drawing and Design", "code": "CAD3", "teacher": "NF2", "type": "lab" },
-=======
-      { "day": 2, "start": 9, "duration": 2, "title": "Engineering awing and Design", "code": "CAD3", "teacher": "NF2", "type": "lab" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 2, "start": 13, "duration": 1, "title": "Maths-1", "code": "G1", "teacher": "RSA", "type": "lec" },
       { "day": 2, "start": 14, "duration": 1, "title": "Physics-1", "code": "G1", "teacher": "RKD", "type": "lec" },
       { "day": 2, "start": 15, "duration": 1, "title": "SDF- I", "code": "G1", "teacher": "SAA", "type": "lec" },
       { "day": 3, "start": 10, "duration": 2, "title": "English", "code": "LL1", "teacher": "EKS", "type": "lab" },
       { "day": 3, "start": 13, "duration": 1, "title": "Physics-1", "code": "G1", "teacher": "RKD", "type": "lec" },
       { "day": 3, "start": 14, "duration": 1, "title": "Maths-1", "code": "G1", "teacher": "RSA", "type": "lec" },
-<<<<<<< HEAD
       { "day": 3, "start": 15, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "APR,ASA", "type": "lab" },
-=======
-      { "day": 3, "start": 15, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "APR,ASA", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 4, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "G1", "teacher": "HEM", "type": "lec" },
       { "day": 4, "start": 11, "duration": 1, "title": "SDF- I", "code": "G1", "teacher": "SAA", "type": "lec" },
       { "day": 4, "start": 13, "duration": 2, "title": "Basic Electronics", "code": "BEL1", "teacher": "NTN,SMK", "type": "lab" },
@@ -162,22 +126,14 @@ const scheduleMap = {
       { "day": 1, "start": 13, "duration": 1, "title": "English", "code": "G1", "teacher": "MB", "type": "lec" },
       { "day": 1, "start": 14, "duration": 1, "title": "Basic Electronics", "code": "G1", "teacher": "HEM", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "SDF- I", "code": "G1", "teacher": "SAA", "type": "lec" },
-<<<<<<< HEAD
       { "day": 2, "start": 9, "duration": 3, "title": "Engineering Drawing and Design", "code": "CAD4", "teacher": "CDN", "type": "lab" },
-=======
-      { "day": 2, "start": 9, "duration": 2, "title": "Engineering awing and Design", "code": "CAD4", "teacher": "CDN", "type": "lab" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 2, "start": 13, "duration": 1, "title": "Maths-1", "code": "G1", "teacher": "RSA", "type": "lec" },
       { "day": 2, "start": 14, "duration": 1, "title": "Physics-1", "code": "G1", "teacher": "RKD", "type": "lec" },
       { "day": 2, "start": 15, "duration": 1, "title": "SDF- I", "code": "G1", "teacher": "SAA", "type": "lec" },
       { "day": 3, "start": 10, "duration": 2, "title": "English", "code": "LL", "teacher": "NIS", "type": "lab" },
       { "day": 3, "start": 13, "duration": 1, "title": "Physics-1", "code": "G1", "teacher": "RKD", "type": "lec" },
       { "day": 3, "start": 14, "duration": 1, "title": "Maths-1", "code": "G1", "teacher": "RSA", "type": "lec" },
-<<<<<<< HEAD
       { "day": 3, "start": 15, "duration": 2, "title": "SDF I", "code": "CL07", "teacher": "ANV", "type": "lab" },
-=======
-      { "day": 3, "start": 15, "duration": 2, "title": "SDF I", "code": "CL07", "teacher": "ANV", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 4, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "G1", "teacher": "HEM", "type": "lec" },
       { "day": 4, "start": 11, "duration": 1, "title": "SDF- I", "code": "G1", "teacher": "SAA", "type": "lec" },
       { "day": 4, "start": 13, "duration": 2, "title": "Basic Electronics", "code": "BEL2", "teacher": "AB.PKY", "type": "lab" },
@@ -190,11 +146,7 @@ const scheduleMap = {
       { "day": 6, "start": 11, "duration": 1, "title": "Maths-1", "code": "G1", "teacher": "RSA", "type": "lec" }
     ],
     "A7": [
-<<<<<<< HEAD
       { "day": 1, "start": 10, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "NIY,APR", "type": "lab" },
-=======
-      { "day": 1, "start": 10, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "NIY,APR", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 1, "start": 13, "duration": 1, "title": "Physics-1", "code": "FF4", "teacher": "GPK", "type": "lec" },
       { "day": 1, "start": 14, "duration": 1, "title": "Basic Electronics", "code": "FF4", "teacher": "RRJ", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "SDF- I", "code": "FF4", "teacher": "MAY", "type": "lec" },
@@ -235,11 +187,7 @@ const scheduleMap = {
       { "day": 4, "start": 9, "duration": 1, "title": "Maths-1", "code": "F6", "teacher": "NF1", "type": "lec" },
       { "day": 4, "start": 10, "duration": 2, "title": "English", "code": "LL1", "teacher": "NIS", "type": "lab" },
       { "day": 4, "start": 14, "duration": 1, "title": "Basic Electronics", "code": "CS6", "teacher": "RRJ", "type": "lec" },
-<<<<<<< HEAD
       { "day": 4, "start": 15, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "SJA,ROH", "type": "lab" },
-=======
-      { "day": 4, "start": 15, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "SJA,ROH", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 5, "start": 9, "duration": 1, "title": "SDF- I", "code": "CS8", "teacher": "MAY", "type": "lec" },
       { "day": 5, "start": 10, "duration": 2, "title": "Basic Electronics", "code": "BEL2", "teacher": "VD,GV", "type": "lab" },
       { "day": 5, "start": 13, "duration": 1, "title": "Physics-1", "code": "G3", "teacher": "GPK", "type": "lec" },
@@ -249,11 +197,7 @@ const scheduleMap = {
       { "day": 1, "start": 10, "duration": 1, "title": "Physics-1", "code": "FF4", "teacher": "MTR", "type": "lec" },
       { "day": 1, "start": 11, "duration": 1, "title": "Maths-1", "code": "FF4", "teacher": "NSK", "type": "lec" },
       { "day": 1, "start": 13, "duration": 1, "title": "Basic Electronics", "code": "G6", "teacher": "VGO", "type": "lec" },
-<<<<<<< HEAD
       { "day": 1, "start": 15, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "ANP", "type": "lab" },
-=======
-      { "day": 1, "start": 15, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "ANP", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 2, "start": 9, "duration": 1, "title": "SDF- I", "code": "TS302", "teacher": "SLK", "type": "tut" },
       { "day": 2, "start": 10, "duration": 1, "title": "Physics-1", "code": "FF9", "teacher": "MTR", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "SDF- I", "code": "FF4", "teacher": "AVR", "type": "lec" },
@@ -291,11 +235,7 @@ const scheduleMap = {
       { "day": 4, "start": 13, "duration": 2, "title": "English", "code": "LL", "teacher": "HK", "type": "lab" },
       { "day": 5, "start": 10, "duration": 1, "title": "Maths-1", "code": "FF2", "teacher": "DGA", "type": "lec" },
       { "day": 5, "start": 11, "duration": 1, "title": "Physics-1", "code": "FF2", "teacher": "DIN", "type": "lec" },
-<<<<<<< HEAD
       { "day": 5, "start": 13, "duration": 2, "title": "SDF I", "code": "CL03", "teacher": "SHO,DCH", "type": "lab" },
-=======
-      { "day": 5, "start": 13, "duration": 2, "title": "SDF I", "code": "CL03", "teacher": "SHO,DCH", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 5, "start": 15, "duration": 1, "title": "SDF- I", "code": "TS8", "teacher": "PKU", "type": "tut" },
       { "day": 6, "start": 9, "duration": 1, "title": "Maths-1", "code": "F7", "teacher": "HA", "type": "tut" },
       { "day": 6, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "G6", "teacher": "RRJ", "type": "lec" },
@@ -320,11 +260,7 @@ const scheduleMap = {
       { "day": 4, "start": 16, "duration": 1, "title": "SDF- I", "code": "TS8", "teacher": "PTK", "type": "tut" },
       { "day": 5, "start": 10, "duration": 1, "title": "Maths-1", "code": "FF2", "teacher": "DGA", "type": "lec" },
       { "day": 5, "start": 11, "duration": 1, "title": "Physics-1", "code": "FF2", "teacher": "DIN", "type": "lec" },
-<<<<<<< HEAD
       { "day": 5, "start": 13, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "ANP", "type": "lab" },
-=======
-      { "day": 5, "start": 13, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "ANP", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 6, "start": 9, "duration": 1, "title": "Maths-1", "code": "TS13", "teacher": "NF5", "type": "tut" },
       { "day": 6, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "G6", "teacher": "RRJ", "type": "lec" },
       { "day": 6, "start": 11, "duration": 1, "title": "Basic Electronics", "code": "TS7", "teacher": "ATA", "type": "tut" }
@@ -334,11 +270,7 @@ const scheduleMap = {
       { "day": 1, "start": 13, "duration": 1, "title": "SDF- I", "code": "FF3", "teacher": "ANP", "type": "lec" },
       { "day": 1, "start": 14, "duration": 1, "title": "Basic Electronics", "code": "FF3", "teacher": "NHI", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "English", "code": "FF3", "teacher": "MB", "type": "lec" },
-<<<<<<< HEAD
       { "day": 2, "start": 9, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "DSI,DCH", "type": "lab" },
-=======
-      { "day": 2, "start": 9, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "DSI,DCH", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 2, "start": 13, "duration": 1, "title": "SDF- I", "code": "FF5", "teacher": "ANP", "type": "lec" },
       { "day": 2, "start": 14, "duration": 1, "title": "Physics-1", "code": "CS6", "teacher": "VRT", "type": "lec" },
       { "day": 2, "start": 15, "duration": 1, "title": "Maths-1", "code": "CS6", "teacher": "NF3", "type": "lec" },
@@ -362,11 +294,7 @@ const scheduleMap = {
       { "day": 1, "start": 13, "duration": 1, "title": "SDF- I", "code": "FF3", "teacher": "ANP", "type": "lec" },
       { "day": 1, "start": 14, "duration": 1, "title": "Basic Electronics", "code": "FF3", "teacher": "NHI", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "English", "code": "FF3", "teacher": "MB", "type": "lec" },
-<<<<<<< HEAD
       { "day": 2, "start": 9, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "SHR,SRG", "type": "lab" },
-=======
-      { "day": 2, "start": 9, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "SHR,SRG", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 2, "start": 13, "duration": 1, "title": "SDF- I", "code": "FF5", "teacher": "ANP", "type": "lec" },
       { "day": 2, "start": 14, "duration": 1, "title": "Physics-1", "code": "CS6", "teacher": "VRT", "type": "lec" },
       { "day": 2, "start": 15, "duration": 1, "title": "Maths-1", "code": "CS6", "teacher": "NF3", "type": "lec" },
@@ -387,11 +315,7 @@ const scheduleMap = {
     ],
     "B1": [
       { "day": 1, "start": 11, "duration": 1, "title": "Maths-1", "code": "CS6", "teacher": "GA", "type": "lec" },
-<<<<<<< HEAD
       { "day": 1, "start": 13, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "AYS,PSO", "type": "lab" },
-=======
-      { "day": 1, "start": 13, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "AYS,PSO", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 1, "start": 15, "duration": 1, "title": "Physics-1", "code": "CR526", "teacher": "EKY", "type": "lec" },
       { "day": 2, "start": 9, "duration": 1, "title": "SDF- I", "code": "F4", "teacher": "SAA", "type": "tut" },
       { "day": 2, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "FF1", "teacher": "AB", "type": "lec" },
@@ -403,11 +327,7 @@ const scheduleMap = {
       { "day": 3, "start": 11, "duration": 1, "title": "Basic Electronics", "code": "FF2", "teacher": "AB", "type": "lec" },
       { "day": 3, "start": 13, "duration": 2, "title": "Physics Lab-1", "code": "PL2", "teacher": "MTR", "type": "lab" },
       { "day": 3, "start": 15, "duration": 1, "title": "SDF- I", "code": "FF2", "teacher": "TNV", "type": "lec" },
-<<<<<<< HEAD
       { "day": 4, "start": 9, "duration": 3, "title": "Engineering Drawing and Design", "code": "CAD1", "teacher": "NTS", "type": "lab" },
-=======
-      { "day": 4, "start": 9, "duration": 2, "title": "Engineering awing and Design", "code": "CAD1", "teacher": "NTS", "type": "lab" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 4, "start": 13, "duration": 1, "title": "Physics-1", "code": "FF2", "teacher": "EKY", "type": "lec" },
       { "day": 4, "start": 14, "duration": 1, "title": "Maths-1", "code": "FF2", "teacher": "GA", "type": "lec" },
       { "day": 4, "start": 15, "duration": 2, "title": "English", "code": "LL", "teacher": "MB", "type": "lab" },
@@ -419,11 +339,7 @@ const scheduleMap = {
     ],
     "B2": [
       { "day": 1, "start": 11, "duration": 1, "title": "Maths-1", "code": "CS6", "teacher": "GA", "type": "lec" },
-<<<<<<< HEAD
       { "day": 1, "start": 13, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "DCH,SLK", "type": "lab" },
-=======
-      { "day": 1, "start": 13, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "DCH,SLK", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 1, "start": 15, "duration": 1, "title": "Physics-1", "code": "CR526", "teacher": "EKY", "type": "lec" },
       { "day": 2, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "FF1", "teacher": "AB", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "SDF- I", "code": "CS8", "teacher": "TNV", "type": "lec" },
@@ -452,11 +368,7 @@ const scheduleMap = {
       { "day": 1, "start": 16, "duration": 1, "title": "Physics-1", "code": "G1", "teacher": "SPP", "type": "lec" },
       { "day": 2, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "FF2", "teacher": "SIM", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "SDF- I", "code": "CS5", "teacher": "TAJ", "type": "lec" },
-<<<<<<< HEAD
       { "day": 2, "start": 13, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "SMS,MAY", "type": "lab" },
-=======
-      { "day": 2, "start": 13, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "SMS,MAY", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 2, "start": 15, "duration": 2, "title": "English", "code": "LL1", "teacher": "MDU", "type": "lab" },
       { "day": 3, "start": 9, "duration": 1, "title": "SDF- I", "code": "TS8", "teacher": "AYS", "type": "tut" },
       { "day": 3, "start": 10, "duration": 1, "title": "English", "code": "FF3", "teacher": "KNP", "type": "lec" },
@@ -481,11 +393,7 @@ const scheduleMap = {
       { "day": 1, "start": 16, "duration": 1, "title": "Physics-1", "code": "G1", "teacher": "SPP", "type": "lec" },
       { "day": 2, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "FF2", "teacher": "SIM", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "SDF- I", "code": "CS5", "teacher": "TAJ", "type": "lec" },
-<<<<<<< HEAD
       { "day": 2, "start": 13, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "NAC,SHV", "type": "lab" },
-=======
-      { "day": 2, "start": 13, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "NAC,SHV", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 2, "start": 15, "duration": 2, "title": "English", "code": "LL", "teacher": "HK", "type": "lab" },
       { "day": 3, "start": 10, "duration": 1, "title": "English", "code": "FF3", "teacher": "KNP", "type": "lec" },
       { "day": 3, "start": 11, "duration": 1, "title": "Maths-1", "code": "FF3", "teacher": "HPT", "type": "lec" },
@@ -516,20 +424,12 @@ const scheduleMap = {
       { "day": 3, "start": 14, "duration": 1, "title": "Physics-1", "code": "FF3", "teacher": "MKC", "type": "lec" },
       { "day": 3, "start": 15, "duration": 2, "title": "Basic Electronics", "code": "BEL1", "teacher": "NTN,SMK", "type": "lab" },
       { "day": 4, "start": 11, "duration": 1, "title": "SDF- I", "code": "FF8", "teacher": "RJM", "type": "lec" },
-<<<<<<< HEAD
       { "day": 4, "start": 13, "duration": 3, "title": "Engineering Drawing and Design", "code": "CAD2", "teacher": "GGL", "type": "lab" },
-=======
-      { "day": 4, "start": 13, "duration": 2, "title": "Engineering awing and Design", "code": "CAD2", "teacher": "GGL", "type": "lab" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 5, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "FF9", "teacher": "NF1", "type": "lec" },
       { "day": 5, "start": 11, "duration": 1, "title": "Physics-1", "code": "FF8", "teacher": "MKC", "type": "lec" },
       { "day": 5, "start": 14, "duration": 1, "title": "Basic Electronics", "code": "TS8", "teacher": "JG", "type": "tut" },
       { "day": 5, "start": 15, "duration": 2, "title": "English", "code": "LL", "teacher": "EKS", "type": "lab" },
-<<<<<<< HEAD
       { "day": 6, "start": 9, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "SRG,RJM", "type": "lab" },
-=======
-      { "day": 6, "start": 9, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "SRG,RJM", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 6, "start": 11, "duration": 1, "title": "Maths-1", "code": "G6", "teacher": "LK", "type": "lec" },
       { "day": 6, "start": 12, "duration": 1, "title": "Basic Electronics", "code": "G2", "teacher": "NF1", "type": "lec" }
     ],
@@ -547,21 +447,13 @@ const scheduleMap = {
       { "day": 3, "start": 14, "duration": 1, "title": "Physics-1", "code": "FF3", "teacher": "MKC", "type": "lec" },
       { "day": 3, "start": 15, "duration": 2, "title": "Basic Electronics", "code": "BEL2", "teacher": "HEM,NF7", "type": "lab" },
       { "day": 4, "start": 11, "duration": 1, "title": "SDF- I", "code": "FF8", "teacher": "RJM", "type": "lec" },
-<<<<<<< HEAD
       { "day": 4, "start": 13, "duration": 3, "title": "Engineering Drawing and Design", "code": "CAD3", "teacher": "CDN", "type": "lab" },
-=======
-      { "day": 4, "start": 13, "duration": 2, "title": "Engineering awing and Design", "code": "CAD3", "teacher": "CDN", "type": "lab" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 5, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "FF9", "teacher": "NF1", "type": "lec" },
       { "day": 5, "start": 11, "duration": 1, "title": "Physics-1", "code": "FF8", "teacher": "MKC", "type": "lec" },
       { "day": 5, "start": 13, "duration": 1, "title": "SDF- I", "code": "F4", "teacher": "SHV", "type": "tut" },
       { "day": 5, "start": 14, "duration": 1, "title": "Basic Electronics", "code": "F4", "teacher": "PKY", "type": "tut" },
       { "day": 5, "start": 15, "duration": 2, "title": "English", "code": "LL1", "teacher": "PAC", "type": "lab" },
-<<<<<<< HEAD
       { "day": 6, "start": 9, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "ASA", "type": "lab" },
-=======
-      { "day": 6, "start": 9, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "ASA", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 6, "start": 11, "duration": 1, "title": "Maths-1", "code": "G6", "teacher": "LK", "type": "lec" },
       { "day": 6, "start": 12, "duration": 1, "title": "Basic Electronics", "code": "G2", "teacher": "NF1", "type": "lec" }
     ],
@@ -584,11 +476,7 @@ const scheduleMap = {
       { "day": 5, "start": 10, "duration": 1, "title": "Maths-1", "code": "FF3", "teacher": "RSH", "type": "lec" },
       { "day": 5, "start": 11, "duration": 1, "title": "Physics-1", "code": "FF3", "teacher": "NF1", "type": "lec" },
       { "day": 5, "start": 13, "duration": 2, "title": "Physics Lab-1", "code": "P12", "teacher": "EKY", "type": "lab" },
-<<<<<<< HEAD
       { "day": 5, "start": 15, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "SOS", "type": "lab" },
-=======
-      { "day": 5, "start": 15, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "SOS", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 6, "start": 9, "duration": 1, "title": "Basic Electronics", "code": "FF9", "teacher": "SHA", "type": "lec" },
       { "day": 6, "start": 10, "duration": 1, "title": "SDF- I", "code": "G3", "teacher": "PSO", "type": "lec" },
       { "day": 6, "start": 11, "duration": 1, "title": "Physics-1", "code": "TS8", "teacher": "RKG", "type": "tut" }
@@ -612,11 +500,7 @@ const scheduleMap = {
       { "day": 5, "start": 10, "duration": 1, "title": "Maths-1", "code": "FF3", "teacher": "RSH", "type": "lec" },
       { "day": 5, "start": 11, "duration": 1, "title": "Physics-1", "code": "FF3", "teacher": "NF1", "type": "lec" },
       { "day": 5, "start": 13, "duration": 2, "title": "Physics Lab-1", "code": "P13", "teacher": "DAM", "type": "lab" },
-<<<<<<< HEAD
       { "day": 5, "start": 15, "duration": 2, "title": "SDF I", "code": "CL06", "teacher": "SMS", "type": "lab" },
-=======
-      { "day": 5, "start": 15, "duration": 2, "title": "SDF I", "code": "CL06", "teacher": "SMS", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 6, "start": 9, "duration": 1, "title": "Basic Electronics", "code": "FF9", "teacher": "SHA", "type": "lec" },
       { "day": 6, "start": 10, "duration": 1, "title": "SDF- I", "code": "G3", "teacher": "PSO", "type": "lec" },
       { "day": 6, "start": 11, "duration": 1, "title": "Physics-1", "code": "TS13", "teacher": "VRT", "type": "tut" }
@@ -627,19 +511,11 @@ const scheduleMap = {
       { "day": 1, "start": 13, "duration": 1, "title": "English", "code": "FF1", "teacher": "EKS", "type": "lec" },
       { "day": 1, "start": 14, "duration": 1, "title": "Basic Electronics", "code": "FF1", "teacher": "AB", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "SDF- I", "code": "FF1", "teacher": "AJS", "type": "lec" },
-<<<<<<< HEAD
       { "day": 2, "start": 9, "duration": 3, "title": "Engineering Drawing and Design", "code": "CAD2", "teacher": "MJH", "type": "lab" },
       { "day": 2, "start": 13, "duration": 1, "title": "Maths-1", "code": "FF1", "teacher": "MKB", "type": "lec" },
       { "day": 2, "start": 14, "duration": 1, "title": "SDF- I", "code": "FF1", "teacher": "AJS", "type": "lec" },
       { "day": 2, "start": 15, "duration": 1, "title": "Physics-1", "code": "FF1", "teacher": "SHIV", "type": "lec" },
       { "day": 3, "start": 10, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "NIY,APR", "type": "lab" },
-=======
-      { "day": 2, "start": 9, "duration": 2, "title": "Engineering awing and Design", "code": "CAD2", "teacher": "MJH", "type": "lab" },
-      { "day": 2, "start": 13, "duration": 1, "title": "Maths-1", "code": "FF1", "teacher": "MKB", "type": "lec" },
-      { "day": 2, "start": 14, "duration": 1, "title": "SDF- I", "code": "FF1", "teacher": "AJS", "type": "lec" },
-      { "day": 2, "start": 15, "duration": 1, "title": "Physics-1", "code": "FF1", "teacher": "SHIV", "type": "lec" },
-      { "day": 3, "start": 10, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "NIY,APR", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 3, "start": 13, "duration": 1, "title": "Physics-1", "code": "FF1", "teacher": "SHIV", "type": "lec" },
       { "day": 3, "start": 14, "duration": 1, "title": "Maths-1", "code": "FF1", "teacher": "MKB", "type": "lec" },
       { "day": 3, "start": 15, "duration": 2, "title": "English", "code": "LL1", "teacher": "EKS", "type": "lab" },
@@ -663,11 +539,7 @@ const scheduleMap = {
       { "day": 2, "start": 13, "duration": 1, "title": "Maths-1", "code": "FF1", "teacher": "MKB", "type": "lec" },
       { "day": 2, "start": 14, "duration": 1, "title": "SDF- I", "code": "FF1", "teacher": "AJS", "type": "lec" },
       { "day": 2, "start": 15, "duration": 1, "title": "Physics-1", "code": "FF1", "teacher": "SHIV", "type": "lec" },
-<<<<<<< HEAD
       { "day": 3, "start": 10, "duration": 2, "title": "SDF I", "code": "CL07", "teacher": "ANV,DSI", "type": "lab" },
-=======
-      { "day": 3, "start": 10, "duration": 2, "title": "SDF I", "code": "CL07", "teacher": "ANV,DSI", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 3, "start": 13, "duration": 1, "title": "Physics-1", "code": "FF1", "teacher": "SHIV", "type": "lec" },
       { "day": 3, "start": 14, "duration": 1, "title": "Maths-1", "code": "FF1", "teacher": "MKB", "type": "lec" },
       { "day": 3, "start": 15, "duration": 2, "title": "English", "code": "LL", "teacher": "NIS", "type": "lab" },
@@ -697,11 +569,7 @@ const scheduleMap = {
       { "day": 3, "start": 14, "duration": 1, "title": "Maths-1", "code": "G6", "teacher": "NS", "type": "lec" },
       { "day": 4, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "FF3", "teacher": "SIM", "type": "lec" },
       { "day": 4, "start": 11, "duration": 1, "title": "SDF- I", "code": "FF3", "teacher": "MKT", "type": "lec" },
-<<<<<<< HEAD
       { "day": 4, "start": 13, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "PSO,ANP", "type": "lab" },
-=======
-      { "day": 4, "start": 13, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "PSO,ANP", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 4, "start": 15, "duration": 2, "title": "Basic Electronics", "code": "BEL1", "teacher": "KUL,ABU", "type": "lab" },
       { "day": 5, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "FF4", "teacher": "SIM", "type": "lec" },
       { "day": 5, "start": 11, "duration": 1, "title": "Physics-1", "code": "FF4", "teacher": "SDC", "type": "lec" },
@@ -725,11 +593,7 @@ const scheduleMap = {
       { "day": 3, "start": 14, "duration": 1, "title": "Maths-1", "code": "G6", "teacher": "NS", "type": "lec" },
       { "day": 4, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "FF3", "teacher": "SIM", "type": "lec" },
       { "day": 4, "start": 11, "duration": 1, "title": "SDF- I", "code": "FF3", "teacher": "MKT", "type": "lec" },
-<<<<<<< HEAD
       { "day": 4, "start": 13, "duration": 2, "title": "SDF I", "code": "CL06", "teacher": "RJM,RCA", "type": "lab" },
-=======
-      { "day": 4, "start": 13, "duration": 2, "title": "SDF I", "code": "CL06", "teacher": "RJM,RCA", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 4, "start": 15, "duration": 2, "title": "Basic Electronics", "code": "BEL2", "teacher": "VKH,RU", "type": "lab" },
       { "day": 5, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "FF4", "teacher": "SIM", "type": "lec" },
       { "day": 5, "start": 11, "duration": 1, "title": "Physics-1", "code": "FF4", "teacher": "SDC", "type": "lec" },
@@ -740,11 +604,7 @@ const scheduleMap = {
     "B13": [
       { "day": 1, "start": 10, "duration": 1, "title": "Physics-1", "code": "FF9", "teacher": "ABH", "type": "lec" },
       { "day": 1, "start": 11, "duration": 1, "title": "Maths-1", "code": "FF9", "teacher": "SP", "type": "lec" },
-<<<<<<< HEAD
       { "day": 1, "start": 13, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "NAC,SHO", "type": "lab" },
-=======
-      { "day": 1, "start": 13, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "NAC,SHO", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 1, "start": 15, "duration": 2, "title": "English", "code": "LL", "teacher": "BB", "type": "lab" },
       { "day": 2, "start": 9, "duration": 2, "title": "Basic Electronics", "code": "ADE", "teacher": "HEM,ALJ", "type": "lab" },
       { "day": 2, "start": 13, "duration": 1, "title": "SDF- I", "code": "G8", "teacher": "MSI", "type": "lec" },
@@ -769,21 +629,13 @@ const scheduleMap = {
       { "day": 1, "start": 10, "duration": 1, "title": "Physics-1", "code": "FF9", "teacher": "ABH", "type": "lec" },
       { "day": 1, "start": 11, "duration": 1, "title": "Maths-1", "code": "FF9", "teacher": "SP", "type": "lec" },
       { "day": 1, "start": 13, "duration": 2, "title": "English", "code": "CL12", "teacher": "SDA", "type": "lab" },
-<<<<<<< HEAD
       { "day": 1, "start": 15, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "AYS", "type": "lab" },
-=======
-      { "day": 1, "start": 15, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "AYS", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 2, "start": 11, "duration": 1, "title": "Maths-1", "code": "F4", "teacher": "SP", "type": "tut" },
       { "day": 2, "start": 13, "duration": 1, "title": "SDF- I", "code": "G8", "teacher": "MSI", "type": "lec" },
       { "day": 2, "start": 14, "duration": 1, "title": "Physics-1", "code": "G7", "teacher": "ABH", "type": "lec" },
       { "day": 2, "start": 15, "duration": 1, "title": "Maths-1", "code": "FF6", "teacher": "SP", "type": "lec" },
       { "day": 2, "start": 16, "duration": 1, "title": "Basic Electronics", "code": "FF1", "teacher": "HEM", "type": "lec" },
-<<<<<<< HEAD
       { "day": 3, "start": 9, "duration": 3, "title": "Engineering Drawing and Design", "code": "CAD3", "teacher": "GGL", "type": "lab" },
-=======
-      { "day": 3, "start": 9, "duration": 2, "title": "Engineering awing and Design", "code": "CAD3", "teacher": "GGL", "type": "lab" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 3, "start": 16, "duration": 1, "title": "SDF- I", "code": "TS6", "teacher": "NIY", "type": "tut" },
       { "day": 4, "start": 10, "duration": 1, "title": "Maths-1", "code": "CS7", "teacher": "SP", "type": "lec" },
       { "day": 4, "start": 11, "duration": 1, "title": "Physics-1", "code": "G9", "teacher": "ABH", "type": "lec" },
@@ -817,11 +669,7 @@ const scheduleMap = {
       { "day": 5, "start": 10, "duration": 1, "title": "English", "code": "CS6", "teacher": "KNP", "type": "lec" },
       { "day": 5, "start": 13, "duration": 1, "title": "Basic Electronics", "code": "F7", "teacher": "SMK", "type": "tut" },
       { "day": 5, "start": 14, "duration": 1, "title": "SDF- I", "code": "G7", "teacher": "NAC", "type": "lec" },
-<<<<<<< HEAD
       { "day": 5, "start": 15, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "ANP", "type": "lab" },
-=======
-      { "day": 5, "start": 15, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "ANP", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 6, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "FF2", "teacher": "NHI", "type": "lec" },
       { "day": 6, "start": 11, "duration": 1, "title": "SDF- I", "code": "FF2", "teacher": "NAC", "type": "lec" }
     ],
@@ -838,11 +686,7 @@ const scheduleMap = {
       { "day": 3, "start": 10, "duration": 2, "title": "English", "code": "CL12", "teacher": "AMI", "type": "lab" },
       { "day": 3, "start": 13, "duration": 1, "title": "SDF- I", "code": "G8", "teacher": "NAC", "type": "lec" },
       { "day": 3, "start": 14, "duration": 1, "title": "Physics-1", "code": "F10", "teacher": "SHIV", "type": "tut" },
-<<<<<<< HEAD
       { "day": 3, "start": 15, "duration": 2, "title": "SDF I", "code": "CL06", "teacher": "AKT,NAC", "type": "lab" },
-=======
-      { "day": 3, "start": 15, "duration": 2, "title": "SDF I", "code": "CL06", "teacher": "AKT,NAC", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 4, "start": 10, "duration": 1, "title": "Maths-1", "code": "CS6", "teacher": "NF6", "type": "lec" },
       { "day": 4, "start": 11, "duration": 1, "title": "Physics-1", "code": "G8", "teacher": "DIN", "type": "lec" },
       { "day": 4, "start": 13, "duration": 1, "title": "Basic Electronics", "code": "G8", "teacher": "NHI", "type": "lec" },
@@ -858,11 +702,7 @@ const scheduleMap = {
       { "day": 1, "start": 11, "duration": 1, "title": "Maths-1", "code": "FF4", "teacher": "NSK", "type": "lec" },
       { "day": 1, "start": 13, "duration": 1, "title": "Basic Electronics", "code": "G6", "teacher": "VGO", "type": "lec" },
       { "day": 1, "start": 14, "duration": 1, "title": "Basic Electronics", "code": "F4", "teacher": "GV", "type": "tut" },
-<<<<<<< HEAD
       { "day": 1, "start": 15, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "SHV", "type": "lab" },
-=======
-      { "day": 1, "start": 15, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "SHV", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 2, "start": 10, "duration": 1, "title": "Physics-1", "code": "FF9", "teacher": "MTR", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "SDF- I", "code": "FF4", "teacher": "AVR", "type": "lec" },
       { "day": 2, "start": 13, "duration": 2, "title": "Physics Lab-1", "code": "PL3", "teacher": "NF1", "type": "lab" },
@@ -894,11 +734,7 @@ const scheduleMap = {
       { "day": 3, "start": 13, "duration": 1, "title": "Physics for Biotechnology", "code": "G9", "teacher": "DAM", "type": "lec" },
       { "day": 3, "start": 14, "duration": 1, "title": "MA112", "code": "FF9", "teacher": "PSI", "type": "lec" },
       { "day": 3, "start": 16, "duration": 1, "title": "SDF- I", "code": "G2", "teacher": "SJA", "type": "lec" },
-<<<<<<< HEAD
       { "day": 4, "start": 9, "duration": 2, "title": "SDF I", "code": "CL21", "teacher": "SHP,BS", "type": "lab" },
-=======
-      { "day": 4, "start": 9, "duration": 2, "title": "SDF I", "code": "CL21", "teacher": "SHP,BS", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 4, "start": 11, "duration": 1, "title": "MA112", "code": "TS8", "teacher": "PSI", "type": "tut" },
       { "day": 4, "start": 13, "duration": 1, "title": "Physics for Biotechnology", "code": "G6", "teacher": "DAM", "type": "lec" },
       { "day": 4, "start": 14, "duration": 1, "title": "English", "code": "FF8", "teacher": "MDU", "type": "lec" },
@@ -916,11 +752,7 @@ const scheduleMap = {
       { "day": 2, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "FF8", "teacher": "SLM", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "SDF- I", "code": "FF8", "teacher": "SJA", "type": "lec" },
       { "day": 2, "start": 13, "duration": 1, "title": "MA112", "code": "G9", "teacher": "PSI", "type": "lec" },
-<<<<<<< HEAD
       { "day": 2, "start": 15, "duration": 2, "title": "SDF I", "code": "CL21", "teacher": "BS,MSH", "type": "lab" },
-=======
-      { "day": 2, "start": 15, "duration": 2, "title": "SDF I", "code": "CL21", "teacher": "BS,MSH", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 3, "start": 10, "duration": 1, "title": "Physics for Biotechnology", "code": "TS6", "teacher": "DAM", "type": "tut" },
       { "day": 3, "start": 11, "duration": 1, "title": "Basic Electronics", "code": "FF8", "teacher": "SLM", "type": "lec" },
       { "day": 3, "start": 13, "duration": 1, "title": "Physics for Biotechnology", "code": "G9", "teacher": "DAM", "type": "lec" },
@@ -969,11 +801,7 @@ const scheduleMap = {
       { "day": 1, "start": 14, "duration": 1, "title": "MA112", "code": "CR526", "teacher": "NF1", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Basic Electronics", "code": "TS6", "teacher": "RRP", "type": "tut" },
       { "day": 1, "start": 16, "duration": 1, "title": "SDF- I", "code": "FF3", "teacher": "MSH", "type": "lec" },
-<<<<<<< HEAD
       { "day": 2, "start": 9, "duration": 2, "title": "SDF I", "code": "CL21", "teacher": "BS,SHP", "type": "lab" },
-=======
-      { "day": 2, "start": 9, "duration": 2, "title": "SDF I", "code": "CL21", "teacher": "BS,SHP", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 2, "start": 11, "duration": 1, "title": "Physics for Biotechnology", "code": "FF1", "teacher": "INC", "type": "lec" },
       { "day": 2, "start": 13, "duration": 1, "title": "SDF- I", "code": "TS6", "teacher": "SJA", "type": "tut" },
       { "day": 2, "start": 15, "duration": 2, "title": "Basic Electronics", "code": "ADE", "teacher": "SLM,RRP", "type": "lab" },
@@ -1002,13 +830,8 @@ const scheduleMap = {
       { "day": 3, "start": 10, "duration": 1, "title": "MA112", "code": "CS7", "teacher": "NF1", "type": "lec" },
       { "day": 3, "start": 11, "duration": 1, "title": "Basic Electronics", "code": "FF9", "teacher": "RRP", "type": "lec" },
       { "day": 3, "start": 13, "duration": 2, "title": "Basic Electronics", "code": "ADE", "teacher": "RRJ,SIM", "type": "lab" },
-<<<<<<< HEAD
       { "day": 3, "start": 15, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "MSH,SAA", "type": "lab" },
       { "day": 4, "start": 9, "duration": 3, "title": "Engineering Drawing and Design", "code": "PGLAB", "teacher": "NF1", "type": "lab" },
-=======
-      { "day": 3, "start": 15, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "MSH,SAA", "type": "lec" },
-      { "day": 4, "start": 9, "duration": 2, "title": "Engineering awing and Design", "code": "PGLAB", "teacher": "NF1", "type": "lab" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 4, "start": 13, "duration": 1, "title": "SDF- I", "code": "G7", "teacher": "MSH", "type": "lec" },
       { "day": 4, "start": 14, "duration": 1, "title": "Physics for Biotechnology", "code": "CS4", "teacher": "INC", "type": "lec" },
       { "day": 5, "start": 9, "duration": 1, "title": "English", "code": "LT3", "teacher": "EKS", "type": "lec" },
@@ -1027,17 +850,10 @@ const scheduleMap = {
       { "day": 2, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "FF4", "teacher": "VGO", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "SDF- I", "code": "CS7", "teacher": "AYS", "type": "lec" },
       { "day": 2, "start": 13, "duration": 2, "title": "Basic Electronics", "code": "BEL1", "teacher": "NHI,NF1", "type": "lab" },
-<<<<<<< HEAD
       { "day": 2, "start": 15, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "AW,AVR", "type": "lab" },
       { "day": 3, "start": 10, "duration": 1, "title": "Physics-1", "code": "FF4", "teacher": "NAR", "type": "lec" },
       { "day": 3, "start": 11, "duration": 1, "title": "Basic Electronics", "code": "FF4", "teacher": "VGO", "type": "lec" },
       { "day": 3, "start": 13, "duration": 3, "title": "Engineering Drawing and Design", "code": "CAD1", "teacher": "NTS", "type": "lab" },
-=======
-      { "day": 2, "start": 15, "duration": 2, "title": "SDF I", "code": "CL05", "teacher": "AW,AVR", "type": "lec" },
-      { "day": 3, "start": 10, "duration": 1, "title": "Physics-1", "code": "FF4", "teacher": "NAR", "type": "lec" },
-      { "day": 3, "start": 11, "duration": 1, "title": "Basic Electronics", "code": "FF4", "teacher": "VGO", "type": "lec" },
-      { "day": 3, "start": 13, "duration": 2, "title": "Engineering awing and Design", "code": "CAD1", "teacher": "NTS", "type": "lab" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 3, "start": 16, "duration": 1, "title": "SDF- I", "code": "FF2", "teacher": "AYS", "type": "lec" },
       { "day": 4, "start": 10, "duration": 1, "title": "Physics-1", "code": "TS8", "teacher": "DIP", "type": "tut" },
       { "day": 4, "start": 11, "duration": 1, "title": "Basic Electronics", "code": "TS7", "teacher": "VKH", "type": "tut" },
@@ -1060,11 +876,7 @@ const scheduleMap = {
       { "day": 2, "start": 13, "duration": 2, "title": "Basic Electronics", "code": "BEL2", "teacher": "NTN,ALJ", "type": "lab" },
       { "day": 3, "start": 10, "duration": 1, "title": "Physics-1", "code": "FF4", "teacher": "NAR", "type": "lec" },
       { "day": 3, "start": 11, "duration": 1, "title": "Basic Electronics", "code": "FF4", "teacher": "VGO", "type": "lec" },
-<<<<<<< HEAD
       { "day": 3, "start": 13, "duration": 3, "title": "Engineering Drawing and Design", "code": "CAD2", "teacher": "NF1", "type": "lab" },
-=======
-      { "day": 3, "start": 13, "duration": 2, "title": "Engineering awing and Design", "code": "CAD2", "teacher": "NF1", "type": "lab" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 3, "start": 16, "duration": 1, "title": "SDF- I", "code": "FF2", "teacher": "AYS", "type": "lec" },
       { "day": 4, "start": 13, "duration": 1, "title": "Physics-1", "code": "FF4", "teacher": "NAR", "type": "lec" },
       { "day": 4, "start": 14, "duration": 1, "title": "Maths-1", "code": "FF4", "teacher": "NF5", "type": "lec" },
@@ -1075,11 +887,7 @@ const scheduleMap = {
       { "day": 5, "start": 14, "duration": 1, "title": "SDF- I", "code": "FF4", "teacher": "AYS", "type": "lec" },
       { "day": 5, "start": 15, "duration": 1, "title": "Basic Electronics", "code": "FF4", "teacher": "VGO", "type": "lec" },
       { "day": 6, "start": 10, "duration": 1, "title": "Physics-1", "code": "F4", "teacher": "DAM", "type": "tut" },
-<<<<<<< HEAD
       { "day": 6, "start": 11, "duration": 2, "title": "SDF I", "code": "CL03", "teacher": "TAJ", "type": "lab" }
-=======
-      { "day": 6, "start": 11, "duration": 2, "title": "SDF I", "code": "CL03", "teacher": "TAJ", "type": "lec" }
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
     ],
     "D3": [
       { "day": 1, "start": 10, "duration": 1, "title": "English", "code": "CS6", "teacher": "EKS", "type": "lec" },
@@ -1095,11 +903,7 @@ const scheduleMap = {
       { "day": 3, "start": 11, "duration": 1, "title": "Basic Electronics", "code": "CS6", "teacher": "NTN", "type": "lec" },
       { "day": 3, "start": 13, "duration": 2, "title": "English", "code": "LL1", "teacher": "MDU", "type": "lab" },
       { "day": 3, "start": 15, "duration": 1, "title": "Physics-1", "code": "FF3", "teacher": "DAM", "type": "lec" },
-<<<<<<< HEAD
       { "day": 4, "start": 10, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "SLK,MSI", "type": "lab" },
-=======
-      { "day": 4, "start": 10, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "SLK,MSI", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 4, "start": 13, "duration": 2, "title": "Physics Lab-1", "code": "PL1", "teacher": "DIN", "type": "lab" },
       { "day": 4, "start": 15, "duration": 1, "title": "Maths-1", "code": "FF1", "teacher": "NF4", "type": "lec" },
       { "day": 4, "start": 16, "duration": 1, "title": "Basic Electronics", "code": "FF1", "teacher": "NTN", "type": "lec" },
@@ -1129,11 +933,7 @@ const scheduleMap = {
       { "day": 5, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "CS5", "teacher": "NTN", "type": "lec" },
       { "day": 5, "start": 11, "duration": 1, "title": "SDF- I", "code": "CS6", "teacher": "SLK", "type": "lec" },
       { "day": 5, "start": 13, "duration": 2, "title": "Physics Lab-1", "code": "PL1", "teacher": "NG", "type": "lab" },
-<<<<<<< HEAD
       { "day": 5, "start": 15, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "TBA", "type": "lab" },
-=======
-      { "day": 5, "start": 15, "duration": 2, "title": "SDF I", "code": "CL02", "teacher": "TBA", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 6, "start": 9, "duration": 1, "title": "Physics-1", "code": "FF4", "teacher": "DAM", "type": "lec" }
     ],
     "G1": [
@@ -1249,11 +1049,7 @@ const scheduleMap = {
       { "day": 3, "start": 14, "duration": 1, "title": "Maths-1", "code": "TS7", "teacher": "HA", "type": "tut" },
       { "day": 3, "start": 15, "duration": 1, "title": "Physics-1", "code": "TS8", "teacher": "DIP", "type": "tut" },
       { "day": 3, "start": 16, "duration": 1, "title": "SDF- I", "code": "FF3", "teacher": "SMS", "type": "lec" },
-<<<<<<< HEAD
       { "day": 4, "start": 9, "duration": 3, "title": "Engineering Drawing and Design", "code": "CAD4", "teacher": "NF2", "type": "lab" },
-=======
-      { "day": 4, "start": 9, "duration": 2, "title": "Engineering awing and Design", "code": "CAD4", "teacher": "NF2", "type": "lab" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 4, "start": 13, "duration": 1, "title": "English", "code": "FF3", "teacher": "PAC", "type": "lec" },
       { "day": 4, "start": 14, "duration": 1, "title": "Physics-1", "code": "FF3", "teacher": "NG", "type": "lec" },
       { "day": 5, "start": 9, "duration": 2, "title": "English", "code": "LL1", "teacher": "NIS", "type": "lab" },
@@ -1293,11 +1089,7 @@ const scheduleMap = {
       { "day": 2, "start": 15, "duration": 2, "title": "English", "code": "CL12", "teacher": "PAC", "type": "lab" },
       { "day": 3, "start": 9, "duration": 1, "title": "English", "code": "F6", "teacher": "HK", "type": "lec" },
       { "day": 3, "start": 10, "duration": 2, "title": "Physics Lab-1", "code": "PL1", "teacher": "BCJ", "type": "lab" },
-<<<<<<< HEAD
       { "day": 3, "start": 13, "duration": 2, "title": "SDF I", "code": "CL03", "teacher": "MSI,PTK", "type": "lab" },
-=======
-      { "day": 3, "start": 13, "duration": 2, "title": "SDF I", "code": "CL03", "teacher": "MSI,PTK", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 3, "start": 15, "duration": 1, "title": "Physics-1", "code": "FF4", "teacher": "RAV", "type": "lec" },
       { "day": 4, "start": 9, "duration": 2, "title": "Basic Electronics", "code": "BEL1", "teacher": "JMO,VGO", "type": "lab" },
       { "day": 4, "start": 13, "duration": 1, "title": "Maths-1", "code": "TS6", "teacher": "MPA", "type": "tut" },
@@ -1319,11 +1111,7 @@ const scheduleMap = {
       { "day": 2, "start": 10, "duration": 1, "title": "Maths-1", "code": "CS6", "teacher": "MPA", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "Physics-1", "code": "FF3", "teacher": "RAV", "type": "lec" },
       { "day": 3, "start": 9, "duration": 1, "title": "English", "code": "F6", "teacher": "HK", "type": "lec" },
-<<<<<<< HEAD
       { "day": 3, "start": 10, "duration": 2, "title": "SDF I", "code": "CL06", "teacher": "SHR,ASA", "type": "lab" },
-=======
-      { "day": 3, "start": 10, "duration": 2, "title": "SDF I", "code": "CL06", "teacher": "SHR,ASA", "type": "lec" },
->>>>>>> 6350a935df9465a2ea25180251a4510cc85ad496
       { "day": 3, "start": 13, "duration": 2, "title": "Physics Lab-1", "code": "PL1", "teacher": "NKS", "type": "lab" },
       { "day": 3, "start": 15, "duration": 1, "title": "Physics-1", "code": "FF4", "teacher": "RAV", "type": "lec" },
       { "day": 4, "start": 10, "duration": 1, "title": "SDF- I", "code": "TS7", "teacher": "AJS", "type": "tut" },
