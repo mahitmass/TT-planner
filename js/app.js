@@ -432,14 +432,17 @@ const TimetableApp = (function() {
 
   function renderDayClasses(container, classes) {
     let lastEndTime = classes[0].start;
+    let lunchStart = (state.currentSemester == 1 || state.currentSemester === '1') ? 12 : 13;
+    let lunchEnd = lunchStart + 1;
+
     classes.forEach((cls, index) => {
       if (index > 0 && cls.start > lastEndTime) {
         const gapStart = lastEndTime;
         const gapEnd = cls.start;
-        if (gapStart <= 13 && gapEnd >= 14) {
-          if (13 > gapStart) container.appendChild(createBreakCard(gapStart, 13, "Break"));
-          container.appendChild(createBreakCard(13, 14, "Lunch Break"));
-          if (gapEnd > 14) container.appendChild(createBreakCard(14, gapEnd, "Break"));
+        if (gapStart <= lunchStart && gapEnd >= lunchEnd) {
+          if (lunchStart > gapStart) container.appendChild(createBreakCard(gapStart, lunchStart, "Break"));
+          container.appendChild(createBreakCard(lunchStart, lunchEnd, "Lunch Break"));
+          if (gapEnd > lunchEnd) container.appendChild(createBreakCard(lunchEnd, gapEnd, "Break"));
         } else {
           container.appendChild(createBreakCard(gapStart, gapEnd, "Break"));
         }
@@ -590,7 +593,8 @@ function renderDesktopView() {
   function createEmptyTableCell(day, hour) {
     const cell = document.createElement('td');
     cell.setAttribute('data-day', day);
-    if (hour === 13) {
+    let lunchHour = (state.currentSemester == 1 || state.currentSemester === '1') ? 12 : 13;
+    if (hour === lunchHour) {
       cell.className = 'cell-break';
       cell.innerHTML = '<span style="font-size:0.6rem; opacity:0.5;">LUNCH</span>';
     }

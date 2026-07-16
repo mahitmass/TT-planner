@@ -376,7 +376,16 @@ function parseSingleFile(filePath) {
 
             const cell = sheet[XLSX.utils.encode_cell({ r: R, c: C })];
             if (cell && cell.v) {
-                let duration = mergeObj ? (mergeObj.e.c - mergeObj.s.c) + 1 : 1;
+                let duration = 1;
+                if (mergeObj) {
+                    const mappedCols = Object.keys(colToStartHour).map(Number).sort((a,b)=>a-b);
+                    let sH = colToStartHour[mergeObj.s.c];
+                    let eC = mappedCols.slice().reverse().find(c => c <= mergeObj.e.c);
+                    let eH = eC ? colToStartHour[eC] : null;
+                    if (sH && eH) {
+                        duration = (eH - sH) + 1;
+                    }
+                }
                 
                 const parsedDataList = parseCellString(cell.v.toString());
                 parsedDataList.forEach(parsedData => {
