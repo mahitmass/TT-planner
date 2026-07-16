@@ -74,6 +74,7 @@ module.exports = {
         "MLL": "ABB-III, 5th Floor", "SPL": "ABB-III, 5th Floor", "MOD": "ABB-III, 5th Floor", "MODLAB": "ABB-III, 5th Floor",
 
         "EDD": "ABB-III, 6th Floor", "near CADLAB": "ABB-III, 6th Floor",
+        "CAD": "ABB-III, 6th Floor", "CAD1": "ABB-III, 6th Floor", "CAD2": "ABB-III, 6th Floor", "CAD3": "ABB-III, 6th Floor", "CAD4": "ABB-III, 6th Floor",
 
         "CR701": "ABB-III, 7th Floor", "CR702": "ABB-III, 7th Floor", "CR703": "ABB-III, 7th Floor",
         "CR704": "ABB-III, 7th Floor", "CR705": "ABB-III, 7th Floor",
