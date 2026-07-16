@@ -535,19 +535,20 @@ body[data-theme="light"] .day-header {
   left: 0;
   top: 0;
   height: 100%;
-  width: 5px;
+  width: 0;
+  border-left: 5px solid transparent;
 }
 
 .type-lec::before {
-  background-color: var(--lec-marker);
+  border-left-color: var(--lec-marker);
 }
 
 .type-tut::before {
-  background-color: var(--tut-marker);
+  border-left-color: var(--tut-marker);
 }
 
 .type-lab::before {
-  background-color: var(--lab-marker);
+  border-left-color: var(--lab-marker);
 }
 
 .active-now {
