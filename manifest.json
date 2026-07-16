@@ -1,7 +1,10 @@
 {
   "name": "Mass Planner",
   "short_name": "Planner",
-  "start_url": "./index.html",
+  "description": "Interactive timetable for batch schedules",
+  "id": "/TT-planner/",
+  "scope": "/TT-planner/",
+  "start_url": "/TT-planner/index.html",
   "display": "standalone",
   "background_color": "#121212", 
   "theme_color": "#bb86fc",
@@ -10,12 +13,14 @@
     {
       "src": "Logo.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "Logo.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
