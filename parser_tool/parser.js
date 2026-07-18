@@ -305,7 +305,7 @@ const isInsideMerge = (r, c, merges) => {
     return merges.find(m => r >= m.s.r && r <= m.e.r && c >= m.s.c && c <= m.e.c);
 };
 
-function parseSingleFile(filePath, semester) {
+function parseSingleFile(filePath, semester, series) {
     console.log(`📂 Reading: ${filePath}...`);
     
     const workbook = XLSX.readFile(filePath);
@@ -399,7 +399,8 @@ function parseSingleFile(filePath, semester) {
                         type: parsedData.type,
                         subject: parsedData.subject,
                         room: parsedData.room,
-                        teacher: parsedData.teacher
+                        teacher: parsedData.teacher,
+                        series: series
                     });
                 });
             }
@@ -441,15 +442,20 @@ function main() {
         try {
             const basename = path.basename(filePath).toLowerCase();
             let semester = 3;
-            // New naming convention: {sem}-{batch}.xlsx → extract semester from prefix
-            const semMatch = basename.match(/^(\d+)-\d+\.xlsx$/);
+            let series = "62"; // Default
+
+            // New naming convention: {sem}-{batch}.xlsx → extract semester and series from filename
+            const semMatch = basename.match(/^(\d+)-(\d+)\.xlsx$/);
             if (semMatch) {
                 semester = parseInt(semMatch[1], 10);
+                series = semMatch[2]; // e.g. "62" or "128"
             } else if (basename === '1.xlsx') {
                 semester = 1;
+            } else if (basename === '128.xlsx') {
+                series = "128";
             }
 
-            let fileData = parseSingleFile(filePath, semester);
+            let fileData = parseSingleFile(filePath, semester, series);
             if (fileData && fileData.length > 0) {
                 fileData.forEach(entry => entry.semester = semester);
                 combinedSchedule = combinedSchedule.concat(fileData);

@@ -743,7 +743,8 @@ function populateBatches() {
       const allBatches = Object.keys(semData);
       
       const filteredBatches = allBatches.filter(b => {
-          return type === "128" ? /^[EFH]/.test(b) : /^[ABCDG]/.test(b);
+          const bSeries = (typeof batchSeries !== 'undefined' && batchSeries[state.currentSemester] && batchSeries[state.currentSemester][b]) ? batchSeries[state.currentSemester][b] : "62";
+          return type === bSeries;
       }).sort((a, b) => 
           a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'})
       );

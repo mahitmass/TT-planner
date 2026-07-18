@@ -31,6 +31,7 @@ function getSubjectName(code, semester) {
 
 // Master object: { "2": { "A1": [...] }, "4": { "A1": [...] } }
 const finalBatches = {};
+const batchSeriesMap = {};
 
 rawData.forEach(entry => {
     const dayIndex = entry.day;
@@ -39,12 +40,14 @@ rawData.forEach(entry => {
     const semester = entry.semester || "3"; // Default to 3
 
     if (!finalBatches[semester]) finalBatches[semester] = {};
+    if (!batchSeriesMap[semester]) batchSeriesMap[semester] = {};
 
     // Overrides: Deletions
     if (overrides.deletions.some(del => del.batch === batchName && del.day === dayIndex && del.start === actualHour && (!del.semester || del.semester == semester))) return;
 
     // Create batch object if it doesn't exist
     if (!finalBatches[semester][batchName]) finalBatches[semester][batchName] = [];
+    if (!batchSeriesMap[semester][batchName]) batchSeriesMap[semester][batchName] = entry.series || "62";
 
     let finalSubject = getSubjectName(entry.subject, semester);
     
@@ -58,7 +61,7 @@ rawData.forEach(entry => {
     finalSubject = finalSubject.replace(/\s*\(?Lab\)?$/ig, '').trim();
 
     let finalDuration = entry.duration;
-    const is128Batch = /^[FHE]/.test(batchName);
+    const is128Batch = entry.series === "128";
     if (entry.type === 'LAB' || entry.duration > 1) {
         finalDuration = 2;
         if (is128Batch && finalSubject.includes('Workshop')) finalDuration = 3;
@@ -151,5 +154,5 @@ semesters.forEach((sem, k) => {
 });
 scheduleMapString += "}";
 
-let fileContent = `// AUTOMATICALLY GENERATED\nconst scheduleMap = ${scheduleMapString};\nconst facultyNames = ${JSON.stringify(dictionaries.teachers, null, 2)};\nconst ROOM_LOCATIONS = ${JSON.stringify(staticData.classroomLocations, null, 2)};\n`;
+let fileContent = `// AUTOMATICALLY GENERATED\nconst scheduleMap = ${scheduleMapString};\nconst batchSeries = ${JSON.stringify(batchSeriesMap, null, 2)};\nconst facultyNames = ${JSON.stringify(dictionaries.teachers, null, 2)};\nconst ROOM_LOCATIONS = ${JSON.stringify(staticData.classroomLocations, null, 2)};\n`;
 fs.writeFileSync('../js/data.js', fileContent);
