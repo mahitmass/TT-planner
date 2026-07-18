@@ -67,6 +67,18 @@ function detectDay(text) {
 function expandBatches(batchString) {
     let spaced = batchString.replace(/(\d)([A-Za-z])/g, '$1,$2');
     const parts = spaced.split(/[,+]/).map(s => s.trim()).filter(s => s);
+    
+    // Backward propagate prefixes (e.g. ['21', 'F22'] -> ['F21', 'F22'])
+    let currentPrefix = '';
+    for (let i = parts.length - 1; i >= 0; i--) {
+        let m = parts[i].match(/^([A-Za-z]+)(.*)$/i);
+        if (m) {
+            currentPrefix = m[1];
+        } else if (currentPrefix) {
+            parts[i] = currentPrefix + parts[i];
+        }
+    }
+
     const expanded = [];
     
     let lastPrefix = '';
@@ -200,7 +212,7 @@ function parseCellString(rawText, semester) {
         else if (subjectPart.toUpperCase().includes('LAB') || subjectTitle.includes('LAB')) type = 'LAB';
 
         // Strip the L, T, P prefix
-        cleanBatches = cleanBatches.replace(/^[LTP](?=[A-Z])/i, '').trim();
+        cleanBatches = cleanBatches.replace(/^[LTP](?=[A-Z0-9])/i, '').trim();
 
         const rawBatchesList = expandBatches(cleanBatches);
         const numBatches = rawBatchesList.length;
@@ -593,7 +605,7 @@ function parseCellStringTokens(rawText, semester, knownBatches = []) {
     else if (foundBatches.some(b => b.startsWith('T'))) type = 'TUT';
 
     let rawBatchesStr = foundBatches.join(',');
-    let cleanBatches = rawBatchesStr.replace(/^[LTP](?=[A-Z])/ig, '').trim();
+    let cleanBatches = rawBatchesStr.replace(/^[LTP](?=[A-Z0-9])/ig, '').trim();
     
     const expandedBatches = expandBatches(cleanBatches);
     

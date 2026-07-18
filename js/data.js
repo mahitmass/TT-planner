@@ -3050,6 +3050,7 @@ const scheduleMap = {
       { "day": 5, "start": 9, "duration": 1, "title": "24B11CS223", "code": "3045", "teacher": "KNS", "type": "lec" }
     ],
     "F21": [
+      { "day": 1, "start": 14, "duration": 2, "title": "Database Management Systems", "code": "AISKILLS LAB", "teacher": "VKG", "type": "lab" },
       { "day": 1, "start": 15, "duration": 1, "title": "Database Management Systems", "code": "3045", "teacher": "KSH", "type": "lec" },
       { "day": 1, "start": 16, "duration": 1, "title": "Economics", "code": "225", "teacher": "NFHSS1", "type": "tut" },
       { "day": 2, "start": 10, "duration": 1, "title": "Data Structures", "code": "3096", "teacher": "NFCS11", "type": "lec" },
@@ -3310,9 +3311,6 @@ const scheduleMap = {
       { "day": 5, "start": 9, "duration": 1, "title": "Economics", "code": "3040", "teacher": "AMA", "type": "lec" },
       { "day": 5, "start": 10, "duration": 1, "title": "Maths for AI & DS", "code": "3040", "teacher": "SREYA", "type": "lec" },
       { "day": 5, "start": 16, "duration": 1, "title": "Unix Programming", "code": "3084", "teacher": "NFCS15", "type": "lec" }
-    ],
-    "P21": [
-      { "day": 1, "start": 14, "duration": 2, "title": "Database Management Systems", "code": "AISKILLS LAB", "teacher": "VKG", "type": "lab" }
     ]
   }
 };
@@ -3425,7 +3423,6 @@ const batchSeries = {
     "F6": "128",
     "E3": "128",
     "E4": "128",
-    "P21": "128",
     "H1": "128",
     "H2": "128",
     "A1": "62",
