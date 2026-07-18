@@ -71,12 +71,12 @@ rawData.forEach(entry => {
     // Smart 128 Teacher Codes
     let finalTeacher = entry.teacher;
     if (is128Batch) {
-        let teacherArray = finalTeacher.split('/');
+        let teacherArray = finalTeacher.split(/[\/,]+/);
         finalTeacher = teacherArray.map(t => {
             let tClean = t.trim();
             if (dictionaries.teachers[tClean + '1']) return tClean + '1';
             return tClean;
-        }).join('/');
+        }).join(',');
     }
 
     finalBatches[semester][batchName].push({

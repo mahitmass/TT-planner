@@ -113,25 +113,40 @@ module.exports = {
 
         //const facultyNames128 
         // FROM SCREENSHOT 1
-        "ATH": "ALKA TRIPATHI", "PKS": "Pankaj Kumar Srivastava", "NEA": "Neha Ahlawat",
-        "KKS": "Kamlesh Kumar Shukla", "UMK": "Umesh Khatri", "PKR": "Pankaj Kumar Rana",
+        "ATH": "Alka Tripathi", "PKS": "Pankaj Kumar Srivastava", "NEA": "Neha Ahlawat",
+        "KKS": "Kamlesh Kumar Shukla", "UMK": "Umesh Khanduri", "PKR": "Pankaj Kumar Rana",
         "SKA1": "Suneet Kumar Awasthi", "VM": "Vikas Malik", "AMV": "Amit Verma",
         "PKC": "Prashant Kumar Chauhan", "ADV": "Anshu Dhirendra Varshney", "URS": "Urbashi Satpathy",
         "ANK1": "Anuj Kumar", "SKH": "Sudip Kumar Haldar", "NAK": "Narender Khatri",
         "BHT": "Bharti Arora", "PRJ": "Prabhakar Jha", "HAB": "Harish Bishwakarma",
         "SUM": "Sumit Mahajan", "PSH": "Piyush Sharma", "RAK": "Rahul Kumar",
         "NIK": "Niraj Kumar", "ASP": "Asim Patra", "SHP1": "Shivani Pant", "AKS": "Akansha Singh",
-        "VIS": "Vikas Sharma", "KAS": "Kartik Samanta", "SHALU": "SHALU", "AMS": "Ambalika Sarkar",
+        "VIS": "Vikas Sharma", "KAS": "Kartik Samanta", "SHALU": "Shalu", "AMS": "Ambalika Sarkar",
         "EKS1": "Ekta Srivastava", "AMA": "Amba Aggarwal", "ANB": "Anshu Banwari",
         "SHV": "Shweta Verma", "PRS": "Praveen Kumar Sharma", "DEV": "Deepak Verma", "SGU": "Shruti Gupta",
-        "SAV": "Sakshi Varshney", "NIC": "Nilu Chaudhary", "PRK": "Priyanka Kwatra", "ANK1": "Anuj Kumar",
+        "SAV": "Sakshi Varshney", "NIC": "Nilu Chaudhary", "PRK": "Priyanka Kwatra",
 
         // FROM SCREENSHOT 2
         "ARJ": "Arti Jain", "GAH": "Gaurav Sinha", "HMB": "Himani Bansal", "JRD": "Janardhan",
         "MKS": "Mukesh Saraswat", "NMD": "Noor Mohammad", "RSK": "Rashmi Kushwah", "HIB": "Himanshi Bansal",
-        "SAP": "SatyaPrakash Patel", "SHM": "Shariq Murtuza", "DVG": "Dhruv Garg",
-        "SHJ": "Shruti Jaiswal", "ADS": "Aditi Sharma", "AKB": "Akanksha Bhardwaj",
-        "KKL": "Kakul", "ANG": "Avinash Gupta", "LKK": "Lakhveer Kaur"
+        "SAP": "Satya Prakash Patel", "SHM1": "Shariq Murtuza", "DVG": "Dhruv Garg",
+        "SHJ": "Shruti Jaiswal", "ADS": "Aditi Sharma", "AKB1": "Akanksha Bhardwaj",
+        "KKL": "Kakul", "ANG": "Ankur Gupta", "LKK": "Lakhveer Kaur",
+
+        // FROM IMAGE - ADDITIONAL 128 TEACHERS
+        "PRN": "Pankaj Singh Rana", "RHN": "Rishabh Negi", "TWT": "Twinkle Tyagi",
+        "NISHANT": "Nishant", "FARAZ": "Faraz", "KALPANA": "Kalpana",
+        "PSK": "Piyush Kushwah", "RGN": "Ragini", "SDP": "Sandeep",
+        "SHRISTI": "Shristi Tiwari", "VKA": "Vikas Kumar", "ASR": "Ajeet Singh Rathore",
+        "RAV1": "Ravi Verma",
+        "SVS": "Sajai Vir Singh", "BHC": "Bhartendu Chaturvedi", "MAG": "Megha Agarwal",
+        "ATK": "Atul Kumar", "RUS": "Ruchi Singh", "RPV": "Ravi Prakash Verma",
+        "BAB": "Bajrang Bansal", "KUM": "Kumar Mohit", "HIG": "Himani Gupta",
+        "VKM": "Vimal Kumar Mishra", "ABK": "Abhishek Kashyap",
+        "VAT": "Vinay Anand Tikkiwal", "PAA": "Parul Arora", "AJK1": "Ajit Kumar",
+        "PLH": "Pallavi Sharma", "SHA1": "Shreya Aryon", "APA": "Aparna Aarya",
+        "JKA": "Jiddu Krishna", "AKG": "Ankit Kumar Gupta", "MHK": "Mohit Kumar Saxena",
+        "KAKUL": "Kakul"
     },
 
     // === 2. SUBJECT DICTIONARY ===
@@ -159,6 +174,7 @@ module.exports = {
         "PH171": "Physics Lab-1",
         "15B17PH171": "Physics Lab-1",
         "MA111": "Maths-1",
+        "15B11MA111": "Maths-1",
         "MA112": "Maths-1"
     },
     subjectsSem3: {

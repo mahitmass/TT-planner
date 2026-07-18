@@ -28,9 +28,9 @@ jobs:
           git sparse-checkout set "raw/time_tables/B.Tech 62 (btech-62)" "raw/time_tables/B.Tech 128 (btech-128)"
           cd ..
 
-          # Find the first .xlsx in the directories and copy directly to raw_data
-          find "senior_repo/raw/time_tables/B.Tech 62 (btech-62)" -type f -name "*.xlsx" -print -quit | xargs -I {} cp "{}" raw_data/62.xlsx
-          find "senior_repo/raw/time_tables/B.Tech 128 (btech-128)" -type f -name "*.xlsx" -print -quit | xargs -I {} cp "{}" raw_data/128.xlsx
+          # Find the first .xlsx in the directories and copy with new naming convention
+          find "senior_repo/raw/time_tables/B.Tech 62 (btech-62)" -type f -name "*.xlsx" -print -quit | xargs -I {} cp "{}" raw_data/3-62.xlsx
+          find "senior_repo/raw/time_tables/B.Tech 128 (btech-128)" -type f -name "*.xlsx" -print -quit | xargs -I {} cp "{}" raw_data/3-128.xlsx
           
           # Delete the temp clone
           rm -rf senior_repo

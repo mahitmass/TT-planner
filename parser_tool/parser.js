@@ -467,7 +467,9 @@ function main() {
             const fullPath = path.join(dir, item);
             if (!fs.statSync(fullPath).isDirectory()) {
                 const lowerItem = item.toLowerCase();
-                if (lowerItem === '62.xlsx' || lowerItem === '128.xlsx' || lowerItem === '1.xlsx') {
+                // Accept new naming: {sem}-{batch}.xlsx e.g. 1-62.xlsx, 1-128.xlsx, 3-62.xlsx
+                // Also keep legacy naming: 62.xlsx, 128.xlsx, 1.xlsx
+                if (/^\d+-\d+\.xlsx$/.test(lowerItem) || lowerItem === '62.xlsx' || lowerItem === '128.xlsx' || lowerItem === '1.xlsx') {
                     filesToParse.push(fullPath);
                 }
             }
@@ -486,7 +488,13 @@ function main() {
         try {
             const basename = path.basename(filePath).toLowerCase();
             let semester = 3;
-            if (basename === '1.xlsx') semester = 1;
+            // New naming convention: {sem}-{batch}.xlsx → extract semester from prefix
+            const semMatch = basename.match(/^(\d+)-\d+\.xlsx$/);
+            if (semMatch) {
+                semester = parseInt(semMatch[1], 10);
+            } else if (basename === '1.xlsx') {
+                semester = 1;
+            }
 
             let fileData = parseSingleFile(filePath, semester);
             if (fileData && fileData.length > 0) {
