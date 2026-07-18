@@ -9,45 +9,37 @@ const sortedTeacherCodes = Object.keys(allTeachers).sort((a, b) => b.length - a.
 
 const CONFIG = { sheetIndex: 0 };
 
-// Map time header text to hour (9AM=9, 10AM=10, etc.)
 function parseTimeHeader(text) {
     if (!text) return null;
-    const cleaned = text.toString().toUpperCase().replace(/\s+/g, '').replace(/[–—]/g, '-').replace(/\./g, ':');
-    
-    // Must look like a time range: "9-10AM", "11-12PM", "1-2PM", "12-1PM", etc.
-    // Must contain a dash and at least one digit
-    if (!cleaned.includes('-') || !/\d/.test(cleaned)) return null;
+    let cleaned = text.toString().toUpperCase().replace(/\s+/g, '').replace(/[–—]/g, '-').replace(/\./g, ':');
     
     // Reject if it looks like class data (contains parentheses or slashes)
     if (cleaned.includes('(') || cleaned.includes('/')) return null;
+    if (!cleaned.includes('-') || !/\d/.test(cleaned)) return null;
+
+    // Remove any minutes (e.g. ":00", ":50")
+    cleaned = cleaned.replace(/:\d{1,2}/g, '');
     
-    // Try to extract: startHour-endHour[AM/PM]
-    const rangeMatch = cleaned.match(/^(\d{1,2})(?::?\d{0,2})?-(\d{1,2})(?::?\d{0,2})?(AM|PM)?$/);
+    // Now it should look like "1PM-1PM" or "9-9AM"
+    const rangeMatch = cleaned.match(/^(\d{1,2})(AM|PM)?-(\d{1,2})(AM|PM)?$/);
     if (!rangeMatch) return null;
     
     let startHour = parseInt(rangeMatch[1], 10);
-    let endHour = parseInt(rangeMatch[2], 10);
-    let ampm = rangeMatch[3]; // AM or PM suffix (applies to END hour typically)
+    let startAmPm = rangeMatch[2];
+    let endHour = parseInt(rangeMatch[3], 10);
+    let endAmPm = rangeMatch[4];
     
-    // If we have AM/PM, figure out the actual start hour
+    let ampm = endAmPm || startAmPm; // Fallback to end AM/PM if available
+    
     if (ampm === 'PM') {
-        // End hour is PM
         if (endHour < 12) endHour += 12;
-        // Start hour: if it's >= endHour-2 and < 12, it's probably AM (like 11-12PM means 11AM)
-        // If start hour is small (1-6), it's PM too (like 1-2PM means 13)
-        if (startHour <= 6) startHour += 12; // 1-2PM -> 13, 2-3PM -> 14, etc.
-        // 11-12PM: startHour=11, keep as-is (11AM)
-        // 12-1PM: startHour=12, keep as-is (12PM)
+        if (startHour <= 6) startHour += 12;
     } else if (ampm === 'AM') {
-        // Both are AM
-        // 9-10AM: startHour=9, fine
+        // AM logic
     } else {
-        // No AM/PM suffix - try to infer from hour values
-        // If startHour is 1-6, assume PM
         if (startHour >= 1 && startHour <= 6) startHour += 12;
     }
     
-    // Sanity check: only accept hours 8-18
     if (startHour >= 8 && startHour <= 18) return startHour;
     return null;
 }
@@ -323,100 +315,61 @@ function parseSingleFile(filePath, semester) {
     const range = XLSX.utils.decode_range(sheet['!ref']);
     const merges = sheet['!merges'] || [];
 
-    // === STEP 1: Find the time header row ===
-    // Look for a row that has at least 3 valid time headers in columns 1+
-    let timeRowIndex = -1;
+    const results = [];
+    let currentDay = null;
     let colToStartHour = {};
 
-    for (let R = 0; R <= 15; ++R) {
+    for (let R = 0; R <= range.e.r; ++R) {
+        // 1. Check if this row is a time header row
         let matchesInRow = 0;
         let tempMap = {};
-        for (let C = 1; C <= range.e.c; ++C) { // Start from col 1, not col 0 (col 0 has day names)
+        for (let C = 1; C <= range.e.c; ++C) {
             const cell = sheet[XLSX.utils.encode_cell({ r: R, c: C })];
             if (cell && cell.v) {
-                const cellText = cell.v.toString().trim();
-                const hour = parseTimeHeader(cellText);
+                const hour = parseTimeHeader(cell.v.toString().trim());
                 if (hour !== null) {
                     matchesInRow++;
                     tempMap[C] = hour;
                 }
             }
         }
-        if (matchesInRow >= 3) {
-            timeRowIndex = R;
-            colToStartHour = tempMap;
-            break;
-        }
-    }
-
-    if (timeRowIndex === -1) {
-        console.error(`❌ ERROR: Could not find Time Headers in ${path.basename(filePath)}. Skipping.`);
-        return [];
-    }
-
-    console.log(`   ⏰ Time header row: ${timeRowIndex}, columns mapped: ${JSON.stringify(colToStartHour)}`);
-
-    // === STEP 2: Detect the day for the time header row itself ===
-    // The day name (e.g. "MON") might be on the SAME row as the time headers
-    let firstDay = null;
-    const dayCell = sheet[XLSX.utils.encode_cell({ r: timeRowIndex, c: 0 })];
-    if (dayCell && dayCell.v) {
-        firstDay = detectDay(dayCell.v.toString());
-    }
-    
-    // Data starts from the row AFTER the time header
-    const dataStartRow = timeRowIndex + 1;
-    
-    // === STEP 3: Build a map of which rows belong to which day ===
-    // Using merge information + cell scanning
-    const rowToDay = {};
-    
-    // If the time header row had a day, all subsequent rows until next day belong to it
-    if (firstDay !== null) {
-        // Find the merge range for column 0 starting at timeRowIndex
-        const dayMerge = merges.find(m => m.s.r === timeRowIndex && m.s.c === 0);
-        const endRow = dayMerge ? dayMerge.e.r : timeRowIndex;
-        for (let R = dataStartRow; R <= endRow; R++) {
-            rowToDay[R] = firstDay;
-        }
-        console.log(`   📅 First day: ${firstDay} (rows ${dataStartRow}-${endRow})`);
-    }
-    
-    // Now scan remaining rows for day names in column 0
-    for (let R = dataStartRow; R <= range.e.r; ++R) {
-        if (rowToDay[R] !== undefined) continue; // already assigned
         
-        const cell = sheet[XLSX.utils.encode_cell({ r: R, c: 0 })];
-        if (cell && cell.v) {
-            const dayVal = detectDay(cell.v.toString());
-            if (dayVal !== null) {
-                // Find merge range for this day cell
-                const dayMerge = merges.find(m => m.s.r === R && m.s.c === 0);
-                const endRow = dayMerge ? dayMerge.e.r : R;
-                for (let rr = R; rr <= endRow; rr++) {
-                    rowToDay[rr] = dayVal;
+        if (matchesInRow >= 3) {
+            colToStartHour = tempMap;
+            // Also check if day is in column 0 of this row
+            const dayCell = sheet[XLSX.utils.encode_cell({ r: R, c: 0 })];
+            if (dayCell && dayCell.v) {
+                const dayVal = detectDay(dayCell.v.toString());
+                if (dayVal !== null) {
+                    currentDay = dayVal;
                 }
-                console.log(`   📅 Day ${dayVal}: rows ${R}-${endRow}`);
             }
-            
-            // Stop at LEGEND
-            if (cell.v.toString().toUpperCase().includes('LEGEND')) break;
+            console.log(`   ⏰ Time header found at row ${R}, columns mapped: ${JSON.stringify(colToStartHour)}`);
+            continue; // Skip processing this row as data
         }
-    }
 
-    // === STEP 4: Extract class data ===
-    const results = [];
+        // 2. Stop if we reach LEGEND, and check for day changes
+        const col0Cell = sheet[XLSX.utils.encode_cell({ r: R, c: 0 })];
+        if (col0Cell && col0Cell.v) {
+            const text = col0Cell.v.toString().toUpperCase();
+            if (text.includes('LEGEND')) break;
+            
+            // Check for new day
+            const dayVal = detectDay(text);
+            if (dayVal !== null) {
+                currentDay = dayVal;
+            }
+        }
 
-    for (let R = dataStartRow; R <= range.e.r; ++R) {
-        const currentDay = rowToDay[R];
-        if (!currentDay) continue;
+        // 3. Extract class data
+        if (!currentDay || Object.keys(colToStartHour).length === 0) continue;
 
         for (let C = 1; C <= range.e.c; ++C) {
             const startHour = colToStartHour[C];
-            if (!startHour) continue;
+            if (!startHour) continue; // Not a designated time column
 
             const mergeObj = isInsideMerge(R, C, merges);
-            if (mergeObj && (mergeObj.s.r !== R || mergeObj.s.c !== C)) continue;
+            if (mergeObj && (mergeObj.s.r !== R || mergeObj.s.c !== C)) continue; // Skip cells that are merged but not the top-left one
 
             const cell = sheet[XLSX.utils.encode_cell({ r: R, c: C })];
             if (cell && cell.v) {
