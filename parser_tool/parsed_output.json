@@ -20029,6 +20029,786 @@
   },
   {
     "day": 1,
+    "start": 11,
+    "duration": 1,
+    "batch": "F1",
+    "type": "LEC",
+    "subject": "25B11MA213",
+    "room": "244B",
+    "teacher": "UMK",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 11,
+    "duration": 1,
+    "batch": "F2",
+    "type": "LEC",
+    "subject": "25B11MA213",
+    "room": "244B",
+    "teacher": "UMK",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 12,
+    "duration": 1,
+    "batch": "H1",
+    "type": "LEC",
+    "subject": "15B11HS211",
+    "room": "3040",
+    "teacher": "ALOK",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 12,
+    "duration": 1,
+    "batch": "H2",
+    "type": "LEC",
+    "subject": "15B11HS211",
+    "room": "3040",
+    "teacher": "ALOK",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 1,
+    "batch": "F21",
+    "type": "LEC",
+    "subject": "26B11MA222",
+    "room": "3045",
+    "teacher": "NFMATHS5",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 1,
+    "batch": "F22",
+    "type": "LEC",
+    "subject": "26B11MA222",
+    "room": "3045",
+    "teacher": "NFMATHS5",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 15,
+    "duration": 1,
+    "batch": "H3",
+    "type": "LEC",
+    "subject": "25B11MA213",
+    "room": "3040",
+    "teacher": "SREYA",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 15,
+    "duration": 1,
+    "batch": "H4",
+    "type": "LEC",
+    "subject": "25B11MA213",
+    "room": "3040",
+    "teacher": "SREYA",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 16,
+    "duration": 1,
+    "batch": "F3",
+    "type": "LEC",
+    "subject": "24B11CS212",
+    "room": "3093",
+    "teacher": "NRP",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 16,
+    "duration": 1,
+    "batch": "F4",
+    "type": "LEC",
+    "subject": "24B11CS212",
+    "room": "3093",
+    "teacher": "NRP",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 9,
+    "duration": 1,
+    "batch": "F5",
+    "type": "LEC",
+    "subject": "15B11HS211",
+    "room": "3040",
+    "teacher": "ANB",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 9,
+    "duration": 1,
+    "batch": "F6",
+    "type": "LEC",
+    "subject": "15B11HS211",
+    "room": "3040",
+    "teacher": "ANB",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 10,
+    "duration": 1,
+    "batch": "F7",
+    "type": "LEC",
+    "subject": "15B11HS211",
+    "room": "3040",
+    "teacher": "ALOK",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 10,
+    "duration": 1,
+    "batch": "F8",
+    "type": "LEC",
+    "subject": "15B11HS211",
+    "room": "3040",
+    "teacher": "ALOK",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 11,
+    "duration": 2,
+    "batch": "F4",
+    "type": "LAB",
+    "subject": "24B15CS213",
+    "room": "C12",
+    "teacher": "AKB",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 11,
+    "duration": 2,
+    "batch": "F5",
+    "type": "LAB",
+    "subject": "24B15CS213",
+    "room": "C12",
+    "teacher": "GAH,JRD",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 11,
+    "duration": 2,
+    "batch": "F6",
+    "type": "LAB",
+    "subject": "24B15CS213",
+    "room": "C12",
+    "teacher": "MSH,SKM",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 2,
+    "batch": "F7",
+    "type": "LAB",
+    "subject": "24B15CS215",
+    "room": "C12",
+    "teacher": "Vaibhav",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 2,
+    "batch": "F8",
+    "type": "LAB",
+    "subject": "24B15CS215",
+    "room": "C12",
+    "teacher": "ANK",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 2,
+    "batch": "F9",
+    "type": "LAB",
+    "subject": "24B15CS215",
+    "room": "C12",
+    "teacher": "PRM,NFCS19",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 16,
+    "duration": 1,
+    "batch": "F5",
+    "type": "LEC",
+    "subject": "24B11CS212",
+    "room": "3040",
+    "teacher": "SHR",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 16,
+    "duration": 1,
+    "batch": "F6",
+    "type": "LEC",
+    "subject": "24B11CS212",
+    "room": "3040",
+    "teacher": "SHR",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 9,
+    "duration": 2,
+    "batch": "F1",
+    "type": "LAB",
+    "subject": "15B17CI371",
+    "room": "CL2",
+    "teacher": "RSK",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 9,
+    "duration": 2,
+    "batch": "F2",
+    "type": "LAB",
+    "subject": "15B17CI371",
+    "room": "CL2",
+    "teacher": "KSA",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 9,
+    "duration": 2,
+    "batch": "F3",
+    "type": "LAB",
+    "subject": "15B17CI371",
+    "room": "CL2",
+    "teacher": "SHR,NF21",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 11,
+    "duration": 2,
+    "batch": "F21",
+    "type": "LAB",
+    "subject": "15B17CI371",
+    "room": "AISKILL LAB",
+    "teacher": "RSK",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 11,
+    "duration": 2,
+    "batch": "F22",
+    "type": "LAB",
+    "subject": "15B17CI371",
+    "room": "AISKILL LAB",
+    "teacher": "AYP,NFCS15",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 2,
+    "batch": "E1",
+    "type": "LAB",
+    "subject": "24B25CS214",
+    "room": "CL4",
+    "teacher": "AKB",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 2,
+    "batch": "E2",
+    "type": "LAB",
+    "subject": "24B25CS214",
+    "room": "CL4",
+    "teacher": "SHG,NFCS16",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 16,
+    "duration": 1,
+    "batch": "F9",
+    "type": "LEC",
+    "subject": "25B11MA213",
+    "room": "3045",
+    "teacher": "NFMATHS2",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 16,
+    "duration": 1,
+    "batch": "F10",
+    "type": "LEC",
+    "subject": "25B11MA213",
+    "room": "3045",
+    "teacher": "NFMATHS2",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 9,
+    "duration": 1,
+    "batch": "E4",
+    "type": "TUT",
+    "subject": "18B11EC215",
+    "room": "3117",
+    "teacher": "DIJ",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 10,
+    "duration": 1,
+    "batch": "F17",
+    "type": "LEC",
+    "subject": "25B11MA213",
+    "room": "3045",
+    "teacher": "NFMATHS3",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 10,
+    "duration": 1,
+    "batch": "F18",
+    "type": "LEC",
+    "subject": "25B11MA213",
+    "room": "3045",
+    "teacher": "NFMATHS3",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 11,
+    "duration": 2,
+    "batch": "H1",
+    "type": "LAB",
+    "subject": "25B15EC311",
+    "room": "257",
+    "teacher": "VAT",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 1,
+    "batch": "F11",
+    "type": "LEC",
+    "subject": "15B11HS211",
+    "room": "3093",
+    "teacher": "AMA",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 1,
+    "batch": "F12",
+    "type": "LEC",
+    "subject": "15B11HS211",
+    "room": "3093",
+    "teacher": "AMA",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 15,
+    "duration": 1,
+    "batch": "F1",
+    "type": "LEC",
+    "subject": "15B11CI311",
+    "room": "244B",
+    "teacher": "RSK",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 15,
+    "duration": 1,
+    "batch": "F2",
+    "type": "LEC",
+    "subject": "15B11CI311",
+    "room": "244B",
+    "teacher": "RSK",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 16,
+    "duration": 1,
+    "batch": "F13",
+    "type": "LEC",
+    "subject": "24B11CS213",
+    "room": "3096",
+    "teacher": "NMD",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 16,
+    "duration": 1,
+    "batch": "F14",
+    "type": "LEC",
+    "subject": "24B11CS213",
+    "room": "3096",
+    "teacher": "NMD",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 9,
+    "duration": 1,
+    "batch": "E3",
+    "type": "TUT",
+    "subject": "24B11EC211",
+    "room": "3116",
+    "teacher": "ICY",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 10,
+    "duration": 1,
+    "batch": "E1",
+    "type": "LEC",
+    "subject": "24B11EC211",
+    "room": "3093",
+    "teacher": "ICY",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 10,
+    "duration": 1,
+    "batch": "E2",
+    "type": "LEC",
+    "subject": "24B11EC211",
+    "room": "3093",
+    "teacher": "ICY",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 11,
+    "duration": 1,
+    "batch": "E1",
+    "type": "LEC",
+    "subject": "15B11MA301",
+    "room": "3093",
+    "teacher": "LKK",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 11,
+    "duration": 1,
+    "batch": "E2",
+    "type": "LEC",
+    "subject": "15B11MA301",
+    "room": "3093",
+    "teacher": "LKK",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 12,
+    "duration": 1,
+    "batch": "F9",
+    "type": "LEC",
+    "subject": "15B11HS211",
+    "room": "3098",
+    "teacher": "ANB",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 12,
+    "duration": 1,
+    "batch": "F10",
+    "type": "LEC",
+    "subject": "15B11HS211",
+    "room": "3098",
+    "teacher": "ANB",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 1,
+    "batch": "H1",
+    "type": "LEC",
+    "subject": "25B11MA213",
+    "room": "3040",
+    "teacher": "SREYA",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 1,
+    "batch": "H2",
+    "type": "LEC",
+    "subject": "25B11MA213",
+    "room": "3040",
+    "teacher": "SREYA",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 15,
+    "duration": 1,
+    "batch": "F3",
+    "type": "LEC",
+    "subject": "15B11CI311",
+    "room": "3093",
+    "teacher": "BHB",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 15,
+    "duration": 1,
+    "batch": "F4",
+    "type": "LEC",
+    "subject": "15B11CI311",
+    "room": "3093",
+    "teacher": "BHB",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 16,
+    "duration": 1,
+    "batch": "F22",
+    "type": "TUT",
+    "subject": "26B11MA222",
+    "room": "3116",
+    "teacher": "NFMATHS5",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 10,
+    "duration": 1,
+    "batch": "E3",
+    "type": "LEC",
+    "subject": "18B11EC215",
+    "room": "3096",
+    "teacher": "DIJ",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 10,
+    "duration": 1,
+    "batch": "E4",
+    "type": "LEC",
+    "subject": "18B11EC215",
+    "room": "3096",
+    "teacher": "DIJ",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 11,
+    "duration": 1,
+    "batch": "F7",
+    "type": "LEC",
+    "subject": "24B11CS212",
+    "room": "3040",
+    "teacher": "ANK",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 11,
+    "duration": 1,
+    "batch": "F8",
+    "type": "LEC",
+    "subject": "24B11CS212",
+    "room": "3040",
+    "teacher": "ANK",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 12,
+    "duration": 1,
+    "batch": "E3",
+    "type": "LEC",
+    "subject": "15B11MA301",
+    "room": "3045",
+    "teacher": "ASP",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 12,
+    "duration": 1,
+    "batch": "E4",
+    "type": "LEC",
+    "subject": "15B11MA301",
+    "room": "3045",
+    "teacher": "ASP",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 1,
+    "batch": "F1",
+    "type": "LEC",
+    "subject": "24B11CS213",
+    "room": "244B",
+    "teacher": "KNS",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 14,
+    "duration": 1,
+    "batch": "F2",
+    "type": "LEC",
+    "subject": "24B11CS213",
+    "room": "244B",
+    "teacher": "KNS",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 15,
+    "duration": 1,
+    "batch": "F11",
+    "type": "LEC",
+    "subject": "24B11CS212",
+    "room": "3084",
+    "teacher": "NFCS13",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 15,
+    "duration": 1,
+    "batch": "F12",
+    "type": "LEC",
+    "subject": "24B11CS212",
+    "room": "3084",
+    "teacher": "NFCS13",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 16,
+    "duration": 1,
+    "batch": "H1",
+    "type": "LEC",
+    "subject": "15B11CI311",
+    "room": "244B",
+    "teacher": "NFCS12",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
+    "start": 16,
+    "duration": 1,
+    "batch": "H2",
+    "type": "LEC",
+    "subject": "15B11CI311",
+    "room": "244B",
+    "teacher": "NFCS12",
+    "series": "128",
+    "semester": 3
+  },
+  {
+    "day": 1,
     "start": 10,
     "duration": 1,
     "batch": "F9",
@@ -20664,7 +21444,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 12,
     "duration": 1,
     "batch": "F13",
@@ -20676,7 +21456,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 12,
     "duration": 1,
     "batch": "F14",
@@ -20688,7 +21468,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 14,
     "duration": 1,
     "batch": "E1",
@@ -20700,7 +21480,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 14,
     "duration": 1,
     "batch": "E2",
@@ -20712,7 +21492,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 15,
     "duration": 1,
     "batch": "E3",
@@ -20724,7 +21504,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 15,
     "duration": 1,
     "batch": "E4",
@@ -20736,7 +21516,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 16,
     "duration": 1,
     "batch": "F3",
@@ -20748,7 +21528,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 16,
     "duration": 1,
     "batch": "F4",
@@ -20760,7 +21540,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 2,
     "batch": "F17",
@@ -20772,7 +21552,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 2,
     "batch": "F4",
@@ -20784,7 +21564,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 2,
     "batch": "F5",
@@ -20796,7 +21576,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 2,
     "batch": "F6",
@@ -20808,7 +21588,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 15,
     "duration": 1,
     "batch": "E1",
@@ -20820,7 +21600,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 15,
     "duration": 1,
     "batch": "E2",
@@ -20832,7 +21612,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 16,
     "duration": 1,
     "batch": "F5",
@@ -20844,7 +21624,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 16,
     "duration": 1,
     "batch": "F6",
@@ -20856,7 +21636,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 2,
     "batch": "E3",
@@ -20868,7 +21648,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 2,
     "batch": "E4",
@@ -20880,7 +21660,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 2,
     "batch": "F18",
@@ -20892,7 +21672,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 14,
     "duration": 2,
     "batch": "F21",
@@ -20904,7 +21684,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 14,
     "duration": 2,
     "batch": "F22",
@@ -20916,7 +21696,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 16,
     "duration": 1,
     "batch": "F9",
@@ -20928,7 +21708,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 16,
     "duration": 1,
     "batch": "F10",
@@ -20940,7 +21720,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 2,
     "batch": "F10",
@@ -20952,7 +21732,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 2,
     "batch": "F11",
@@ -20964,7 +21744,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 2,
     "batch": "F12",
@@ -20976,7 +21756,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 2,
     "batch": "F7",
@@ -20988,7 +21768,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 2,
     "batch": "F8",
@@ -21000,7 +21780,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 2,
     "batch": "F9",
@@ -21012,7 +21792,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 14,
     "duration": 2,
     "batch": "F10",
@@ -21024,7 +21804,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 14,
     "duration": 2,
     "batch": "F11",
@@ -21036,7 +21816,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 14,
     "duration": 2,
     "batch": "F12",
@@ -21048,7 +21828,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 16,
     "duration": 1,
     "batch": "E1",
@@ -21060,7 +21840,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 16,
     "duration": 1,
     "batch": "E2",
@@ -21072,7 +21852,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 1,
     "batch": "F1",
@@ -21084,7 +21864,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 1,
     "batch": "F2",
@@ -21096,7 +21876,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 10,
     "duration": 1,
     "batch": "F3",
@@ -21108,7 +21888,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 10,
     "duration": 1,
     "batch": "F4",
@@ -21120,7 +21900,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 2,
     "batch": "E1",
@@ -21132,7 +21912,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 14,
     "duration": 1,
     "batch": "F17",
@@ -21144,7 +21924,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 14,
     "duration": 1,
     "batch": "F18",
@@ -21156,7 +21936,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 15,
     "duration": 1,
     "batch": "F5",
@@ -21168,7 +21948,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 15,
     "duration": 1,
     "batch": "F6",
@@ -21180,7 +21960,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 16,
     "duration": 1,
     "batch": "F11",
@@ -21192,7 +21972,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 16,
     "duration": 1,
     "batch": "F12",
@@ -21204,7 +21984,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 1,
     "batch": "E2",
@@ -21216,7 +21996,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 10,
     "duration": 1,
     "batch": "E1",
@@ -21228,7 +22008,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 10,
     "duration": 1,
     "batch": "E2",
@@ -21240,7 +22020,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 2,
     "batch": "E2",
@@ -21252,7 +22032,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 14,
     "duration": 1,
     "batch": "H3",
@@ -21264,7 +22044,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 14,
     "duration": 1,
     "batch": "H4",
@@ -21276,7 +22056,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 15,
     "duration": 1,
     "batch": "F24",
@@ -21288,7 +22068,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 15,
     "duration": 1,
     "batch": "F25",
@@ -21300,7 +22080,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 16,
     "duration": 1,
     "batch": "F24",
@@ -21312,7 +22092,7 @@
     "semester": 3
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 16,
     "duration": 1,
     "batch": "F25",
@@ -22056,7 +22836,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 9,
     "duration": 1,
     "batch": "H3",
@@ -22068,7 +22848,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 9,
     "duration": 1,
     "batch": "H4",
@@ -22080,7 +22860,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 10,
     "duration": 1,
     "batch": "E1",
@@ -22092,7 +22872,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 10,
     "duration": 1,
     "batch": "E2",
@@ -22104,7 +22884,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 12,
     "duration": 1,
     "batch": "F5",
@@ -22116,7 +22896,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 12,
     "duration": 1,
     "batch": "F6",
@@ -22128,7 +22908,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 16,
     "duration": 1,
     "batch": "F3",
@@ -22140,7 +22920,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 16,
     "duration": 1,
     "batch": "F4",
@@ -22152,7 +22932,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 9,
     "duration": 1,
     "batch": "E1",
@@ -22164,7 +22944,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 9,
     "duration": 1,
     "batch": "E2",
@@ -22176,7 +22956,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 10,
     "duration": 1,
     "batch": "F1",
@@ -22188,7 +22968,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 10,
     "duration": 1,
     "batch": "F2",
@@ -22200,7 +22980,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 11,
     "duration": 2,
     "batch": "F1",
@@ -22212,7 +22992,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 11,
     "duration": 2,
     "batch": "F2",
@@ -22224,7 +23004,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 11,
     "duration": 2,
     "batch": "F3",
@@ -22236,7 +23016,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 14,
     "duration": 2,
     "batch": "F18",
@@ -22248,7 +23028,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 16,
     "duration": 1,
     "batch": "E1",
@@ -22260,7 +23040,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 16,
     "duration": 1,
     "batch": "E2",
@@ -22272,7 +23052,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 9,
     "duration": 1,
     "batch": "F9",
@@ -22284,7 +23064,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 10,
     "duration": 1,
     "batch": "F17",
@@ -22296,7 +23076,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 10,
     "duration": 1,
     "batch": "F18",
@@ -22308,7 +23088,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 11,
     "duration": 2,
     "batch": "F17",
@@ -22320,7 +23100,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 14,
     "duration": 2,
     "batch": "F24",
@@ -22332,7 +23112,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 14,
     "duration": 2,
     "batch": "F25",
@@ -22344,7 +23124,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 16,
     "duration": 1,
     "batch": "F21",
@@ -22356,7 +23136,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 16,
     "duration": 1,
     "batch": "F22",
@@ -22368,7 +23148,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 9,
     "duration": 1,
     "batch": "F10",
@@ -22380,7 +23160,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 10,
     "duration": 1,
     "batch": "F3",
@@ -22392,7 +23172,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 10,
     "duration": 1,
     "batch": "F4",
@@ -22404,7 +23184,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 14,
     "duration": 1,
     "batch": "E3",
@@ -22416,7 +23196,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 14,
     "duration": 1,
     "batch": "E4",
@@ -22428,7 +23208,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 15,
     "duration": 2,
     "batch": "F13",
@@ -22440,7 +23220,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 15,
     "duration": 2,
     "batch": "F14",
@@ -22452,7 +23232,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 9,
     "duration": 1,
     "batch": "F3",
@@ -22464,7 +23244,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 9,
     "duration": 1,
     "batch": "F4",
@@ -22476,7 +23256,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 10,
     "duration": 1,
     "batch": "F21",
@@ -22488,7 +23268,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 10,
     "duration": 1,
     "batch": "F22",
@@ -22500,7 +23280,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 11,
     "duration": 1,
     "batch": "E3",
@@ -22512,7 +23292,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 11,
     "duration": 1,
     "batch": "E4",
@@ -22524,7 +23304,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 12,
     "duration": 1,
     "batch": "F7",
@@ -22536,7 +23316,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 12,
     "duration": 1,
     "batch": "F8",
@@ -22548,7 +23328,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 14,
     "duration": 1,
     "batch": "E1",
@@ -22560,7 +23340,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 14,
     "duration": 1,
     "batch": "E2",
@@ -22572,7 +23352,7 @@
     "semester": 3
   },
   {
-    "day": 2,
+    "day": 3,
     "start": 15,
     "duration": 2,
     "batch": "E3",
@@ -23232,7 +24012,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 12,
     "duration": 1,
     "batch": "F1",
@@ -23244,7 +24024,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 12,
     "duration": 1,
     "batch": "F2",
@@ -23256,7 +24036,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 11,
     "duration": 2,
     "batch": "F7",
@@ -23268,7 +24048,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 11,
     "duration": 2,
     "batch": "F8",
@@ -23280,7 +24060,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 11,
     "duration": 2,
     "batch": "F9",
@@ -23292,7 +24072,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 14,
     "duration": 2,
     "batch": "H2",
@@ -23304,7 +24084,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 16,
     "duration": 1,
     "batch": "F9",
@@ -23316,7 +24096,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 16,
     "duration": 1,
     "batch": "F10",
@@ -23328,7 +24108,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 9,
     "duration": 2,
     "batch": "F1",
@@ -23340,7 +24120,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 9,
     "duration": 2,
     "batch": "F2",
@@ -23352,7 +24132,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 9,
     "duration": 2,
     "batch": "F3",
@@ -23364,7 +24144,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 11,
     "duration": 2,
     "batch": "H1",
@@ -23376,7 +24156,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 11,
     "duration": 2,
     "batch": "H2",
@@ -23388,7 +24168,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 11,
     "duration": 2,
     "batch": "H3",
@@ -23400,7 +24180,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 14,
     "duration": 1,
     "batch": "E3",
@@ -23412,7 +24192,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 14,
     "duration": 1,
     "batch": "E4",
@@ -23424,7 +24204,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 15,
     "duration": 1,
     "batch": "F13",
@@ -23436,7 +24216,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 15,
     "duration": 1,
     "batch": "F14",
@@ -23448,7 +24228,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 16,
     "duration": 1,
     "batch": "F11",
@@ -23460,7 +24240,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 16,
     "duration": 1,
     "batch": "F12",
@@ -23472,7 +24252,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 9,
     "duration": 1,
     "batch": "H1",
@@ -23484,7 +24264,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 9,
     "duration": 1,
     "batch": "H2",
@@ -23496,7 +24276,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 10,
     "duration": 1,
     "batch": "E3",
@@ -23508,7 +24288,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 10,
     "duration": 1,
     "batch": "E4",
@@ -23520,7 +24300,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 11,
     "duration": 2,
     "batch": "F17",
@@ -23532,7 +24312,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 14,
     "duration": 1,
     "batch": "F24",
@@ -23544,7 +24324,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 14,
     "duration": 1,
     "batch": "F25",
@@ -23556,7 +24336,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 15,
     "duration": 2,
     "batch": "F24",
@@ -23568,7 +24348,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 15,
     "duration": 2,
     "batch": "F25",
@@ -23580,7 +24360,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 15,
     "duration": 2,
     "batch": "H4",
@@ -23592,7 +24372,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 9,
     "duration": 1,
     "batch": "F24",
@@ -23604,7 +24384,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 9,
     "duration": 1,
     "batch": "F25",
@@ -23616,7 +24396,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 10,
     "duration": 1,
     "batch": "E1",
@@ -23628,7 +24408,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 10,
     "duration": 1,
     "batch": "E2",
@@ -23640,7 +24420,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 11,
     "duration": 1,
     "batch": "F21",
@@ -23652,7 +24432,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 11,
     "duration": 1,
     "batch": "F22",
@@ -23664,7 +24444,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 12,
     "duration": 1,
     "batch": "F21",
@@ -23676,7 +24456,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 12,
     "duration": 1,
     "batch": "F22",
@@ -23688,7 +24468,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 14,
     "duration": 2,
     "batch": "F18",
@@ -23700,7 +24480,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 16,
     "duration": 1,
     "batch": "F17",
@@ -23712,7 +24492,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 16,
     "duration": 1,
     "batch": "F18",
@@ -23724,7 +24504,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 9,
     "duration": 1,
     "batch": "E1",
@@ -23736,7 +24516,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 10,
     "duration": 1,
     "batch": "H1",
@@ -23748,7 +24528,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 10,
     "duration": 1,
     "batch": "H2",
@@ -23760,7 +24540,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 11,
     "duration": 1,
     "batch": "F13",
@@ -23772,7 +24552,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 11,
     "duration": 1,
     "batch": "F14",
@@ -23784,7 +24564,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 12,
     "duration": 1,
     "batch": "E1",
@@ -23796,7 +24576,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 12,
     "duration": 1,
     "batch": "E2",
@@ -23808,7 +24588,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 14,
     "duration": 1,
     "batch": "F3",
@@ -23820,7 +24600,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 14,
     "duration": 1,
     "batch": "F4",
@@ -23832,7 +24612,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 15,
     "duration": 1,
     "batch": "E1",
@@ -23844,7 +24624,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 15,
     "duration": 1,
     "batch": "E2",
@@ -23856,7 +24636,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 16,
     "duration": 1,
     "batch": "H1",
@@ -23868,7 +24648,7 @@
     "semester": 3
   },
   {
-    "day": 3,
+    "day": 4,
     "start": 16,
     "duration": 1,
     "batch": "H2",
@@ -24516,7 +25296,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 12,
     "duration": 1,
     "batch": "E3",
@@ -24528,7 +25308,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 12,
     "duration": 1,
     "batch": "E4",
@@ -24540,7 +25320,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "F9",
@@ -24552,7 +25332,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "F10",
@@ -24564,7 +25344,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 10,
     "duration": 1,
     "batch": "F17",
@@ -24576,7 +25356,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 10,
     "duration": 1,
     "batch": "F18",
@@ -24588,7 +25368,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 2,
     "batch": "F17",
@@ -24600,7 +25380,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 14,
     "duration": 1,
     "batch": "F1",
@@ -24612,7 +25392,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 14,
     "duration": 1,
     "batch": "F2",
@@ -24624,7 +25404,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "E4",
@@ -24636,7 +25416,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 2,
     "batch": "F4",
@@ -24648,7 +25428,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 2,
     "batch": "F5",
@@ -24660,7 +25440,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 2,
     "batch": "F6",
@@ -24672,7 +25452,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 2,
     "batch": "F7",
@@ -24684,7 +25464,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 2,
     "batch": "F8",
@@ -24696,7 +25476,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 2,
     "batch": "F9",
@@ -24708,7 +25488,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 14,
     "duration": 2,
     "batch": "F18",
@@ -24720,7 +25500,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "F17",
@@ -24732,7 +25512,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "F18",
@@ -24744,7 +25524,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 2,
     "batch": "H1",
@@ -24756,7 +25536,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 2,
     "batch": "H2",
@@ -24768,7 +25548,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 2,
     "batch": "H3",
@@ -24780,7 +25560,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 2,
     "batch": "F24",
@@ -24792,7 +25572,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 2,
     "batch": "F25",
@@ -24804,7 +25584,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 2,
     "batch": "H4",
@@ -24816,7 +25596,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 14,
     "duration": 2,
     "batch": "F10",
@@ -24828,7 +25608,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 14,
     "duration": 2,
     "batch": "F11",
@@ -24840,7 +25620,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 14,
     "duration": 2,
     "batch": "F12",
@@ -24852,7 +25632,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "F24",
@@ -24864,7 +25644,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "F25",
@@ -24876,7 +25656,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 1,
     "batch": "E3",
@@ -24888,7 +25668,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 1,
     "batch": "E4",
@@ -24900,7 +25680,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 10,
     "duration": 1,
     "batch": "F13",
@@ -24912,7 +25692,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 10,
     "duration": 1,
     "batch": "F14",
@@ -24924,7 +25704,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 2,
     "batch": "H1",
@@ -24936,7 +25716,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 2,
     "batch": "H2",
@@ -24948,7 +25728,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 14,
     "duration": 2,
     "batch": "H3",
@@ -24960,7 +25740,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 14,
     "duration": 2,
     "batch": "H4",
@@ -24972,7 +25752,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "F3",
@@ -24984,7 +25764,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "F4",
@@ -24996,7 +25776,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 1,
     "batch": "F17",
@@ -25008,7 +25788,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 10,
     "duration": 1,
     "batch": "F24",
@@ -25020,7 +25800,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 10,
     "duration": 1,
     "batch": "F25",
@@ -25032,7 +25812,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 2,
     "batch": "E2",
@@ -25044,7 +25824,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 14,
     "duration": 1,
     "batch": "F21",
@@ -25056,7 +25836,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 14,
     "duration": 1,
     "batch": "F22",
@@ -25068,7 +25848,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 15,
     "duration": 1,
     "batch": "E1",
@@ -25080,7 +25860,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 15,
     "duration": 1,
     "batch": "E2",
@@ -25092,7 +25872,7 @@
     "semester": 3
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "F21",
@@ -25872,7 +26652,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 2,
     "batch": "E4",
@@ -25884,7 +26664,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 2,
     "batch": "F13",
@@ -25896,7 +26676,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 2,
     "batch": "F14",
@@ -25908,7 +26688,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 2,
     "batch": "F24",
@@ -25920,7 +26700,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 2,
     "batch": "F25",
@@ -25932,7 +26712,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 2,
     "batch": "F10",
@@ -25944,7 +26724,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 2,
     "batch": "F11",
@@ -25956,7 +26736,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 2,
     "batch": "F12",
@@ -25968,7 +26748,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 2,
     "batch": "F13",
@@ -25980,7 +26760,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 2,
     "batch": "F14",
@@ -25992,7 +26772,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 2,
     "batch": "F1",
@@ -26004,7 +26784,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 2,
     "batch": "F2",
@@ -26016,7 +26796,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 2,
     "batch": "F3",
@@ -26028,7 +26808,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 2,
     "batch": "F4",
@@ -26040,7 +26820,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 2,
     "batch": "F5",
@@ -26052,7 +26832,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 2,
     "batch": "F6",
@@ -26064,7 +26844,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 1,
     "batch": "H3",
@@ -26076,7 +26856,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 1,
     "batch": "H4",
@@ -26088,7 +26868,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 10,
     "duration": 1,
     "batch": "F5",
@@ -26100,7 +26880,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 10,
     "duration": 1,
     "batch": "F6",
@@ -26112,7 +26892,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 2,
     "batch": "E3",
@@ -26124,7 +26904,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 1,
     "batch": "F17",
@@ -26136,7 +26916,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 1,
     "batch": "F18",
@@ -26148,7 +26928,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 10,
     "duration": 1,
     "batch": "H3",
@@ -26160,7 +26940,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 10,
     "duration": 1,
     "batch": "H4",
@@ -26172,7 +26952,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 1,
     "batch": "F11",
@@ -26184,7 +26964,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 1,
     "batch": "F12",
@@ -26196,7 +26976,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "F9",
@@ -26208,7 +26988,7 @@
     "semester": 3
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "F10",
