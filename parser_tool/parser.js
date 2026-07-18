@@ -120,8 +120,15 @@ function expandBatches(batchString) {
 function parseCellString(rawText, semester) {
     if (!rawText || typeof rawText !== 'string') return [];
     
-    const text = rawText.replace(/\r?\n/g, ' ').replace(/[–—]/g, '-').replace(/\s+/g, ' ').trim();
+    let text = rawText.replace(/\r?\n/g, ' ').replace(/[–—]/g, '-').replace(/\s+/g, ' ').trim();
     
+    // Fix missing opening parenthesis for subject codes (e.g., "PC1BT373)" -> "PC1(BT373)")
+    text = text.replace(/(^|\s)([^()]+?\d{3}[A-Z]?)\)/gi, (match, space, content) => {
+        let fixed = content.replace(/([A-Z]{2}\d{3}[A-Z]?)$/i, '($1');
+        if (fixed === content) return match;
+        return space + fixed + ')';
+    });
+
     // Skip cells that are clearly headers/junk (day names, time slots, "LEGEND", etc.)
     const upperText = text.toUpperCase();
     if (/^(MON|TUE|WED|THU|FRI|SAT|SUN|LEGEND|BACKLOG|PROBABILITY AND|NOTE)/i.test(upperText)) return [];
@@ -141,9 +148,9 @@ function parseCellString(rawText, semester) {
         
         if (!match) return;
 
-        let batchPart = match[1].trim();
+        let batchPart = match[1].replace(/-+$/, '').trim();
         let subjectPart = match[2].trim();
-        let roomPart = match[3].trim();
+        let roomPart = match[3].replace(/^-+/, '').trim();
         let teacherPart = match[4] ? match[4].trim() : "TBA";
         
         // Dictionary-assisted splitting if no explicit slash was found and teacher is TBA
@@ -245,8 +252,8 @@ function parseCellString(rawText, semester) {
             let finalBatch = b.trim().toUpperCase();
             
             // VALIDATION: batch must match pattern like A1, B12, C3, D1, G1, etc.
-            // Must start with a letter and end with digits, total length 2-4
-            if (!/^[A-Z]\d{1,3}$/.test(finalBatch)) return;
+            // Must start with a letter and end with 1-2 digits, total length 2-3
+            if (!/^[A-Z]\d{1,2}$/.test(finalBatch)) return;
             
             results.push({
                 rawBatch: finalBatch,
@@ -506,12 +513,20 @@ function main() {
 }
 
 main();
+
 // === SECOND LEVEL PARSING (TOKEN CLASSIFICATION) ===
 function parseCellStringTokens(rawText, semester, knownBatches = []) {
     if (!rawText || typeof rawText !== 'string') return [];
     
     // Normalize text
-    const text = rawText.replace(/\r?\n/g, ' ').replace(/[?"?"]/g, '-').replace(/\s+/g, ' ').trim();
+    let text = rawText.replace(/\r?\n/g, ' ').replace(/[–—]/g, '-').replace(/\s+/g, ' ').trim();
+    
+    // Fix missing opening parenthesis for subject codes
+    text = text.replace(/(^|\s)([^()]+?\d{3}[A-Z]?)\)/gi, (match, space, content) => {
+        let fixed = content.replace(/([A-Z]{2}\d{3}[A-Z]?)$/i, '($1');
+        if (fixed === content) return match;
+        return space + fixed + ')';
+    });
     
     const upperText = text.toUpperCase();
     if (/^(MON|TUE|WED|THU|FRI|SAT|SUN|LEGEND|BACKLOG|PROBABILITY AND|NOTE)/i.test(upperText)) return [];
@@ -572,7 +587,7 @@ function parseCellStringTokens(rawText, semester, knownBatches = []) {
     let results = [];
     expandedBatches.forEach(b => {
         let finalBatch = b.trim().toUpperCase();
-        if (!/^[A-Z]\d{1,3}$/.test(finalBatch)) return;
+        if (!/^[A-Z]\d{1,2}$/.test(finalBatch)) return;
         results.push({
             rawBatch: finalBatch,
             type: type,
