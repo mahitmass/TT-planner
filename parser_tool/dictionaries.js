@@ -22,7 +22,7 @@ module.exports = {
         "SHV": "Shweta Verma", "PRV": "Praveen Kumar Sharma", "UMK": "Umesh Khanduri",
         "NMD": "Noor Muhammad", "SHA": "Shreya Aron", "PLV": "Pallavi",
         "PSK": "Piyush Kushwah", "PRM": "Prakhar Mishra",
-        
+
         // BIOTECH
         "PMG": "Prof. Pammi Gauba", "AKV": "Dr. Ankisha Vijay", "ANM": "Dr Ankit Mathur",
         "ANR": "Dr. Anuradha Singh", "ANS": "Dr. Aniruddh Sharma", "APC": "Dr Apurv Chatrath",
@@ -198,8 +198,8 @@ module.exports = {
     },
     subjectsSem3: {
         // NEW SEM 3 128 SUBJECTS
-        "26B11MA222": "Mathematical and Statistical Foundations for Computational Intelligence",
-        "MA222": "Mathematical and Statistical Foundations for Computational Intelligence",
+        "26B11MA222": "Mathematical and Statistics",
+        "MA222": "Mathematical and Statistics",
         "26B11CS216": "Artificial Intelligence",
         "CS216": "Artificial Intelligence",
         "26B15CS216": "Artificial Intelligence Lab",
@@ -217,8 +217,8 @@ module.exports = {
         "CS218": "Data Structures and Algorithm Design",
         "24B15CS218": "Data Structures and Algorithm Design Lab",
         "19B13BT211": "Environmental Studies",
-        "25B11MA213": "Mathematical Foundations for Artificial Intelligence and Data Science",
-        "MA213": "Mathematical Foundations for Artificial Intelligence and Data Science",
+        "25B11MA213": "Mathematical Foundations for AI and DS",
+        "MA213": "Mathematical Foundations for AI and DS",
         "24B11CS212": "Theory of Computation",
         "15B11CI311": "Data Structures",
         "15B17CI371": "Data Structures Lab",
@@ -229,7 +229,7 @@ module.exports = {
         "25B11EC311": "Digital Systems and Computer Organization",
         "25B15EC311": "Digital Systems and Computer Organisation Lab",
         "24B25CS214": "IT Infrastructure and Communication Lab",
-        
+
         "MA230": "Probability & Statistics",
         "MA229": "Discrete Mathematics",
         "MA212": "Discrete Mathematics",
