@@ -996,7 +996,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 2,
     "batch": "F18",
@@ -1008,7 +1008,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 1,
     "batch": "F17",
@@ -1020,7 +1020,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 1,
     "batch": "F18",
@@ -1032,7 +1032,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 13,
     "duration": 2,
     "batch": "E2",
@@ -1044,7 +1044,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 15,
     "duration": 2,
     "batch": "F15",
@@ -1056,7 +1056,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 2,
     "batch": "F9",
@@ -1068,7 +1068,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 1,
     "batch": "F11",
@@ -1080,7 +1080,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 1,
     "batch": "F12",
@@ -1092,7 +1092,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 13,
     "duration": 2,
     "batch": "F11",
@@ -1104,7 +1104,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 15,
     "duration": 2,
     "batch": "F25",
@@ -1116,7 +1116,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 2,
     "batch": "F10",
@@ -1128,7 +1128,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 1,
     "batch": "F3",
@@ -1140,7 +1140,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 1,
     "batch": "F4",
@@ -1152,7 +1152,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 13,
     "duration": 2,
     "batch": "F12",
@@ -1164,7 +1164,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 15,
     "duration": 2,
     "batch": "F26",
@@ -1176,7 +1176,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 3,
     "batch": "F5",
@@ -1188,7 +1188,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 13,
     "duration": 3,
     "batch": "F6",
@@ -1200,7 +1200,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 2,
     "batch": "F30",
@@ -1212,7 +1212,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 1,
     "batch": "F13",
@@ -1224,7 +1224,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 1,
     "batch": "F14",
@@ -1236,7 +1236,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 14,
     "duration": 2,
     "batch": "F16",
@@ -1248,7 +1248,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 14,
     "duration": 2,
     "batch": "F17",
@@ -1260,7 +1260,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 14,
     "duration": 2,
     "batch": "F18",
@@ -1272,7 +1272,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 2,
     "batch": "F13",
@@ -1284,7 +1284,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 2,
     "batch": "F14",
@@ -1296,7 +1296,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 2,
     "batch": "F15",
@@ -1308,7 +1308,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 1,
     "batch": "F21",
@@ -1320,7 +1320,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 1,
     "batch": "F22",
@@ -1332,7 +1332,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 13,
     "duration": 3,
     "batch": "F8",
@@ -1344,7 +1344,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 3,
     "batch": "F7",
@@ -1356,7 +1356,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 13,
     "duration": 3,
     "batch": "F28",
@@ -1368,7 +1368,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 3,
     "batch": "F27",
@@ -1380,7 +1380,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 13,
     "duration": 2,
     "batch": "F5",
@@ -1392,7 +1392,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 15,
     "duration": 2,
     "batch": "F11",
@@ -1404,7 +1404,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 9,
     "duration": 2,
     "batch": "F6",
@@ -1416,7 +1416,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 11,
     "duration": 2,
     "batch": "F9",
@@ -1428,7 +1428,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 13,
     "duration": 2,
     "batch": "F7",
@@ -1440,7 +1440,7 @@
     "semester": 1
   },
   {
-    "day": 1,
+    "day": 2,
     "start": 15,
     "duration": 2,
     "batch": "F12",
@@ -5184,7 +5184,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 1,
     "batch": "F27",
@@ -5196,7 +5196,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 1,
     "batch": "F28",
@@ -5208,7 +5208,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 10,
     "duration": 1,
     "batch": "F21",
@@ -5220,7 +5220,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 10,
     "duration": 1,
     "batch": "F22",
@@ -5232,7 +5232,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 1,
     "batch": "F15",
@@ -5244,7 +5244,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 1,
     "batch": "F16",
@@ -5256,7 +5256,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 15,
     "duration": 2,
     "batch": "F3",
@@ -5268,7 +5268,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 2,
     "batch": "F18",
@@ -5280,7 +5280,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 1,
     "batch": "F1",
@@ -5292,7 +5292,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 1,
     "batch": "F2",
@@ -5304,7 +5304,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 13,
     "duration": 2,
     "batch": "F15",
@@ -5316,7 +5316,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 15,
     "duration": 2,
     "batch": "F17",
@@ -5328,7 +5328,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 2,
     "batch": "F20",
@@ -5340,7 +5340,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 1,
     "batch": "F3",
@@ -5352,7 +5352,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 1,
     "batch": "F4",
@@ -5364,7 +5364,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 13,
     "duration": 2,
     "batch": "F16",
@@ -5376,7 +5376,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 15,
     "duration": 2,
     "batch": "F19",
@@ -5388,7 +5388,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 3,
     "batch": "F17",
@@ -5400,7 +5400,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 13,
     "duration": 3,
     "batch": "F18",
@@ -5412,7 +5412,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "E3",
@@ -5424,7 +5424,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "E4",
@@ -5436,7 +5436,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 3,
     "batch": "F19",
@@ -5448,7 +5448,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 13,
     "duration": 3,
     "batch": "F20",
@@ -5460,7 +5460,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "F15",
@@ -5472,7 +5472,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "F16",
@@ -5484,7 +5484,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 3,
     "batch": "E3",
@@ -5496,7 +5496,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 13,
     "duration": 3,
     "batch": "E4",
@@ -5508,7 +5508,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "F19",
@@ -5520,7 +5520,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "F20",
@@ -5532,7 +5532,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 2,
     "batch": "F15",
@@ -5544,7 +5544,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 1,
     "batch": "F5",
@@ -5556,7 +5556,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 1,
     "batch": "F6",
@@ -5568,7 +5568,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 13,
     "duration": 1,
     "batch": "F25",
@@ -5580,7 +5580,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 13,
     "duration": 1,
     "batch": "F26",
@@ -5592,7 +5592,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 14,
     "duration": 2,
     "batch": "F22",
@@ -5604,7 +5604,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 14,
     "duration": 2,
     "batch": "F28",
@@ -5616,7 +5616,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 14,
     "duration": 2,
     "batch": "F31",
@@ -5628,7 +5628,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 2,
     "batch": "F16",
@@ -5640,7 +5640,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 1,
     "batch": "F11",
@@ -5652,7 +5652,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 11,
     "duration": 1,
     "batch": "F12",
@@ -5664,7 +5664,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 13,
     "duration": 2,
     "batch": "F12",
@@ -5676,7 +5676,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 15,
     "duration": 2,
     "batch": "F22",
@@ -5688,7 +5688,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 1,
     "batch": "F7",
@@ -5700,7 +5700,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 9,
     "duration": 1,
     "batch": "F8",
@@ -5712,7 +5712,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 10,
     "duration": 2,
     "batch": "F14",
@@ -5724,7 +5724,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 13,
     "duration": 1,
     "batch": "F17",
@@ -5736,7 +5736,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 13,
     "duration": 1,
     "batch": "F18",
@@ -5748,7 +5748,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 14,
     "duration": 1,
     "batch": "F25",
@@ -5760,7 +5760,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 14,
     "duration": 1,
     "batch": "F26",
@@ -5772,7 +5772,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 15,
     "duration": 1,
     "batch": "F13",
@@ -5784,7 +5784,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 15,
     "duration": 1,
     "batch": "F14",
@@ -5796,7 +5796,7 @@
     "semester": 1
   },
   {
-    "day": 4,
+    "day": 5,
     "start": 16,
     "duration": 1,
     "batch": "F13",
@@ -6744,7 +6744,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 2,
     "batch": "F28",
@@ -6756,7 +6756,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "F1",
@@ -6768,7 +6768,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "F2",
@@ -6780,7 +6780,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 3,
     "batch": "F21",
@@ -6792,7 +6792,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "F7",
@@ -6804,7 +6804,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "F8",
@@ -6816,7 +6816,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 3,
     "batch": "F22",
@@ -6828,7 +6828,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "F30",
@@ -6840,7 +6840,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "F31",
@@ -6852,7 +6852,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 10,
     "duration": 2,
     "batch": "F31",
@@ -6864,7 +6864,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "F15",
@@ -6876,7 +6876,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "F16",
@@ -6888,7 +6888,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 2,
     "batch": "F25",
@@ -6900,7 +6900,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 2,
     "batch": "F27",
@@ -6912,7 +6912,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 1,
     "batch": "F30",
@@ -6924,7 +6924,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 1,
     "batch": "F31",
@@ -6936,7 +6936,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 10,
     "duration": 1,
     "batch": "F1",
@@ -6948,7 +6948,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 10,
     "duration": 1,
     "batch": "F2",
@@ -6960,7 +6960,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 1,
     "batch": "F7",
@@ -6972,7 +6972,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 1,
     "batch": "F8",
@@ -6984,7 +6984,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "F25",
@@ -6996,7 +6996,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "F26",
@@ -7008,7 +7008,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 1,
     "batch": "F11",
@@ -7020,7 +7020,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 9,
     "duration": 1,
     "batch": "F12",
@@ -7032,7 +7032,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 10,
     "duration": 1,
     "batch": "F3",
@@ -7044,7 +7044,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 10,
     "duration": 1,
     "batch": "F4",
@@ -7056,7 +7056,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 1,
     "batch": "F9",
@@ -7068,7 +7068,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 1,
     "batch": "F10",
@@ -7080,7 +7080,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "F17",
@@ -7092,7 +7092,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "F18",
@@ -7104,7 +7104,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 10,
     "duration": 1,
     "batch": "F5",
@@ -7116,7 +7116,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 10,
     "duration": 1,
     "batch": "F6",
@@ -7128,7 +7128,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 1,
     "batch": "F25",
@@ -7140,7 +7140,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 11,
     "duration": 1,
     "batch": "F26",
@@ -7152,7 +7152,7 @@
     "semester": 1
   },
   {
-    "day": 5,
+    "day": 6,
     "start": 12,
     "duration": 1,
     "batch": "F9",

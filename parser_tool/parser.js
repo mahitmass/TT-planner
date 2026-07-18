@@ -368,6 +368,19 @@ function parseSingleFile(filePath, semester, series) {
             }
         }
 
+        // --- 1-128.xlsx HARDCODED BOUNDARY FIX ---
+        // The PDF-to-Excel converter for 1-128.xlsx placed day labels in the middle of blocks
+        // and left empty rows at day boundaries. We must override currentDay manually based on physical gaps.
+        const base = path.basename(filePath).toLowerCase();
+        if (base === '1-128.xlsx') {
+            if (R >= 13 && R <= 24) currentDay = 1;
+            else if (R >= 27 && R <= 60) currentDay = 2;
+            else if (R >= 61 && R <= 82) currentDay = 3;
+            else if (R >= 83 && R <= 96) currentDay = 4;
+            else if (R >= 99 && R <= 117) currentDay = 5;
+            else if (R >= 120) currentDay = 6;
+        }
+
         // 3. Extract class data
         if (!currentDay || Object.keys(colToStartHour).length === 0) continue;
 
