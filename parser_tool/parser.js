@@ -565,10 +565,10 @@ function parseCellStringTokens(rawText, semester, knownBatches = []) {
             foundBatches.push(t);
         } else if (teacherCodes.includes(t) || /^NF\d{1,3}$/.test(t)) {
             foundTeachers.push(t);
-        } else if (roomCodes.includes(t) || /^(CL|CR|TR|TS|G|F|FF|PL|BT|MCL|LAB)\d{1,3}$/.test(t)) {
-            foundRooms.push(t);
         } else if (subjectsList.includes(t)) {
             foundSubjects.push(t);
+        } else if (roomCodes.includes(t) || /^(CL|CR|TR|TS|G|F|FF|PL|BT|MCL|LAB)\d{1,3}$/.test(t)) {
+            foundRooms.push(t);
         } else if (/^[A-Z]{1,2}\d{1,3}(-[A-Z]{0,2}\d{1,3})?$/.test(t) && !/^(CL|CR|TR|TS|G|F|FF|PL|BT|MCL)\d/.test(t)) {
             foundBatches.push(t);
         } else {

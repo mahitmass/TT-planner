@@ -30125,8 +30125,8 @@
     "duration": 1,
     "batch": "C3",
     "type": "LEC",
-    "subject": "UNKNOWN",
-    "room": "BT313,TS11",
+    "subject": "BT313",
+    "room": "TS11",
     "teacher": "POC,SOC",
     "series": "62",
     "semester": 3
