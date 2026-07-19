@@ -26,9 +26,6 @@ jobs:
 
       - name: Run Smart Scraper
         run: |
-          # Clean old data to prevent ghosts
-          rm -rf raw_data
-          
           # Run the Python script to scrape the JIIT site
           python scraper.py
 

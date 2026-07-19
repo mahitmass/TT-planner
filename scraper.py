@@ -15,10 +15,10 @@ BASE_URL = "https://www.jiit.ac.in"
 btech_pattern = re.compile(r'b\.?\s*tech', re.IGNORECASE)
 
 # Looks for "Sem" followed by an optional dash/space, and then "1" or "I"
-sem1_pattern = re.compile(r'sem(?:ester)?\s*[-]?\s*(1|i)\b', re.IGNORECASE)
+sem1_pattern = re.compile(r'(?:sem(?:ester)?\s*[-]?\s*(1|i)\b|\b(1|i)\s*[-]?\s*sem(?:ester)?)', re.IGNORECASE)
 
 # Looks for "Sem" followed by "3" or "III"
-sem3_pattern = re.compile(r'sem(?:ester)?\s*[-]?\s*(3|iii)\b', re.IGNORECASE)
+sem3_pattern = re.compile(r'(?:sem(?:ester)?\s*[-]?\s*(3|iii)\b|\b(3|iii)\s*[-]?\s*sem(?:ester)?)', re.IGNORECASE)
 
 # Looks for 62 or 128 anywhere in the string
 campus62_pattern = re.compile(r'62', re.IGNORECASE)

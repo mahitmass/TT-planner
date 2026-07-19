@@ -18,8 +18,7 @@ jobs:
 
       - name: Fetch Data
         run: |
-          # Clean old data to prevent ghosts
-          rm -rf raw_data
+          # Ensure directory exists
           mkdir -p raw_data
 
           # Smart-clone only the folders we need from senior repo
