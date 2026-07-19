@@ -416,7 +416,34 @@ function parseSingleFile(filePath, semester, series) {
                     }
                 }
                 
-                const parsedDataList = parseCellString(cell.v.toString(), semester);
+                let cellString = cell.v.toString();
+                let parsedDataList = parseCellString(cellString, semester);
+
+                // --- Incomplete Split Cell Fix ---
+                let isPotentiallyIncomplete = parsedDataList.length === 0 || parsedDataList.some(d => d.room === "TBA" || d.teacher === "TBA") || cellString.trim().endsWith('-');
+                
+                if (isPotentiallyIncomplete) {
+                    let nextCell = sheet[XLSX.utils.encode_cell({ r: R + 1, c: C })];
+                    if (nextCell && nextCell.v) {
+                        let nextString = nextCell.v.toString();
+                        let nextParsed = parseCellString(nextString, semester);
+                        
+                        // If the cell directly below is NOT a valid standalone class
+                        if (nextParsed.length === 0) {
+                            let combinedString = cellString + " " + nextString;
+                            let combinedParsed = parseCellString(combinedString, semester);
+                            
+                            if (combinedParsed.length > 0) {
+                                let currentTBA = parsedDataList.length === 0 ? 999 : parsedDataList.reduce((acc, d) => acc + (d.room === 'TBA' ? 1 : 0) + (d.teacher === 'TBA' ? 1 : 0), 0);
+                                let combinedTBA = combinedParsed.reduce((acc, d) => acc + (d.room === 'TBA' ? 1 : 0) + (d.teacher === 'TBA' ? 1 : 0), 0);
+                                
+                                if (combinedTBA < currentTBA || (combinedTBA === currentTBA && combinedParsed.length >= parsedDataList.length)) {
+                                    parsedDataList = combinedParsed;
+                                }
+                            }
+                        }
+                    }
+                }
                 parsedDataList.forEach(parsedData => {
                     let finalDuration = duration;
                     if (parsedData.subject.toUpperCase().includes('GE111')) {
