@@ -147,7 +147,7 @@ function parseCellString(rawText, semester) {
     if (/^\d{1,2}-\d{1,2}(AM|PM)?$/i.test(text.replace(/\s/g, ''))) return []; // skip time-only cells
     
     // Lookahead Regex: Splits when two classes share the same cell
-    const entries = text.match(/[A-Z0-9,+\- ]+\(\s*[^)]+\s*\)[^(]*(?=\s*[A-Z0-9,+\- ]+\(\s*[^)]+\s*\)|$)/gi);
+    const entries = text.match(/[A-Z0-9,+\- ]+\(\s*[^)]+\s*\).*?(?=\s+[A-Z0-9,+\- ]+\(\s*[^)]+\s*\)|$)/gi);
     
     if (!entries) return [];
 
@@ -156,7 +156,7 @@ function parseCellString(rawText, semester) {
     entries.forEach(entry => {
         // Match: BATCHES(SUBJECT)-ROOM/TEACHER
         // We use \/ as the separator between room and teacher to avoid splitting by comma prematurely
-        const match = entry.match(/^([^()]+)\s*\(\s*([^)]+)\s*\)\s*-?\s*([^/]+?)(?:\s*\/\s*(.*))?$/i);     
+        const match = entry.match(/^([^()]+)\s*\(\s*([^)]+)\s*\)\s*[-/]?\s*([^/]+?(?:\/[^/]+?\([^)]+\))*)(?:\s*\/\s*(.*))?$/i);     
         
         if (!match) return;
 
@@ -189,7 +189,13 @@ function parseCellString(rawText, semester) {
                     }
                 }
                 if (!foundTeacher) {
-                    cleanRooms.push(part);
+                    let regexSplit = part.match(/^(.*?(?:\d|\)))\s*([A-Z]{2,4})$/i);
+                    if (regexSplit && !['LAB', 'TUT', 'LEC'].includes(regexSplit[2].toUpperCase())) {
+                        cleanRooms.push(regexSplit[1].trim());
+                        extractedTeachers.push(regexSplit[2].trim().toUpperCase());
+                    } else {
+                        cleanRooms.push(part);
+                    }
                 }
             });
             
@@ -286,8 +292,8 @@ function parseCellString(rawText, semester) {
     results.forEach(res => {
         let isMisarranged = false;
         
-        let tTokens = res.teacher.split(/[,/\s]+/).map(t => t.trim().toUpperCase()).filter(t => t);
-        let rTokens = res.room.split(/[,/\s]+/).map(t => t.trim().toUpperCase()).filter(t => t);
+        let tTokens = res.teacher.split(/[,/\s()]+/).map(t => t.trim().toUpperCase()).filter(t => t);
+        let rTokens = res.room.split(/[,/\s()]+/).map(t => t.trim().toUpperCase()).filter(t => t);
 
         // Check if teacher field contains a room
         if (tTokens.some(t => roomCodes.includes(t) || /^(CL|CR|TR|TS|G|F|FF|PL|BT|MCL|LAB)\d{1,3}$/.test(t))) {
@@ -603,6 +609,8 @@ function parseCellStringTokens(rawText, semester, knownBatches = []) {
             let shortCodeMatch = t.match(/[A-Z]{2}\d{3,4}/);
             if (shortCodeMatch && subjectsList.includes(shortCodeMatch[0])) {
                 foundSubjects.push(shortCodeMatch[0]);
+            } else {
+                foundRooms.push(t);
             }
         }
     });
