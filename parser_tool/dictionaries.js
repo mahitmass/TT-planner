@@ -226,9 +226,9 @@ module.exports = {
         "24B15CS213": "Database Management Systems Lab",
         "24B15CS215": "OOPS using Java",
         "15B11HS211": "Economics",
-        "25B11EC311": "Digital Systems & Computer Organization",
-        "25B15EC311": "Digital Systems & Computer Organisation Lab",
-        "24B25CS214": "IT Infrastructure & Communication Lab",
+        "25B11EC311": "Digital Systems & Computer Org",
+        "25B15EC311": "Digital Systems & Computer Org Lab",
+        "24B25CS214": "IT Infrastructure & Comms Lab",
 
         "MA230": "Probability & Statistics",
         "MA229": "Discrete Mathematics",
