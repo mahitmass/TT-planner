@@ -295,13 +295,13 @@ function parseCellString(rawText, semester) {
         let tTokens = res.teacher.split(/[,/\s()]+/).map(t => t.trim().toUpperCase()).filter(t => t);
         let rTokens = res.room.split(/[,/\s()]+/).map(t => t.trim().toUpperCase()).filter(t => t);
 
-        // Check if teacher field contains a room
-        if (tTokens.some(t => roomCodes.includes(t) || /^(CL|CR|TR|TS|G|F|FF|PL|BT|MCL|LAB)\d{1,3}$/.test(t))) {
+        // Check if teacher field contains a room (ignore ambiguous BT)
+        if (tTokens.some(t => (roomCodes.includes(t) && !/^BT\d{1,3}$/.test(t)) || /^(CL|CR|TR|TS|G|F|FF|PL|MCL|LAB)\d{1,3}$/.test(t))) {
             isMisarranged = true;
         }
         
-        // Check if room field contains a teacher
-        if (rTokens.some(r => teacherCodes.includes(r) || /^NF\d{1,3}$/.test(r))) {
+        // Check if room field contains a teacher (ignore ambiguous BT)
+        if (rTokens.some(r => (teacherCodes.includes(r) && !/^BT\d{1,3}$/.test(r)) || /^NF\d{1,3}$/.test(r))) {
             isMisarranged = true;
         }
 
@@ -586,6 +586,7 @@ function parseCellStringTokens(rawText, semester, knownBatches = []) {
     let foundTeachers = [];
     let foundRooms = [];
     let foundSubjects = [];
+    let ambiguousBT = [];
 
     const teacherCodes = Object.keys(dictionaries.teachers || {});
     const roomCodes = Object.keys(staticData.classroomLocations || {});
@@ -597,13 +598,15 @@ function parseCellStringTokens(rawText, semester, knownBatches = []) {
         
         if (knownBatches.includes(t)) {
             foundBatches.push(t);
+        } else if (/^BT\d{1,3}$/.test(t)) {
+            ambiguousBT.push(t);
         } else if (teacherCodes.includes(t) || /^NF\d{1,3}$/.test(t)) {
             foundTeachers.push(t);
         } else if (subjectsList.includes(t)) {
             foundSubjects.push(t);
-        } else if (roomCodes.includes(t) || /^(CL|CR|TR|TS|G|F|FF|PL|BT|MCL|LAB)\d{1,3}$/.test(t)) {
+        } else if (roomCodes.includes(t) || /^(CL|CR|TR|TS|G|F|FF|PL|MCL|LAB)\d{1,3}$/.test(t)) {
             foundRooms.push(t);
-        } else if (/^[A-Z]{1,2}\d{1,3}(-[A-Z]{0,2}\d{1,3})?$/.test(t) && !/^(CL|CR|TR|TS|G|F|FF|PL|BT|MCL)\d/.test(t)) {
+        } else if (/^[A-Z]{1,2}\d{1,3}(-[A-Z]{0,2}\d{1,3})?$/.test(t) && !/^(CL|CR|TR|TS|G|F|FF|PL|MCL)\d/.test(t)) {
             foundBatches.push(t);
         } else {
             let shortCodeMatch = t.match(/[A-Z]{2}\d{3,4}/);
@@ -612,6 +615,15 @@ function parseCellStringTokens(rawText, semester, knownBatches = []) {
             } else {
                 foundRooms.push(t);
             }
+        }
+    });
+
+    // Resolve ambiguous BT tokens (can be room or teacher)
+    ambiguousBT.forEach(bt => {
+        if (foundRooms.length === 0) {
+            foundRooms.push(bt);
+        } else {
+            foundTeachers.push(bt);
         }
     });
 
