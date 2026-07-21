@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://planner-mass.vercel.app/sitemap.xml
