@@ -1449,7 +1449,7 @@ function initTeacherSearch() {
           Object.keys(semBatches || {}).forEach(batchName => {
             const batchClasses = semBatches[batchName];
             batchClasses.forEach(cls => {
-               const teachers = cls.teacher.split('/').map(t => t.trim());
+               const teachers = cls.teacher.split(/[/,]/).map(t => t.trim());
                if (teachers.includes(targetCode)) {
                    const key = `${cls.day}-${cls.start}`;
                    if (!slotMap.has(key)) {
