@@ -86,10 +86,25 @@ for link in soup.find_all('a', href=True):
                 # If it's a PDF or something else, prefix with manual_ so the parser ignores it
                 save_path = f"raw_data/manual_{semester}-{campus}.{file_ext}"
             
-            print(f"   -> Downloading to {save_path}...")
+            temp_save_path = save_path + ".tmp"
+            print(f"   -> Downloading to {temp_save_path}...")
             file_resp = requests.get(download_url, verify=False)
-            with open(save_path, 'wb') as f:
+            with open(temp_save_path, 'wb') as f:
                 f.write(file_resp.content)
+                
+            # Size and content check
+            if os.path.exists(save_path):
+                existing_size = os.path.getsize(save_path)
+                new_size = os.path.getsize(temp_save_path)
+                if new_size >= existing_size:
+                    os.replace(temp_save_path, save_path)
+                    print(f"   -> Replaced {save_path} (New size: {new_size} >= Old: {existing_size})")
+                else:
+                    os.remove(temp_save_path)
+                    print(f"   -> Kept existing {save_path} (Existing {existing_size} > New {new_size})")
+            else:
+                os.rename(temp_save_path, save_path)
+                print(f"   -> Saved new file {save_path}")
                 
             # Update memory
             scraped_urls.add(download_url)

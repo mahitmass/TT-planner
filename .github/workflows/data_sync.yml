@@ -27,9 +27,29 @@ jobs:
           git sparse-checkout set "raw/time_tables/B.Tech 62 (btech-62)" "raw/time_tables/B.Tech 128 (btech-128)"
           cd ..
 
-          # Find the first .xlsx in the directories and copy with new naming convention
-          find "senior_repo/raw/time_tables/B.Tech 62 (btech-62)" -type f -name "*.xlsx" -print -quit | xargs -I {} cp "{}" raw_data/3-62.xlsx
-          find "senior_repo/raw/time_tables/B.Tech 128 (btech-128)" -type f -name "*.xlsx" -print -quit | xargs -I {} cp "{}" raw_data/3-128.xlsx
+          # Iterate over campuses and semesters to copy correctly named files
+          for campus in "62" "128"; do
+            for sem in "1" "3"; do
+              src_file="senior_repo/raw/time_tables/B.Tech $campus (btech-$campus)/$sem/$sem.xlsx"
+              dest_file="raw_data/$sem-$campus.xlsx"
+              
+              if [ -f "$src_file" ]; then
+                if [ -f "$dest_file" ]; then
+                  src_size=$(stat -c%s "$src_file")
+                  dest_size=$(stat -c%s "$dest_file")
+                  if [ "$src_size" -ge "$dest_size" ]; then
+                    cp "$src_file" "$dest_file"
+                    echo "Updated $dest_file (New: $src_size, Old: $dest_size)"
+                  else
+                    echo "Kept existing $dest_file (Existing $dest_size > New $src_size)"
+                  fi
+                else
+                  cp "$src_file" "$dest_file"
+                  echo "Added $dest_file"
+                fi
+              fi
+            done
+          done
           
           # Delete the temp clone
           rm -rf senior_repo
