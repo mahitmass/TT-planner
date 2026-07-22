@@ -612,6 +612,8 @@ function parseCellStringTokens(rawText, semester, knownBatches = []) {
             let shortCodeMatch = t.match(/[A-Z]{2}\d{3,4}/);
             if (shortCodeMatch && subjectsList.includes(shortCodeMatch[0])) {
                 foundSubjects.push(shortCodeMatch[0]);
+            } else if (/^[A-Z]{2,4}$/.test(t) && !/^(CL|CR|TR|TS|G|F|FF|PL|MCL|LAB|LT)$/.test(t)) {
+                foundTeachers.push(t);
             } else {
                 foundRooms.push(t);
             }

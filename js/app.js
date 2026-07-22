@@ -639,7 +639,8 @@ function createTableCell(classes) {
       }
       
       const current = state.currentBatch;
-      const is128 = /^[FEH]/.test(current); 
+      const bSeries = (typeof batchSeries !== 'undefined' && batchSeries[state.currentSemester] && batchSeries[state.currentSemester][current]) ? batchSeries[state.currentSemester][current] : (/^[FEH]/.test(current) ? "128" : "62");
+      const is128 = bSeries === "128"; 
       
       if (is128) {
           document.body.classList.add('series-128');
@@ -709,7 +710,6 @@ function populateBatches() {
     batchSelect.innerHTML = "";
     
     const is128 = toggleCheckbox.checked;
-    const targetPrefixes = is128 ? ['F', 'H', 'E'] : ['A', 'B', 'C', 'D', 'G'];
     
     let hasData = false;
     
@@ -717,8 +717,8 @@ function populateBatches() {
     const semData = scheduleMap || {};
 
     Object.keys(semData).sort().forEach(batch => {
-        const startsWithPrefix = targetPrefixes.some(prefix => batch.startsWith(prefix));
-        if (startsWithPrefix) {
+        const bSeries = (typeof batchSeries !== 'undefined' && batchSeries[state.currentSemester] && batchSeries[state.currentSemester][batch]) ? batchSeries[state.currentSemester][batch] : (/^[FEH]/.test(batch) ? "128" : "62");
+        if ((is128 && bSeries === "128") || (!is128 && bSeries === "62")) {
             const option = document.createElement("option");
             option.value = batch;
             option.textContent = `Batch ${batch}`;
@@ -787,7 +787,8 @@ function populateBatches() {
       state.currentBatch = batchName;
       Storage.set('selectedBatch', batchName);
       
-      const is128 = /^[FEH]/.test(batchName);
+      const bSeries = (typeof batchSeries !== 'undefined' && batchSeries[state.currentSemester] && batchSeries[state.currentSemester][batchName]) ? batchSeries[state.currentSemester][batchName] : (/^[FEH]/.test(batchName) ? "128" : "62");
+      const is128 = bSeries === "128";
       if (is128) {
           document.body.classList.add('series-128');
       } else {
