@@ -579,7 +579,8 @@ function parseCellStringTokens(rawText, semester, knownBatches = []) {
     if (/^(MON|TUE|WED|THU|FRI|SAT|SUN|LEGEND|BACKLOG|PROBABILITY AND|NOTE)/i.test(upperText)) return [];
     if (/^\d{1,2}-\d{1,2}(AM|PM)?$/i.test(text.replace(/\s/g, ''))) return [];
 
-    let tokens = text.split(/[\s()/\-,]+/).filter(t => t.trim());
+    const ignoreWords = ['TO', 'BE', 'TAUGHT', 'BY', 'FACULTY', 'PROF', 'DR', 'MR', 'MS', 'MRS', 'PROF.', 'DR.', 'MR.', 'MS.', 'MRS.', 'AND', 'III', 'SEM'];
+    let tokens = text.split(/[\s()/\-,]+/).filter(t => t.trim() && !ignoreWords.includes(t.toUpperCase()));
     
     // First pass: extract all matches
     let foundBatches = [];
@@ -598,12 +599,12 @@ function parseCellStringTokens(rawText, semester, knownBatches = []) {
         
         if (knownBatches.includes(t)) {
             foundBatches.push(t);
-        } else if (/^BT\d{1,3}$/.test(t)) {
-            ambiguousBT.push(t);
         } else if (teacherCodes.includes(t) || /^NF\d{1,3}$/.test(t)) {
             foundTeachers.push(t);
         } else if (subjectsList.includes(t)) {
             foundSubjects.push(t);
+        } else if (/^BT\d{1,3}$/.test(t)) {
+            ambiguousBT.push(t);
         } else if (roomCodes.includes(t) || /^(CL|CR|TR|TS|G|F|FF|PL|MCL|LAB)\d{1,3}$/.test(t)) {
             foundRooms.push(t);
         } else if (/^[A-Z]{1,2}\d{1,3}(-[A-Z]{0,2}\d{1,3})?$/.test(t) && !/^(CL|CR|TR|TS|G|F|FF|PL|MCL)\d/.test(t)) {

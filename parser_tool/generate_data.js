@@ -45,6 +45,8 @@ rawData.forEach(entry => {
     // Overrides: Deletions
     if (overrides.deletions.some(del => del.batch === batchName && del.day === dayIndex && del.start === actualHour && (!del.semester || del.semester == semester))) return;
 
+    if (entry.subject === 'UNKNOWN') return; // Skip unstructured notes
+
     // Create batch object if it doesn't exist
     if (!finalBatches[semester][batchName]) finalBatches[semester][batchName] = [];
     if (!batchSeriesMap[semester][batchName]) batchSeriesMap[semester][batchName] = entry.series || "62";
