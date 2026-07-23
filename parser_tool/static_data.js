@@ -90,6 +90,7 @@ module.exports = {
         "CL04": "ABB-III, Underground-2",
         "CL23": "ABB-I, 2nd Floor",
         "CL22": "ABB-I, 2nd Floor",
+        "CL16": "ABB-III , Underground-1",
 
         "CPMCS": "ABB-III, Underground", "INS": "ABB-III, Underground",
 
