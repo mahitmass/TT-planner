@@ -308,7 +308,7 @@ function parseCellString(rawText, semester) {
         if (isMisarranged) {
             // Re-parse the text for this entry using token classification to fix the misarrangement
             let combinedString = `${res.rawBatch} ${res.subject} ${res.room} ${res.teacher}`;
-            let corrected = parseCellStringTokens(combinedString, semester, [res.rawBatch]);
+            let corrected = parseCellStringTokens(combinedString, semester, [res.rawBatch], res.type);
             if (corrected.length > 0) {
                 finalResults.push(...corrected);
             } else {
@@ -562,7 +562,7 @@ function main() {
 main();
 
 // === SECOND LEVEL PARSING (TOKEN CLASSIFICATION) ===
-function parseCellStringTokens(rawText, semester, knownBatches = []) {
+function parseCellStringTokens(rawText, semester, knownBatches = [], defaultType = null) {
     if (!rawText || typeof rawText !== 'string') return [];
     
     // Normalize text
@@ -639,9 +639,9 @@ function parseCellStringTokens(rawText, semester, knownBatches = []) {
     let subjectDict = semester === 1 ? dictionaries.subjectsSem1 : dictionaries.subjectsSem3;
     let subjectTitle = subjectDict && subjectDict[subject] ? subjectDict[subject].toUpperCase() : "";
 
-    let type = 'LEC';
+    let type = defaultType || 'LEC';
     if (subject.includes('LAB') || subjectTitle.includes('LAB') || foundBatches.some(b => b.startsWith('P'))) type = 'LAB';
-    else if (foundBatches.some(b => b.startsWith('T'))) type = 'TUT';
+    else if (!defaultType && foundBatches.some(b => b.startsWith('T'))) type = 'TUT';
 
     let rawBatchesStr = foundBatches.join(',');
     let cleanBatches = rawBatchesStr.replace(/^[LTP](?=[A-Z0-9])/ig, '').trim();
