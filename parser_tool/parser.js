@@ -147,7 +147,7 @@ function parseCellString(rawText, semester) {
     if (/^\d{1,2}-\d{1,2}(AM|PM)?$/i.test(text.replace(/\s/g, ''))) return []; // skip time-only cells
     
     // Lookahead Regex: Splits when two classes share the same cell
-    const entries = text.match(/[A-Z0-9,+\- ]+\(\s*[^)]+\s*\).*?(?=\s+[A-Z0-9,+\- ]+\(\s*[^)]+\s*\)|$)/gi);
+    const entries = text.match(/[A-Z0-9,+\- ]+\(\s*[^)]+\s*\).*?(?=\s+[A-Z]{1,3}\d{1,2}[A-Z0-9,+\- ]*\(\s*[^)]+\s*\)|$)/gi);
     
     if (!entries) return [];
 

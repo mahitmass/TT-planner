@@ -554,27 +554,44 @@ function renderDesktopView() {
 
         // 2. Class Slots
         let skipSlots = 0;
+        let runningCell = null;
+        let runningClasses = [];
+        
         hours.forEach(hour => {
+            const classesForSlot = state.currentSchedule.filter(s => s.day === day && s.start === hour);
+
             if (skipSlots > 0) {
+                if (classesForSlot.length > 0) {
+                    runningClasses.push(...classesForSlot);
+                    const newCell = createTableCell(runningClasses);
+                    newCell.colSpan = runningCell.colSpan;
+                    newCell.setAttribute('data-start-hour', runningCell.getAttribute('data-start-hour'));
+                    row.replaceChild(newCell, runningCell);
+                    runningCell = newCell;
+                }
                 skipSlots--;
                 return;
             }
 
-            const classesForSlot = state.currentSchedule.filter(s => s.day === day && s.start === hour);
-
             if (classesForSlot.length > 0) {
+                classesForSlot.sort((a, b) => b.duration - a.duration);
                 const cls = classesForSlot[0];
-                const cell = createTableCell(classesForSlot); // Uses helper below
+                runningClasses = [...classesForSlot];
+                
+                const cell = createTableCell(runningClasses);
                 if (cls.duration > 1) {
                     cell.colSpan = cls.duration;
                     skipSlots = cls.duration - 1;
                 }
                 cell.setAttribute('data-start-hour', cls.start);
                 row.appendChild(cell);
+                runningCell = cell;
             } else {
                 const cell = createEmptyTableCell(day, hour);
                 cell.setAttribute('data-start-hour', hour);
                 row.appendChild(cell);
+                runningCell = null;
+                runningClasses = [];
             }
         });
 
