@@ -32,6 +32,14 @@ self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
   if (!event.request.url.startsWith('http')) return;
   const url = new URL(event.request.url);
+  
+  // FIX OLD PWA INSTALLS
+  if (url.pathname.startsWith('/TT-planner/')) {
+      const newUrl = event.request.url.replace('/TT-planner/', '/');
+      event.respondWith(Response.redirect(newUrl, 301));
+      return;
+  }
+  
   const isDataFile = url.pathname.endsWith('data.js');
 
   event.respondWith(
