@@ -99,7 +99,9 @@ self.addEventListener('fetch', (event) => {
       }
       
       // SCENARIO C: First Visit + Offline (Prevent Crash)
-      return networkPromise;
+      const fallbackResponse = await networkPromise;
+      if (fallbackResponse) return fallbackResponse;
+      return new Response('Offline and no cache', { status: 503 });
     })()
   );
 });

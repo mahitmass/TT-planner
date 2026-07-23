@@ -4,7 +4,7 @@ const path = require('path');
 const dictionaries = require('./dictionaries');
 const staticData = require('./static_data');
 
-const allTeachers = dictionaries.teachers || {};
+const allTeachers = { ...(dictionaries.teachers62 || {}), ...(dictionaries.teachers128 || {}) };
 const sortedTeacherCodes = Object.keys(allTeachers).sort((a, b) => b.length - a.length);
 
 const CONFIG = { sheetIndex: 0 };
@@ -285,7 +285,7 @@ function parseCellString(rawText, semester) {
 
     // === SECOND LEVEL PARSING ===
     // Go through the extracted results and detect misarrangements (be "the eyes")
-    const teacherCodes = Object.keys(dictionaries.teachers || {});
+    const teacherCodes = Object.keys(allTeachers);
     const roomCodes = Object.keys(staticData.classroomLocations || {});
     
     let finalResults = [];
@@ -588,7 +588,7 @@ function parseCellStringTokens(rawText, semester, knownBatches = []) {
     let foundSubjects = [];
     let ambiguousBT = [];
 
-    const teacherCodes = Object.keys(dictionaries.teachers || {});
+    const teacherCodes = Object.keys({ ...(dictionaries.teachers62 || {}), ...(dictionaries.teachers128 || {}) });
     const roomCodes = Object.keys(staticData.classroomLocations || {});
     const subjectsList = (semester == 1) ? Object.keys(dictionaries.subjectsSem1 || {}) : Object.keys(dictionaries.subjectsSem3 || {});
 

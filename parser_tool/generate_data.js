@@ -77,7 +77,7 @@ rawData.forEach(entry => {
         let teacherArray = finalTeacher.split(/[\/,]+/);
         finalTeacher = teacherArray.map(t => {
             let tClean = t.trim();
-            if (dictionaries.teachers[tClean + '1']) return tClean + '1';
+            if (dictionaries.teachers128[tClean + '1']) return tClean + '1';
             return tClean;
         }).join(',');
     }
@@ -154,5 +154,5 @@ semesters.forEach((sem, k) => {
 });
 scheduleMapString += "}";
 
-let fileContent = `// AUTOMATICALLY GENERATED\nconst scheduleMap = ${scheduleMapString};\nconst batchSeries = ${JSON.stringify(batchSeriesMap, null, 2)};\nconst facultyNames = ${JSON.stringify(dictionaries.teachers, null, 2)};\nconst ROOM_LOCATIONS = ${JSON.stringify(staticData.classroomLocations, null, 2)};\n`;
+let fileContent = `// AUTOMATICALLY GENERATED\nconst scheduleMap = ${scheduleMapString};\nconst batchSeries = ${JSON.stringify(batchSeriesMap, null, 2)};\nconst facultyNames = ${JSON.stringify(dictionaries.teachers62, null, 2)};\nconst facultyNames128 = ${JSON.stringify(dictionaries.teachers128, null, 2)};\nconst ROOM_LOCATIONS = ${JSON.stringify(staticData.classroomLocations, null, 2)};\n`;
 fs.writeFileSync('../js/data.js', fileContent);
