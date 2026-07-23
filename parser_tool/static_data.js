@@ -80,8 +80,17 @@ module.exports = {
         "CR704": "ABB-III, 7th Floor", "CR705": "ABB-III, 7th Floor",
 
         // ABB-III Underground
-        "CL01": "ABB-III, Underground-1", "CL02": "ABB-III, Underground-1",
-        "CL3": "ABB-III, Underground-2", "CL4": "ABB-III, Underground-2",
+        "CL01": "ABB-III, Underground-1",
+        "CL02": "ABB-III, Underground-1",
+        "CL1": "ABB-III, Underground-1",
+        "CL2": "ABB-III, Underground-1",
+        "CL3": "ABB-III, Underground-2",
+        "CL4": "ABB-III, Underground-2",
+        "CL03": "ABB-III, Underground-2",
+        "CL04": "ABB-III, Underground-2",
+        "CL23": "ABB-I, 2nd Floor",
+        "CL22": "ABB-I, 2nd Floor",
+
         "CPMCS": "ABB-III, Underground", "INS": "ABB-III, Underground",
 
         // Other
