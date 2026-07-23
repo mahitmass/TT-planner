@@ -138,7 +138,7 @@ module.exports = {
         "PKC": "Prashant Kumar Chauhan", "ADV": "Anshu Dhirendra Varshney", "URS": "Urbashi Satpathy",
         "ANK1": "Anuj Kumar", "SKH": "Sudip Kumar Haldar", "NAK": "Narender Khatri",
         "BHT": "Bharti Arora", "PRJ": "Prabhakar Jha", "HAB": "Harish Bishwakarma",
-        "SUM": "Sumit Mahajan", "PSH": "Piyush Sharma", "RAK": "Rahul Kumar",
+        "SUM": "Sumit Mahajan", "PSH1": "Piyush Sharma", "RAK": "Rahul Kumar",
         "NIK": "Niraj Kumar", "ASP": "Asim Patra", "SHP1": "Shivani Pant", "AKS": "Akansha Singh",
         "VIS": "Vikas Sharma", "KAS": "Kartik Samanta", "SHALU": "Shalu", "AMS": "Ambalika Sarkar",
         "EKS1": "Ekta Srivastava", "AMA": "Amba Aggarwal", "ANB": "Anshu Banwari",
