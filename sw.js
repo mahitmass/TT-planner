@@ -47,12 +47,17 @@ self.addEventListener('fetch', (event) => {
       // 2. Network Promise (With Cache Buster & Crash Protection)
       const networkPromise = (async () => {
           try {
-              const networkUrl = new URL(event.request.url);
-              // Force fresh data from Vercel
-              if (isDataFile) networkUrl.searchParams.set('sb', Date.now()); 
+              let fetchReq;
+              if (isDataFile) {
+                  const networkUrl = new URL(event.request.url);
+                  networkUrl.searchParams.set('sb', Date.now());
+                  fetchReq = new Request(networkUrl, { cache: 'no-store' });
+              } else {
+                  fetchReq = event.request;
+              }
               
-              const response = await fetch(networkUrl, { cache: 'no-store' });
-              if (response && response.status === 200) {
+              const response = await fetch(fetchReq);
+              if (response && (response.ok || response.type === 'opaque')) {
                   return response;
               }
           } catch(e) { /* Ignore offline errors */ }
