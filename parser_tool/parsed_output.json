@@ -9139,7 +9139,7 @@
     "type": "LEC",
     "subject": "EC111",
     "room": "FF8",
-    "teacher": "NF1",
+    "teacher": "VSS",
     "series": "62",
     "semester": 1
   },
@@ -9151,7 +9151,7 @@
     "type": "LEC",
     "subject": "EC111",
     "room": "FF8",
-    "teacher": "NF1",
+    "teacher": "VSS",
     "series": "62",
     "semester": 1
   },
@@ -9769,18 +9769,6 @@
   },
   {
     "day": 1,
-    "start": 9,
-    "duration": 1,
-    "batch": "C2",
-    "type": "TUT",
-    "subject": "EC112",
-    "room": "F4",
-    "teacher": "SLM",
-    "series": "62",
-    "semester": 1
-  },
-  {
-    "day": 1,
     "start": 10,
     "duration": 1,
     "batch": "A8",
@@ -9932,6 +9920,18 @@
     "subject": "MA111",
     "room": "TS13",
     "teacher": "NS",
+    "series": "62",
+    "semester": 1
+  },
+  {
+    "day": 1,
+    "start": 11,
+    "duration": 1,
+    "batch": "C2",
+    "type": "TUT",
+    "subject": "EC112",
+    "room": "TR525",
+    "teacher": "SLM",
     "series": "62",
     "semester": 1
   },
@@ -10435,7 +10435,7 @@
     "type": "LAB",
     "subject": "CS111",
     "room": "CL05",
-    "teacher": "SHV,NEH",
+    "teacher": "MSI,NEH",
     "series": "62",
     "semester": 1
   },
@@ -10447,7 +10447,7 @@
     "type": "LAB",
     "subject": "EC111",
     "room": "ADE",
-    "teacher": "NHI,NF1",
+    "teacher": "NHI,VSS",
     "series": "62",
     "semester": 1
   },
@@ -10495,7 +10495,7 @@
     "type": "LAB",
     "subject": "EC111",
     "room": "BEL2",
-    "teacher": "JYM,NF4",
+    "teacher": "GRA,CBP",
     "series": "62",
     "semester": 1
   },
@@ -10531,7 +10531,7 @@
     "type": "LAB",
     "subject": "EC111",
     "room": "ADE",
-    "teacher": "BHG,NF7",
+    "teacher": "BHG,RDR",
     "series": "62",
     "semester": 1
   },
@@ -10555,7 +10555,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD3",
-    "teacher": "SNP",
+    "teacher": "MJH",
     "series": "62",
     "semester": 1
   },
@@ -10567,7 +10567,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD1",
-    "teacher": "GRP",
+    "teacher": "NBH",
     "series": "62",
     "semester": 1
   },
@@ -10591,7 +10591,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD2",
-    "teacher": "NBH",
+    "teacher": "GGL",
     "series": "62",
     "semester": 1
   },
@@ -10602,8 +10602,8 @@
     "batch": "C3",
     "type": "LAB",
     "subject": "GE111",
-    "room": "PGLAB",
-    "teacher": "NF1",
+    "room": "SPL",
+    "teacher": "SNP",
     "series": "62",
     "semester": 1
   },
@@ -10661,9 +10661,9 @@
     "duration": 1,
     "batch": "A3",
     "type": "LEC",
-    "subject": "MA111",
+    "subject": "EC111",
     "room": "G1",
-    "teacher": "RSC",
+    "teacher": "BVI",
     "series": "62",
     "semester": 1
   },
@@ -10673,9 +10673,9 @@
     "duration": 1,
     "batch": "A4",
     "type": "LEC",
-    "subject": "MA111",
+    "subject": "EC111",
     "room": "G1",
-    "teacher": "RSC",
+    "teacher": "SHWETA",
     "series": "62",
     "semester": 1
   },
@@ -11095,7 +11095,7 @@
     "type": "LEC",
     "subject": "EC111",
     "room": "FF3",
-    "teacher": "NF1",
+    "teacher": "VSS",
     "series": "62",
     "semester": 1
   },
@@ -11107,7 +11107,7 @@
     "type": "LEC",
     "subject": "EC111",
     "room": "FF3",
-    "teacher": "NF1",
+    "teacher": "VSS",
     "series": "62",
     "semester": 1
   },
@@ -12127,7 +12127,7 @@
     "type": "TUT",
     "subject": "CI111",
     "room": "TS6",
-    "teacher": "AJS",
+    "teacher": "RCA",
     "series": "62",
     "semester": 1
   },
@@ -12175,7 +12175,7 @@
     "type": "TUT",
     "subject": "CI111",
     "room": "TS7",
-    "teacher": "RCA",
+    "teacher": "AJS",
     "series": "62",
     "semester": 1
   },
@@ -12487,7 +12487,7 @@
     "type": "LAB",
     "subject": "HS112",
     "room": "LL1",
-    "teacher": "EKS",
+    "teacher": "MB",
     "series": "62",
     "semester": 1
   },
@@ -12631,7 +12631,7 @@
     "type": "LAB",
     "subject": "EC111",
     "room": "BEL1",
-    "teacher": "NHI,NF1",
+    "teacher": "NHI,VSS",
     "series": "62",
     "semester": 1
   },
@@ -12643,7 +12643,7 @@
     "type": "LAB",
     "subject": "EC111",
     "room": "BEL1",
-    "teacher": "MJ,VKH",
+    "teacher": "BVI,ATA",
     "series": "62",
     "semester": 1
   },
@@ -12787,7 +12787,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD2",
-    "teacher": "GRP",
+    "teacher": "CDN",
     "series": "62",
     "semester": 1
   },
@@ -12799,7 +12799,7 @@
     "type": "LAB",
     "subject": "EC111",
     "room": "BEL2",
-    "teacher": "ATA,BVI",
+    "teacher": "MJ,VKH",
     "series": "62",
     "semester": 1
   },
@@ -12811,7 +12811,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD3",
-    "teacher": "ASG",
+    "teacher": "SWET",
     "series": "62",
     "semester": 1
   },
@@ -12835,7 +12835,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD4",
-    "teacher": "NF1",
+    "teacher": "NTS",
     "series": "62",
     "semester": 1
   },
@@ -12847,7 +12847,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD1",
-    "teacher": "NBH",
+    "teacher": "GRP",
     "series": "62",
     "semester": 1
   },
@@ -12871,7 +12871,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD3",
-    "teacher": "NF2",
+    "teacher": "SNP",
     "series": "62",
     "semester": 1
   },
@@ -12883,7 +12883,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD4",
-    "teacher": "CDN",
+    "teacher": "NBH",
     "series": "62",
     "semester": 1
   },
@@ -13794,7 +13794,7 @@
     "batch": "A10",
     "type": "LEC",
     "subject": "HS112",
-    "room": "CS4",
+    "room": "G2",
     "teacher": "HK",
     "series": "62",
     "semester": 1
@@ -13806,7 +13806,7 @@
     "batch": "B20",
     "type": "LEC",
     "subject": "HS112",
-    "room": "CS4",
+    "room": "G2",
     "teacher": "HK",
     "series": "62",
     "semester": 1
@@ -14739,23 +14739,23 @@
     "day": 3,
     "start": 15,
     "duration": 1,
-    "batch": "B7",
-    "type": "TUT",
-    "subject": "EC111",
-    "room": "TS13",
-    "teacher": "ALJ",
-    "series": "62",
-    "semester": 1
-  },
-  {
-    "day": 3,
-    "start": 15,
-    "duration": 1,
     "batch": "B8",
     "type": "TUT",
     "subject": "EC111",
     "room": "TS16",
     "teacher": "RU",
+    "series": "62",
+    "semester": 1
+  },
+  {
+    "day": 3,
+    "start": 16,
+    "duration": 1,
+    "batch": "B7",
+    "type": "TUT",
+    "subject": "EC111",
+    "room": "TS13",
+    "teacher": "ALJ",
     "series": "62",
     "semester": 1
   },
@@ -14791,7 +14791,7 @@
     "type": "LAB",
     "subject": "CS111",
     "room": "CL03",
-    "teacher": "MSI,PTK",
+    "teacher": "SHV,PTK",
     "series": "62",
     "semester": 1
   },
@@ -15079,7 +15079,7 @@
     "type": "LAB",
     "subject": "CS111",
     "room": "CL06",
-    "teacher": "AKT,NAC",
+    "teacher": "AKT,SHO",
     "series": "62",
     "semester": 1
   },
@@ -15139,7 +15139,7 @@
     "type": "LAB",
     "subject": "EC111",
     "room": "BEL2",
-    "teacher": "BHG,NF1",
+    "teacher": "BHG,VSS",
     "series": "62",
     "semester": 1
   },
@@ -15187,7 +15187,7 @@
     "type": "LAB",
     "subject": "EC111",
     "room": "BEL2",
-    "teacher": "HEM,NF7",
+    "teacher": "HEM,RDR",
     "series": "62",
     "semester": 1
   },
@@ -15198,8 +15198,8 @@
     "batch": "A10",
     "type": "LAB",
     "subject": "GE111",
-    "room": "PGLAB",
-    "teacher": "NF2",
+    "room": "SPL",
+    "teacher": "GRP",
     "series": "62",
     "semester": 1
   },
@@ -15223,7 +15223,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD1",
-    "teacher": "SNP",
+    "teacher": "SWET",
     "series": "62",
     "semester": 1
   },
@@ -15247,7 +15247,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD2",
-    "teacher": "ADM",
+    "teacher": "NTS",
     "series": "62",
     "semester": 1
   },
@@ -15259,7 +15259,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD2",
-    "teacher": "NF1",
+    "teacher": "SNP",
     "series": "62",
     "semester": 1
   },
@@ -15271,7 +15271,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD3",
-    "teacher": "GGL",
+    "teacher": "MJH",
     "series": "62",
     "semester": 1
   },
@@ -15283,7 +15283,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD3",
-    "teacher": "CDN",
+    "teacher": "NBH",
     "series": "62",
     "semester": 1
   },
@@ -15295,7 +15295,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD4",
-    "teacher": "NBH",
+    "teacher": "CDN",
     "series": "62",
     "semester": 1
   },
@@ -15307,7 +15307,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD4",
-    "teacher": "SWET",
+    "teacher": "ASG",
     "series": "62",
     "semester": 1
   },
@@ -15557,9 +15557,9 @@
     "duration": 1,
     "batch": "A3",
     "type": "LEC",
-    "subject": "EC111",
+    "subject": "MA111",
     "room": "FF1",
-    "teacher": "BVI",
+    "teacher": "RSC",
     "series": "62",
     "semester": 1
   },
@@ -15569,9 +15569,9 @@
     "duration": 1,
     "batch": "A4",
     "type": "LEC",
-    "subject": "EC111",
+    "subject": "MA111",
     "room": "FF1",
-    "teacher": "SHWETA",
+    "teacher": "RSC",
     "series": "62",
     "semester": 1
   },
@@ -16459,7 +16459,7 @@
     "type": "LEC",
     "subject": "EC111",
     "room": "CS8",
-    "teacher": "NF1",
+    "teacher": "VSS",
     "series": "62",
     "semester": 1
   },
@@ -16471,7 +16471,7 @@
     "type": "LEC",
     "subject": "EC111",
     "room": "CS8",
-    "teacher": "NF1",
+    "teacher": "VSS",
     "series": "62",
     "semester": 1
   },
@@ -16753,18 +16753,6 @@
   },
   {
     "day": 4,
-    "start": 15,
-    "duration": 1,
-    "batch": "A18",
-    "type": "TUT",
-    "subject": "EC111",
-    "room": "TS7",
-    "teacher": "ALJ",
-    "series": "62",
-    "semester": 1
-  },
-  {
-    "day": 4,
     "start": 16,
     "duration": 1,
     "batch": "B9",
@@ -16981,6 +16969,18 @@
   },
   {
     "day": 4,
+    "start": 13,
+    "duration": 1,
+    "batch": "A18",
+    "type": "TUT",
+    "subject": "EC111",
+    "room": "TS10",
+    "teacher": "ALJ",
+    "series": "62",
+    "semester": 1
+  },
+  {
+    "day": 4,
     "start": 14,
     "duration": 1,
     "batch": "G2",
@@ -17143,7 +17143,7 @@
     "type": "LAB",
     "subject": "HS112",
     "room": "LL",
-    "teacher": "MB",
+    "teacher": "EKS",
     "series": "62",
     "semester": 1
   },
@@ -17419,7 +17419,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD2",
-    "teacher": "SWET",
+    "teacher": "NBH",
     "series": "62",
     "semester": 1
   },
@@ -17443,7 +17443,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD3",
-    "teacher": "ASG",
+    "teacher": "SWET",
     "series": "62",
     "semester": 1
   },
@@ -17467,7 +17467,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD4",
-    "teacher": "NF2",
+    "teacher": "ASG",
     "series": "62",
     "semester": 1
   },
@@ -17490,8 +17490,8 @@
     "batch": "C5",
     "type": "LAB",
     "subject": "GE111",
-    "room": "PGLAB",
-    "teacher": "NF1",
+    "room": "SPL",
+    "teacher": "CDN",
     "series": "62",
     "semester": 1
   },
@@ -17753,9 +17753,9 @@
     "duration": 1,
     "batch": "A3",
     "type": "LEC",
-    "subject": "EC111",
+    "subject": "PH111",
     "room": "FF1",
-    "teacher": "BVI",
+    "teacher": "DIP",
     "series": "62",
     "semester": 1
   },
@@ -17765,9 +17765,9 @@
     "duration": 1,
     "batch": "A4",
     "type": "LEC",
-    "subject": "EC111",
+    "subject": "PH111",
     "room": "FF1",
-    "teacher": "SHWETA",
+    "teacher": "DIP",
     "series": "62",
     "semester": 1
   },
@@ -18451,7 +18451,7 @@
     "type": "LEC",
     "subject": "EC111",
     "room": "G6",
-    "teacher": "NF1",
+    "teacher": "VSS",
     "series": "62",
     "semester": 1
   },
@@ -18463,7 +18463,7 @@
     "type": "LEC",
     "subject": "EC111",
     "room": "G6",
-    "teacher": "NF1",
+    "teacher": "VSS",
     "series": "62",
     "semester": 1
   },
@@ -18595,7 +18595,7 @@
     "type": "LEC",
     "subject": "EC111",
     "room": "FF9",
-    "teacher": "NF1",
+    "teacher": "VSS",
     "series": "62",
     "semester": 1
   },
@@ -18607,7 +18607,7 @@
     "type": "LEC",
     "subject": "EC111",
     "room": "FF9",
-    "teacher": "NF1",
+    "teacher": "VSS",
     "series": "62",
     "semester": 1
   },
@@ -19543,7 +19543,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD2",
-    "teacher": "GRP",
+    "teacher": "CDN",
     "series": "62",
     "semester": 1
   },
@@ -19567,7 +19567,7 @@
     "type": "LAB",
     "subject": "CS111",
     "room": "CL02",
-    "teacher": "DCH,SHO",
+    "teacher": "DCH,NAC",
     "series": "62",
     "semester": 1
   },
@@ -19579,7 +19579,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD3",
-    "teacher": "ASG",
+    "teacher": "ADM",
     "series": "62",
     "semester": 1
   },
@@ -19639,7 +19639,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD1",
-    "teacher": "SNP",
+    "teacher": "GGL",
     "series": "62",
     "semester": 1
   },
@@ -19651,7 +19651,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD2",
-    "teacher": "ADM",
+    "teacher": "ASG",
     "series": "62",
     "semester": 1
   },
@@ -19709,9 +19709,9 @@
     "duration": 1,
     "batch": "A3",
     "type": "LEC",
-    "subject": "PH111",
+    "subject": "EC111",
     "room": "G1",
-    "teacher": "DIP",
+    "teacher": "BVI",
     "series": "62",
     "semester": 1
   },
@@ -19721,9 +19721,9 @@
     "duration": 1,
     "batch": "A4",
     "type": "LEC",
-    "subject": "PH111",
+    "subject": "EC111",
     "room": "G1",
-    "teacher": "DIP",
+    "teacher": "SHWETA",
     "series": "62",
     "semester": 1
   },
@@ -19963,7 +19963,7 @@
     "type": "LEC",
     "subject": "EC111",
     "room": "G2",
-    "teacher": "NF1",
+    "teacher": "VSS",
     "series": "62",
     "semester": 1
   },
@@ -19975,7 +19975,7 @@
     "type": "LEC",
     "subject": "EC111",
     "room": "G2",
-    "teacher": "NF1",
+    "teacher": "VSS",
     "series": "62",
     "semester": 1
   },
@@ -20329,18 +20329,6 @@
   },
   {
     "day": 6,
-    "start": 10,
-    "duration": 1,
-    "batch": "B9",
-    "type": "TUT",
-    "subject": "EC111",
-    "room": "TS7",
-    "teacher": "BVI",
-    "series": "62",
-    "semester": 1
-  },
-  {
-    "day": 6,
     "start": 11,
     "duration": 1,
     "batch": "D3",
@@ -20444,6 +20432,18 @@
     "subject": "18CI111",
     "room": "TS16",
     "teacher": "MSH",
+    "series": "62",
+    "semester": 1
+  },
+  {
+    "day": 6,
+    "start": 9,
+    "duration": 1,
+    "batch": "B9",
+    "type": "TUT",
+    "subject": "EC111",
+    "room": "TS12",
+    "teacher": "BVI",
     "series": "62",
     "semester": 1
   },
@@ -20563,7 +20563,7 @@
     "type": "LAB",
     "subject": "EC111",
     "room": "BEL1",
-    "teacher": "JYM,RHA",
+    "teacher": "GRA,RHA",
     "series": "62",
     "semester": 1
   },
@@ -20635,7 +20635,7 @@
     "type": "LAB",
     "subject": "EC111",
     "room": "BEL1",
-    "teacher": "VGO,NF4",
+    "teacher": "VGO,CBP",
     "series": "62",
     "semester": 1
   },
@@ -20647,7 +20647,7 @@
     "type": "LAB",
     "subject": "EC111",
     "room": "BEL2",
-    "teacher": "ALJ,NF1",
+    "teacher": "ALJ,VSS",
     "series": "62",
     "semester": 1
   },
@@ -20683,7 +20683,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD3",
-    "teacher": "ADM",
+    "teacher": "NBH",
     "series": "62",
     "semester": 1
   },
@@ -20695,7 +20695,7 @@
     "type": "LAB",
     "subject": "GE111",
     "room": "CAD4",
-    "teacher": "NF2",
+    "teacher": "GRP",
     "series": "62",
     "semester": 1
   },
