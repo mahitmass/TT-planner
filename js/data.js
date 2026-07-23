@@ -3632,6 +3632,7 @@ const batchSeries = {
 };
 const facultyNames = {
   "LKK": "Lakhveer Kaur",
+  "PSH": "Piyush Sharma",
   "AMB": "Amita Bhagat",
   "KKS": "Kamlesh Kumar Shukla",
   "NEA": "Neha Ahlawat",
@@ -3960,7 +3961,6 @@ const facultyNames = {
   "PRJ": "Prabhakar Jha",
   "HAB": "Harish Bishwakarma",
   "SUM": "Sumit Mahajan",
-  "PSH": "Piyush Sharma",
   "RAK": "Rahul Kumar",
   "NIK": "Niraj Kumar",
   "ASP": "Asim Patra",
