@@ -5,7 +5,7 @@ module.exports = {
     // === 1. TEACHER DICTIONARY ===
     teachers: {
         // NEW SEM 3 128 TEACHERS
-        "LKK": "Lakhveer Kaur", "AMB": "Amita Bhagat", "KKS": "Kamlesh Kumar Shukla",
+        "LKK": "Lakhveer Kaur","PSH": "Purwa Shriwastava", "AMB": "Amita Bhagat", "KKS": "Kamlesh Kumar Shukla",
         "NEA": "Neha Ahlawat", "ANK": "Ankit", "AHR": "Ashish Sharma",
         "HMA": "Himanshu Agraw", "KNS": "Kedar Nath", "MGO": "Mukta Goyal",
         "NRP": "Neeraj Pathak", "AKANSHA": "Tarkeshwar", "ADS": "Aditi Sharma",
