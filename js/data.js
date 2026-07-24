@@ -3632,7 +3632,7 @@ const batchSeries = {
 const facultyNames = {
   "LKK": "Lakhveer Kaur",
   "AMB": "Amita Bhagat",
-  "SPT": "Surbhi Tomar",
+  "SPT": "Surbhi",
   "KKS": "Kamlesh Kumar Shukla",
   "NEA": "Neha Ahlawat",
   "ANK": "Dr. Arpita Nayek",
