@@ -2,6 +2,7 @@ module.exports = {
     teachers62: {
     "LKK": "Lakhveer Kaur",
     "AMB": "Amita Bhagat",
+    "SPT": "Surbhi Tomar",
     "KKS": "Kamlesh Kumar Shukla",
     "NEA": "Neha Ahlawat",
     "ANK": "Dr. Arpita Nayek",
