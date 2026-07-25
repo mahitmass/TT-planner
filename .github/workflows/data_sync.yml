@@ -34,19 +34,8 @@ jobs:
               dest_file="raw_data/$sem-$campus.xlsx"
               
               if [ -f "$src_file" ]; then
-                if [ -f "$dest_file" ]; then
-                  src_size=$(stat -c%s "$src_file")
-                  dest_size=$(stat -c%s "$dest_file")
-                  if [ "$src_size" -ge "$dest_size" ]; then
-                    cp "$src_file" "$dest_file"
-                    echo "Updated $dest_file (New: $src_size, Old: $dest_size)"
-                  else
-                    echo "Kept existing $dest_file (Existing $dest_size > New $src_size)"
-                  fi
-                else
-                  cp "$src_file" "$dest_file"
-                  echo "Added $dest_file"
-                fi
+                cp "$src_file" "$dest_file"
+                echo "Copied $dest_file"
               fi
             done
           done
