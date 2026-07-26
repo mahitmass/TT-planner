@@ -987,7 +987,8 @@ const scheduleMap = {
       { "day": 5, "start": 11, "duration": 1, "title": "Basic Electronics", "code": "228", "teacher": "SVS", "type": "lec" },
       { "day": 5, "start": 13, "duration": 1, "title": "SDF- I", "code": "228", "teacher": "RGN", "type": "lec" },
       { "day": 5, "start": 16, "duration": 1, "title": "Physics-1", "code": "121", "teacher": "SKA1", "type": "tut" },
-      { "day": 6, "start": 9, "duration": 1, "title": "Maths-1", "code": "CR41", "teacher": "SHRISTI", "type": "lec" }
+      { "day": 6, "start": 9, "duration": 1, "title": "Maths-1", "code": "CR41", "teacher": "SHRISTI", "type": "lec" },
+      { "day": 6, "start": 10, "duration": 2, "title": "Physics Lab-1", "code": "41", "teacher": "PKC", "type": "lab" }
     ],
     "E3": [
       { "day": 1, "start": 9, "duration": 1, "title": "Physics-1", "code": "123", "teacher": "AMV", "type": "lec" },
@@ -1153,6 +1154,7 @@ const scheduleMap = {
       { "day": 5, "start": 13, "duration": 1, "title": "Maths-1", "code": "118", "teacher": "KKS", "type": "lec" },
       { "day": 5, "start": 14, "duration": 1, "title": "Basic Electronics", "code": "118", "teacher": "SAK", "type": "lec" },
       { "day": 5, "start": 15, "duration": 1, "title": "Maths-1", "code": "121", "teacher": "PKS", "type": "tut" },
+      { "day": 6, "start": 9, "duration": 1, "title": "Physics-1", "code": "126", "teacher": "SKH", "type": "tut" },
       { "day": 6, "start": 10, "duration": 1, "title": "SDF- I", "code": "123", "teacher": "SHJ", "type": "lec" }
     ],
     "F6": [
@@ -1197,10 +1199,9 @@ const scheduleMap = {
       { "day": 5, "start": 9, "duration": 1, "title": "SDF- I", "code": "111", "teacher": "TWT", "type": "lec" },
       { "day": 5, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "116", "teacher": "RAS", "type": "lec" },
       { "day": 5, "start": 11, "duration": 1, "title": "Maths-1", "code": "121", "teacher": "PKS", "type": "tut" },
-      { "day": 5, "start": 14, "duration": 1, "title": "Physics-1", "code": "123", "teacher": "BHARTI", "type": "lec" },
+      { "day": 5, "start": 13, "duration": 1, "title": "Physics-1", "code": "123", "teacher": "BHARTI", "type": "lec" },
       { "day": 6, "start": 10, "duration": 1, "title": "English", "code": "118", "teacher": "DEV", "type": "lec" },
-      { "day": 6, "start": 11, "duration": 1, "title": "SDF- I", "code": "118", "teacher": "TWT", "type": "lec" },
-      { "day": 6, "start": 12, "duration": 1, "title": "Maths-1", "code": "118", "teacher": "NEA", "type": "lec" }
+      { "day": 6, "start": 11, "duration": 1, "title": "SDF- I", "code": "118", "teacher": "TWT", "type": "lec" }
     ],
     "F8": [
       { "day": 1, "start": 9, "duration": 2, "title": "SDF- I", "code": "031", "teacher": "SHJ,PLH", "type": "lab" },
@@ -1221,10 +1222,9 @@ const scheduleMap = {
       { "day": 5, "start": 9, "duration": 1, "title": "SDF- I", "code": "111", "teacher": "TWT", "type": "lec" },
       { "day": 5, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "116", "teacher": "RAS", "type": "lec" },
       { "day": 5, "start": 11, "duration": 1, "title": "Maths-1", "code": "116", "teacher": "NEA", "type": "tut" },
-      { "day": 5, "start": 14, "duration": 1, "title": "Physics-1", "code": "123", "teacher": "BHARTI", "type": "lec" },
+      { "day": 5, "start": 13, "duration": 1, "title": "Physics-1", "code": "123", "teacher": "BHARTI", "type": "lec" },
       { "day": 6, "start": 10, "duration": 1, "title": "English", "code": "118", "teacher": "DEV", "type": "lec" },
-      { "day": 6, "start": 11, "duration": 1, "title": "SDF- I", "code": "118", "teacher": "TWT", "type": "lec" },
-      { "day": 6, "start": 12, "duration": 1, "title": "Maths-1", "code": "118", "teacher": "NEA", "type": "lec" }
+      { "day": 6, "start": 11, "duration": 1, "title": "SDF- I", "code": "118", "teacher": "TWT", "type": "lec" }
     ],
     "F9": [
       { "day": 1, "start": 9, "duration": 2, "title": "SDF- I", "code": "031", "teacher": "RGN,KAKUL", "type": "lab" },
@@ -1457,6 +1457,7 @@ const scheduleMap = {
       { "day": 5, "start": 13, "duration": 3, "title": "Engineering Drawing and Design", "code": "EDD/CADD(DW04)", "teacher": "PSH", "type": "lab" },
       { "day": 5, "start": 13, "duration": 1, "title": "SDF- I", "code": "117", "teacher": "SHA1", "type": "lec" },
       { "day": 5, "start": 14, "duration": 1, "title": "Maths-1", "code": "117", "teacher": "ASP", "type": "lec" },
+      { "day": 6, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "121", "teacher": "RUS", "type": "tut" },
       { "day": 6, "start": 11, "duration": 1, "title": "SDF- I", "code": "123", "teacher": "SHA1", "type": "lec" },
       { "day": 6, "start": 12, "duration": 1, "title": "Maths-1", "code": "123", "teacher": "ASP", "type": "lec" }
     ],
@@ -1529,8 +1530,7 @@ const scheduleMap = {
       { "day": 5, "start": 10, "duration": 1, "title": "SDF- I", "code": "217", "teacher": "SDP", "type": "lec" },
       { "day": 5, "start": 11, "duration": 1, "title": "Basic Electronics", "code": "217", "teacher": "NF3", "type": "lec" },
       { "day": 5, "start": 13, "duration": 1, "title": "Maths-1", "code": "CR41", "teacher": "ASP", "type": "lec" },
-      { "day": 5, "start": 14, "duration": 1, "title": "Physics-1", "code": "CR41", "teacher": "SKH", "type": "lec" },
-      { "day": 6, "start": 9, "duration": 3, "title": "Engineering Drawing and Design", "code": "EDD/CADD(DW04)", "teacher": "RAK", "type": "lab" }
+      { "day": 5, "start": 14, "duration": 1, "title": "Physics-1", "code": "CR41", "teacher": "SKH", "type": "lec" }
     ],
     "F22": [
       { "day": 1, "start": 11, "duration": 1, "title": "Basic Electronics", "code": "121", "teacher": "RAV1", "type": "tut" },
@@ -1560,7 +1560,7 @@ const scheduleMap = {
       { "day": 1, "start": 9, "duration": 3, "title": "Engineering Drawing and Design", "code": "EDD/CADD(DW04)", "teacher": "NIK", "type": "lab" },
       { "day": 1, "start": 14, "duration": 1, "title": "SDF- I", "code": "111", "teacher": "NMD", "type": "lec" },
       { "day": 1, "start": 15, "duration": 2, "title": "English", "code": "240", "teacher": "SHV", "type": "lab" },
-      { "day": 2, "start": 9, "duration": 1, "title": "Basic Electronics", "code": "118", "teacher": "VKM", "type": "lec" },
+      { "day": 2, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "118", "teacher": "VKM", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "SDF- I", "code": "126", "teacher": "FARAZ", "type": "tut" },
       { "day": 2, "start": 15, "duration": 2, "title": "Physics Lab-1", "code": "027A", "teacher": "SHALU", "type": "lab" },
       { "day": 2, "start": 16, "duration": 1, "title": "Maths-1", "code": "CR41", "teacher": "UMK", "type": "lec" },
@@ -1583,7 +1583,7 @@ const scheduleMap = {
       { "day": 1, "start": 9, "duration": 2, "title": "Basic Electronics", "code": "224", "teacher": "VKM", "type": "lab" },
       { "day": 1, "start": 13, "duration": 3, "title": "Engineering Drawing and Design", "code": "EDD/CADD(DW04)", "teacher": "SUM", "type": "lab" },
       { "day": 1, "start": 14, "duration": 1, "title": "SDF- I", "code": "111", "teacher": "NMD", "type": "lec" },
-      { "day": 2, "start": 9, "duration": 1, "title": "Basic Electronics", "code": "118", "teacher": "VKM", "type": "lec" },
+      { "day": 2, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "118", "teacher": "VKM", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "SDF- I", "code": "127", "teacher": "RHN", "type": "tut" },
       { "day": 2, "start": 14, "duration": 1, "title": "Basic Electronics", "code": "116", "teacher": "VKM", "type": "tut" },
       { "day": 2, "start": 15, "duration": 2, "title": "Physics Lab-1", "code": "41", "teacher": "AMV", "type": "lab" },
@@ -1624,6 +1624,7 @@ const scheduleMap = {
       { "day": 4, "start": 16, "duration": 1, "title": "Maths-1", "code": "116", "teacher": "ASP", "type": "tut" },
       { "day": 5, "start": 9, "duration": 1, "title": "English", "code": "217", "teacher": "CHS", "type": "lec" },
       { "day": 5, "start": 10, "duration": 1, "title": "SDF- I", "code": "127", "teacher": "FARAZ", "type": "tut" },
+      { "day": 6, "start": 10, "duration": 1, "title": "Physics-1", "code": "127", "teacher": "ADG", "type": "tut" },
       { "day": 6, "start": 11, "duration": 2, "title": "Basic Electronics", "code": "137", "teacher": "BAB", "type": "lab" }
     ],
     "F28": [
@@ -2863,7 +2864,7 @@ const scheduleMap = {
       { "day": 1, "start": 14, "duration": 1, "title": "Data Structures", "code": "3116", "teacher": "SHR", "type": "tut" },
       { "day": 1, "start": 15, "duration": 1, "title": "Data Structures", "code": "3093", "teacher": "BHB", "type": "lec" },
       { "day": 1, "start": 16, "duration": 1, "title": "Theory of Computation", "code": "3093", "teacher": "NRP", "type": "lec" },
-      { "day": 2, "start": 9, "duration": 1, "title": "Unix Programming", "code": "3084", "teacher": "NFCS24", "type": "lec" },
+      { "day": 2, "start": 9, "duration": 2, "title": "Unix Programming", "code": "3084", "teacher": "NFCS24", "type": "lec" },
       { "day": 2, "start": 10, "duration": 1, "title": "Economics", "code": "3040", "teacher": "SKVA", "type": "lec" },
       { "day": 2, "start": 16, "duration": 1, "title": "Database Management Systems", "code": "3045", "teacher": "AKS", "type": "lec" },
       { "day": 3, "start": 9, "duration": 1, "title": "Mathematical Foundations", "code": "3040", "teacher": "MUKESH", "type": "lec" },
@@ -2882,11 +2883,11 @@ const scheduleMap = {
       { "day": 6, "start": 9, "duration": 2, "title": "OOPS using Java", "code": "CL2", "teacher": "NFCS32", "type": "lab" }
     ],
     "F4": [
-      { "day": 1, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "C12", "teacher": "AKB1", "type": "lab" },
+      { "day": 1, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "Cl2", "teacher": "AKB1", "type": "lab" },
       { "day": 1, "start": 14, "duration": 1, "title": "Data Structures", "code": "3117", "teacher": "NFCS11", "type": "tut" },
       { "day": 1, "start": 15, "duration": 1, "title": "Data Structures", "code": "3093", "teacher": "BHB", "type": "lec" },
       { "day": 1, "start": 16, "duration": 1, "title": "Theory of Computation", "code": "3093", "teacher": "NRP", "type": "lec" },
-      { "day": 2, "start": 9, "duration": 1, "title": "Unix Programming", "code": "3084", "teacher": "NFCS24", "type": "lec" },
+      { "day": 2, "start": 9, "duration": 2, "title": "Unix Programming", "code": "3084", "teacher": "NFCS24", "type": "lec" },
       { "day": 2, "start": 10, "duration": 1, "title": "Economics", "code": "3040", "teacher": "SKVA", "type": "lec" },
       { "day": 2, "start": 11, "duration": 2, "title": "Data Structures", "code": "CL1", "teacher": "KSA,JYR", "type": "lab" },
       { "day": 2, "start": 16, "duration": 1, "title": "Database Management Systems", "code": "3045", "teacher": "AKS", "type": "lec" },
@@ -2906,7 +2907,7 @@ const scheduleMap = {
     ],
     "F5": [
       { "day": 1, "start": 9, "duration": 1, "title": "Economics", "code": "3040", "teacher": "ANB", "type": "lec" },
-      { "day": 1, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "C12", "teacher": "GAH,JRD", "type": "lab" },
+      { "day": 1, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "Cl2", "teacher": "GAH,JRD", "type": "lab" },
       { "day": 1, "start": 15, "duration": 1, "title": "Data Structures", "code": "3116", "teacher": "ZUBAIR", "type": "tut" },
       { "day": 1, "start": 16, "duration": 1, "title": "Theory of Computation", "code": "3040", "teacher": "SHR", "type": "lec" },
       { "day": 2, "start": 11, "duration": 2, "title": "Data Structures", "code": "CL1", "teacher": "SHR,NFCS11", "type": "lab" },
@@ -2931,7 +2932,7 @@ const scheduleMap = {
     ],
     "F6": [
       { "day": 1, "start": 9, "duration": 1, "title": "Economics", "code": "3040", "teacher": "ANB", "type": "lec" },
-      { "day": 1, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "C12", "teacher": "MSH,SKM", "type": "lab" },
+      { "day": 1, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "Cl2", "teacher": "MSH,SKM", "type": "lab" },
       { "day": 1, "start": 15, "duration": 1, "title": "Data Structures", "code": "3117", "teacher": "AYP", "type": "tut" },
       { "day": 1, "start": 16, "duration": 1, "title": "Theory of Computation", "code": "3040", "teacher": "SHR", "type": "lec" },
       { "day": 2, "start": 11, "duration": 2, "title": "Data Structures", "code": "CL1", "teacher": "NFCS21,NFCS33", "type": "lab" },
@@ -2958,10 +2959,10 @@ const scheduleMap = {
       { "day": 1, "start": 10, "duration": 1, "title": "Economics", "code": "3040", "teacher": "ALOK", "type": "lec" },
       { "day": 1, "start": 11, "duration": 1, "title": "Theory of Computation", "code": "3040", "teacher": "ANK1", "type": "lec" },
       { "day": 1, "start": 12, "duration": 1, "title": "Mathematical Foundations", "code": "225", "teacher": "MUKESH", "type": "tut" },
-      { "day": 1, "start": 14, "duration": 2, "title": "OOPS using Java", "code": "C12", "teacher": "Vaibhav", "type": "lab" },
+      { "day": 1, "start": 14, "duration": 2, "title": "OOPS using Java", "code": "Cl2", "teacher": "Vaibhav", "type": "lab" },
       { "day": 2, "start": 9, "duration": 1, "title": "Mathematical Foundations", "code": "3117", "teacher": "AJAY", "type": "tut" },
       { "day": 2, "start": 10, "duration": 1, "title": "Mathematical Foundations", "code": "3093", "teacher": "AJAY", "type": "lec" },
-      { "day": 2, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "C12", "teacher": "NMD", "type": "lab" },
+      { "day": 2, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "Cl2", "teacher": "NMD", "type": "lab" },
       { "day": 2, "start": 14, "duration": 1, "title": "Data Structures", "code": "3116", "teacher": "NFCS12", "type": "tut" },
       { "day": 3, "start": 11, "duration": 1, "title": "Data Structures", "code": "3093", "teacher": "AYP", "type": "lec" },
       { "day": 3, "start": 12, "duration": 1, "title": "Economics", "code": "3093", "teacher": "ALOK", "type": "lec" },
@@ -2983,9 +2984,9 @@ const scheduleMap = {
       { "day": 1, "start": 10, "duration": 1, "title": "Economics", "code": "3040", "teacher": "ALOK", "type": "lec" },
       { "day": 1, "start": 11, "duration": 1, "title": "Theory of Computation", "code": "3040", "teacher": "ANK1", "type": "lec" },
       { "day": 1, "start": 12, "duration": 1, "title": "Mathematical Foundations", "code": "229", "teacher": "AJAY", "type": "tut" },
-      { "day": 1, "start": 14, "duration": 2, "title": "OOPS using Java", "code": "C12", "teacher": "ANK1", "type": "lab" },
+      { "day": 1, "start": 14, "duration": 2, "title": "OOPS using Java", "code": "Cl2", "teacher": "ANK1", "type": "lab" },
       { "day": 2, "start": 10, "duration": 1, "title": "Mathematical Foundations", "code": "3093", "teacher": "AJAY", "type": "lec" },
-      { "day": 2, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "C12", "teacher": "ADS,SHG", "type": "lab" },
+      { "day": 2, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "Cl2", "teacher": "ADS,SHG", "type": "lab" },
       { "day": 2, "start": 14, "duration": 1, "title": "Data Structures", "code": "3117", "teacher": "AVINASH", "type": "tut" },
       { "day": 3, "start": 11, "duration": 1, "title": "Data Structures", "code": "3093", "teacher": "AYP", "type": "lec" },
       { "day": 3, "start": 12, "duration": 1, "title": "Economics", "code": "3093", "teacher": "ALOK", "type": "lec" },
@@ -3006,10 +3007,10 @@ const scheduleMap = {
       { "day": 1, "start": 10, "duration": 1, "title": "Theory of Computation", "code": "3098", "teacher": "PKM", "type": "lec" },
       { "day": 1, "start": 11, "duration": 1, "title": "Data Structures", "code": "3098", "teacher": "KSH", "type": "lec" },
       { "day": 1, "start": 12, "duration": 1, "title": "Economics", "code": "3098", "teacher": "ANB", "type": "lec" },
-      { "day": 1, "start": 14, "duration": 2, "title": "OOPS using Java", "code": "C12", "teacher": "PRM,NFCS19", "type": "lab" },
+      { "day": 1, "start": 14, "duration": 2, "title": "OOPS using Java", "code": "Cl2", "teacher": "PRM,NFCS19", "type": "lab" },
       { "day": 1, "start": 16, "duration": 1, "title": "Mathematical Foundations", "code": "3045", "teacher": "NFMATHS2", "type": "lec" },
       { "day": 2, "start": 10, "duration": 1, "title": "Unix Programming", "code": "3084", "teacher": "NFCS19", "type": "lec" },
-      { "day": 2, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "C12", "teacher": "KNS,SKM", "type": "lab" },
+      { "day": 2, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "Cl2", "teacher": "KNS,SKM", "type": "lab" },
       { "day": 2, "start": 16, "duration": 1, "title": "Theory of Computation", "code": "3098", "teacher": "PKM", "type": "lec" },
       { "day": 3, "start": 9, "duration": 1, "title": "Economics", "code": "3116", "teacher": "ANB", "type": "tut" },
       { "day": 3, "start": 10, "duration": 1, "title": "Data Structures", "code": "3116", "teacher": "AVINASH", "type": "tut" },
@@ -3031,9 +3032,9 @@ const scheduleMap = {
       { "day": 1, "start": 11, "duration": 1, "title": "Data Structures", "code": "3098", "teacher": "KSH", "type": "lec" },
       { "day": 1, "start": 12, "duration": 1, "title": "Economics", "code": "3098", "teacher": "ANB", "type": "lec" },
       { "day": 1, "start": 16, "duration": 1, "title": "Mathematical Foundations", "code": "3045", "teacher": "NFMATHS2", "type": "lec" },
-      { "day": 2, "start": 9, "duration": 2, "title": "OOPS using Java", "code": "C12", "teacher": "ANK1", "type": "lab" },
+      { "day": 2, "start": 9, "duration": 2, "title": "OOPS using Java", "code": "Cl2", "teacher": "ANK1", "type": "lab" },
       { "day": 2, "start": 10, "duration": 1, "title": "Unix Programming", "code": "3084", "teacher": "NFCS19", "type": "lec" },
-      { "day": 2, "start": 14, "duration": 2, "title": "Database Management Systems", "code": "C12", "teacher": "NMD", "type": "lab" },
+      { "day": 2, "start": 14, "duration": 2, "title": "Database Management Systems", "code": "Cl2", "teacher": "NMD", "type": "lab" },
       { "day": 2, "start": 16, "duration": 1, "title": "Theory of Computation", "code": "3098", "teacher": "PKM", "type": "lec" },
       { "day": 3, "start": 9, "duration": 1, "title": "Economics", "code": "3117", "teacher": "ALOK", "type": "tut" },
       { "day": 3, "start": 10, "duration": 1, "title": "Data Structures", "code": "3117", "teacher": "BHB", "type": "tut" },
@@ -3054,9 +3055,9 @@ const scheduleMap = {
       { "day": 1, "start": 11, "duration": 1, "title": "Database Management Systems", "code": "3096", "teacher": "MSH", "type": "lec" },
       { "day": 1, "start": 14, "duration": 1, "title": "Economics", "code": "3093", "teacher": "AMA", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Theory of Computation", "code": "3084", "teacher": "NFCS13", "type": "lec" },
-      { "day": 2, "start": 9, "duration": 2, "title": "OOPS using Java", "code": "C12", "teacher": "PRM", "type": "lab" },
+      { "day": 2, "start": 9, "duration": 2, "title": "OOPS using Java", "code": "Cl2", "teacher": "PRM", "type": "lab" },
       { "day": 2, "start": 12, "duration": 1, "title": "Theory of Computation", "code": "3098", "teacher": "NFCS13", "type": "lec" },
-      { "day": 2, "start": 14, "duration": 2, "title": "Database Management Systems", "code": "C12", "teacher": "SHA1", "type": "lab" },
+      { "day": 2, "start": 14, "duration": 2, "title": "Database Management Systems", "code": "Cl2", "teacher": "SHA1", "type": "lab" },
       { "day": 2, "start": 16, "duration": 1, "title": "Database Management Systems", "code": "", "teacher": "MSH", "type": "lec" },
       { "day": 3, "start": 11, "duration": 1, "title": "Data Structures", "code": "3098", "teacher": "KSA", "type": "lec" },
       { "day": 3, "start": 15, "duration": 1, "title": "Mathematical Foundations", "code": "3040", "teacher": "NFMATHS1", "type": "lec" },
@@ -3069,15 +3070,16 @@ const scheduleMap = {
       { "day": 5, "start": 12, "duration": 1, "title": "Mathematical Foundations", "code": "3098", "teacher": "NFMATHS1", "type": "lec" },
       { "day": 5, "start": 14, "duration": 2, "title": "Unix Programming", "code": "CL2", "teacher": "NFCS24,PLV", "type": "lab" },
       { "day": 6, "start": 9, "duration": 2, "title": "Data Structures", "code": "CL1", "teacher": "KSA", "type": "lab" },
-      { "day": 6, "start": 11, "duration": 1, "title": "Economics", "code": "3040", "teacher": "AMA", "type": "lec" }
+      { "day": 6, "start": 11, "duration": 1, "title": "Economics", "code": "3040", "teacher": "AMA", "type": "lec" },
+      { "day": 6, "start": 12, "duration": 1, "title": "Data Structures", "code": "3040", "teacher": "KSA", "type": "lec" }
     ],
     "F12": [
       { "day": 1, "start": 11, "duration": 1, "title": "Database Management Systems", "code": "3096", "teacher": "MSH", "type": "lec" },
       { "day": 1, "start": 14, "duration": 1, "title": "Economics", "code": "3093", "teacher": "AMA", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Theory of Computation", "code": "3084", "teacher": "NFCS13", "type": "lec" },
-      { "day": 2, "start": 9, "duration": 2, "title": "OOPS using Java", "code": "C12", "teacher": "NFCS19", "type": "lab" },
+      { "day": 2, "start": 9, "duration": 2, "title": "OOPS using Java", "code": "Cl2", "teacher": "NFCS19", "type": "lab" },
       { "day": 2, "start": 12, "duration": 1, "title": "Theory of Computation", "code": "3098", "teacher": "NFCS13", "type": "lec" },
-      { "day": 2, "start": 14, "duration": 2, "title": "Database Management Systems", "code": "C12", "teacher": "VIS,KNS", "type": "lab" },
+      { "day": 2, "start": 14, "duration": 2, "title": "Database Management Systems", "code": "Cl2", "teacher": "VIS,KNS", "type": "lab" },
       { "day": 2, "start": 16, "duration": 1, "title": "Database Management Systems", "code": "", "teacher": "MSH", "type": "lec" },
       { "day": 3, "start": 11, "duration": 1, "title": "Data Structures", "code": "3098", "teacher": "KSA", "type": "lec" },
       { "day": 3, "start": 15, "duration": 1, "title": "Mathematical Foundations", "code": "3040", "teacher": "NFMATHS1", "type": "lec" },
@@ -3090,10 +3092,11 @@ const scheduleMap = {
       { "day": 5, "start": 12, "duration": 1, "title": "Mathematical Foundations", "code": "3098", "teacher": "NFMATHS1", "type": "lec" },
       { "day": 5, "start": 14, "duration": 2, "title": "Unix Programming", "code": "CL2", "teacher": "NFCS24,PLV", "type": "lab" },
       { "day": 6, "start": 9, "duration": 2, "title": "Data Structures", "code": "CL1", "teacher": "SHR,NFCS33", "type": "lab" },
-      { "day": 6, "start": 11, "duration": 1, "title": "Economics", "code": "3040", "teacher": "AMA", "type": "lec" }
+      { "day": 6, "start": 11, "duration": 1, "title": "Economics", "code": "3040", "teacher": "AMA", "type": "lec" },
+      { "day": 6, "start": 12, "duration": 1, "title": "Data Structures", "code": "3040", "teacher": "KSA", "type": "lec" }
     ],
     "F13": [
-      { "day": 1, "start": 9, "duration": 2, "title": "OOPS using Java", "code": "C14", "teacher": "Vaibhav", "type": "lab" },
+      { "day": 1, "start": 9, "duration": 2, "title": "OOPS using Java", "code": "Cl4", "teacher": "Vaibhav", "type": "lab" },
       { "day": 1, "start": 14, "duration": 1, "title": "Data Structures", "code": "3096", "teacher": "RKB", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Theory of Computation", "code": "3096", "teacher": "NFCS28", "type": "lec" },
       { "day": 1, "start": 16, "duration": 1, "title": "Database Management Systems", "code": "3096", "teacher": "NMD", "type": "lec" },
@@ -3117,7 +3120,7 @@ const scheduleMap = {
       { "day": 6, "start": 11, "duration": 2, "title": "Data Structures", "code": "CL1", "teacher": "JYH", "type": "lab" }
     ],
     "F14": [
-      { "day": 1, "start": 9, "duration": 2, "title": "OOPS using Java", "code": "C14", "teacher": "NFCS22", "type": "lab" },
+      { "day": 1, "start": 9, "duration": 2, "title": "OOPS using Java", "code": "Cl4", "teacher": "NFCS22", "type": "lab" },
       { "day": 1, "start": 14, "duration": 1, "title": "Data Structures", "code": "3096", "teacher": "RKB", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Theory of Computation", "code": "3096", "teacher": "NFCS28", "type": "lec" },
       { "day": 1, "start": 16, "duration": 1, "title": "Database Management Systems", "code": "3096", "teacher": "NMD", "type": "lec" },
@@ -3185,18 +3188,21 @@ const scheduleMap = {
       { "day": 5, "start": 16, "duration": 1, "title": "Software Engineering", "code": "3045", "teacher": "KNS", "type": "lec" },
       { "day": 6, "start": 9, "duration": 1, "title": "Software Engineering", "code": "3045", "teacher": "KNS", "type": "lec" },
       { "day": 6, "start": 10, "duration": 1, "title": "Database Management Systems", "code": "3045", "teacher": "VIS", "type": "lec" },
-      { "day": 6, "start": 11, "duration": 1, "title": "15B11CI518", "code": "3045", "teacher": "DTS", "type": "lec" }
+      { "day": 6, "start": 11, "duration": 1, "title": "15B11CI518", "code": "3045", "teacher": "DTS", "type": "lec" },
+      { "day": 6, "start": 12, "duration": 1, "title": "15B11CI518", "code": "3116", "teacher": "NFCS16", "type": "tut" }
     ],
     "F21": [
       { "day": 1, "start": 11, "duration": 2, "title": "Data Structures", "code": "AISKILL LAB", "teacher": "RSK", "type": "lab" },
       { "day": 1, "start": 14, "duration": 1, "title": "Mathematical and Statistics", "code": "3045", "teacher": "NFMATHS5", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Database Management Systems", "code": "3045", "teacher": "KSH", "type": "lec" },
       { "day": 1, "start": 16, "duration": 1, "title": "Economics", "code": "225", "teacher": "NFHSS1", "type": "tut" },
-      { "day": 2, "start": 10, "duration": 1, "title": "Data Structures", "code": "3096", "teacher": "NFCS11", "type": "lec" },
+      { "day": 2, "start": 9, "duration": 2, "title": "Data Structures", "code": "3096", "teacher": "NFCS11", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "Database Management Systems", "code": "3096", "teacher": "KSH", "type": "lec" },
       { "day": 2, "start": 12, "duration": 1, "title": "Artificial Intelligence", "code": "3096", "teacher": "AMS", "type": "lec" },
       { "day": 2, "start": 14, "duration": 2, "title": "Database Management Systems", "code": "AISKILLS LAB", "teacher": "VKG", "type": "lab" },
       { "day": 3, "start": 10, "duration": 1, "title": "Artificial Intelligence", "code": "3098", "teacher": "AMS", "type": "lec" },
+      { "day": 3, "start": 11, "duration": 2, "title": "AI", "code": "AISKILL LAB(CR-99)", "teacher": "AMS", "type": "lab" },
+      { "day": 3, "start": 14, "duration": 2, "title": "PYTHON", "code": "AISKILL LAB", "teacher": "Zubair", "type": "lab" },
       { "day": 3, "start": 16, "duration": 1, "title": "Data Structures", "code": "3045", "teacher": "NFCS11", "type": "lec" },
       { "day": 4, "start": 10, "duration": 1, "title": "Artificial Intelligence", "code": "3116", "teacher": "NFCS20", "type": "tut" },
       { "day": 4, "start": 11, "duration": 1, "title": "Mathematical and Statistics", "code": "3040", "teacher": "NFMATHS5", "type": "lec" },
@@ -3206,7 +3212,8 @@ const scheduleMap = {
       { "day": 5, "start": 16, "duration": 1, "title": "Mathematical and Statistics", "code": "3117", "teacher": "NFMATHS5", "type": "tut" },
       { "day": 6, "start": 9, "duration": 1, "title": "Data Structures", "code": "3116", "teacher": "RKV", "type": "tut" },
       { "day": 6, "start": 10, "duration": 1, "title": "Database Management Systems", "code": "244B", "teacher": "KSH", "type": "lec" },
-      { "day": 6, "start": 11, "duration": 1, "title": "Artificial Intelligence", "code": "244B", "teacher": "AMS", "type": "lec" }
+      { "day": 6, "start": 11, "duration": 1, "title": "Artificial Intelligence", "code": "244B", "teacher": "AMS", "type": "lec" },
+      { "day": 6, "start": 12, "duration": 1, "title": "Data Structures", "code": "244B", "teacher": "NFCS11", "type": "lec" }
     ],
     "F22": [
       { "day": 1, "start": 10, "duration": 1, "title": "Artificial Intelligence", "code": "225", "teacher": "NFCS20", "type": "tut" },
@@ -3214,12 +3221,14 @@ const scheduleMap = {
       { "day": 1, "start": 14, "duration": 1, "title": "Mathematical and Statistics", "code": "3045", "teacher": "NFMATHS5", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Database Management Systems", "code": "3045", "teacher": "KSH", "type": "lec" },
       { "day": 1, "start": 16, "duration": 1, "title": "Mathematical and Statistics", "code": "3116", "teacher": "NFMATHS5", "type": "tut" },
-      { "day": 2, "start": 10, "duration": 1, "title": "Data Structures", "code": "3096", "teacher": "NFCS11", "type": "lec" },
+      { "day": 2, "start": 9, "duration": 2, "title": "Data Structures", "code": "3096", "teacher": "NFCS11", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "Database Management Systems", "code": "3096", "teacher": "KSH", "type": "lec" },
       { "day": 2, "start": 12, "duration": 1, "title": "Artificial Intelligence", "code": "3096", "teacher": "AMS", "type": "lec" },
       { "day": 2, "start": 14, "duration": 2, "title": "Database Management Systems", "code": "AISKILLS LAB", "teacher": "KSH,NFCS2", "type": "lab" },
       { "day": 2, "start": 16, "duration": 1, "title": "Economics", "code": "3116", "teacher": "PRV", "type": "tut" },
       { "day": 3, "start": 10, "duration": 1, "title": "Artificial Intelligence", "code": "3098", "teacher": "AMS", "type": "lec" },
+      { "day": 3, "start": 11, "duration": 2, "title": "AI", "code": "AISKILL LAB(CR-99)", "teacher": "NF20", "type": "lab" },
+      { "day": 3, "start": 14, "duration": 2, "title": "PYTHON", "code": "AISKILL LAB", "teacher": "NFCS32", "type": "lab" },
       { "day": 3, "start": 16, "duration": 1, "title": "Data Structures", "code": "3045", "teacher": "NFCS11", "type": "lec" },
       { "day": 4, "start": 11, "duration": 1, "title": "Mathematical and Statistics", "code": "3040", "teacher": "NFMATHS5", "type": "lec" },
       { "day": 4, "start": 12, "duration": 1, "title": "Economics", "code": "3040", "teacher": "ALOK", "type": "lec" },
@@ -3227,7 +3236,8 @@ const scheduleMap = {
       { "day": 5, "start": 15, "duration": 1, "title": "Mathematical and Statistics", "code": "244B", "teacher": "NFMATHS5", "type": "lec" },
       { "day": 6, "start": 9, "duration": 1, "title": "Data Structures", "code": "3117", "teacher": "NFCS17", "type": "tut" },
       { "day": 6, "start": 10, "duration": 1, "title": "Database Management Systems", "code": "244B", "teacher": "KSH", "type": "lec" },
-      { "day": 6, "start": 11, "duration": 1, "title": "Artificial Intelligence", "code": "244B", "teacher": "AMS", "type": "lec" }
+      { "day": 6, "start": 11, "duration": 1, "title": "Artificial Intelligence", "code": "244B", "teacher": "AMS", "type": "lec" },
+      { "day": 6, "start": 12, "duration": 1, "title": "Data Structures", "code": "244B", "teacher": "NFCS11", "type": "lec" }
     ],
     "F24": [
       { "day": 1, "start": 10, "duration": 1, "title": "Data Structures", "code": "3116", "teacher": "ZUBAIR", "type": "tut" },
@@ -3236,7 +3246,7 @@ const scheduleMap = {
       { "day": 1, "start": 14, "duration": 1, "title": "Mathematical Foundations", "code": "225", "teacher": "NFMATHS", "type": "tut" },
       { "day": 2, "start": 10, "duration": 1, "title": "Database Management Systems", "code": "3098", "teacher": "VKG", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "Theory of Computation", "code": "3098", "teacher": "NFCS16", "type": "lec" },
-      { "day": 2, "start": 14, "duration": 2, "title": "OOPS using Java", "code": "C14", "teacher": "ANK1", "type": "lab" },
+      { "day": 2, "start": 14, "duration": 2, "title": "OOPS using Java", "code": "Cl4", "teacher": "ANK1", "type": "lab" },
       { "day": 2, "start": 15, "duration": 1, "title": "Mathematical Foundations", "code": "3096", "teacher": "NFMATHS4", "type": "lec" },
       { "day": 2, "start": 16, "duration": 1, "title": "Data Structures", "code": "3096", "teacher": "SHR", "type": "lec" },
       { "day": 3, "start": 14, "duration": 2, "title": "OOP using Java", "code": "CL2", "teacher": "TBA", "type": "lab" },
@@ -3244,7 +3254,7 @@ const scheduleMap = {
       { "day": 4, "start": 9, "duration": 1, "title": "Mathematical Foundations", "code": "3045", "teacher": "NFMATHS4", "type": "lec" },
       { "day": 4, "start": 11, "duration": 1, "title": "Theory of Computation", "code": "3098", "teacher": "NFCS16", "type": "lec" },
       { "day": 4, "start": 14, "duration": 1, "title": "Economics", "code": "3045", "teacher": "ANB", "type": "lec" },
-      { "day": 4, "start": 15, "duration": 2, "title": "Database Management Systems", "code": "C12", "teacher": "SHA1", "type": "lab" },
+      { "day": 4, "start": 15, "duration": 2, "title": "Database Management Systems", "code": "Cl2", "teacher": "SHA1", "type": "lab" },
       { "day": 5, "start": 10, "duration": 1, "title": "Economics", "code": "3093", "teacher": "ANB", "type": "lec" },
       { "day": 5, "start": 11, "duration": 2, "title": "Data Structures", "code": "CL1", "teacher": "KSH,RSK", "type": "lab" },
       { "day": 5, "start": 14, "duration": 1, "title": "Mathematical Foundations", "code": "", "teacher": "NFMATHS4", "type": "lec" },
@@ -3261,7 +3271,7 @@ const scheduleMap = {
       { "day": 1, "start": 14, "duration": 1, "title": "Mathematical Foundations", "code": "3084", "teacher": "NFMATHS", "type": "tut" },
       { "day": 2, "start": 10, "duration": 1, "title": "Database Management Systems", "code": "3098", "teacher": "VKG", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "Theory of Computation", "code": "3098", "teacher": "NFCS16", "type": "lec" },
-      { "day": 2, "start": 14, "duration": 2, "title": "OOPS using Java", "code": "C14", "teacher": "NFCS18,NFCS22", "type": "lab" },
+      { "day": 2, "start": 14, "duration": 2, "title": "OOPS using Java", "code": "Cl4", "teacher": "NFCS18,NFCS22", "type": "lab" },
       { "day": 2, "start": 15, "duration": 1, "title": "Mathematical Foundations", "code": "3096", "teacher": "NFMATHS4", "type": "lec" },
       { "day": 2, "start": 16, "duration": 1, "title": "Data Structures", "code": "3096", "teacher": "SHR", "type": "lec" },
       { "day": 3, "start": 14, "duration": 2, "title": "OOP using Java", "code": "CL2", "teacher": "TBA", "type": "lab" },
@@ -3269,7 +3279,7 @@ const scheduleMap = {
       { "day": 4, "start": 10, "duration": 1, "title": "Economics", "code": "3117", "teacher": "ALOK", "type": "tut" },
       { "day": 4, "start": 11, "duration": 1, "title": "Theory of Computation", "code": "3098", "teacher": "NFCS16", "type": "lec" },
       { "day": 4, "start": 14, "duration": 1, "title": "Economics", "code": "3045", "teacher": "ANB", "type": "lec" },
-      { "day": 4, "start": 15, "duration": 2, "title": "Database Management Systems", "code": "C12", "teacher": "JRD", "type": "lab" },
+      { "day": 4, "start": 15, "duration": 2, "title": "Database Management Systems", "code": "Cl2", "teacher": "JRD", "type": "lab" },
       { "day": 5, "start": 10, "duration": 1, "title": "Economics", "code": "3093", "teacher": "ANB", "type": "lec" },
       { "day": 5, "start": 11, "duration": 2, "title": "Data Structures", "code": "CL1", "teacher": "AYP,NFCS13", "type": "lab" },
       { "day": 5, "start": 14, "duration": 1, "title": "Mathematical Foundations", "code": "", "teacher": "NFMATHS4", "type": "lec" },
@@ -3400,7 +3410,7 @@ const scheduleMap = {
       { "day": 3, "start": 12, "duration": 1, "title": "IT Infrastructure & Comms", "code": "244B", "teacher": "NFCS14", "type": "lec" },
       { "day": 4, "start": 9, "duration": 1, "title": "Economics", "code": "3040", "teacher": "ALOK", "type": "lec" },
       { "day": 4, "start": 10, "duration": 1, "title": "Mathematical Foundations", "code": "3040", "teacher": "SREYA", "type": "lec" },
-      { "day": 4, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "C12", "teacher": "ADS", "type": "lab" },
+      { "day": 4, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "Cl2", "teacher": "ADS", "type": "lab" },
       { "day": 4, "start": 16, "duration": 1, "title": "Database Management Systems", "code": "3096", "teacher": "NFCS2", "type": "lec" },
       { "day": 5, "start": 9, "duration": 2, "title": "Data Structures", "code": "CL1", "teacher": "BHB", "type": "lab" },
       { "day": 5, "start": 11, "duration": 2, "title": "IT Infrastructure & Comms", "code": "3121", "teacher": "3067", "type": "lab" },
@@ -3423,7 +3433,7 @@ const scheduleMap = {
       { "day": 3, "start": 12, "duration": 1, "title": "IT Infrastructure & Comms", "code": "244B", "teacher": "NFCS14", "type": "lec" },
       { "day": 4, "start": 9, "duration": 1, "title": "Economics", "code": "3040", "teacher": "ALOK", "type": "lec" },
       { "day": 4, "start": 10, "duration": 1, "title": "Mathematical Foundations", "code": "3040", "teacher": "SREYA", "type": "lec" },
-      { "day": 4, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "C12", "teacher": "SHA1,MSH", "type": "lab" },
+      { "day": 4, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "Cl2", "teacher": "SHA1,MSH", "type": "lab" },
       { "day": 4, "start": 14, "duration": 2, "title": "Digital Systems & Computer Org", "code": "257", "teacher": "VAT,MAP", "type": "lab" },
       { "day": 4, "start": 16, "duration": 1, "title": "Database Management Systems", "code": "3096", "teacher": "NFCS2", "type": "lec" },
       { "day": 5, "start": 9, "duration": 2, "title": "Data Structures", "code": "CL1", "teacher": "KSA,DTS", "type": "lab" },
@@ -3447,14 +3457,15 @@ const scheduleMap = {
       { "day": 3, "start": 16, "duration": 1, "title": "Database Management Systems", "code": "3096", "teacher": "NFCS14", "type": "lec" },
       { "day": 4, "start": 9, "duration": 1, "title": "Digital Systems & Computer Org", "code": "3084", "teacher": "VAT", "type": "lec" },
       { "day": 4, "start": 10, "duration": 1, "title": "Data Structures", "code": "3096", "teacher": "NFCS13", "type": "lec" },
-      { "day": 4, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "C12", "teacher": "VKG,VIS", "type": "lab" },
+      { "day": 4, "start": 11, "duration": 2, "title": "Database Management Systems", "code": "Cl2", "teacher": "VKG,VIS", "type": "lab" },
       { "day": 5, "start": 9, "duration": 2, "title": "Data Structures", "code": "CL1", "teacher": "NFCS11,NFCS12", "type": "lab" },
       { "day": 5, "start": 12, "duration": 1, "title": "Economics", "code": "3117", "teacher": "PRV", "type": "tut" },
       { "day": 5, "start": 14, "duration": 2, "title": "IT Infrastructure & Comms", "code": "CL4", "teacher": "-SHA", "type": "lab" },
       { "day": 5, "start": 16, "duration": 1, "title": "IT Infrastructure & Comms", "code": "3084", "teacher": "NFCS15", "type": "lec" },
       { "day": 6, "start": 9, "duration": 1, "title": "Economics", "code": "3040", "teacher": "AMA", "type": "lec" },
       { "day": 6, "start": 10, "duration": 1, "title": "Mathematical Foundations", "code": "3040", "teacher": "SREYA", "type": "lec" },
-      { "day": 6, "start": 11, "duration": 1, "title": "Data Structures", "code": "3116", "teacher": "NFCS17", "type": "tut" }
+      { "day": 6, "start": 11, "duration": 1, "title": "Data Structures", "code": "3116", "teacher": "NFCS17", "type": "tut" },
+      { "day": 6, "start": 12, "duration": 1, "title": "Database Management Systems", "code": "3096", "teacher": "NFCS14", "type": "lec" }
     ],
     "H4": [
       { "day": 1, "start": 10, "duration": 1, "title": "Digital Systems & Computer Org", "code": "3084", "teacher": "VAT", "type": "lec" },
@@ -3471,13 +3482,14 @@ const scheduleMap = {
       { "day": 4, "start": 9, "duration": 1, "title": "Digital Systems & Computer Org", "code": "3084", "teacher": "VAT", "type": "lec" },
       { "day": 4, "start": 10, "duration": 1, "title": "Data Structures", "code": "3096", "teacher": "NFCS13", "type": "lec" },
       { "day": 4, "start": 14, "duration": 1, "title": "Data Structures", "code": "3117", "teacher": "ZUBAIR", "type": "tut" },
-      { "day": 4, "start": 15, "duration": 2, "title": "Database Management Systems", "code": "C12", "teacher": "KSH,KNS", "type": "lab" },
+      { "day": 4, "start": 15, "duration": 2, "title": "Database Management Systems", "code": "Cl2", "teacher": "KSH,KNS", "type": "lab" },
       { "day": 5, "start": 11, "duration": 2, "title": "Data Structures", "code": "CL1", "teacher": "NFCS33,SKM", "type": "lab" },
       { "day": 5, "start": 14, "duration": 2, "title": "IT Infrastructure & Comms", "code": "CL4", "teacher": "NFCS25", "type": "lab" },
       { "day": 5, "start": 16, "duration": 1, "title": "IT Infrastructure & Comms", "code": "3084", "teacher": "NFCS15", "type": "lec" },
       { "day": 6, "start": 9, "duration": 1, "title": "Economics", "code": "3040", "teacher": "AMA", "type": "lec" },
       { "day": 6, "start": 10, "duration": 1, "title": "Mathematical Foundations", "code": "3040", "teacher": "SREYA", "type": "lec" },
-      { "day": 6, "start": 11, "duration": 1, "title": "Mathematical Foundations", "code": "", "teacher": "SREYA", "type": "tut" }
+      { "day": 6, "start": 11, "duration": 1, "title": "Mathematical Foundations", "code": "", "teacher": "SREYA", "type": "tut" },
+      { "day": 6, "start": 12, "duration": 1, "title": "Database Management Systems", "code": "3096", "teacher": "NFCS14", "type": "lec" }
     ]
   }
 };
