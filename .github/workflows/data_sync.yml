@@ -33,17 +33,21 @@ jobs:
               src_dir="senior_repo/raw/time_tables/B.Tech $campus (btech-$campus)/$sem"
               dest_file="raw_data/$sem-$campus.xlsx"
               
-              # Find any .xlsx file in the folder (handles 1.xlsx inside both 1/ and 3/)
+              # Find any .xlsx file in the folder
               src_file=$(find "$src_dir" -maxdepth 1 -name "*.xlsx" 2>/dev/null | head -n 1)
               
               if [ -n "$src_file" ] && [ -f "$src_file" ]; then
                 cp "$src_file" "$dest_file"
+                
+                # TRICK: Append a trailing space to force Git to see ALL 4 files as modified
+                echo " " >> "$dest_file"
+                
                 echo "Copied $src_file to $dest_file"
               fi
             done
           done
           
-          # FORCE TRIGGER: Create a dummy file so Git detects a change
+          # Force git to detect a change for PR creation
           echo "Force sync triggered at $(date)" > raw_data/force_sync_trigger.txt
           
           # Delete the temp clone
