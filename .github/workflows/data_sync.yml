@@ -30,18 +30,21 @@ jobs:
           # Iterate over campuses and semesters to copy correctly named files
           for campus in "62" "128"; do
             for sem in "1" "3"; do
-              src_file="senior_repo/raw/time_tables/B.Tech $campus (btech-$campus)/$sem/$sem.xlsx"
+              src_dir="senior_repo/raw/time_tables/B.Tech $campus (btech-$campus)/$sem"
               dest_file="raw_data/$sem-$campus.xlsx"
               
-              if [ -f "$src_file" ]; then
+              # Find any .xlsx file in the folder (handles 1.xlsx inside both 1/ and 3/)
+              src_file=$(find "$src_dir" -maxdepth 1 -name "*.xlsx" 2>/dev/null | head -n 1)
+              
+              if [ -n "$src_file" ] && [ -f "$src_file" ]; then
                 cp "$src_file" "$dest_file"
-                echo "Copied $dest_file"
+                echo "Copied $src_file to $dest_file"
               fi
             done
           done
           
-          # Force git to see a change so a PR gets created
-          echo "Force trigger" > raw_data/force_sync_trigger.txt
+          # FORCE TRIGGER: Create a dummy file so Git detects a change
+          echo "Force sync triggered at $(date)" > raw_data/force_sync_trigger.txt
           
           # Delete the temp clone
           rm -rf senior_repo
