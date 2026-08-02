@@ -27,30 +27,43 @@ jobs:
           git sparse-checkout set "raw/time_tables/B.Tech 62 (btech-62)" "raw/time_tables/B.Tech 128 (btech-128)"
           cd ..
 
-          # Iterate over campuses and semesters to copy correctly named files
+          # Get latest upstream commit SHA
+          UPSTREAM_SHA=$(git -C senior_repo rev-parse HEAD)
+          echo "Upstream commit SHA: $UPSTREAM_SHA"
+
+          # Read previously saved SHA from main branch (if present)
+          LOCAL_LAST_SHA=""
+          if [ -f "raw_data/.last_sync_sha" ]; then
+            LOCAL_LAST_SHA=$(cat raw_data/.last_sync_sha)
+          fi
+
+          # Check if upstream has pushed any new commits
+          if [ "$UPSTREAM_SHA" = "$LOCAL_LAST_SHA" ]; then
+            echo "No new commit in upstream repository since last sync ($UPSTREAM_SHA). Skipping."
+            rm -rf senior_repo
+            exit 0
+          fi
+
+          # Copy updated files if a new upstream commit exists
           for campus in "62" "128"; do
             for sem in "1" "3"; do
               src_dir="senior_repo/raw/time_tables/B.Tech $campus (btech-$campus)/$sem"
               dest_file="raw_data/$sem-$campus.xlsx"
               
-              # Find any .xlsx file in the folder
+              # Find any .xlsx file in the directory
               src_file=$(find "$src_dir" -maxdepth 1 -name "*.xlsx" 2>/dev/null | head -n 1)
               
               if [ -n "$src_file" ] && [ -f "$src_file" ]; then
                 cp "$src_file" "$dest_file"
-                
-                # TRICK: Append a trailing space to force Git to see ALL 4 files as modified
-                echo " " >> "$dest_file"
-                
                 echo "Copied $src_file to $dest_file"
               fi
             done
           done
           
-          # Force git to detect a change for PR creation
-          echo "Force sync triggered at $(date)" > raw_data/force_sync_trigger.txt
+          # Save the processed upstream commit SHA
+          echo "$UPSTREAM_SHA" > raw_data/.last_sync_sha
           
-          # Delete the temp clone
+          # Clean up temp clone
           rm -rf senior_repo
 
       - name: Create Pull Request
