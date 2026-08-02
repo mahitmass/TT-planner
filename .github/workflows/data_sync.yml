@@ -40,6 +40,9 @@ jobs:
             done
           done
           
+          # Force git to see a change so a PR gets created
+          echo "Force trigger" > raw_data/force_sync_trigger.txt
+          
           # Delete the temp clone
           rm -rf senior_repo
 
