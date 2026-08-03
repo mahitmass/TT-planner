@@ -49,7 +49,15 @@ module.exports = {
         }
     }
     */
-    
+    {
+        semester: 3,
+        batch: "B12",
+        day: 4,
+        start: 14,
+        changes: {
+            code: "LT3" 
+        }
+    },
     
   ]
 };
