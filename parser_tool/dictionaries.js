@@ -890,7 +890,7 @@ module.exports = {
     "B15CS215": "OOP using Java",
     "HS211": "Economics",
     "HS112": "Economics",
-    "MA211": "Summer Training-I",
+    "MA211": "Probability & Statistics",
     "24B11MA211": "Numerical Techniques",
     "MA301": "Probability & Random Processes",
     "MA302": "Probability & Statistics",
