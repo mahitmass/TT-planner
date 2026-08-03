@@ -2532,7 +2532,7 @@ const scheduleMap = {
       { "day": 4, "start": 9, "duration": 2, "title": "OOP using Java", "code": "CL23", "teacher": "SHY,DEV", "type": "lab" },
       { "day": 4, "start": 11, "duration": 1, "title": "Economics", "code": "TS10", "teacher": "MM", "type": "tut" },
       { "day": 4, "start": 12, "duration": 1, "title": "Unix Programming", "code": "FF5", "teacher": "KRR", "type": "lec" },
-      { "day": 4, "start": 14, "duration": 1, "title": "Database Management Systems", "code": "FF5", "teacher": "DEP", "type": "lec" },
+      { "day": 4, "start": 14, "duration": 1, "title": "Database Management Systems", "code": "LT3", "teacher": "DEP", "type": "lec" },
       { "day": 4, "start": 15, "duration": 1, "title": "Maths for AI & DS", "code": "FF5", "teacher": "NF9", "type": "lec" },
       { "day": 5, "start": 9, "duration": 1, "title": "Theory of Computation", "code": "FF6", "teacher": "RTK", "type": "lec" },
       { "day": 5, "start": 14, "duration": 1, "title": "Maths for AI & DS", "code": "FF6", "teacher": "NF9", "type": "lec" },
