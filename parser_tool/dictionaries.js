@@ -1,6 +1,7 @@
 module.exports = {
     teachers62: {
     "LKK": "Lakhveer Kaur",
+    "NF9": "Harshita Bharadwaj",
     "AMB": "Amita Bhagat",
     "KRR": "Kritika Rohila",
     "SPT": "Sapna Thapar",
