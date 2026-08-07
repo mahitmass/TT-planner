@@ -2422,7 +2422,7 @@ const scheduleMap = {
     ],
     "B8": [
       { "day": 1, "start": 9, "duration": 1, "title": "Theory of Computation", "code": "CS4", "teacher": "ASY", "type": "lec" },
-      { "day": 1, "start": 10, "duration": 2, "title": "OOP using Java", "code": "CL04", "teacher": "GAS,SLK", "type": "lab" },
+      { "day": 1, "start": 10, "duration": 2, "title": "OOP using Java", "code": "CL04", "teacher": "GRS,KRL", "type": "lab" },
       { "day": 1, "start": 14, "duration": 1, "title": "Data Structures", "code": "CS5", "teacher": "NSA", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Maths for AI & DS", "code": "FF7", "teacher": "HZR", "type": "lec" },
       { "day": 2, "start": 9, "duration": 2, "title": "Data Structures", "code": "CL04", "teacher": "LM,RJM", "type": "lab" },
@@ -2506,7 +2506,7 @@ const scheduleMap = {
       { "day": 3, "start": 10, "duration": 1, "title": "Economics", "code": "LT2", "teacher": "MRB", "type": "lec" },
       { "day": 3, "start": 14, "duration": 1, "title": "Database Management Systems", "code": "G2", "teacher": "DEP", "type": "lec" },
       { "day": 3, "start": 16, "duration": 1, "title": "Theory of Computation", "code": "LT3", "teacher": "RTK", "type": "lec" },
-      { "day": 4, "start": 9, "duration": 2, "title": "OOP using Java", "code": "CL22", "teacher": "SHB", "type": "lab" },
+      { "day": 4, "start": 9, "duration": 2, "title": "OOP using Java", "code": "CL22", "teacher": "SHY", "type": "lab" },
       { "day": 4, "start": 12, "duration": 1, "title": "Unix Programming", "code": "LT3", "teacher": "KRR", "type": "lec" },
       { "day": 4, "start": 14, "duration": 1, "title": "Database Management Systems", "code": "LT3", "teacher": "DEP", "type": "lec" },
       { "day": 4, "start": 15, "duration": 1, "title": "Maths for AI & DS", "code": "FF5", "teacher": "NF9", "type": "lec" },
@@ -2529,7 +2529,7 @@ const scheduleMap = {
       { "day": 3, "start": 14, "duration": 1, "title": "Database Management Systems", "code": "G2", "teacher": "DEP", "type": "lec" },
       { "day": 3, "start": 15, "duration": 1, "title": "Maths for AI & DS", "code": "TS10", "teacher": "RSH", "type": "tut" },
       { "day": 3, "start": 16, "duration": 1, "title": "Theory of Computation", "code": "LT3", "teacher": "RTK", "type": "lec" },
-      { "day": 4, "start": 9, "duration": 2, "title": "OOP using Java", "code": "CL23", "teacher": "SHY,DEV", "type": "lab" },
+      { "day": 4, "start": 9, "duration": 2, "title": "OOP using Java", "code": "CL23", "teacher": "SLK", "type": "lab" },
       { "day": 4, "start": 11, "duration": 1, "title": "Economics", "code": "TS10", "teacher": "MM", "type": "tut" },
       { "day": 4, "start": 12, "duration": 1, "title": "Unix Programming", "code": "LT3", "teacher": "KRR", "type": "lec" },
       { "day": 4, "start": 14, "duration": 1, "title": "Database Management Systems", "code": "LT3", "teacher": "DEP", "type": "lec" },
@@ -3314,7 +3314,7 @@ const scheduleMap = {
       { "day": 5, "start": 11, "duration": 1, "title": "Probability & Statistics", "code": "FF6", "teacher": "ATI", "type": "lec" },
       { "day": 5, "start": 12, "duration": 1, "title": "Database Systems and Web", "code": "G3", "teacher": "SON", "type": "lec" },
       { "day": 5, "start": 14, "duration": 1, "title": "Environmental Studies", "code": "FF5", "teacher": "AKV", "type": "lec" },
-      { "day": 6, "start": 11, "duration": 2, "title": "OOP using Java", "code": "CL06", "teacher": "GAS", "type": "lab" }
+      { "day": 6, "start": 11, "duration": 2, "title": "OOP using Java", "code": "CL06", "teacher": "GRS", "type": "lab" }
     ],
     "G2": [
       { "day": 1, "start": 9, "duration": 1, "title": "Data Structures", "code": "TS13", "teacher": "LM", "type": "tut" },
@@ -3385,7 +3385,7 @@ const scheduleMap = {
       { "day": 3, "start": 15, "duration": 1, "title": "Discrete Mathematics", "code": "G7", "teacher": "NF3", "type": "lec" },
       { "day": 4, "start": 9, "duration": 1, "title": "Probability & Statistics", "code": "CR301", "teacher": "DGA", "type": "lec" },
       { "day": 4, "start": 10, "duration": 1, "title": "Environmental Studies", "code": "CR301", "teacher": "AKV", "type": "lec" },
-      { "day": 4, "start": 11, "duration": 2, "title": "OOP using Java", "code": "CL16", "teacher": "ASI,GAS", "type": "lab" },
+      { "day": 4, "start": 11, "duration": 2, "title": "OOP using Java", "code": "CL16", "teacher": "ASI,GRS", "type": "lab" },
       { "day": 4, "start": 14, "duration": 1, "title": "Probability & Statistics", "code": "TS13", "teacher": "DGA", "type": "tut" },
       { "day": 4, "start": 15, "duration": 1, "title": "Database Systems and Web", "code": "FF6", "teacher": "ATI", "type": "lec" },
       { "day": 4, "start": 16, "duration": 1, "title": "Data Structures", "code": "FF6", "teacher": "SHG", "type": "lec" },
