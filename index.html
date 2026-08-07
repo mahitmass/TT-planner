@@ -116,6 +116,7 @@
   </div>
 
   <div id="timetable-container" class="view-container">
+    <button id="mode-toggle-swipe" class="mode-toggle-btn" aria-label="Toggle Custom Mode">📋</button>
     <div id="floating-batch" class="floating-batch" aria-live="polite">BATCH A1</div>
     <div id="batch-scroller" class="batch-scroll-overlay">
         </div>
@@ -143,6 +144,48 @@
 
   <div id="smart-update-btn" class="smart-update-btn hidden" onclick="window.location.reload(true)">
     Update Available <span class="update-icon">🔄</span>
+  </div>
+
+  <div id="mode-toast" class="mode-toast"></div>
+
+  <div id="add-class-modal" class="add-class-modal">
+    <div class="add-class-form">
+      <h3>➕ Add New Class</h3>
+      <div class="edit-form">
+        <div class="edit-form-row">
+          <span class="edit-form-label">Day</span>
+          <div class="day-chips" id="add-day-chips"></div>
+        </div>
+        <div class="edit-form-row">
+          <span class="edit-form-label">Time</span>
+          <div class="time-picker-row">
+            <select class="time-select" id="add-start-time"></select>
+            <span style="color:var(--text-muted); font-size:0.75rem;">for</span>
+            <div class="dur-chips" id="add-duration-chips"></div>
+          </div>
+        </div>
+        <div class="edit-form-row">
+          <span class="edit-form-label">Subject</span>
+          <input class="edit-form-input" id="add-subject" placeholder="Subject name">
+        </div>
+        <div class="edit-form-row">
+          <span class="edit-form-label">Room</span>
+          <input class="edit-form-input" id="add-room" placeholder="e.g. G7, FF5">
+        </div>
+        <div class="edit-form-row">
+          <span class="edit-form-label">Teacher</span>
+          <input class="edit-form-input" id="add-teacher" placeholder="Teacher code e.g. ANK">
+        </div>
+        <div class="edit-form-row">
+          <span class="edit-form-label">Type</span>
+          <div class="type-chips" id="add-type-chips"></div>
+        </div>
+        <div class="edit-form-actions">
+          <button class="edit-btn-cancel" id="add-class-cancel">Cancel</button>
+          <button class="edit-btn-save" id="add-class-save">Add Class</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="footer-sig">

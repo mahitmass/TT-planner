@@ -259,7 +259,59 @@ const TimetableApp = (function() {
     isVerticalScrollPossible: false,
     initialScrollTop: 0,
     isTeacherMode: false,
-    wheelCooldown: false
+    wheelCooldown: false,
+    isCustomMode: false,
+    editingCardIndex: -1
+  };
+
+  // ==================== CUSTOM SCHEDULE MODULE ====================
+  const CustomSchedule = {
+    _key: (sem, batch) => `customSchedule_${sem}_${batch}`,
+    
+    load: (sem, batch) => {
+      return Storage.getJSON(CustomSchedule._key(sem, batch), null);
+    },
+    
+    save: (sem, batch, schedule) => {
+      Storage.setJSON(CustomSchedule._key(sem, batch), schedule);
+    },
+    
+    ensureClone: (sem, batch) => {
+      const existing = CustomSchedule.load(sem, batch);
+      if (existing) return existing;
+      // Clone from official
+      let official = [];
+      if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[sem] && scheduleMap[sem][batch]) {
+        official = JSON.parse(JSON.stringify(scheduleMap[sem][batch]));
+      }
+      CustomSchedule.save(sem, batch, official);
+      return official;
+    },
+    
+    addEntry: (sem, batch, entry) => {
+      const schedule = CustomSchedule.load(sem, batch) || [];
+      schedule.push(entry);
+      CustomSchedule.save(sem, batch, schedule);
+      return schedule;
+    },
+    
+    updateEntry: (sem, batch, index, updatedEntry) => {
+      const schedule = CustomSchedule.load(sem, batch) || [];
+      if (index >= 0 && index < schedule.length) {
+        schedule[index] = { ...schedule[index], ...updatedEntry };
+        CustomSchedule.save(sem, batch, schedule);
+      }
+      return schedule;
+    },
+    
+    deleteEntry: (sem, batch, index) => {
+      const schedule = CustomSchedule.load(sem, batch) || [];
+      if (index >= 0 && index < schedule.length) {
+        schedule.splice(index, 1);
+        CustomSchedule.save(sem, batch, schedule);
+      }
+      return schedule;
+    }
   };
 
   const dom = {
@@ -285,6 +337,21 @@ const TimetableApp = (function() {
     const teacherBtn = document.getElementById('teacher-mode-btn');
     if(teacherBtn) teacherBtn.addEventListener('click', toggleTeacherMode);
     
+    // Custom Mode Toggle
+    const modeToggleSwipe = document.getElementById('mode-toggle-swipe');
+    if (modeToggleSwipe) modeToggleSwipe.addEventListener('click', (e) => { e.stopPropagation(); toggleCustomMode(); });
+    
+    // Restore custom mode state
+    state.isCustomMode = Storage.get('isCustomMode', 'false') === 'true';
+    if (state.isCustomMode) {
+      document.body.classList.add('custom-mode');
+      const btn = document.getElementById('mode-toggle-swipe');
+      if (btn) { btn.classList.add('custom-active'); btn.textContent = '✏️'; }
+      // Load custom schedule
+      state.currentSchedule = CustomSchedule.ensureClone(state.currentSemester, state.currentBatch);
+    }
+    
+    initAddClassForm();
     initTeacherSearch();
     renderInitialViews();
     startActiveHighlighting();
@@ -384,16 +451,17 @@ const TimetableApp = (function() {
     
     const cornerLabel = document.getElementById('table-corner-label');
     if (cornerLabel) {
-        // Teacher Mode Check
         if (state.isTeacherMode) {
              cornerLabel.innerHTML = 'Day';
         } else {
-             // YOUR EXACT STYLING [cite: 70-71], just changed "TIME" to "DAY"
+             const modeIcon = state.isCustomMode ? '✏️' : '📋';
+             const modeClass = state.isCustomMode ? 'custom-active' : '';
              cornerLabel.innerHTML = `
                   <div style="display: inline-block; font-size: 0.9rem; color: var(--accent-color); font-weight: 800; border: 1px solid var(--accent-color); background: rgba(187, 134, 252, 0.1); border-radius: 6px; padding: 1px 8px; margin-bottom: 2px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.5px;">
                       ${batchName}
                   </div>
                   <div style="font-size: 0.65rem; opacity: 0.6; font-weight: 600; letter-spacing: 1px;">DAY</div>
+                  <button class="corner-mode-btn ${modeClass}" onclick="TimetableApp.toggleCustomMode(); event.stopPropagation();">${modeIcon}</button>
               `;
         }
     }
@@ -427,6 +495,16 @@ const TimetableApp = (function() {
     } else {
       renderDayClasses(dayView, dayClasses);
     }
+    
+    // Add "+" button in custom mode
+    if (state.isCustomMode) {
+      const addBtn = document.createElement('button');
+      addBtn.className = 'add-class-btn';
+      addBtn.innerHTML = '<span class="plus-icon">+</span> Add Class';
+      addBtn.onclick = (e) => { e.stopPropagation(); openAddClassForm(day); };
+      dayView.appendChild(addBtn);
+    }
+    
     return dayView;
   }
 
@@ -467,6 +545,11 @@ const TimetableApp = (function() {
     card.className = `class-card type-${cls.type}`;
     card.dataset.startHour = cls.start.toString();
     card.dataset.day = cls.day.toString();
+    
+    // Store the original index for editing
+    const clsIndex = state.currentSchedule.indexOf(cls);
+    card.dataset.scheduleIndex = clsIndex.toString();
+    
     card.innerHTML = `
       <div class="time-slot">${formatTimeRange(cls.start, cls.duration)}</div>
       <div class="subject-name">${displayTitle}</div>
@@ -478,6 +561,17 @@ const TimetableApp = (function() {
         <span class="info-badge">${cls.type.toUpperCase()}</span>
       </div>
     `;
+    
+    // In Custom Mode, tapping card (not location icon) opens inline edit
+    if (state.isCustomMode && clsIndex >= 0) {
+      card.addEventListener('click', (e) => {
+        // Don't intercept clicks on the location info button
+        if (e.target.closest('.info-badge[onclick]') || e.target.closest('.info-icon')) return;
+        e.stopPropagation();
+        openInlineEdit(card, cls, clsIndex);
+      });
+    }
+    
     return card;
   }
 
@@ -814,7 +908,9 @@ function populateBatches() {
       const seriesBtn = document.getElementById('series-text');
       if (seriesBtn) seriesBtn.textContent = is128 ? "128 Series" : "62 Series";
       
-      if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[state.currentSemester] && scheduleMap[state.currentSemester][batchName]) {
+      if (state.isCustomMode) {
+          state.currentSchedule = CustomSchedule.ensureClone(state.currentSemester, batchName);
+      } else if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[state.currentSemester] && scheduleMap[state.currentSemester][batchName]) {
           state.currentSchedule = scheduleMap[state.currentSemester][batchName];
       } else {
           state.currentSchedule = [];
@@ -1110,7 +1206,6 @@ function resetModalFields() {
     const modal = document.getElementById('details-modal');
     if(!modal) return;
     
-    // CRITICAL: Ensure fields are visible (in case Room Modal hid them)
     resetModalFields();
 
     const isArray = Array.isArray(classes);
@@ -1151,6 +1246,28 @@ function resetModalFields() {
     
     const roomEl = document.getElementById('modal-room');
     roomEl.innerHTML = roomHtml;
+    
+    // Add pencil edit button in Custom Mode
+    const modalContent = modal.querySelector('.modal-content');
+    let existingEditBtn = modalContent.querySelector('.modal-edit-btn');
+    if (existingEditBtn) existingEditBtn.remove();
+    
+    if (state.isCustomMode && clsList.length === 1) {
+      const clsIndex = state.currentSchedule.indexOf(primaryCls);
+      if (clsIndex >= 0) {
+        const editBtn = document.createElement('button');
+        editBtn.className = 'modal-edit-btn';
+        editBtn.innerHTML = '✏️';
+        editBtn.title = 'Edit this class';
+        editBtn.onclick = (e) => {
+          e.stopPropagation();
+          closeModal();
+          // Find and open inline edit for this class in swipe view
+          openModalEdit(primaryCls, clsIndex);
+        };
+        modalContent.appendChild(editBtn);
+      }
+    }
     
     modal.classList.remove('hidden-modal');
     modal.setAttribute('aria-hidden', 'false');
@@ -1507,6 +1624,341 @@ function initTeacherSearch() {
         .then(() => console.log("Check complete"))
         .catch(() => console.log("Check failed (offline)"));
   }
+  // ==================== CUSTOM MODE FUNCTIONS ====================
+  
+  function toggleCustomMode() {
+    state.isCustomMode = !state.isCustomMode;
+    Storage.set('isCustomMode', state.isCustomMode.toString());
+    
+    const swipeBtn = document.getElementById('mode-toggle-swipe');
+    
+    if (state.isCustomMode) {
+      document.body.classList.add('custom-mode');
+      if (swipeBtn) { swipeBtn.classList.add('custom-active'); swipeBtn.textContent = '✏️'; }
+      state.currentSchedule = CustomSchedule.ensureClone(state.currentSemester, state.currentBatch);
+      showToast('✏️ Custom Mode');
+    } else {
+      document.body.classList.remove('custom-mode');
+      if (swipeBtn) { swipeBtn.classList.remove('custom-active'); swipeBtn.textContent = '📋'; }
+      // Restore official schedule
+      if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[state.currentSemester] && scheduleMap[state.currentSemester][state.currentBatch]) {
+        state.currentSchedule = scheduleMap[state.currentSemester][state.currentBatch];
+      } else {
+        state.currentSchedule = [];
+      }
+      showToast('📋 Official Mode');
+    }
+    
+    renderMobileView();
+    renderDesktopView();
+    updateBatchLabels(state.currentBatch);
+    setTimeout(() => {
+      highlightActiveClass();
+      jumpToDay(state.currentDayIndex);
+    }, 50);
+  }
+  
+  function showToast(message) {
+    const toast = document.getElementById('mode-toast');
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 1500);
+  }
+  
+  // --- Inline Edit (Swipe View Cards) ---
+  function openInlineEdit(card, cls, clsIndex) {
+    // Save original HTML for cancel
+    const originalHTML = card.innerHTML;
+    const originalClassName = card.className;
+    
+    card.className = `class-card type-${cls.type}`;
+    card.innerHTML = `
+      <div class="edit-form">
+        <div class="edit-form-row">
+          <span class="edit-form-label">Subject</span>
+          <input class="edit-form-input" id="edit-subject" value="${cls.title}">
+        </div>
+        <div class="edit-form-row">
+          <span class="edit-form-label">Room</span>
+          <input class="edit-form-input" id="edit-room" value="${cls.code}">
+        </div>
+        <div class="edit-form-row">
+          <span class="edit-form-label">Teacher</span>
+          <input class="edit-form-input" id="edit-teacher" value="${cls.teacher}">
+        </div>
+        <div class="edit-form-row">
+          <span class="edit-form-label">Time</span>
+          <div class="time-picker-row">
+            <select class="time-select" id="edit-start-time">
+              ${[9,10,11,12,13,14,15,16].map(h => `<option value="${h}" ${h === cls.start ? 'selected' : ''}>${h > 12 ? h-12 : h}:00 ${h >= 12 ? 'PM' : 'AM'}</option>`).join('')}
+            </select>
+            <span style="color:var(--text-muted); font-size:0.75rem;">for</span>
+            <div class="dur-chips">
+              ${[1,2,3].map(d => `<button class="dur-chip ${d === cls.duration ? 'active' : ''}" data-dur="${d}">${d}h</button>`).join('')}
+            </div>
+          </div>
+        </div>
+        <div class="edit-form-row">
+          <span class="edit-form-label">Type</span>
+          <div class="type-chips">
+            ${['lec','tut','lab'].map(t => `<button class="type-chip ${t === cls.type ? 'active' : ''}" data-type="${t}">${t.toUpperCase()}</button>`).join('')}
+          </div>
+        </div>
+        <div class="edit-form-actions">
+          <button class="edit-btn-delete" id="edit-delete-btn">🗑️ Delete</button>
+          <button class="edit-btn-cancel" id="edit-cancel-btn">Cancel</button>
+          <button class="edit-btn-save" id="edit-save-btn">Save</button>
+        </div>
+        <div id="edit-delete-confirm" style="display:none;"></div>
+      </div>
+    `;
+    
+    // Type chip clicks
+    card.querySelectorAll('.type-chip').forEach(chip => {
+      chip.onclick = (e) => {
+        e.stopPropagation();
+        card.querySelectorAll('.type-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+      };
+    });
+    
+    // Duration chip clicks
+    card.querySelectorAll('.dur-chip').forEach(chip => {
+      chip.onclick = (e) => {
+        e.stopPropagation();
+        card.querySelectorAll('.dur-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+      };
+    });
+    
+    // Stop propagation on all inputs
+    card.querySelectorAll('input, select').forEach(el => {
+      el.addEventListener('click', e => e.stopPropagation());
+    });
+    
+    // Save
+    card.querySelector('#edit-save-btn').onclick = (e) => {
+      e.stopPropagation();
+      const updated = {
+        title: card.querySelector('#edit-subject').value.trim() || cls.title,
+        code: card.querySelector('#edit-room').value.trim() || cls.code,
+        teacher: card.querySelector('#edit-teacher').value.trim() || cls.teacher,
+        start: parseInt(card.querySelector('#edit-start-time').value),
+        duration: parseInt(card.querySelector('.dur-chip.active')?.dataset.dur || cls.duration),
+        type: card.querySelector('.type-chip.active')?.dataset.type || cls.type,
+        day: cls.day
+      };
+      state.currentSchedule = CustomSchedule.updateEntry(state.currentSemester, state.currentBatch, clsIndex, updated);
+      renderMobileView();
+      renderDesktopView();
+      setTimeout(() => jumpToDay(state.currentDayIndex, false), 50);
+    };
+    
+    // Cancel
+    card.querySelector('#edit-cancel-btn').onclick = (e) => {
+      e.stopPropagation();
+      card.innerHTML = originalHTML;
+      card.className = originalClassName;
+    };
+    
+    // Delete
+    card.querySelector('#edit-delete-btn').onclick = (e) => {
+      e.stopPropagation();
+      const confirmDiv = card.querySelector('#edit-delete-confirm');
+      confirmDiv.style.display = 'block';
+      confirmDiv.innerHTML = `
+        <div class="delete-confirm">
+          <span>Delete this class?</span>
+          <button class="delete-confirm-yes" id="confirm-yes">Yes</button>
+          <button class="delete-confirm-no" id="confirm-no">No</button>
+        </div>
+      `;
+      confirmDiv.querySelector('#confirm-yes').onclick = (ev) => {
+        ev.stopPropagation();
+        state.currentSchedule = CustomSchedule.deleteEntry(state.currentSemester, state.currentBatch, clsIndex);
+        renderMobileView();
+        renderDesktopView();
+        setTimeout(() => jumpToDay(state.currentDayIndex, false), 50);
+      };
+      confirmDiv.querySelector('#confirm-no').onclick = (ev) => {
+        ev.stopPropagation();
+        confirmDiv.style.display = 'none';
+      };
+    };
+  }
+  
+  // --- Modal Edit (Table View) ---
+  function openModalEdit(cls, clsIndex) {
+    // Switch to swipe view briefly, jump to the right day, and open inline edit
+    // OR: open the add-class modal pre-filled for editing
+    const modal = document.getElementById('add-class-modal');
+    if (!modal) return;
+    
+    const form = modal.querySelector('.add-class-form h3');
+    form.textContent = '✏️ Edit Class';
+    
+    // Fill day chips
+    const dayChips = document.getElementById('add-day-chips');
+    dayChips.querySelectorAll('.day-chip').forEach(c => {
+      c.classList.toggle('active', parseInt(c.dataset.day) === cls.day);
+    });
+    
+    // Fill time
+    document.getElementById('add-start-time').value = cls.start.toString();
+    
+    // Fill duration
+    document.getElementById('add-duration-chips').querySelectorAll('.dur-chip').forEach(c => {
+      c.classList.toggle('active', parseInt(c.dataset.dur) === cls.duration);
+    });
+    
+    // Fill fields
+    document.getElementById('add-subject').value = cls.title;
+    document.getElementById('add-room').value = cls.code;
+    document.getElementById('add-teacher').value = cls.teacher;
+    
+    // Fill type
+    document.getElementById('add-type-chips').querySelectorAll('.type-chip').forEach(c => {
+      c.classList.toggle('active', c.dataset.type === cls.type);
+    });
+    
+    // Change save button behavior to update instead of add
+    const saveBtn = document.getElementById('add-class-save');
+    saveBtn.textContent = 'Save Changes';
+    saveBtn.onclick = () => {
+      const day = parseInt(dayChips.querySelector('.day-chip.active')?.dataset.day || cls.day);
+      const updated = {
+        day,
+        start: parseInt(document.getElementById('add-start-time').value),
+        duration: parseInt(document.getElementById('add-duration-chips').querySelector('.dur-chip.active')?.dataset.dur || 1),
+        title: document.getElementById('add-subject').value.trim() || cls.title,
+        code: document.getElementById('add-room').value.trim() || cls.code,
+        teacher: document.getElementById('add-teacher').value.trim() || cls.teacher,
+        type: document.getElementById('add-type-chips').querySelector('.type-chip.active')?.dataset.type || 'lec'
+      };
+      state.currentSchedule = CustomSchedule.updateEntry(state.currentSemester, state.currentBatch, clsIndex, updated);
+      closeAddClassModal();
+      renderMobileView();
+      renderDesktopView();
+      setTimeout(() => { highlightActiveClass(); jumpToDay(state.currentDayIndex); }, 50);
+    };
+    
+    modal.classList.add('visible');
+  }
+  
+  // --- Add Class Form ---
+  function initAddClassForm() {
+    const dayChips = document.getElementById('add-day-chips');
+    const durChips = document.getElementById('add-duration-chips');
+    const typeChips = document.getElementById('add-type-chips');
+    const startSelect = document.getElementById('add-start-time');
+    
+    if (!dayChips) return;
+    
+    // Populate day chips
+    const dayNames = ['M', 'T', 'W', 'T', 'F', 'S'];
+    dayChips.innerHTML = dayNames.map((d, i) => 
+      `<button class="day-chip" data-day="${i + 1}">${d}</button>`
+    ).join('');
+    dayChips.querySelectorAll('.day-chip').forEach(c => {
+      c.onclick = () => {
+        dayChips.querySelectorAll('.day-chip').forEach(x => x.classList.remove('active'));
+        c.classList.add('active');
+      };
+    });
+    
+    // Populate time select
+    startSelect.innerHTML = [9,10,11,12,13,14,15,16].map(h => 
+      `<option value="${h}">${h > 12 ? h-12 : h}:00 ${h >= 12 ? 'PM' : 'AM'}</option>`
+    ).join('');
+    
+    // Duration chips
+    durChips.innerHTML = [1,2,3].map(d => 
+      `<button class="dur-chip ${d === 1 ? 'active' : ''}" data-dur="${d}">${d}h</button>`
+    ).join('');
+    durChips.querySelectorAll('.dur-chip').forEach(c => {
+      c.onclick = () => {
+        durChips.querySelectorAll('.dur-chip').forEach(x => x.classList.remove('active'));
+        c.classList.add('active');
+      };
+    });
+    
+    // Type chips
+    typeChips.innerHTML = ['lec','tut','lab'].map(t => 
+      `<button class="type-chip ${t === 'lec' ? 'active' : ''}" data-type="${t}">${t.toUpperCase()}</button>`
+    ).join('');
+    typeChips.querySelectorAll('.type-chip').forEach(c => {
+      c.onclick = () => {
+        typeChips.querySelectorAll('.type-chip').forEach(x => x.classList.remove('active'));
+        c.classList.add('active');
+      };
+    });
+    
+    // Cancel
+    document.getElementById('add-class-cancel').onclick = closeAddClassModal;
+    
+    // Save (default: add new)
+    document.getElementById('add-class-save').onclick = () => {
+      const day = parseInt(dayChips.querySelector('.day-chip.active')?.dataset.day);
+      if (!day) { showToast('⚠️ Select a day'); return; }
+      
+      const entry = {
+        day,
+        start: parseInt(startSelect.value),
+        duration: parseInt(durChips.querySelector('.dur-chip.active')?.dataset.dur || 1),
+        title: document.getElementById('add-subject').value.trim() || 'New Class',
+        code: document.getElementById('add-room').value.trim() || 'TBA',
+        teacher: document.getElementById('add-teacher').value.trim() || 'TBA',
+        type: typeChips.querySelector('.type-chip.active')?.dataset.type || 'lec'
+      };
+      
+      state.currentSchedule = CustomSchedule.addEntry(state.currentSemester, state.currentBatch, entry);
+      closeAddClassModal();
+      renderMobileView();
+      renderDesktopView();
+      setTimeout(() => { highlightActiveClass(); jumpToDay(day - 1); }, 50);
+    };
+    
+    // Close on backdrop click
+    document.getElementById('add-class-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'add-class-modal') closeAddClassModal();
+    });
+  }
+  
+  function openAddClassForm(prefilledDay) {
+    const modal = document.getElementById('add-class-modal');
+    if (!modal) return;
+    
+    // Reset form
+    const form = modal.querySelector('.add-class-form h3');
+    form.textContent = '➕ Add New Class';
+    document.getElementById('add-subject').value = '';
+    document.getElementById('add-room').value = '';
+    document.getElementById('add-teacher').value = '';
+    document.getElementById('add-start-time').value = '9';
+    
+    // Reset chips
+    document.getElementById('add-duration-chips').querySelectorAll('.dur-chip').forEach((c, i) => c.classList.toggle('active', i === 0));
+    document.getElementById('add-type-chips').querySelectorAll('.type-chip').forEach((c, i) => c.classList.toggle('active', i === 0));
+    
+    // Pre-select day
+    document.getElementById('add-day-chips').querySelectorAll('.day-chip').forEach(c => {
+      c.classList.toggle('active', parseInt(c.dataset.day) === prefilledDay);
+    });
+    
+    // Reset save button
+    const saveBtn = document.getElementById('add-class-save');
+    saveBtn.textContent = 'Add Class';
+    // Re-bind default save handler (initAddClassForm sets it)
+    
+    modal.classList.add('visible');
+  }
+  
+  function closeAddClassModal() {
+    const modal = document.getElementById('add-class-modal');
+    if (modal) modal.classList.remove('visible');
+  }
+
   // Public API
     return {
       init,
@@ -1518,7 +1970,8 @@ function initTeacherSearch() {
       toggleSemester,
       toggleSeries,
       toggleBatchGrid,
-        forceUpdateCheck
+      forceUpdateCheck,
+      toggleCustomMode
     };
 })();
 

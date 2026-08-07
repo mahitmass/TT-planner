@@ -17,6 +17,22 @@ const Storage = {
     } catch (e) {
       console.error("Storage save failed", e);
     }
+  },
+  getJSON: (key, defaultValue) => {
+    try {
+      const val = localStorage.getItem(key);
+      return val ? JSON.parse(val) : defaultValue;
+    } catch (e) {
+      console.error("Storage JSON parse failed", e);
+      return defaultValue;
+    }
+  },
+  setJSON: (key, value) => {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+    } catch (e) {
+      console.error("Storage JSON save failed", e);
+    }
   }
 };
 
