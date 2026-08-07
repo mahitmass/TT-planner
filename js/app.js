@@ -347,9 +347,15 @@ const TimetableApp = (function() {
       document.body.classList.add('custom-mode');
       const btn = document.getElementById('mode-toggle-swipe');
       if (btn) { btn.classList.add('custom-active'); btn.textContent = '✏️'; }
+      const fab = document.getElementById('floating-add-btn');
+      if (fab) fab.style.display = 'flex';
       // Load custom schedule
       state.currentSchedule = CustomSchedule.ensureClone(state.currentSemester, state.currentBatch);
     }
+    
+    // Wire up floating add button
+    const fab = document.getElementById('floating-add-btn');
+    if (fab) fab.onclick = () => openAddClassForm(state.currentDayIndex + 1);
     
     initAddClassForm();
     initTeacherSearch();
@@ -1247,13 +1253,17 @@ function resetModalFields() {
     const roomEl = document.getElementById('modal-room');
     roomEl.innerHTML = roomHtml;
     
-    // Add pencil edit button in Custom Mode
+    // Add edit and add buttons in Custom Mode
     const modalContent = modal.querySelector('.modal-content');
     let existingEditBtn = modalContent.querySelector('.modal-edit-btn');
     if (existingEditBtn) existingEditBtn.remove();
+    let existingAddBtn = modalContent.querySelector('.modal-add-btn');
+    if (existingAddBtn) existingAddBtn.remove();
     
     if (state.isCustomMode && clsList.length === 1) {
       const clsIndex = state.currentSchedule.indexOf(primaryCls);
+      
+      // Pencil Edit Button
       if (clsIndex >= 0) {
         const editBtn = document.createElement('button');
         editBtn.className = 'modal-edit-btn';
@@ -1262,11 +1272,22 @@ function resetModalFields() {
         editBtn.onclick = (e) => {
           e.stopPropagation();
           closeModal();
-          // Find and open inline edit for this class in swipe view
           openModalEdit(primaryCls, clsIndex);
         };
         modalContent.appendChild(editBtn);
       }
+      
+      // Top Right Add (+) Button
+      const addBtn = document.createElement('button');
+      addBtn.className = 'modal-add-btn';
+      addBtn.innerHTML = '➕';
+      addBtn.title = 'Add new class';
+      addBtn.onclick = (e) => {
+        e.stopPropagation();
+        closeModal();
+        openAddClassForm(primaryCls.day);
+      };
+      modalContent.appendChild(addBtn);
     }
     
     modal.classList.remove('hidden-modal');
@@ -1631,15 +1652,18 @@ function initTeacherSearch() {
     Storage.set('isCustomMode', state.isCustomMode.toString());
     
     const swipeBtn = document.getElementById('mode-toggle-swipe');
+    const fab = document.getElementById('floating-add-btn');
     
     if (state.isCustomMode) {
       document.body.classList.add('custom-mode');
       if (swipeBtn) { swipeBtn.classList.add('custom-active'); swipeBtn.textContent = '✏️'; }
+      if (fab) fab.style.display = 'flex';
       state.currentSchedule = CustomSchedule.ensureClone(state.currentSemester, state.currentBatch);
       showToast('✏️ Custom Mode');
     } else {
       document.body.classList.remove('custom-mode');
       if (swipeBtn) { swipeBtn.classList.remove('custom-active'); swipeBtn.textContent = '📋'; }
+      if (fab) fab.style.display = 'none';
       // Restore official schedule
       if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[state.currentSemester] && scheduleMap[state.currentSemester][state.currentBatch]) {
         state.currentSchedule = scheduleMap[state.currentSemester][state.currentBatch];
@@ -1688,21 +1712,17 @@ function initTeacherSearch() {
           <input class="edit-form-input" id="edit-teacher" value="${cls.teacher}">
         </div>
         <div class="edit-form-row">
+          <span class="edit-form-label">Day</span>
+          <div class="day-chips">
+            ${['M','T','W','T','F','S'].map((d,i) => `<button class="day-chip ${i+1 === cls.day ? 'active' : ''}" data-day="${i+1}">${d}</button>`).join('')}
+          </div>
+        </div>
+        <div class="edit-form-row">
           <span class="edit-form-label">Time</span>
           <div class="time-picker-row">
             <select class="time-select" id="edit-start-time">
               ${[9,10,11,12,13,14,15,16].map(h => `<option value="${h}" ${h === cls.start ? 'selected' : ''}>${h > 12 ? h-12 : h}:00 ${h >= 12 ? 'PM' : 'AM'}</option>`).join('')}
             </select>
-            <span style="color:var(--text-muted); font-size:0.75rem;">for</span>
-            <div class="dur-chips">
-              ${[1,2,3].map(d => `<button class="dur-chip ${d === cls.duration ? 'active' : ''}" data-dur="${d}">${d}h</button>`).join('')}
-            </div>
-          </div>
-        </div>
-        <div class="edit-form-row">
-          <span class="edit-form-label">Type</span>
-          <div class="type-chips">
-            ${['lec','tut','lab'].map(t => `<button class="type-chip ${t === cls.type ? 'active' : ''}" data-type="${t}">${t.toUpperCase()}</button>`).join('')}
           </div>
         </div>
         <div class="edit-form-actions">
@@ -1714,20 +1734,11 @@ function initTeacherSearch() {
       </div>
     `;
     
-    // Type chip clicks
-    card.querySelectorAll('.type-chip').forEach(chip => {
+    // Day chip clicks
+    card.querySelectorAll('.day-chip').forEach(chip => {
       chip.onclick = (e) => {
         e.stopPropagation();
-        card.querySelectorAll('.type-chip').forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-      };
-    });
-    
-    // Duration chip clicks
-    card.querySelectorAll('.dur-chip').forEach(chip => {
-      chip.onclick = (e) => {
-        e.stopPropagation();
-        card.querySelectorAll('.dur-chip').forEach(c => c.classList.remove('active'));
+        card.querySelectorAll('.day-chip').forEach(c => c.classList.remove('active'));
         chip.classList.add('active');
       };
     });
@@ -1745,9 +1756,9 @@ function initTeacherSearch() {
         code: card.querySelector('#edit-room').value.trim() || cls.code,
         teacher: card.querySelector('#edit-teacher').value.trim() || cls.teacher,
         start: parseInt(card.querySelector('#edit-start-time').value),
-        duration: parseInt(card.querySelector('.dur-chip.active')?.dataset.dur || cls.duration),
-        type: card.querySelector('.type-chip.active')?.dataset.type || cls.type,
-        day: cls.day
+        duration: cls.duration,
+        type: cls.type,
+        day: parseInt(card.querySelector('.day-chip.active')?.dataset.day || cls.day)
       };
       state.currentSchedule = CustomSchedule.updateEntry(state.currentSemester, state.currentBatch, clsIndex, updated);
       renderMobileView();
@@ -1790,13 +1801,16 @@ function initTeacherSearch() {
   
   // --- Modal Edit (Table View) ---
   function openModalEdit(cls, clsIndex) {
-    // Switch to swipe view briefly, jump to the right day, and open inline edit
-    // OR: open the add-class modal pre-filled for editing
     const modal = document.getElementById('add-class-modal');
     if (!modal) return;
     
     const form = modal.querySelector('.add-class-form h3');
     form.textContent = '✏️ Edit Class';
+    
+    // Hide Duration and Type fields for edit mode
+    document.getElementById('add-duration-label').style.display = 'none';
+    document.getElementById('add-duration-chips').style.display = 'none';
+    document.getElementById('add-type-row').style.display = 'none';
     
     // Fill day chips
     const dayChips = document.getElementById('add-day-chips');
@@ -1830,17 +1844,17 @@ function initTeacherSearch() {
       const updated = {
         day,
         start: parseInt(document.getElementById('add-start-time').value),
-        duration: parseInt(document.getElementById('add-duration-chips').querySelector('.dur-chip.active')?.dataset.dur || 1),
+        duration: cls.duration,
         title: document.getElementById('add-subject').value.trim() || cls.title,
         code: document.getElementById('add-room').value.trim() || cls.code,
         teacher: document.getElementById('add-teacher').value.trim() || cls.teacher,
-        type: document.getElementById('add-type-chips').querySelector('.type-chip.active')?.dataset.type || 'lec'
+        type: cls.type
       };
       state.currentSchedule = CustomSchedule.updateEntry(state.currentSemester, state.currentBatch, clsIndex, updated);
       closeAddClassModal();
       renderMobileView();
       renderDesktopView();
-      setTimeout(() => { highlightActiveClass(); jumpToDay(state.currentDayIndex); }, 50);
+      setTimeout(() => { highlightActiveClass(); jumpToDay(day - 1); }, 50);
     };
     
     modal.classList.add('visible');
@@ -1936,6 +1950,11 @@ function initTeacherSearch() {
     document.getElementById('add-room').value = '';
     document.getElementById('add-teacher').value = '';
     document.getElementById('add-start-time').value = '9';
+    
+    // Ensure Duration and Type rows are visible (might be hidden by edit mode)
+    document.getElementById('add-duration-label').style.display = 'inline';
+    document.getElementById('add-duration-chips').style.display = 'flex';
+    document.getElementById('add-type-row').style.display = 'flex';
     
     // Reset chips
     document.getElementById('add-duration-chips').querySelectorAll('.dur-chip').forEach((c, i) => c.classList.toggle('active', i === 0));

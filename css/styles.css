@@ -2050,6 +2050,8 @@ body {
   font-size: 0.85rem;
   outline: none;
   transition: border-color 0.2s ease;
+  user-select: text !important;
+  -webkit-user-select: text !important;
 }
 
 .edit-form-input:focus {
@@ -2109,6 +2111,8 @@ body {
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
+  user-select: auto !important;
+  -webkit-user-select: auto !important;
 }
 
 .time-select:focus { border-color: var(--accent-color); }
@@ -2159,7 +2163,7 @@ body {
 }
 .edit-btn-delete:hover { background: rgba(239, 68, 68, 0.25); }
 
-/* --- Add Class Button (Swipe View) --- */
+/* --- Add Class Button (Swipe View list) --- */
 .add-class-btn {
   display: flex;
   align-items: center;
@@ -2190,6 +2194,60 @@ body {
   font-size: 1.2rem;
   font-weight: 800;
 }
+
+/* --- Floating Add Class Button (Global) --- */
+.floating-add-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: #000;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(187, 134, 252, 0.4);
+  cursor: pointer;
+  z-index: 1000;
+  border: none;
+  transition: all 0.2s ease;
+  animation: popIn 0.3s ease;
+}
+
+.floating-add-btn:hover {
+  transform: scale(1.1);
+  background: var(--accent-hover);
+}
+
+/* --- Modal Corner Add Button --- */
+.modal-add-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: #000;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(187, 134, 252, 0.4);
+  cursor: pointer;
+  z-index: 105;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.modal-add-btn:hover {
+  transform: scale(1.1);
+  background: var(--accent-hover);
+}
+
 
 /* --- Add Class Modal/Form --- */
 .add-class-modal {

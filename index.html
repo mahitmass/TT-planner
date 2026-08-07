@@ -146,6 +146,8 @@
     Update Available <span class="update-icon">🔄</span>
   </div>
 
+  <button id="floating-add-btn" class="floating-add-btn" style="display: none;" aria-label="Add Class">➕</button>
+
   <div id="mode-toast" class="mode-toast"></div>
 
   <div id="add-class-modal" class="add-class-modal">
@@ -160,7 +162,7 @@
           <span class="edit-form-label">Time</span>
           <div class="time-picker-row">
             <select class="time-select" id="add-start-time"></select>
-            <span style="color:var(--text-muted); font-size:0.75rem;">for</span>
+            <span id="add-duration-label" style="color:var(--text-muted); font-size:0.75rem;">for</span>
             <div class="dur-chips" id="add-duration-chips"></div>
           </div>
         </div>
@@ -176,7 +178,7 @@
           <span class="edit-form-label">Teacher</span>
           <input class="edit-form-input" id="add-teacher" placeholder="Teacher code e.g. ANK">
         </div>
-        <div class="edit-form-row">
+        <div class="edit-form-row" id="add-type-row">
           <span class="edit-form-label">Type</span>
           <div class="type-chips" id="add-type-chips"></div>
         </div>
