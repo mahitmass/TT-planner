@@ -1,0 +1,27 @@
+name: Auto Merge Bot PRs
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    # Only auto-merge PRs created by GitHub Actions on our known sync branches
+    if: >
+      github.event.pull_request.user.login == 'github-actions[bot]' &&
+      (github.event.pull_request.head.ref == 'sync-timetable-data' || github.event.pull_request.head.ref == 'sync-scraper-data')
+    steps:
+      - name: Merge PR
+        run: |
+          echo "Auto-merging PR #${{ github.event.pull_request.number }} from ${{ github.event.pull_request.head.ref }}"
+          gh pr merge ${{ github.event.pull_request.number }} \
+            --repo ${{ github.repository }} \
+            --merge \
+            --admin
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
