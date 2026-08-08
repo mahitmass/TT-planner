@@ -1,117 +1,117 @@
 // Removed semester logic
 if ("serviceWorker" in navigator) {
-    
-    // 1. Listen for the "Reload" command from the Service Worker
-    navigator.serviceWorker.addEventListener('message', (event) => {
-        if (event.data && event.data.type === 'UPDATE_AVAILABLE') {
-            console.log("Update Available Notification Received");
-            try {
-                // Safely evaluate the new data
-                const getNewSchedule = new Function(event.data.payload + '\nreturn scheduleMap;');
-                const newScheduleMap = getNewSchedule();
-                
-                const currentBatch = Storage.get('selectedBatch', 'A1');
-                
-                const oldBatchSchedule = JSON.stringify(scheduleMap?.[currentBatch] || []);
-                const newBatchSchedule = JSON.stringify(newScheduleMap?.[currentBatch] || []);
-                
-                if (oldBatchSchedule !== newBatchSchedule) {
-                    console.log("Current batch data changed. Showing Update button.");
-                    const updateBtn = document.getElementById('smart-update-btn');
-                    if (updateBtn) updateBtn.classList.remove('hidden');
-                } else {
-                    console.log("Update is for another batch. Ignoring silently.");
-                }
-            } catch (err) {
-                console.error("Failed to parse new schedule data", err);
 
-            }
-        } else if (event.data && event.data.type === 'FORCE_RELOAD') {
-            console.log("Force Update Triggered");
-            window.location.reload();
+  // 1. Listen for the "Reload" command from the Service Worker
+  navigator.serviceWorker.addEventListener('message', (event) => {
+    if (event.data && event.data.type === 'UPDATE_AVAILABLE') {
+      console.log("Update Available Notification Received");
+      try {
+        // Safely evaluate the new data
+        const getNewSchedule = new Function(event.data.payload + '\nreturn scheduleMap;');
+        const newScheduleMap = getNewSchedule();
+
+        const currentBatch = Storage.get('selectedBatch', 'A1');
+
+        const oldBatchSchedule = JSON.stringify(scheduleMap?.[currentBatch] || []);
+        const newBatchSchedule = JSON.stringify(newScheduleMap?.[currentBatch] || []);
+
+        if (oldBatchSchedule !== newBatchSchedule) {
+          console.log("Current batch data changed. Showing Update button.");
+          const updateBtn = document.getElementById('smart-update-btn');
+          if (updateBtn) updateBtn.classList.remove('hidden');
+        } else {
+          console.log("Update is for another batch. Ignoring silently.");
         }
-    });
+      } catch (err) {
+        console.error("Failed to parse new schedule data", err);
 
-    // 2. Listen for a new Service Worker taking control
-    // (This ensures the "Rename Trick" refreshes the page instantly)
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
-        console.log("New Service Worker active. Reloading...");
-        window.location.reload();
-    });
+      }
+    } else if (event.data && event.data.type === 'FORCE_RELOAD') {
+      console.log("Force Update Triggered");
+      window.location.reload();
+    }
+  });
 
-    // 3. Register the NEW filename
-    navigator.serviceWorker.register("./sw.js") // <--- NEW NAME
-        .then(reg => {
-             // Force a check immediately on load
-             reg.update();
-             console.log("SW Registered");
-        })
-        .catch(err => console.log("SW Fail", err));
-        
-    // 4. Check connection recovery
-    window.addEventListener('online', () => {
-         fetch('./js/data.js', { cache: 'no-store' }).catch(() => {});
-    });
+  // 2. Listen for a new Service Worker taking control
+  // (This ensures the "Rename Trick" refreshes the page instantly)
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    console.log("New Service Worker active. Reloading...");
+    window.location.reload();
+  });
+
+  // 3. Register the NEW filename
+  navigator.serviceWorker.register("./sw.js") // <--- NEW NAME
+    .then(reg => {
+      // Force a check immediately on load
+      reg.update();
+      console.log("SW Registered");
+    })
+    .catch(err => console.log("SW Fail", err));
+
+  // 4. Check connection recovery
+  window.addEventListener('online', () => {
+    fetch('./js/data.js', { cache: 'no-store' }).catch(() => { });
+  });
 }
 // ================= END SERVICE WORKER SETUP =================
 // ==================== ROOM POPUP LOGIC ====================
 // Define the global function immediately
-window.showRoomPopup = function(event, code) {
-    event.stopPropagation();
-    let popup = document.getElementById('room-info-popup');
-    
-    // Create it if it doesn't exist yet
-    if (!popup) {
-        popup = document.createElement('div');
-        popup.id = 'room-info-popup';
-        document.body.appendChild(popup);
-    }
+window.showRoomPopup = function (event, code) {
+  event.stopPropagation();
+  let popup = document.getElementById('room-info-popup');
 
-    const location = (typeof ROOM_LOCATIONS !== 'undefined' && ROOM_LOCATIONS[code]) 
-                     ? ROOM_LOCATIONS[code] 
-                     : "Location details not available";
+  // Create it if it doesn't exist yet
+  if (!popup) {
+    popup = document.createElement('div');
+    popup.id = 'room-info-popup';
+    document.body.appendChild(popup);
+  }
 
-    popup.innerHTML = `<div><span style="color:var(--accent-color)">${code}:</span> ${location}</div>`;
-    
-    const rect = event.currentTarget.getBoundingClientRect();
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+  const location = (typeof ROOM_LOCATIONS !== 'undefined' && ROOM_LOCATIONS[code])
+    ? ROOM_LOCATIONS[code]
+    : "Location details not available";
 
-    popup.style.display = 'block';
-    popup.style.top = `${rect.bottom + scrollTop + 8}px`;
-    popup.style.left = `${rect.left + scrollLeft}px`;
+  popup.innerHTML = `<div><span style="color:var(--accent-color)">${code}:</span> ${location}</div>`;
 
-    // Handle overflow
-    if (rect.left + 220 > window.innerWidth) {
-        popup.style.left = 'auto';
-        popup.style.right = '10px';
-    }
+  const rect = event.currentTarget.getBoundingClientRect();
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+  popup.style.display = 'block';
+  popup.style.top = `${rect.bottom + scrollTop + 8}px`;
+  popup.style.left = `${rect.left + scrollLeft}px`;
+
+  // Handle overflow
+  if (rect.left + 220 > window.innerWidth) {
+    popup.style.left = 'auto';
+    popup.style.right = '10px';
+  }
 };
 
 // Global hider
 document.addEventListener('click', () => {
-    const popup = document.getElementById('room-info-popup');
-    if (popup) popup.style.display = 'none';
+  const popup = document.getElementById('room-info-popup');
+  if (popup) popup.style.display = 'none';
 });
 document.addEventListener('scroll', () => {
-    const popup = document.getElementById('room-info-popup');
-    if (popup) popup.style.display = 'none';
-}, {capture: true});
+  const popup = document.getElementById('room-info-popup');
+  if (popup) popup.style.display = 'none';
+}, { capture: true });
 
 // ==================== TIMETABLE APPLICATION ====================
-const TimetableApp = (function() {
-// ==================== MOBILE BATCH SCROLLER (V3 - Final) ====================
-  const BatchScroller = (function() {
-  let masterList = [];
-  let overlay = null;
-  let badge = null;
-  let isOpen = false;
-  
-  let startY = 0;
-  let lastSwitchY = 0;
-  let isSwiping = false; 
-  
-  function init() {
+const TimetableApp = (function () {
+  // ==================== MOBILE BATCH SCROLLER (V3 - Final) ====================
+  const BatchScroller = (function () {
+    let masterList = [];
+    let overlay = null;
+    let badge = null;
+    let isOpen = false;
+
+    let startY = 0;
+    let lastSwitchY = 0;
+    let isSwiping = false;
+
+    function init() {
       overlay = document.getElementById('batch-scroller');
       badge = document.getElementById('floating-batch');
       if (!overlay || !badge) return;
@@ -120,127 +120,127 @@ const TimetableApp = (function() {
       badge.addEventListener('touchmove', handleMove, { passive: false });
       badge.addEventListener('touchend', handleEnd);
       badge.addEventListener('touchcancel', handleEnd);
-      
+
       document.addEventListener('click', (e) => {
-          if (isOpen && !isSwiping && !overlay.contains(e.target) && !badge.contains(e.target)) {
-              close();
-          }
+        if (isOpen && !isSwiping && !overlay.contains(e.target) && !badge.contains(e.target)) {
+          close();
+        }
       });
-      
+
       overlay.addEventListener('click', (e) => {
-           const item = e.target.closest('.scroll-item');
-           if(item) {
-               selectBatch(item.textContent);
-               close();
-           }
+        const item = e.target.closest('.scroll-item');
+        if (item) {
+          selectBatch(item.textContent);
+          close();
+        }
       });
-  }
+    }
 
-  function updateMasterList() {
+    function updateMasterList() {
       if (typeof scheduleMap === 'undefined') return;
-      
-      const semData = scheduleMap[state.currentSemester] || {};
-      masterList = Object.keys(semData).sort((a, b) => 
-          a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' })
-      );
-  }
 
-  function handleStart(e) {
+      const semData = scheduleMap[state.currentSemester] || {};
+      masterList = Object.keys(semData).sort((a, b) =>
+        a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' })
+      );
+    }
+
+    function handleStart(e) {
       if (state.currentView !== 'swipe') return;
-      
+
       updateMasterList();
-      
+
       startY = e.touches[0].clientY;
       lastSwitchY = startY;
-      isSwiping = false; 
-      
-      if (!isOpen) open();
-  }
+      isSwiping = false;
 
-  function handleMove(e) {
+      if (!isOpen) open();
+    }
+
+    function handleMove(e) {
       if (state.currentView !== 'swipe') return;
-      e.preventDefault(); 
-      
+      e.preventDefault();
+
       const currentY = e.touches[0].clientY;
       const deltaTotal = currentY - startY;
       const deltaStep = currentY - lastSwitchY;
-      
+
       if (Math.abs(deltaTotal) > 10) {
-          isSwiping = true;
+        isSwiping = true;
       }
 
-      const SENSITIVITY = 25; 
+      const SENSITIVITY = 25;
 
       if (Math.abs(deltaStep) > SENSITIVITY) {
-          const direction = deltaStep > 0 ? -1 : 1; 
-          
-          shiftBatch(direction);
-          lastSwitchY = currentY; 
-      }
-  }
+        const direction = deltaStep > 0 ? -1 : 1;
 
-  function handleEnd(e) {
+        shiftBatch(direction);
+        lastSwitchY = currentY;
+      }
+    }
+
+    function handleEnd(e) {
       if (isSwiping) {
-          close();
+        close();
       } else {
-          if (!isOpen) open();
+        if (!isOpen) open();
       }
       isSwiping = false;
-  }
+    }
 
-  function shiftBatch(direction) {
+    function shiftBatch(direction) {
       const currentIndex = masterList.indexOf(state.currentBatch);
       if (currentIndex === -1) return;
 
       let newIndex = currentIndex + direction;
-      
+
       if (newIndex >= masterList.length) newIndex = 0;
       if (newIndex < 0) newIndex = masterList.length - 1;
 
       const newBatch = masterList[newIndex];
       selectBatch(newBatch);
-      renderList(); 
+      renderList();
       if (navigator.vibrate) navigator.vibrate(5);
-  }
+    }
 
-  function open() {
+    function open() {
       isOpen = true;
       renderList();
       overlay.classList.add('active');
-      badge.classList.add('hide-self'); 
-  }
+      badge.classList.add('hide-self');
+    }
 
-  function close() {
+    function close() {
       isOpen = false;
       overlay.classList.remove('active');
       badge.classList.remove('hide-self');
-  }
+    }
 
-  function renderList() {
+    function renderList() {
       const currIdx = masterList.indexOf(state.currentBatch);
       if (currIdx === -1) return;
 
       const indices = [currIdx - 2, currIdx - 1, currIdx, currIdx + 1, currIdx + 2];
-      
-      overlay.innerHTML = ''; 
-      
-      indices.forEach(idx => {
-          let actualIdx = idx;
-          if (idx < 0) actualIdx = masterList.length + idx; 
-          if (idx >= masterList.length) actualIdx = idx - masterList.length; 
-          
-          const batch = masterList[actualIdx];
-          const div = document.createElement('div');
-          const isCenter = (idx === currIdx);
-          
-          div.className = `scroll-item ${isCenter ? 'current' : ''}`;
-          div.textContent = batch;
-          overlay.appendChild(div);
-      });
-  }
 
-  return { init };
-})();    
+      overlay.innerHTML = '';
+
+      indices.forEach(idx => {
+        let actualIdx = idx;
+        if (idx < 0) actualIdx = masterList.length + idx;
+        if (idx >= masterList.length) actualIdx = idx - masterList.length;
+
+        const batch = masterList[actualIdx];
+        const div = document.createElement('div');
+        const isCenter = (idx === currIdx);
+
+        div.className = `scroll-item ${isCenter ? 'current' : ''}`;
+        div.textContent = batch;
+        overlay.appendChild(div);
+      });
+    }
+
+    return { init };
+  })();
   let state = {
     currentSemester: Storage.get('selectedSemester', '3'),
     currentSchedule: [],
@@ -267,15 +267,15 @@ const TimetableApp = (function() {
   // ==================== CUSTOM SCHEDULE MODULE ====================
   const CustomSchedule = {
     _key: (sem, batch) => `customSchedule_${sem}_${batch}`,
-    
+
     load: (sem, batch) => {
       return Storage.getJSON(CustomSchedule._key(sem, batch), null);
     },
-    
+
     save: (sem, batch, schedule) => {
       Storage.setJSON(CustomSchedule._key(sem, batch), schedule);
     },
-    
+
     ensureClone: (sem, batch) => {
       const existing = CustomSchedule.load(sem, batch);
       if (existing) return existing;
@@ -287,14 +287,14 @@ const TimetableApp = (function() {
       CustomSchedule.save(sem, batch, official);
       return official;
     },
-    
+
     addEntry: (sem, batch, entry) => {
       const schedule = CustomSchedule.load(sem, batch) || [];
       schedule.push(entry);
       CustomSchedule.save(sem, batch, schedule);
       return schedule;
     },
-    
+
     updateEntry: (sem, batch, index, updatedEntry) => {
       const schedule = CustomSchedule.load(sem, batch) || [];
       if (index >= 0 && index < schedule.length) {
@@ -303,7 +303,7 @@ const TimetableApp = (function() {
       }
       return schedule;
     },
-    
+
     deleteEntry: (sem, batch, index) => {
       const schedule = CustomSchedule.load(sem, batch) || [];
       if (index >= 0 && index < schedule.length) {
@@ -333,19 +333,19 @@ const TimetableApp = (function() {
     setupEventListeners();
     initializeBatchDropdown();
     BatchScroller.init();
-    
+
     // Initialize Custom Mode Autocomplete
     if (typeof setupAutocomplete === 'function') {
       setupAutocomplete();
     }
-    
+
     const teacherBtn = document.getElementById('teacher-mode-btn');
-    if(teacherBtn) teacherBtn.addEventListener('click', toggleTeacherMode);
-    
+    if (teacherBtn) teacherBtn.addEventListener('click', toggleTeacherMode);
+
     // Custom Mode Toggle
     const modeToggleSwipe = document.getElementById('mode-toggle-swipe');
     if (modeToggleSwipe) modeToggleSwipe.addEventListener('click', (e) => { e.stopPropagation(); toggleCustomMode(); });
-    
+
     // Restore custom mode state
     state.isCustomMode = Storage.get('isCustomMode', 'false') === 'true';
     if (state.isCustomMode) {
@@ -357,39 +357,39 @@ const TimetableApp = (function() {
       // Load custom schedule
       state.currentSchedule = CustomSchedule.ensureClone(state.currentSemester, state.currentBatch);
     }
-    
+
     // Wire up floating add button
     const fab = document.getElementById('floating-add-btn');
     if (fab) fab.onclick = () => openAddClassForm(state.currentDayIndex + 1);
-    
+
     initAddClassForm();
     initTeacherSearch();
     renderInitialViews();
     startActiveHighlighting();
 
     // FIX LAYOUT
-   setTimeout(() => {
-        handleResize(); 
-        jumpToDay(state.currentDayIndex);
+    setTimeout(() => {
+      handleResize();
+      jumpToDay(state.currentDayIndex);
     }, 100);
 
     // 1. Run immediately (50ms) so it feels instant
     setTimeout(() => {
-        handleResize(); // This now uses instant jump internally
-        jumpToDay(state.currentDayIndex, false); // Force Instant Jump
-        highlightActiveClass();
+      handleResize(); // This now uses instant jump internally
+      jumpToDay(state.currentDayIndex, false); // Force Instant Jump
+      highlightActiveClass();
     }, 50);
 
     // 2. Safety Check (In case browser was slow to calculate width)
     setTimeout(() => {
-        const trackWidth = dom.timetableContainer ? dom.timetableContainer.offsetWidth : window.innerWidth;
-        // If the math is wrong (we aren't exactly on the day), snap it again instantly
-        if (Math.abs(state.currentTranslate) % trackWidth !== 0 || trackWidth === 0) {
-            handleResize();
-            jumpToDay(state.currentDayIndex, false); // Instant Correction
-        }
+      const trackWidth = dom.timetableContainer ? dom.timetableContainer.offsetWidth : window.innerWidth;
+      // If the math is wrong (we aren't exactly on the day), snap it again instantly
+      if (Math.abs(state.currentTranslate) % trackWidth !== 0 || trackWidth === 0) {
+        handleResize();
+        jumpToDay(state.currentDayIndex, false); // Instant Correction
+      }
     }, 300);
-}
+  }
 
   function cacheDOMElements() {
     dom.daysTrack = document.getElementById('daysTrack');
@@ -404,23 +404,23 @@ const TimetableApp = (function() {
   }
 
   function loadSavedPreferences() {
-    
+
     const savedBatch = Storage.get('selectedBatch', 'A1');
     state.currentBatch = savedBatch;
-    
+
     // Check inside the semester!
     if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[state.currentSemester] && scheduleMap[state.currentSemester][savedBatch]) {
-        state.currentSchedule = scheduleMap[state.currentSemester][savedBatch];
+      state.currentSchedule = scheduleMap[state.currentSemester][savedBatch];
     } else {
-        state.currentSchedule = [];
+      state.currentSchedule = [];
     }
-    
+
     state.currentView = Storage.get('preferredView', 'swipe');
     const savedTheme = Storage.get('theme', 'dark');
     document.body.setAttribute('data-theme', savedTheme);
     const themeBtn = document.getElementById('theme-btn');
-    if(themeBtn) themeBtn.textContent = savedTheme === 'dark' ? '☀' : '🌙';
-    
+    if (themeBtn) themeBtn.textContent = savedTheme === 'dark' ? '☀' : '🌙';
+
     const today = DateTime.getCurrentDay();
     state.currentDayIndex = (today >= 1 && today <= 6) ? today - 1 : 0;
   }
@@ -436,46 +436,46 @@ const TimetableApp = (function() {
       dom.daysTrack.addEventListener('mouseleave', handleMouseLeave);
     }
     if (dom.timetableContainer) {
-        dom.timetableContainer.addEventListener('wheel', handleWheel, { passive: false });
+      dom.timetableContainer.addEventListener('wheel', handleWheel, { passive: false });
     }
     window.addEventListener('resize', debounce(handleResize, 200));
     document.addEventListener('click', handleOutsideClick);
     document.addEventListener('keydown', handleKeyboardNavigation);
-      // Listen for Semester Clicks
+    // Listen for Semester Clicks
     document.querySelectorAll('.sem-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            selectSemester(e.target.getAttribute('data-sem'));
-        });
+      btn.addEventListener('click', (e) => {
+        selectSemester(e.target.getAttribute('data-sem'));
+      });
     });
   }
-  
+
   // ==================== RENDERING ====================
   function renderInitialViews() {
     updateBatchLabels(state.currentBatch);
-    setViewMode(state.currentView); 
+    setViewMode(state.currentView);
     renderMobileView();
     renderDesktopView();
   }
 
   function updateBatchLabels(batchName) {
     if (dom.floatingBatch) dom.floatingBatch.textContent = `BATCH ${batchName}`;
-    
+
     const cornerLabel = document.getElementById('table-corner-label');
     if (cornerLabel) {
-        if (state.isTeacherMode) {
-             cornerLabel.innerHTML = 'Day';
-        } else {
-             const modeIcon = state.isCustomMode ? '✏️' : '📋';
-             const modeClass = state.isCustomMode ? 'custom-active' : '';
-             cornerLabel.innerHTML = `
+      if (state.isTeacherMode) {
+        cornerLabel.innerHTML = 'Day';
+      } else {
+        const modeIcon = state.isCustomMode ? '✏️' : '📋';
+        const modeClass = state.isCustomMode ? 'custom-active' : '';
+        cornerLabel.innerHTML = `
                   <div style="display: inline-block; font-size: 0.9rem; color: var(--accent-color); font-weight: 800; border: 1px solid var(--accent-color); background: rgba(187, 134, 252, 0.1); border-radius: 6px; padding: 1px 8px; margin-bottom: 2px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.5px;">
                       ${batchName}
                   </div>
                   <button class="corner-mode-btn ${modeClass}" onclick="TimetableApp.toggleCustomMode(); event.stopPropagation();">${modeIcon}</button>
               `;
-        }
+      }
     }
-}
+  }
 
   function renderMobileView() {
     if (!dom.daysTrack) return;
@@ -505,7 +505,7 @@ const TimetableApp = (function() {
     } else {
       renderDayClasses(dayView, dayClasses);
     }
-    
+
     // Add "+" button in custom mode
     if (state.isCustomMode) {
       const addBtn = document.createElement('button');
@@ -514,7 +514,7 @@ const TimetableApp = (function() {
       addBtn.onclick = (e) => { e.stopPropagation(); openAddClassForm(day); };
       dayView.appendChild(addBtn);
     }
-    
+
     return dayView;
   }
 
@@ -547,19 +547,19 @@ const TimetableApp = (function() {
     return card;
   }
 
- function createClassCard(cls) {
+  function createClassCard(cls) {
     const displayTeacher = getTeacherDisplayName(cls.teacher);
     const displayTitle = getSubjectFullTitle(cls.title, cls.type) || cls.title;
-    
+
     const card = document.createElement('div');
     card.className = `class-card type-${cls.type}`;
     card.dataset.startHour = cls.start.toString();
     card.dataset.day = cls.day.toString();
-    
+
     // Store the original index for editing
     const clsIndex = state.currentSchedule.indexOf(cls);
     card.dataset.scheduleIndex = clsIndex.toString();
-    
+
     card.innerHTML = `
       <div class="time-slot">${formatTimeRange(cls.start, cls.duration)}</div>
       <div class="subject-name">${displayTitle}</div>
@@ -571,7 +571,7 @@ const TimetableApp = (function() {
         <span class="info-badge">${cls.type.toUpperCase()}</span>
       </div>
     `;
-    
+
     // In Custom Mode, tapping card (not location icon) opens inline edit
     if (state.isCustomMode && clsIndex >= 0) {
       card.addEventListener('click', (e) => {
@@ -581,7 +581,7 @@ const TimetableApp = (function() {
         openInlineEdit(card, cls, clsIndex);
       });
     }
-    
+
     return card;
   }
 
@@ -595,8 +595,8 @@ const TimetableApp = (function() {
     return breakCard;
   }
 
-// --- REPLACE 'renderDesktopView' IN app.js ---
-function renderDesktopView() {
+  // --- REPLACE 'renderDesktopView' IN app.js ---
+  function renderDesktopView() {
     const table = document.querySelector('.weekly-table');
     // Safety check: if table doesn't exist, stop.
     if (!table) return;
@@ -604,11 +604,11 @@ function renderDesktopView() {
     // 1. Grab parts DIRECTLY (Fixes "Nothing in table" issue)
     const thead = table.querySelector('thead');
     let tbody = table.querySelector('tbody');
-    
+
     // If tbody is missing for some reason, create it
     if (!tbody) {
-        tbody = document.createElement('tbody');
-        table.appendChild(tbody);
+      tbody = document.createElement('tbody');
+      table.appendChild(tbody);
     }
 
     const hours = [9, 10, 11, 12, 13, 14, 15, 16];
@@ -622,40 +622,40 @@ function renderDesktopView() {
     corner.id = 'table-corner-label';
     corner.style.zIndex = '65'; // Higher than others
     corner.style.position = 'relative'; // For absolute toggle button
-    
+
     if (state.isTeacherMode) {
-        corner.innerHTML = 'Day';
+      corner.innerHTML = 'Day';
     } else {
-        corner.innerHTML = `
+      corner.innerHTML = `
              <div style="display: inline-block; font-size: 0.9rem; color: var(--accent-color); font-weight: 800; border: 1px solid var(--accent-color); background: rgba(187, 134, 252, 0.1); border-radius: 6px; padding: 1px 8px; margin-bottom: 2px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.5px;">
                   ${state.currentBatch}
               </div>
               
         `;
-        
-        // Inject Table View Mode Toggle Button
-        const toggleBtn = document.createElement('button');
-        toggleBtn.id = 'mode-toggle-table';
-        toggleBtn.className = 'corner-mode-btn ' + (state.isCustomMode ? 'custom-active' : '');
-        toggleBtn.innerHTML = state.isCustomMode ? '✏️' : '📋';
-        
-        
-        
-        toggleBtn.style.fontSize = '0.9rem';
-        toggleBtn.style.padding = '3px 6px';
-        toggleBtn.title = 'Toggle Custom Mode';
-        toggleBtn.onclick = (e) => { e.stopPropagation(); toggleCustomMode(); };
-        
-        corner.appendChild(toggleBtn);
+
+      // Inject Table View Mode Toggle Button
+      const toggleBtn = document.createElement('button');
+      toggleBtn.id = 'mode-toggle-table';
+      toggleBtn.className = 'corner-mode-btn ' + (state.isCustomMode ? 'custom-active' : '');
+      toggleBtn.innerHTML = state.isCustomMode ? '✏️' : '📋';
+
+
+
+      toggleBtn.style.fontSize = '0.9rem';
+      toggleBtn.style.padding = '3px 6px';
+      toggleBtn.title = 'Toggle Custom Mode';
+      toggleBtn.onclick = (e) => { e.stopPropagation(); toggleCustomMode(); };
+
+      corner.appendChild(toggleBtn);
     }
     headerRow.appendChild(corner);
 
     // Time Columns
     hours.forEach(h => {
-        const th = document.createElement('th');
-        const displayH = h % 12 || 12;
-        th.innerHTML = `${displayH}:00`;
-        headerRow.appendChild(th);
+      const th = document.createElement('th');
+      const displayH = h % 12 || 12;
+      th.innerHTML = `${displayH}:00`;
+      headerRow.appendChild(th);
     });
     thead.appendChild(headerRow);
 
@@ -663,61 +663,61 @@ function renderDesktopView() {
     tbody.innerHTML = ''; // Clear previous content
 
     for (let day = 1; day <= 6; day++) {
-        const row = document.createElement('tr');
-        row.setAttribute('data-day', day); 
+      const row = document.createElement('tr');
+      row.setAttribute('data-day', day);
 
-        // 1. Day Name (Sticky Left)
-        const dayLabel = document.createElement('td');
-        dayLabel.textContent = state.dayNames[day].substring(0, 3); 
-        dayLabel.className = 'day-col-header';
-        row.appendChild(dayLabel);
+      // 1. Day Name (Sticky Left)
+      const dayLabel = document.createElement('td');
+      dayLabel.textContent = state.dayNames[day].substring(0, 3);
+      dayLabel.className = 'day-col-header';
+      row.appendChild(dayLabel);
 
-        // 2. Class Slots
-        let skipSlots = 0;
-        let runningCell = null;
-        let runningClasses = [];
-        
-        hours.forEach(hour => {
-            const classesForSlot = state.currentSchedule.filter(s => s.day === day && s.start === hour);
+      // 2. Class Slots
+      let skipSlots = 0;
+      let runningCell = null;
+      let runningClasses = [];
 
-            if (skipSlots > 0) {
-                if (classesForSlot.length > 0) {
-                    runningClasses.push(...classesForSlot);
-                    const newCell = createTableCell(runningClasses);
-                    newCell.colSpan = runningCell.colSpan;
-                    newCell.setAttribute('data-start-hour', runningCell.getAttribute('data-start-hour'));
-                    row.replaceChild(newCell, runningCell);
-                    runningCell = newCell;
-                }
-                skipSlots--;
-                return;
-            }
+      hours.forEach(hour => {
+        const classesForSlot = state.currentSchedule.filter(s => s.day === day && s.start === hour);
 
-            if (classesForSlot.length > 0) {
-                classesForSlot.sort((a, b) => b.duration - a.duration);
-                const cls = classesForSlot[0];
-                runningClasses = [...classesForSlot];
-                
-                const cell = createTableCell(runningClasses);
-                if (cls.duration > 1) {
-                    cell.colSpan = cls.duration;
-                    skipSlots = cls.duration - 1;
-                }
-                cell.setAttribute('data-start-hour', cls.start);
-                row.appendChild(cell);
-                runningCell = cell;
-            } else {
-                const cell = createEmptyTableCell(day, hour);
-                cell.setAttribute('data-start-hour', hour);
-                row.appendChild(cell);
-                runningCell = null;
-                runningClasses = [];
-            }
-        });
+        if (skipSlots > 0) {
+          if (classesForSlot.length > 0) {
+            runningClasses.push(...classesForSlot);
+            const newCell = createTableCell(runningClasses);
+            newCell.colSpan = runningCell.colSpan;
+            newCell.setAttribute('data-start-hour', runningCell.getAttribute('data-start-hour'));
+            row.replaceChild(newCell, runningCell);
+            runningCell = newCell;
+          }
+          skipSlots--;
+          return;
+        }
 
-        tbody.appendChild(row);
+        if (classesForSlot.length > 0) {
+          classesForSlot.sort((a, b) => b.duration - a.duration);
+          const cls = classesForSlot[0];
+          runningClasses = [...classesForSlot];
+
+          const cell = createTableCell(runningClasses);
+          if (cls.duration > 1) {
+            cell.colSpan = cls.duration;
+            skipSlots = cls.duration - 1;
+          }
+          cell.setAttribute('data-start-hour', cls.start);
+          row.appendChild(cell);
+          runningCell = cell;
+        } else {
+          const cell = createEmptyTableCell(day, hour);
+          cell.setAttribute('data-start-hour', hour);
+          row.appendChild(cell);
+          runningCell = null;
+          runningClasses = [];
+        }
+      });
+
+      tbody.appendChild(row);
     }
-    
+
     // Bottom Hint
     const hintRow = document.createElement('tr');
     const hintCell = document.createElement('td');
@@ -726,7 +726,7 @@ function renderDesktopView() {
     hintCell.textContent = "☝️ Tap any class block for details";
     hintRow.appendChild(hintCell);
     tbody.appendChild(hintRow);
-}
+  }
   function createEmptyTableCell(day, hour) {
     const cell = document.createElement('td');
     cell.setAttribute('data-day', day);
@@ -737,7 +737,7 @@ function renderDesktopView() {
     }
     return cell;
   }
-function createTableCell(classes) {
+  function createTableCell(classes) {
     const isArray = Array.isArray(classes);
     const cls = isArray ? classes[0] : classes;
     const extraCount = isArray ? classes.length - 1 : 0;
@@ -756,159 +756,159 @@ function createTableCell(classes) {
     `;
 
     if (extraCount > 0) {
-        innerHtml += `<div style="position: absolute; top: 2px; right: 2px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 4px; color: #fff; font-size: 0.6rem; padding: 1px 3px; font-weight: bold;">+${extraCount}</div>`;
-        cell.style.position = 'relative';
+      innerHtml += `<div style="position: absolute; top: 2px; right: 2px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 4px; color: #fff; font-size: 0.6rem; padding: 1px 3px; font-weight: bold;">+${extraCount}</div>`;
+      cell.style.position = 'relative';
     }
     cell.innerHTML = innerHtml;
     return cell; // <--- This is CRITICAL
-}
+  }
   function initializeBatchDropdown() {
-      const availableSems = typeof scheduleMap !== 'undefined' ? Object.keys(scheduleMap) : ['3'];
-      if (!availableSems.includes(state.currentSemester)) {
-          state.currentSemester = availableSems[0] || '3';
-      }
-      
-      const semText = document.getElementById('semester-text');
-      if (semText) semText.textContent = `Semester ${state.currentSemester}`;
-      
-      if (scheduleMap && scheduleMap[state.currentSemester] && !scheduleMap[state.currentSemester][state.currentBatch]) {
-          state.currentBatch = Object.keys(scheduleMap[state.currentSemester])[0] || 'A1';
-      }
-      
-      const current = state.currentBatch;
-      const bSeries = (typeof batchSeries !== 'undefined' && batchSeries[state.currentSemester] && batchSeries[state.currentSemester][current]) ? batchSeries[state.currentSemester][current] : (/^[FEH]/.test(current) ? "128" : "62");
-      const is128 = bSeries === "128"; 
-      
-      if (is128) {
-          document.body.classList.add('series-128');
-      } else {
-          document.body.classList.remove('series-128');
-      }
-
-      const seriesBtn = document.getElementById('series-text');
-      if (seriesBtn) seriesBtn.textContent = is128 ? "128 Series" : "62 Series";
-      
-      updateTriggerText();
-      populateBatchGrid(is128 ? "128" : "62");
-    }
-  
-    function toggleSemester() {
-      const semText = document.getElementById('semester-text');
-      if (!semText) return;
-      if (typeof scheduleMap === 'undefined') return;
-      
-      const availableSems = Object.keys(scheduleMap).sort();
-      if (availableSems.length <= 1) return;
-      
-      let currentIndex = availableSems.indexOf(state.currentSemester);
-      let nextIndex = (currentIndex + 1) % availableSems.length;
-      let nextSem = availableSems[nextIndex];
-      
-      state.currentSemester = nextSem;
-      Storage.set('selectedSemester', nextSem);
-      semText.textContent = `Semester ${nextSem}`;
-      
-      const semBatches = Object.keys(scheduleMap[nextSem] || {});
-      if (semBatches.length > 0) {
-          selectBatch(semBatches[0]);
-      } else {
-          populateBatchGrid();
-      }
+    const availableSems = typeof scheduleMap !== 'undefined' ? Object.keys(scheduleMap) : ['3'];
+    if (!availableSems.includes(state.currentSemester)) {
+      state.currentSemester = availableSems[0] || '3';
     }
 
-    function toggleSeries() {
-      const seriesText = document.getElementById('series-text');
-      if (!seriesText) return;
+    const semText = document.getElementById('semester-text');
+    if (semText) semText.textContent = `Semester ${state.currentSemester}`;
 
-      const isCurrently62 = seriesText.textContent.includes("62");
-      const newType = isCurrently62 ? "128" : "62";
-
-      if (newType === "128") {
-          document.body.classList.add('series-128');
-      } else {
-          document.body.classList.remove('series-128');
-      }
-
-      seriesText.textContent = `${newType} Series`;
-      populateBatchGrid(newType);
+    if (scheduleMap && scheduleMap[state.currentSemester] && !scheduleMap[state.currentSemester][state.currentBatch]) {
+      state.currentBatch = Object.keys(scheduleMap[state.currentSemester])[0] || 'A1';
     }
+
+    const current = state.currentBatch;
+    const bSeries = (typeof batchSeries !== 'undefined' && batchSeries[state.currentSemester] && batchSeries[state.currentSemester][current]) ? batchSeries[state.currentSemester][current] : (/^[FEH]/.test(current) ? "128" : "62");
+    const is128 = bSeries === "128";
+
+    if (is128) {
+      document.body.classList.add('series-128');
+    } else {
+      document.body.classList.remove('series-128');
+    }
+
+    const seriesBtn = document.getElementById('series-text');
+    if (seriesBtn) seriesBtn.textContent = is128 ? "128 Series" : "62 Series";
+
+    updateTriggerText();
+    populateBatchGrid(is128 ? "128" : "62");
+  }
+
+  function toggleSemester() {
+    const semText = document.getElementById('semester-text');
+    if (!semText) return;
+    if (typeof scheduleMap === 'undefined') return;
+
+    const availableSems = Object.keys(scheduleMap).sort();
+    if (availableSems.length <= 1) return;
+
+    let currentIndex = availableSems.indexOf(state.currentSemester);
+    let nextIndex = (currentIndex + 1) % availableSems.length;
+    let nextSem = availableSems[nextIndex];
+
+    state.currentSemester = nextSem;
+    Storage.set('selectedSemester', nextSem);
+    semText.textContent = `Semester ${nextSem}`;
+
+    const semBatches = Object.keys(scheduleMap[nextSem] || {});
+    if (semBatches.length > 0) {
+      selectBatch(semBatches[0]);
+    } else {
+      populateBatchGrid();
+    }
+  }
+
+  function toggleSeries() {
+    const seriesText = document.getElementById('series-text');
+    if (!seriesText) return;
+
+    const isCurrently62 = seriesText.textContent.includes("62");
+    const newType = isCurrently62 ? "128" : "62";
+
+    if (newType === "128") {
+      document.body.classList.add('series-128');
+    } else {
+      document.body.classList.remove('series-128');
+    }
+
+    seriesText.textContent = `${newType} Series`;
+    populateBatchGrid(newType);
+  }
 
   function toggleBatchGrid(forceState) {
     const grid = document.getElementById('floating-batch-grid');
     if (!grid) return;
     if (typeof forceState === 'boolean') {
-        forceState ? grid.classList.remove('hidden') : grid.classList.add('hidden');
+      forceState ? grid.classList.remove('hidden') : grid.classList.add('hidden');
     } else {
-        grid.classList.toggle('hidden');
+      grid.classList.toggle('hidden');
     }
   }
-function populateBatches() {
+  function populateBatches() {
     const batchSelect = document.getElementById("batch-select");
     batchSelect.innerHTML = "";
-    
+
     const is128 = toggleCheckbox.checked;
-    
+
     let hasData = false;
-    
+
     // Read from the new nested object!
     const semData = scheduleMap || {};
 
     Object.keys(semData).sort().forEach(batch => {
-        const bSeries = (typeof batchSeries !== 'undefined' && batchSeries[state.currentSemester] && batchSeries[state.currentSemester][batch]) ? batchSeries[state.currentSemester][batch] : (/^[FEH]/.test(batch) ? "128" : "62");
-        if ((is128 && bSeries === "128") || (!is128 && bSeries === "62")) {
-            const option = document.createElement("option");
-            option.value = batch;
-            option.textContent = `Batch ${batch}`;
-            batchSelect.appendChild(option);
-            hasData = true;
-        }
+      const bSeries = (typeof batchSeries !== 'undefined' && batchSeries[state.currentSemester] && batchSeries[state.currentSemester][batch]) ? batchSeries[state.currentSemester][batch] : (/^[FEH]/.test(batch) ? "128" : "62");
+      if ((is128 && bSeries === "128") || (!is128 && bSeries === "62")) {
+        const option = document.createElement("option");
+        option.value = batch;
+        option.textContent = `Batch ${batch}`;
+        batchSelect.appendChild(option);
+        hasData = true;
+      }
     });
-    
+
     if (!hasData) {
-        batchSelect.innerHTML = '<option value="">NO DATA</option>';
+      batchSelect.innerHTML = '<option value="">NO DATA</option>';
     }
 
-}
+  }
   function populateBatchGrid(forcedType) {
-      const grid = document.getElementById('floating-batch-grid');
-      const seriesText = document.getElementById('series-text');
-      const type = forcedType || (seriesText?.textContent.includes("128") ? "128" : "62");
-      if (!grid || typeof scheduleMap === 'undefined') return;
-      grid.innerHTML = '';
-  
-      const semData = scheduleMap[state.currentSemester] || {};
-      const allBatches = Object.keys(semData);
-      
-      const filteredBatches = allBatches.filter(b => {
-          const bSeries = (typeof batchSeries !== 'undefined' && batchSeries[state.currentSemester] && batchSeries[state.currentSemester][b]) ? batchSeries[state.currentSemester][b] : "62";
-          return type === bSeries;
-      }).sort((a, b) => 
-          a.localeCompare(b, undefined, {numeric: true, sensitivity: 'base'})
-      );
-      
-      filteredBatches.forEach(bName => {
-          const div = document.createElement('div');
-          div.className = `batch-grid-item ${bName === state.currentBatch ? 'active' : ''}`;
-          div.textContent = bName;
-          div.onclick = (e) => {
-              e.stopPropagation();
-              selectBatch(bName);
-              toggleBatchGrid(false);
-          };
-          grid.appendChild(div);
-      });
-      
-      if(filteredBatches.length === 0) {
-          grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; opacity:0.5; padding:10px;">No Data</div>';
-      }
-      updateGridSelection();
+    const grid = document.getElementById('floating-batch-grid');
+    const seriesText = document.getElementById('series-text');
+    const type = forcedType || (seriesText?.textContent.includes("128") ? "128" : "62");
+    if (!grid || typeof scheduleMap === 'undefined') return;
+    grid.innerHTML = '';
+
+    const semData = scheduleMap[state.currentSemester] || {};
+    const allBatches = Object.keys(semData);
+
+    const filteredBatches = allBatches.filter(b => {
+      const bSeries = (typeof batchSeries !== 'undefined' && batchSeries[state.currentSemester] && batchSeries[state.currentSemester][b]) ? batchSeries[state.currentSemester][b] : "62";
+      return type === bSeries;
+    }).sort((a, b) =>
+      a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' })
+    );
+
+    filteredBatches.forEach(bName => {
+      const div = document.createElement('div');
+      div.className = `batch-grid-item ${bName === state.currentBatch ? 'active' : ''}`;
+      div.textContent = bName;
+      div.onclick = (e) => {
+        e.stopPropagation();
+        selectBatch(bName);
+        toggleBatchGrid(false);
+      };
+      grid.appendChild(div);
+    });
+
+    if (filteredBatches.length === 0) {
+      grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; opacity:0.5; padding:10px;">No Data</div>';
     }
+    updateGridSelection();
+  }
 
   function updateTriggerText() {
-      const btnText = document.getElementById('trigger-text');
-      if(btnText) btnText.textContent = state.currentBatch;
+    const btnText = document.getElementById('trigger-text');
+    if (btnText) btnText.textContent = state.currentBatch;
   }
-  
+
   function updateGridSelection() {
     document.querySelectorAll('.batch-btn').forEach(btn => {
       btn.classList.remove('active-batch');
@@ -917,54 +917,54 @@ function populateBatches() {
       }
     });
   }
-  
+
   function selectBatch(batchName) {
-      if (!batchName) return;
-      
-      state.currentBatch = batchName;
-      Storage.set('selectedBatch', batchName);
-      
-      const bSeries = (typeof batchSeries !== 'undefined' && batchSeries[state.currentSemester] && batchSeries[state.currentSemester][batchName]) ? batchSeries[state.currentSemester][batchName] : (/^[FEH]/.test(batchName) ? "128" : "62");
-      const is128 = bSeries === "128";
-      if (is128) {
-          document.body.classList.add('series-128');
-      } else {
-          document.body.classList.remove('series-128');
-      }
-      const seriesBtn = document.getElementById('series-text');
-      if (seriesBtn) seriesBtn.textContent = is128 ? "128 Series" : "62 Series";
-      
-      if (state.isCustomMode) {
-          state.currentSchedule = CustomSchedule.ensureClone(state.currentSemester, batchName);
-      } else if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[state.currentSemester] && scheduleMap[state.currentSemester][batchName]) {
-          state.currentSchedule = scheduleMap[state.currentSemester][batchName];
-      } else {
-          state.currentSchedule = [];
-      }
-      
-      updateTriggerText();
-      populateBatchGrid(is128 ? "128" : "62");
-      BatchScroller.init(); 
-      renderInitialViews();
-      
-      updateGridSelection();
-      renderMobileView();
-      renderDesktopView();
-      
-      setTimeout(() => {
-          highlightActiveClass();
-          jumpToDay(state.currentDayIndex);
-      }, 50);
+    if (!batchName) return;
+
+    state.currentBatch = batchName;
+    Storage.set('selectedBatch', batchName);
+
+    const bSeries = (typeof batchSeries !== 'undefined' && batchSeries[state.currentSemester] && batchSeries[state.currentSemester][batchName]) ? batchSeries[state.currentSemester][batchName] : (/^[FEH]/.test(batchName) ? "128" : "62");
+    const is128 = bSeries === "128";
+    if (is128) {
+      document.body.classList.add('series-128');
+    } else {
+      document.body.classList.remove('series-128');
+    }
+    const seriesBtn = document.getElementById('series-text');
+    if (seriesBtn) seriesBtn.textContent = is128 ? "128 Series" : "62 Series";
+
+    if (state.isCustomMode) {
+      state.currentSchedule = CustomSchedule.ensureClone(state.currentSemester, batchName);
+    } else if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[state.currentSemester] && scheduleMap[state.currentSemester][batchName]) {
+      state.currentSchedule = scheduleMap[state.currentSemester][batchName];
+    } else {
+      state.currentSchedule = [];
+    }
+
+    updateTriggerText();
+    populateBatchGrid(is128 ? "128" : "62");
+    BatchScroller.init();
+    renderInitialViews();
+
+    updateGridSelection();
+    renderMobileView();
+    renderDesktopView();
+
+    setTimeout(() => {
+      highlightActiveClass();
+      jumpToDay(state.currentDayIndex);
+    }, 50);
   }
 
-// ==================== VIEW MODE ====================
-function setViewMode(mode) {
+  // ==================== VIEW MODE ====================
+  function setViewMode(mode) {
     state.currentView = mode;
     Storage.set('preferredView', mode);
-    
+
     document.querySelectorAll('#btn-swipe, #btn-table').forEach(btn => btn.classList.remove('active'));
     const activeBtn = document.getElementById(`btn-${mode}`);
-    if(activeBtn) activeBtn.classList.add('active');
+    if (activeBtn) activeBtn.classList.add('active');
 
     const fab = document.getElementById('floating-add-btn');
     const camBtn = document.getElementById('camera-btn');
@@ -972,43 +972,43 @@ function setViewMode(mode) {
     if (mode === 'swipe') {
       dom.timetableContainer.classList.remove('hidden-view');
       dom.compactContainer.classList.add('hidden-view');
-      
+
       if (fab) fab.style.display = state.isCustomMode ? 'flex' : 'none';
       if (camBtn) camBtn.style.display = 'none';
-      
+
       // Instant snap for Swipe View
       setTimeout(() => {
-          handleResize();
-          jumpToDay(state.currentDayIndex, false); 
+        handleResize();
+        jumpToDay(state.currentDayIndex, false);
       }, 10);
-      
+
       if (!state.isTeacherMode) {
-          const group3 = document.querySelector('.filter-group:nth-child(3)');
-          if(group3) {
-             group3.style.visibility = 'visible'; 
-             group3.style.opacity = '1'; 
-             group3.style.height = 'auto'; 
-          }
+        const group3 = document.querySelector('.filter-group:nth-child(3)');
+        if (group3) {
+          group3.style.visibility = 'visible';
+          group3.style.opacity = '1';
+          group3.style.height = 'auto';
+        }
       }
     } else {
       dom.timetableContainer.classList.add('hidden-view');
       dom.compactContainer.classList.remove('hidden-view');
-      
+
       if (fab) fab.style.display = 'none';
       if (camBtn) camBtn.style.display = 'flex';
 
       if (!state.isTeacherMode) {
-          const group3 = document.querySelector('.filter-group:nth-child(3)');
-          if(group3) {
-             group3.style.visibility = 'hidden'; 
-             group3.style.opacity = '0'; 
-             group3.style.height = '0';
-          }
+        const group3 = document.querySelector('.filter-group:nth-child(3)');
+        if (group3) {
+          group3.style.visibility = 'hidden';
+          group3.style.opacity = '0';
+          group3.style.height = '0';
+        }
       }
     }
-    
+
     if (dom.filterPanel && dom.filterPanel.classList.contains('expanded')) {
-       toggleFilterPanel();
+      toggleFilterPanel();
     }
   }
 
@@ -1016,7 +1016,7 @@ function setViewMode(mode) {
 
   // ==================== NAVIGATION ====================
   // REPLACE 'jumpToDay' in app.js
-function jumpToDay(index, animate = true) { // <--- Added 'animate' parameter (Default: true)
+  function jumpToDay(index, animate = true) { // <--- Added 'animate' parameter (Default: true)
     if (index < 0 || index >= state.totalDays) return;
     state.currentDayIndex = index;
     const trackWidth = dom.timetableContainer ? dom.timetableContainer.offsetWidth : window.innerWidth;
@@ -1024,99 +1024,99 @@ function jumpToDay(index, animate = true) { // <--- Added 'animate' parameter (D
     state.prevTranslate = state.currentTranslate;
 
     if (dom.daysTrack) {
-        if (animate) {
-            // Normal Swipe Animation
-            dom.daysTrack.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.8, 0.5, 1)';
-        } else {
-            // INSTANT JUMP (No Animation)
-            dom.daysTrack.style.transition = 'none';
-        }
-        dom.daysTrack.style.transform = `translateX(${state.currentTranslate}px)`;
+      if (animate) {
+        // Normal Swipe Animation
+        dom.daysTrack.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.8, 0.5, 1)';
+      } else {
+        // INSTANT JUMP (No Animation)
+        dom.daysTrack.style.transition = 'none';
+      }
+      dom.daysTrack.style.transform = `translateX(${state.currentTranslate}px)`;
     }
-    
+
     // Update Active Button State
     document.querySelectorAll('.day-btn').forEach(btn => {
       btn.classList.toggle('active-day', parseInt(btn.dataset.day) === index + 1);
     });
-}
+  }
 
   function manualJumpToDay(dayNumber) {
     jumpToDay(dayNumber - 1);
   }
 
-// REPLACE 'highlightActiveClass' in app.js
-function highlightActiveClass() {
+  // REPLACE 'highlightActiveClass' in app.js
+  function highlightActiveClass() {
     // 1. Cleanup old highlights
     document.querySelectorAll('.active-now').forEach(el => el.classList.remove('active-now'));
     document.querySelectorAll('.active-day-row').forEach(el => el.classList.remove('active-day-row'));
 
     const now = new Date();
-    const currentDay = now.getDay(); 
+    const currentDay = now.getDay();
     let currentHour = now.getHours();
     const currentMinute = now.getMinutes();
-    
+
     // Logic: If it is past X:50, highlight the NEXT hour class
     if (currentMinute >= 50) {
-        currentHour += 1;
+      currentHour += 1;
     }
 
     if (currentDay >= 1 && currentDay <= 6) {
-        // --- A. TABLE VIEW: Highlight Row ---
-        const dayRow = document.querySelector(`.weekly-table tr[data-day="${currentDay}"]`);
+      // --- A. TABLE VIEW: Highlight Row ---
+      const dayRow = document.querySelector(`.weekly-table tr[data-day="${currentDay}"]`);
+      if (dayRow) {
+        dayRow.classList.add('active-day-row');
+      }
+
+      // --- B. FIND THE ACTIVE CLASS DATA ---
+      const activeClass = state.currentSchedule.find(cls =>
+        cls.day === currentDay &&
+        currentHour >= cls.start &&
+        currentHour < (cls.start + cls.duration)
+      );
+
+      if (activeClass) {
+        // 1. Handle Swipe Card View (Unchanged)
+        const dayView = document.querySelector(`#day-${currentDay}`);
+        if (dayView) {
+          const card = dayView.querySelector(`.class-card[data-start-hour="${activeClass.start}"]`);
+          if (card) {
+            card.classList.add('active-now');
+            if (!state.isDragging) {
+              if (state.currentDayIndex !== (currentDay - 1)) {
+                jumpToDay(currentDay - 1, false); // Instant jump
+              }
+              // Scroll card into view
+              setTimeout(() => {
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }, 100);
+            }
+          }
+        }
+
+        // 2. Handle Table View Cell (UPDATED WITH NAVIGATION)
         if (dayRow) {
-            dayRow.classList.add('active-day-row');
-        }
+          const cell = dayRow.querySelector(`td[data-start-hour="${activeClass.start}"]`);
+          if (cell) {
+            cell.classList.add('active-now');
 
-        // --- B. FIND THE ACTIVE CLASS DATA ---
-        const activeClass = state.currentSchedule.find(cls => 
-            cls.day === currentDay && 
-            currentHour >= cls.start && 
-            currentHour < (cls.start + cls.duration)
-        );
+            // === NEW: Horizontal Auto-Scroll ===
+            const container = document.getElementById('compact-container');
+            // Only scroll if Table View is currently visible
+            if (container && !container.classList.contains('hidden-view')) {
+              // Calculate center position: Cell Position - Half Screen Width + Half Cell Width
+              const scrollTarget = cell.offsetLeft - (container.clientWidth / 2) + (cell.clientWidth / 2);
 
-        if (activeClass) {
-            // 1. Handle Swipe Card View (Unchanged)
-            const dayView = document.querySelector(`#day-${currentDay}`);
-            if (dayView) {
-                const card = dayView.querySelector(`.class-card[data-start-hour="${activeClass.start}"]`);
-                if (card) {
-                    card.classList.add('active-now');
-                    if (!state.isDragging) {
-                        if (state.currentDayIndex !== (currentDay - 1)) {
-                            jumpToDay(currentDay - 1, false); // Instant jump
-                        }
-                        // Scroll card into view
-                        setTimeout(() => {
-                            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        }, 100);
-                    }
-                }
+              container.scrollTo({
+                left: scrollTarget,
+                behavior: 'smooth' // Smooth scroll to the right time column
+              });
             }
-            
-            // 2. Handle Table View Cell (UPDATED WITH NAVIGATION)
-            if (dayRow) {
-                 const cell = dayRow.querySelector(`td[data-start-hour="${activeClass.start}"]`);
-                 if (cell) {
-                      cell.classList.add('active-now');
-
-                      // === NEW: Horizontal Auto-Scroll ===
-                      const container = document.getElementById('compact-container');
-                      // Only scroll if Table View is currently visible
-                      if (container && !container.classList.contains('hidden-view')) {
-                           // Calculate center position: Cell Position - Half Screen Width + Half Cell Width
-                           const scrollTarget = cell.offsetLeft - (container.clientWidth / 2) + (cell.clientWidth / 2);
-                           
-                           container.scrollTo({
-                               left: scrollTarget,
-                               behavior: 'smooth' // Smooth scroll to the right time column
-                           });
-                      }
-                 }
-            }
+          }
         }
+      }
     }
-}
-    
+  }
+
   function startActiveHighlighting() {
     highlightActiveClass();
     state.activeHighlightInterval = setInterval(highlightActiveClass, 60000);
@@ -1141,57 +1141,57 @@ function highlightActiveClass() {
     const deltaX = Math.abs(touch.clientX - state.startX);
     const deltaY = Math.abs(touch.clientY - state.startY);
     if (state.isVerticalScrollPossible && deltaY > deltaX) {
-        state.isVerticalScroll = true;
-        state.isDragging = false;
-        if (dom.timetableContainer) dom.timetableContainer.style.cursor = 'default';
-        return;
+      state.isVerticalScroll = true;
+      state.isDragging = false;
+      if (dom.timetableContainer) dom.timetableContainer.style.cursor = 'default';
+      return;
     }
     if (deltaX > 5) {
-        e.preventDefault();
-        moveDrag(touch.clientX);
+      e.preventDefault();
+      moveDrag(touch.clientX);
     }
   }
 
   function handleTouchEnd() {
     if (!state.isVerticalScroll) endDrag();
     else {
-        state.isDragging = false;
-        state.isVerticalScroll = false;
-        if(dom.timetableContainer) dom.timetableContainer.style.cursor = 'grab';
+      state.isDragging = false;
+      state.isVerticalScroll = false;
+      if (dom.timetableContainer) dom.timetableContainer.style.cursor = 'grab';
     }
   }
 
-  function handleMouseStart(e) { 
-      // --- FIX: Allow Middle-Click Auto-Scroll (Button 1) ---
-      if (e.button === 1) return; 
+  function handleMouseStart(e) {
+    // --- FIX: Allow Middle-Click Auto-Scroll (Button 1) ---
+    if (e.button === 1) return;
 
-      if (state.currentView !== 'swipe') return;
-      e.preventDefault();
-      startDrag(e.clientX, e.clientY); 
+    if (state.currentView !== 'swipe') return;
+    e.preventDefault();
+    startDrag(e.clientX, e.clientY);
   }
-  function handleMouseMove(e) { if(state.isDragging) { e.preventDefault(); moveDrag(e.clientX); } }
+  function handleMouseMove(e) { if (state.isDragging) { e.preventDefault(); moveDrag(e.clientX); } }
   function handleMouseEnd() { endDrag(); }
-  function handleMouseLeave() { if(state.isDragging) endDrag(); }
+  function handleMouseLeave() { if (state.isDragging) endDrag(); }
 
   function startDrag(x, y) {
     state.isDragging = true;
     state.startX = x;
     state.startY = y;
-    if(dom.daysTrack) dom.daysTrack.style.transition = 'none';
+    if (dom.daysTrack) dom.daysTrack.style.transition = 'none';
   }
 
   function moveDrag(x) {
     state.currentTranslate = state.prevTranslate + (x - state.startX);
-    if(dom.daysTrack) dom.daysTrack.style.transform = `translateX(${state.currentTranslate}px)`;
+    if (dom.daysTrack) dom.daysTrack.style.transform = `translateX(${state.currentTranslate}px)`;
   }
 
   function endDrag() {
-    if(!state.isDragging) return;
+    if (!state.isDragging) return;
     state.isDragging = false;
     const movedBy = state.currentTranslate - state.prevTranslate;
     const containerWidth = dom.timetableContainer ? dom.timetableContainer.offsetWidth : window.innerWidth;
     const threshold = containerWidth / 4;
-    
+
     if (movedBy < -threshold) {
       state.currentDayIndex = (state.currentDayIndex < state.totalDays - 1) ? state.currentDayIndex + 1 : 0;
     } else if (movedBy > threshold) {
@@ -1202,14 +1202,14 @@ function highlightActiveClass() {
 
   // ==================== MODAL LOGIC ====================
 
-function openRoomModal(code, location) {
+  function openRoomModal(code, location) {
     const modal = document.getElementById('details-modal');
-    if(!modal) return;
+    if (!modal) return;
 
     // 1. Set Data
     document.getElementById('modal-subject').textContent = code; // e.g. "TS12"
     document.getElementById('modal-time').textContent = "Room Detail"; // Subtitle
-    
+
     // 2. Hide Irrelevant Fields (Type, Teacher, Batch)
     const typeRow = document.getElementById('modal-type') ? document.getElementById('modal-type').parentElement : null;
     const teacherRow = document.getElementById('modal-teacher') ? document.getElementById('modal-teacher').parentElement : null;
@@ -1221,29 +1221,29 @@ function openRoomModal(code, location) {
 
     // 3. Show Venue
     const roomRow = document.getElementById('modal-venue-row');
-    if(roomRow) roomRow.style.display = 'flex';
+    if (roomRow) roomRow.style.display = 'flex';
     document.getElementById('modal-room').textContent = location;
 
     // 4. Show Modal
     modal.classList.remove('hidden-modal');
     modal.setAttribute('aria-hidden', 'false');
-    
+
     // 5. Close Handlers
     const closeBtn = document.getElementById('modal-close-btn');
     closeBtn.onclick = () => {
-        closeModal();
-        resetModalFields(); // Reset for next time
+      closeModal();
+      resetModalFields(); // Reset for next time
     };
     modal.onclick = (e) => {
-        if (e.target === modal) {
-            closeModal();
-            resetModalFields();
-        }
+      if (e.target === modal) {
+        closeModal();
+        resetModalFields();
+      }
     };
-}
+  }
 
-// --- HELPER: Reset Hidden Fields ---
-function resetModalFields() {
+  // --- HELPER: Reset Hidden Fields ---
+  function resetModalFields() {
     const typeRow = document.getElementById('modal-type') ? document.getElementById('modal-type').parentElement : null;
     const teacherRow = document.getElementById('modal-teacher') ? document.getElementById('modal-teacher').parentElement : null;
     const batchRow = document.getElementById('modal-batch') ? document.getElementById('modal-batch').parentElement : null;
@@ -1251,12 +1251,12 @@ function resetModalFields() {
     if (typeRow) typeRow.style.display = 'flex';
     if (teacherRow) teacherRow.style.display = 'flex';
     if (batchRow) batchRow.style.display = 'flex';
-}
-    
+  }
+
   function openDetailsModal(classes) {
     const modal = document.getElementById('details-modal');
-    if(!modal) return;
-    
+    if (!modal) return;
+
     resetModalFields();
 
     const isArray = Array.isArray(classes);
@@ -1269,24 +1269,24 @@ function resetModalFields() {
     let roomHtml = '';
 
     clsList.forEach((cls, index) => {
-        const rawTitle = cls.title;
-        const isFormatted = rawTitle.includes('('); 
-        const displayTitle = isFormatted ? rawTitle : (getSubjectFullTitle(rawTitle, cls.type) || rawTitle);
-        const displayTeacher = getTeacherDisplayName(cls.teacher);
+      const rawTitle = cls.title;
+      const isFormatted = rawTitle.includes('(');
+      const displayTitle = isFormatted ? rawTitle : (getSubjectFullTitle(rawTitle, cls.type) || rawTitle);
+      const displayTeacher = getTeacherDisplayName(cls.teacher);
 
-        const separator = index > 0 ? '<div style="height: 1px; background: rgba(255,255,255,0.1); margin: 6px 0;"></div>' : '';
+      const separator = index > 0 ? '<div style="height: 1px; background: rgba(255,255,255,0.1); margin: 6px 0;"></div>' : '';
 
-        subjectHtml += `${separator}<div>${displayTitle}</div>`;
-        typeHtml += `${separator}<div>${cls.type.charAt(0).toUpperCase() + cls.type.slice(1)}</div>`;
-        teacherHtml += `${separator}<div>${displayTeacher}</div>`;
-        roomHtml += `${separator}<div>${cls.code} <span class="modal-glow-btn" onclick="window.showRoomPopup(event, '${cls.code}')">i</span></div>`;
+      subjectHtml += `${separator}<div>${displayTitle}</div>`;
+      typeHtml += `${separator}<div>${cls.type.charAt(0).toUpperCase() + cls.type.slice(1)}</div>`;
+      teacherHtml += `${separator}<div>${displayTeacher}</div>`;
+      roomHtml += `${separator}<div>${cls.code} <span class="modal-glow-btn" onclick="window.showRoomPopup(event, '${cls.code}')">i</span></div>`;
     });
 
     const displayTime = formatTimeRange(primaryCls.start, primaryCls.duration);
-    
+
     let displayBatch = state.currentBatch;
     if (primaryCls.batchNames && Array.isArray(primaryCls.batchNames)) {
-        displayBatch = primaryCls.batchNames.join(', ');
+      displayBatch = primaryCls.batchNames.join(', ');
     }
 
     document.getElementById('modal-subject').innerHTML = subjectHtml;
@@ -1294,20 +1294,20 @@ function resetModalFields() {
     document.getElementById('modal-type').innerHTML = typeHtml;
     document.getElementById('modal-teacher').innerHTML = teacherHtml;
     document.getElementById('modal-batch').textContent = displayBatch;
-    
+
     const roomEl = document.getElementById('modal-room');
     roomEl.innerHTML = roomHtml;
-    
+
     // Add edit and add buttons in Custom Mode
     const modalContent = modal.querySelector('.modal-content');
     let existingEditBtn = modalContent.querySelector('.modal-edit-btn');
     if (existingEditBtn) existingEditBtn.remove();
     let existingAddBtn = modalContent.querySelector('.modal-add-btn');
     if (existingAddBtn) existingAddBtn.remove();
-    
+
     if (state.isCustomMode && clsList.length === 1) {
       const clsIndex = state.currentSchedule.indexOf(primaryCls);
-      
+
       // Pencil Edit Button
       if (clsIndex >= 0) {
         const editBtn = document.createElement('button');
@@ -1321,7 +1321,7 @@ function resetModalFields() {
         };
         modalContent.appendChild(editBtn);
       }
-      
+
       // Top Right Add (+) Button
       const addBtn = document.createElement('button');
       addBtn.className = 'modal-add-btn';
@@ -1334,34 +1334,34 @@ function resetModalFields() {
       };
       modalContent.appendChild(addBtn);
     }
-    
+
     modal.classList.remove('hidden-modal');
     modal.setAttribute('aria-hidden', 'false');
     const closeBtn = document.getElementById('modal-close-btn');
     closeBtn.onclick = closeModal;
     modal.onclick = (e) => {
-        if (e.target === modal) closeModal();
+      if (e.target === modal) closeModal();
     };
-}
-
-  function closeModal() {
-      const modal = document.getElementById('details-modal');
-      if(modal) {
-          modal.classList.add('hidden-modal');
-          modal.setAttribute('aria-hidden', 'true');
-      }
   }
 
-// --- NEW HELPER: The "Glass Wall" Manager ---
-function manageBackdrop(shouldShow) {
+  function closeModal() {
+    const modal = document.getElementById('details-modal');
+    if (modal) {
+      modal.classList.add('hidden-modal');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  // --- NEW HELPER: The "Glass Wall" Manager ---
+  function manageBackdrop(shouldShow) {
     let backdrop = document.getElementById('filter-backdrop');
-    
+
     if (shouldShow) {
-        if (!backdrop) {
-            backdrop = document.createElement('div');
-            backdrop.id = 'filter-backdrop';
-            // z-index 1050: Above Table, Below Header
-            backdrop.style.cssText = `
+      if (!backdrop) {
+        backdrop = document.createElement('div');
+        backdrop.id = 'filter-backdrop';
+        // z-index 1050: Above Table, Below Header
+        backdrop.style.cssText = `
                 position: fixed; 
                 top: 0; 
                 left: 0; 
@@ -1372,46 +1372,46 @@ function manageBackdrop(shouldShow) {
                 touch-action: none;
                 cursor: default;
             `;
-            
-            // The "Closer" Function
-            const closeAndBlock = (e) => {
-                e.preventDefault();
-                e.stopPropagation(); // <--- CRITICAL: Stops click from hitting table
-                
-                if (state.isTeacherMode) {
-                    toggleTeacherMode();
-                } else {
-                    toggleFilterPanel();
-                }
-            };
-            
-            backdrop.addEventListener('click', closeAndBlock);
-            backdrop.addEventListener('touchstart', closeAndBlock, { passive: false });
-            backdrop.addEventListener('wheel', (e) => { e.preventDefault(); e.stopPropagation(); }, { passive: false });
-            document.body.appendChild(backdrop);
-        }
+
+        // The "Closer" Function
+        const closeAndBlock = (e) => {
+          e.preventDefault();
+          e.stopPropagation(); // <--- CRITICAL: Stops click from hitting table
+
+          if (state.isTeacherMode) {
+            toggleTeacherMode();
+          } else {
+            toggleFilterPanel();
+          }
+        };
+
+        backdrop.addEventListener('click', closeAndBlock);
+        backdrop.addEventListener('touchstart', closeAndBlock, { passive: false });
+        backdrop.addEventListener('wheel', (e) => { e.preventDefault(); e.stopPropagation(); }, { passive: false });
+        document.body.appendChild(backdrop);
+      }
     } else {
-        if (backdrop) backdrop.remove();
+      if (backdrop) backdrop.remove();
     }
-}
-    
+  }
+
   // ==================== UI CONTROLS ====================
- // REPLACE 'toggleFilterPanel' in app.js
-function toggleFilterPanel() {
+  // REPLACE 'toggleFilterPanel' in app.js
+  function toggleFilterPanel() {
     if (state.isTeacherMode) {
-        toggleTeacherMode();
-        return; 
+      toggleTeacherMode();
+      return;
     }
 
     const isExpanded = dom.filterPanel.classList.toggle('expanded');
-    
+
     if (isExpanded) {
-        const computedStyle = window.getComputedStyle(dom.filterPanel);
-        if (computedStyle.position === 'static') dom.filterPanel.style.position = 'relative';
-        dom.filterPanel.style.zIndex = '1060'; 
+      const computedStyle = window.getComputedStyle(dom.filterPanel);
+      if (computedStyle.position === 'static') dom.filterPanel.style.position = 'relative';
+      dom.filterPanel.style.zIndex = '1060';
     } else {
-        dom.filterPanel.style.zIndex = ''; 
-        dom.filterPanel.style.position = '';
+      dom.filterPanel.style.zIndex = '';
+      dom.filterPanel.style.position = '';
     }
 
     if (dom.filterArrow) {
@@ -1419,10 +1419,10 @@ function toggleFilterPanel() {
     }
 
     toggleBatchGrid(false);
-    
+
     // THE FIX: Turn on the glass wall
     manageBackdrop(isExpanded);
-}
+  }
 
   function handleOutsideClick(e) {
     const filterPanel = dom.filterPanel;
@@ -1433,10 +1433,10 @@ function toggleFilterPanel() {
         toggleFilterPanel();
       }
     }
-    
+
     // Cancel any open inline edits if clicking outside a class card
     if (!e.target.closest('.class-card')) {
-        document.querySelectorAll('.class-card .edit-btn-cancel').forEach(btn => btn.click());
+      document.querySelectorAll('.class-card .edit-btn-cancel').forEach(btn => btn.click());
     }
   }
 
@@ -1446,14 +1446,14 @@ function toggleFilterPanel() {
     document.body.setAttribute('data-theme', newTheme);
     Storage.set('theme', newTheme);
     const btn = document.getElementById('theme-btn');
-    if(btn) btn.textContent = newTheme === 'dark' ? '☀' : '🌙';
+    if (btn) btn.textContent = newTheme === 'dark' ? '☀' : '🌙';
   }
 
   // REPLACE 'handleResize' in app.js
-function handleResize() {
+  function handleResize() {
     // Pass 'false' to make it instant
     jumpToDay(state.currentDayIndex, false);
-}
+  }
 
   function handleKeyboardNavigation(e) {
     if (state.currentView !== 'swipe') return;
@@ -1463,171 +1463,171 @@ function handleResize() {
 
   // ==================== TEACHER MODE ====================
   // REPLACE 'toggleTeacherMode' in app.js
-function toggleTeacherMode() {
+  function toggleTeacherMode() {
     state.isTeacherMode = !state.isTeacherMode;
     const btn = document.getElementById('teacher-mode-btn');
     const studentControls = document.getElementById('student-controls');
     const teacherControls = document.getElementById('teacher-controls');
-    
+
     if (btn) btn.classList.toggle('active-mode', state.isTeacherMode);
 
     if (state.isTeacherMode) {
-        // --- OPEN MODE ---
-        if (studentControls) studentControls.classList.add('hidden');
-        if (teacherControls) teacherControls.classList.remove('hidden');
+      // --- OPEN MODE ---
+      if (studentControls) studentControls.classList.add('hidden');
+      if (teacherControls) teacherControls.classList.remove('hidden');
 
-        if (dom.filterPanel) {
-            dom.filterPanel.classList.add('expanded');
-            dom.filterPanel.style.zIndex = '1060'; 
-            if(dom.filterArrow) dom.filterArrow.textContent = '▲';
-        }
-        setTimeout(() => {
-            const searchInput = document.getElementById('teacher-search');
-            if (searchInput) searchInput.focus();
-        }, 300);
-        
-    } else {
-        // --- CLOSE MODE ---
-        if (studentControls) studentControls.classList.remove('hidden');
-        if (teacherControls) teacherControls.classList.add('hidden');
-
-        const viewModeButtons = document.querySelector('.filter-group:nth-child(2) .filter-options');
-        const jumpToDayButtons = document.querySelector('.filter-group:nth-child(3) .filter-options');
-        if (viewModeButtons) { viewModeButtons.style.visibility = 'visible'; viewModeButtons.style.opacity = '1'; }
-        if (jumpToDayButtons) { jumpToDayButtons.style.visibility = 'visible'; jumpToDayButtons.style.opacity = '1'; }
-
+      if (dom.filterPanel) {
+        dom.filterPanel.classList.add('expanded');
+        dom.filterPanel.style.zIndex = '1060';
+        if (dom.filterArrow) dom.filterArrow.textContent = '▲';
+      }
+      setTimeout(() => {
         const searchInput = document.getElementById('teacher-search');
-        const searchList = document.getElementById('search-suggestions');
-        if (searchInput) searchInput.value = '';
-        if (searchList) searchList.innerHTML = '';
-        
-        if (dom.filterPanel) {
-            dom.filterPanel.classList.remove('expanded');
-            if(dom.filterArrow) dom.filterArrow.textContent = '▼';
-        }
-        
-        selectBatch(state.currentBatch);
+        if (searchInput) searchInput.focus();
+      }, 300);
+
+    } else {
+      // --- CLOSE MODE ---
+      if (studentControls) studentControls.classList.remove('hidden');
+      if (teacherControls) teacherControls.classList.add('hidden');
+
+      const viewModeButtons = document.querySelector('.filter-group:nth-child(2) .filter-options');
+      const jumpToDayButtons = document.querySelector('.filter-group:nth-child(3) .filter-options');
+      if (viewModeButtons) { viewModeButtons.style.visibility = 'visible'; viewModeButtons.style.opacity = '1'; }
+      if (jumpToDayButtons) { jumpToDayButtons.style.visibility = 'visible'; jumpToDayButtons.style.opacity = '1'; }
+
+      const searchInput = document.getElementById('teacher-search');
+      const searchList = document.getElementById('search-suggestions');
+      if (searchInput) searchInput.value = '';
+      if (searchList) searchList.innerHTML = '';
+
+      if (dom.filterPanel) {
+        dom.filterPanel.classList.remove('expanded');
+        if (dom.filterArrow) dom.filterArrow.textContent = '▼';
+      }
+
+      selectBatch(state.currentBatch);
     }
-    
+
     // THE FIX: Turn on the glass wall here too!
     manageBackdrop(state.isTeacherMode);
-}
+  }
 
- // REPLACE 'initTeacherSearch' in app.js
-function initTeacherSearch() {
+  // REPLACE 'initTeacherSearch' in app.js
+  function initTeacherSearch() {
     const input = document.getElementById('teacher-search');
     const list = document.getElementById('search-suggestions');
     if (!input || !list) return;
 
     const toggleOtherGroups = (show) => {
-        const group2 = document.querySelector('.filter-group:nth-child(2)');
-        const group3 = document.querySelector('.filter-group:nth-child(3)');
-        const displayValue = show ? 'flex' : 'none';
-        if (group2) group2.style.display = displayValue;
-        if (group3) group3.style.display = displayValue;
-        
-        if (!show) {
-            list.style.position = 'relative';
-            list.style.boxShadow = 'none';
-            list.style.border = 'none';
-        } else {
-            list.style.position = '';
-            list.style.boxShadow = '';
-            list.style.border = '';
-        }
+      const group2 = document.querySelector('.filter-group:nth-child(2)');
+      const group3 = document.querySelector('.filter-group:nth-child(3)');
+      const displayValue = show ? 'flex' : 'none';
+      if (group2) group2.style.display = displayValue;
+      if (group3) group3.style.display = displayValue;
+
+      if (!show) {
+        list.style.position = 'relative';
+        list.style.boxShadow = 'none';
+        list.style.border = 'none';
+      } else {
+        list.style.position = '';
+        list.style.boxShadow = '';
+        list.style.border = '';
+      }
     };
 
     input.addEventListener('input', (e) => {
-        const val = e.target.value.toLowerCase().trim();
-        list.innerHTML = ''; 
+      const val = e.target.value.toLowerCase().trim();
+      list.innerHTML = '';
 
-        if (val.length < 1) {
-            toggleOtherGroups(true); 
-            return;
-        }
-        toggleOtherGroups(false);
+      if (val.length < 1) {
+        toggleOtherGroups(true);
+        return;
+      }
+      toggleOtherGroups(false);
 
-        let allResults = [];
+      let allResults = [];
 
-        // 1. Add Teachers
-        if (typeof facultyNames !== 'undefined') {
-            Object.entries(facultyNames).forEach(([code, name]) => 
-                allResults.push({ type: 'teacher', code, name, source: '62' }));
-        }
-        if (typeof facultyNames128 !== 'undefined') {
-            Object.entries(facultyNames128).forEach(([code, name]) => 
-                allResults.push({ type: 'teacher', code, name, source: '128' }));
-        }
+      // 1. Add Teachers
+      if (typeof facultyNames !== 'undefined') {
+        Object.entries(facultyNames).forEach(([code, name]) =>
+          allResults.push({ type: 'teacher', code, name, source: '62' }));
+      }
+      if (typeof facultyNames128 !== 'undefined') {
+        Object.entries(facultyNames128).forEach(([code, name]) =>
+          allResults.push({ type: 'teacher', code, name, source: '128' }));
+      }
 
-        // 2. Add Rooms
-        if (typeof ROOM_LOCATIONS !== 'undefined') {
-            Object.entries(ROOM_LOCATIONS).forEach(([code, location]) => {
-                allResults.push({ type: 'room', code: code, name: location });
-            });
-        }
-
-        // 3. Filter Matches
-        let matches = allResults.filter(item => 
-            item.code.toLowerCase().includes(val) || 
-            item.name.toLowerCase().includes(val)
-        );
-
-        // 4. Sort
-        matches.sort((a, b) => {
-             const aCodeStart = a.code.toLowerCase().startsWith(val);
-             const bCodeStart = b.code.toLowerCase().startsWith(val);
-             if (aCodeStart && !bCodeStart) return -1;
-             if (!aCodeStart && bCodeStart) return 1;
-             return a.name.localeCompare(b.name);
+      // 2. Add Rooms
+      if (typeof ROOM_LOCATIONS !== 'undefined') {
+        Object.entries(ROOM_LOCATIONS).forEach(([code, location]) => {
+          allResults.push({ type: 'room', code: code, name: location });
         });
+      }
 
-        if (matches.length === 0) {
-            list.innerHTML = '<div style="padding:15px; opacity:0.6;">No matches found</div>';
-        } else {
-             matches.slice(0, 15).forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'suggestion-item';
-                
-                if (item.type === 'teacher') {
-                    // --- TEACHER CLICK ---
-                    const codeDisplay = item.source === '128' ? `${item.code} (128)` : item.code;
-                    div.innerHTML = `<span class="s-code">${codeDisplay}</span> <span class="s-name">${item.name}</span>`;
-                    div.onclick = () => {
-                        loadTeacherSchedule(item.code, item.name);
-                        input.value = `${item.name} (${codeDisplay})`;
-                        list.innerHTML = '';
-                        
-                        if (dom.filterPanel) {
-                            dom.filterPanel.classList.remove('expanded');
-                            dom.filterPanel.style.zIndex = ''; 
-                            dom.filterPanel.style.position = '';
-                        }
-                        if (dom.filterArrow) dom.filterArrow.textContent = '▼';
-                        
-                        // Remove the invisible backdrop so you can interact with the table
-                        if (typeof manageBackdrop === 'function') manageBackdrop(false);
-                        
-                        setTimeout(() => toggleOtherGroups(true), 300);
-                    };
-                } else {
-                    // --- ROOM CLICK ---
-                    div.innerHTML = `<span class="s-code">📍 ${item.code}</span> <span class="s-name" style="font-size:0.8rem">${item.name}</span>`;
-                    div.onclick = () => {
-                        openRoomModal(item.code, item.name);
-                        input.value = ''; // Clear input for next search
-                        list.innerHTML = '';
-                        
-                        // DO NOT CLOSE PANEL for Rooms
-                        // The User stays in "Search Mode" to look up more rooms if they want.
-                        
-                        setTimeout(() => toggleOtherGroups(true), 300);
-                    };
-                }
-                list.appendChild(div);
-            });
-        }
+      // 3. Filter Matches
+      let matches = allResults.filter(item =>
+        item.code.toLowerCase().includes(val) ||
+        item.name.toLowerCase().includes(val)
+      );
+
+      // 4. Sort
+      matches.sort((a, b) => {
+        const aCodeStart = a.code.toLowerCase().startsWith(val);
+        const bCodeStart = b.code.toLowerCase().startsWith(val);
+        if (aCodeStart && !bCodeStart) return -1;
+        if (!aCodeStart && bCodeStart) return 1;
+        return a.name.localeCompare(b.name);
+      });
+
+      if (matches.length === 0) {
+        list.innerHTML = '<div style="padding:15px; opacity:0.6;">No matches found</div>';
+      } else {
+        matches.slice(0, 15).forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'suggestion-item';
+
+          if (item.type === 'teacher') {
+            // --- TEACHER CLICK ---
+            const codeDisplay = item.source === '128' ? `${item.code} (128)` : item.code;
+            div.innerHTML = `<span class="s-code">${codeDisplay}</span> <span class="s-name">${item.name}</span>`;
+            div.onclick = () => {
+              loadTeacherSchedule(item.code, item.name);
+              input.value = `${item.name} (${codeDisplay})`;
+              list.innerHTML = '';
+
+              if (dom.filterPanel) {
+                dom.filterPanel.classList.remove('expanded');
+                dom.filterPanel.style.zIndex = '';
+                dom.filterPanel.style.position = '';
+              }
+              if (dom.filterArrow) dom.filterArrow.textContent = '▼';
+
+              // Remove the invisible backdrop so you can interact with the table
+              if (typeof manageBackdrop === 'function') manageBackdrop(false);
+
+              setTimeout(() => toggleOtherGroups(true), 300);
+            };
+          } else {
+            // --- ROOM CLICK ---
+            div.innerHTML = `<span class="s-code">📍 ${item.code}</span> <span class="s-name" style="font-size:0.8rem">${item.name}</span>`;
+            div.onclick = () => {
+              openRoomModal(item.code, item.name);
+              input.value = ''; // Clear input for next search
+              list.innerHTML = '';
+
+              // DO NOT CLOSE PANEL for Rooms
+              // The User stays in "Search Mode" to look up more rooms if they want.
+
+              setTimeout(() => toggleOtherGroups(true), 300);
+            };
+          }
+          list.appendChild(div);
+        });
+      }
     });
-}
+  }
   function handleWheel(e) {
     if (state.currentView !== 'swipe') return;
     if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
@@ -1650,60 +1650,60 @@ function initTeacherSearch() {
 
     const slotMap = new Map();
     if (typeof scheduleMap !== 'undefined') {
-        Object.keys(scheduleMap || {}).forEach(semId => {
-          const semBatches = scheduleMap[semId];
-          Object.keys(semBatches || {}).forEach(batchName => {
-            const batchClasses = semBatches[batchName];
-            batchClasses.forEach(cls => {
-               const teachers = cls.teacher.split(/[/,]/).map(t => t.trim());
-               if (teachers.includes(targetCode)) {
-                   const key = `${cls.day}-${cls.start}`;
-                   if (!slotMap.has(key)) {
-                      slotMap.set(key, { ...cls, batchNames: [batchName] });
-                   } else {
-                       const existing = slotMap.get(key);
-                       if (!existing.batchNames.includes(batchName)) {
-                           existing.batchNames.push(batchName);
-                       }
-                   }
-               }
-            });
+      Object.keys(scheduleMap || {}).forEach(semId => {
+        const semBatches = scheduleMap[semId];
+        Object.keys(semBatches || {}).forEach(batchName => {
+          const batchClasses = semBatches[batchName];
+          batchClasses.forEach(cls => {
+            const teachers = cls.teacher.split(/[/,]/).map(t => t.trim());
+            if (teachers.includes(targetCode)) {
+              const key = `${cls.day}-${cls.start}`;
+              if (!slotMap.has(key)) {
+                slotMap.set(key, { ...cls, batchNames: [batchName] });
+              } else {
+                const existing = slotMap.get(key);
+                if (!existing.batchNames.includes(batchName)) {
+                  existing.batchNames.push(batchName);
+                }
+              }
+            }
           });
         });
-      }
+      });
+    }
 
     const aggregatedSchedule = Array.from(slotMap.values()).map(cls => {
-        const fullName = getSubjectFullTitle(cls.title, cls.type) || cls.title;
-        const uniqueBatches = cls.batchNames.sort((a, b) => 
-            a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' })
-        );
-        return {
-            ...cls,
-            title: `${fullName} (${uniqueBatches.join(', ')})` 
-        };
+      const fullName = getSubjectFullTitle(cls.title, cls.type) || cls.title;
+      const uniqueBatches = cls.batchNames.sort((a, b) =>
+        a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' })
+      );
+      return {
+        ...cls,
+        title: `${fullName} (${uniqueBatches.join(', ')})`
+      };
     });
     state.currentSchedule = aggregatedSchedule;
     renderMobileView();
     renderDesktopView();
     jumpToDay(state.currentDayIndex);
   }
-// --- NEW: Force Check Function ---
+  // --- NEW: Force Check Function ---
   function forceUpdateCheck() {
     console.log("Checking for updates...");
     // We add ?t=Timestamp to force the browser to actually ask the network
     fetch(`./js/data.js?t=${Date.now()}`)
-        .then(() => console.log("Check complete"))
-        .catch(() => console.log("Check failed (offline)"));
+      .then(() => console.log("Check complete"))
+      .catch(() => console.log("Check failed (offline)"));
   }
   // ==================== CUSTOM MODE FUNCTIONS ====================
-  
+
   function toggleCustomMode() {
     state.isCustomMode = !state.isCustomMode;
     Storage.set('isCustomMode', state.isCustomMode.toString());
-    
+
     const swipeBtn = document.getElementById('mode-toggle-swipe');
     const fab = document.getElementById('floating-add-btn');
-    
+
     if (state.isCustomMode) {
       document.body.classList.add('custom-mode');
       if (swipeBtn) { swipeBtn.classList.add('custom-active'); swipeBtn.textContent = '✏️'; }
@@ -1722,7 +1722,7 @@ function initTeacherSearch() {
       }
       showToast('📋 Official Mode');
     }
-    
+
     renderMobileView();
     renderDesktopView();
     updateBatchLabels(state.currentBatch);
@@ -1731,7 +1731,7 @@ function initTeacherSearch() {
       jumpToDay(state.currentDayIndex);
     }, 50);
   }
-  
+
   function showToast(message) {
     const toast = document.getElementById('mode-toast');
     if (!toast) return;
@@ -1739,76 +1739,102 @@ function initTeacherSearch() {
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 1500);
   }
-  
+
   function takeScreenshot() {
     const tableEl = document.querySelector('.weekly-table');
     const containerEl = document.getElementById('compact-container');
-    
+
     if (!tableEl || typeof html2canvas === 'undefined') {
-        showToast('❌ Unable to capture image');
-        return;
+      showToast('❌ Unable to capture image');
+      return;
     }
-    
+
     showToast('📸 Capturing schedule...');
-    
+
     const isDark = document.body.getAttribute('data-theme') === 'dark';
-    
+
     // Save scroll state
     const origScrollLeft = containerEl ? containerEl.scrollLeft : 0;
-    
+
     // Reset scroll to 0 to fix sticky column offset in capture
     if (containerEl) {
-        containerEl.scrollLeft = 0;
+      containerEl.scrollLeft = 0;
     }
-    
+
     // Briefly adjust z-index to ensure it captures cleanly
     const originalZIndex = tableEl.style.zIndex;
     tableEl.style.zIndex = '9999';
-    
+
+    // Inject styles manually for offline html2canvas compatibility
+    const styleBlock = document.createElement('style');
+    let cssString = '';
+    try {
+      for (let i = 0; i < document.styleSheets.length; i++) {
+        const sheet = document.styleSheets[i];
+        if (sheet.href && sheet.href.includes('styles.css')) {
+          for (let j = 0; j < sheet.cssRules.length; j++) {
+            cssString += sheet.cssRules[j].cssText;
+          }
+        }
+      }
+    } catch (e) {
+      console.warn('Could not read css rules', e);
+    }
+
+    if (cssString) {
+      styleBlock.textContent = cssString;
+      tableEl.appendChild(styleBlock);
+    }
+
     html2canvas(tableEl, {
       backgroundColor: isDark ? '#1a1a2e' : '#f8fafc',
       scale: 2 // Higher resolution
     }).then(canvas => {
+      if (cssString) styleBlock.remove(); // Clean up
+
       // Restore live table state immediately
       tableEl.style.zIndex = originalZIndex;
+
       if (containerEl) containerEl.scrollLeft = origScrollLeft;
-      
+
       canvas.toBlob(blob => {
-          if (!blob) {
-              console.error('html2canvas returned an empty blob');
-              showToast('❌ Empty image generated');
-              return;
-          }
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = `Schedule_${state.currentBatch}.png`;
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          
-          setTimeout(() => URL.revokeObjectURL(url), 10000);
-          showToast('✅ Schedule downloaded!');
+        if (!blob) {
+          console.error('html2canvas returned an empty blob');
+          showToast('❌ Empty image generated');
+          return;
+        }
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `Schedule_${state.currentBatch}.png`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+
+        setTimeout(() => URL.revokeObjectURL(url), 10000);
+        showToast('✅ Schedule downloaded!');
       }, 'image/png');
-      
+
     }).catch(err => {
+      if (cssString) styleBlock.remove(); // Clean up
       console.error('Screenshot failed:', err);
+
       tableEl.style.zIndex = originalZIndex;
       if (containerEl) containerEl.scrollLeft = origScrollLeft;
       overlays.forEach(o => o.remove());
       showToast('❌ Failed to capture image');
     });
   }
-  
+
   // --- Inline Edit (Swipe View Cards) ---
   function openInlineEdit(card, cls, clsIndex) {
     if (card.querySelector('.edit-form')) return; // Already editing
-    
+
     // Close any other open edit forms
     document.querySelectorAll('.class-card .edit-btn-cancel').forEach(btn => {
-        if (btn.closest('.class-card') !== card) btn.click();
+      if (btn.closest('.class-card') !== card) btn.click();
     });
-    
+
     // Hide room popup if open
     const popup = document.getElementById('room-info-popup');
     if (popup) popup.style.display = 'none';
@@ -1816,7 +1842,7 @@ function initTeacherSearch() {
     // Save original HTML for cancel
     const originalHTML = card.innerHTML;
     const originalClassName = card.className;
-    
+
     card.className = `class-card type-${cls.type}`;
     card.innerHTML = `
       <div class="edit-form">
@@ -1835,14 +1861,14 @@ function initTeacherSearch() {
         <div class="edit-form-row">
           <span class="edit-form-label">Day</span>
           <div class="day-chips">
-            ${['M','T','W','T','F','S'].map((d,i) => `<button class="day-chip ${i+1 === cls.day ? 'active' : ''}" data-day="${i+1}">${d}</button>`).join('')}
+            ${['M', 'T', 'W', 'T', 'F', 'S'].map((d, i) => `<button class="day-chip ${i + 1 === cls.day ? 'active' : ''}" data-day="${i + 1}">${d}</button>`).join('')}
           </div>
         </div>
         <div class="edit-form-row">
           <span class="edit-form-label">Time</span>
           <div class="time-picker-row">
             <select class="time-select" id="edit-start-time">
-              ${[9,10,11,12,13,14,15,16].map(h => `<option value="${h}" ${h === cls.start ? 'selected' : ''}>${h > 12 ? h-12 : h}:00 ${h >= 12 ? 'PM' : 'AM'}</option>`).join('')}
+              ${[9, 10, 11, 12, 13, 14, 15, 16].map(h => `<option value="${h}" ${h === cls.start ? 'selected' : ''}>${h > 12 ? h - 12 : h}:00 ${h >= 12 ? 'PM' : 'AM'}</option>`).join('')}
             </select>
           </div>
         </div>
@@ -1854,7 +1880,7 @@ function initTeacherSearch() {
         <div id="edit-delete-confirm" style="display:none;"></div>
       </div>
     `;
-    
+
     // Day chip clicks
     card.querySelectorAll('.day-chip').forEach(chip => {
       chip.onclick = (e) => {
@@ -1863,12 +1889,12 @@ function initTeacherSearch() {
         chip.classList.add('active');
       };
     });
-    
+
     // Stop propagation on all inputs
     card.querySelectorAll('input, select').forEach(el => {
       el.addEventListener('click', e => e.stopPropagation());
     });
-    
+
     // Save
     card.querySelector('#edit-save-btn').onclick = (e) => {
       e.stopPropagation();
@@ -1886,14 +1912,14 @@ function initTeacherSearch() {
       renderDesktopView();
       setTimeout(() => jumpToDay(state.currentDayIndex, false), 50);
     };
-    
+
     // Cancel
     card.querySelector('#edit-cancel-btn').onclick = (e) => {
       e.stopPropagation();
       card.innerHTML = originalHTML;
       card.className = originalClassName;
     };
-    
+
     // Delete
     card.querySelector('#edit-delete-btn').onclick = (e) => {
       e.stopPropagation();
@@ -1919,51 +1945,51 @@ function initTeacherSearch() {
       };
     };
   }
-  
+
   // --- Modal Edit (Table View) ---
   function openModalEdit(cls, clsIndex) {
     const modal = document.getElementById('add-class-modal');
     if (!modal) return;
-    
+
     const form = modal.querySelector('.add-class-form h3');
     form.textContent = '✏️ Edit Class';
-    
+
     // Hide Duration and Type fields for edit mode
     document.getElementById('add-duration-label').style.display = 'none';
     document.getElementById('add-duration-chips').style.display = 'none';
     document.getElementById('add-type-row').style.display = 'none';
-    
+
     // Fill day chips
     const dayChips = document.getElementById('add-day-chips');
     dayChips.querySelectorAll('.day-chip').forEach(c => {
       c.classList.toggle('active', parseInt(c.dataset.day) === cls.day);
     });
-    
+
     // Fill time
     document.getElementById('add-start-time').value = cls.start.toString();
-    
+
     // Fill duration
     document.getElementById('add-duration-chips').querySelectorAll('.dur-chip').forEach(c => {
       c.classList.toggle('active', parseInt(c.dataset.dur) === cls.duration);
     });
-    
+
     // Fill fields
     document.getElementById('add-subject').value = cls.title;
     document.getElementById('add-room').value = cls.code;
     document.getElementById('add-teacher').value = cls.teacher;
-    
+
     // Fill type
     document.getElementById('add-type-chips').querySelectorAll('.type-chip').forEach(c => {
       c.classList.toggle('active', c.dataset.type === cls.type);
     });
-    
+
     // Save (Update existing)
     const saveBtn = document.getElementById('add-class-save');
     saveBtn.textContent = 'Save Changes';
     saveBtn.onclick = () => {
       const day = parseInt(dayChips.querySelector('.day-chip.active')?.dataset.day);
       if (!day) return;
-      
+
       const updated = {
         ...cls,
         day,
@@ -1972,14 +1998,14 @@ function initTeacherSearch() {
         code: document.getElementById('add-room').value.trim(),
         teacher: document.getElementById('add-teacher').value.trim()
       };
-      
+
       state.currentSchedule = CustomSchedule.updateEntry(state.currentSemester, state.currentBatch, clsIndex, updated);
       closeAddClassModal();
       renderMobileView();
       renderDesktopView();
       setTimeout(() => { highlightActiveClass(); jumpToDay(day - 1); }, 50);
     };
-    
+
     // Show delete button for Edit mode
     const deleteBtn = document.getElementById('add-class-delete');
     if (deleteBtn) {
@@ -1992,22 +2018,22 @@ function initTeacherSearch() {
         setTimeout(() => jumpToDay(state.currentDayIndex, false), 50);
       };
     }
-    
+
     modal.classList.add('visible');
   }
-  
+
   // --- Add Class Form ---
   function initAddClassForm() {
     const dayChips = document.getElementById('add-day-chips');
     const durChips = document.getElementById('add-duration-chips');
     const typeChips = document.getElementById('add-type-chips');
     const startSelect = document.getElementById('add-start-time');
-    
+
     if (!dayChips) return;
-    
+
     // Populate day chips
     const dayNames = ['M', 'T', 'W', 'T', 'F', 'S'];
-    dayChips.innerHTML = dayNames.map((d, i) => 
+    dayChips.innerHTML = dayNames.map((d, i) =>
       `<button class="day-chip" data-day="${i + 1}">${d}</button>`
     ).join('');
     dayChips.querySelectorAll('.day-chip').forEach(c => {
@@ -2016,14 +2042,14 @@ function initTeacherSearch() {
         c.classList.add('active');
       };
     });
-    
+
     // Populate time select
-    startSelect.innerHTML = [9,10,11,12,13,14,15,16].map(h => 
-      `<option value="${h}">${h > 12 ? h-12 : h}:00 ${h >= 12 ? 'PM' : 'AM'}</option>`
+    startSelect.innerHTML = [9, 10, 11, 12, 13, 14, 15, 16].map(h =>
+      `<option value="${h}">${h > 12 ? h - 12 : h}:00 ${h >= 12 ? 'PM' : 'AM'}</option>`
     ).join('');
-    
+
     // Duration chips
-    durChips.innerHTML = [1,2,3].map(d => 
+    durChips.innerHTML = [1, 2, 3].map(d =>
       `<button class="dur-chip ${d === 1 ? 'active' : ''}" data-dur="${d}">${d}h</button>`
     ).join('');
     durChips.querySelectorAll('.dur-chip').forEach(c => {
@@ -2032,9 +2058,9 @@ function initTeacherSearch() {
         c.classList.add('active');
       };
     });
-    
+
     // Type chips
-    typeChips.innerHTML = ['lec','tut','lab'].map(t => 
+    typeChips.innerHTML = ['lec', 'tut', 'lab'].map(t =>
       `<button class="type-chip ${t === 'lec' ? 'active' : ''}" data-type="${t}">${t.toUpperCase()}</button>`
     ).join('');
     typeChips.querySelectorAll('.type-chip').forEach(c => {
@@ -2043,15 +2069,15 @@ function initTeacherSearch() {
         c.classList.add('active');
       };
     });
-    
+
     // Cancel
     document.getElementById('add-class-cancel').onclick = closeAddClassModal;
-    
+
     // Save (default: add new)
     document.getElementById('add-class-save').onclick = () => {
       const day = parseInt(dayChips.querySelector('.day-chip.active')?.dataset.day);
       if (!day) { showToast('⚠️ Select a day'); return; }
-      
+
       const entry = {
         day,
         start: parseInt(startSelect.value),
@@ -2061,24 +2087,24 @@ function initTeacherSearch() {
         teacher: document.getElementById('add-teacher').value.trim() || 'TBA',
         type: typeChips.querySelector('.type-chip.active')?.dataset.type || 'lec'
       };
-      
+
       state.currentSchedule = CustomSchedule.addEntry(state.currentSemester, state.currentBatch, entry);
       closeAddClassModal();
       renderMobileView();
       renderDesktopView();
       setTimeout(() => { highlightActiveClass(); jumpToDay(day - 1); }, 50);
     };
-    
+
     // Close on backdrop click
     document.getElementById('add-class-modal').addEventListener('click', (e) => {
       if (e.target.id === 'add-class-modal') closeAddClassModal();
     });
   }
-  
+
   function openAddClassForm(prefilledDay) {
     const modal = document.getElementById('add-class-modal');
     if (!modal) return;
-    
+
     // Reset form
     const form = modal.querySelector('.add-class-form h3');
     form.textContent = '➕ Add New Class';
@@ -2086,25 +2112,25 @@ function initTeacherSearch() {
     document.getElementById('add-room').value = '';
     document.getElementById('add-teacher').value = '';
     document.getElementById('add-start-time').value = '9';
-    
+
     // Ensure Duration and Type rows are visible (might be hidden by edit mode)
     document.getElementById('add-duration-label').style.display = 'inline';
     document.getElementById('add-duration-chips').style.display = 'flex';
     document.getElementById('add-type-row').style.display = 'flex';
-    
+
     // Reset chips
     document.getElementById('add-duration-chips').querySelectorAll('.dur-chip').forEach((c, i) => c.classList.toggle('active', i === 0));
     document.getElementById('add-type-chips').querySelectorAll('.type-chip').forEach((c, i) => c.classList.toggle('active', i === 0));
-    
+
     // Pre-select day
     document.getElementById('add-day-chips').querySelectorAll('.day-chip').forEach(c => {
       c.classList.toggle('active', parseInt(c.dataset.day) === prefilledDay);
     });
-    
+
     // Hide delete button for Add mode
     const deleteBtn = document.getElementById('add-class-delete');
     if (deleteBtn) deleteBtn.style.display = 'none';
-    
+
     // Reset save button and RE-BIND Add Entry logic
     const saveBtn = document.getElementById('add-class-save');
     saveBtn.textContent = 'Add Class';
@@ -2113,10 +2139,10 @@ function initTeacherSearch() {
       const startSelect = document.getElementById('add-start-time');
       const durChips = document.getElementById('add-duration-chips');
       const typeChips = document.getElementById('add-type-chips');
-      
+
       const day = parseInt(dayChips.querySelector('.day-chip.active')?.dataset.day);
       if (!day) { showToast('❌ Select a day'); return; }
-      
+
       const entry = {
         day,
         start: parseInt(startSelect.value),
@@ -2126,17 +2152,17 @@ function initTeacherSearch() {
         teacher: document.getElementById('add-teacher').value.trim() || 'TBA',
         type: typeChips.querySelector('.type-chip.active')?.dataset.type || 'lec'
       };
-      
+
       state.currentSchedule = CustomSchedule.addEntry(state.currentSemester, state.currentBatch, entry);
       closeAddClassModal();
       renderMobileView();
       renderDesktopView();
       setTimeout(() => { highlightActiveClass(); jumpToDay(day - 1); }, 50);
     };
-    
+
     modal.classList.add('visible');
   }
-  
+
   function closeAddClassModal() {
     const modal = document.getElementById('add-class-modal');
     if (modal) modal.classList.remove('visible');
@@ -2150,9 +2176,9 @@ function initTeacherSearch() {
       const input = document.getElementById(inputId);
       const suggBox = document.getElementById(suggId);
       if (!input || !suggBox) return;
-      
+
       let activeIndex = -1;
-      
+
       const renderSuggestions = (suggestions) => {
         if (!suggestions || suggestions.length === 0) {
           suggBox.style.display = 'none';
@@ -2160,7 +2186,7 @@ function initTeacherSearch() {
         }
         suggBox.innerHTML = suggestions.map((s, i) => `<div class="autocomplete-item" data-index="${i}">${s}</div>`).join('');
         suggBox.style.display = 'block';
-        
+
         suggBox.querySelectorAll('.autocomplete-item').forEach(item => {
           item.onmousedown = (e) => {
             e.preventDefault(); // Prevent blur
@@ -2169,30 +2195,30 @@ function initTeacherSearch() {
           };
         });
       };
-      
+
       input.addEventListener('input', () => {
         activeIndex = -1;
         const val = input.value.trim().toLowerCase();
         if (!val) { suggBox.style.display = 'none'; return; }
-        
+
         const matches = getSuggestions(val);
         renderSuggestions(matches);
       });
-      
+
       input.addEventListener('blur', () => {
         // Delay to allow click on suggestion
         setTimeout(() => suggBox.style.display = 'none', 150);
       });
-      
+
       input.addEventListener('focus', () => {
         const val = input.value.trim().toLowerCase();
         if (val) {
-           const matches = getSuggestions(val);
-           renderSuggestions(matches);
+          const matches = getSuggestions(val);
+          renderSuggestions(matches);
         }
       });
     };
-    
+
     // 1. Subject Autocomplete
     attachAutocomplete('add-subject', 'add-subject-suggestions', (query) => {
       // Extract unique subjects from official scheduleMap
@@ -2208,7 +2234,7 @@ function initTeacherSearch() {
         .filter(s => s.toLowerCase().includes(query))
         .slice(0, 5); // Max 5 suggestions
     });
-    
+
     // 2. Room Autocomplete
     attachAutocomplete('add-room', 'add-room-suggestions', (query) => {
       const uniqueRooms = new Set();
@@ -2217,7 +2243,7 @@ function initTeacherSearch() {
         Object.values(scheduleMap).forEach(batches => {
           Object.values(batches).forEach(schedule => {
             schedule.forEach(cls => {
-                if(cls.code && cls.code !== 'TBA') uniqueRooms.add(cls.code);
+              if (cls.code && cls.code !== 'TBA') uniqueRooms.add(cls.code);
             });
           });
         });
@@ -2226,61 +2252,61 @@ function initTeacherSearch() {
       if (typeof ROOM_LOCATIONS !== 'undefined') {
         Object.keys(ROOM_LOCATIONS).forEach(r => uniqueRooms.add(r));
       }
-      
+
       return Array.from(uniqueRooms)
         .filter(r => r.toLowerCase().includes(query))
         .slice(0, 5); // Max 5
     });
-    
+
     // 3. Teacher Autocomplete (Max 2 suggestions matching name or code)
     attachAutocomplete('add-teacher', 'add-teacher-suggestions', (query) => {
       const matches = [];
       const addTeachersFrom = (dict) => {
         if (!dict) return;
         for (const [code, name] of Object.entries(dict)) {
-           const codeMatch = code.toLowerCase().includes(query);
-           const nameMatch = name.toLowerCase().includes(query);
-           if (codeMatch || nameMatch) {
-               matches.push(`${name} (${code})`);
-           }
+          const codeMatch = code.toLowerCase().includes(query);
+          const nameMatch = name.toLowerCase().includes(query);
+          if (codeMatch || nameMatch) {
+            matches.push(`${name} (${code})`);
+          }
         }
       };
-      
+
       if (typeof facultyNames !== 'undefined') addTeachersFrom(facultyNames);
       if (typeof facultyNames128 !== 'undefined') addTeachersFrom(facultyNames128);
-      
+
       // Deduplicate and limit to 2
       return [...new Set(matches)].slice(0, 2);
     });
   }
 
   // Public API
-    return {
-      init,
-      toggleFilterPanel,
-      toggleTheme,
-      selectBatch,
-      setViewMode,
-      manualJumpToDay,
-      toggleSemester,
-      toggleSeries,
-      toggleBatchGrid,
-      forceUpdateCheck,
-      toggleCustomMode,
-      takeScreenshot
-    };
+  return {
+    init,
+    toggleFilterPanel,
+    toggleTheme,
+    selectBatch,
+    setViewMode,
+    manualJumpToDay,
+    toggleSemester,
+    toggleSeries,
+    toggleBatchGrid,
+    forceUpdateCheck,
+    toggleCustomMode,
+    takeScreenshot
+  };
 })();
 
 // Start
 document.addEventListener('DOMContentLoaded', () => {
-    TimetableApp.init();
-    
-    // Check for updates immediately on load
-    setTimeout(() => TimetableApp.forceUpdateCheck(), 1000); 
+  TimetableApp.init();
+
+  // Check for updates immediately on load
+  setTimeout(() => TimetableApp.forceUpdateCheck(), 1000);
 });
 
 // Check for updates whenever internet comes back
 window.addEventListener('online', () => {
-    console.log("Back online! Checking for data...");
-    TimetableApp.forceUpdateCheck();
+  console.log("Back online! Checking for data...");
+  TimetableApp.forceUpdateCheck();
 });
