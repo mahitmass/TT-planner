@@ -773,13 +773,26 @@ const TimetableApp = (function () {
     const clsIndex = state.currentSchedule.indexOf(cls);
     card.dataset.scheduleIndex = clsIndex.toString();
 
+    let sharedBatchesHtml = '';
+    if (state.isRoomMode) {
+        sharedBatchesHtml = `<span class="info-badge">👥 ${cls.batchNames ? cls.batchNames.join(', ') : ''}</span>`;
+    } else if (!state.isTeacherMode && !state.isCustomMode) {
+        const shared = findSharedBatches(cls);
+        if (shared.length > 0) {
+            sharedBatchesHtml = `<span class="info-badge">👥 +${shared.join(', ')}</span>`;
+        }
+    }
+
+    const roomBadgeHtml = state.isRoomMode ? '' : `<span class="info-badge" style="cursor:pointer; display:inline-flex; align-items:center;" onclick="window.showRoomPopup(event, '${cls.code}')">
+            🏛 ${cls.code} <span class="info-icon">i</span>
+        </span>`;
+
     card.innerHTML = `
       <div class="time-slot">${formatTimeRange(cls.start, cls.duration)}</div>
       <div class="subject-name">${displayTitle}</div>
       <div class="card-footer">
-        <span class="info-badge" style="cursor:pointer; display:inline-flex; align-items:center;" onclick="window.showRoomPopup(event, '${cls.code}')">
-            🏛 ${cls.code} <span class="info-icon">i</span>
-        </span>
+        ${roomBadgeHtml}
+        ${sharedBatchesHtml}
         <span class="info-badge">👨‍🏫 ${displayTeacher}</span>
         <span class="info-badge">${cls.type.toUpperCase()}</span>
       </div>
@@ -966,11 +979,6 @@ const TimetableApp = (function () {
     let extraBatchesHtml = '';
     if (state.isRoomMode) {
         extraBatchesHtml = `<span class="cell-room" style="color:var(--text-muted); font-size: 0.65rem; display:block; margin-top:2px;">${cls.batchNames ? cls.batchNames.join(', ') : ''}</span>`;
-    } else if (!state.isTeacherMode && !state.isCustomMode) {
-        const shared = findSharedBatches(cls);
-        if (shared.length > 0) {
-            extraBatchesHtml = `<span class="cell-room" style="color:var(--text-muted); font-size: 0.6rem; display:block; margin-top:2px;">+ ${shared.join(', ')}</span>`;
-        }
     }
 
     let innerHtml = `
@@ -1838,12 +1846,18 @@ const TimetableApp = (function () {
             // --- ROOM CLICK ---
             div.innerHTML = `<span class="s-code">📍 ${item.code}</span> <span class="s-name" style="font-size:0.8rem">${item.name}</span>`;
             div.onclick = () => {
-              openRoomModal(item.code, item.name);
-              input.value = ''; // Clear input for next search
+              loadRoomSchedule(item.code, item.name);
+              input.value = `${item.name} (${item.code})`;
               list.innerHTML = '';
 
-              // DO NOT CLOSE PANEL for Rooms
-              // The User stays in "Search Mode" to look up more rooms if they want.
+              if (dom.filterPanel) {
+                dom.filterPanel.classList.remove('expanded');
+                dom.filterPanel.style.zIndex = '';
+                dom.filterPanel.style.position = '';
+              }
+              if (dom.filterArrow) dom.filterArrow.textContent = '▼';
+
+              if (typeof manageBackdrop === 'function') manageBackdrop(false);
 
               setTimeout(() => toggleOtherGroups(true), 300);
             };
