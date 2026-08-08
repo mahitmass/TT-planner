@@ -2222,30 +2222,35 @@ body {
   background: var(--accent-hover);
 }
 
-/* --- Modal Corner Add Button --- */
+/* --- Modal Corner Add Button (Tab Style) --- */
 .modal-add-btn {
   position: absolute;
-  top: -15px;
-  right: -15px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--accent-color);
-  color: #000;
-  font-size: 1.5rem;
+  bottom: 100%; /* Sits exactly on top of the modal */
+  right: 20px; /* Slightly inset from the right */
+  width: 50px;
+  height: 36px;
+  background-color: #1e1e1e; /* Matches modal-content dark mode */
+  border-radius: 12px 12px 0 0; /* Tab shape */
+  border: 1px solid var(--border-color);
+  border-bottom: none; /* Connect smoothly */
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(187, 134, 252, 0.4);
+  color: var(--text-main);
+  font-size: 1.3rem;
+  font-weight: bold;
   cursor: pointer;
   z-index: 105;
-  border: none;
   transition: all 0.2s ease;
 }
 
+[data-theme="light"] .modal-add-btn {
+  background-color: #ffffff;
+}
+
 .modal-add-btn:hover {
-  transform: scale(1.1);
-  background: var(--accent-hover);
+  color: var(--accent-color);
+  transform: translateY(-2px);
 }
 
 

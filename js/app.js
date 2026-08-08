@@ -1779,26 +1779,20 @@ function initTeacherSearch() {
       scale: 2 // Higher resolution
     }).then(canvas => {
       document.body.removeChild(offscreen);
-      const imgData = canvas.toDataURL('image/png');
       
-      const newTab = window.open();
-      if (newTab) {
-        newTab.document.write(`
-          <html>
-            <head><title>Schedule Screenshot</title></head>
-            <body style="margin:0; background:${isDark ? '#222' : '#eee'}; display:flex; justify-content:center; align-items:center; min-height:100vh;">
-              <img src="${imgData}" style="max-width:100%; max-height:100vh; object-fit:contain; box-shadow: 0 0 20px rgba(0,0,0,0.5);" />
-            </body>
-          </html>
-        `);
-        newTab.document.close();
-      } else {
-        // Fallback if popup blocked
-        const a = document.createElement('a');
-        a.href = imgData;
-        a.download = `Schedule_${state.currentBatch}.png`;
-        a.click();
-      }
+      canvas.toBlob(blob => {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `Schedule_${state.currentBatch}.png`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          
+          setTimeout(() => URL.revokeObjectURL(url), 10000);
+          showToast('✅ Schedule downloaded!');
+      }, 'image/png');
+      
     }).catch(err => {
       console.error('Screenshot failed:', err);
       if (document.body.contains(offscreen)) {
