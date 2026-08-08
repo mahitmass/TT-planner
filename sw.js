@@ -1,4 +1,4 @@
-const CACHE_NAME = 'a6-planner-v35'; // Bump Version
+const CACHE_NAME = 'a6-planner-v36'; // Bump Version
 const TIMEOUT_MS = 1000; // 1 Second Timeout
 
 const ASSETS = [

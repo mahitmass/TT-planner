@@ -1716,23 +1716,69 @@ function initTeacherSearch() {
   }
   
   function takeScreenshot() {
-    const tableEl = document.querySelector('.weekly-table');
-    if (!tableEl || typeof html2canvas === 'undefined') {
+    const origTable = document.querySelector('.weekly-table');
+    if (!origTable || typeof html2canvas === 'undefined') {
         showToast('❌ Unable to capture image');
         return;
     }
     
     showToast('📸 Capturing schedule...');
     
-    // Briefly adjust styling if needed for a clean screenshot
-    const originalZIndex = tableEl.style.zIndex;
-    tableEl.style.zIndex = '9999';
+    const isDark = document.body.getAttribute('data-theme') === 'dark';
     
-    html2canvas(tableEl, {
-      backgroundColor: document.body.getAttribute('data-theme') === 'dark' ? '#121212' : '#f8fafc',
+    // Create an off-screen container for perfect un-scrolled cloning
+    const offscreen = document.createElement('div');
+    offscreen.className = 'compact-container';
+    offscreen.style.position = 'absolute';
+    offscreen.style.top = '-9999px';
+    offscreen.style.left = '-9999px';
+    offscreen.style.width = 'max-content';
+    offscreen.style.overflow = 'visible';
+    offscreen.style.backgroundColor = isDark ? '#1a1a2e' : '#f8fafc';
+    offscreen.style.padding = '20px';
+    offscreen.style.borderRadius = '16px';
+    
+    // Clone the table
+    const cloneTable = origTable.cloneNode(true);
+    
+    // Remove sticky positioning so everything aligns perfectly in the full-size clone
+    cloneTable.querySelectorAll('th, td, thead, tbody').forEach(el => {
+        el.style.position = 'static';
+    });
+    
+    if (isDark) {
+        // Brighten cells for better contrast in dark mode screenshots
+        cloneTable.querySelectorAll('.cell-lec, .cell-tut, .cell-lab').forEach(cell => {
+            cell.style.position = 'relative';
+            const overlay = document.createElement('div');
+            overlay.style.position = 'absolute';
+            overlay.style.inset = '0';
+            overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'; // Brighten
+            overlay.style.pointerEvents = 'none';
+            overlay.style.borderRadius = 'inherit';
+            cell.appendChild(overlay);
+        });
+        cloneTable.style.color = '#ffffff';
+    }
+    
+    // Add a title to the screenshot
+    const title = document.createElement('h2');
+    const typeLabel = state.isCustomMode ? 'Custom ' : '';
+    title.textContent = `${typeLabel}Batch ${state.currentBatch} Schedule`;
+    title.style.color = isDark ? '#ffffff' : '#000000';
+    title.style.fontFamily = 'Inter, sans-serif';
+    title.style.textAlign = 'center';
+    title.style.marginBottom = '15px';
+    
+    offscreen.appendChild(title);
+    offscreen.appendChild(cloneTable);
+    document.body.appendChild(offscreen);
+    
+    html2canvas(offscreen, {
+      backgroundColor: isDark ? '#1a1a2e' : '#ffffff',
       scale: 2 // Higher resolution
     }).then(canvas => {
-      tableEl.style.zIndex = originalZIndex;
+      document.body.removeChild(offscreen);
       const imgData = canvas.toDataURL('image/png');
       
       const newTab = window.open();
@@ -1740,7 +1786,7 @@ function initTeacherSearch() {
         newTab.document.write(`
           <html>
             <head><title>Schedule Screenshot</title></head>
-            <body style="margin:0; background:${document.body.getAttribute('data-theme') === 'dark' ? '#222' : '#eee'}; display:flex; justify-content:center; align-items:center; min-height:100vh;">
+            <body style="margin:0; background:${isDark ? '#222' : '#eee'}; display:flex; justify-content:center; align-items:center; min-height:100vh;">
               <img src="${imgData}" style="max-width:100%; max-height:100vh; object-fit:contain; box-shadow: 0 0 20px rgba(0,0,0,0.5);" />
             </body>
           </html>
@@ -1755,7 +1801,9 @@ function initTeacherSearch() {
       }
     }).catch(err => {
       console.error('Screenshot failed:', err);
-      tableEl.style.zIndex = originalZIndex;
+      if (document.body.contains(offscreen)) {
+          document.body.removeChild(offscreen);
+      }
       showToast('❌ Failed to capture image');
     });
   }
