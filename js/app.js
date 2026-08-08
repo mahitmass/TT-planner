@@ -938,7 +938,6 @@ function populateBatches() {
   }
 
 // ==================== VIEW MODE ====================
- // REPLACE 'setViewMode' in app.js
 function setViewMode(mode) {
     state.currentView = mode;
     Storage.set('preferredView', mode);
@@ -947,27 +946,53 @@ function setViewMode(mode) {
     const activeBtn = document.getElementById(`btn-${mode}`);
     if(activeBtn) activeBtn.classList.add('active');
 
+    const fab = document.getElementById('floating-add-btn');
+    const camBtn = document.getElementById('camera-btn');
+
     if (mode === 'swipe') {
       dom.timetableContainer.classList.remove('hidden-view');
       dom.compactContainer.classList.add('hidden-view');
+      
+      if (fab) fab.style.display = state.isCustomMode ? 'flex' : 'none';
+      if (camBtn) camBtn.style.display = 'none';
       
       // Instant snap for Swipe View
       setTimeout(() => {
           handleResize();
           jumpToDay(state.currentDayIndex, false); 
-      }, 50);
-
+      }, 10);
+      
+      if (!state.isTeacherMode) {
+          const group3 = document.querySelector('.filter-group:nth-child(3)');
+          if(group3) {
+             group3.style.visibility = 'visible'; 
+             group3.style.opacity = '1'; 
+             group3.style.height = 'auto'; 
+          }
+      }
     } else {
-      // Switch to Table View
       dom.timetableContainer.classList.add('hidden-view');
       dom.compactContainer.classList.remove('hidden-view');
       
-      // --- NEW: Trigger Navigation immediately for Table View ---
-      setTimeout(() => {
-          highlightActiveClass(); 
-      }, 50);
+      if (fab) fab.style.display = 'none';
+      if (camBtn) camBtn.style.display = 'flex';
+
+      if (!state.isTeacherMode) {
+          const group3 = document.querySelector('.filter-group:nth-child(3)');
+          if(group3) {
+             group3.style.visibility = 'hidden'; 
+             group3.style.opacity = '0'; 
+             group3.style.height = '0';
+          }
+      }
     }
-}
+    
+    if (dom.filterPanel && dom.filterPanel.classList.contains('expanded')) {
+       toggleFilterPanel();
+    }
+  }
+
+
 
   // ==================== NAVIGATION ====================
   // REPLACE 'jumpToDay' in app.js
@@ -1657,7 +1682,7 @@ function initTeacherSearch() {
     if (state.isCustomMode) {
       document.body.classList.add('custom-mode');
       if (swipeBtn) { swipeBtn.classList.add('custom-active'); swipeBtn.textContent = '✏️'; }
-      if (fab) fab.style.display = 'flex';
+      if (fab && state.currentView === 'swipe') fab.style.display = 'flex';
       state.currentSchedule = CustomSchedule.ensureClone(state.currentSemester, state.currentBatch);
       showToast('✏️ Custom Mode');
     } else {
@@ -1688,6 +1713,51 @@ function initTeacherSearch() {
     toast.textContent = message;
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 1500);
+  }
+  
+  function takeScreenshot() {
+    const tableEl = document.querySelector('.weekly-table');
+    if (!tableEl || typeof html2canvas === 'undefined') {
+        showToast('❌ Unable to capture image');
+        return;
+    }
+    
+    showToast('📸 Capturing schedule...');
+    
+    // Briefly adjust styling if needed for a clean screenshot
+    const originalZIndex = tableEl.style.zIndex;
+    tableEl.style.zIndex = '9999';
+    
+    html2canvas(tableEl, {
+      backgroundColor: document.body.getAttribute('data-theme') === 'dark' ? '#121212' : '#f8fafc',
+      scale: 2 // Higher resolution
+    }).then(canvas => {
+      tableEl.style.zIndex = originalZIndex;
+      const imgData = canvas.toDataURL('image/png');
+      
+      const newTab = window.open();
+      if (newTab) {
+        newTab.document.write(`
+          <html>
+            <head><title>Schedule Screenshot</title></head>
+            <body style="margin:0; background:${document.body.getAttribute('data-theme') === 'dark' ? '#222' : '#eee'}; display:flex; justify-content:center; align-items:center; min-height:100vh;">
+              <img src="${imgData}" style="max-width:100%; max-height:100vh; object-fit:contain; box-shadow: 0 0 20px rgba(0,0,0,0.5);" />
+            </body>
+          </html>
+        `);
+        newTab.document.close();
+      } else {
+        // Fallback if popup blocked
+        const a = document.createElement('a');
+        a.href = imgData;
+        a.download = `Schedule_${state.currentBatch}.png`;
+        a.click();
+      }
+    }).catch(err => {
+      console.error('Screenshot failed:', err);
+      tableEl.style.zIndex = originalZIndex;
+      showToast('❌ Failed to capture image');
+    });
   }
   
   // --- Inline Edit (Swipe View Cards) ---
@@ -1990,7 +2060,8 @@ function initTeacherSearch() {
       toggleSeries,
       toggleBatchGrid,
       forceUpdateCheck,
-      toggleCustomMode
+      toggleCustomMode,
+      takeScreenshot
     };
 })();
 
