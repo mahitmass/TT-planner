@@ -111,7 +111,115 @@ const TimetableApp = (function () {
     let lastSwitchY = 0;
     let isSwiping = false;
 
-    function init() {
+  
+  // ==================== SHARED BATCHES HELPER ====================
+  function findSharedBatches(targetClass) {
+    if (state.isTeacherMode || state.isRoomMode || state.isCustomMode) return [];
+    if (!scheduleMap || !scheduleMap[state.currentSemester]) return [];
+    
+    const semData = scheduleMap[state.currentSemester];
+    const shared = [];
+    
+    const getSeries = (bName) => {
+      if (typeof batchSeries !== 'undefined' && batchSeries[state.currentSemester] && batchSeries[state.currentSemester][bName]) {
+        return batchSeries[state.currentSemester][bName];
+      }
+      return /^[FEH]/.test(bName) ? "128" : "62";
+    };
+    
+    const currentSeries = getSeries(state.currentBatch);
+    
+    for (const [batchName, batchSchedule] of Object.entries(semData)) {
+      if (batchName === state.currentBatch) continue; // Skip current
+      if (getSeries(batchName) !== currentSeries) continue; // Skip batches from a different series
+      
+      const hasMatch = batchSchedule.some(cls => 
+        cls.day === targetClass.day &&
+        cls.start === targetClass.start &&
+        cls.duration === targetClass.duration &&
+        cls.code === targetClass.code &&
+        cls.teacher === targetClass.teacher &&
+        cls.title === targetClass.title
+      );
+      
+      if (hasMatch) {
+        shared.push(batchName);
+      }
+    }
+    return shared;
+  }
+  
+  // ==================== ROOM SCHEDULE GENERATION ====================
+  function loadRoomSchedule(roomCode, roomName) {
+    if (dom.selectedBatchLabel) dom.selectedBatchLabel.textContent = `Room: ${roomCode}`;
+    if (dom.floatingBatch) dom.floatingBatch.textContent = `ROOM ${roomCode}`;
+
+    state.currentBatch = roomCode;
+    state.isTeacherMode = false;
+    state.isRoomMode = true;
+
+    document.querySelectorAll('.batch-btn').forEach(btn => btn.classList.remove('active-batch'));
+
+    let roomSchedule = [];
+
+    // Search ALL semesters and ALL batches for classes in this room
+    if (typeof scheduleMap !== 'undefined') {
+      Object.keys(scheduleMap).forEach(semKey => {
+        const semBatches = scheduleMap[semKey];
+        Object.keys(semBatches).forEach(batchKey => {
+          const classes = semBatches[batchKey];
+          classes.forEach(cls => {
+            if (cls.code === roomCode) {
+              let existing = roomSchedule.find(c =>
+                c.day === cls.day &&
+                c.start === cls.start &&
+                c.duration === cls.duration &&
+                c.title === cls.title &&
+                c.teacher === cls.teacher &&
+                c.type === cls.type
+              );
+
+              if (existing) {
+                if (!existing.batchNames.includes(batchKey)) {
+                  existing.batchNames.push(batchKey);
+                }
+              } else {
+                roomSchedule.push({
+                  ...cls,
+                  batchNames: [batchKey]
+                });
+              }
+            }
+          });
+        });
+      });
+    }
+
+    state.currentSchedule = roomSchedule;
+    renderInitialViews();
+    
+    // Manage UI elements for Teacher/Room mode
+    const studentControls = document.getElementById('student-controls');
+    const teacherControls = document.getElementById('teacher-controls');
+    if (studentControls) studentControls.classList.add('hidden');
+    if (teacherControls) teacherControls.classList.remove('hidden');
+
+    const viewModeButtons = document.querySelector('.filter-group:nth-child(2) .filter-options');
+    const jumpToDayButtons = document.querySelector('.filter-group:nth-child(3) .filter-options');
+    if (viewModeButtons) { viewModeButtons.style.visibility = 'visible'; viewModeButtons.style.opacity = '1'; }
+    if (jumpToDayButtons) { jumpToDayButtons.style.visibility = 'visible'; jumpToDayButtons.style.opacity = '1'; }
+    
+    // Keep Teacher Mode active in terms of UI layout (glass wall)
+    state.isTeacherMode = true; // Temporary hack to reuse teacher UI 
+    manageBackdrop(true);
+
+    setTimeout(() => {
+      highlightActiveClass();
+      jumpToDay(state.currentDayIndex);
+    }, 50);
+  }
+
+  function init() {
       overlay = document.getElementById('batch-scroller');
       badge = document.getElementById('floating-batch');
       if (!overlay || !badge) return;
@@ -259,6 +367,7 @@ const TimetableApp = (function () {
     isVerticalScrollPossible: false,
     initialScrollTop: 0,
     isTeacherMode: false,
+    isRoomMode: false,
     wheelCooldown: false,
     isCustomMode: false,
     editingCardIndex: -1
@@ -325,6 +434,104 @@ const TimetableApp = (function () {
     filterPanel: null,
     dropdownContent: null
   };
+
+
+  // ==================== SHARED BATCHES HELPER ====================
+  function findSharedBatches(targetClass) {
+    if (state.isTeacherMode || state.isRoomMode || state.isCustomMode) return [];
+    if (!scheduleMap || !scheduleMap[state.currentSemester]) return [];
+    
+    const semData = scheduleMap[state.currentSemester];
+    const shared = [];
+    
+    for (const [batchName, batchSchedule] of Object.entries(semData)) {
+      if (batchName === state.currentBatch) continue; // Skip current
+      
+      const hasMatch = batchSchedule.some(cls => 
+        cls.day === targetClass.day &&
+        cls.start === targetClass.start &&
+        cls.duration === targetClass.duration &&
+        cls.code === targetClass.code &&
+        cls.teacher === targetClass.teacher &&
+        cls.title === targetClass.title
+      );
+      
+      if (hasMatch) {
+        shared.push(batchName);
+      }
+    }
+    return shared;
+  }
+  
+  // ==================== ROOM SCHEDULE GENERATION ====================
+  function loadRoomSchedule(roomCode, roomName) {
+    if (dom.selectedBatchLabel) dom.selectedBatchLabel.textContent = `Room: ${roomCode}`;
+    if (dom.floatingBatch) dom.floatingBatch.textContent = `ROOM ${roomCode}`;
+
+    state.currentBatch = roomCode;
+    state.isTeacherMode = false;
+    state.isRoomMode = true;
+
+    document.querySelectorAll('.batch-btn').forEach(btn => btn.classList.remove('active-batch'));
+
+    let roomSchedule = [];
+
+    // Search ALL semesters and ALL batches for classes in this room
+    if (typeof scheduleMap !== 'undefined') {
+      Object.keys(scheduleMap).forEach(semKey => {
+        const semBatches = scheduleMap[semKey];
+        Object.keys(semBatches).forEach(batchKey => {
+          const classes = semBatches[batchKey];
+          classes.forEach(cls => {
+            if (cls.code === roomCode) {
+              let existing = roomSchedule.find(c =>
+                c.day === cls.day &&
+                c.start === cls.start &&
+                c.duration === cls.duration &&
+                c.title === cls.title &&
+                c.teacher === cls.teacher &&
+                c.type === cls.type
+              );
+
+              if (existing) {
+                if (!existing.batchNames.includes(batchKey)) {
+                  existing.batchNames.push(batchKey);
+                }
+              } else {
+                roomSchedule.push({
+                  ...cls,
+                  batchNames: [batchKey]
+                });
+              }
+            }
+          });
+        });
+      });
+    }
+
+    state.currentSchedule = roomSchedule;
+    renderInitialViews();
+    
+    // Manage UI elements for Teacher/Room mode
+    const studentControls = document.getElementById('student-controls');
+    const teacherControls = document.getElementById('teacher-controls');
+    if (studentControls) studentControls.classList.add('hidden');
+    if (teacherControls) teacherControls.classList.remove('hidden');
+
+    const viewModeButtons = document.querySelector('.filter-group:nth-child(2) .filter-options');
+    const jumpToDayButtons = document.querySelector('.filter-group:nth-child(3) .filter-options');
+    if (viewModeButtons) { viewModeButtons.style.visibility = 'visible'; viewModeButtons.style.opacity = '1'; }
+    if (jumpToDayButtons) { jumpToDayButtons.style.visibility = 'visible'; jumpToDayButtons.style.opacity = '1'; }
+    
+    // Keep Teacher Mode active in terms of UI layout (glass wall)
+    state.isTeacherMode = true; // Temporary hack to reuse teacher UI 
+    manageBackdrop(true);
+
+    setTimeout(() => {
+      highlightActiveClass();
+      jumpToDay(state.currentDayIndex);
+    }, 50);
+  }
 
   function init() {
     console.log('Initializing Timetable App...');
@@ -458,11 +665,17 @@ const TimetableApp = (function () {
   }
 
   function updateBatchLabels(batchName) {
-    if (dom.floatingBatch) dom.floatingBatch.textContent = `BATCH ${batchName}`;
+    if (dom.floatingBatch) {
+      if (state.isRoomMode) {
+        dom.floatingBatch.textContent = `ROOM ${batchName}`;
+      } else {
+        dom.floatingBatch.textContent = `BATCH ${batchName}`;
+      }
+    }
 
     const cornerLabel = document.getElementById('table-corner-label');
     if (cornerLabel) {
-      if (state.isTeacherMode) {
+      if (state.isTeacherMode || state.isRoomMode) {
         cornerLabel.innerHTML = 'Day';
       } else {
         const modeIcon = state.isCustomMode ? '✏️' : '📋';
@@ -750,9 +963,20 @@ const TimetableApp = (function () {
     const displayTitle = getSubjectFullTitle(cls.title, cls.type) || cls.title;
     const shortTitle = displayTitle.includes('(') ? displayTitle.split('(')[0].trim() : displayTitle;
 
+    let extraBatchesHtml = '';
+    if (state.isRoomMode) {
+        extraBatchesHtml = `<span class="cell-room" style="color:var(--text-muted); font-size: 0.65rem; display:block; margin-top:2px;">${cls.batchNames ? cls.batchNames.join(', ') : ''}</span>`;
+    } else if (!state.isTeacherMode && !state.isCustomMode) {
+        const shared = findSharedBatches(cls);
+        if (shared.length > 0) {
+            extraBatchesHtml = `<span class="cell-room" style="color:var(--text-muted); font-size: 0.6rem; display:block; margin-top:2px;">+ ${shared.join(', ')}</span>`;
+        }
+    }
+
     let innerHtml = `
         <span class="cell-subject" title="${displayTitle}">${shortTitle}</span>
-        <span class="cell-room">${cls.code}</span>
+        ${state.isRoomMode ? '' : `<span class="cell-room">${cls.code}</span>`}
+        ${extraBatchesHtml}
     `;
 
     if (extraCount > 0) {
@@ -1464,6 +1688,7 @@ const TimetableApp = (function () {
   // ==================== TEACHER MODE ====================
   // REPLACE 'toggleTeacherMode' in app.js
   function toggleTeacherMode() {
+    state.isRoomMode = false;
     state.isTeacherMode = !state.isTeacherMode;
     const btn = document.getElementById('teacher-mode-btn');
     const studentControls = document.getElementById('student-controls');
