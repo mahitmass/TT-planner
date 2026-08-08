@@ -3645,6 +3645,10 @@ const batchSeries = {
 const facultyNames = {
   "LKK": "Lakhveer Kaur",
   "NF9": "Harshita Bharadwaj",
+  "SAM": "Sambhav",
+  "BHA": "Bharti Arora",
+  "ABC": "Abhishek Chaudhary",
+  "SHY": "Shulabh Tyagi",
   "AMB": "Amita Bhagat",
   "KRR": "Kritika Rohila",
   "SPT": "Sapna Thapar",
