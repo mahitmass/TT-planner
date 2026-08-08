@@ -471,7 +471,6 @@ const TimetableApp = (function() {
                   <div style="display: inline-block; font-size: 0.9rem; color: var(--accent-color); font-weight: 800; border: 1px solid var(--accent-color); background: rgba(187, 134, 252, 0.1); border-radius: 6px; padding: 1px 8px; margin-bottom: 2px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.5px;">
                       ${batchName}
                   </div>
-                  <div style="font-size: 0.65rem; opacity: 0.6; font-weight: 600; letter-spacing: 1px;">DAY</div>
                   <button class="corner-mode-btn ${modeClass}" onclick="TimetableApp.toggleCustomMode(); event.stopPropagation();">${modeIcon}</button>
               `;
         }
@@ -631,7 +630,7 @@ function renderDesktopView() {
              <div style="display: inline-block; font-size: 0.9rem; color: var(--accent-color); font-weight: 800; border: 1px solid var(--accent-color); background: rgba(187, 134, 252, 0.1); border-radius: 6px; padding: 1px 8px; margin-bottom: 2px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); letter-spacing: 0.5px;">
                   ${state.currentBatch}
               </div>
-              <div style="font-size: 0.65rem; opacity: 0.6; font-weight: 600; letter-spacing: 1px;">DAY</div>
+              
         `;
         
         // Inject Table View Mode Toggle Button

@@ -25,3 +25,20 @@ jobs:
             --admin
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Send Email Notification
+        if: success()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          from: "Schedule Bot <${{ secrets.MAIL_USERNAME }}>"
+          to: anonyfuss4anonymous@gmail.com
+          subject: "✅ Timetable Auto-Merge Successful"
+          body: |
+            The scraper bot data was successfully accepted and merged into the main branch!
+            
+            PR: #${{ github.event.pull_request.number }}
+            Branch: ${{ github.event.pull_request.head.ref }}
