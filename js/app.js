@@ -617,6 +617,7 @@ function renderDesktopView() {
     const corner = document.createElement('th');
     corner.id = 'table-corner-label';
     corner.style.zIndex = '65'; // Higher than others
+    corner.style.position = 'relative'; // For absolute toggle button
     
     if (state.isTeacherMode) {
         corner.innerHTML = 'Day';
@@ -627,6 +628,21 @@ function renderDesktopView() {
               </div>
               <div style="font-size: 0.65rem; opacity: 0.6; font-weight: 600; letter-spacing: 1px;">DAY</div>
         `;
+        
+        // Inject Table View Mode Toggle Button
+        const toggleBtn = document.createElement('button');
+        toggleBtn.id = 'mode-toggle-table';
+        toggleBtn.className = 'mode-toggle-btn ' + (state.isCustomMode ? 'custom-active' : '');
+        toggleBtn.innerHTML = state.isCustomMode ? '✏️' : '📋';
+        toggleBtn.style.position = 'absolute';
+        toggleBtn.style.bottom = '4px';
+        toggleBtn.style.right = '4px';
+        toggleBtn.style.fontSize = '0.9rem';
+        toggleBtn.style.padding = '3px 6px';
+        toggleBtn.title = 'Toggle Custom Mode';
+        toggleBtn.onclick = (e) => { e.stopPropagation(); toggleCustomMode(); };
+        
+        corner.appendChild(toggleBtn);
     }
     headerRow.appendChild(corner);
 
@@ -1716,8 +1732,10 @@ function initTeacherSearch() {
   }
   
   function takeScreenshot() {
-    const origTable = document.querySelector('.weekly-table');
-    if (!origTable || typeof html2canvas === 'undefined') {
+    const tableEl = document.querySelector('.weekly-table');
+    const containerEl = document.querySelector('.compact-container');
+    
+    if (!tableEl || typeof html2canvas === 'undefined') {
         showToast('❌ Unable to capture image');
         return;
     }
@@ -1726,61 +1744,53 @@ function initTeacherSearch() {
     
     const isDark = document.body.getAttribute('data-theme') === 'dark';
     
-    // Create an off-screen container for perfect un-scrolled cloning
-    const offscreen = document.createElement('div');
-    offscreen.className = 'compact-container';
-    offscreen.style.position = 'absolute';
-    offscreen.style.top = '-9999px';
-    offscreen.style.left = '-9999px';
-    offscreen.style.width = 'max-content';
-    offscreen.style.overflow = 'visible';
-    offscreen.style.backgroundColor = isDark ? '#1a1a2e' : '#f8fafc';
-    offscreen.style.padding = '20px';
-    offscreen.style.borderRadius = '16px';
+    // Save scroll state
+    const origScrollLeft = containerEl ? containerEl.scrollLeft : 0;
     
-    // Clone the table
-    const cloneTable = origTable.cloneNode(true);
+    // Reset scroll to 0 to fix sticky column offset in capture
+    if (containerEl) {
+        containerEl.scrollLeft = 0;
+    }
     
-    // Remove sticky positioning so everything aligns perfectly in the full-size clone
-    cloneTable.querySelectorAll('th, td, thead, tbody').forEach(el => {
-        el.style.position = 'static';
-    });
-    
+    // Add brightness overlays in dark mode directly to live table
+    const overlays = [];
     if (isDark) {
-        // Brighten cells for better contrast in dark mode screenshots
-        cloneTable.querySelectorAll('.cell-lec, .cell-tut, .cell-lab').forEach(cell => {
-            cell.style.position = 'relative';
+        tableEl.querySelectorAll('.cell-lec, .cell-tut, .cell-lab').forEach(cell => {
+            if (getComputedStyle(cell).position === 'static') {
+                cell.style.position = 'relative';
+            }
             const overlay = document.createElement('div');
             overlay.style.position = 'absolute';
             overlay.style.inset = '0';
-            overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'; // Brighten
+            overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.15)'; // Brighten
             overlay.style.pointerEvents = 'none';
             overlay.style.borderRadius = 'inherit';
+            overlay.style.zIndex = '10';
+            
             cell.appendChild(overlay);
+            overlays.push(overlay);
         });
-        cloneTable.style.color = '#ffffff';
     }
     
-    // Add a title to the screenshot
-    const title = document.createElement('h2');
-    const typeLabel = state.isCustomMode ? 'Custom ' : '';
-    title.textContent = `${typeLabel}Batch ${state.currentBatch} Schedule`;
-    title.style.color = isDark ? '#ffffff' : '#000000';
-    title.style.fontFamily = 'Inter, sans-serif';
-    title.style.textAlign = 'center';
-    title.style.marginBottom = '15px';
+    // Briefly adjust z-index to ensure it captures cleanly
+    const originalZIndex = tableEl.style.zIndex;
+    tableEl.style.zIndex = '9999';
     
-    offscreen.appendChild(title);
-    offscreen.appendChild(cloneTable);
-    document.body.appendChild(offscreen);
-    
-    html2canvas(offscreen, {
-      backgroundColor: isDark ? '#1a1a2e' : '#ffffff',
+    html2canvas(tableEl, {
+      backgroundColor: isDark ? '#1a1a2e' : '#f8fafc',
       scale: 2 // Higher resolution
     }).then(canvas => {
-      document.body.removeChild(offscreen);
+      // Restore live table state immediately
+      tableEl.style.zIndex = originalZIndex;
+      if (containerEl) containerEl.scrollLeft = origScrollLeft;
+      overlays.forEach(o => o.remove());
       
       canvas.toBlob(blob => {
+          if (!blob) {
+              console.error('html2canvas returned an empty blob');
+              showToast('❌ Empty image generated');
+              return;
+          }
           const url = URL.createObjectURL(blob);
           const a = document.createElement('a');
           a.href = url;
@@ -1795,9 +1805,9 @@ function initTeacherSearch() {
       
     }).catch(err => {
       console.error('Screenshot failed:', err);
-      if (document.body.contains(offscreen)) {
-          document.body.removeChild(offscreen);
-      }
+      tableEl.style.zIndex = originalZIndex;
+      if (containerEl) containerEl.scrollLeft = origScrollLeft;
+      overlays.forEach(o => o.remove());
       showToast('❌ Failed to capture image');
     });
   }
