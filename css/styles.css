@@ -2250,7 +2250,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-main);
+  color: var(--accent-color);
   font-size: 1.3rem;
   font-weight: bold;
   cursor: pointer;
@@ -2263,7 +2263,7 @@ body {
 }
 
 .modal-add-btn:hover {
-  color: var(--accent-color);
+  color: var(--accent-hover);
   transform: translateY(-2px);
 }
 

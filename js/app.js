@@ -637,11 +637,11 @@ function renderDesktopView() {
         // Inject Table View Mode Toggle Button
         const toggleBtn = document.createElement('button');
         toggleBtn.id = 'mode-toggle-table';
-        toggleBtn.className = 'mode-toggle-btn ' + (state.isCustomMode ? 'custom-active' : '');
+        toggleBtn.className = 'corner-mode-btn ' + (state.isCustomMode ? 'custom-active' : '');
         toggleBtn.innerHTML = state.isCustomMode ? '✏️' : '📋';
-        toggleBtn.style.position = 'absolute';
-        toggleBtn.style.bottom = '4px';
-        toggleBtn.style.right = '4px';
+        
+        
+        
         toggleBtn.style.fontSize = '0.9rem';
         toggleBtn.style.padding = '3px 6px';
         toggleBtn.title = 'Toggle Custom Mode';
@@ -1434,6 +1434,11 @@ function toggleFilterPanel() {
         toggleFilterPanel();
       }
     }
+    
+    // Cancel any open inline edits if clicking outside a class card
+    if (!e.target.closest('.class-card')) {
+        document.querySelectorAll('.class-card .edit-btn-cancel').forEach(btn => btn.click());
+    }
   }
 
   function toggleTheme() {
@@ -1738,7 +1743,7 @@ function initTeacherSearch() {
   
   function takeScreenshot() {
     const tableEl = document.querySelector('.weekly-table');
-    const containerEl = document.querySelector('.compact-container');
+    const containerEl = document.getElementById('compact-container');
     
     if (!tableEl || typeof html2canvas === 'undefined') {
         showToast('❌ Unable to capture image');
@@ -1757,26 +1762,6 @@ function initTeacherSearch() {
         containerEl.scrollLeft = 0;
     }
     
-    // Add brightness overlays in dark mode directly to live table
-    const overlays = [];
-    if (isDark) {
-        tableEl.querySelectorAll('.cell-lec, .cell-tut, .cell-lab').forEach(cell => {
-            if (getComputedStyle(cell).position === 'static') {
-                cell.style.position = 'relative';
-            }
-            const overlay = document.createElement('div');
-            overlay.style.position = 'absolute';
-            overlay.style.inset = '0';
-            overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.15)'; // Brighten
-            overlay.style.pointerEvents = 'none';
-            overlay.style.borderRadius = 'inherit';
-            overlay.style.zIndex = '10';
-            
-            cell.appendChild(overlay);
-            overlays.push(overlay);
-        });
-    }
-    
     // Briefly adjust z-index to ensure it captures cleanly
     const originalZIndex = tableEl.style.zIndex;
     tableEl.style.zIndex = '9999';
@@ -1788,7 +1773,6 @@ function initTeacherSearch() {
       // Restore live table state immediately
       tableEl.style.zIndex = originalZIndex;
       if (containerEl) containerEl.scrollLeft = origScrollLeft;
-      overlays.forEach(o => o.remove());
       
       canvas.toBlob(blob => {
           if (!blob) {
@@ -1819,6 +1803,17 @@ function initTeacherSearch() {
   
   // --- Inline Edit (Swipe View Cards) ---
   function openInlineEdit(card, cls, clsIndex) {
+    if (card.querySelector('.edit-form')) return; // Already editing
+    
+    // Close any other open edit forms
+    document.querySelectorAll('.class-card .edit-btn-cancel').forEach(btn => {
+        if (btn.closest('.class-card') !== card) btn.click();
+    });
+    
+    // Hide room popup if open
+    const popup = document.getElementById('room-info-popup');
+    if (popup) popup.style.display = 'none';
+
     // Save original HTML for cancel
     const originalHTML = card.innerHTML;
     const originalClassName = card.className;
