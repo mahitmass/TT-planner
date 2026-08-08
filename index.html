@@ -169,21 +169,31 @@
         </div>
         <div class="edit-form-row">
           <span class="edit-form-label">Subject</span>
-          <input class="edit-form-input" id="add-subject" placeholder="Subject name">
+          <div class="input-wrapper">
+            <input class="edit-form-input" id="add-subject" placeholder="Subject name" autocomplete="off">
+            <div id="add-subject-suggestions" class="autocomplete-suggestions"></div>
+          </div>
         </div>
         <div class="edit-form-row">
           <span class="edit-form-label">Room</span>
-          <input class="edit-form-input" id="add-room" placeholder="e.g. G7, FF5">
+          <div class="input-wrapper">
+            <input class="edit-form-input" id="add-room" placeholder="e.g. G7, FF5" autocomplete="off">
+            <div id="add-room-suggestions" class="autocomplete-suggestions"></div>
+          </div>
         </div>
         <div class="edit-form-row">
           <span class="edit-form-label">Teacher</span>
-          <input class="edit-form-input" id="add-teacher" placeholder="Teacher code e.g. ANK">
+          <div class="input-wrapper">
+            <input class="edit-form-input" id="add-teacher" placeholder="Teacher code e.g. ANK" autocomplete="off">
+            <div id="add-teacher-suggestions" class="autocomplete-suggestions"></div>
+          </div>
         </div>
         <div class="edit-form-row" id="add-type-row">
           <span class="edit-form-label">Type</span>
           <div class="type-chips" id="add-type-chips"></div>
         </div>
         <div class="edit-form-actions">
+          <button class="edit-btn-delete" id="add-class-delete" style="display:none">Delete</button>
           <button class="edit-btn-cancel" id="add-class-cancel">Cancel</button>
           <button class="edit-btn-save" id="add-class-save">Add Class</button>
         </div>

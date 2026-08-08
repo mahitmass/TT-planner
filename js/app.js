@@ -334,6 +334,11 @@ const TimetableApp = (function() {
     initializeBatchDropdown();
     BatchScroller.init();
     
+    // Initialize Custom Mode Autocomplete
+    if (typeof setupAutocomplete === 'function') {
+      setupAutocomplete();
+    }
+    
     const teacherBtn = document.getElementById('teacher-mode-btn');
     if(teacherBtn) teacherBtn.addEventListener('click', toggleTeacherMode);
     
@@ -1958,26 +1963,41 @@ function initTeacherSearch() {
       c.classList.toggle('active', c.dataset.type === cls.type);
     });
     
-    // Change save button behavior to update instead of add
+    // Save (Update existing)
     const saveBtn = document.getElementById('add-class-save');
     saveBtn.textContent = 'Save Changes';
     saveBtn.onclick = () => {
-      const day = parseInt(dayChips.querySelector('.day-chip.active')?.dataset.day || cls.day);
+      const day = parseInt(dayChips.querySelector('.day-chip.active')?.dataset.day);
+      if (!day) return;
+      
       const updated = {
+        ...cls,
         day,
         start: parseInt(document.getElementById('add-start-time').value),
-        duration: cls.duration,
-        title: document.getElementById('add-subject').value.trim() || cls.title,
-        code: document.getElementById('add-room').value.trim() || cls.code,
-        teacher: document.getElementById('add-teacher').value.trim() || cls.teacher,
-        type: cls.type
+        title: document.getElementById('add-subject').value.trim(),
+        code: document.getElementById('add-room').value.trim(),
+        teacher: document.getElementById('add-teacher').value.trim()
       };
+      
       state.currentSchedule = CustomSchedule.updateEntry(state.currentSemester, state.currentBatch, clsIndex, updated);
       closeAddClassModal();
       renderMobileView();
       renderDesktopView();
       setTimeout(() => { highlightActiveClass(); jumpToDay(day - 1); }, 50);
     };
+    
+    // Show delete button for Edit mode
+    const deleteBtn = document.getElementById('add-class-delete');
+    if (deleteBtn) {
+      deleteBtn.style.display = 'inline-block';
+      deleteBtn.onclick = () => {
+        state.currentSchedule = CustomSchedule.deleteEntry(state.currentSemester, state.currentBatch, clsIndex);
+        closeAddClassModal();
+        renderMobileView();
+        renderDesktopView();
+        setTimeout(() => jumpToDay(state.currentDayIndex, false), 50);
+      };
+    }
     
     modal.classList.add('visible');
   }
@@ -2087,10 +2107,38 @@ function initTeacherSearch() {
       c.classList.toggle('active', parseInt(c.dataset.day) === prefilledDay);
     });
     
-    // Reset save button
+    // Hide delete button for Add mode
+    const deleteBtn = document.getElementById('add-class-delete');
+    if (deleteBtn) deleteBtn.style.display = 'none';
+    
+    // Reset save button and RE-BIND Add Entry logic
     const saveBtn = document.getElementById('add-class-save');
     saveBtn.textContent = 'Add Class';
-    // Re-bind default save handler (initAddClassForm sets it)
+    saveBtn.onclick = () => {
+      const dayChips = document.getElementById('add-day-chips');
+      const startSelect = document.getElementById('add-start-time');
+      const durChips = document.getElementById('add-duration-chips');
+      const typeChips = document.getElementById('add-type-chips');
+      
+      const day = parseInt(dayChips.querySelector('.day-chip.active')?.dataset.day);
+      if (!day) { showToast('❌ Select a day'); return; }
+      
+      const entry = {
+        day,
+        start: parseInt(startSelect.value),
+        duration: parseInt(durChips.querySelector('.dur-chip.active')?.dataset.dur || 1),
+        title: document.getElementById('add-subject').value.trim() || 'New Class',
+        code: document.getElementById('add-room').value.trim() || 'TBA',
+        teacher: document.getElementById('add-teacher').value.trim() || 'TBA',
+        type: typeChips.querySelector('.type-chip.active')?.dataset.type || 'lec'
+      };
+      
+      state.currentSchedule = CustomSchedule.addEntry(state.currentSemester, state.currentBatch, entry);
+      closeAddClassModal();
+      renderMobileView();
+      renderDesktopView();
+      setTimeout(() => { highlightActiveClass(); jumpToDay(day - 1); }, 50);
+    };
     
     modal.classList.add('visible');
   }
@@ -2098,6 +2146,118 @@ function initTeacherSearch() {
   function closeAddClassModal() {
     const modal = document.getElementById('add-class-modal');
     if (modal) modal.classList.remove('visible');
+    // Hide autocomplete dropdowns just in case
+    document.querySelectorAll('.autocomplete-suggestions').forEach(el => el.style.display = 'none');
+  }
+
+  // --- Autocomplete Engine ---
+  function setupAutocomplete() {
+    const attachAutocomplete = (inputId, suggId, getSuggestions) => {
+      const input = document.getElementById(inputId);
+      const suggBox = document.getElementById(suggId);
+      if (!input || !suggBox) return;
+      
+      let activeIndex = -1;
+      
+      const renderSuggestions = (suggestions) => {
+        if (!suggestions || suggestions.length === 0) {
+          suggBox.style.display = 'none';
+          return;
+        }
+        suggBox.innerHTML = suggestions.map((s, i) => `<div class="autocomplete-item" data-index="${i}">${s}</div>`).join('');
+        suggBox.style.display = 'block';
+        
+        suggBox.querySelectorAll('.autocomplete-item').forEach(item => {
+          item.onmousedown = (e) => {
+            e.preventDefault(); // Prevent blur
+            input.value = item.textContent;
+            suggBox.style.display = 'none';
+          };
+        });
+      };
+      
+      input.addEventListener('input', () => {
+        activeIndex = -1;
+        const val = input.value.trim().toLowerCase();
+        if (!val) { suggBox.style.display = 'none'; return; }
+        
+        const matches = getSuggestions(val);
+        renderSuggestions(matches);
+      });
+      
+      input.addEventListener('blur', () => {
+        // Delay to allow click on suggestion
+        setTimeout(() => suggBox.style.display = 'none', 150);
+      });
+      
+      input.addEventListener('focus', () => {
+        const val = input.value.trim().toLowerCase();
+        if (val) {
+           const matches = getSuggestions(val);
+           renderSuggestions(matches);
+        }
+      });
+    };
+    
+    // 1. Subject Autocomplete
+    attachAutocomplete('add-subject', 'add-subject-suggestions', (query) => {
+      // Extract unique subjects from official scheduleMap
+      const uniqueSubjects = new Set();
+      if (typeof scheduleMap !== 'undefined') {
+        Object.values(scheduleMap).forEach(batches => {
+          Object.values(batches).forEach(schedule => {
+            schedule.forEach(cls => uniqueSubjects.add(cls.title));
+          });
+        });
+      }
+      return Array.from(uniqueSubjects)
+        .filter(s => s.toLowerCase().includes(query))
+        .slice(0, 5); // Max 5 suggestions
+    });
+    
+    // 2. Room Autocomplete
+    attachAutocomplete('add-room', 'add-room-suggestions', (query) => {
+      const uniqueRooms = new Set();
+      // From scheduleMap
+      if (typeof scheduleMap !== 'undefined') {
+        Object.values(scheduleMap).forEach(batches => {
+          Object.values(batches).forEach(schedule => {
+            schedule.forEach(cls => {
+                if(cls.code && cls.code !== 'TBA') uniqueRooms.add(cls.code);
+            });
+          });
+        });
+      }
+      // From ROOM_LOCATIONS
+      if (typeof ROOM_LOCATIONS !== 'undefined') {
+        Object.keys(ROOM_LOCATIONS).forEach(r => uniqueRooms.add(r));
+      }
+      
+      return Array.from(uniqueRooms)
+        .filter(r => r.toLowerCase().includes(query))
+        .slice(0, 5); // Max 5
+    });
+    
+    // 3. Teacher Autocomplete (Max 2 suggestions matching name or code)
+    attachAutocomplete('add-teacher', 'add-teacher-suggestions', (query) => {
+      const matches = [];
+      const addTeachersFrom = (dict) => {
+        if (!dict) return;
+        for (const [code, name] of Object.entries(dict)) {
+           const codeMatch = code.toLowerCase().includes(query);
+           const nameMatch = name.toLowerCase().includes(query);
+           if (codeMatch || nameMatch) {
+               matches.push(`${name} (${code})`);
+           }
+        }
+      };
+      
+      if (typeof facultyNames !== 'undefined') addTeachersFrom(facultyNames);
+      if (typeof facultyNames128 !== 'undefined') addTeachersFrom(facultyNames128);
+      
+      // Deduplicate and limit to 2
+      return [...new Set(matches)].slice(0, 2);
+    });
   }
 
   // Public API
