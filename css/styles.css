@@ -2214,12 +2214,12 @@ body {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: var(--accent-color);
   color: #000;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
