@@ -49,24 +49,7 @@ module.exports = {
         }
     }
     */
-    {
-        semester: 3,
-        batch: "B12",
-        day: 4,
-        start: 14,
-        changes: {
-            code: "LT3" 
-        }
-    },
-    {
-        semester: 3,
-        batch: "B12",
-        day: 4,
-        start: 12,
-        changes: {
-            code: "LT3" 
-        }
-    },
+    
     {
         semester: 3,
         batch: "A5",
