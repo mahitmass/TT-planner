@@ -67,6 +67,16 @@ module.exports = {
             code: "LT3" 
         }
     },
+    {
+        semester: 3,
+        batch: "A5",
+        day: 2,
+        start: 9,
+        changes: {
+            start: 10,
+            code: "F4"
+        }
+    },
     
   ]
 };
