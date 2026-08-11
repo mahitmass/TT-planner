@@ -2011,8 +2011,8 @@ const TimetableApp = (function () {
 
         if (!tw || !th) return;
 
-        // Scale so entire table fits in viewport with 4px margin
-        const scale = Math.min((vw - 8) / tw, (vh - 8) / th);
+        // Scale so entire table fits in viewport with margins
+        const scale = Math.min((vw - 20) / tw, (vh - 120) / th);
 
         // Center the scaled table within the viewport
         const scaledW = tw * scale;

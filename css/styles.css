@@ -93,17 +93,44 @@ body.screenshot-mode #compact-container {
 
 /* The table itself is what gets scaled by JS transform */
 body.screenshot-mode .weekly-table {
-    min-width: 700px !important;
+    min-width: 800px !important;
     width: max-content !important;
 }
 
 body.screenshot-mode .weekly-table td, 
 body.screenshot-mode .weekly-table th {
-    padding-top: 16px !important;
-    padding-bottom: 16px !important;
+    padding: 24px 6px !important;
+    word-break: keep-all !important;
+    white-space: nowrap !important;
 }
 
-body.screenshot-mode #exit-screenshot-btn {
+body.screenshot-mode .weekly-table td div {
+    white-space: normal !important;
+    word-break: keep-all !important;
+    hyphens: none !important;
+}
+
+.exit-screenshot-btn {
+    display: none;
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    background: #ff3b30;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    z-index: 10000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+body.screenshot-mode .exit-screenshot-btn {
     display: flex !important;
 }
 
