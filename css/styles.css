@@ -91,16 +91,18 @@ body.screenshot-mode #compact-container {
     left: 0 !important;
 }
 
-/* The table itself is what gets scaled by JS transform */
+/* --- SCREENSHOT MODE DEFAULT (PC & Landscape) --- */
+/* Stretches to fill horizontal space, no squishing */
 body.screenshot-mode .weekly-table {
-    width: 600px !important;
-    min-width: 600px !important;
-    max-width: 600px !important; 
+    table-layout: fixed !important;
+    width: 100% !important;
+    min-width: 1000px !important;
+    max-width: unset !important;
 }
 
 body.screenshot-mode .weekly-table td, 
 body.screenshot-mode .weekly-table th {
-    padding: 16px 4px !important;
+    padding: 16px 10px !important;
     word-break: normal !important;
     white-space: normal !important;
     hyphens: none !important;
@@ -110,6 +112,20 @@ body.screenshot-mode .weekly-table td div {
     white-space: normal !important;
     word-break: normal !important;
     hyphens: none !important;
+}
+
+/* --- SCREENSHOT MODE MOBILE PORTRAIT (Squished, one word per line) --- */
+@media (max-width: 768px) and (orientation: portrait) {
+    body.screenshot-mode .weekly-table {
+        table-layout: auto !important; /* Let browser size columns to words */
+        width: min-content !important; /* Shrink to absolute minimum width (longest word) */
+        min-width: unset !important;
+    }
+    body.screenshot-mode .weekly-table td, 
+    body.screenshot-mode .weekly-table th {
+        width: min-content !important;
+        padding: 16px 4px !important;
+    }
 }
 
 .exit-screenshot-btn {
