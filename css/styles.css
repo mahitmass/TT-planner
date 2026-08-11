@@ -93,20 +93,22 @@ body.screenshot-mode #compact-container {
 
 /* The table itself is what gets scaled by JS transform */
 body.screenshot-mode .weekly-table {
-    min-width: 800px !important;
-    width: max-content !important;
+    width: 600px !important;
+    min-width: 600px !important;
+    max-width: 600px !important; 
 }
 
 body.screenshot-mode .weekly-table td, 
 body.screenshot-mode .weekly-table th {
-    padding: 24px 6px !important;
-    word-break: keep-all !important;
-    white-space: nowrap !important;
+    padding: 16px 4px !important;
+    word-break: normal !important;
+    white-space: normal !important;
+    hyphens: none !important;
 }
 
 body.screenshot-mode .weekly-table td div {
     white-space: normal !important;
-    word-break: keep-all !important;
+    word-break: normal !important;
     hyphens: none !important;
 }
 
