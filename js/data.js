@@ -2010,7 +2010,7 @@ const scheduleMap = {
       { "day": 1, "start": 14, "duration": 1, "title": "Digital Circuit Design", "code": "G7", "teacher": "RMD", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Signals and Systems", "code": "TS16", "teacher": "VD", "type": "tut" },
       { "day": 1, "start": 16, "duration": 1, "title": "Electronic Devices and Circuit", "code": "TS7", "teacher": "RDR", "type": "tut" },
-      { "day": 2, "start": 10, "duration": 1, "title": "Probability & Random Processes", "code": "FF4", "teacher": "DCS", "type": "tut" },
+      { "day": 2, "start": 10, "duration": 1, "title": "Probability & Random Processes", "code": "F4", "teacher": "DCS", "type": "tut" },
       { "day": 2, "start": 11, "duration": 1, "title": "Electronic Devices and Circuit", "code": "G4", "teacher": "SPT", "type": "lec" },
       { "day": 2, "start": 12, "duration": 1, "title": "Probability & Random Processes", "code": "G4", "teacher": "DCS", "type": "lec" },
       { "day": 2, "start": 14, "duration": 1, "title": "Economics", "code": "G8", "teacher": "MRB", "type": "lec" },
