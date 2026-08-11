@@ -93,8 +93,14 @@ body.screenshot-mode #compact-container {
 
 /* The table itself is what gets scaled by JS transform */
 body.screenshot-mode .weekly-table {
-    min-width: 900px !important;
+    min-width: 700px !important;
     width: max-content !important;
+}
+
+body.screenshot-mode .weekly-table td, 
+body.screenshot-mode .weekly-table th {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
 }
 
 body.screenshot-mode #exit-screenshot-btn {
