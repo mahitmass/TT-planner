@@ -1980,89 +1980,77 @@ const TimetableApp = (function () {
   }
 
   function takeScreenshot() {
+    const isScreenshotMode = document.body.classList.contains('screenshot-mode');
     const tableEl = document.querySelector('.weekly-table');
     const containerEl = document.getElementById('compact-container');
 
-    if (!tableEl || typeof html2canvas === 'undefined') {
-      showToast('❌ Unable to capture image');
-      return;
-    }
-
-    showToast('📸 Capturing schedule...');
-
-    const isDark = document.body.getAttribute('data-theme') === 'dark';
-
-    // Save scroll state
-    const origScrollLeft = containerEl ? containerEl.scrollLeft : 0;
-
-    // Reset scroll to 0 to fix sticky column offset in capture
-    if (containerEl) {
-      containerEl.scrollLeft = 0;
-    }
-
-    // Briefly adjust z-index to ensure it captures cleanly
-    const originalZIndex = tableEl.style.zIndex;
-    tableEl.style.zIndex = '9999';
-
-    // Inject styles manually for offline html2canvas compatibility
-    const styleBlock = document.createElement('style');
-    let cssString = '';
-    try {
-      for (let i = 0; i < document.styleSheets.length; i++) {
-        const sheet = document.styleSheets[i];
-        if (sheet.href && sheet.href.includes('styles.css')) {
-          for (let j = 0; j < sheet.cssRules.length; j++) {
-            cssString += sheet.cssRules[j].cssText;
-          }
-        }
+    if (!isScreenshotMode) {
+      // --- ENTER SCREENSHOT MODE ---
+      if (state.currentView === 'swipe') {
+        setViewMode('table');
       }
-    } catch (e) {
-      console.warn('Could not read css rules', e);
+
+      document.body.classList.add('screenshot-mode');
+      showToast('Screenshot Mode');
+
+      const applyScale = () => {
+        if (!document.body.classList.contains('screenshot-mode')) return;
+        const tbl = document.querySelector('.weekly-table');
+        if (!tbl) return;
+
+        // Reset any prior transform so we measure true natural size
+        tbl.style.transform = '';
+        tbl.style.transformOrigin = '';
+
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+
+        // scrollWidth/scrollHeight gives the full un-clipped size of the table
+        const tw = tbl.scrollWidth;
+        const th = tbl.scrollHeight;
+
+        if (!tw || !th) return;
+
+        // Scale so entire table fits in viewport with 4px margin
+        const scale = Math.min((vw - 8) / tw, (vh - 8) / th);
+
+        // Center the scaled table within the viewport
+        const scaledW = tw * scale;
+        const scaledH = th * scale;
+        const ox = (vw - scaledW) / 2;
+        const oy = (vh - scaledH) / 2;
+
+        tbl.style.transformOrigin = 'top left';
+        tbl.style.transform = `translate(${ox}px, ${oy}px) scale(${scale})`;
+      };
+
+      // Wait for UI to hide, then scale
+      setTimeout(applyScale, 100);
+
+      // Re-scale on orientation/resize
+      window._ssResizeHandler = () => {
+        const tbl = document.querySelector('.weekly-table');
+        if (tbl) { tbl.style.transform = ''; }
+        setTimeout(applyScale, 80);
+      };
+      window.addEventListener('resize', window._ssResizeHandler);
+
+    } else {
+      // --- EXIT SCREENSHOT MODE ---
+      document.body.classList.remove('screenshot-mode');
+
+      if (tableEl) {
+        tableEl.style.transform = '';
+        tableEl.style.transformOrigin = '';
+      }
+      if (containerEl) {
+        containerEl.style.overflow = '';
+      }
+      if (window._ssResizeHandler) {
+        window.removeEventListener('resize', window._ssResizeHandler);
+        delete window._ssResizeHandler;
+      }
     }
-
-    if (cssString) {
-      styleBlock.textContent = cssString;
-      tableEl.appendChild(styleBlock);
-    }
-
-    html2canvas(tableEl, {
-      backgroundColor: isDark ? '#1a1a2e' : '#f8fafc',
-      scale: 2 // Higher resolution
-    }).then(canvas => {
-      if (cssString) styleBlock.remove(); // Clean up
-
-      // Restore live table state immediately
-      tableEl.style.zIndex = originalZIndex;
-
-      if (containerEl) containerEl.scrollLeft = origScrollLeft;
-
-      canvas.toBlob(blob => {
-        if (!blob) {
-          console.error('html2canvas returned an empty blob');
-          showToast('❌ Empty image generated');
-          return;
-        }
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `Schedule_${state.currentBatch}.png`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-
-        setTimeout(() => URL.revokeObjectURL(url), 10000);
-        showToast('✅ Schedule downloaded!');
-      }, 'image/png');
-
-    }).catch(err => {
-      if (cssString) styleBlock.remove(); // Clean up
-      console.error('Screenshot failed:', err);
-
-      tableEl.style.zIndex = originalZIndex;
-      if (containerEl) containerEl.scrollLeft = origScrollLeft;
-      overlays.forEach(o => o.remove());
-      showToast('❌ Failed to capture image');
-    });
   }
 
   // --- Inline Edit (Swipe View Cards) ---

@@ -53,6 +53,53 @@
   padding: 0;
 }
 
+/* --- SCREENSHOT MODE --- */
+body.screenshot-mode header,
+body.screenshot-mode #filter-panel,
+body.screenshot-mode #student-controls,
+body.screenshot-mode #teacher-controls,
+body.screenshot-mode #floating-batch,
+body.screenshot-mode #floating-add-btn,
+body.screenshot-mode #camera-btn,
+body.screenshot-mode #mode-toast,
+body.screenshot-mode .filter-group {
+    display: none !important;
+}
+
+body.screenshot-mode {
+    overflow: hidden !important;
+    background-color: var(--bg-color) !important;
+}
+
+body.screenshot-mode main {
+    height: 100vh !important;
+    width: 100vw !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+/* Let the container expand to its full natural width so JS can read scrollWidth */
+body.screenshot-mode #compact-container {
+    overflow: visible !important;
+    width: max-content !important;
+    height: auto !important;
+    padding: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+/* The table itself is what gets scaled by JS transform */
+body.screenshot-mode .weekly-table {
+    min-width: unset !important;
+}
+
+body.screenshot-mode #exit-screenshot-btn {
+    display: flex !important;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-color);
