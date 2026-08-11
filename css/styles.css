@@ -80,15 +80,16 @@ body.screenshot-mode main {
     position: relative !important;
 }
 
-/* Let the container expand to its full natural width so JS can read scrollWidth */
+/* Lock container to exact screen size so browsers (like Samsung) don't auto-zoom the layout */
 body.screenshot-mode #compact-container {
-    overflow: visible !important;
-    width: max-content !important;
-    height: auto !important;
+    overflow: hidden !important;
+    width: 100vw !important;
+    height: 100vh !important;
     padding: 0 !important;
-    position: absolute !important;
+    position: fixed !important;
     top: 0 !important;
     left: 0 !important;
+    z-index: 1000;
 }
 
 /* --- SCREENSHOT MODE DEFAULT (PC & Landscape) --- */
@@ -98,6 +99,9 @@ body.screenshot-mode .weekly-table {
     width: max-content !important;
     min-width: 1000px !important;
     max-width: unset !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
 }
 
 body.screenshot-mode .weekly-table td, 
