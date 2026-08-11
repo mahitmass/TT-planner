@@ -1970,7 +1970,6 @@ const TimetableApp = (function () {
       jumpToDay(state.currentDayIndex);
     }, 50);
   }
-
   function showToast(message) {
     const toast = document.getElementById('mode-toast');
     if (!toast) return;
@@ -1986,6 +1985,21 @@ const TimetableApp = (function () {
 
     if (!isScreenshotMode) {
       // --- ENTER SCREENSHOT MODE ---
+      
+      // 1. Force reset all scroll positions BEFORE layout changes
+      // This prevents Chrome/Safari from "anchoring" to the previous scroll position
+      window.scrollTo(0, 0);
+      if (containerEl) {
+        containerEl.scrollLeft = 0;
+        containerEl.scrollTop = 0;
+      }
+
+      // 2. Force meta viewport to reset any manual pinch-to-zoom
+      const viewportMeta = document.querySelector('meta[name="viewport"]');
+      if (viewportMeta) {
+        viewportMeta.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no";
+      }
+
       if (state.currentView === 'swipe') {
         setViewMode('table');
       }
@@ -2003,8 +2017,6 @@ const TimetableApp = (function () {
         tbl.style.transform = '';
         tbl.style.transformOrigin = '';
         
-        // Force reset all scroll positions to ensure perfect centering
-        window.scrollTo(0, 0);
         if (container) {
           container.scrollLeft = 0;
           container.scrollTop = 0;
@@ -2046,6 +2058,12 @@ const TimetableApp = (function () {
     } else {
       // --- EXIT SCREENSHOT MODE ---
       document.body.classList.remove('screenshot-mode');
+
+      const viewportMeta = document.querySelector('meta[name="viewport"]');
+      if (viewportMeta) {
+        // Restore original viewport
+        viewportMeta.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no";
+      }
 
       if (tableEl) {
         tableEl.style.transform = '';
