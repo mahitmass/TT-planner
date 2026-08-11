@@ -1996,11 +1996,19 @@ const TimetableApp = (function () {
       const applyScale = () => {
         if (!document.body.classList.contains('screenshot-mode')) return;
         const tbl = document.querySelector('.weekly-table');
+        const container = document.getElementById('compact-container');
         if (!tbl) return;
 
         // Reset any prior transform so we measure true natural size
         tbl.style.transform = '';
         tbl.style.transformOrigin = '';
+        
+        // Force reset all scroll positions to ensure perfect centering
+        window.scrollTo(0, 0);
+        if (container) {
+          container.scrollLeft = 0;
+          container.scrollTop = 0;
+        }
 
         const vw = window.innerWidth;
         const vh = window.innerHeight;
