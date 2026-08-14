@@ -67,6 +67,7 @@ jobs:
           rm -rf senior_repo
 
       - name: Create Pull Request
+        id: cpr
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
