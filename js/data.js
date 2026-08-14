@@ -71,7 +71,7 @@ const scheduleMap = {
       { "day": 5, "start": 14, "duration": 1, "title": "SDF- I", "code": "FF1", "teacher": "RCA", "type": "lec" },
       { "day": 5, "start": 15, "duration": 1, "title": "Maths-1", "code": "FF1", "teacher": "RSC", "type": "lec" },
       { "day": 6, "start": 10, "duration": 1, "title": "Basic Electronics", "code": "G1", "teacher": "BVI", "type": "lec" },
-      { "day": 6, "start": 11, "duration": 2, "title": "Basic Electronics", "code": "BEL1", "teacher": "GRA,RHA", "type": "lab" }
+      { "day": 6, "start": 11, "duration": 2, "title": "Basic Electronics", "code": "BEL1", "teacher": "RDR,RHA", "type": "lab" }
     ],
     "A4": [
       { "day": 1, "start": 9, "duration": 1, "title": "SDF- I", "code": "TS8", "teacher": "AYS", "type": "tut" },
@@ -215,7 +215,7 @@ const scheduleMap = {
       { "day": 5, "start": 9, "duration": 2, "title": "English", "code": "CL12", "teacher": "ASU", "type": "lab" },
       { "day": 5, "start": 13, "duration": 1, "title": "Maths-1", "code": "G4", "teacher": "NSK", "type": "lec" },
       { "day": 5, "start": 15, "duration": 2, "title": "Basic Electronics", "code": "BEL1", "teacher": "HEM,VKH", "type": "lab" },
-      { "day": 6, "start": 11, "duration": 1, "title": "Maths-1", "code": "F7", "teacher": "DGA", "type": "tut" },
+      { "day": 6, "start": 11, "duration": 1, "title": "Maths-1", "code": "F7", "teacher": "DCS", "type": "tut" },
       { "day": 6, "start": 12, "duration": 1, "title": "Basic Electronics", "code": "G1", "teacher": "VGO", "type": "lec" }
     ],
     "A15": [
@@ -1725,7 +1725,7 @@ const scheduleMap = {
       { "day": 6, "start": 11, "duration": 2, "title": "SDF I", "code": "CL01", "teacher": "ANV", "type": "lab" }
     ],
     "G2": [
-      { "day": 1, "start": 9, "duration": 1, "title": "Maths-1", "code": "F10", "teacher": "DCS", "type": "tut" },
+      { "day": 1, "start": 9, "duration": 1, "title": "Maths-1", "code": "TS12", "teacher": "DCS", "type": "tut" },
       { "day": 1, "start": 10, "duration": 1, "title": "Physics-1", "code": "FF2", "teacher": "RAV", "type": "lec" },
       { "day": 1, "start": 11, "duration": 1, "title": "English", "code": "FF2", "teacher": "MDU", "type": "lec" },
       { "day": 1, "start": 13, "duration": 1, "title": "Maths-1", "code": "G3", "teacher": "DCS", "type": "lec" },
@@ -1912,14 +1912,14 @@ const scheduleMap = {
       { "day": 3, "start": 12, "duration": 1, "title": "Digital Circuit Design", "code": "FF5", "teacher": "SCH", "type": "lec" },
       { "day": 3, "start": 14, "duration": 1, "title": "Electronic Devices and Circuit", "code": "G4-", "teacher": "RDR", "type": "lec" },
       { "day": 3, "start": 15, "duration": 2, "title": "Electronic Devices and Circuits", "code": "EDC", "teacher": "AJK,APN", "type": "lab" },
+      { "day": 4, "start": 10, "duration": 1, "title": "Electronic Devices and Circuit", "code": "G7", "teacher": "RDR", "type": "lec" },
       { "day": 4, "start": 11, "duration": 1, "title": "Environmental Studies", "code": "LT2", "teacher": "GMA", "type": "lec" },
       { "day": 4, "start": 12, "duration": 1, "title": "Probability & Random Processes", "code": "G3", "teacher": "YG", "type": "lec" },
-      { "day": 4, "start": 14, "duration": 1, "title": "Electronic Devices and Circuit", "code": "CR501", "teacher": "RDR", "type": "lec" },
       { "day": 4, "start": 15, "duration": 1, "title": "Signals and Systems", "code": "TS13", "teacher": "VK", "type": "tut" },
-      { "day": 5, "start": 10, "duration": 1, "title": "Probability & Random Processes", "code": "TS10", "teacher": "YG", "type": "tut" },
+      { "day": 5, "start": 10, "duration": 1, "title": "Probability & Random Processes", "code": "CS9", "teacher": "YG", "type": "lec" },
+      { "day": 5, "start": 11, "duration": 1, "title": "Probability & Random Processes", "code": "TS13", "teacher": "YG", "type": "tut" },
       { "day": 5, "start": 14, "duration": 1, "title": "Environmental Studies", "code": "G4", "teacher": "GMA", "type": "lec" },
-      { "day": 5, "start": 15, "duration": 2, "title": "Signals and Systems", "code": "MODLAB", "teacher": "VK,TA11", "type": "lab" },
-      { "day": 6, "start": 9, "duration": 1, "title": "Probability & Random Processes", "code": "FF7", "teacher": "YG", "type": "lec" }
+      { "day": 5, "start": 15, "duration": 2, "title": "Signals and Systems", "code": "MODLAB", "teacher": "VK,TA11", "type": "lab" }
     ],
     "A2": [
       { "day": 1, "start": 9, "duration": 1, "title": "Economics", "code": "FF1", "teacher": "AMN", "type": "lec" },
@@ -1939,25 +1939,25 @@ const scheduleMap = {
       { "day": 3, "start": 12, "duration": 1, "title": "Digital Circuit Design", "code": "FF5", "teacher": "SCH", "type": "lec" },
       { "day": 3, "start": 14, "duration": 1, "title": "Electronic Devices and Circuit", "code": "G4-", "teacher": "RDR", "type": "lec" },
       { "day": 3, "start": 15, "duration": 2, "title": "Digital Circuit Design", "code": "CML", "teacher": "SCH,AKS", "type": "lab" },
+      { "day": 4, "start": 10, "duration": 1, "title": "Electronic Devices and Circuit", "code": "G7", "teacher": "RDR", "type": "lec" },
       { "day": 4, "start": 11, "duration": 1, "title": "Environmental Studies", "code": "LT2", "teacher": "GMA", "type": "lec" },
       { "day": 4, "start": 12, "duration": 1, "title": "Probability & Random Processes", "code": "G3", "teacher": "YG", "type": "lec" },
-      { "day": 4, "start": 14, "duration": 1, "title": "Electronic Devices and Circuit", "code": "CR501", "teacher": "RDR", "type": "lec" },
       { "day": 4, "start": 16, "duration": 1, "title": "Signals and Systems", "code": "TS13", "teacher": "VK", "type": "tut" },
+      { "day": 5, "start": 10, "duration": 1, "title": "Probability & Random Processes", "code": "CS9", "teacher": "YG", "type": "lec" },
       { "day": 5, "start": 11, "duration": 1, "title": "Electronic Devices and Circuit", "code": "TS16", "teacher": "AJK", "type": "tut" },
       { "day": 5, "start": 12, "duration": 1, "title": "Economics", "code": "TS13", "teacher": "PSH", "type": "tut" },
-      { "day": 5, "start": 14, "duration": 1, "title": "Environmental Studies", "code": "G4", "teacher": "GMA", "type": "lec" },
-      { "day": 6, "start": 9, "duration": 1, "title": "Probability & Random Processes", "code": "FF7", "teacher": "YG", "type": "lec" }
+      { "day": 5, "start": 14, "duration": 1, "title": "Environmental Studies", "code": "G4", "teacher": "GMA", "type": "lec" }
     ],
     "A3": [
       { "day": 1, "start": 9, "duration": 1, "title": "Economics", "code": "FF4", "teacher": "NES", "type": "lec" },
       { "day": 1, "start": 10, "duration": 1, "title": "Environmental Studies", "code": "CR301", "teacher": "GMA", "type": "lec" },
       { "day": 1, "start": 11, "duration": 2, "title": "Digital Circuit Design", "code": "CML", "teacher": "AGO,AKS", "type": "lab" },
-      { "day": 1, "start": 14, "duration": 1, "title": "Digital Circuit Design", "code": "G6", "teacher": "AGO", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Signals and Systems", "code": "", "teacher": "G8RK", "type": "lec" },
       { "day": 1, "start": 16, "duration": 1, "title": "Probability & Random Processes", "code": "TS6", "teacher": "BPC", "type": "tut" },
       { "day": 2, "start": 9, "duration": 1, "title": "Signals and Systems", "code": "CS6", "teacher": "RK", "type": "lec" },
       { "day": 2, "start": 10, "duration": 1, "title": "Electronic Devices and Circuit", "code": "FF6", "teacher": "AJK", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "Probability & Random Processes", "code": "G6", "teacher": "BPC", "type": "lec" },
+      { "day": 2, "start": 12, "duration": 1, "title": "Digital Circuit Design", "code": "G2", "teacher": "AGO", "type": "lec" },
       { "day": 2, "start": 14, "duration": 1, "title": "Economics", "code": "G4", "teacher": "NES", "type": "lec" },
       { "day": 3, "start": 10, "duration": 1, "title": "Electronic Devices and Circuit", "code": "FF6", "teacher": "AJK", "type": "lec" },
       { "day": 3, "start": 11, "duration": 1, "title": "Signals and Systems", "code": "FF6", "teacher": "RK", "type": "lec" },
@@ -1979,12 +1979,12 @@ const scheduleMap = {
       { "day": 1, "start": 9, "duration": 1, "title": "Economics", "code": "FF4", "teacher": "NES", "type": "lec" },
       { "day": 1, "start": 10, "duration": 1, "title": "Environmental Studies", "code": "LT3", "teacher": "SBT", "type": "lec" },
       { "day": 1, "start": 11, "duration": 2, "title": "Electronic Devices and Circuits", "code": "EDC", "teacher": "APN,AJK", "type": "lab" },
-      { "day": 1, "start": 14, "duration": 1, "title": "Digital Circuit Design", "code": "G6", "teacher": "AGO", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Signals and Systems", "code": "", "teacher": "G8RK", "type": "lec" },
       { "day": 1, "start": 16, "duration": 1, "title": "Signals and Systems", "code": "TS13", "teacher": "RIG", "type": "tut" },
       { "day": 2, "start": 9, "duration": 1, "title": "Signals and Systems", "code": "CS6", "teacher": "RK", "type": "lec" },
       { "day": 2, "start": 10, "duration": 1, "title": "Electronic Devices and Circuit", "code": "FF6", "teacher": "AJK", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "Probability & Random Processes", "code": "G6", "teacher": "BPC", "type": "lec" },
+      { "day": 2, "start": 12, "duration": 1, "title": "Digital Circuit Design", "code": "G2", "teacher": "AGO", "type": "lec" },
       { "day": 2, "start": 14, "duration": 1, "title": "Economics", "code": "G4", "teacher": "NES", "type": "lec" },
       { "day": 2, "start": 15, "duration": 1, "title": "Probability & Random Processes", "code": "TS11", "teacher": "BPC", "type": "tut" },
       { "day": 3, "start": 9, "duration": 1, "title": "Economics", "code": "TS12", "teacher": "VSE", "type": "tut" },
@@ -1992,12 +1992,12 @@ const scheduleMap = {
       { "day": 3, "start": 11, "duration": 1, "title": "Signals and Systems", "code": "FF6", "teacher": "RK", "type": "lec" },
       { "day": 3, "start": 12, "duration": 1, "title": "Digital Circuit Design", "code": "FF6", "teacher": "AGO", "type": "lec" },
       { "day": 3, "start": 14, "duration": 1, "title": "Electronic Devices and Circuit", "code": "TS13", "teacher": "AJK", "type": "tut" },
+      { "day": 3, "start": 15, "duration": 1, "title": "Digital Circuit Design", "code": "TS17", "teacher": "AGO", "type": "tut" },
       { "day": 3, "start": 16, "duration": 1, "title": "Environmental Studies", "code": "G8", "teacher": "SBT", "type": "lec" },
       { "day": 4, "start": 10, "duration": 1, "title": "Electronic Devices and Circuit", "code": "FF6", "teacher": "AJK", "type": "lec" },
       { "day": 4, "start": 11, "duration": 1, "title": "Environmental Studies", "code": "LT3", "teacher": "SBT", "type": "lec" },
       { "day": 4, "start": 12, "duration": 1, "title": "Probability & Random Processes", "code": "G2", "teacher": "BPC", "type": "lec" },
       { "day": 4, "start": 14, "duration": 2, "title": "Signals and Systems", "code": "MODLAB", "teacher": "RK,TA7", "type": "lab" },
-      { "day": 4, "start": 16, "duration": 1, "title": "Digital Circuit Design", "code": "TS17", "teacher": "AGO", "type": "tut" },
       { "day": 5, "start": 9, "duration": 1, "title": "Probability & Random Processes", "code": "FF4", "teacher": "BPC", "type": "lec" },
       { "day": 6, "start": 9, "duration": 2, "title": "Digital Circuit Design", "code": "CML", "teacher": "RMD,JAS", "type": "lab" },
       { "day": 6, "start": 12, "duration": 1, "title": "Digital Circuit Design", "code": "G3", "teacher": "AGO", "type": "lec" }
@@ -2006,7 +2006,6 @@ const scheduleMap = {
       { "day": 1, "start": 9, "duration": 1, "title": "Economics", "code": "FF7", "teacher": "MRB", "type": "lec" },
       { "day": 1, "start": 10, "duration": 1, "title": "Environmental Studies", "code": "LT3", "teacher": "SBT", "type": "lec" },
       { "day": 1, "start": 11, "duration": 1, "title": "Signals and Systems", "code": "FF5", "teacher": "BHG", "type": "lec" },
-      { "day": 1, "start": 12, "duration": 1, "title": "Probability & Random Processes", "code": "FF5", "teacher": "DCS", "type": "lec" },
       { "day": 1, "start": 14, "duration": 1, "title": "Digital Circuit Design", "code": "G7", "teacher": "RMD", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Signals and Systems", "code": "TS16", "teacher": "VD", "type": "tut" },
       { "day": 1, "start": 16, "duration": 1, "title": "Electronic Devices and Circuit", "code": "TS7", "teacher": "RDR", "type": "tut" },
@@ -2026,6 +2025,7 @@ const scheduleMap = {
       { "day": 4, "start": 15, "duration": 1, "title": "Digital Circuit Design", "code": "TS16", "teacher": "MN", "type": "tut" },
       { "day": 5, "start": 9, "duration": 2, "title": "Digital Circuit Design", "code": "CML", "teacher": "AGO,SHI", "type": "lab" },
       { "day": 5, "start": 11, "duration": 1, "title": "Digital Circuit Design", "code": "G7", "teacher": "RMD", "type": "lec" },
+      { "day": 5, "start": 12, "duration": 1, "title": "Probability & Random Processes", "code": "CS4", "teacher": "DCS", "type": "lec" },
       { "day": 5, "start": 15, "duration": 2, "title": "Electronic Devices and Circuits", "code": "EDC", "teacher": "GK,RSB", "type": "lab" },
       { "day": 6, "start": 11, "duration": 2, "title": "Signals and Systems", "code": "MODLAB", "teacher": "RIG,TA15", "type": "lab" }
     ],
@@ -2033,7 +2033,6 @@ const scheduleMap = {
       { "day": 1, "start": 9, "duration": 1, "title": "Economics", "code": "FF7", "teacher": "MRB", "type": "lec" },
       { "day": 1, "start": 10, "duration": 1, "title": "Environmental Studies", "code": "LT3", "teacher": "SBT", "type": "lec" },
       { "day": 1, "start": 11, "duration": 1, "title": "Signals and Systems", "code": "FF5", "teacher": "BHG", "type": "lec" },
-      { "day": 1, "start": 12, "duration": 1, "title": "Probability & Random Processes", "code": "FF5", "teacher": "DCS", "type": "lec" },
       { "day": 1, "start": 14, "duration": 1, "title": "Digital Circuit Design", "code": "G7", "teacher": "RMD", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Digital Circuit Design", "code": "TS13", "teacher": "JAS", "type": "tut" },
       { "day": 1, "start": 16, "duration": 1, "title": "Electronic Devices and Circuit", "code": "TS8", "teacher": "GK", "type": "tut" },
@@ -2054,6 +2053,7 @@ const scheduleMap = {
       { "day": 4, "start": 14, "duration": 1, "title": "Electronic Devices and Circuit", "code": "G3", "teacher": "SPT", "type": "lec" },
       { "day": 5, "start": 9, "duration": 2, "title": "Electronic Devices and Circuits", "code": "EDC", "teacher": "SHS,SPT", "type": "lab" },
       { "day": 5, "start": 11, "duration": 1, "title": "Digital Circuit Design", "code": "G7", "teacher": "RMD", "type": "lec" },
+      { "day": 5, "start": 12, "duration": 1, "title": "Probability & Random Processes", "code": "CS4", "teacher": "DCS", "type": "lec" },
       { "day": 5, "start": 14, "duration": 2, "title": "Digital Circuit Design", "code": "CML", "teacher": "RMD,SHI", "type": "lab" }
     ],
     "A7": [
@@ -2146,7 +2146,6 @@ const scheduleMap = {
       { "day": 1, "start": 15, "duration": 1, "title": "Probability & Random Processes", "code": "TS10", "teacher": "YG", "type": "tut" },
       { "day": 1, "start": 16, "duration": 1, "title": "Digital Logic and Circuit Design", "code": "G3", "teacher": "JAS", "type": "lec" },
       { "day": 2, "start": 10, "duration": 1, "title": "Economics", "code": "TS11", "teacher": "MM", "type": "tut" },
-      { "day": 2, "start": 14, "duration": 1, "title": "Electronic Devices", "code": "TR302", "teacher": "SNS", "type": "tut" },
       { "day": 2, "start": 15, "duration": 1, "title": "Electronic Devices", "code": "G7", "teacher": "SNS", "type": "lec" },
       { "day": 3, "start": 9, "duration": 1, "title": "Digital Logic and Circuit Design", "code": "CS6", "teacher": "JAS", "type": "lec" },
       { "day": 3, "start": 10, "duration": 1, "title": "Probability & Random Processes", "code": "FF5", "teacher": "NF2", "type": "lec" },
@@ -2171,7 +2170,6 @@ const scheduleMap = {
       { "day": 1, "start": 11, "duration": 1, "title": "Probability & Random Processes", "code": "FF6", "teacher": "NF2", "type": "lec" },
       { "day": 1, "start": 12, "duration": 1, "title": "Economics", "code": "FF6", "teacher": "MM", "type": "lec" },
       { "day": 1, "start": 14, "duration": 1, "title": "Environmental Studies", "code": "CS3", "teacher": "DSH", "type": "lec" },
-      { "day": 1, "start": 15, "duration": 1, "title": "Electronic Devices", "code": "TS11", "teacher": "SNS", "type": "tut" },
       { "day": 1, "start": 16, "duration": 1, "title": "Digital Logic and Circuit Design", "code": "G3", "teacher": "JAS", "type": "lec" },
       { "day": 2, "start": 11, "duration": 2, "title": "Digital Logic and Circuit Design", "code": "CML", "teacher": "RS,AMR", "type": "lab" },
       { "day": 2, "start": 14, "duration": 1, "title": "Probability & Random Processes", "code": "TS10", "teacher": "YG", "type": "tut" },
@@ -2204,7 +2202,7 @@ const scheduleMap = {
       { "day": 2, "start": 9, "duration": 1, "title": "Signals and Systems", "code": "CS7", "teacher": "BHG", "type": "lec" },
       { "day": 2, "start": 10, "duration": 1, "title": "Electronic Devices and Circuit", "code": "FF7", "teacher": "SPT", "type": "lec" },
       { "day": 2, "start": 11, "duration": 1, "title": "Probability & Random Processes", "code": "G7", "teacher": "NF9", "type": "lec" },
-      { "day": 2, "start": 14, "duration": 1, "title": "Digital Circuit Design", "code": "TR307", "teacher": "MN", "type": "tut" },
+      { "day": 2, "start": 14, "duration": 1, "title": "Digital Circuit Design", "code": "TR424", "teacher": "MN", "type": "tut" },
       { "day": 2, "start": 15, "duration": 2, "title": "Electronic Devices and Circuits", "code": "EDC", "teacher": "RRJ,ABS", "type": "lab" },
       { "day": 3, "start": 11, "duration": 2, "title": "Signals and Systems", "code": "MODLAB", "teacher": "RIG,TA11", "type": "lab" },
       { "day": 3, "start": 14, "duration": 1, "title": "Electronic Devices and Circuit", "code": "FF7", "teacher": "SPT", "type": "lec" },
@@ -2301,7 +2299,7 @@ const scheduleMap = {
       { "day": 6, "start": 11, "duration": 2, "title": "Data Structures", "code": "CL22", "teacher": "LM,JAT", "type": "lab" }
     ],
     "B3": [
-      { "day": 1, "start": 10, "duration": 2, "title": "Data Structures", "code": "CL21", "teacher": "MON", "type": "lab" },
+      { "day": 1, "start": 10, "duration": 2, "title": "Data Structures", "code": "CL21", "teacher": "MON,Zaid", "type": "lab" },
       { "day": 1, "start": 12, "duration": 1, "title": "Maths for AI & DS", "code": "TS8", "teacher": "MSD", "type": "tut" },
       { "day": 1, "start": 15, "duration": 1, "title": "Maths for AI & DS", "code": "FF6", "teacher": "MSD", "type": "lec" },
       { "day": 1, "start": 16, "duration": 1, "title": "Data Structures", "code": "TS11", "teacher": "MON", "type": "tut" },
@@ -2325,7 +2323,7 @@ const scheduleMap = {
       { "day": 6, "start": 10, "duration": 2, "title": "OOP using Java", "code": "CL19", "teacher": "PAG", "type": "lab" }
     ],
     "B4": [
-      { "day": 1, "start": 10, "duration": 2, "title": "Data Structures", "code": "CL22", "teacher": "KJ,JAT", "type": "lab" },
+      { "day": 1, "start": 10, "duration": 2, "title": "Data Structures", "code": "CL20", "teacher": "KJ,JAT", "type": "lab" },
       { "day": 1, "start": 15, "duration": 1, "title": "Maths for AI & DS", "code": "FF6", "teacher": "MSD", "type": "lec" },
       { "day": 2, "start": 10, "duration": 1, "title": "Data Structures", "code": "F8", "teacher": "PRV", "type": "lec" },
       { "day": 2, "start": 12, "duration": 1, "title": "Economics", "code": "TS11", "teacher": "KMB", "type": "tut" },
@@ -2349,7 +2347,7 @@ const scheduleMap = {
       { "day": 6, "start": 10, "duration": 2, "title": "OOP using Java", "code": "CL20", "teacher": "KRL,POS", "type": "lab" }
     ],
     "B5": [
-      { "day": 1, "start": 10, "duration": 2, "title": "Unix Programming", "code": "CL23", "teacher": "PU", "type": "lab" },
+      { "day": 1, "start": 10, "duration": 2, "title": "Unix Programming", "code": "CL22", "teacher": "PU", "type": "lab" },
       { "day": 1, "start": 12, "duration": 1, "title": "Maths for AI & DS", "code": "TS10", "teacher": "RSH", "type": "tut" },
       { "day": 1, "start": 14, "duration": 1, "title": "Theory of Computation", "code": "G4", "teacher": "RTK", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Maths for AI & DS", "code": "G4", "teacher": "RSH", "type": "lec" },
@@ -2373,7 +2371,7 @@ const scheduleMap = {
       { "day": 6, "start": 12, "duration": 1, "title": "Theory of Computation", "code": "G8", "teacher": "RTK", "type": "lec" }
     ],
     "B6": [
-      { "day": 1, "start": 10, "duration": 2, "title": "Unix Programming", "code": "CL24", "teacher": "SAM,BHA", "type": "lab" },
+      { "day": 1, "start": 10, "duration": 2, "title": "Unix Programming", "code": "CL23", "teacher": "SAM,BHA", "type": "lab" },
       { "day": 1, "start": 14, "duration": 1, "title": "Theory of Computation", "code": "G4", "teacher": "RTK", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Maths for AI & DS", "code": "G4", "teacher": "RSH", "type": "lec" },
       { "day": 1, "start": 16, "duration": 1, "title": "Data Structures", "code": "G4", "teacher": "RJM", "type": "lec" },
@@ -2401,7 +2399,7 @@ const scheduleMap = {
       { "day": 1, "start": 10, "duration": 2, "title": "OOP using Java", "code": "CL03", "teacher": "ASY", "type": "lab" },
       { "day": 1, "start": 14, "duration": 1, "title": "Data Structures", "code": "CS5", "teacher": "NSA", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Maths for AI & DS", "code": "FF7", "teacher": "HZR", "type": "lec" },
-      { "day": 2, "start": 9, "duration": 2, "title": "Data Structures", "code": "CL03", "teacher": "AW", "type": "lab" },
+      { "day": 2, "start": 9, "duration": 2, "title": "Data Structures", "code": "CL03", "teacher": "AW,LM", "type": "lab" },
       { "day": 2, "start": 11, "duration": 1, "title": "Economics", "code": "FF7", "teacher": "VSE", "type": "lec" },
       { "day": 2, "start": 12, "duration": 1, "title": "Database Management Systems", "code": "G6", "teacher": "ABC", "type": "lec" },
       { "day": 2, "start": 14, "duration": 1, "title": "Data Structures", "code": "FF3", "teacher": "NSA", "type": "lec" },
@@ -2425,7 +2423,7 @@ const scheduleMap = {
       { "day": 1, "start": 10, "duration": 2, "title": "OOP using Java", "code": "CL04", "teacher": "GRS,KRL", "type": "lab" },
       { "day": 1, "start": 14, "duration": 1, "title": "Data Structures", "code": "CS5", "teacher": "NSA", "type": "lec" },
       { "day": 1, "start": 15, "duration": 1, "title": "Maths for AI & DS", "code": "FF7", "teacher": "HZR", "type": "lec" },
-      { "day": 2, "start": 9, "duration": 2, "title": "Data Structures", "code": "CL04", "teacher": "LM,RJM", "type": "lab" },
+      { "day": 2, "start": 9, "duration": 2, "title": "Data Structures", "code": "CL24", "teacher": "RJM,Zaid", "type": "lab" },
       { "day": 2, "start": 11, "duration": 1, "title": "Economics", "code": "FF7", "teacher": "VSE", "type": "lec" },
       { "day": 2, "start": 12, "duration": 1, "title": "Database Management Systems", "code": "G6", "teacher": "ABC", "type": "lec" },
       { "day": 2, "start": 14, "duration": 1, "title": "Data Structures", "code": "FF3", "teacher": "NSA", "type": "lec" },
@@ -2496,7 +2494,7 @@ const scheduleMap = {
       { "day": 1, "start": 10, "duration": 1, "title": "Data Structures", "code": "LT2", "teacher": "VRN", "type": "lec" },
       { "day": 1, "start": 11, "duration": 1, "title": "Economics", "code": "LT2", "teacher": "MRB", "type": "lec" },
       { "day": 1, "start": 12, "duration": 1, "title": "Theory of Computation", "code": "LT3", "teacher": "RTK", "type": "lec" },
-      { "day": 1, "start": 14, "duration": 2, "title": "Data Structures", "code": "CL15", "teacher": "AW", "type": "lab" },
+      { "day": 1, "start": 14, "duration": 2, "title": "Data Structures", "code": "CL15", "teacher": "AW,PRV", "type": "lab" },
       { "day": 2, "start": 9, "duration": 1, "title": "Maths for AI & DS", "code": "CS2", "teacher": "NF9", "type": "lec" },
       { "day": 2, "start": 10, "duration": 1, "title": "Economics", "code": "TS10", "teacher": "AMN", "type": "tut" },
       { "day": 2, "start": 11, "duration": 2, "title": "Unix Programming", "code": "CL20", "teacher": "AKT,HN", "type": "lab" },
@@ -2520,7 +2518,7 @@ const scheduleMap = {
       { "day": 1, "start": 10, "duration": 1, "title": "Data Structures", "code": "LT2", "teacher": "VRN", "type": "lec" },
       { "day": 1, "start": 11, "duration": 1, "title": "Economics", "code": "LT2", "teacher": "MRB", "type": "lec" },
       { "day": 1, "start": 12, "duration": 1, "title": "Theory of Computation", "code": "LT3", "teacher": "RTK", "type": "lec" },
-      { "day": 1, "start": 14, "duration": 2, "title": "Data Structures", "code": "CL16", "teacher": "LM,PRV", "type": "lab" },
+      { "day": 1, "start": 14, "duration": 2, "title": "Data Structures", "code": "CL24", "teacher": "LM,Zaid", "type": "lab" },
       { "day": 2, "start": 9, "duration": 1, "title": "Maths for AI & DS", "code": "CS2", "teacher": "NF9", "type": "lec" },
       { "day": 2, "start": 10, "duration": 1, "title": "Data Structures", "code": "TS13", "teacher": "KJ", "type": "tut" },
       { "day": 2, "start": 14, "duration": 1, "title": "Data Structures", "code": "LT3", "teacher": "VRN", "type": "lec" },
@@ -2671,7 +2669,7 @@ const scheduleMap = {
       { "day": 4, "start": 16, "duration": 1, "title": "Probability & Random Processes", "code": "G3", "teacher": "NSK", "type": "lec" },
       { "day": 5, "start": 14, "duration": 1, "title": "Environmental Studies", "code": "G3", "teacher": "ANS", "type": "lec" },
       { "day": 5, "start": 15, "duration": 1, "title": "Fundamentals of Robotics & AI", "code": "TS17", "teacher": "ADM", "type": "tut" },
-      { "day": 5, "start": 16, "duration": 1, "title": "Mechanical Engineering", "code": "FF1", "teacher": "SWET", "type": "lec" },
+      { "day": 5, "start": 16, "duration": 1, "title": "Mechanical Engineering", "code": "FF7", "teacher": "SWET", "type": "lec" },
       { "day": 6, "start": 9, "duration": 1, "title": "Probability & Random Processes", "code": "TS10", "teacher": "NSK", "type": "tut" },
       { "day": 6, "start": 11, "duration": 1, "title": "Mechanical Engineering", "code": "FF6", "teacher": "SWET", "type": "lec" }
     ],
@@ -2700,7 +2698,7 @@ const scheduleMap = {
       { "day": 5, "start": 9, "duration": 2, "title": "Analog & Digital Electronics", "code": "ADE", "teacher": "MTO,HIM", "type": "lab" },
       { "day": 5, "start": 11, "duration": 2, "title": "Signals and Systems", "code": "MODLAB", "teacher": "SB,TA12", "type": "lab" },
       { "day": 5, "start": 14, "duration": 1, "title": "Environmental Studies", "code": "G3", "teacher": "ANS", "type": "lec" },
-      { "day": 5, "start": 16, "duration": 1, "title": "Mechanical Engineering", "code": "FF1", "teacher": "SWET", "type": "lec" },
+      { "day": 5, "start": 16, "duration": 1, "title": "Mechanical Engineering", "code": "FF7", "teacher": "SWET", "type": "lec" },
       { "day": 6, "start": 10, "duration": 1, "title": "Probability & Random Processes", "code": "TS10", "teacher": "NSK", "type": "tut" },
       { "day": 6, "start": 11, "duration": 1, "title": "Mechanical Engineering", "code": "FF6", "teacher": "SWET", "type": "lec" },
       { "day": 6, "start": 12, "duration": 1, "title": "Fundamentals of Robotics & AI", "code": "TS7", "teacher": "ADM", "type": "tut" }
@@ -3357,6 +3355,7 @@ const scheduleMap = {
       { "day": 3, "start": 10, "duration": 1, "title": "Database Systems and Web", "code": "F6", "teacher": "ATI", "type": "lec" },
       { "day": 3, "start": 11, "duration": 1, "title": "Economics", "code": "CR425", "teacher": "KMB", "type": "lec" },
       { "day": 3, "start": 12, "duration": 1, "title": "Environmental Studies", "code": "G7", "teacher": "AKV", "type": "lec" },
+      { "day": 3, "start": 14, "duration": 1, "title": "Discrete Mathematics", "code": "TR305", "teacher": "NF3", "type": "tut" },
       { "day": 3, "start": 15, "duration": 1, "title": "Discrete Mathematics", "code": "G7", "teacher": "NF3", "type": "lec" },
       { "day": 4, "start": 9, "duration": 1, "title": "Probability & Statistics", "code": "CR301", "teacher": "DGA", "type": "lec" },
       { "day": 4, "start": 10, "duration": 1, "title": "Environmental Studies", "code": "CR301", "teacher": "AKV", "type": "lec" },
@@ -3367,8 +3366,7 @@ const scheduleMap = {
       { "day": 5, "start": 10, "duration": 1, "title": "Database Systems and Web", "code": "FF7", "teacher": "ATI", "type": "lec" },
       { "day": 5, "start": 11, "duration": 1, "title": "Data Structures", "code": "FF7", "teacher": "SHG", "type": "lec" },
       { "day": 5, "start": 12, "duration": 1, "title": "Probability & Statistics", "code": "FF7", "teacher": "DGA", "type": "lec" },
-      { "day": 5, "start": 15, "duration": 2, "title": "Database Systems and Web", "code": "CL09", "teacher": "KJ", "type": "lab" },
-      { "day": 6, "start": 9, "duration": 1, "title": "Discrete Mathematics", "code": "TS11", "teacher": "NF3", "type": "tut" }
+      { "day": 5, "start": 15, "duration": 2, "title": "Database Systems and Web", "code": "CL09", "teacher": "KJ", "type": "lab" }
     ],
     "G4": [
       { "day": 1, "start": 9, "duration": 1, "title": "Database Systems and Web", "code": "TR424", "teacher": "ATI", "type": "tut" },
