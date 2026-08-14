@@ -1517,8 +1517,16 @@ const TimetableApp = (function () {
     const displayTime = formatTimeRange(primaryCls.start, primaryCls.duration);
 
     let displayBatch = state.currentBatch;
+    
     if (primaryCls.batchNames && Array.isArray(primaryCls.batchNames)) {
+      // Handles Teacher and Room modes
       displayBatch = primaryCls.batchNames.join(', ');
+    } else if (!state.isTeacherMode && !state.isRoomMode && !state.isCustomMode) {
+      // Handles standard Student mode to show shared batches
+      const shared = findSharedBatches(primaryCls);
+      if (shared.length > 0) {
+        displayBatch = `${state.currentBatch} + ${shared.join(' + ')}`;
+      }
     }
 
     document.getElementById('modal-subject').innerHTML = subjectHtml;
