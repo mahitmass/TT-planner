@@ -75,3 +75,13 @@ jobs:
           body: "A new timetable excel file has been detected in the upstream repo. Please review and merge to trigger parsing."
           branch: "sync-timetable-data"
           base: "main"
+
+      - name: Auto Merge PR
+        if: steps.cpr.outputs.pull-request-number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr merge ${{ steps.cpr.outputs.pull-request-number }} \
+            --repo ${{ github.repository }} \
+            --merge \
+            --delete-branch
