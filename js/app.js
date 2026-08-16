@@ -374,53 +374,237 @@ const TimetableApp = (function () {
   };
 
   // ==================== CUSTOM SCHEDULE MODULE ====================
+  // Smart sync: unedited classes always come from official.
+  // Only user-edited/added classes are stored separately.
   const CustomSchedule = {
-    _key: (sem, batch) => `customSchedule_${sem}_${batch}`,
+    // Old key (for backward compat / migration)
+    _oldKey: (sem, batch) => `customSchedule_${sem}_${batch}`,
+    // New key: stores ONLY user edits/additions/deletions
+    _editsKey: (sem, batch) => `customEdits_${sem}_${batch}`,
 
-    load: (sem, batch) => {
-      return Storage.getJSON(CustomSchedule._key(sem, batch), null);
+    // --- Generate a stable key to identify an official class ---
+    _classKey: (cls) => `${cls.day}_${cls.start}_${cls.duration}_${cls.title}_${cls.type}`,
+
+    // --- Load/Save user edits ---
+    loadEdits: (sem, batch) => {
+      return Storage.getJSON(CustomSchedule._editsKey(sem, batch), null);
+    },
+    saveEdits: (sem, batch, edits) => {
+      Storage.setJSON(CustomSchedule._editsKey(sem, batch), edits);
     },
 
-    save: (sem, batch, schedule) => {
-      Storage.setJSON(CustomSchedule._key(sem, batch), schedule);
+    // --- Migrate old format to new format (one-time) ---
+    _migrate: (sem, batch) => {
+      const oldData = Storage.getJSON(CustomSchedule._oldKey(sem, batch), null);
+      if (!oldData) return null; // Nothing to migrate
+
+      // Get current official schedule
+      let official = [];
+      if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[sem] && scheduleMap[sem][batch]) {
+        official = scheduleMap[sem][batch];
+      }
+
+      const edits = [];
+      // Compare each old entry to official
+      oldData.forEach(oldEntry => {
+        // Try to find a matching official class
+        const officialMatch = official.find(o =>
+          o.day === oldEntry.day &&
+          o.start === oldEntry.start &&
+          o.duration === oldEntry.duration &&
+          o.title === oldEntry.title &&
+          o.type === oldEntry.type &&
+          o.code === oldEntry.code &&
+          o.teacher === oldEntry.teacher
+        );
+        if (!officialMatch) {
+          // This entry was either edited or added by user
+          // Try to find original by position (day+start+type)
+          const possibleOriginal = official.find(o =>
+            o.day === oldEntry.day &&
+            o.start === oldEntry.start &&
+            o.duration === oldEntry.duration &&
+            o.type === oldEntry.type
+          );
+          if (possibleOriginal) {
+            // It's an edit of an official class
+            edits.push({
+              ...oldEntry,
+              _originalKey: CustomSchedule._classKey(possibleOriginal),
+              _isEdited: true
+            });
+          } else {
+            // It's a brand new class added by user
+            edits.push({
+              ...oldEntry,
+              _isNew: true
+            });
+          }
+        }
+        // If it matches official exactly, skip it (no need to store)
+      });
+
+      // Save new format and remove old key
+      CustomSchedule.saveEdits(sem, batch, edits);
+      localStorage.removeItem(CustomSchedule._oldKey(sem, batch));
+      return edits;
     },
 
-    ensureClone: (sem, batch) => {
-      const existing = CustomSchedule.load(sem, batch);
-      if (existing) return existing;
-      // Clone from official
+    // --- Build the merged schedule: official + user edits ---
+    buildMerged: (sem, batch) => {
+      // Check for old format migration first
+      let edits = CustomSchedule.loadEdits(sem, batch);
+      if (edits === null) {
+        // Try migrating from old format
+        edits = CustomSchedule._migrate(sem, batch);
+      }
+      if (!edits) edits = [];
+
+      // Start with a deep clone of official
       let official = [];
       if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[sem] && scheduleMap[sem][batch]) {
         official = JSON.parse(JSON.stringify(scheduleMap[sem][batch]));
       }
-      CustomSchedule.save(sem, batch, official);
-      return official;
+
+      // Build a set of deleted original keys
+      const deletedKeys = new Set();
+      edits.forEach(e => {
+        if (e._deleted && e._originalKey) deletedKeys.add(e._originalKey);
+      });
+
+      // Start with official entries (excluding deleted ones)
+      const merged = [];
+      official.forEach(cls => {
+        const key = CustomSchedule._classKey(cls);
+        if (deletedKeys.has(key)) return; // User deleted this
+
+        // Check if user edited this class
+        const edit = edits.find(e => e._isEdited && e._originalKey === key);
+        if (edit) {
+          // Use user's edited version (without internal flags)
+          const { _originalKey, _isEdited, ...cleanEdit } = edit;
+          merged.push(cleanEdit);
+        } else {
+          merged.push(cls); // Unedited, use latest official
+        }
+      });
+
+      // Add user-added classes
+      edits.forEach(e => {
+        if (e._isNew) {
+          const { _isNew, ...cleanEntry } = e;
+          merged.push(cleanEntry);
+        }
+      });
+
+      return merged;
     },
 
+    // --- Check if this batch has ANY user edits ---
+    hasEdits: (sem, batch) => {
+      const edits = CustomSchedule.loadEdits(sem, batch);
+      return edits !== null && edits.length > 0;
+    },
+
+    // --- Add a new class (user-created) ---
     addEntry: (sem, batch, entry) => {
-      const schedule = CustomSchedule.load(sem, batch) || [];
-      schedule.push(entry);
-      CustomSchedule.save(sem, batch, schedule);
-      return schedule;
+      let edits = CustomSchedule.loadEdits(sem, batch) || [];
+      edits.push({ ...entry, _isNew: true });
+      CustomSchedule.saveEdits(sem, batch, edits);
+      return CustomSchedule.buildMerged(sem, batch);
     },
 
-    updateEntry: (sem, batch, index, updatedEntry) => {
-      const schedule = CustomSchedule.load(sem, batch) || [];
-      if (index >= 0 && index < schedule.length) {
-        schedule[index] = { ...schedule[index], ...updatedEntry };
-        CustomSchedule.save(sem, batch, schedule);
+    // --- Update an existing class ---
+    // mergedIndex is the index in the MERGED schedule (state.currentSchedule)
+    updateEntry: (sem, batch, mergedIndex, updatedEntry) => {
+      const currentSchedule = state.currentSchedule;
+      if (mergedIndex < 0 || mergedIndex >= currentSchedule.length) return currentSchedule;
+
+      const originalCls = currentSchedule[mergedIndex];
+      let edits = CustomSchedule.loadEdits(sem, batch) || [];
+
+      // Get official schedule to check if this was an official class
+      let official = [];
+      if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[sem] && scheduleMap[sem][batch]) {
+        official = scheduleMap[sem][batch];
       }
-      return schedule;
+
+      // Find if this class matches an official entry
+      const officialMatch = official.find(o => CustomSchedule._classKey(o) === CustomSchedule._classKey(originalCls));
+
+      // Check if this was already a user edit
+      const existingEditIdx = edits.findIndex(e => {
+        if (e._isEdited && e._originalKey) {
+          return e._originalKey === CustomSchedule._classKey(originalCls);
+        }
+        if (e._isNew) {
+          // Match new entries by all fields
+          return e.day === originalCls.day && e.start === originalCls.start &&
+                 e.title === originalCls.title && e.type === originalCls.type;
+        }
+        return false;
+      });
+
+      if (existingEditIdx >= 0) {
+        // Update existing edit
+        const oldEdit = edits[existingEditIdx];
+        edits[existingEditIdx] = { ...oldEdit, ...updatedEntry };
+      } else if (officialMatch) {
+        // First time editing an official class
+        edits.push({
+          ...originalCls,
+          ...updatedEntry,
+          _originalKey: CustomSchedule._classKey(officialMatch),
+          _isEdited: true
+        });
+      } else {
+        // Editing a new class that was added
+        edits.push({ ...originalCls, ...updatedEntry, _isNew: true });
+      }
+
+      CustomSchedule.saveEdits(sem, batch, edits);
+      return CustomSchedule.buildMerged(sem, batch);
     },
 
-    deleteEntry: (sem, batch, index) => {
-      const schedule = CustomSchedule.load(sem, batch) || [];
-      if (index >= 0 && index < schedule.length) {
-        schedule.splice(index, 1);
-        CustomSchedule.save(sem, batch, schedule);
+    // --- Delete a class ---
+    deleteEntry: (sem, batch, mergedIndex) => {
+      const currentSchedule = state.currentSchedule;
+      if (mergedIndex < 0 || mergedIndex >= currentSchedule.length) return currentSchedule;
+
+      const cls = currentSchedule[mergedIndex];
+      let edits = CustomSchedule.loadEdits(sem, batch) || [];
+
+      // Get official schedule
+      let official = [];
+      if (typeof scheduleMap !== 'undefined' && scheduleMap && scheduleMap[sem] && scheduleMap[sem][batch]) {
+        official = scheduleMap[sem][batch];
       }
-      return schedule;
-    }
+
+      const officialMatch = official.find(o => CustomSchedule._classKey(o) === CustomSchedule._classKey(cls));
+
+      // Remove any existing edit for this class
+      edits = edits.filter(e => {
+        if (e._isEdited && e._originalKey === CustomSchedule._classKey(cls)) return false;
+        if (e._isNew && e.day === cls.day && e.start === cls.start &&
+            e.title === cls.title && e.type === cls.type) return false;
+        return true;
+      });
+
+      if (officialMatch) {
+        // Mark official class as deleted
+        edits.push({
+          _originalKey: CustomSchedule._classKey(officialMatch),
+          _deleted: true
+        });
+      }
+      // If it was a user-added class, just removing the edit entry is enough
+
+      CustomSchedule.saveEdits(sem, batch, edits);
+      return CustomSchedule.buildMerged(sem, batch);
+    },
+
+    // Keep old methods for compatibility but they now delegate
+    ensureClone: (sem, batch) => CustomSchedule.buildMerged(sem, batch)
   };
 
   const dom = {
@@ -991,6 +1175,11 @@ const TimetableApp = (function () {
       innerHtml += `<div style="position: absolute; top: 2px; right: 2px; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 4px; color: #fff; font-size: 0.6rem; padding: 1px 3px; font-weight: bold;">+${extraCount}</div>`;
       cell.style.position = 'relative';
     }
+    // Show edit indicator in custom mode for all cells (single or multi)
+    if (state.isCustomMode && !state.isTeacherMode && !state.isRoomMode) {
+      innerHtml += `<div style="position: absolute; bottom: 1px; right: 2px; font-size: 0.55rem; opacity: 0.6;">✏️</div>`;
+      cell.style.position = 'relative';
+    }
     cell.innerHTML = innerHtml;
     return cell; // <--- This is CRITICAL
   }
@@ -1540,27 +1729,46 @@ const TimetableApp = (function () {
 
     // Add edit and add buttons in Custom Mode
     const modalContent = modal.querySelector('.modal-content');
-    let existingEditBtn = modalContent.querySelector('.modal-edit-btn');
-    if (existingEditBtn) existingEditBtn.remove();
-    let existingAddBtn = modalContent.querySelector('.modal-add-btn');
-    if (existingAddBtn) existingAddBtn.remove();
+    // Remove any old edit/add buttons
+    modalContent.querySelectorAll('.modal-edit-btn, .modal-add-btn, .modal-edit-container').forEach(el => el.remove());
 
-    if (state.isCustomMode && clsList.length === 1) {
-      const clsIndex = state.currentSchedule.indexOf(primaryCls);
+    if (state.isCustomMode) {
+      // Create edit buttons for EACH class in the cell
+      const editContainer = document.createElement('div');
+      editContainer.className = 'modal-edit-container';
+      editContainer.style.cssText = 'display: flex; flex-direction: column; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1);';
 
-      // Pencil Edit Button
-      if (clsIndex >= 0) {
+      clsList.forEach((cls, idx) => {
+        const clsIndex = state.currentSchedule.indexOf(cls);
+        if (clsIndex < 0) return;
+
+        const displayTitle = getSubjectFullTitle(cls.title, cls.type) || cls.title;
+        const shortTitle = displayTitle.includes('(') ? displayTitle.split('(')[0].trim() : displayTitle;
+
+        const editRow = document.createElement('div');
+        editRow.style.cssText = 'display: flex; align-items: center; gap: 8px; justify-content: space-between;';
+
+        const label = document.createElement('span');
+        label.textContent = shortTitle;
+        label.style.cssText = 'font-size: 0.8rem; color: var(--text-muted); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;';
+
         const editBtn = document.createElement('button');
         editBtn.className = 'modal-edit-btn';
         editBtn.innerHTML = '✏️';
-        editBtn.title = 'Edit this class';
+        editBtn.title = `Edit ${shortTitle}`;
+        editBtn.style.cssText = 'position: static; background: rgba(187,134,252,0.15); border: 1px solid var(--accent-color); border-radius: 8px; padding: 4px 10px; cursor: pointer; font-size: 0.9rem;';
         editBtn.onclick = (e) => {
           e.stopPropagation();
           closeModal();
-          openModalEdit(primaryCls, clsIndex);
+          openModalEdit(cls, clsIndex);
         };
-        modalContent.appendChild(editBtn);
-      }
+
+        editRow.appendChild(label);
+        editRow.appendChild(editBtn);
+        editContainer.appendChild(editRow);
+      });
+
+      modalContent.appendChild(editContainer);
 
       // Top Right Add (+) Button
       const addBtn = document.createElement('button');
