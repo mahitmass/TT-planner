@@ -843,7 +843,7 @@ const TimetableApp = (function () {
   // ==================== RENDERING ====================
   function renderInitialViews() {
     updateBatchLabels(state.currentBatch);
-    setViewMode(state.currentView);
+    setViewMode(state.currentView, false); // <--- Add 'false' here to prevent closing
     renderMobileView();
     renderDesktopView();
   }
@@ -1379,7 +1379,8 @@ const TimetableApp = (function () {
   }
 
   // ==================== VIEW MODE ====================
-  function setViewMode(mode) {
+  // Add "closePanel = true" as a default parameter
+  function setViewMode(mode, closePanel = true) {
     state.currentView = mode;
     Storage.set('preferredView', mode);
 
@@ -1428,10 +1429,13 @@ const TimetableApp = (function () {
       }
     }
 
-    if (dom.filterPanel && dom.filterPanel.classList.contains('expanded')) {
+    // UPDATE HERE: Only close the filter panel if closePanel is true
+    if (closePanel && dom.filterPanel && dom.filterPanel.classList.contains('expanded')) {
       toggleFilterPanel();
     }
   }
+
+    
 
 
 
