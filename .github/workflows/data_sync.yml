@@ -66,17 +66,32 @@ jobs:
           # Clean up temp clone
           rm -rf senior_repo
 
+      # --- Run the Parser on the newly downloaded files in the workspace ---
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Run Parser
+        run: |
+          cd parser_tool
+          npm install
+          node parser.js
+          node generate_data.js
+
+      # --- Create the PR with BOTH the Excel files and the new data.js ---
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: synchronize timetable data"
-          title: "New Timetable Data Available"
-          body: "A new timetable excel file has been detected in the upstream repo. Please review and merge to trigger parsing."
+          commit-message: "chore: synchronize timetable and generate data"
+          title: "New Timetable Data & Parsed Data Available"
+          body: "A new timetable excel file was detected. The bot has fetched it and automatically regenerated data.js."
           branch: "sync-timetable-data"
           base: "main"
 
+      # --- Instantly merge the PR ---
       - name: Auto Merge PR
         if: steps.cpr.outputs.pull-request-number != ''
         env:
