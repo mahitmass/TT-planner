@@ -1,4 +1,4 @@
-const CACHE_NAME = 'a6-planner-v39'; // Bump Version
+const CACHE_NAME = 'a6-planner-v40'; // Bump Version
 const TIMEOUT_MS = 1000; // 1 Second Timeout
 
 const ASSETS = [
@@ -33,8 +33,8 @@ self.addEventListener('fetch', (event) => {
   if (!event.request.url.startsWith('http')) return;
   const url = new URL(event.request.url);
   
-  // FIX OLD PWA INSTALLS
-  if (url.pathname.startsWith('/TT-planner/')) {
+  // FIX OLD PWA INSTALLS (only on Vercel/root domains, NOT on GitHub Pages)
+  if (url.pathname.startsWith('/TT-planner/') && !url.host.includes('github.io')) {
       const newUrl = event.request.url.replace('/TT-planner/', '/');
       event.respondWith(Response.redirect(newUrl, 301));
       return;
