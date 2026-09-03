@@ -2,7 +2,7 @@ module.exports = {
     teachers62: {
         "LKK": "Lakhveer Kaur",
         "NF9": "Harshita Bharadwaj",
-        "RDR": "Radhika Raina",
+        "RDR": "Radhika Raina" ,
         "SAM": "Sambhav",
         "BHA": "Bharti Arora",
         "ABC": "Abhishek Chaudhary",
