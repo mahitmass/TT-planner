@@ -2098,7 +2098,7 @@ const scheduleMap = {
       { "day": 4, "start": 9, "duration": 1, "title": "Economics", "code": "TS10", "teacher": "PSH", "type": "tut" },
       { "day": 4, "start": 11, "duration": 1, "title": "Environmental Studies", "code": "LT3", "teacher": "SBT", "type": "lec" },
       { "day": 4, "start": 14, "duration": 1, "title": "Electronic Devices and Circuit", "code": "G3", "teacher": "SPT", "type": "lec" },
-      { "day": 5, "start": 9, "duration": 2, "title": "Electronic Devices and Circuits", "code": "EDC", "teacher": "SHS,SPT", "type": "lab" },
+      { "day": 5, "start": 9, "duration": 2, "title": "Electronic Devices and Circuits", "code": "EDC", "teacher": "GK", "type": "lab" },
       { "day": 5, "start": 11, "duration": 1, "title": "Digital Circuit Design", "code": "G7", "teacher": "RMD", "type": "lec" },
       { "day": 5, "start": 12, "duration": 1, "title": "Probability & Random Processes", "code": "CS4", "teacher": "DCS", "type": "lec" },
       { "day": 5, "start": 14, "duration": 2, "title": "Digital Circuit Design", "code": "CML", "teacher": "RMD,SHI", "type": "lab" }
