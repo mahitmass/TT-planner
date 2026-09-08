@@ -60,6 +60,15 @@ module.exports = {
             code: "F4"
         }
     },
+    {
+        semester: 3,
+        batch: "A6",
+        day: 5,
+        start: 9,
+        changes: {
+            teacher: "GK",
+        }
+    }
     
   ]
 };
