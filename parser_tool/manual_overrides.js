@@ -66,7 +66,7 @@ module.exports = {
         day: 5,
         start: 9,
         changes: {
-            teacher: "GK",
+            teacher: "GK /SPT",
         }
     }
     
